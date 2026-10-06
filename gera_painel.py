@@ -1,334 +1,571 @@
 # -*- coding: utf-8 -*-
-"""Gera o painel gerencial Yó / Boldró (index.html).
+"""Gera o painel gerencial Yó / Boldró no esqueleto do painel Amana/Topázio.
 
-Esqueleto herdado do painel Amana/Topázio: nav fixa, hero com a cascata da DRE,
-indicadores, composição, tabelas por categoria e ressalvas. Os KPIs é que mudam —
-lá é pousada (serviço), aqui é restaurante e beach club (comércio de A&B).
+Mesma estrutura: nav com seletor de entidade (Boldró · YO · Consolidado · Sócios),
+hero com pills de mês, switch de regime (caixa × competência) e a ponte do caixa em SVG,
+KPIs abaixo do hero, indicadores mês a mês com análise vertical, orçado × real,
+composição das saídas em donut, leitura do mês, seção operacional e relatórios com
+switch DFC × DRE. O miolo é que muda: lá é pousada, aqui é restaurante e beach club.
 
-Fonte: omie-boldro/dados_boldro.json, montado por dados_painel.py a partir da API do Omie.
+Gera index.html e socios.html (a visão dos sócios, sem o detalhe mês a mês).
 Rodar:  python3 gera_painel.py
 """
 import json
 import os
 
 BASE = os.path.expanduser('~/Library/Mobile Documents/com~apple~CloudDocs/Claude VS/omie-boldro')
-D = json.load(open(os.path.join(BASE, 'dados_boldro.json')))
-FECHADOS = D['fechados']
-MES_NOME = {'2026-08': 'agosto', '2026-09': 'setembro'}
+D = json.load(open(os.path.join(BASE, 'dados_painel.json')))
 
-# YO: ainda não lançada no Omie. Números vêm da conciliação do CSC e estão marcados como tal.
-YO = {'periodo': '01/07 a 18/09/2026', 'linhas': 1618, 'credito': 2356759.55,
-      'debito': 3329777.29, 'saldo_ini': 1202894.61, 'saldo_fim': 229876.34,
-      'aporte': 2271313.67, 'obra': 364, 'operacao': 314, 'preop': 40, 'sem_destino': 743}
-
-
-def acum(campo):
-    return sum(D['dre'][m][campo] for m in FECHADOS)
-
-
-def brl(v, casas=0):
-    s = '{:,.{}f}'.format(abs(v), casas)
-    s = s.replace(',', 'X').replace('.', ',').replace('X', '.')
-    return ('\u2212' if v < 0 else '') + 'R$ ' + s
-
-
-def pct(v, base):
-    return '%.1f%%' % (100 * v / base) if base else '—'
-
-
-RL = acum('receita_liquida')
-CMV = -acum('cmv')
-COP = -acum('custos_operacao')
-PES = -acum('pessoal')
-OCU = -acum('ocupacao')
-ADM = -acum('administrativas')
-MKT = -acum('marketing')
-LB = acum('lucro_bruto')
-EBITDA = acum('ebitda')
-FIN = acum('financeiro')
-LL = acum('lucro_liquido')
-RB = acum('receita_bruta')
-DED = -acum('deducoes')
-INV = -acum('investimento')
-PRIME = CMV + PES
-CC = sum(D['fora_da_dre'].get('CC', {}).values())
-CAIXA = D['dfc']['saldo_final']
-
-CASCATA = [('Receita bruta', RB, 'in'), ('Deduções', -DED, 'out'),
-           ('Receita líquida', RL, 'sub'), ('CMV', -CMV, 'out'),
-           ('Custos de operação', -COP, 'out'), ('Lucro bruto', LB, 'sub'),
-           ('Pessoal', -PES, 'out'), ('Ocupação', -OCU, 'out'),
-           ('Administrativas', -ADM, 'out'), ('Marketing', -MKT, 'out'),
-           ('EBITDA', EBITDA, 'sub'), ('Resultado financeiro', FIN, 'out'),
-           ('Lucro líquido', LL, 'tot')]
-
-KPIS = [
-    ('Receita líquida', brl(RL), 'o que entrou pelo banco em %s e %s' % (MES_NOME[FECHADOS[0]], MES_NOME[FECHADOS[1]]), ''),
-    ('CMV sobre a receita', pct(CMV, RL), 'food cost — insumos de A&B', 'referência de mercado: 28% a 35%'),
-    ('Prime cost', pct(PRIME, RL), 'CMV + pessoal, o indicador que manda em restaurante', 'referência de mercado: 60% a 65%'),
-    ('Custo de pessoal', pct(PES, RL), 'salários, diaristas, encargos, alojamento fora', ''),
-    ('Margem EBITDA', pct(EBITDA, RL), 'antes de depreciação, acima do pró-labore', 'distorcida pelo recorte — ver ressalvas'),
-    ('Caixa em 30/09', brl(CAIXA), 'conta corrente Santander, conferida com o extrato', 'abriu o período em zero'),
-    ('Exposição com a YO', brl(abs(CC)), 'conta corrente de partes relacionadas', 'R$ 107,2 mil pagos pela Boldró por conta da YO'),
-    ('Investimento', brl(INV), 'fora do EBITDA, critério D7', 'coqueiros e guarda-sol'),
-]
-
-
-def barras():
-    """evolução mensal: receita x despesa operacional"""
-    out = []
-    mx = max(max(D['dre'][m]['receita_liquida'] for m in FECHADOS),
-             max(-(D['dre'][m]['cmv'] + D['dre'][m]['custos_operacao'] + D['dre'][m]['pessoal'] +
-                   D['dre'][m]['ocupacao'] + D['dre'][m]['administrativas'] + D['dre'][m]['marketing'])
-                 for m in FECHADOS))
-    for m in FECHADOS:
-        x = D['dre'][m]
-        desp = -(x['cmv'] + x['custos_operacao'] + x['pessoal'] + x['ocupacao'] +
-                 x['administrativas'] + x['marketing'])
-        out.append((MES_NOME[m], x['receita_liquida'], desp, x['ebitda'],
-                    100 * x['receita_liquida'] / mx, 100 * desp / mx))
-    return out
-
-
-def tabela_grupos():
-    linhas = []
-    for nome, por_mes in sorted(D['grupos'].items(), key=lambda i: -abs(sum(i[1].values()))):
-        v = {m: por_mes.get(m, 0) for m in FECHADOS}
-        tot = sum(v.values())
-        if abs(tot) < 0.01:
-            continue
-        linhas.append((nome, v[FECHADOS[0]], v[FECHADOS[1]], tot))
-    return linhas
-
-
-def tabela_contas():
-    linhas = []
-    for chave, por_mes in D['contas'].items():
-        g, _, nome = chave.partition('|')
-        v = {m: por_mes.get(m, 0) for m in FECHADOS}
-        tot = sum(v.values())
-        if abs(tot) < 0.01:
-            continue
-        linhas.append((nome, v[FECHADOS[0]], v[FECHADOS[1]], tot))
-    return sorted(linhas, key=lambda x: -abs(x[3]))
-
-
-CSS = """
+CSS = r"""
 :root{--navy:#0D0F1A;--navy2:#141726;--navy3:#1C2032;--line:#262B40;--orange:#F97316;
  --orange-soft:#FFF7ED;--offwhite:#FAFAF7;--ink:#0D0F1A;--ink2:#374151;--g400:#9CA3AF;
- --g500:#6B7280;--g300:#D1D5DB;--g200:#E5E7EB;--in:#0E9F6E;--in-soft:#E7F6F0;--out:#DC2626;
- --out-soft:#FCECEC;--card:#fff;--shadow:0 1px 3px rgba(13,15,26,.06),0 8px 24px rgba(13,15,26,.05)}
+ --g500:#6B7280;--g300:#D1D5DB;--g200:#E5E7EB;--in:#0E9F6E;--out:#DC2626;
+ --card:#fff;--shadow:0 1px 3px rgba(13,15,26,.06),0 8px 24px rgba(13,15,26,.05)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--offwhite);color:var(--ink);
  -webkit-font-smoothing:antialiased;line-height:1.55}
 .num{font-family:'Plus Jakarta Sans',sans-serif;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
-.ital{font-family:'Fraunces',serif;font-style:italic;font-weight:400}
+.light{font-weight:300;color:var(--g500)}
 .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
 .nav{position:sticky;top:0;z-index:50;background:rgba(13,15,26,.92);backdrop-filter:blur(10px);
  border-bottom:1px solid rgba(255,255,255,.08)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-.nav .mark{font-family:'Plus Jakarta Sans';font-weight:700;font-size:14px;color:#fff;letter-spacing:.02em}
-.nav .mark b{color:var(--orange)}
-.nav-links{display:flex;gap:4px}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{font-family:'Plus Jakarta Sans';font-weight:800;font-size:13px;color:#fff;letter-spacing:.04em;
+ text-transform:uppercase;white-space:nowrap}
+.brand b{color:var(--orange)}
+.nav-links{display:flex;gap:2px;flex:1;justify-content:center}
 .nav-links a{font-family:'Plus Jakarta Sans';font-size:12.5px;font-weight:600;color:#B8BECF;
- text-decoration:none;padding:8px 13px;border-radius:8px;transition:.2s}
+ text-decoration:none;padding:7px 11px;border-radius:8px;transition:.2s;white-space:nowrap}
 .nav-links a:hover{color:#fff;background:rgba(255,255,255,.07)}
 .nav-links a.on{color:var(--navy);background:var(--orange)}
-@media(max-width:820px){.nav-links{display:none}}
-.hero{background:var(--navy);color:#fff;padding:48px 0 56px;position:relative;overflow:hidden}
+.entsw{display:flex;gap:3px;background:rgba(255,255,255,.06);padding:3px;border-radius:9px}
+.entsw button,.entsw a{font-family:'Plus Jakarta Sans';font-size:11.5px;font-weight:700;color:#B8BECF;
+ background:none;border:none;padding:6px 11px;border-radius:7px;cursor:pointer;transition:.2s;
+ text-decoration:none;display:inline-block}
+.entsw button:hover,.entsw a:hover{color:#fff}
+.entsw button.on,.entsw a.on{background:#fff;color:var(--navy)}
+@media(max-width:1100px){.nav-links{display:none}}
+.hero{background:var(--navy);color:#fff;padding:40px 0 52px;position:relative;overflow:hidden}
 .hero:before{content:"";position:absolute;top:-40%;right:-10%;width:520px;height:520px;
  background:radial-gradient(circle,rgba(249,115,22,.18),transparent 62%);pointer-events:none}
 .eyebrow{font-family:'Plus Jakarta Sans';font-size:11px;font-weight:700;letter-spacing:.22em;
  text-transform:uppercase;color:var(--orange)}
-.hero h1{font-family:'Plus Jakarta Sans';font-weight:300;font-size:clamp(30px,4.4vw,50px);
- line-height:1.08;margin:14px 0 6px;letter-spacing:-.02em}
+.hero h1{font-family:'Plus Jakarta Sans';font-weight:300;font-size:clamp(28px,4vw,44px);
+ line-height:1.08;margin:12px 0 4px;letter-spacing:-.02em}
 .hero h1 b{font-weight:700}
-.hero .sub{font-size:15px;color:#AEB4C6;max-width:680px}
-.hero .sub .ital{color:#fff;font-size:16px}
-.waterfall{margin-top:36px;background:var(--navy2);border:1px solid var(--line);border-radius:16px;
- padding:26px 28px 20px}
-.wf-row{display:grid;grid-template-columns:200px 1fr 150px;align-items:center;gap:14px;
- padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05)}
-.wf-row:last-child{border-bottom:none}
-.wf-row .lab{font-size:13px;color:#C3C9D9}
-.wf-row.sub .lab,.wf-row.tot .lab{font-weight:700;color:#fff;font-family:'Plus Jakarta Sans'}
-.wf-row.tot{background:rgba(249,115,22,.09);margin:6px -14px 0;padding:12px 14px;border-radius:10px}
-.wf-bar{height:9px;border-radius:5px;background:rgba(255,255,255,.07);overflow:hidden}
-.wf-bar i{display:block;height:100%;border-radius:5px}
-.wf-row .val{text-align:right;font-size:14px;font-weight:600}
-.wf-row.sub .val,.wf-row.tot .val{font-size:16px;font-weight:800}
-.v-in{color:#34D399}.v-out{color:#F87171}.v-neutral{color:#fff}
-section{padding:54px 0}
-.sec-alt{background:#fff;border-top:1px solid var(--g200);border-bottom:1px solid var(--g200)}
-h2{font-family:'Plus Jakarta Sans';font-weight:700;font-size:25px;letter-spacing:-.02em;margin-bottom:6px}
-h2 .ital{font-weight:400;color:var(--g500)}
-.lead{color:var(--ink2);font-size:14.5px;max-width:760px;margin-bottom:26px}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cnpjline{font-size:13px;color:#8A91A6;margin-bottom:18px}
+.mespills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.mespills button{font-family:'Plus Jakarta Sans';font-size:12px;font-weight:700;color:#B8BECF;
+ background:rgba(255,255,255,.06);border:1px solid transparent;padding:6px 14px;border-radius:20px;cursor:pointer}
+.mespills button.on{background:var(--orange);color:var(--navy);border-color:var(--orange)}
+.regsw{display:flex;align-items:center;gap:7px;margin-bottom:8px}
+.reglab{font-size:12px;color:#8A91A6}
+.regsw button{font-family:'Plus Jakarta Sans';font-size:12px;font-weight:700;color:#B8BECF;
+ background:rgba(255,255,255,.06);border:none;padding:6px 13px;border-radius:7px;cursor:pointer}
+.regsw button.on{background:#fff;color:var(--navy)}
+.waterfall{margin-top:26px;background:var(--navy2);border:1px solid var(--line);border-radius:16px;
+ padding:22px 26px 14px}
+.wf-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;gap:14px;flex-wrap:wrap}
+.wf-head .t{font-family:'Plus Jakarta Sans';font-weight:700;font-size:15px}
+.wf-head .h{font-size:12.5px;color:#8A91A6}
+.wf-x{display:grid;grid-template-columns:repeat(5,1fr);margin-top:6px}
+.wf-x span{font-size:11px;color:#8A91A6;text-align:center}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:-30px 0 0;position:relative;z-index:5}
 @media(max-width:980px){.kpis{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.kpis{grid-template-columns:1fr}}
-.kpi{background:var(--card);border:1px solid var(--g200);border-radius:14px;padding:18px 18px 16px;
+.kpi{background:var(--card);border:1px solid var(--g200);border-radius:14px;padding:16px 17px 14px;
  box-shadow:var(--shadow)}
-.kpi .t{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--g500)}
-.kpi .v{font-family:'Plus Jakarta Sans';font-size:27px;font-weight:800;letter-spacing:-.025em;margin:8px 0 4px}
-.kpi .d{font-size:12.5px;color:var(--ink2)}
-.kpi .ref{font-size:11.5px;color:var(--orange);margin-top:6px;font-weight:600}
-table{width:100%;border-collapse:collapse;font-size:13.5px;background:#fff;border-radius:12px;overflow:hidden;
- box-shadow:var(--shadow)}
-th{background:var(--navy);color:#fff;font-family:'Plus Jakarta Sans';font-size:11.5px;font-weight:700;
- text-transform:uppercase;letter-spacing:.07em;padding:11px 14px;text-align:right}
-th:first-child{text-align:left}
-td{padding:9px 14px;border-bottom:1px solid var(--g200);text-align:right}
-td:first-child{text-align:left}
-tr:nth-child(even) td{background:#FBFBF9}
-tr.destaque td{font-weight:700;background:var(--orange-soft)}
-.bars{display:grid;gap:18px;margin-top:8px}
-.bar-row{background:#fff;border:1px solid var(--g200);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
-.bar-row .mes{font-family:'Plus Jakarta Sans';font-weight:700;font-size:14px;text-transform:capitalize}
-.bar{height:22px;border-radius:6px;margin:7px 0 3px;position:relative;background:var(--g200)}
-.bar i{display:block;height:100%;border-radius:6px}
-.bar span{position:absolute;right:9px;top:1px;font-size:12px;font-weight:700;color:#fff}
+.kpi .t{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--g500)}
+.kpi .v{font-family:'Plus Jakarta Sans';font-size:25px;font-weight:800;letter-spacing:-.025em;margin:7px 0 3px}
+.kpi .d{font-size:12px;color:var(--ink2)}
+.kpi .ref{font-size:11px;color:var(--orange);margin-top:5px;font-weight:600}
+section{padding:52px 0}
+.sec-alt{background:#fff;border-top:1px solid var(--g200);border-bottom:1px solid var(--g200)}
+.sec-head{margin-bottom:24px}
+.sec-head .k{font-family:'Plus Jakarta Sans';font-size:11px;font-weight:700;letter-spacing:.2em;
+ text-transform:uppercase;color:var(--orange);margin-bottom:7px}
+.sec-head h2{font-family:'Plus Jakarta Sans';font-weight:700;font-size:25px;letter-spacing:-.02em}
+.sec-head .lede{color:var(--ink2);font-size:14.5px;max-width:800px;margin-top:7px}
+.rsm-wrap{overflow-x:auto}
+table.rsm,table.xtbl{width:100%;border-collapse:collapse;font-size:13px;background:#fff;
+ border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+.rsm th,.xtbl th{background:var(--navy);color:#fff;font-family:'Plus Jakarta Sans';font-size:11px;
+ font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:10px 13px;text-align:right;white-space:nowrap}
+.rsm th.l,.xtbl th.l{text-align:left}
+.rsm td,.xtbl td{padding:8px 13px;border-bottom:1px solid var(--g200);text-align:right;white-space:nowrap}
+.rsm td.l,.xtbl td.l{text-align:left}
+.rsm tr:nth-child(even) td,.xtbl tr:nth-child(even) td{background:#FBFBF9}
+tr.res td{font-weight:800;background:var(--orange-soft)!important;border-top:1px solid #FDBA74}
+tr.g td{font-weight:700}
+td.av{color:var(--g500);font-size:12px}
+.rsm-nota,.repnote{font-size:12.5px;color:var(--g500);margin-top:12px;max-width:880px}
+.pz-grid{display:grid;grid-template-columns:320px 1fr;gap:34px;align-items:center}
+@media(max-width:820px){.pz-grid{grid-template-columns:1fr}}
+.pz-chart{position:relative}
+.pz-mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none}
+.pz-mid .pz-t{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--g500)}
+.pz-mid b{font-family:'Plus Jakarta Sans';font-size:21px;font-weight:800}
+.pz-leg{display:flex;flex-direction:column;gap:9px}
+.pz-item{display:grid;grid-template-columns:12px 1fr auto auto;gap:11px;align-items:center;font-size:13.5px}
+.pz-item i{width:12px;height:12px;border-radius:3px;display:block}
+.pz-item .p{color:var(--g500);font-size:12.5px;width:52px;text-align:right}
+.bridge{background:var(--navy);color:#fff;border-radius:18px;padding:30px 34px}
+.bridge .bk{font-family:'Plus Jakarta Sans';font-size:11px;font-weight:700;letter-spacing:.2em;
+ text-transform:uppercase;color:var(--orange)}
+.bridge h3{font-family:'Plus Jakarta Sans';font-weight:300;font-size:clamp(21px,2.6vw,29px);
+ margin:11px 0 8px;letter-spacing:-.02em}
+.bridge h3 b{font-weight:700}
+.bridge .bsub{color:#AEB4C6;font-size:14.5px;max-width:840px}
+.bflow{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:13px;margin-top:22px}
+.bflow .bx{background:var(--navy2);border:1px solid var(--line);border-radius:12px;padding:15px 16px}
+.bflow .bx .t{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#8A91A6}
+.bflow .bx .v{font-family:'Plus Jakarta Sans';font-size:20px;font-weight:800;margin:6px 0 3px}
+.bflow .bx .d{font-size:12px;color:#AEB4C6}
+.rep-switch{display:flex;gap:4px;background:var(--g200);padding:4px;border-radius:10px;
+ width:fit-content;margin-bottom:20px}
+.rep-switch button{font-family:'Plus Jakarta Sans';font-size:12.5px;font-weight:700;color:var(--g500);
+ background:none;border:none;padding:8px 16px;border-radius:7px;cursor:pointer}
+.rep-switch button.on{background:#fff;color:var(--navy);box-shadow:var(--shadow)}
+.repwrap{display:none}.repwrap.on{display:block}
+.vazio{background:#fff;border:1px dashed var(--g300);border-radius:14px;padding:28px 30px;text-align:center}
+.vazio h4{font-family:'Plus Jakarta Sans';font-size:15px;font-weight:700;margin-bottom:6px}
+.vazio p{font-size:13.5px;color:var(--ink2);max-width:660px;margin:0 auto}
 .aviso{background:#fff;border:1px solid var(--g200);border-left:3px solid var(--orange);border-radius:12px;
- padding:18px 20px;margin-bottom:14px;box-shadow:var(--shadow)}
-.aviso h4{font-family:'Plus Jakarta Sans';font-size:14px;font-weight:700;margin-bottom:5px}
+ padding:16px 19px;margin-bottom:12px;box-shadow:var(--shadow)}
+.aviso h4{font-family:'Plus Jakarta Sans';font-size:14px;font-weight:700;margin-bottom:4px}
 .aviso p{font-size:13.5px;color:var(--ink2)}
-.tag{display:inline-block;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
- padding:3px 9px;border-radius:20px;background:var(--orange-soft);color:#B45309;margin-left:8px}
-.tag.cinza{background:var(--g200);color:var(--g500)}
-@media(max-width:720px){
- .wf-row{grid-template-columns:1fr auto;gap:8px}
- .wf-row .wf-bar{grid-column:1/-1;order:3}
- .wrap{padding:0 18px}
- .hero{padding:34px 0 40px}
- table{font-size:12px}
- th,td{padding:8px 9px}
-}
-footer{background:var(--navy);color:#8A91A6;padding:30px 0;font-size:12.5px}
-footer b{color:#fff}
+.tag{display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;
+ padding:3px 9px;border-radius:20px;background:var(--orange-soft);color:#B45309;margin-left:9px;vertical-align:middle}
+.foot{background:var(--navy);color:#8A91A6;padding:40px 0 34px;font-size:12.5px}
+.foot .fg{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;
+ padding-bottom:20px;border-bottom:1px solid var(--line)}
+.foot .sig{font-family:'Fraunces',serif;font-style:italic;font-size:19px;color:#fff}
+.foot .disc{margin-top:18px;font-size:11.5px;line-height:1.7;color:#6D748A}
+@media(max-width:720px){.wrap{padding:0 18px}.kpis{margin-top:18px}}
 """
 
+JS = r"""
+var ENT=(typeof ENT0!=='undefined'?ENT0:'boldro'), MES=D.meses[D.meses.length-1], REG='caixa';
+var SOCIOS=(typeof SOCIOS!=='undefined')&&SOCIOS;
+function brl(v,c){c=c||0;var s=Math.abs(v).toLocaleString('pt-BR',{minimumFractionDigits:c,maximumFractionDigits:c});
+ return (v<0?'−':'')+'R$ '+s}
+function pc(v,b){return b?(100*v/b).toFixed(1).replace('.',',')+'%':'—'}
 
-def html():
-    mx = max(abs(v) for _, v, _ in CASCATA)
-    wf = []
-    for lab, val, kind in CASCATA:
-        cor = '#34D399' if val >= 0 else '#F87171'
-        if kind in ('sub', 'tot'):
-            cor = '#F97316'
-        cls = {'in': '', 'out': '', 'sub': ' sub', 'tot': ' tot'}[kind]
-        vcl = 'v-in' if val > 0 else ('v-out' if val < 0 else 'v-neutral')
-        wf.append('<div class="wf-row%s"><div class="lab">%s</div>'
-                  '<div class="wf-bar"><i style="width:%.1f%%;background:%s"></i></div>'
-                  '<div class="val num %s">%s</div></div>'
-                  % (cls, lab, 100 * abs(val) / mx, cor, vcl, brl(val)))
+/* entidade virtual: consolidado soma as duas e elimina a conta corrente entre elas */
+function bloco(ent,reg,mes){
+ if(ent==='consol'){
+  var o={grupos:{},contas:{},lanc:{}};
+  ['boldro','yo'].forEach(function(e){
+   var b=((D.ents[e]||{})[reg]||{})[mes]; if(!b)return;
+   Object.keys(b.grupos).forEach(function(g){o.grupos[g]=(o.grupos[g]||0)+b.grupos[g]});
+   Object.keys(b.contas).forEach(function(k){
+    if(/YO Noronha|Yo - Boldr/i.test(k))return;            /* eliminação intercompany */
+    o.contas[k]=(o.contas[k]||0)+b.contas[k];
+    o.lanc[k]=(o.lanc[k]||0)+(b.lanc[k]||0);
+   });
+  });
+  /* o grupo CC perde a parte YO<->Boldró, sobra o que é com a Topázio */
+  var cc=0; Object.keys(o.contas).forEach(function(k){if(k.indexOf('CC|')===0)cc+=o.contas[k]});
+  o.grupos['CC']=cc;
+  return o;
+ }
+ return ((D.ents[ent]||{})[reg]||{})[mes]||{grupos:{},contas:{},lanc:{}};
+}
+function E(){return ENT==='consol'?{nome:'Consolidado Yó + Boldró',cnpj:'45.270.781/0002-53 e 55.526.039/0001-39',
+ status:'ok',conta:'soma das duas bases, sem a conta corrente entre elas'}:D.ents[ENT]}
+function soma(ent,reg,mes,ks){var b=bloco(ent,reg,mes),t=0;ks.forEach(function(k){t+=b.grupos[k]||0});return t}
+function saldos(ent,mes){
+ if(ent!=='consol')return ((D.ents[ent]||{}).saldos||{})[mes];
+ var o=null;['boldro','yo'].forEach(function(e){var s=((D.ents[e]||{}).saldos||{})[mes];if(!s)return;
+  o=o||{ini:0,fim:0,entradas:0,saidas:0};
+  o.ini+=s.ini;o.fim+=s.fim;o.entradas+=s.entradas;o.saidas+=s.saidas});
+ return o;
+}
+function temDado(ent){return ent==='consol'||(D.ents[ent]||{}).status==='ok'}
 
-    k = ''.join('<div class="kpi"><div class="t">%s</div><div class="v num">%s</div>'
-                '<div class="d">%s</div>%s</div>'
-                % (t, v, d, '<div class="ref">%s</div>' % r if r else '')
-                for t, v, d, r in KPIS)
+function setEntity(e){ENT=e;document.querySelectorAll('.entsw button').forEach(function(b){
+ b.classList.toggle('on',b.dataset.ent===e)});render()}
+function setMes(m){MES=m;document.querySelectorAll('.mespills button').forEach(function(b){
+ b.classList.toggle('on',b.dataset.m===m)});render()}
+function setRegime(r){REG=r;document.querySelectorAll('.regsw button,.rep-switch button').forEach(function(b){
+ b.classList.toggle('on',b.dataset.r===r)});render()}
 
-    bars = ''.join(
-        '<div class="bar-row"><div class="mes">%s</div>'
-        '<div class="bar"><i style="width:%.1f%%;background:#0E9F6E"></i><span>%s de receita</span></div>'
-        '<div class="bar"><i style="width:%.1f%%;background:#DC2626"></i><span>%s de despesa</span></div>'
-        '<div class="d num" style="font-size:12.5px;color:var(--ink2);margin-top:6px">EBITDA %s</div></div>'
-        % (mes, pr, brl(rec), pd, brl(desp), brl(eb))
-        for mes, rec, desp, eb, pr, pd in barras())
+function ponteSVG(){
+ var s=saldos(ENT,MES);
+ if(!s)return '<text x="540" y="120" text-anchor="middle" fill="#6D748A" font-size="14" font-family="Inter">sem movimento lançado neste mês</text>';
+ var passos=[['Saldo inicial',s.ini,'n'],['Entradas',s.entradas,'in'],['Saídas',s.saidas,'out'],
+             ['Resultado',s.entradas+s.saidas,'r'],['Saldo final',s.fim,'n']];
+ var mx=Math.max.apply(null,passos.map(function(p){return Math.abs(p[1])}))||1;
+ var W=1080,H=236,cw=W/5,bw=92,base=H-38,esc=base-30,out='',acum=s.ini;
+ passos.forEach(function(p,i){
+  var cx=i*cw+cw/2,cor,y,alt;
+  if(p[2]==='in'){cor='#34D399';alt=Math.abs(p[1])/mx*esc;y=base-((acum+p[1])/mx*esc);acum+=p[1]}
+  else if(p[2]==='out'){cor='#F87171';alt=Math.abs(p[1])/mx*esc;y=base-(acum/mx*esc);acum+=p[1]}
+  else{cor=p[2]==='r'?'#F97316':'#9CA3AF';alt=Math.abs(p[1])/mx*esc;y=base-alt}
+  if(y<18)y=18;
+  out+='<rect x="'+(cx-bw/2)+'" y="'+y.toFixed(1)+'" width="'+bw+'" height="'+Math.max(3,alt).toFixed(1)+
+       '" rx="5" fill="'+cor+'" opacity=".92"/>'+
+       '<text x="'+cx+'" y="'+(y-9).toFixed(1)+'" text-anchor="middle" fill="#fff" font-size="13" '+
+       'font-weight="700" font-family="Plus Jakarta Sans">'+brl(p[1])+'</text>';
+ });
+ return out;
+}
 
-    tg = ''.join('<tr%s><td>%s</td><td class="num">%s</td><td class="num">%s</td><td class="num">%s</td></tr>'
-                 % (' class="destaque"' if n == 'Receita bruta' else '', n, brl(a), brl(s), brl(t))
-                 for n, a, s, t in tabela_grupos())
-    tc = ''.join('<tr><td>%s</td><td class="num">%s</td><td class="num">%s</td><td class="num">%s</td></tr>'
-                 % (n, brl(a), brl(s), brl(t)) for n, a, s, t in tabela_contas())
+function card(k){return '<div class="kpi"><div class="t">'+k[0]+'</div><div class="v num">'+k[1]+
+ '</div><div class="d">'+k[2]+'</div>'+(k[3]?'<div class="ref">'+k[3]+'</div>':'')+'</div>'}
+function kpis(){
+ if(!temDado(ENT)){
+  var c=D.ents[ENT].conciliacao;
+  return [['Situação','Sem carga','nenhum lançamento financeiro no Omie',''],
+   ['Conciliação do CSC',c.linhas+' linhas',c.periodo,'ainda não lançada no sistema'],
+   ['Saldo no início',brl(c.saldo_ini),'em 01/07/2026',''],
+   ['Saldo no fim',brl(c.saldo_fim),'em 18/09/2026','consumo de '+brl(c.saldo_ini-c.saldo_fim)]].map(card).join('');
+ }
+ var s=saldos(ENT,MES)||{ini:0,fim:0,entradas:0,saidas:0};
+ var rl=soma(ENT,'comp',MES,['1','2']);
+ var cmv=-soma(ENT,'comp',MES,['4']),pes=-soma(ENT,'comp',MES,['6']);
+ var ebitda=rl+soma(ENT,'comp',MES,['4','5','3','6','7','8','9']);
+ var cc=soma(ENT,'comp',MES,['CC']);
+ return [
+  ['Receita líquida',brl(rl),'competência de '+D.meses_nome[MES],'pelo líquido da GetNet'],
+  ['Food cost',pc(cmv,rl),'CMV sobre a receita','referência: 28% a 35%'],
+  ['Prime cost',pc(cmv+pes,rl),'CMV + pessoal','referência: 60% a 65%'],
+  ['Margem EBITDA',pc(ebitda,rl),brl(ebitda)+' no mês','distorcida pelo recorte'],
+  ['Saldo em caixa',brl(s.fim),'extrato bancário','abriu o mês com '+brl(s.ini)],
+  ['Entradas',brl(s.entradas),'creditado no mês',''],
+  ['Saídas',brl(Math.abs(s.saidas)),'debitado no mês',''],
+  ['Conta corrente com o grupo',brl(Math.abs(cc)),'partes relacionadas, fora da DRE',
+   ENT==='consol'?'o par Yó↔Boldró foi eliminado':(cc<0?'pago por conta do grupo':'recebido do grupo')]
+ ].map(card).join('');
+}
 
+var LINHAS=[['1','Receita bruta','g'],['2','Deduções',''],['=RL','Receita líquida','res'],
+ ['4','CMV',''],['5','Custos de operação',''],['=LB','Lucro bruto','res'],
+ ['3','Despesas variáveis de venda',''],['6','Pessoal operacional',''],['7','Ocupação',''],
+ ['8','Administrativas',''],['9','Marketing e entretenimento',''],['=EB','EBITDA','res'],
+ ['10','Resultado financeiro',''],['=LL','Lucro líquido','res'],
+ ['11','Investimentos',''],['12','Financiamento',''],['CC','Conta corrente com o grupo','']];
+function valorLinha(mes,cod){
+ var f=function(ks){return soma(ENT,'comp',mes,ks)};
+ if(cod==='=RL')return f(['1','2']);
+ if(cod==='=LB')return f(['1','2','4','5']);
+ if(cod==='=EB')return f(['1','2','4','5','3','6','7','8','9']);
+ if(cod==='=LL')return f(['1','2','4','5','3','6','7','8','9','10']);
+ return f([cod]);
+}
+function rsm(){
+ if(!temDado(ENT))return '<tr><td class="l" colspan="9">Sem lançamento no Omie.</td></tr>';
+ var th='<tr><th class="l">Linha</th>';
+ D.meses.forEach(function(m){th+='<th>'+D.meses_nome[m]+'</th><th class="av">AV%</th>'});
+ th+='<th>acumulado</th><th class="av">AV%</th></tr>';
+ var rbt=D.meses.reduce(function(a,m){return a+soma(ENT,'comp',m,['1'])},0),body='';
+ LINHAS.forEach(function(l){
+  var tot=0,tds='';
+  D.meses.forEach(function(m){
+   var v=valorLinha(m,l[0]);tot+=v;
+   tds+='<td class="num">'+brl(v)+'</td><td class="av">'+pc(v,soma(ENT,'comp',m,['1']))+'</td>';
+  });
+  body+='<tr class="'+l[2]+'"><td class="l">'+l[1]+'</td>'+tds+'<td class="num">'+brl(tot)+
+        '</td><td class="av">'+pc(tot,rbt)+'</td></tr>';
+ });
+ return '<thead>'+th+'</thead><tbody>'+body+'</tbody>';
+}
+
+var CORES=['#F97316','#0D0F1A','#0E9F6E','#DC2626','#6366F1','#D97706','#0891B2','#7C3AED',
+ '#BE185D','#4D7C0F','#9CA3AF','#334155'];
+function pizza(){
+ var b=bloco(ENT,REG,MES),itens=[];
+ Object.keys(b.grupos).forEach(function(g){
+  if(b.grupos[g]<0&&g!=='CC'&&g!=='NEUTRO')itens.push([D.grupo_nome[g]||g,-b.grupos[g]]);
+ });
+ itens.sort(function(a,c){return c[1]-a[1]});
+ var tot=itens.reduce(function(a,i){return a+i[1]},0);
+ if(!tot){document.getElementById('pzSvg').innerHTML='';
+  document.getElementById('pzLeg').innerHTML='<p class="repnote">Sem saídas lançadas neste mês.</p>';
+  document.getElementById('pzTot').textContent='—';return}
+ var r=140,c=2*Math.PI*r,off=0,svg='',leg='';
+ itens.forEach(function(it,i){
+  var frac=it[1]/tot,cor=CORES[i%CORES.length];
+  svg+='<circle cx="160" cy="160" r="'+r+'" fill="none" stroke="'+cor+'" stroke-width="38" stroke-dasharray="'+
+       (frac*c)+' '+c+'" stroke-dashoffset="'+(-off*c)+'" transform="rotate(-90 160 160)"/>';
+  off+=frac;
+  leg+='<div class="pz-item"><i style="background:'+cor+'"></i><span>'+it[0]+'</span><span class="num">'+
+       brl(it[1])+'</span><span class="p">'+pc(it[1],tot)+'</span></div>';
+ });
+ document.getElementById('pzSvg').innerHTML=svg;
+ document.getElementById('pzLeg').innerHTML=leg;
+ document.getElementById('pzTot').textContent=brl(tot);
+}
+
+function ponteTexto(){
+ if(!temDado(ENT)){
+  document.getElementById('brTitle').innerHTML='A YO ainda <b>não tem lançamento</b> no Omie';
+  document.getElementById('brSub').textContent='Plano de contas aplicado e contas bancárias cadastradas, mas nenhum título lançado. Os números da conciliação do CSC servem de dimensão, não de resultado.';
+  document.getElementById('bflow').innerHTML='';return;
+ }
+ var s=saldos(ENT,MES)||{ini:0,fim:0,entradas:0,saidas:0};
+ var rl=soma(ENT,'comp',MES,['1','2']);
+ var ebitda=rl+soma(ENT,'comp',MES,['4','5','3','6','7','8','9']);
+ var cc=soma(ENT,'comp',MES,['CC']),inv=soma(ENT,'comp',MES,['11']);
+ document.getElementById('brTitle').innerHTML='O caixa variou <b>'+brl(s.fim-s.ini)+
+  '</b> e o resultado do mês foi <b>'+brl(ebitda)+'</b>';
+ document.getElementById('brSub').textContent='A diferença de '+brl((s.fim-s.ini)-ebitda)+
+  ' é o que não passa pela DRE: conta corrente com o grupo, investimento e o descasamento entre a emissão do título e o pagamento.';
+ document.getElementById('bflow').innerHTML=[
+  ['Saldo inicial',brl(s.ini),'início de '+D.meses_nome[MES]],
+  ['Entradas',brl(s.entradas),'tudo que creditou'],
+  ['Saídas',brl(Math.abs(s.saidas)),'tudo que debitou'],
+  ['EBITDA do mês',brl(ebitda),'competência'],
+  ['Conta corrente com o grupo',brl(Math.abs(cc)),'fora da DRE'],
+  ['Investimento',brl(Math.abs(inv)),'fora do EBITDA'],
+  ['Saldo final',brl(s.fim),'fim de '+D.meses_nome[MES]]
+ ].map(function(b){return '<div class="bx"><div class="t">'+b[0]+'</div><div class="v num">'+b[1]+
+  '</div><div class="d">'+b[2]+'</div></div>'}).join('');
+}
+
+function tabela(reg){
+ if(!temDado(ENT))return '<tr><td class="l" colspan="4">Sem lançamento no Omie.</td></tr>';
+ var b=bloco(ENT,reg,MES),porGrupo={};
+ Object.keys(b.contas).forEach(function(k){
+  var g=k.split('|')[0],n=k.split('|')[1];(porGrupo[g]=porGrupo[g]||[]).push([n,b.contas[k],b.lanc[k]||0]);
+ });
+ var base=Math.abs(b.grupos['1']||0)||1,out='';
+ Object.keys(porGrupo).sort(function(a,c){return Math.abs(b.grupos[c]||0)-Math.abs(b.grupos[a]||0)}).forEach(function(g){
+  out+='<tr class="g"><td class="l">'+(D.grupo_nome[g]||g)+'</td><td class="num">'+brl(b.grupos[g]||0)+
+       '</td><td class="av">'+pc(b.grupos[g]||0,base)+'</td><td class="av">'+
+       porGrupo[g].reduce(function(a,i){return a+i[2]},0)+'</td></tr>';
+  porGrupo[g].sort(function(a,c){return Math.abs(c[1])-Math.abs(a[1])}).forEach(function(i){
+   out+='<tr><td class="l" style="padding-left:30px;color:#374151">'+i[0]+'</td><td class="num">'+brl(i[1])+
+        '</td><td class="av">'+pc(i[1],base)+'</td><td class="av">'+i[2]+'</td></tr>';
+  });
+ });
+ return out;
+}
+
+function operacao(){
+ var el=document.getElementById('op-kpis'); if(!el)return;
+ if(!temDado(ENT)){el.innerHTML='<div class="vazio"><h4>Sem dados operacionais</h4><p>A YO entra aqui quando a carga for feita.</p></div>';return}
+ var rl=soma(ENT,'comp',MES,['1','2']);
+ var cmv=-soma(ENT,'comp',MES,['4']),cop=-soma(ENT,'comp',MES,['5']),pes=-soma(ENT,'comp',MES,['6']);
+ var ocu=-soma(ENT,'comp',MES,['7']),adm=-soma(ENT,'comp',MES,['8']),mkt=-soma(ENT,'comp',MES,['9']);
+ el.innerHTML=[
+  ['Food cost',pc(cmv,rl),brl(cmv)+' de insumos','referência: 28% a 35%'],
+  ['Custo de pessoal',pc(pes,rl),brl(pes)+' com a equipe','referência: 25% a 32%'],
+  ['Prime cost',pc(cmv+pes,rl),'CMV + pessoal','referência: 60% a 65%'],
+  ['Custos de operação',pc(cop,rl),'energia, água, limpeza, alojamento',''],
+  ['Ocupação',pc(ocu,rl),brl(ocu)+' de arrendamento','referência: até 10%'],
+  ['Administrativas',pc(adm,rl),brl(adm),''],
+  ['Marketing',pc(mkt,rl),brl(mkt)+' em mídia e atrações','referência: 3% a 6%'],
+  ['Sobra operacional',pc(rl-cmv-cop-pes-ocu-adm-mkt,rl),'antes do resultado financeiro','']
+ ].map(card).join('');
+}
+
+function socios(){
+ var el=document.getElementById('soc-kpis'); if(!el)return;
+ var pro=0,dist=0,adi=0;
+ D.meses.forEach(function(m){
+  var b=bloco(ENT,'comp',m);
+  Object.keys(b.contas).forEach(function(k){
+   var n=k.split('|')[1].toLowerCase();
+   if(n.indexOf('pró-labore')>=0||n.indexOf('pro-labore')>=0)pro+=b.contas[k];
+   if(n.indexOf('distribuição de lucros')>=0)dist+=b.contas[k];
+   if(n.indexOf('adiantamento de resultado')>=0)adi+=b.contas[k];
+  });
+ });
+ var rl=D.meses.reduce(function(a,m){return a+soma(ENT,'comp',m,['1','2'])},0);
+ var eb=D.meses.reduce(function(a,m){return a+soma(ENT,'comp',m,['1','2','4','5','3','6','7','8','9'])},0);
+ var s0=saldos(ENT,D.meses[0]),s1=saldos(ENT,D.meses[D.meses.length-1]);
+ el.innerHTML=[
+  ['Receita líquida do período',brl(rl),D.meses_nome[D.meses[0]]+' a '+D.meses_nome[D.meses[D.meses.length-1]],''],
+  ['EBITDA do período',brl(eb),pc(eb,rl)+' sobre a receita','com o pró-labore já deduzido (D8)'],
+  ['Pró-labore',brl(Math.abs(pro)),'acima do EBITDA, decisão D8',''],
+  ['Distribuição de lucros',brl(Math.abs(dist)),'financiamento, fora do resultado',''],
+  ['Adiantamento a sócio operador',brl(Math.abs(adi)),'compensa na distribuição',''],
+  ['Caixa no fim',s1?brl(s1.fim):'—','conta corrente',s0?('abriu em '+brl(s0.ini)):''],
+  ['Conta corrente com o grupo',brl(Math.abs(D.meses.reduce(function(a,m){return a+soma(ENT,'comp',m,['CC'])},0))),
+   'partes relacionadas',''],
+  ['Investimento',brl(Math.abs(D.meses.reduce(function(a,m){return a+soma(ENT,'comp',m,['11'])},0))),
+   'fora do EBITDA','critério D7']
+ ].map(card).join('');
+}
+
+function render(){
+ var e=E();
+ document.getElementById('heroTitle').innerHTML=temDado(ENT)
+  ? (SOCIOS?'Visão dos <b>sócios</b>':'Resultado de <b>'+D.meses_nome[MES]+'</b>')
+  : '<b>'+e.nome+'</b> — aguardando carga';
+ document.getElementById('heroCnpj').textContent=e.nome+' · '+(e.cnpj?'CNPJ '+e.cnpj:'')+
+  (e.conta?' · '+e.conta:'');
+ document.getElementById('wf').innerHTML=ponteSVG();
+ document.getElementById('wfTitle').textContent='Ponte do caixa · '+D.meses_nome[MES];
+ document.getElementById('kpis').innerHTML=kpis();
+ var t=document.getElementById('rsm'); if(t)t.innerHTML=rsm();
+ pizza(); ponteTexto(); operacao(); socios();
+ var fc=document.getElementById('fcbody'); if(fc)fc.innerHTML=tabela('caixa');
+ var dr=document.getElementById('drebody'); if(dr)dr.innerHTML=tabela('comp');
+ document.querySelectorAll('.repwrap').forEach(function(w){
+  w.classList.toggle('on',(REG==='caixa')===(w.id==='rep-fc'))});
+}
+document.getElementById('mespills').innerHTML=D.meses.map(function(m){
+ return '<button data-m="'+m+'" class="'+(m===MES?'on':'')+'" onclick="setMes(\''+m+'\')">'+
+  D.meses_nome[m]+'</button>'}).join('');
+window.addEventListener('scroll',function(){
+ var y=scrollY+90,at='geral';
+ document.querySelectorAll('section,header').forEach(function(s){if(s.offsetTop<=y)at=s.id});
+ document.querySelectorAll('.nav-links a').forEach(function(a){
+  a.classList.toggle('on',a.getAttribute('href')==='#'+at)});
+});
+render();
+"""
+
+NAV_LINKS = ('<a href="#geral" class="on">Visão geral</a><a href="#tend">Ano</a>'
+             '<a href="#orcado">Orçado × Real</a><a href="#pizza">Saídas</a>'
+             '<a href="#ponte">DRE × Caixa</a><a href="#operacao">Operação</a>'
+             '<a href="#relatorios">Relatórios</a>')
+NAV_LINKS_SOC = ('<a href="#geral" class="on">Visão geral</a><a href="#socios">Sócios</a>'
+                 '<a href="#pizza">Saídas</a><a href="#ponte">DRE × Caixa</a>'
+                 '<a href="#operacao">Operação</a>')
+
+ENTSW = """<div class="entsw" id="entsw">
+<button data-ent="boldro" class="on" onclick="setEntity('boldro')">Boldró</button>
+<button data-ent="yo" onclick="setEntity('yo')">YO</button>
+<button data-ent="consol" onclick="setEntity('consol')">Consolidado</button>
+<a href="socios.html">Sócios</a>
+</div>"""
+ENTSW_SOC = """<div class="entsw" id="entsw">
+<button data-ent="boldro" class="on" onclick="setEntity('boldro')">Boldró</button>
+<button data-ent="yo" onclick="setEntity('yo')">YO</button>
+<button data-ent="consol" onclick="setEntity('consol')">Consolidado</button>
+<a href="index.html" class="on">Sócios</a>
+</div>"""
+
+SEC_ANO = """<section id="tend" class="sec-alt"><div class="wrap">
+<div class="sec-head"><div class="k">O período de 2026</div><h2>Indicadores <span class="light">mês a mês</span></h2>
+<p class="lede">Receita, estrutura de custo, EBITDA e resultado, com análise vertical sobre a receita bruta do mês.</p></div>
+<div class="rsm-wrap"><table class="rsm" id="rsm"></table></div>
+<p class="rsm-nota">Análise vertical sobre a receita bruta do mês. <b>CMV</b> são os insumos de A&amp;B; <b>custos de operação</b> incluem energia, água, limpeza, manutenção e o alojamento da equipe, que por decisão de 22/09 é custo direto. Conta corrente com o grupo, transferências e ajustes ficam fora do resultado.</p>
+</div></section>
+
+<section id="orcado"><div class="wrap">
+<div class="sec-head"><div class="k">Orçamento 2026</div><h2>Orçado <span class="light">× realizado</span></h2>
+<p class="lede">Confronto do orçamento com o que de fato aconteceu, linha a linha, no plano de contas.</p></div>
+<div class="vazio"><h4>Não há orçamento aprovado para a Boldró nem para a YO</h4>
+<p>A seção existe no esqueleto e passa a ser preenchida assim que o orçamento de 2026 for fechado com o CSC — é aqui que, na Amana e na Topázio, entra o confronto linha a linha.</p></div>
+</div></section>"""
+
+SEC_SOCIOS = """<section id="socios" class="sec-alt"><div class="wrap">
+<div class="sec-head"><div class="k">Para os sócios</div><h2>O que sobrou <span class="light">e o que foi retirado</span></h2>
+<p class="lede">Resultado do período, o que já saiu como pró-labore e distribuição, e o que está preso em conta corrente com as outras empresas do grupo.</p></div>
+<div class="kpis" id="soc-kpis" style="margin:0"></div>
+</div></section>"""
+
+
+def pagina(socios=False):
     return """<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fluxo de Caixa &amp; DRE · Yó / Boldró · 2026</title>
+<title>%sFluxo de Caixa &amp; DRE · Yó / Boldró · 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,400&display=swap" rel="stylesheet">
 <style>%s</style></head><body>
 
 <nav class="nav"><div class="wrap">
-  <div class="mark">Grupo <b>Yó / Boldró</b></div>
-  <div class="nav-links">
-    <a href="#geral" class="on">Visão geral</a><a href="#indicadores">Indicadores</a>
-    <a href="#evolucao">Evolução</a><a href="#tabelas">Tabelas</a>
-    <a href="#yo">YO</a><a href="#ressalvas">Ressalvas</a>
-  </div>
+<div class="brand">Grupo <b>Yó / Boldró</b></div>
+<div class="nav-links">%s</div>
+%s
 </div></nav>
 
 <header class="hero" id="geral"><div class="wrap">
-  <div class="eyebrow">Boldró Praia Empreendimentos · 45.270.781/0002-53</div>
-  <h1>Resultado de <b>agosto e setembro</b> de 2026</h1>
-  <p class="sub">Primeiro fechamento da Boldró no Omie. <span class="ital">669 lançamentos conciliados com o extrato do Santander</span>, saldo do sistema igual ao da conciliação, diferença zero.</p>
-  <div class="waterfall">%s</div>
+<div class="eyebrow">%s</div>
+<h1 id="heroTitle"></h1>
+<div class="cnpjline" id="heroCnpj"></div>
+<div class="mespills" id="mespills"></div>
+<div class="regsw" id="regsw"><span class="reglab">Ver por:</span>
+<button data-r="caixa" class="on" onclick="setRegime('caixa')">Caixa</button>
+<button data-r="comp" onclick="setRegime('comp')">Competência</button></div>
+<div class="waterfall">
+<div class="wf-head"><span class="t" id="wfTitle">Ponte do caixa</span>
+<span class="h">Saldo inicial → entradas → saídas → resultado → saldo final</span></div>
+<svg id="wf" viewBox="0 0 1080 236"></svg>
+<div class="wf-x"><span>Saldo inicial</span><span>Entradas</span><span>Saídas</span><span>Resultado</span><span>Saldo final</span></div>
+</div>
 </div></header>
+<div class="wrap"><div class="kpis" id="kpis"></div></div>
 
-<section id="indicadores"><div class="wrap">
-  <h2>Indicadores <span class="ital">de operação de A&amp;B</span></h2>
-  <p class="lead">Restaurante e beach club se medem por food cost e prime cost, não por diária e ocupação. As referências de mercado estão ao lado de cada indicador para dar escala — não são meta aprovada.</p>
-  <div class="kpis">%s</div>
+%s
+
+<section id="pizza" class="sec-alt"><div class="wrap">
+<div class="sec-head"><div class="k">Para onde foi</div><h2>Composição <span class="light">das saídas</span></h2>
+<p class="lede">Todas as saídas do mês selecionado, agrupadas pelo plano gerencial, com o percentual sobre o total.</p></div>
+<div class="pz-grid">
+<div class="pz-chart"><svg id="pzSvg" viewBox="0 0 320 320"></svg>
+<div class="pz-mid"><span class="pz-t">total</span><b id="pzTot"></b></div></div>
+<div class="pz-leg" id="pzLeg"></div>
+</div>
 </div></section>
 
-<section id="evolucao" class="sec-alt"><div class="wrap">
-  <h2>Evolução <span class="ital">mês a mês</span></h2>
-  <p class="lead">Os dois meses não são comparáveis entre si: agosto concentra o abastecimento inicial e setembro concentra o crédito das vendas em cartão. Leia o acumulado, não a variação.</p>
-  <div class="bars">%s</div>
+<section id="ponte"><div class="wrap">
+<div class="bridge"><div class="bk">A leitura do mês</div>
+<h3 id="brTitle"></h3><p class="bsub" id="brSub"></p>
+<div class="bflow" id="bflow"></div></div>
 </div></section>
 
-<section id="tabelas"><div class="wrap">
-  <h2>Tabelas <span class="ital">por grupo e por conta</span></h2>
-  <p class="lead">Mesma estrutura do painel Amana/Topázio: o grupo abre em conta, e cada conta soma os títulos pela competência da emissão.</p>
-  <table><thead><tr><th>Grupo gerencial</th><th>agosto</th><th>setembro</th><th>acumulado</th></tr></thead><tbody>%s</tbody></table>
-  <div style="height:26px"></div>
-  <table><thead><tr><th>Conta</th><th>agosto</th><th>setembro</th><th>acumulado</th></tr></thead><tbody>%s</tbody></table>
+<section id="operacao" class="sec-alt"><div class="wrap">
+<div class="sec-head"><div class="k">Desempenho operacional</div>
+<h2>Estrutura de custo <span class="light">de A&amp;B</span></h2>
+<p class="lede">Restaurante e beach club se medem por food cost e prime cost, não por ocupação e diária média. As referências ao lado de cada indicador dão escala de mercado — não são meta aprovada.</p></div>
+<div class="kpis" id="op-kpis" style="margin:0"></div>
+<p class="repnote">Não há abertura por canal — salão, bar, beach club e eventos vivem no PDV (3LM), que não tem integração por API. O Omie é controle financeiro e recebe a receita em uma conta só.</p>
+</div></section>
+%s
+<section id="relatorios"><div class="wrap">
+<div class="sec-head"><div class="k">Relatório detalhado</div>
+<h2>Tabelas por categoria <span class="light">— grupo e conta</span></h2>
+<p class="lede">O mesmo número de duas maneiras: pelo caixa, como saiu do extrato; e por competência, como entra na DRE.</p></div>
+<div class="rep-switch">
+<button data-r="caixa" class="on" onclick="setRegime('caixa')">Fluxo de Caixa (DFC)</button>
+<button data-r="comp" onclick="setRegime('comp')">DRE (competência)</button></div>
+<div id="rep-fc" class="repwrap on"><table class="xtbl"><thead><tr><th class="l">Demonstrativo do caixa</th><th>Valor</th><th class="av">AV %%</th><th class="av">Lançtos</th></tr></thead><tbody id="fcbody"></tbody></table>
+<p class="repnote">Fonte: extrato da conta corrente no Omie, conferido contra a conciliação do CSC — saldo igual, diferença zero.</p></div>
+<div id="rep-dre" class="repwrap"><table class="xtbl"><thead><tr><th class="l">Categoria</th><th>Valor</th><th class="av">AV %%</th><th class="av">Lançtos</th></tr></thead><tbody id="drebody"></tbody></table>
+<p class="repnote">Competência pela data de emissão do título. A conta corrente com partes relacionadas aparece destacada e não entra no resultado.</p></div>
+
+<div style="margin-top:34px">
+<div class="aviso"><h4>A receita está pelo líquido da GetNet<span class="tag">ressalva</span></h4>
+<p>O que entra no banco é o repasse líquido da adquirente. A receita bruta e a taxa de cartão ainda não existem na base, e o custo de antecipação também não — com o extrato de vendas detalhado da GetNet isso é reclassificado e a margem muda.</p></div>
+<div class="aviso"><h4>O universo é o que passou pelo banco</h4>
+<p>Agosto e setembro de 2026. Compra com prazo e folha paga em outubro ficam de fora, por isso a margem aparece alta demais para uma operação de A&amp;B.</p></div>
+<div class="aviso"><h4>A YO ainda não tem lançamento, e o consolidado reflete isso</h4>
+<p>A base da YO tem plano de contas e contas bancárias, mas nenhum título. Na conciliação do CSC são 1.618 lançamentos de 01/07 a 18/09, com 364 linhas de obra e 743 sem destino. Enquanto a carga não acontece, o consolidado é a Boldró mais nada — e o par de conta corrente entre as duas não tem o outro lado para eliminar.</p></div>
+</div>
 </div></section>
 
-<section id="yo" class="sec-alt"><div class="wrap">
-  <h2>YO Noronha <span class="tag cinza">aguardando carga</span></h2>
-  <p class="lead">A base da YO tem o plano de contas aplicado, mas <b>nenhum lançamento financeiro</b>. Os números abaixo vêm da conciliação do CSC e ainda <b>não estão no Omie</b> — servem de dimensão, não de resultado.</p>
-  <div class="kpis">
-    <div class="kpi"><div class="t">Período</div><div class="v num" style="font-size:19px">%s</div><div class="d">%d lançamentos na conciliação</div></div>
-    <div class="kpi"><div class="t">Saldo no início</div><div class="v num">%s</div><div class="d">em 01/07/2026</div></div>
-    <div class="kpi"><div class="t">Saldo no fim</div><div class="v num">%s</div><div class="d">em 18/09/2026</div><div class="ref">consumo de %s no período</div></div>
-    <div class="kpi"><div class="t">Aporte de investidor</div><div class="v num">%s</div><div class="d">20 lançamentos</div><div class="ref">depende de decisão societária</div></div>
-  </div>
-  <div style="height:16px"></div>
-  <div class="aviso"><h4>A YO é obra, a Boldró é operação</h4>
-    <p>Na conciliação da YO, %d lançamentos estão marcados como <b>obra</b>, %d como operação e %d como pré-operação — e %d linhas estão <b>sem destino</b>. Enquanto o destino não for preenchido, não há como separar o que entra no EBITDA do que é investimento.</p></div>
-</div></section>
-
-<section id="ressalvas"><div class="wrap">
-  <h2>Ressalvas <span class="ital">que mudam a leitura</span></h2>
-  <p class="lead">Três limitações desta versão. Nenhuma é erro de carga: são do recorte e das fontes disponíveis hoje.</p>
-  <div class="aviso"><h4>A receita está pelo líquido da GetNet</h4>
-    <p>O que entrou no banco é o repasse líquido da adquirente. A <b>receita bruta e a taxa de cartão não aparecem</b>, e o custo de antecipação também não. Com o extrato de vendas detalhado da GetNet isso é reclassificado e a margem muda.</p></div>
-  <div class="aviso"><h4>O regime é de caixa bancário, não de competência</h4>
-    <p>A DRE segue a emissão do título, mas o universo é o que passou pela conta em agosto e setembro. Compra com prazo e folha paga em outubro ficam de fora — por isso a margem EBITDA aparece alta demais para uma operação de A&amp;B.</p></div>
-  <div class="aviso"><h4>Não há abertura por canal</h4>
-    <p>Salão, bar, beach club e eventos só existem no PDV (3LM), que não tem integração por API. O Omie é controle financeiro: a receita entra em uma conta só.</p></div>
-</div></section>
-
-<footer><div class="wrap">
-  <b>Exact BR</b> · CSC Noronha · painel gerencial Yó / Boldró · versão 1 · dados do Omie em 06/10/2026<br>
-  Fonte: API do Omie (títulos e extrato) para a Boldró; conciliação do CSC para a YO, ainda não lançada.
+<footer class="foot"><div class="wrap"><div class="fg">
+<div><div class="sig">João Victor Andrade de Souza</div><div class="r">Sócio-fundador · Exact BR</div></div>
+<div style="text-align:right"><div class="r" style="margin-bottom:4px">Disciplina Gera Lucro</div>
+<div style="font-family:'Plus Jakarta Sans';font-size:13px;font-weight:500;color:rgba(255,255,255,.85)">Exact BR · Recife — PE</div></div>
+</div>
+<p class="disc">Relatório gerencial · Grupo Yó / Boldró. Resultado apurado por competência, pela data de emissão dos documentos; fluxo de caixa apurado pela movimentação bancária, conferido contra o extrato da conta corrente Santander 13002614-6 até 30 de setembro de 2026, com saldo igual ao da conciliação do CSC. A conta corrente entre as empresas do grupo é transferência, não custo, e fica fora do resultado; no consolidado, o par Yó↔Boldró é eliminado. A receita está lançada pelo valor líquido repassado pela adquirente enquanto o extrato de vendas detalhado da GetNet não é incorporado. Dados lidos da API do Omie em %s.</p>
 </div></footer>
 
-<script>
-var secs=[].slice.call(document.querySelectorAll('section,header')),links=[].slice.call(document.querySelectorAll('.nav-links a'));
-window.addEventListener('scroll',function(){var y=scrollY+90,at=secs[0].id;
- secs.forEach(function(s){if(s.offsetTop<=y)at=s.id});
- links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+at)})});
-</script>
-</body></html>""" % (CSS, ''.join(wf), k, bars, tg, tc,
-                      YO['periodo'], YO['linhas'], brl(YO['saldo_ini']), brl(YO['saldo_fim']),
-                      brl(YO['saldo_ini'] - YO['saldo_fim']), brl(YO['aporte']),
-                      YO['obra'], YO['operacao'], YO['preop'], YO['sem_destino'])
+<script>const D=%s;var SOCIOS=%s;%s</script>
+</body></html>""" % (
+        'Sócios · ' if socios else '',
+        CSS,
+        NAV_LINKS_SOC if socios else NAV_LINKS,
+        ENTSW_SOC if socios else ENTSW,
+        'Visão dos sócios · 2026' if socios else 'Fluxo de Caixa &amp; DRE Gerencial · 2026',
+        SEC_SOCIOS if socios else SEC_ANO,
+        SEC_SOCIOS if not socios else '',
+        D['gerado'],
+        json.dumps(D, ensure_ascii=False),
+        'true' if socios else 'false',
+        JS)
 
 
 if __name__ == '__main__':
-    out = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'index.html')
-    open(out, 'w').write(html())
-    print('gerado %s (%.0f KB)' % (out, os.path.getsize(out) / 1024))
-    print('RL %.2f | CMV %.1f%% | prime %.1f%% | EBITDA %.2f (%.1f%%) | caixa %.2f'
-          % (RL, 100 * CMV / RL, 100 * PRIME / RL, EBITDA, 100 * EBITDA / RL, CAIXA))
+    d = os.path.dirname(os.path.abspath(__file__))
+    for nome, soc in (('index.html', False), ('socios.html', True)):
+        p = os.path.join(d, nome)
+        open(p, 'w').write(pagina(soc))
+        print('gerado %s (%.0f KB)' % (nome, os.path.getsize(p) / 1024))
