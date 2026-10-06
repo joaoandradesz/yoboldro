@@ -128,6 +128,12 @@ td.av{color:var(--g500);font-size:12px}
  background:none;border:none;padding:8px 16px;border-radius:7px;cursor:pointer}
 .rep-switch button.on{background:#fff;color:var(--navy);box-shadow:var(--shadow)}
 .repwrap{display:none}.repwrap.on{display:block}
+.mixrow{display:grid;grid-template-columns:150px 1fr 190px;gap:14px;align-items:center;margin-bottom:9px}
+.mixlab{font-family:'Plus Jakarta Sans';font-weight:700;font-size:13.5px}
+.mixbar{height:20px;border-radius:6px;background:var(--g200);overflow:hidden}
+.mixbar i{display:block;height:100%;border-radius:6px}
+.mixval{font-size:13px;text-align:right;color:var(--ink2)}
+@media(max-width:720px){.mixrow{grid-template-columns:1fr;gap:4px}.mixval{text-align:left}}
 .vazio{background:#fff;border:1px dashed var(--g300);border-radius:14px;padding:28px 30px;text-align:center}
 .vazio h4{font-family:'Plus Jakarta Sans';font-size:15px;font-weight:700;margin-bottom:6px}
 .vazio p{font-size:13.5px;color:var(--ink2);max-width:660px;margin:0 auto}
@@ -212,6 +218,22 @@ function ponteSVG(){
  return out;
 }
 
+function cozinha(mes){
+ var b=bloco(ENT,'comp',mes), f=b.familias||{};
+ var venda=soma(ENT,'comp',mes,['1','2']);
+ return {venda:venda, cmv:-soma(ENT,'comp',mes,['4']), food:-(f.cozinha||0), bar:-(f.bar||0),
+         comum:-(f.comum||0), pessoal:-soma(ENT,'comp',mes,['6']),
+         operacao:-soma(ENT,'comp',mes,['5']), ocupacao:-soma(ENT,'comp',mes,['7']),
+         adm:-soma(ENT,'comp',mes,['8']), mkt:-soma(ENT,'comp',mes,['9']),
+         variaveis:-soma(ENT,'comp',mes,['3']), deducoes:-soma(ENT,'comp',mes,['2'])};
+}
+function acumCozinha(){
+ var t={venda:0,cmv:0,food:0,bar:0,comum:0,pessoal:0,operacao:0,ocupacao:0,adm:0,mkt:0,
+        variaveis:0,deducoes:0};
+ D.meses.forEach(function(m){var k=cozinha(m);
+  Object.keys(t).forEach(function(x){t[x]+=k[x]})});
+ return t;
+}
 function card(k){return '<div class="kpi"><div class="t">'+k[0]+'</div><div class="v num">'+k[1]+
  '</div><div class="d">'+k[2]+'</div>'+(k[3]?'<div class="ref">'+k[3]+'</div>':'')+'</div>'}
 function kpis(){
@@ -223,19 +245,23 @@ function kpis(){
    ['Saldo no fim',brl(c.saldo_fim),'em 18/09/2026','consumo de '+brl(c.saldo_ini-c.saldo_fim)]].map(card).join('');
  }
  var s=saldos(ENT,MES)||{ini:0,fim:0,entradas:0,saidas:0};
- var rl=soma(ENT,'comp',MES,['1','2']);
- var cmv=-soma(ENT,'comp',MES,['4']),pes=-soma(ENT,'comp',MES,['6']);
- var ebitda=rl+soma(ENT,'comp',MES,['4','5','3','6','7','8','9']);
+ var k=cozinha(MES), A=acumCozinha(), dias=(D.dias||{})[MES]||30;
+ var ebitda=k.venda+soma(ENT,'comp',MES,['4','5','3','6','7','8','9']);
  var cc=soma(ENT,'comp',MES,['CC']);
+ var fixo=k.pessoal+k.ocupacao+k.adm+k.mkt+k.operacao;
  return [
-  ['Receita líquida',brl(rl),'competência de '+D.meses_nome[MES],'pelo líquido da GetNet'],
-  ['Food cost',pc(cmv,rl),'CMV sobre a receita','referência: 28% a 35%'],
-  ['Prime cost',pc(cmv+pes,rl),'CMV + pessoal','referência: 60% a 65%'],
-  ['Margem EBITDA',pc(ebitda,rl),brl(ebitda)+' no mês','distorcida pelo recorte'],
-  ['Saldo em caixa',brl(s.fim),'extrato bancário','abriu o mês com '+brl(s.ini)],
-  ['Entradas',brl(s.entradas),'creditado no mês',''],
-  ['Saídas',brl(Math.abs(s.saidas)),'debitado no mês',''],
-  ['Conta corrente com o grupo',brl(Math.abs(cc)),'partes relacionadas, fora da DRE',
+  ['Venda líquida',brl(k.venda),'o que a casa vendeu em '+D.meses_nome[MES],'líquido da maquininha'],
+  ['Venda por dia',brl(k.venda/dias),dias+' dias de operação','é o número que o salão sente'],
+  ['Food cost',pc(k.food,k.venda),brl(k.food)+' de insumo de cozinha',
+   'no acumulado: '+pc(A.food,A.venda)+' · mercado: 28% a 35%'],
+  ['Bar cost',pc(k.bar,k.venda),brl(k.bar)+' de bebida',
+   'no acumulado: '+pc(A.bar,A.venda)+' · mercado: 18% a 25%'],
+  ['Prime cost',pc(k.cmv+k.pessoal,k.venda),'CMV + equipe, o número que manda',
+   'no acumulado: '+pc(A.cmv+A.pessoal,A.venda)+' · mercado: 60% a 65%'],
+  ['Margem EBITDA',pc(ebitda,k.venda),brl(ebitda)+' no mês','distorcida pelo recorte'],
+  ['Dinheiro em caixa',brl(s.fim),'no banco ao fim do mês',
+   fixo?('dá para '+(s.fim/fixo).toFixed(1).replace('.',',')+' mês de casa aberta'):''],
+  ['Conta corrente com o grupo',brl(Math.abs(cc)),'o que é da YO e passou aqui',
    ENT==='consol'?'o par Yó↔Boldró foi eliminado':(cc<0?'pago por conta do grupo':'recebido do grupo')]
  ].map(card).join('');
 }
@@ -345,19 +371,56 @@ function tabela(reg){
 
 function operacao(){
  var el=document.getElementById('op-kpis'); if(!el)return;
- if(!temDado(ENT)){el.innerHTML='<div class="vazio"><h4>Sem dados operacionais</h4><p>A YO entra aqui quando a carga for feita.</p></div>';return}
- var rl=soma(ENT,'comp',MES,['1','2']);
- var cmv=-soma(ENT,'comp',MES,['4']),cop=-soma(ENT,'comp',MES,['5']),pes=-soma(ENT,'comp',MES,['6']);
- var ocu=-soma(ENT,'comp',MES,['7']),adm=-soma(ENT,'comp',MES,['8']),mkt=-soma(ENT,'comp',MES,['9']);
+ if(!temDado(ENT)){el.innerHTML='<div class="vazio"><h4>A casa ainda não abriu no sistema</h4><p>A YO entra aqui quando a carga for feita.</p></div>';return}
+ var k=cozinha(MES), A=acumCozinha(), dias=(D.dias||{})[MES]||30;
+ var fixo=k.pessoal+k.ocupacao+k.adm+k.mkt+k.operacao;
  el.innerHTML=[
-  ['Food cost',pc(cmv,rl),brl(cmv)+' de insumos','referência: 28% a 35%'],
-  ['Custo de pessoal',pc(pes,rl),brl(pes)+' com a equipe','referência: 25% a 32%'],
-  ['Prime cost',pc(cmv+pes,rl),'CMV + pessoal','referência: 60% a 65%'],
-  ['Custos de operação',pc(cop,rl),'energia, água, limpeza, alojamento',''],
-  ['Ocupação',pc(ocu,rl),brl(ocu)+' de arrendamento','referência: até 10%'],
-  ['Administrativas',pc(adm,rl),brl(adm),''],
-  ['Marketing',pc(mkt,rl),brl(mkt)+' em mídia e atrações','referência: 3% a 6%'],
-  ['Sobra operacional',pc(rl-cmv-cop-pes-ocu-adm-mkt,rl),'antes do resultado financeiro','']
+  ['Cozinha',pc(k.food,k.venda),brl(k.food)+' em proteína, hortifrúti, secos e frios',
+   'no acumulado do período: '+pc(A.food,A.venda)],
+  ['Bar',pc(k.bar,k.venda),brl(k.bar)+' em bebida','no acumulado: '+pc(A.bar,A.venda)],
+  ['Logística de insumo',pc(k.comum,k.venda),brl(k.comum)+' de frete e diversos',
+   'em Noronha isso pesa como insumo'],
+  ['Equipe',pc(k.pessoal,k.venda),brl(k.pessoal)+' entre fixos, diaristas e alojamento',
+   'referência: 25% a 32%'],
+  ['Custo de casa aberta',brl(fixo/dias),'por dia de operação',
+   'sem vender nada, a casa custa isso por dia'],
+  ['Ocupação',pc(k.ocupacao,k.venda),brl(k.ocupacao)+' de arrendamento','referência: até 10%'],
+  ['Atrações e mídia',pc(k.mkt,k.venda),brl(k.mkt)+' em DJ, música e divulgação','referência: 3% a 6%'],
+  ['Sobra depois de tudo',pc(k.venda-k.cmv-fixo,k.venda),
+   brl(k.venda-k.cmv-fixo)+' antes do financeiro','']
+ ].map(card).join('');
+
+ /* mix cozinha x bar */
+ var mx=document.getElementById('op-mix'); if(!mx)return;
+ var tot=k.food+k.bar+k.comum;
+ if(!tot){mx.innerHTML='';return}
+ mx.innerHTML=[['Cozinha',k.food,'#F97316'],['Bar',k.bar,'#0E9F6E'],['Frete e diversos',k.comum,'#6366F1']]
+  .map(function(i){return '<div class="mixrow"><div class="mixlab">'+i[0]+'</div>'+
+   '<div class="mixbar"><i style="width:'+(100*i[1]/tot).toFixed(1)+'%;background:'+i[2]+'"></i></div>'+
+   '<div class="mixval num">'+brl(i[1])+' · '+pc(i[1],tot)+'</div></div>'}).join('');
+}
+
+/* ponto de equilibrio: quanto a casa precisa vender para empatar */
+function equilibrio(){
+ var el=document.getElementById('eq-box'); if(!el)return;
+ if(!temDado(ENT)){el.innerHTML='<div class="vazio"><h4>Sem venda lançada</h4><p>O ponto de equilíbrio aparece quando houver movimento.</p></div>';return}
+ var P=D.premissas||{}, k=cozinha(MES);
+ var fixo=k.pessoal+k.ocupacao+k.adm+k.mkt+k.operacao;
+ var cmvPct=k.venda?k.cmv/k.venda:0, varPct=k.venda?(k.variaveis+k.deducoes)/k.venda:0;
+ var mc=1-cmvPct-varPct;                         /* margem de contribuição real */
+ var be=mc>0?fixo/mc:0;
+ var falta=be-k.venda;
+ var fixoPlano=P.fixo_mes||0;
+ el.innerHTML=[
+  ['Precisa vender por mês',be?brl(be):'—','para empatar com a estrutura que existe HOJE',
+   'margem de contribuição de '+(100*mc).toFixed(0)+'%'],
+  ['Vendeu',brl(k.venda),'em '+D.meses_nome[MES],
+   falta>0?('faltaram '+brl(falta)):('passou em '+brl(-falta))],
+  ['Custo fixo de hoje',brl(fixo),'equipe, casa, administrativo e mídia',
+   fixoPlano?('o plano previa '+brl(fixoPlano)+' por mês'):''],
+  ['Equilíbrio com a casa cheia',brl(P.ponto_equilibrio||0),
+   'premissa do plano de investimento',
+   fixoPlano&&fixo?('a estrutura de hoje é '+(100*fixo/fixoPlano).toFixed(0)+'% da planejada'):'']
  ].map(card).join('');
 }
 
@@ -393,7 +456,7 @@ function socios(){
 function render(){
  var e=E();
  document.getElementById('heroTitle').innerHTML=temDado(ENT)
-  ? (SOCIOS?'Visão dos <b>sócios</b>':'Resultado de <b>'+D.meses_nome[MES]+'</b>')
+  ? (SOCIOS?'Visão dos <b>sócios</b>':'A casa em <b>'+D.meses_nome[MES]+'</b>')
   : '<b>'+e.nome+'</b> — aguardando carga';
  document.getElementById('heroCnpj').textContent=e.nome+' · '+(e.cnpj?'CNPJ '+e.cnpj:'')+
   (e.conta?' · '+e.conta:'');
@@ -401,7 +464,7 @@ function render(){
  document.getElementById('wfTitle').textContent='Ponte do caixa · '+D.meses_nome[MES];
  document.getElementById('kpis').innerHTML=kpis();
  var t=document.getElementById('rsm'); if(t)t.innerHTML=rsm();
- pizza(); ponteTexto(); operacao(); socios();
+ pizza(); ponteTexto(); operacao(); equilibrio(); socios();
  var fc=document.getElementById('fcbody'); if(fc)fc.innerHTML=tabela('caixa');
  var dr=document.getElementById('drebody'); if(dr)dr.innerHTML=tabela('comp');
  document.querySelectorAll('.repwrap').forEach(function(w){
@@ -421,11 +484,11 @@ render();
 
 NAV_LINKS = ('<a href="#geral" class="on">Visão geral</a><a href="#tend">Ano</a>'
              '<a href="#orcado">Orçado × Real</a><a href="#pizza">Saídas</a>'
-             '<a href="#ponte">DRE × Caixa</a><a href="#operacao">Operação</a>'
-             '<a href="#relatorios">Relatórios</a>')
+             '<a href="#ponte">DRE × Caixa</a><a href="#operacao">Cozinha e bar</a>'
+             '<a href="#equilibrio">Equilíbrio</a><a href="#relatorios">Relatórios</a>')
 NAV_LINKS_SOC = ('<a href="#geral" class="on">Visão geral</a><a href="#socios">Sócios</a>'
                  '<a href="#pizza">Saídas</a><a href="#ponte">DRE × Caixa</a>'
-                 '<a href="#operacao">Operação</a>')
+                 '<a href="#operacao">Cozinha e bar</a>')
 
 ENTSW = """<div class="entsw" id="entsw">
 <button data-ent="boldro" class="on" onclick="setEntity('boldro')">Boldró</button>
@@ -441,8 +504,8 @@ ENTSW_SOC = """<div class="entsw" id="entsw">
 </div>"""
 
 SEC_ANO = """<section id="tend" class="sec-alt"><div class="wrap">
-<div class="sec-head"><div class="k">O período de 2026</div><h2>Indicadores <span class="light">mês a mês</span></h2>
-<p class="lede">Receita, estrutura de custo, EBITDA e resultado, com análise vertical sobre a receita bruta do mês.</p></div>
+<div class="sec-head"><div class="k">O período de 2026</div><h2>A casa <span class="light">mês a mês</span></h2>
+<p class="lede">Venda, custo de insumo, equipe e resultado, com o peso de cada linha sobre a venda do mês — a leitura vertical que se usa em operação de A&amp;B.</p></div>
 <div class="rsm-wrap"><table class="rsm" id="rsm"></table></div>
 <p class="rsm-nota">Análise vertical sobre a receita bruta do mês. <b>CMV</b> são os insumos de A&amp;B; <b>custos de operação</b> incluem energia, água, limpeza, manutenção e o alojamento da equipe, que por decisão de 22/09 é custo direto. Conta corrente com o grupo, transferências e ajustes ficam fora do resultado.</p>
 </div></section>
@@ -495,8 +558,8 @@ def pagina(socios=False):
 %s
 
 <section id="pizza" class="sec-alt"><div class="wrap">
-<div class="sec-head"><div class="k">Para onde foi</div><h2>Composição <span class="light">das saídas</span></h2>
-<p class="lede">Todas as saídas do mês selecionado, agrupadas pelo plano gerencial, com o percentual sobre o total.</p></div>
+<div class="sec-head"><div class="k">Para onde foi</div><h2>Para onde foi <span class="light">o dinheiro do mês</span></h2>
+<p class="lede">Tudo que saiu no mês, do insumo ao arrendamento, com o peso de cada bloco. É a conta que o gerente faz de cabeça antes de aprovar compra.</p></div>
 <div class="pz-grid">
 <div class="pz-chart"><svg id="pzSvg" viewBox="0 0 320 320"></svg>
 <div class="pz-mid"><span class="pz-t">total</span><b id="pzTot"></b></div></div>
@@ -511,11 +574,22 @@ def pagina(socios=False):
 </div></section>
 
 <section id="operacao" class="sec-alt"><div class="wrap">
-<div class="sec-head"><div class="k">Desempenho operacional</div>
-<h2>Estrutura de custo <span class="light">de A&amp;B</span></h2>
-<p class="lede">Restaurante e beach club se medem por food cost e prime cost, não por ocupação e diária média. As referências ao lado de cada indicador dão escala de mercado — não são meta aprovada.</p></div>
+<div class="sec-head"><div class="k">Cozinha, bar e salão</div>
+<h2>Onde vai <span class="light">cada real vendido</span></h2>
+<p class="lede">Casa de comida se mede por food cost, bar cost e prime cost — não por diária e ocupação. As referências ao lado de cada número são escala de mercado para operação de praia com alta sazonalidade; não são meta aprovada.</p></div>
 <div class="kpis" id="op-kpis" style="margin:0"></div>
-<p class="repnote">Não há abertura por canal — salão, bar, beach club e eventos vivem no PDV (3LM), que não tem integração por API. O Omie é controle financeiro e recebe a receita em uma conta só.</p>
+<div style="height:30px"></div>
+<h3 style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:17px;margin-bottom:14px">Mix de insumo <span class="light">— cozinha × bar</span></h3>
+<div id="op-mix"></div>
+<p class="repnote">Sem integração com o PDV não há ticket médio, número de couverts nem venda por canal — salão, bar, beach club e day use vivem no 3LM. O que dá para medir pelo financeiro é o <b>mix de compra</b>: quanto do insumo foi para a cozinha e quanto foi para o bar.</p>
+</div></section>
+
+<section id="equilibrio"><div class="wrap">
+<div class="sec-head"><div class="k">Ponto de equilíbrio</div>
+<h2>Quanto a casa precisa <span class="light">vender para empatar</span></h2>
+<p class="lede">Calculado com a estrutura real do mês: custo fixo dividido pela margem de contribuição que sobra depois do CMV e das deduções. Ao lado, a premissa que o plano de investimento assumiu.</p></div>
+<div class="kpis" id="eq-box" style="margin:0"></div>
+<p class="repnote"><b>Os dois números não se contradizem — medem casas diferentes.</b> O da esquerda é o que a operação de hoje precisa vender para empatar, com a equipe e a estrutura que existem agora. O da direita é o equilíbrio da casa em regime pleno, como o plano de investimento projetou: CMV de 33%%, impostos e comissões de 17%% e custo fixo com folha de R$ 510.000 por mês. Conforme o quadro de pessoal e a operação completam, o número da esquerda sobe em direção ao da direita — e é essa convergência que vale acompanhar mês a mês.</p>
 </div></section>
 %s
 <section id="relatorios"><div class="wrap">

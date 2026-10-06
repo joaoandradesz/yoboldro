@@ -115,6 +115,12 @@ td.av{color:var(--g500);font-size:12px}
  background:none;border:none;padding:8px 16px;border-radius:7px;cursor:pointer}
 .rep-switch button.on{background:#fff;color:var(--navy);box-shadow:var(--shadow)}
 .repwrap{display:none}.repwrap.on{display:block}
+.mixrow{display:grid;grid-template-columns:150px 1fr 190px;gap:14px;align-items:center;margin-bottom:9px}
+.mixlab{font-family:'Plus Jakarta Sans';font-weight:700;font-size:13.5px}
+.mixbar{height:20px;border-radius:6px;background:var(--g200);overflow:hidden}
+.mixbar i{display:block;height:100%;border-radius:6px}
+.mixval{font-size:13px;text-align:right;color:var(--ink2)}
+@media(max-width:720px){.mixrow{grid-template-columns:1fr;gap:4px}.mixval{text-align:left}}
 .vazio{background:#fff;border:1px dashed var(--g300);border-radius:14px;padding:28px 30px;text-align:center}
 .vazio h4{font-family:'Plus Jakarta Sans';font-size:15px;font-weight:700;margin-bottom:6px}
 .vazio p{font-size:13.5px;color:var(--ink2);max-width:660px;margin:0 auto}
@@ -134,7 +140,7 @@ td.av{color:var(--g500);font-size:12px}
 
 <nav class="nav"><div class="wrap">
 <div class="brand">Grupo <b>Yó / Boldró</b></div>
-<div class="nav-links"><a href="#geral" class="on">Visão geral</a><a href="#socios">Sócios</a><a href="#pizza">Saídas</a><a href="#ponte">DRE × Caixa</a><a href="#operacao">Operação</a></div>
+<div class="nav-links"><a href="#geral" class="on">Visão geral</a><a href="#socios">Sócios</a><a href="#pizza">Saídas</a><a href="#ponte">DRE × Caixa</a><a href="#operacao">Cozinha e bar</a></div>
 <div class="entsw" id="entsw">
 <button data-ent="boldro" class="on" onclick="setEntity('boldro')">Boldró</button>
 <button data-ent="yo" onclick="setEntity('yo')">YO</button>
@@ -167,8 +173,8 @@ td.av{color:var(--g500);font-size:12px}
 </div></section>
 
 <section id="pizza" class="sec-alt"><div class="wrap">
-<div class="sec-head"><div class="k">Para onde foi</div><h2>Composição <span class="light">das saídas</span></h2>
-<p class="lede">Todas as saídas do mês selecionado, agrupadas pelo plano gerencial, com o percentual sobre o total.</p></div>
+<div class="sec-head"><div class="k">Para onde foi</div><h2>Para onde foi <span class="light">o dinheiro do mês</span></h2>
+<p class="lede">Tudo que saiu no mês, do insumo ao arrendamento, com o peso de cada bloco. É a conta que o gerente faz de cabeça antes de aprovar compra.</p></div>
 <div class="pz-grid">
 <div class="pz-chart"><svg id="pzSvg" viewBox="0 0 320 320"></svg>
 <div class="pz-mid"><span class="pz-t">total</span><b id="pzTot"></b></div></div>
@@ -183,11 +189,22 @@ td.av{color:var(--g500);font-size:12px}
 </div></section>
 
 <section id="operacao" class="sec-alt"><div class="wrap">
-<div class="sec-head"><div class="k">Desempenho operacional</div>
-<h2>Estrutura de custo <span class="light">de A&amp;B</span></h2>
-<p class="lede">Restaurante e beach club se medem por food cost e prime cost, não por ocupação e diária média. As referências ao lado de cada indicador dão escala de mercado — não são meta aprovada.</p></div>
+<div class="sec-head"><div class="k">Cozinha, bar e salão</div>
+<h2>Onde vai <span class="light">cada real vendido</span></h2>
+<p class="lede">Casa de comida se mede por food cost, bar cost e prime cost — não por diária e ocupação. As referências ao lado de cada número são escala de mercado para operação de praia com alta sazonalidade; não são meta aprovada.</p></div>
 <div class="kpis" id="op-kpis" style="margin:0"></div>
-<p class="repnote">Não há abertura por canal — salão, bar, beach club e eventos vivem no PDV (3LM), que não tem integração por API. O Omie é controle financeiro e recebe a receita em uma conta só.</p>
+<div style="height:30px"></div>
+<h3 style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:17px;margin-bottom:14px">Mix de insumo <span class="light">— cozinha × bar</span></h3>
+<div id="op-mix"></div>
+<p class="repnote">Sem integração com o PDV não há ticket médio, número de couverts nem venda por canal — salão, bar, beach club e day use vivem no 3LM. O que dá para medir pelo financeiro é o <b>mix de compra</b>: quanto do insumo foi para a cozinha e quanto foi para o bar.</p>
+</div></section>
+
+<section id="equilibrio"><div class="wrap">
+<div class="sec-head"><div class="k">Ponto de equilíbrio</div>
+<h2>Quanto a casa precisa <span class="light">vender para empatar</span></h2>
+<p class="lede">Calculado com a estrutura real do mês: custo fixo dividido pela margem de contribuição que sobra depois do CMV e das deduções. Ao lado, a premissa que o plano de investimento assumiu.</p></div>
+<div class="kpis" id="eq-box" style="margin:0"></div>
+<p class="repnote"><b>Os dois números não se contradizem — medem casas diferentes.</b> O da esquerda é o que a operação de hoje precisa vender para empatar, com a equipe e a estrutura que existem agora. O da direita é o equilíbrio da casa em regime pleno, como o plano de investimento projetou: CMV de 33%, impostos e comissões de 17% e custo fixo com folha de R$ 510.000 por mês. Conforme o quadro de pessoal e a operação completam, o número da esquerda sobe em direção ao da direita — e é essa convergência que vale acompanhar mês a mês.</p>
 </div></section>
 
 <section id="relatorios"><div class="wrap">
@@ -220,7 +237,7 @@ td.av{color:var(--g500);font-size:12px}
 <p class="disc">Relatório gerencial · Grupo Yó / Boldró. Resultado apurado por competência, pela data de emissão dos documentos; fluxo de caixa apurado pela movimentação bancária, conferido contra o extrato da conta corrente Santander 13002614-6 até 30 de setembro de 2026, com saldo igual ao da conciliação do CSC. A conta corrente entre as empresas do grupo é transferência, não custo, e fica fora do resultado; no consolidado, o par Yó↔Boldró é eliminado. A receita está lançada pelo valor líquido repassado pela adquirente enquanto o extrato de vendas detalhado da GetNet não é incorporado. Dados lidos da API do Omie em 06/10/2026.</p>
 </div></footer>
 
-<script>const D={"gerado": "06/10/2026", "meses": ["2026-08", "2026-09"], "meses_nome": {"2026-08": "ago/26", "2026-09": "set/26"}, "grupo_nome": {"1": "Receita bruta", "2": "Deduções", "3": "Despesas variáveis de venda", "4": "CMV", "5": "Custos de operação", "6": "Pessoal operacional", "7": "Ocupação", "8": "Administrativas", "9": "Marketing e entretenimento", "10": "Resultado financeiro", "11": "Investimentos", "12": "Financiamento", "13": "Movimentações neutras", "CC": "Conta corrente com o grupo", "NEUTRO": "Movimentações neutras", "NAO MAPEADA": "Sem classificação"}, "ents": {"boldro": {"nome": "Boldró Praia Empreendimentos", "cnpj": "45.270.781/0002-53", "status": "ok", "conta": "Santander c/c 13002614-6", "comp": {"2026-08": {"grupos": {"1": 165122.28, "CC": 63050.09000000001, "10": 0.1, "NEUTRO": 9.17, "2": -346.34, "4": -135762.79, "5": -9638.46, "8": -17043.760000000006, "6": -13199.34, "9": -4385.0}, "contas": {"1|Receita operacional (salão)": 165122.28, "CC|Conta corrente YO Noronha - entrada": 100000.0, "10|Rendimentos de aplicações": 0.1, "NEUTRO|Ajustes e estornos - entrada": 9.17, "2|ISS retido na fonte de prestadores": -346.34, "4|Secos e mercearia": -30411.870000000003, "4|Outros insumos e diversos": -6972.8, "5|Alojamento e ajuda de custo para moradia": -7000.0, "8|Sistemas": -2021.58, "6|Diarista (OIA)": -8933.14, "9|Atrações, música e DJs": -2385.0, "5|Limpeza e descartáveis": -2458.46, "8|Contabilidade, jurídico e consultorias": -7500.0, "4|Bebidas alcoólicas": -25113.379999999997, "9|Outros de marketing": -2000.0, "6|Passagens aéreas da equipe": -2010.0, "4|Proteínas (carnes e frutos do mar)": -27772.770000000004, "4|Hortifrúti": -14636.61, "5|Reposição de utensílios": -180.0, "4|Frios, laticínios e congelados": -25477.84, "8|Outras despesas administrativas": -3740.0, "8|Viagens administrativas": -3500.0, "6|Alimentação de colaboradores": -2256.2, "8|Tarifas bancárias": -282.18000000000006, "4|Frete de insumos de alimentos e bebidas": -5377.52, "CC|Conta corrente YO Noronha - saída": -36949.91}, "lanc": {"1|Receita operacional (salão)": 50, "CC|Conta corrente YO Noronha - entrada": 1, "10|Rendimentos de aplicações": 1, "NEUTRO|Ajustes e estornos - entrada": 4, "2|ISS retido na fonte de prestadores": 3, "4|Secos e mercearia": 15, "4|Outros insumos e diversos": 2, "5|Alojamento e ajuda de custo para moradia": 1, "8|Sistemas": 4, "6|Diarista (OIA)": 27, "9|Atrações, música e DJs": 2, "5|Limpeza e descartáveis": 2, "8|Contabilidade, jurídico e consultorias": 1, "4|Bebidas alcoólicas": 7, "9|Outros de marketing": 1, "6|Passagens aéreas da equipe": 1, "4|Proteínas (carnes e frutos do mar)": 10, "4|Hortifrúti": 11, "5|Reposição de utensílios": 1, "4|Frios, laticínios e congelados": 11, "8|Outras despesas administrativas": 1, "8|Viagens administrativas": 1, "6|Alimentação de colaboradores": 1, "8|Tarifas bancárias": 10, "4|Frete de insumos de alimentos e bebidas": 1, "CC|Conta corrente YO Noronha - saída": 10}}, "2026-09": {"grupos": {"1": 773637.4700000002, "10": -5296.66, "5": -34728.590000000004, "2": -12494.039999999999, "8": -55050.35000000001, "9": -21885.0, "6": -102657.10999999996, "4": -55215.32000000001, "7": -4286.05, "11": -7000.0, "CC": -73679.58000000002}, "contas": {"1|Receita operacional (salão)": 773637.4700000002, "10|Rendimentos de aplicações": 3.3400000000000003, "5|Água e esgoto": -949.0, "2|ISS retido na fonte de prestadores": -2734.33, "8|Viagens administrativas": -7000.0, "9|Outros de marketing": -3500.0, "8|Contabilidade, jurídico e consultorias": -7500.0, "6|Diarista (OIA)": -45111.989999999976, "5|Alojamento e ajuda de custo para moradia": -15070.65, "6|Salários da operação": -24901.96, "8|Telefonia e internet": -188.42, "8|Outras despesas administrativas": -7469.92, "6|Alimentação de colaboradores": -18736.48, "8|Correios e fretes administrativos": -186.95, "4|Outros insumos e diversos": -3838.0, "9|Atrações, música e DJs": -14385.0, "6|Extras e freelancers": -8000.0, "5|Gestor operacional PJ": -9000.0, "8|Pró-labore": -28000.0, "7|Arrendamento e aluguel do ponto": -4000.0, "5|Manutenção de equipamentos": -3188.81, "4|Proteínas (carnes e frutos do mar)": -20698.78, "4|Secos e mercearia": -5676.3, "5|Limpeza e descartáveis": -6071.13, "11|Obras e reformas": -2000.0, "7|Outros aluguéis": -286.05, "8|Tarifas bancárias": -761.6800000000001, "4|Bebidas alcoólicas": -14725.0, "6|Passagens aéreas da equipe": -3982.68, "6|Uniformes, EPI e exames": -1924.0, "4|Hortifrúti": -4279.2, "9|Agência e conteúdo": -2500.0, "CC|Conta corrente YO Noronha - saída": -70212.91000000002, "4|Frete de insumos de alimentos e bebidas": -5998.04, "2|Simples Nacional (DAS)": -9759.71, "8|Sistemas": -3943.38, "11|Equipamentos e mobiliário": -5000.0, "CC|Conta corrente Pousada Topázio - saída": -3466.67, "10|Juros e multas": -5300.0, "5|Transporte, veículo e combustível": -449.0, "9|Mídia paga": -1500.0}, "lanc": {"1|Receita operacional (salão)": 225, "10|Rendimentos de aplicações": 6, "5|Água e esgoto": 1, "2|ISS retido na fonte de prestadores": 8, "8|Viagens administrativas": 2, "9|Outros de marketing": 2, "8|Contabilidade, jurídico e consultorias": 1, "6|Diarista (OIA)": 79, "5|Alojamento e ajuda de custo para moradia": 8, "6|Salários da operação": 23, "8|Telefonia e internet": 1, "8|Outras despesas administrativas": 5, "6|Alimentação de colaboradores": 8, "8|Correios e fretes administrativos": 1, "4|Outros insumos e diversos": 1, "9|Atrações, música e DJs": 14, "6|Extras e freelancers": 3, "5|Gestor operacional PJ": 2, "8|Pró-labore": 3, "7|Arrendamento e aluguel do ponto": 1, "5|Manutenção de equipamentos": 3, "4|Proteínas (carnes e frutos do mar)": 9, "4|Secos e mercearia": 5, "5|Limpeza e descartáveis": 5, "11|Obras e reformas": 1, "7|Outros aluguéis": 1, "8|Tarifas bancárias": 23, "4|Bebidas alcoólicas": 4, "6|Passagens aéreas da equipe": 4, "6|Uniformes, EPI e exames": 3, "4|Hortifrúti": 2, "9|Agência e conteúdo": 1, "CC|Conta corrente YO Noronha - saída": 24, "4|Frete de insumos de alimentos e bebidas": 1, "2|Simples Nacional (DAS)": 2, "8|Sistemas": 3, "11|Equipamentos e mobiliário": 1, "CC|Conta corrente Pousada Topázio - saída": 2, "10|Juros e multas": 1, "5|Transporte, veículo e combustível": 1, "9|Mídia paga": 1}}}, "caixa": {"2026-08": {"grupos": {"NEUTRO": 9.17, "2": -946.3399999999999, "4": -32246.059999999998, "5": -7574.0, "8": -17043.760000000002, "6": -10943.14, "CC": 100000.0, "1": 165122.28, "9": -4385.0, "10": 0.1}, "contas": {"NEUTRO|Ajustes e estornos - entrada": 9.17, "2|ISS retido na fonte de prestadores": -946.3399999999999, "4|Secos e mercearia": -3774.9799999999996, "4|Outros insumos e diversos": -2800.0, "5|Alojamento e ajuda de custo para moradia": -7000.0, "8|Sistemas": -2021.58, "6|Diarista (OIA)": -8933.14, "CC|Conta corrente YO Noronha - entrada": 100000.0, "1|Receita operacional (salão)": 165122.28, "8|Tarifas bancárias": -282.18000000000006, "9|Atrações, música e DJs": -2385.0, "5|Limpeza e descartáveis": -394.0, "8|Contabilidade, jurídico e consultorias": -7500.0, "4|Bebidas alcoólicas": -16052.38, "9|Outros de marketing": -2000.0, "6|Passagens aéreas da equipe": -2010.0, "4|Proteínas (carnes e frutos do mar)": -5888.0, "4|Hortifrúti": -2590.7, "5|Reposição de utensílios": -180.0, "4|Frios, laticínios e congelados": -1140.0, "8|Outras despesas administrativas": -3740.0, "8|Viagens administrativas": -3500.0, "10|Rendimentos de aplicações": 0.1}, "lanc": {"NEUTRO|Ajustes e estornos - entrada": 4, "2|ISS retido na fonte de prestadores": 5, "4|Secos e mercearia": 5, "4|Outros insumos e diversos": 1, "5|Alojamento e ajuda de custo para moradia": 1, "8|Sistemas": 4, "6|Diarista (OIA)": 27, "CC|Conta corrente YO Noronha - entrada": 1, "1|Receita operacional (salão)": 50, "8|Tarifas bancárias": 10, "9|Atrações, música e DJs": 2, "5|Limpeza e descartáveis": 1, "8|Contabilidade, jurídico e consultorias": 1, "4|Bebidas alcoólicas": 5, "9|Outros de marketing": 1, "6|Passagens aéreas da equipe": 1, "4|Proteínas (carnes e frutos do mar)": 1, "4|Hortifrúti": 5, "5|Reposição de utensílios": 1, "4|Frios, laticínios e congelados": 1, "8|Outras despesas administrativas": 1, "8|Viagens administrativas": 1, "10|Rendimentos de aplicações": 1}}, "2026-09": {"grupos": {"1": 773637.4700000002, "4": -158732.04999999996, "6": -104913.30999999994, "8": -55050.35000000001, "9": -21885.0, "5": -35844.05, "10": -5296.66, "11": -7000.0, "7": -4286.05, "2": -11894.039999999999, "CC": -110629.49}, "contas": {"1|Receita operacional (salão)": 773637.4700000002, "4|Hortifrúti": -16325.11, "6|Alimentação de colaboradores": -20992.68, "4|Secos e mercearia": -32313.190000000002, "8|Viagens administrativas": -7000.0, "9|Outros de marketing": -3500.0, "8|Contabilidade, jurídico e consultorias": -7500.0, "6|Diarista (OIA)": -45111.989999999976, "5|Alojamento e ajuda de custo para moradia": -15070.65, "10|Rendimentos de aplicações": 3.3400000000000003, "5|Limpeza e descartáveis": -8135.59, "4|Proteínas (carnes e frutos do mar)": -42583.55, "4|Bebidas alcoólicas": -23786.0, "11|Obras e reformas": -2000.0, "7|Outros aluguéis": -286.05, "8|Tarifas bancárias": -761.6800000000001, "6|Salários da operação": -24901.96, "5|Gestor operacional PJ": -9000.0, "6|Extras e freelancers": -8000.0, "5|Manutenção de equipamentos": -3188.81, "8|Telefonia e internet": -188.42, "8|Outras despesas administrativas": -7469.92, "8|Correios e fretes administrativos": -186.95, "4|Outros insumos e diversos": -8010.8, "9|Atrações, música e DJs": -14385.0, "8|Pró-labore": -28000.0, "7|Arrendamento e aluguel do ponto": -4000.0, "2|ISS retido na fonte de prestadores": -2134.33, "6|Passagens aéreas da equipe": -3982.68, "6|Uniformes, EPI e exames": -1924.0, "4|Frios, laticínios e congelados": -24337.84, "9|Mídia paga": -1500.0, "4|Frete de insumos de alimentos e bebidas": -11375.560000000001, "9|Agência e conteúdo": -2500.0, "CC|Conta corrente YO Noronha - saída": -107162.81999999999, "2|Simples Nacional (DAS)": -9759.71, "8|Sistemas": -3943.38, "11|Equipamentos e mobiliário": -5000.0, "CC|Conta corrente Pousada Topázio - saída": -3466.67, "10|Juros e multas": -5300.0, "5|Transporte, veículo e combustível": -449.0}, "lanc": {"1|Receita operacional (salão)": 225, "4|Hortifrúti": 8, "6|Alimentação de colaboradores": 9, "4|Secos e mercearia": 15, "8|Viagens administrativas": 2, "9|Outros de marketing": 2, "8|Contabilidade, jurídico e consultorias": 1, "6|Diarista (OIA)": 79, "5|Alojamento e ajuda de custo para moradia": 8, "10|Rendimentos de aplicações": 6, "5|Limpeza e descartáveis": 6, "4|Proteínas (carnes e frutos do mar)": 18, "4|Bebidas alcoólicas": 6, "11|Obras e reformas": 1, "7|Outros aluguéis": 1, "8|Tarifas bancárias": 23, "6|Salários da operação": 23, "5|Gestor operacional PJ": 2, "6|Extras e freelancers": 3, "5|Manutenção de equipamentos": 3, "8|Telefonia e internet": 1, "8|Outras despesas administrativas": 5, "8|Correios e fretes administrativos": 1, "4|Outros insumos e diversos": 2, "9|Atrações, música e DJs": 14, "8|Pró-labore": 3, "7|Arrendamento e aluguel do ponto": 1, "2|ISS retido na fonte de prestadores": 6, "6|Passagens aéreas da equipe": 4, "6|Uniformes, EPI e exames": 3, "4|Frios, laticínios e congelados": 10, "9|Mídia paga": 1, "4|Frete de insumos de alimentos e bebidas": 2, "9|Agência e conteúdo": 1, "CC|Conta corrente YO Noronha - saída": 34, "2|Simples Nacional (DAS)": 2, "8|Sistemas": 3, "11|Equipamentos e mobiliário": 1, "CC|Conta corrente Pousada Topázio - saída": 2, "10|Juros e multas": 1, "5|Transporte, veículo e combustível": 1}}}, "saldos": {"2026-08": {"ini": 0, "fim": 191993.25, "entradas": 265131.55, "saidas": -73138.3}, "2026-09": {"ini": 191993.25, "fim": 450099.72, "entradas": 773640.8100000002, "saidas": -515534.33999999997}}}, "yo": {"nome": "YO Noronha", "cnpj": "55.526.039/0001-39", "status": "sem_carga", "comp": {}, "caixa": {}, "saldos": {}, "conciliacao": {"periodo": "01/07 a 18/09/2026", "linhas": 1618, "credito": 2356759.55, "debito": 3329777.29, "saldo_ini": 1202894.61, "saldo_fim": 229876.34, "aporte": 2271313.67, "obra": 364, "operacao": 314, "preop": 40, "sem_destino": 743}}}};var SOCIOS=true;
+<script>const D={"gerado": "06/10/2026", "meses": ["2026-08", "2026-09"], "meses_nome": {"2026-08": "ago/26", "2026-09": "set/26"}, "grupo_nome": {"1": "Receita bruta", "2": "Deduções", "3": "Despesas variáveis de venda", "4": "CMV", "5": "Custos de operação", "6": "Pessoal operacional", "7": "Ocupação", "8": "Administrativas", "9": "Marketing e entretenimento", "10": "Resultado financeiro", "11": "Investimentos", "12": "Financiamento", "13": "Movimentações neutras", "CC": "Conta corrente com o grupo", "NEUTRO": "Movimentações neutras", "NAO MAPEADA": "Sem classificação"}, "premissas": {"ponto_equilibrio": 1050000, "cmv_pct": 0.33, "variaveis_pct": 0.17, "fixo_mes": 510000, "faturamento_previsto": 600000, "fonte": "Gestao Orcamentaria YO, rev 30.07.2026"}, "dias": {"2026-08": 31, "2026-09": 30}, "ents": {"boldro": {"nome": "Boldró Praia Empreendimentos", "cnpj": "45.270.781/0002-53", "status": "ok", "conta": "Santander c/c 13002614-6", "comp": {"2026-08": {"grupos": {"1": 165122.28, "CC": 63050.09000000001, "10": 0.1, "NEUTRO": 9.17, "2": -346.34, "4": -135762.79, "5": -9638.46, "8": -17043.760000000006, "6": -13199.34, "9": -4385.0}, "contas": {"1|Receita operacional (salão)": 165122.28, "CC|Conta corrente YO Noronha - entrada": 100000.0, "10|Rendimentos de aplicações": 0.1, "NEUTRO|Ajustes e estornos - entrada": 9.17, "2|ISS retido na fonte de prestadores": -346.34, "4|Secos e mercearia": -30411.870000000003, "4|Outros insumos e diversos": -6972.8, "5|Alojamento e ajuda de custo para moradia": -7000.0, "8|Sistemas": -2021.58, "6|Diarista (OIA)": -8933.14, "9|Atrações, música e DJs": -2385.0, "5|Limpeza e descartáveis": -2458.46, "8|Contabilidade, jurídico e consultorias": -7500.0, "4|Bebidas alcoólicas": -25113.379999999997, "9|Outros de marketing": -2000.0, "6|Passagens aéreas da equipe": -2010.0, "4|Proteínas (carnes e frutos do mar)": -27772.770000000004, "4|Hortifrúti": -14636.61, "5|Reposição de utensílios": -180.0, "4|Frios, laticínios e congelados": -25477.84, "8|Outras despesas administrativas": -3740.0, "8|Viagens administrativas": -3500.0, "6|Alimentação de colaboradores": -2256.2, "8|Tarifas bancárias": -282.18000000000006, "4|Frete de insumos de alimentos e bebidas": -5377.52, "CC|Conta corrente YO Noronha - saída": -36949.91}, "lanc": {"1|Receita operacional (salão)": 50, "CC|Conta corrente YO Noronha - entrada": 1, "10|Rendimentos de aplicações": 1, "NEUTRO|Ajustes e estornos - entrada": 4, "2|ISS retido na fonte de prestadores": 3, "4|Secos e mercearia": 15, "4|Outros insumos e diversos": 2, "5|Alojamento e ajuda de custo para moradia": 1, "8|Sistemas": 4, "6|Diarista (OIA)": 27, "9|Atrações, música e DJs": 2, "5|Limpeza e descartáveis": 2, "8|Contabilidade, jurídico e consultorias": 1, "4|Bebidas alcoólicas": 7, "9|Outros de marketing": 1, "6|Passagens aéreas da equipe": 1, "4|Proteínas (carnes e frutos do mar)": 10, "4|Hortifrúti": 11, "5|Reposição de utensílios": 1, "4|Frios, laticínios e congelados": 11, "8|Outras despesas administrativas": 1, "8|Viagens administrativas": 1, "6|Alimentação de colaboradores": 1, "8|Tarifas bancárias": 10, "4|Frete de insumos de alimentos e bebidas": 1, "CC|Conta corrente YO Noronha - saída": 10}, "familias": {"cozinha": -98299.09, "comum": -12350.32, "bar": -25113.379999999997}}, "2026-09": {"grupos": {"1": 773637.4700000002, "10": -5296.66, "5": -34728.590000000004, "2": -12494.039999999999, "8": -55050.35000000001, "9": -21885.0, "6": -102657.10999999996, "4": -55215.32000000001, "7": -4286.05, "11": -7000.0, "CC": -73679.58000000002}, "contas": {"1|Receita operacional (salão)": 773637.4700000002, "10|Rendimentos de aplicações": 3.3400000000000003, "5|Água e esgoto": -949.0, "2|ISS retido na fonte de prestadores": -2734.33, "8|Viagens administrativas": -7000.0, "9|Outros de marketing": -3500.0, "8|Contabilidade, jurídico e consultorias": -7500.0, "6|Diarista (OIA)": -45111.989999999976, "5|Alojamento e ajuda de custo para moradia": -15070.65, "6|Salários da operação": -24901.96, "8|Telefonia e internet": -188.42, "8|Outras despesas administrativas": -7469.92, "6|Alimentação de colaboradores": -18736.48, "8|Correios e fretes administrativos": -186.95, "4|Outros insumos e diversos": -3838.0, "9|Atrações, música e DJs": -14385.0, "6|Extras e freelancers": -8000.0, "5|Gestor operacional PJ": -9000.0, "8|Pró-labore": -28000.0, "7|Arrendamento e aluguel do ponto": -4000.0, "5|Manutenção de equipamentos": -3188.81, "4|Proteínas (carnes e frutos do mar)": -20698.78, "4|Secos e mercearia": -5676.3, "5|Limpeza e descartáveis": -6071.13, "11|Obras e reformas": -2000.0, "7|Outros aluguéis": -286.05, "8|Tarifas bancárias": -761.6800000000001, "4|Bebidas alcoólicas": -14725.0, "6|Passagens aéreas da equipe": -3982.68, "6|Uniformes, EPI e exames": -1924.0, "4|Hortifrúti": -4279.2, "9|Agência e conteúdo": -2500.0, "CC|Conta corrente YO Noronha - saída": -70212.91000000002, "4|Frete de insumos de alimentos e bebidas": -5998.04, "2|Simples Nacional (DAS)": -9759.71, "8|Sistemas": -3943.38, "11|Equipamentos e mobiliário": -5000.0, "CC|Conta corrente Pousada Topázio - saída": -3466.67, "10|Juros e multas": -5300.0, "5|Transporte, veículo e combustível": -449.0, "9|Mídia paga": -1500.0}, "lanc": {"1|Receita operacional (salão)": 225, "10|Rendimentos de aplicações": 6, "5|Água e esgoto": 1, "2|ISS retido na fonte de prestadores": 8, "8|Viagens administrativas": 2, "9|Outros de marketing": 2, "8|Contabilidade, jurídico e consultorias": 1, "6|Diarista (OIA)": 79, "5|Alojamento e ajuda de custo para moradia": 8, "6|Salários da operação": 23, "8|Telefonia e internet": 1, "8|Outras despesas administrativas": 5, "6|Alimentação de colaboradores": 8, "8|Correios e fretes administrativos": 1, "4|Outros insumos e diversos": 1, "9|Atrações, música e DJs": 14, "6|Extras e freelancers": 3, "5|Gestor operacional PJ": 2, "8|Pró-labore": 3, "7|Arrendamento e aluguel do ponto": 1, "5|Manutenção de equipamentos": 3, "4|Proteínas (carnes e frutos do mar)": 9, "4|Secos e mercearia": 5, "5|Limpeza e descartáveis": 5, "11|Obras e reformas": 1, "7|Outros aluguéis": 1, "8|Tarifas bancárias": 23, "4|Bebidas alcoólicas": 4, "6|Passagens aéreas da equipe": 4, "6|Uniformes, EPI e exames": 3, "4|Hortifrúti": 2, "9|Agência e conteúdo": 1, "CC|Conta corrente YO Noronha - saída": 24, "4|Frete de insumos de alimentos e bebidas": 1, "2|Simples Nacional (DAS)": 2, "8|Sistemas": 3, "11|Equipamentos e mobiliário": 1, "CC|Conta corrente Pousada Topázio - saída": 2, "10|Juros e multas": 1, "5|Transporte, veículo e combustível": 1, "9|Mídia paga": 1}, "familias": {"comum": -9836.04, "cozinha": -30654.280000000002, "bar": -14725.0}}}, "caixa": {"2026-08": {"grupos": {"NEUTRO": 9.17, "2": -946.3399999999999, "4": -32246.059999999998, "5": -7574.0, "8": -17043.760000000002, "6": -10943.14, "CC": 100000.0, "1": 165122.28, "9": -4385.0, "10": 0.1}, "contas": {"NEUTRO|Ajustes e estornos - entrada": 9.17, "2|ISS retido na fonte de prestadores": -946.3399999999999, "4|Secos e mercearia": -3774.9799999999996, "4|Outros insumos e diversos": -2800.0, "5|Alojamento e ajuda de custo para moradia": -7000.0, "8|Sistemas": -2021.58, "6|Diarista (OIA)": -8933.14, "CC|Conta corrente YO Noronha - entrada": 100000.0, "1|Receita operacional (salão)": 165122.28, "8|Tarifas bancárias": -282.18000000000006, "9|Atrações, música e DJs": -2385.0, "5|Limpeza e descartáveis": -394.0, "8|Contabilidade, jurídico e consultorias": -7500.0, "4|Bebidas alcoólicas": -16052.38, "9|Outros de marketing": -2000.0, "6|Passagens aéreas da equipe": -2010.0, "4|Proteínas (carnes e frutos do mar)": -5888.0, "4|Hortifrúti": -2590.7, "5|Reposição de utensílios": -180.0, "4|Frios, laticínios e congelados": -1140.0, "8|Outras despesas administrativas": -3740.0, "8|Viagens administrativas": -3500.0, "10|Rendimentos de aplicações": 0.1}, "lanc": {"NEUTRO|Ajustes e estornos - entrada": 4, "2|ISS retido na fonte de prestadores": 5, "4|Secos e mercearia": 5, "4|Outros insumos e diversos": 1, "5|Alojamento e ajuda de custo para moradia": 1, "8|Sistemas": 4, "6|Diarista (OIA)": 27, "CC|Conta corrente YO Noronha - entrada": 1, "1|Receita operacional (salão)": 50, "8|Tarifas bancárias": 10, "9|Atrações, música e DJs": 2, "5|Limpeza e descartáveis": 1, "8|Contabilidade, jurídico e consultorias": 1, "4|Bebidas alcoólicas": 5, "9|Outros de marketing": 1, "6|Passagens aéreas da equipe": 1, "4|Proteínas (carnes e frutos do mar)": 1, "4|Hortifrúti": 5, "5|Reposição de utensílios": 1, "4|Frios, laticínios e congelados": 1, "8|Outras despesas administrativas": 1, "8|Viagens administrativas": 1, "10|Rendimentos de aplicações": 1}, "familias": {"cozinha": -13393.68, "comum": -2800.0, "bar": -16052.38}}, "2026-09": {"grupos": {"1": 773637.4700000002, "4": -158732.04999999996, "6": -104913.30999999994, "8": -55050.35000000001, "9": -21885.0, "5": -35844.05, "10": -5296.66, "11": -7000.0, "7": -4286.05, "2": -11894.039999999999, "CC": -110629.49}, "contas": {"1|Receita operacional (salão)": 773637.4700000002, "4|Hortifrúti": -16325.11, "6|Alimentação de colaboradores": -20992.68, "4|Secos e mercearia": -32313.190000000002, "8|Viagens administrativas": -7000.0, "9|Outros de marketing": -3500.0, "8|Contabilidade, jurídico e consultorias": -7500.0, "6|Diarista (OIA)": -45111.989999999976, "5|Alojamento e ajuda de custo para moradia": -15070.65, "10|Rendimentos de aplicações": 3.3400000000000003, "5|Limpeza e descartáveis": -8135.59, "4|Proteínas (carnes e frutos do mar)": -42583.55, "4|Bebidas alcoólicas": -23786.0, "11|Obras e reformas": -2000.0, "7|Outros aluguéis": -286.05, "8|Tarifas bancárias": -761.6800000000001, "6|Salários da operação": -24901.96, "5|Gestor operacional PJ": -9000.0, "6|Extras e freelancers": -8000.0, "5|Manutenção de equipamentos": -3188.81, "8|Telefonia e internet": -188.42, "8|Outras despesas administrativas": -7469.92, "8|Correios e fretes administrativos": -186.95, "4|Outros insumos e diversos": -8010.8, "9|Atrações, música e DJs": -14385.0, "8|Pró-labore": -28000.0, "7|Arrendamento e aluguel do ponto": -4000.0, "2|ISS retido na fonte de prestadores": -2134.33, "6|Passagens aéreas da equipe": -3982.68, "6|Uniformes, EPI e exames": -1924.0, "4|Frios, laticínios e congelados": -24337.84, "9|Mídia paga": -1500.0, "4|Frete de insumos de alimentos e bebidas": -11375.560000000001, "9|Agência e conteúdo": -2500.0, "CC|Conta corrente YO Noronha - saída": -107162.81999999999, "2|Simples Nacional (DAS)": -9759.71, "8|Sistemas": -3943.38, "11|Equipamentos e mobiliário": -5000.0, "CC|Conta corrente Pousada Topázio - saída": -3466.67, "10|Juros e multas": -5300.0, "5|Transporte, veículo e combustível": -449.0}, "lanc": {"1|Receita operacional (salão)": 225, "4|Hortifrúti": 8, "6|Alimentação de colaboradores": 9, "4|Secos e mercearia": 15, "8|Viagens administrativas": 2, "9|Outros de marketing": 2, "8|Contabilidade, jurídico e consultorias": 1, "6|Diarista (OIA)": 79, "5|Alojamento e ajuda de custo para moradia": 8, "10|Rendimentos de aplicações": 6, "5|Limpeza e descartáveis": 6, "4|Proteínas (carnes e frutos do mar)": 18, "4|Bebidas alcoólicas": 6, "11|Obras e reformas": 1, "7|Outros aluguéis": 1, "8|Tarifas bancárias": 23, "6|Salários da operação": 23, "5|Gestor operacional PJ": 2, "6|Extras e freelancers": 3, "5|Manutenção de equipamentos": 3, "8|Telefonia e internet": 1, "8|Outras despesas administrativas": 5, "8|Correios e fretes administrativos": 1, "4|Outros insumos e diversos": 2, "9|Atrações, música e DJs": 14, "8|Pró-labore": 3, "7|Arrendamento e aluguel do ponto": 1, "2|ISS retido na fonte de prestadores": 6, "6|Passagens aéreas da equipe": 4, "6|Uniformes, EPI e exames": 3, "4|Frios, laticínios e congelados": 10, "9|Mídia paga": 1, "4|Frete de insumos de alimentos e bebidas": 2, "9|Agência e conteúdo": 1, "CC|Conta corrente YO Noronha - saída": 34, "2|Simples Nacional (DAS)": 2, "8|Sistemas": 3, "11|Equipamentos e mobiliário": 1, "CC|Conta corrente Pousada Topázio - saída": 2, "10|Juros e multas": 1, "5|Transporte, veículo e combustível": 1}, "familias": {"cozinha": -115559.69, "bar": -23786.0, "comum": -19386.36}}}, "saldos": {"2026-08": {"ini": 0, "fim": 191993.25, "entradas": 265131.55, "saidas": -73138.3}, "2026-09": {"ini": 191993.25, "fim": 450099.72, "entradas": 773640.8100000002, "saidas": -515534.33999999997}}}, "yo": {"nome": "YO Noronha", "cnpj": "55.526.039/0001-39", "status": "sem_carga", "comp": {}, "caixa": {}, "saldos": {}, "conciliacao": {"periodo": "01/07 a 18/09/2026", "linhas": 1618, "credito": 2356759.55, "debito": 3329777.29, "saldo_ini": 1202894.61, "saldo_fim": 229876.34, "aporte": 2271313.67, "obra": 364, "operacao": 314, "preop": 40, "sem_destino": 743}}}};var SOCIOS=true;
 var ENT=(typeof ENT0!=='undefined'?ENT0:'boldro'), MES=D.meses[D.meses.length-1], REG='caixa';
 var SOCIOS=(typeof SOCIOS!=='undefined')&&SOCIOS;
 function brl(v,c){c=c||0;var s=Math.abs(v).toLocaleString('pt-BR',{minimumFractionDigits:c,maximumFractionDigits:c});
@@ -287,6 +304,22 @@ function ponteSVG(){
  return out;
 }
 
+function cozinha(mes){
+ var b=bloco(ENT,'comp',mes), f=b.familias||{};
+ var venda=soma(ENT,'comp',mes,['1','2']);
+ return {venda:venda, cmv:-soma(ENT,'comp',mes,['4']), food:-(f.cozinha||0), bar:-(f.bar||0),
+         comum:-(f.comum||0), pessoal:-soma(ENT,'comp',mes,['6']),
+         operacao:-soma(ENT,'comp',mes,['5']), ocupacao:-soma(ENT,'comp',mes,['7']),
+         adm:-soma(ENT,'comp',mes,['8']), mkt:-soma(ENT,'comp',mes,['9']),
+         variaveis:-soma(ENT,'comp',mes,['3']), deducoes:-soma(ENT,'comp',mes,['2'])};
+}
+function acumCozinha(){
+ var t={venda:0,cmv:0,food:0,bar:0,comum:0,pessoal:0,operacao:0,ocupacao:0,adm:0,mkt:0,
+        variaveis:0,deducoes:0};
+ D.meses.forEach(function(m){var k=cozinha(m);
+  Object.keys(t).forEach(function(x){t[x]+=k[x]})});
+ return t;
+}
 function card(k){return '<div class="kpi"><div class="t">'+k[0]+'</div><div class="v num">'+k[1]+
  '</div><div class="d">'+k[2]+'</div>'+(k[3]?'<div class="ref">'+k[3]+'</div>':'')+'</div>'}
 function kpis(){
@@ -298,19 +331,23 @@ function kpis(){
    ['Saldo no fim',brl(c.saldo_fim),'em 18/09/2026','consumo de '+brl(c.saldo_ini-c.saldo_fim)]].map(card).join('');
  }
  var s=saldos(ENT,MES)||{ini:0,fim:0,entradas:0,saidas:0};
- var rl=soma(ENT,'comp',MES,['1','2']);
- var cmv=-soma(ENT,'comp',MES,['4']),pes=-soma(ENT,'comp',MES,['6']);
- var ebitda=rl+soma(ENT,'comp',MES,['4','5','3','6','7','8','9']);
+ var k=cozinha(MES), A=acumCozinha(), dias=(D.dias||{})[MES]||30;
+ var ebitda=k.venda+soma(ENT,'comp',MES,['4','5','3','6','7','8','9']);
  var cc=soma(ENT,'comp',MES,['CC']);
+ var fixo=k.pessoal+k.ocupacao+k.adm+k.mkt+k.operacao;
  return [
-  ['Receita líquida',brl(rl),'competência de '+D.meses_nome[MES],'pelo líquido da GetNet'],
-  ['Food cost',pc(cmv,rl),'CMV sobre a receita','referência: 28% a 35%'],
-  ['Prime cost',pc(cmv+pes,rl),'CMV + pessoal','referência: 60% a 65%'],
-  ['Margem EBITDA',pc(ebitda,rl),brl(ebitda)+' no mês','distorcida pelo recorte'],
-  ['Saldo em caixa',brl(s.fim),'extrato bancário','abriu o mês com '+brl(s.ini)],
-  ['Entradas',brl(s.entradas),'creditado no mês',''],
-  ['Saídas',brl(Math.abs(s.saidas)),'debitado no mês',''],
-  ['Conta corrente com o grupo',brl(Math.abs(cc)),'partes relacionadas, fora da DRE',
+  ['Venda líquida',brl(k.venda),'o que a casa vendeu em '+D.meses_nome[MES],'líquido da maquininha'],
+  ['Venda por dia',brl(k.venda/dias),dias+' dias de operação','é o número que o salão sente'],
+  ['Food cost',pc(k.food,k.venda),brl(k.food)+' de insumo de cozinha',
+   'no acumulado: '+pc(A.food,A.venda)+' · mercado: 28% a 35%'],
+  ['Bar cost',pc(k.bar,k.venda),brl(k.bar)+' de bebida',
+   'no acumulado: '+pc(A.bar,A.venda)+' · mercado: 18% a 25%'],
+  ['Prime cost',pc(k.cmv+k.pessoal,k.venda),'CMV + equipe, o número que manda',
+   'no acumulado: '+pc(A.cmv+A.pessoal,A.venda)+' · mercado: 60% a 65%'],
+  ['Margem EBITDA',pc(ebitda,k.venda),brl(ebitda)+' no mês','distorcida pelo recorte'],
+  ['Dinheiro em caixa',brl(s.fim),'no banco ao fim do mês',
+   fixo?('dá para '+(s.fim/fixo).toFixed(1).replace('.',',')+' mês de casa aberta'):''],
+  ['Conta corrente com o grupo',brl(Math.abs(cc)),'o que é da YO e passou aqui',
    ENT==='consol'?'o par Yó↔Boldró foi eliminado':(cc<0?'pago por conta do grupo':'recebido do grupo')]
  ].map(card).join('');
 }
@@ -420,19 +457,56 @@ function tabela(reg){
 
 function operacao(){
  var el=document.getElementById('op-kpis'); if(!el)return;
- if(!temDado(ENT)){el.innerHTML='<div class="vazio"><h4>Sem dados operacionais</h4><p>A YO entra aqui quando a carga for feita.</p></div>';return}
- var rl=soma(ENT,'comp',MES,['1','2']);
- var cmv=-soma(ENT,'comp',MES,['4']),cop=-soma(ENT,'comp',MES,['5']),pes=-soma(ENT,'comp',MES,['6']);
- var ocu=-soma(ENT,'comp',MES,['7']),adm=-soma(ENT,'comp',MES,['8']),mkt=-soma(ENT,'comp',MES,['9']);
+ if(!temDado(ENT)){el.innerHTML='<div class="vazio"><h4>A casa ainda não abriu no sistema</h4><p>A YO entra aqui quando a carga for feita.</p></div>';return}
+ var k=cozinha(MES), A=acumCozinha(), dias=(D.dias||{})[MES]||30;
+ var fixo=k.pessoal+k.ocupacao+k.adm+k.mkt+k.operacao;
  el.innerHTML=[
-  ['Food cost',pc(cmv,rl),brl(cmv)+' de insumos','referência: 28% a 35%'],
-  ['Custo de pessoal',pc(pes,rl),brl(pes)+' com a equipe','referência: 25% a 32%'],
-  ['Prime cost',pc(cmv+pes,rl),'CMV + pessoal','referência: 60% a 65%'],
-  ['Custos de operação',pc(cop,rl),'energia, água, limpeza, alojamento',''],
-  ['Ocupação',pc(ocu,rl),brl(ocu)+' de arrendamento','referência: até 10%'],
-  ['Administrativas',pc(adm,rl),brl(adm),''],
-  ['Marketing',pc(mkt,rl),brl(mkt)+' em mídia e atrações','referência: 3% a 6%'],
-  ['Sobra operacional',pc(rl-cmv-cop-pes-ocu-adm-mkt,rl),'antes do resultado financeiro','']
+  ['Cozinha',pc(k.food,k.venda),brl(k.food)+' em proteína, hortifrúti, secos e frios',
+   'no acumulado do período: '+pc(A.food,A.venda)],
+  ['Bar',pc(k.bar,k.venda),brl(k.bar)+' em bebida','no acumulado: '+pc(A.bar,A.venda)],
+  ['Logística de insumo',pc(k.comum,k.venda),brl(k.comum)+' de frete e diversos',
+   'em Noronha isso pesa como insumo'],
+  ['Equipe',pc(k.pessoal,k.venda),brl(k.pessoal)+' entre fixos, diaristas e alojamento',
+   'referência: 25% a 32%'],
+  ['Custo de casa aberta',brl(fixo/dias),'por dia de operação',
+   'sem vender nada, a casa custa isso por dia'],
+  ['Ocupação',pc(k.ocupacao,k.venda),brl(k.ocupacao)+' de arrendamento','referência: até 10%'],
+  ['Atrações e mídia',pc(k.mkt,k.venda),brl(k.mkt)+' em DJ, música e divulgação','referência: 3% a 6%'],
+  ['Sobra depois de tudo',pc(k.venda-k.cmv-fixo,k.venda),
+   brl(k.venda-k.cmv-fixo)+' antes do financeiro','']
+ ].map(card).join('');
+
+ /* mix cozinha x bar */
+ var mx=document.getElementById('op-mix'); if(!mx)return;
+ var tot=k.food+k.bar+k.comum;
+ if(!tot){mx.innerHTML='';return}
+ mx.innerHTML=[['Cozinha',k.food,'#F97316'],['Bar',k.bar,'#0E9F6E'],['Frete e diversos',k.comum,'#6366F1']]
+  .map(function(i){return '<div class="mixrow"><div class="mixlab">'+i[0]+'</div>'+
+   '<div class="mixbar"><i style="width:'+(100*i[1]/tot).toFixed(1)+'%;background:'+i[2]+'"></i></div>'+
+   '<div class="mixval num">'+brl(i[1])+' · '+pc(i[1],tot)+'</div></div>'}).join('');
+}
+
+/* ponto de equilibrio: quanto a casa precisa vender para empatar */
+function equilibrio(){
+ var el=document.getElementById('eq-box'); if(!el)return;
+ if(!temDado(ENT)){el.innerHTML='<div class="vazio"><h4>Sem venda lançada</h4><p>O ponto de equilíbrio aparece quando houver movimento.</p></div>';return}
+ var P=D.premissas||{}, k=cozinha(MES);
+ var fixo=k.pessoal+k.ocupacao+k.adm+k.mkt+k.operacao;
+ var cmvPct=k.venda?k.cmv/k.venda:0, varPct=k.venda?(k.variaveis+k.deducoes)/k.venda:0;
+ var mc=1-cmvPct-varPct;                         /* margem de contribuição real */
+ var be=mc>0?fixo/mc:0;
+ var falta=be-k.venda;
+ var fixoPlano=P.fixo_mes||0;
+ el.innerHTML=[
+  ['Precisa vender por mês',be?brl(be):'—','para empatar com a estrutura que existe HOJE',
+   'margem de contribuição de '+(100*mc).toFixed(0)+'%'],
+  ['Vendeu',brl(k.venda),'em '+D.meses_nome[MES],
+   falta>0?('faltaram '+brl(falta)):('passou em '+brl(-falta))],
+  ['Custo fixo de hoje',brl(fixo),'equipe, casa, administrativo e mídia',
+   fixoPlano?('o plano previa '+brl(fixoPlano)+' por mês'):''],
+  ['Equilíbrio com a casa cheia',brl(P.ponto_equilibrio||0),
+   'premissa do plano de investimento',
+   fixoPlano&&fixo?('a estrutura de hoje é '+(100*fixo/fixoPlano).toFixed(0)+'% da planejada'):'']
  ].map(card).join('');
 }
 
@@ -468,7 +542,7 @@ function socios(){
 function render(){
  var e=E();
  document.getElementById('heroTitle').innerHTML=temDado(ENT)
-  ? (SOCIOS?'Visão dos <b>sócios</b>':'Resultado de <b>'+D.meses_nome[MES]+'</b>')
+  ? (SOCIOS?'Visão dos <b>sócios</b>':'A casa em <b>'+D.meses_nome[MES]+'</b>')
   : '<b>'+e.nome+'</b> — aguardando carga';
  document.getElementById('heroCnpj').textContent=e.nome+' · '+(e.cnpj?'CNPJ '+e.cnpj:'')+
   (e.conta?' · '+e.conta:'');
@@ -476,7 +550,7 @@ function render(){
  document.getElementById('wfTitle').textContent='Ponte do caixa · '+D.meses_nome[MES];
  document.getElementById('kpis').innerHTML=kpis();
  var t=document.getElementById('rsm'); if(t)t.innerHTML=rsm();
- pizza(); ponteTexto(); operacao(); socios();
+ pizza(); ponteTexto(); operacao(); equilibrio(); socios();
  var fc=document.getElementById('fcbody'); if(fc)fc.innerHTML=tabela('caixa');
  var dr=document.getElementById('drebody'); if(dr)dr.innerHTML=tabela('comp');
  document.querySelectorAll('.repwrap').forEach(function(w){
