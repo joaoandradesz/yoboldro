@@ -147,6 +147,9 @@ td.av{color:var(--g500);font-size:12px}
 .foot .fg{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;
  padding-bottom:20px;border-bottom:1px solid var(--line)}
 .foot .sig{font-family:'Fraunces',serif;font-style:italic;font-size:19px;color:#fff}
+.xtbl tr.abre{cursor:pointer}
+.xtbl tr.abre:hover td{background:var(--orange-soft)}
+.caret{display:inline-block;width:15px;color:var(--orange);font-size:11px}
 .foot .disc{margin-top:18px;font-size:11.5px;line-height:1.7;color:#6D748A}
 @media(max-width:720px){.wrap{padding:0 18px}.kpis{margin-top:18px}}
 """
@@ -379,6 +382,13 @@ function ponteTexto(){
   '</div><div class="d">'+b[2]+'</div></div>'}).join('');
 }
 
+var FECHADOS_G={};                                 /* grupos que o usuario fechou */
+function togGrp(reg,g){
+ var k=reg+'|'+g; FECHADOS_G[k]=!FECHADOS_G[k];
+ document.querySelectorAll('tr[data-pai="'+k+'"]').forEach(function(tr){
+  tr.style.display=FECHADOS_G[k]?'none':'';});
+ var c=document.querySelector('span[data-caret="'+k+'"]'); if(c)c.textContent=FECHADOS_G[k]?'▸':'▾';
+}
 function tabela(reg){
  if(!temDado(ENT))return '<tr><td class="l" colspan="4">Sem lançamento no Omie.</td></tr>';
  var b=bloco(ENT,reg,MES),porGrupo={};
@@ -387,11 +397,15 @@ function tabela(reg){
  });
  var base=Math.abs(b.grupos['1']||0)||1,out='';
  Object.keys(porGrupo).sort(function(a,c){return Math.abs(b.grupos[c]||0)-Math.abs(b.grupos[a]||0)}).forEach(function(g){
-  out+='<tr class="g"><td class="l">'+(D.grupo_nome[g]||g)+'</td><td class="num">'+brl(b.grupos[g]||0)+
+  var k=reg+'|'+g, fech=!!FECHADOS_G[k];
+  out+='<tr class="g abre" onclick="togGrp(\''+reg+'\',\''+g+'\')"><td class="l">'+
+       '<span class="caret" data-caret="'+k+'">'+(fech?'▸':'▾')+'</span>'+(D.grupo_nome[g]||g)+
+       '</td><td class="num">'+brl(b.grupos[g]||0)+
        '</td><td class="av">'+pc(b.grupos[g]||0,base)+'</td><td class="av">'+
        porGrupo[g].reduce(function(a,i){return a+i[2]},0)+'</td></tr>';
   porGrupo[g].sort(function(a,c){return Math.abs(c[1])-Math.abs(a[1])}).forEach(function(i){
-   out+='<tr><td class="l" style="padding-left:30px;color:#374151">'+i[0]+'</td><td class="num">'+brl(i[1])+
+   out+='<tr data-pai="'+k+'"'+(fech?' style="display:none"':'')+
+        '><td class="l" style="padding-left:34px;color:#374151">'+i[0]+'</td><td class="num">'+brl(i[1])+
         '</td><td class="av">'+pc(i[1],base)+'</td><td class="av">'+i[2]+'</td></tr>';
   });
  });
@@ -675,7 +689,7 @@ def pagina(socios=False):
 <button data-r="caixa" class="on" onclick="setRegime('caixa')">Fluxo de Caixa (DFC)</button>
 <button data-r="comp" onclick="setRegime('comp')">DRE (competência)</button></div>
 <div id="rep-fc" class="repwrap on"><table class="xtbl"><thead><tr><th class="l">Demonstrativo do caixa</th><th>Valor</th><th class="av">AV %%</th><th class="av">Lançtos</th></tr></thead><tbody id="fcbody"></tbody></table>
-<p class="repnote">Fonte: extrato da conta corrente no Omie, conferido contra a conciliação do CSC — saldo igual, diferença zero.</p></div>
+<p class="repnote">Fonte: extrato das contas no Omie, conferido movimento a movimento contra o extrato do banco. Clique na linha do grupo para abrir ou fechar as contas de dentro.</p></div>
 <div id="rep-dre" class="repwrap"><table class="xtbl"><thead><tr><th class="l">Categoria</th><th>Valor</th><th class="av">AV %%</th><th class="av">Lançtos</th></tr></thead><tbody id="drebody"></tbody></table>
 <p class="repnote">Competência pela data de emissão do título. A conta corrente com partes relacionadas aparece destacada e não entra no resultado.</p></div>
 
