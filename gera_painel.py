@@ -161,12 +161,13 @@ function pc(v,b){return b?(100*v/b).toFixed(1).replace('.',',')+'%':'—'}
 /* entidade virtual: consolidado soma as duas e elimina a conta corrente entre elas */
 function bloco(ent,reg,mes){
  if(ent==='consol'){
-  var o={grupos:{},contas:{},lanc:{}};
+  var o={grupos:{},contas:{},lanc:{},familias:{}};
   ['boldro','yo'].forEach(function(e){
    var b=((D.ents[e]||{})[reg]||{})[mes]; if(!b)return;
+   Object.keys(b.familias||{}).forEach(function(f){o.familias[f]=(o.familias[f]||0)+b.familias[f]});
    Object.keys(b.grupos).forEach(function(g){o.grupos[g]=(o.grupos[g]||0)+b.grupos[g]});
    Object.keys(b.contas).forEach(function(k){
-    if(/YO Noronha|Yo - Boldr/i.test(k))return;            /* eliminação intercompany */
+    if(/YO Noronha|Yo - Boldr|corrente Boldr/i.test(k))return;  /* eliminação intercompany */
     o.contas[k]=(o.contas[k]||0)+b.contas[k];
     o.lanc[k]=(o.lanc[k]||0)+(b.lanc[k]||0);
    });
@@ -176,7 +177,7 @@ function bloco(ent,reg,mes){
   o.grupos['CC']=cc;
   return o;
  }
- return ((D.ents[ent]||{})[reg]||{})[mes]||{grupos:{},contas:{},lanc:{}};
+ return ((D.ents[ent]||{})[reg]||{})[mes]||{grupos:{},contas:{},lanc:{},familias:{}};
 }
 function E(){return ENT==='consol'?{nome:'Consolidado Yó + Boldró',cnpj:'45.270.781/0002-53 e 55.526.039/0001-39',
  status:'ok',conta:'soma das duas bases, sem a conta corrente entre elas'}:D.ents[ENT]}
@@ -189,6 +190,10 @@ function saldos(ent,mes){
  return o;
 }
 function temDado(ent){return ent==='consol'||(D.ents[ent]||{}).status==='ok'}
+function fase(ent){return ent==='consol'?'operando':((D.ents[ent]||{}).fase||'operando')}
+function soGrupo(ent,reg,mes,gs){var b=bloco(ent,reg,mes),o={};
+ Object.keys(b.contas).forEach(function(k){var g=k.split('|')[0];
+  if(gs.indexOf(g)>=0)o[k.split('|')[1]]=(o[k.split('|')[1]]||0)+b.contas[k]});return o}
 
 function setEntity(e){ENT=e;document.querySelectorAll('.entsw button').forEach(function(b){
  b.classList.toggle('on',b.dataset.ent===e)});render()}
@@ -245,6 +250,30 @@ function kpis(){
    ['Saldo no fim',brl(c.saldo_fim),'em 18/09/2026','consumo de '+brl(c.saldo_ini-c.saldo_fim)]].map(card).join('');
  }
  var s=saldos(ENT,MES)||{ini:0,fim:0,entradas:0,saidas:0};
+ if(fase(ENT)==='pre_operacao'){
+  var inv=soma(ENT,'comp',MES,['11']), apo=soma(ENT,'comp',MES,['12']),
+      cus=soma(ENT,'comp',MES,['4','5','6','7','8','9']), rec=soma(ENT,'comp',MES,['1']);
+  var qT=0,iT=0,aT=0;
+  D.meses.forEach(function(m){qT+=soma(ENT,'comp',m,['4','5','6','7','8','9','11']);
+   iT+=soma(ENT,'comp',m,['11']);aT+=soma(ENT,'comp',m,['12'])});
+  var ccq=soma(ENT,'comp',MES,['CC']);
+  return [
+   ['Fase','Implantação','a casa ainda não fatura no CNPJ da YO',
+    'a venda de salão está na Boldró'],
+   ['Investimento no mês',brl(-inv),'obra, equipamento, frete de obra e pré-operação',
+    'no período: '+brl(-iT)],
+   ['Custo de estrutura no mês',brl(-cus),'insumo, equipe, arrendamento e administrativo',
+    'corre mesmo sem venda'],
+   ['Queima do mês',brl(-(inv+cus)),'investimento mais estrutura',
+    'no período: '+brl(-qT)],
+   ['Aporte no mês',brl(apo),'entrada de sócio','no período: '+brl(aT)],
+   ['Receita no mês',brl(rec),'reembolso e outras receitas','não é venda de salão'],
+   ['Dinheiro em caixa',brl(s.fim),'conta corrente mais aplicação',
+    cus?('dá para '+(s.fim/-cus).toFixed(1).replace('.',',')+' mês de estrutura'):''],
+   ['Conta corrente com o grupo',brl(Math.abs(ccq)),'o que passou pela Boldró',
+    ccq<0?'pago por conta do grupo':'recebido do grupo']
+  ].map(card).join('');
+ }
  var k=cozinha(MES), A=acumCozinha(), dias=(D.dias||{})[MES]||30;
  var ebitda=k.venda+soma(ENT,'comp',MES,['4','5','3','6','7','8','9']);
  var cc=soma(ENT,'comp',MES,['CC']);
@@ -372,6 +401,33 @@ function tabela(reg){
 function operacao(){
  var el=document.getElementById('op-kpis'); if(!el)return;
  if(!temDado(ENT)){el.innerHTML='<div class="vazio"><h4>A casa ainda não abriu no sistema</h4><p>A YO entra aqui quando a carga for feita.</p></div>';return}
+ if(fase(ENT)==='pre_operacao'){
+  var inv=soGrupo(ENT,'comp',MES,['11']), ac={};
+  D.meses.forEach(function(m){var x=soGrupo(ENT,'comp',m,['11']);
+   Object.keys(x).forEach(function(c){ac[c]=(ac[c]||0)+x[c]})});
+  var tI=0;Object.keys(inv).forEach(function(c){tI+=inv[c]});
+  var tA=0;Object.keys(ac).forEach(function(c){tA+=ac[c]});
+  var fin=soma(ENT,'comp',MES,['12']), cmv=soma(ENT,'comp',MES,['4']),
+      pes=soma(ENT,'comp',MES,['6']), ocu=soma(ENT,'comp',MES,['7']);
+  el.innerHTML=[
+   ['Investimento no mês',brl(-tI),'obra, equipamento, frete de obra e pré-operação',
+    'no período todo: '+brl(-tA)],
+   ['Aporte no mês',brl(fin),'entrada de sócio','é o que banca a obra'],
+   ['Estoque e insumo já comprado',brl(-cmv),'comprado antes de abrir a casa',
+    'está quase todo em uma conta genérica de insumos'],
+   ['Equipe já contratada',brl(-pes),'folha, diarista, alimentação e passagem',
+    'a casa paga equipe antes de faturar'],
+   ['Arrendamento do ponto',brl(-ocu),'corre desde antes da abertura',''],
+   ['Receita no mês',brl(soma(ENT,'comp',MES,['1'])),'não é venda de salão',
+    'são reembolsos e outras receitas']
+  ].map(card).join('');
+  var mx0=document.getElementById('op-mix');
+  if(mx0){var ks=Object.keys(ac).sort(function(a,b){return ac[a]-ac[b]}),cor=['#F97316','#0E9F6E','#6366F1','#EAB308'];
+   mx0.innerHTML=ks.map(function(c,i){return '<div class="mixrow"><div class="mixlab">'+c+'</div>'+
+    '<div class="mixbar"><i style="width:'+(100*ac[c]/tA).toFixed(1)+'%;background:'+cor[i%4]+'"></i></div>'+
+    '<div class="mixval num">'+brl(-ac[c])+' · '+pc(ac[c],tA)+'</div></div>'}).join('')}
+  return;
+ }
  var k=cozinha(MES), A=acumCozinha(), dias=(D.dias||{})[MES]||30;
  var fixo=k.pessoal+k.ocupacao+k.adm+k.mkt+k.operacao;
  el.innerHTML=[
@@ -404,6 +460,24 @@ function operacao(){
 function equilibrio(){
  var el=document.getElementById('eq-box'); if(!el)return;
  if(!temDado(ENT)){el.innerHTML='<div class="vazio"><h4>Sem venda lançada</h4><p>O ponto de equilíbrio aparece quando houver movimento.</p></div>';return}
+ if(fase(ENT)==='pre_operacao'){
+  var P0=D.premissas||{},q=0,ap=0;
+  D.meses.forEach(function(m){q+=soma(ENT,'comp',m,['4','5','6','7','8','9','11']);
+   ap+=soma(ENT,'comp',m,['12'])});
+  var s0=saldos(ENT,D.meses[0]),s1=saldos(ENT,D.meses[D.meses.length-1]);
+  el.innerHTML=[
+   ['Queima no período',brl(q),'tudo que saiu sem a casa estar vendendo',
+    'inclui obra, equipe, insumo e arrendamento'],
+   ['Aporte no período',brl(ap),'entrada de sócio no mesmo intervalo',
+    ap+q<0?('faltou '+brl(-(ap+q))+' de aporte para cobrir'):'cobriu a queima'],
+   ['Caixa que restou',brl(s1?s1.fim:0),'conta corrente mais aplicação',
+    s0?('começou o período com '+brl(s0.ini)):''],
+   ['Ponto de equilíbrio do plano',brl(P0.ponto_equilibrio||0),
+    'premissa do material de gestão orçamentária',
+    'passa a valer quando a casa abrir e faturar no CNPJ da YO']
+  ].map(card).join('');
+  return;
+ }
  var P=D.premissas||{}, k=cozinha(MES);
  var fixo=k.pessoal+k.ocupacao+k.adm+k.mkt+k.operacao;
  var cmvPct=k.venda?k.cmv/k.venda:0, varPct=k.venda?(k.variaveis+k.deducoes)/k.venda:0;
@@ -456,7 +530,8 @@ function socios(){
 function render(){
  var e=E();
  document.getElementById('heroTitle').innerHTML=temDado(ENT)
-  ? (SOCIOS?'Visão dos <b>sócios</b>':'A casa em <b>'+D.meses_nome[MES]+'</b>')
+  ? (SOCIOS?'Visão dos <b>sócios</b>':(fase(ENT)==='pre_operacao'
+     ?'Implantação em <b>'+D.meses_nome[MES]+'</b>':'A casa em <b>'+D.meses_nome[MES]+'</b>'))
   : '<b>'+e.nome+'</b> — aguardando carga';
  document.getElementById('heroCnpj').textContent=e.nome+' · '+(e.cnpj?'CNPJ '+e.cnpj:'')+
   (e.conta?' · '+e.conta:'');
@@ -609,8 +684,12 @@ def pagina(socios=False):
 <p>O que entra no banco é o repasse líquido da adquirente. A receita bruta e a taxa de cartão ainda não existem na base, e o custo de antecipação também não — com o extrato de vendas detalhado da GetNet isso é reclassificado e a margem muda.</p></div>
 <div class="aviso"><h4>O universo é o que passou pelo banco</h4>
 <p>Agosto e setembro de 2026. Compra com prazo e folha paga em outubro ficam de fora, por isso a margem aparece alta demais para uma operação de A&amp;B.</p></div>
-<div class="aviso"><h4>A YO ainda não tem lançamento, e o consolidado reflete isso</h4>
-<p>A base da YO tem plano de contas e contas bancárias, mas nenhum título. Na conciliação do CSC são 1.618 lançamentos de 01/07 a 18/09, com 364 linhas de obra e 743 sem destino. Enquanto a carga não acontece, o consolidado é a Boldró mais nada — e o par de conta corrente entre as duas não tem o outro lado para eliminar.</p></div>
+<div class="aviso"><h4>A YO está carregada, mas a casa fatura no CNPJ da Boldró<span class="tag">leitura</span></h4>
+<p>A base da YO tem 1.105 títulos lançados e o caixa fecha com a conciliação do CSC. Só que a venda de salão aparece inteira na Boldró: na YO o que existe é obra, pré-operação, estoque inicial, equipe e arrendamento. Por isso a YO não tem food cost nem ponto de equilíbrio ainda — tem queima de caixa de implantação, e é assim que o painel a trata.</p></div>
+<div class="aviso"><h4>A conta corrente entre as duas não fecha<span class="tag">ressalva</span></h4>
+<p>Em 20/08 a YO transferiu R$ 100 mil para a Boldró — conferido no extrato do Santander, PIX recebido do CNPJ da YO. Esse par tem as duas pernas e foi eliminado no consolidado. Mas a Boldró ainda registra R$ 107.162,82 que pagou por conta da YO e que a YO nunca lançou do lado dela. Enquanto esse espelho não for feito, esse custo não aparece no resultado de nenhuma das duas.</p></div>
+<div class="aviso"><h4>O insumo da YO está num saco só</h4>
+<p>R$ 336.706,60 de compra da YO em agosto e setembro estão na conta genérica de insumos, sem separar proteína, hortifrúti, secos ou bebida. É por isso que o mix de cozinha e bar da YO não é confiável e o da Boldró é.</p></div>
 </div>
 </div></section>
 
@@ -619,7 +698,7 @@ def pagina(socios=False):
 <div style="text-align:right"><div class="r" style="margin-bottom:4px">Disciplina Gera Lucro</div>
 <div style="font-family:'Plus Jakarta Sans';font-size:13px;font-weight:500;color:rgba(255,255,255,.85)">Exact BR · Recife — PE</div></div>
 </div>
-<p class="disc">Relatório gerencial · Grupo Yó / Boldró. Resultado apurado por competência, pela data de emissão dos documentos; fluxo de caixa apurado pela movimentação bancária, conferido contra o extrato da conta corrente Santander 13002614-6 até 30 de setembro de 2026, com saldo igual ao da conciliação do CSC. A conta corrente entre as empresas do grupo é transferência, não custo, e fica fora do resultado; no consolidado, o par Yó↔Boldró é eliminado. A receita está lançada pelo valor líquido repassado pela adquirente enquanto o extrato de vendas detalhado da GetNet não é incorporado. Dados lidos da API do Omie em %s.</p>
+<p class="disc">Relatório gerencial · Grupo Yó / Boldró. Resultado apurado por competência, pela data de emissão dos documentos; fluxo de caixa apurado pela movimentação bancária, conferido contra o extrato bancário de cada empresa até 30 de setembro de 2026 — Santander 13002614-6 na Boldró e Bradesco mais aplicação na YO — com saldo igual ao da conciliação do CSC. A conta corrente entre as empresas do grupo é transferência, não custo, e fica fora do resultado; no consolidado, o par Yó↔Boldró é eliminado. A receita está lançada pelo valor líquido repassado pela adquirente enquanto o extrato de vendas detalhado da GetNet não é incorporado. Dados lidos da API do Omie em %s.</p>
 </div></footer>
 
 <script>const D=%s;var SOCIOS=%s;%s</script>
