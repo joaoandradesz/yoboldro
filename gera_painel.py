@@ -148,6 +148,12 @@ td.av{color:var(--g500);font-size:12px}
  padding-bottom:20px;border-bottom:1px solid var(--line)}
 .foot .sig{font-family:'Fraunces',serif;font-style:italic;font-size:19px;color:#fff}
 .xtbl tr.abre{cursor:pointer}
+.xtbl td.n2{padding-left:30px;color:var(--ink2)}
+.xtbl td.n3{padding-left:54px;color:var(--g500);font-size:12px}
+.xtbl tr.i td{font-size:12px;color:var(--g500);background:#FCFCFB}
+.xtbl tr.c td{font-weight:500}
+.xtbl td.tt{font-weight:700}
+.xtbl .z{color:var(--g300)}
 .xtbl tr.abre:hover td{background:var(--orange-soft)}
 .caret{display:inline-block;width:15px;color:var(--orange);font-size:11px}
 .foot .disc{margin-top:18px;font-size:11.5px;line-height:1.7;color:#6D748A}
@@ -164,10 +170,11 @@ function pc(v,b){return b?(100*v/b).toFixed(1).replace('.',',')+'%':'—'}
 /* entidade virtual: consolidado soma as duas e elimina a conta corrente entre elas */
 function bloco(ent,reg,mes){
  if(ent==='consol'){
-  var o={grupos:{},contas:{},lanc:{},familias:{}};
+  var o={grupos:{},contas:{},lanc:{},familias:{},itens:[]};
   ['boldro','yo'].forEach(function(e){
    var b=((D.ents[e]||{})[reg]||{})[mes]; if(!b)return;
    Object.keys(b.familias||{}).forEach(function(f){o.familias[f]=(o.familias[f]||0)+b.familias[f]});
+   (b.itens||[]).forEach(function(i){if(!/YO Noronha|Yo - Boldr|corrente Boldr/i.test(i[0]))o.itens.push(i)});
    Object.keys(b.grupos).forEach(function(g){o.grupos[g]=(o.grupos[g]||0)+b.grupos[g]});
    Object.keys(b.contas).forEach(function(k){
     if(/YO Noronha|Yo - Boldr|corrente Boldr/i.test(k))return;  /* eliminação intercompany */
@@ -180,7 +187,7 @@ function bloco(ent,reg,mes){
   o.grupos['CC']=cc;
   return o;
  }
- return ((D.ents[ent]||{})[reg]||{})[mes]||{grupos:{},contas:{},lanc:{},familias:{}};
+ return ((D.ents[ent]||{})[reg]||{})[mes]||{grupos:{},contas:{},lanc:{},familias:{},itens:[]};
 }
 function E(){return ENT==='consol'?{nome:'Consolidado Yó + Boldró',cnpj:'45.270.781/0002-53 e 55.526.039/0001-39',
  status:'ok',conta:'soma das duas bases, sem a conta corrente entre elas'}:D.ents[ENT]}
@@ -382,31 +389,68 @@ function ponteTexto(){
   '</div><div class="d">'+b[2]+'</div></div>'}).join('');
 }
 
-var FECHADOS_G={};                                 /* grupos que o usuario fechou */
-function togGrp(reg,g){
- var k=reg+'|'+g; FECHADOS_G[k]=!FECHADOS_G[k];
- document.querySelectorAll('tr[data-pai="'+k+'"]').forEach(function(tr){
-  tr.style.display=FECHADOS_G[k]?'none':'';});
- var c=document.querySelector('span[data-caret="'+k+'"]'); if(c)c.textContent=FECHADOS_G[k]?'▸':'▾';
-}
-function tabela(reg){
- if(!temDado(ENT))return '<tr><td class="l" colspan="4">Sem lançamento no Omie.</td></tr>';
- var b=bloco(ENT,reg,MES),porGrupo={};
- Object.keys(b.contas).forEach(function(k){
-  var g=k.split('|')[0],n=k.split('|')[1];(porGrupo[g]=porGrupo[g]||[]).push([n,b.contas[k],b.lanc[k]||0]);
+var ABERTO={};                     /* o que o usuario abriu: grupo e conta */
+function togNo(k){
+ ABERTO[k]=!ABERTO[k];
+ ['fc','dre'].forEach(function(t){
+  var h=document.getElementById(t+'head'); if(!h)return;
+  var th='<th class="l">'+(t==='fc'?'Demonstrativo do caixa':'Categoria')+'</th>';
+  D.meses.forEach(function(m){th+='<th>'+D.meses_nome[m]+'</th>'});
+  h.innerHTML=th+'<th>acumulado</th><th class="av">AV %</th>';
  });
- var base=Math.abs(b.grupos['1']||0)||1,out='';
- Object.keys(porGrupo).sort(function(a,c){return Math.abs(b.grupos[c]||0)-Math.abs(b.grupos[a]||0)}).forEach(function(g){
-  var k=reg+'|'+g, fech=!!FECHADOS_G[k];
-  out+='<tr class="g abre" onclick="togGrp(\''+reg+'\',\''+g+'\')"><td class="l">'+
-       '<span class="caret" data-caret="'+k+'">'+(fech?'▸':'▾')+'</span>'+(D.grupo_nome[g]||g)+
-       '</td><td class="num">'+brl(b.grupos[g]||0)+
-       '</td><td class="av">'+pc(b.grupos[g]||0,base)+'</td><td class="av">'+
-       porGrupo[g].reduce(function(a,i){return a+i[2]},0)+'</td></tr>';
-  porGrupo[g].sort(function(a,c){return Math.abs(c[1])-Math.abs(a[1])}).forEach(function(i){
-   out+='<tr data-pai="'+k+'"'+(fech?' style="display:none"':'')+
-        '><td class="l" style="padding-left:34px;color:#374151">'+i[0]+'</td><td class="num">'+brl(i[1])+
-        '</td><td class="av">'+pc(i[1],base)+'</td><td class="av">'+i[2]+'</td></tr>';
+ var fc=document.getElementById('fcbody'); if(fc)fc.innerHTML=tabela('caixa');
+ var dr=document.getElementById('drebody'); if(dr)dr.innerHTML=tabela('comp');
+}
+function tdMes(v){return '<td class="num">'+(v?brl(v):'<span class="z">—</span>')+'</td>'}
+
+/* tres niveis: grupo -> conta -> lancamento. Uma coluna por mes, nunca somado. */
+function tabela(reg){
+ if(!temDado(ENT))return '<tr><td class="l" colspan="'+(D.meses.length+3)+'">Sem lançamento no Omie.</td></tr>';
+ var MS=D.meses, blocos={}, base=0;
+ MS.forEach(function(m){blocos[m]=bloco(ENT,reg,m); base+=Math.abs(blocos[m].grupos['1']||0)});
+ base=base||1;
+ var grupos={}, contas={};
+ MS.forEach(function(m){
+  Object.keys(blocos[m].contas).forEach(function(k){
+   var g=k.split('|')[0];
+   grupos[g]=grupos[g]||{}; contas[g]=contas[g]||{};
+   grupos[g][m]=(blocos[m].grupos[g]||0);
+   contas[g][k]=contas[g][k]||{};
+   contas[g][k][m]=blocos[m].contas[k];
+  });
+ });
+ function tot(o){var t=0;MS.forEach(function(m){t+=o[m]||0});return t}
+ var out='';
+ Object.keys(grupos).sort(function(a,c){return Math.abs(tot(grupos[c]))-Math.abs(tot(grupos[a]))})
+ .forEach(function(g){
+  var kg=reg+'|g|'+g, tg=tot(grupos[g]), ab=!!ABERTO[kg];
+  out+='<tr class="g abre" onclick="togNo(\''+kg+'\')"><td class="l"><span class="caret">'+
+       (ab?'▾':'▸')+'</span>'+(D.grupo_nome[g]||g)+'</td>';
+  MS.forEach(function(m){out+=tdMes(grupos[g][m])});
+  out+='<td class="num tt">'+brl(tg)+'</td><td class="av">'+pc(tg,base)+'</td></tr>';
+  if(!ab)return;
+  Object.keys(contas[g]).sort(function(a,c){return Math.abs(tot(contas[g][c]))-Math.abs(tot(contas[g][a]))})
+  .forEach(function(k){
+   var kc=reg+'|c|'+k, tc=tot(contas[g][k]), nome=k.split('|')[1], ac=!!ABERTO[kc];
+   out+='<tr class="c abre" onclick="togNo(\''+kc.replace(/'/g,"\\'")+'\')"><td class="l n2">'+
+        '<span class="caret">'+(ac?'▾':'▸')+'</span>'+nome+'</td>';
+   MS.forEach(function(m){out+=tdMes(contas[g][k][m])});
+   out+='<td class="num">'+brl(tc)+'</td><td class="av">'+pc(tc,base)+'</td></tr>';
+   if(!ac)return;
+   var itens=[];
+   MS.forEach(function(m){
+    ((blocos[m].itens)||[]).forEach(function(i){if(i[0]===k)itens.push({m:m,d:i[1],v:i[2],q:i[3]})});
+   });
+   itens.sort(function(a,b){return a.d.slice(6)+a.d.slice(3,5)+a.d.slice(0,2)>
+                                   b.d.slice(6)+b.d.slice(3,5)+b.d.slice(0,2)?1:-1});
+   if(!itens.length){
+    out+='<tr class="i"><td class="l n3" colspan="'+(MS.length+3)+'">sem detalhe de lançamento</td></tr>';
+   }
+   itens.forEach(function(i){
+    out+='<tr class="i"><td class="l n3">'+i.d+' · '+(i.q||'—')+'</td>';
+    MS.forEach(function(m){out+=tdMes(m===i.m?i.v:0)});
+    out+='<td class="num"></td><td class="av"></td></tr>';
+   });
   });
  });
  return out;
@@ -554,6 +598,12 @@ function render(){
  document.getElementById('kpis').innerHTML=kpis();
  var t=document.getElementById('rsm'); if(t)t.innerHTML=rsm();
  pizza(); ponteTexto(); operacao(); equilibrio(); socios();
+ ['fc','dre'].forEach(function(t){
+  var h=document.getElementById(t+'head'); if(!h)return;
+  var th='<th class="l">'+(t==='fc'?'Demonstrativo do caixa':'Categoria')+'</th>';
+  D.meses.forEach(function(m){th+='<th>'+D.meses_nome[m]+'</th>'});
+  h.innerHTML=th+'<th>acumulado</th><th class="av">AV %</th>';
+ });
  var fc=document.getElementById('fcbody'); if(fc)fc.innerHTML=tabela('caixa');
  var dr=document.getElementById('drebody'); if(dr)dr.innerHTML=tabela('comp');
  document.querySelectorAll('.repwrap').forEach(function(w){
@@ -688,10 +738,10 @@ def pagina(socios=False):
 <div class="rep-switch">
 <button data-r="caixa" class="on" onclick="setRegime('caixa')">Fluxo de Caixa (DFC)</button>
 <button data-r="comp" onclick="setRegime('comp')">DRE (competência)</button></div>
-<div id="rep-fc" class="repwrap on"><table class="xtbl"><thead><tr><th class="l">Demonstrativo do caixa</th><th>Valor</th><th class="av">AV %%</th><th class="av">Lançtos</th></tr></thead><tbody id="fcbody"></tbody></table>
-<p class="repnote">Fonte: extrato das contas no Omie, conferido movimento a movimento contra o extrato do banco. Clique na linha do grupo para abrir ou fechar as contas de dentro.</p></div>
-<div id="rep-dre" class="repwrap"><table class="xtbl"><thead><tr><th class="l">Categoria</th><th>Valor</th><th class="av">AV %%</th><th class="av">Lançtos</th></tr></thead><tbody id="drebody"></tbody></table>
-<p class="repnote">Competência pela data de emissão do título. A conta corrente com partes relacionadas aparece destacada e não entra no resultado.</p></div>
+<div id="rep-fc" class="repwrap on"><table class="xtbl"><thead><tr id="fchead"></tr></thead><tbody id="fcbody"></tbody></table>
+<p class="repnote">Fonte: extrato das contas no Omie, conferido movimento a movimento contra o extrato do banco. Uma coluna por mês, sem somar. Clique no grupo para abrir as contas e na conta para abrir os lançamentos, com data e contraparte.</p></div>
+<div id="rep-dre" class="repwrap"><table class="xtbl"><thead><tr id="drehead"></tr></thead><tbody id="drebody"></tbody></table>
+<p class="repnote">Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
 
 <div style="margin-top:34px">
 <div class="aviso"><h4>A receita está pelo líquido da GetNet<span class="tag">ressalva</span></h4>
@@ -699,7 +749,7 @@ def pagina(socios=False):
 <div class="aviso"><h4>Caixa e competência já não contam a mesma história</h4>
 <p>O fluxo de caixa é o que passou pelo banco em agosto e setembro de 2026. A competência vai além: a folha de setembro da Boldró e as compras a prazo que vencem em outubro já estão lançadas como título em aberto e entram no resultado do mês em que foram geradas — são 54 títulos que não vieram da conciliação bancária. Por isso a margem por competência é menor, e mais honesta, que a do caixa.</p></div>
 <div class="aviso"><h4>A YO está carregada, mas a casa fatura no CNPJ da Boldró<span class="tag">leitura</span></h4>
-<p>A base da YO está carregada até 09/10 e o caixa fecha com o extrato do Bradesco dentro de R$ 9,00. Só que a venda de salão aparece inteira na Boldró: na YO o que existe é obra, pré-operação, estoque inicial, equipe e arrendamento. Por isso a YO não tem food cost nem ponto de equilíbrio ainda — tem queima de caixa de implantação, e é assim que o painel a trata.</p></div>
+<p>A base da YO está carregada até 09/10 e o caixa fecha com o extrato do Bradesco. A venda de salão aparece inteira na Boldró: na YO o que existe é obra, pré-operação, estoque inicial, equipe e arrendamento. A receita de setembro da YO é de R$ 5.998 e é o PIX que a Boldró mandou em 15/09 — até 12/10 havia R$ 5.206 a mais ali, que eram transferências da conta Mercado Pago da própria YO lançadas como receita e já foram reclassificadas.</p></div>
 <div class="aviso"><h4>Os dois caixas fecham no centavo com o extrato do banco<span class="tag">conciliado</span></h4>
 <p>Boldró em 30/09: R$ 599.857,30 no Omie e R$ 599.857,30 no Santander. YO em 30/09: R$ 142.214,80 no Omie e R$ 142.214,80 no Bradesco. Os 1.048 movimentos de setembro da Boldró batem um a um por data e valor. Três coisas tiveram que ser arrumadas na base para chegar aqui: as pernas da varredura automática das duas aplicações, que o banco mostra todo dia e o Omie não tinha; as quatro tarifas de PIX de 24/09 da YO, que faltavam na conciliação do CSC; e o piso de R$ 1,00 da conta corrente da YO, que estava contado duas vezes na abertura.</p></div>
 <div class="aviso"><h4>A conta corrente entre as duas não fecha<span class="tag">ressalva</span></h4>
