@@ -147,6 +147,9 @@ td.av{color:var(--g500);font-size:12px}
 .foot .fg{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;
  padding-bottom:20px;border-bottom:1px solid var(--line)}
 .foot .sig{font-family:'Fraunces',serif;font-style:italic;font-size:19px;color:#fff}
+.emc{display:inline-block;font-size:15px;font-weight:600;color:var(--orange);
+ background:var(--orange-soft);border-radius:6px;padding:3px 9px;letter-spacing:-.01em}
+.emcm{display:block;margin-top:7px;font-size:11.5px;color:var(--g500);line-height:1.5;font-weight:400}
 .xtbl tr.abre{cursor:pointer}
 .xtbl td.n2{padding-left:30px;color:var(--ink2)}
 .xtbl td.n3{padding-left:54px;color:var(--g500);font-size:12px}
@@ -251,6 +254,7 @@ function acumCozinha(){
 }
 function card(k){return '<div class="kpi"><div class="t">'+k[0]+'</div><div class="v num">'+k[1]+
  '</div><div class="d">'+k[2]+'</div>'+(k[3]?'<div class="ref">'+k[3]+'</div>':'')+'</div>'}
+function emC(motivo){return '<span class="emc">em construção</span><span class="emcm">'+motivo+'</span>'}
 function kpis(){
  if(!temDado(ENT)){
   var c=D.ents[ENT].conciliacao;
@@ -280,8 +284,7 @@ function kpis(){
    ['Receita no mês',brl(rec),'reembolso e outras receitas','não é venda de salão'],
    ['Dinheiro em caixa',brl(s.fim),'conta corrente mais aplicação',
     cus?('dá para '+(s.fim/-cus).toFixed(1).replace('.',',')+' mês de estrutura'):''],
-   ['Conta corrente com o grupo',brl(Math.abs(ccq)),'o que passou pela Boldró',
-    ccq<0?'pago por conta do grupo':'recebido do grupo']
+   ['Share por turno',emC('vem do relatório de vendas do 3LM'),'','']
   ].map(card).join('');
  }
  var k=cozinha(MES), A=acumCozinha(), dias=(D.dias||{})[MES]||30;
@@ -291,17 +294,15 @@ function kpis(){
  return [
   ['Venda líquida',brl(k.venda),'o que a casa vendeu em '+D.meses_nome[MES],'líquido da maquininha'],
   ['Venda por dia',brl(k.venda/dias),dias+' dias de operação','é o número que o salão sente'],
-  ['Food cost',pc(k.food,k.venda),brl(k.food)+' de insumo de cozinha',
-   'no acumulado: '+pc(A.food,A.venda)+' · mercado: 28% a 35%'],
-  ['Bar cost',pc(k.bar,k.venda),brl(k.bar)+' de bebida',
-   'no acumulado: '+pc(A.bar,A.venda)+' · mercado: 18% a 25%'],
-  ['Prime cost',pc(k.cmv+k.pessoal,k.venda),'CMV + equipe, o número que manda',
-   'no acumulado: '+pc(A.cmv+A.pessoal,A.venda)+' · mercado: 60% a 65%'],
+  ['Ticket médio por conta',emC('depende da exportação de comandas do 3LM'),'',''],
+  ['Ticket médio individual',emC('o 3LM não exporta nº de pessoas por conta'),'',''],
+  ['Ticket médio por mesa',emC('o 3LM exporta comanda, não mesa física'),'',''],
   ['Margem EBITDA',pc(ebitda,k.venda),brl(ebitda)+' no mês','distorcida pelo recorte'],
   ['Dinheiro em caixa',brl(s.fim),'no banco ao fim do mês',
    fixo?('dá para '+(s.fim/fixo).toFixed(1).replace('.',',')+' mês de casa aberta'):''],
-  ['Conta corrente com o grupo',brl(Math.abs(cc)),'o que é da YO e passou aqui',
-   ENT==='consol'?'o par Yó↔Boldró foi eliminado':(cc<0?'pago por conta do grupo':'recebido do grupo')]
+  ['Share por turno',emC('vem do relatório de vendas do 3LM'),'',''],
+  ['Curva ABC por categoria',emC('vem do relatório de vendas do 3LM'),'',''],
+  ['Venda por dia da semana',emC('vem do relatório de vendas do 3LM'),'','']
  ].map(card).join('');
 }
 
@@ -310,7 +311,7 @@ var LINHAS=[['1','Receita bruta','g'],['2','Deduções',''],['=RL','Receita líq
  ['3','Despesas variáveis de venda',''],['6','Pessoal operacional',''],['7','Ocupação',''],
  ['8','Administrativas',''],['9','Marketing e entretenimento',''],['=EB','EBITDA','res'],
  ['10','Resultado financeiro',''],['=LL','Lucro líquido','res'],
- ['11','Investimentos',''],['12','Financiamento',''],['CC','Conta corrente com o grupo','']];
+ ['11','Investimentos',''],['12','Financiamento','']];
 function valorLinha(mes,cod){
  var f=function(ks){return soma(ENT,'comp',mes,ks)};
  if(cod==='=RL')return f(['1','2']);
@@ -382,7 +383,6 @@ function ponteTexto(){
   ['Entradas',brl(s.entradas),'tudo que creditou'],
   ['Saídas',brl(Math.abs(s.saidas)),'tudo que debitou'],
   ['EBITDA do mês',brl(ebitda),'competência'],
-  ['Conta corrente com o grupo',brl(Math.abs(cc)),'fora da DRE'],
   ['Investimento',brl(Math.abs(inv)),'fora do EBITDA'],
   ['Saldo final',brl(s.fim),'fim de '+D.meses_nome[MES]]
  ].map(function(b){return '<div class="bx"><div class="t">'+b[0]+'</div><div class="v num">'+b[1]+
@@ -421,7 +421,8 @@ function tabela(reg){
  });
  function tot(o){var t=0;MS.forEach(function(m){t+=o[m]||0});return t}
  var out='';
- Object.keys(grupos).sort(function(a,c){return Math.abs(tot(grupos[c]))-Math.abs(tot(grupos[a]))})
+ Object.keys(grupos).filter(function(g){return !(reg==='comp'&&(g==='CC'||g==='NEUTRO'))})
+ .sort(function(a,c){return Math.abs(tot(grupos[c]))-Math.abs(tot(grupos[a]))})
  .forEach(function(g){
   var kg=reg+'|g|'+g, tg=tot(grupos[g]), ab=!!ABERTO[kg];
   out+='<tr class="g abre" onclick="togNo(\''+kg+'\')"><td class="l"><span class="caret">'+
@@ -489,11 +490,8 @@ function operacao(){
  var k=cozinha(MES), A=acumCozinha(), dias=(D.dias||{})[MES]||30;
  var fixo=k.pessoal+k.ocupacao+k.adm+k.mkt+k.operacao;
  el.innerHTML=[
-  ['Cozinha',pc(k.food,k.venda),brl(k.food)+' em proteína, hortifrúti, secos e frios',
-   'no acumulado do período: '+pc(A.food,A.venda)],
-  ['Bar',pc(k.bar,k.venda),brl(k.bar)+' em bebida','no acumulado: '+pc(A.bar,A.venda)],
-  ['Logística de insumo',pc(k.comum,k.venda),brl(k.comum)+' de frete e diversos',
-   'em Noronha isso pesa como insumo'],
+  ['Insumo de A&B',pc(k.cmv,k.venda),brl(k.cmv)+' de compra no mês',
+   'a abertura por cozinha e bar entra quando o insumo deixar de vir num balde só'],
   ['Equipe',pc(k.pessoal,k.venda),brl(k.pessoal)+' entre fixos, diaristas e alojamento',
    'referência: 25% a 32%'],
   ['Custo de casa aberta',brl(fixo/dias),'por dia de operação',
@@ -578,8 +576,6 @@ function socios(){
   ['Distribuição de lucros',brl(Math.abs(dist)),'financiamento, fora do resultado',''],
   ['Adiantamento a sócio operador',brl(Math.abs(adi)),'compensa na distribuição',''],
   ['Caixa no fim',s1?brl(s1.fim):'—','conta corrente',s0?('abriu em '+brl(s0.ini)):''],
-  ['Conta corrente com o grupo',brl(Math.abs(D.meses.reduce(function(a,m){return a+soma(ENT,'comp',m,['CC'])},0))),
-   'partes relacionadas',''],
   ['Investimento',brl(Math.abs(D.meses.reduce(function(a,m){return a+soma(ENT,'comp',m,['11'])},0))),
    'fora do EBITDA','critério D7']
  ].map(card).join('');
@@ -646,7 +642,7 @@ SEC_ANO = """<section id="tend" class="sec-alt"><div class="wrap">
 <div class="sec-head"><div class="k">O período de 2026</div><h2>A casa <span class="light">mês a mês</span></h2>
 <p class="lede">Venda, custo de insumo, equipe e resultado, com o peso de cada linha sobre a venda do mês — a leitura vertical que se usa em operação de A&amp;B.</p></div>
 <div class="rsm-wrap"><table class="rsm" id="rsm"></table></div>
-<p class="rsm-nota">Análise vertical sobre a receita bruta do mês. <b>CMV</b> são os insumos de A&amp;B; <b>custos de operação</b> incluem energia, água, limpeza, manutenção e o alojamento da equipe, que por decisão de 22/09 é custo direto. Conta corrente com o grupo, transferências e ajustes ficam fora do resultado.</p>
+<p class="rsm-nota">Análise vertical sobre a receita bruta do mês. <b>CMV</b> são os insumos de A&amp;B; <b>custos de operação</b> incluem energia, água, limpeza, manutenção e o alojamento da equipe, que por decisão de 22/09 é custo direto. Transferência entre empresas do grupo, transferência entre contas próprias e ajustes ficam fora do resultado.</p>
 </div></section>
 
 <section id="orcado"><div class="wrap">
