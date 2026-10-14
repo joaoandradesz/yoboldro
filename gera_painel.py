@@ -51,7 +51,7 @@ body{font-family:'Inter',sans-serif;background:var(--offwhite);color:var(--ink);
  background:radial-gradient(circle,rgba(249,115,22,.18),transparent 62%);pointer-events:none}
 .eyebrow{font-family:'Plus Jakarta Sans';font-size:11px;font-weight:700;letter-spacing:.22em;
  text-transform:uppercase;color:var(--orange)}
-.hero h1{font-family:'Plus Jakarta Sans';font-weight:300;font-size:clamp(28px,4vw,44px);
+.hero h1{font-family:'Plus Jakarta Sans';font-weight:300;font-size:clamp(30px,4.4vw,45px);
  line-height:1.08;margin:12px 0 4px;letter-spacing:-.02em}
 .hero h1 b{font-weight:700}
 .cnpjline{font-size:13px;color:#8A91A6;margin-bottom:18px}
@@ -76,17 +76,17 @@ body{font-family:'Inter',sans-serif;background:var(--offwhite);color:var(--ink);
 @media(max-width:560px){.kpis{grid-template-columns:1fr}}
 .kpi{background:var(--card);border:1px solid var(--g200);border-radius:14px;padding:16px 17px 14px;
  box-shadow:var(--shadow)}
-.kpi .t{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--g500)}
-.kpi .v{font-family:'Plus Jakarta Sans';font-size:25px;font-weight:800;letter-spacing:-.025em;margin:7px 0 3px}
-.kpi .d{font-size:12px;color:var(--ink2)}
-.kpi .ref{font-size:11px;color:var(--orange);margin-top:5px;font-weight:600}
+.kpi .t{font-family:'Plus Jakarta Sans',sans-serif;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#6B7280}
+.kpi .v{font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:700;letter-spacing:-.02em;margin:7px 0 3px}
+.kpi .d{font-family:'Inter',sans-serif;font-size:11.5px;font-weight:400;color:#6B7280}
+.kpi .ref{font-family:'Inter',sans-serif;font-size:11px;color:var(--orange);margin-top:5px;font-weight:500}
 section{padding:52px 0}
 .sec-alt{background:#fff;border-top:1px solid var(--g200);border-bottom:1px solid var(--g200)}
 .sec-head{margin-bottom:24px}
 .sec-head .k{font-family:'Plus Jakarta Sans';font-size:11px;font-weight:700;letter-spacing:.2em;
  text-transform:uppercase;color:var(--orange);margin-bottom:7px}
-.sec-head h2{font-family:'Plus Jakarta Sans';font-weight:700;font-size:25px;letter-spacing:-.02em}
-.sec-head .lede{color:var(--ink2);font-size:14.5px;max-width:800px;margin-top:7px}
+.sec-head h2{font-family:'Plus Jakarta Sans';font-weight:700;font-size:30.7px;letter-spacing:-.02em;line-height:1.12}
+.sec-head .lede{font-family:'Fraunces',Georgia,serif;color:var(--ink2);font-size:16px;line-height:1.55;max-width:800px;margin-top:9px}
 .rsm-wrap{overflow-x:auto}
 table.rsm,table.xtbl{width:100%;border-collapse:collapse;font-size:13px;background:#fff;
  border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
@@ -100,7 +100,7 @@ table.rsm,table.xtbl{width:100%;border-collapse:collapse;font-size:13px;backgrou
 .rsm tr.res td{font-weight:800;background:var(--orange-soft);border-top:1px solid #FDBA74}
 tr.g td{font-weight:700}
 td.av{color:var(--g500);font-size:12px}
-.rsm-nota,.repnote{font-size:12.5px;color:var(--g500);margin-top:12px;max-width:880px}
+.rsm-nota,.repnote{font-size:12px;color:var(--g500);margin-top:12px;max-width:880px}
 .pz-grid{display:grid;grid-template-columns:320px 1fr;gap:34px;align-items:center}
 @media(max-width:820px){.pz-grid{grid-template-columns:1fr}}
 .pz-chart{position:relative}
@@ -148,37 +148,74 @@ td.av{color:var(--g500);font-size:12px}
 .foot .fg{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;
  padding-bottom:20px;border-bottom:1px solid var(--line)}
 .foot .sig{font-family:'Fraunces',serif;font-style:italic;font-size:19px;color:#fff}
-.xtbl.mat{font-size:12px}
-.xtbl.mat th{background:#EEF0F4;color:#3B4252;font-weight:700;font-size:9.5px;
- text-transform:uppercase;letter-spacing:.03em;padding:9px 11px;text-align:right}
+/* tipografia medida no painel Amana/Topazio: rotulo em Inter, numero em Plus
+   Jakarta Sans, e o peso acompanhando o nivel da linha. */
+.xtbl.mat{font-family:'Inter',sans-serif;font-size:12px;font-weight:400;color:var(--ink)}
+.xtbl.mat th{font-family:'Plus Jakarta Sans',sans-serif;background:#EEF0F4;color:#3B4252;
+ font-weight:700;font-size:9.5px;letter-spacing:.285px;text-transform:uppercase;
+ padding:9px 11px;text-align:right}
 .xtbl.mat th.l{text-align:left}
-.xtbl.mat td{padding:6px 11px;font-size:12px;text-align:right;white-space:nowrap}
-.xtbl.mat td.l{text-align:left;white-space:normal}
-.xtbl.mat i.avin{display:block;font-style:normal;font-size:8.4px;color:#9CA3AF;margin-top:1px}
+.xtbl.mat td{padding:6px 11px;text-align:right;white-space:nowrap;
+ border-bottom:1px solid #EFEFEC}
+.xtbl.mat td.num{font-family:'Plus Jakarta Sans',sans-serif}
+.xtbl.mat td.l{font-family:'Inter',sans-serif;text-align:left;white-space:normal}
+.xtbl.mat i.avin{display:block;font-style:normal;font-size:8.4px;color:#9CA3AF;
+ margin-top:1px;font-weight:inherit}
 .xtbl.mat .chv{display:inline-block;width:15px;color:var(--orange);font-size:10px}
 .xtbl.mat td.n1{padding-left:24px}
-.xtbl.mat td.n2{padding-left:48px;color:#4B5563;font-size:11.5px}
+.xtbl.mat td.n2{padding-left:48px;font-size:11.5px}
 .xtbl.mat td.n3{padding-left:68px;color:var(--g500);font-size:11px}
-.xtbl.mat tr.xm td{background:#F1F3F6;color:#374151;cursor:pointer}
+
+.xtbl.mat tr.xm td{background:#F1F3F6;color:#374151;cursor:pointer;font-weight:600}
+.xtbl.mat tr.xm td.l{font-weight:400}
 .xtbl.mat tr.lvl1 td{background:#F6F7F9;color:#374151;font-weight:600;cursor:pointer}
-.xtbl.mat tr.lvl2 td{background:#fff;color:#4B5563;font-weight:500;cursor:pointer}
-.xtbl.mat tr.lvl3 td{background:#fff}
+.xtbl.mat tr.lvl2 td{background:#fff;color:#374151;font-weight:500;cursor:pointer;font-size:11.5px}
+.xtbl.mat tr.lvl2 td.l{color:#4B5563}
+.xtbl.mat tr.lvl2 i.avin{font-size:8.05px}
+.xtbl.mat tr.lvl3 td{background:#fff;font-weight:400}
 .xtbl.mat tr.r0 td{background:#1F2937;color:#fff;font-weight:800;cursor:pointer}
-.xtbl.mat tr.sub td{background:#fff;color:#374151;cursor:pointer}
+.xtbl.mat tr.sub td{background:#fff;color:#374151;cursor:pointer;font-weight:400}
 .xtbl.mat tr.sub td.n1{padding-left:26px}
+.xtbl.mat tr.scc td{background:#fff;color:#374151;font-size:11.5px;font-weight:400}
 .xtbl.mat tr.scc td.n2{padding-left:44px}
-.xtbl.mat tr.scc td{background:#fff;color:#374151;font-size:11.5px}
 .xtbl.mat tr.op td{background:#EEF4FF;font-weight:700;border-top:1px solid #C9D8F0}
 .xtbl.mat tr.ebit td{background:#FFF7ED;color:#7A3E00;font-weight:800;
  border-top:1.5px solid var(--orange)}
 .xtbl.mat tr.res td{background:#0D0F1A;color:#fff;font-weight:800;border-top:1.5px solid #0D0F1A}
-.xtbl.mat tr.res i.avin{color:rgba(255,255,255,.55)}
-.xtbl.mat tr.r0 i.avin{color:rgba(255,255,255,.55)}
-.xtbl.mat tr.sep td{background:var(--navy2);color:rgba(255,255,255,.75);font-size:10.5px;
- letter-spacing:.09em;text-transform:uppercase;font-weight:700;padding:8px 12px;text-align:left}
+.xtbl.mat tr.res i.avin,.xtbl.mat tr.r0 i.avin{color:rgba(255,255,255,.55)}
+.xtbl.mat tr.sep td{font-family:'Plus Jakarta Sans',sans-serif;background:var(--navy2);
+ color:rgba(255,255,255,.75);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+ font-weight:700;padding:8px 12px;text-align:left}
 .xtbl.mat td.tt{font-weight:700;border-left:1px solid var(--g200)}
-.xtbl.mat td.avtot{color:var(--g500);font-size:11px}
+.xtbl.mat td.avtot{font-family:'Plus Jakarta Sans',sans-serif;color:var(--g500);
+ font-size:11px;font-weight:500}
 .xtbl.mat tr.xm:hover td,.xtbl.mat tr.lvl1:hover td,.xtbl.mat tr.lvl2:hover td{background:var(--orange-soft)}
+.xtbl.mat td.clic{cursor:pointer}
+.xtbl.mat td.clic:hover{background:var(--orange-soft);box-shadow:inset 0 0 0 1px var(--orange)}
+.cx-fundo{position:fixed;inset:0;background:rgba(13,15,26,.45);display:none;z-index:90;
+ align-items:center;justify-content:center;padding:28px}
+.cx-fundo.on{display:flex}
+.cx{background:#fff;border-radius:14px;max-width:900px;width:100%;max-height:82vh;
+ overflow:auto;box-shadow:0 24px 70px rgba(13,15,26,.3)}
+.cx-cab{display:flex;align-items:center;gap:12px;padding:18px 22px;border-bottom:1px solid var(--g200);
+ position:sticky;top:0;background:#fff}
+.cx-cab h4{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;flex:1}
+.cx-x{background:none;border:none;font-size:22px;color:var(--g500);cursor:pointer;line-height:1}
+.cx-sub{display:flex;justify-content:space-between;padding:12px 22px 0;
+ font-family:'Plus Jakarta Sans',sans-serif;font-size:10.5px;font-weight:700;
+ letter-spacing:.09em;color:var(--g500)}
+.cx-sub b{color:var(--ink)}
+.cx-nota{margin:12px 22px;padding:10px 13px;background:var(--orange-soft);border-radius:8px;
+ font-size:12px;color:var(--ink2)}
+.cx-vazio{padding:26px 22px;color:var(--g500);font-size:13px}
+.cx-tbl{width:100%;border-collapse:collapse;font-size:12.5px}
+.cx-tbl th{background:#F6F7F9;color:var(--g500);font-family:'Plus Jakarta Sans',sans-serif;
+ font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+ padding:9px 22px;text-align:left}
+.cx-tbl th.r,.cx-tbl td.r{text-align:right}
+.cx-tbl td{padding:9px 22px;border-bottom:1px solid #F0F0ED}
+.cx-tbl td.pos{color:var(--in);font-weight:600}
+.cx-tbl td.neg{color:var(--ink);font-weight:600}
 .ress{margin-top:30px;border:1px solid var(--g200);border-radius:12px;background:#fff}
 .ress summary{cursor:pointer;padding:15px 18px;font-size:13.5px;color:var(--ink2);
  list-style:none;display:flex;align-items:center;gap:8px}
@@ -203,8 +240,7 @@ td.av{color:var(--g500);font-size:12px}
  letter-spacing:.09em;text-transform:uppercase;padding:9px 12px}
 .xtbl tr.dfcs td{background:var(--orange-soft);font-weight:700;border-top:1.5px solid var(--orange)}
 .xtbl tr.dfcp td{font-size:11.5px;color:var(--g500);font-style:italic}
-.subt{margin:26px 0 10px;font-size:13px;font-weight:700;color:var(--ink2);
- letter-spacing:.04em;text-transform:uppercase}
+.subt{font-family:'Plus Jakarta Sans',sans-serif;margin:30px 0 12px;font-size:14px;font-weight:600;color:var(--ink2);letter-spacing:.02em}
 .selo{margin-top:7px;font-size:11.5px;color:rgba(255,255,255,.5);letter-spacing:.01em}
 .selo b{color:rgba(255,255,255,.8);font-weight:600}
 .aviso.erro{border-color:var(--out);background:#FFF5F5}
@@ -534,17 +570,47 @@ function cv(k){return '<span class="chv">'+(ABERTO[k]?'▾':'▸')+'</span>'}
    cabe mais mes na largura e a soma visual fecha com o total. */
 function mv(v){return (v<0?'-':'')+Math.abs(v).toLocaleString('pt-BR',
  {minimumFractionDigits:2,maximumFractionDigits:2})}
-function cel(v,base,cls){
+function cel(v,base,cls,abre){
  if(!v)return '<td class="num '+(cls||'')+'">–</td>';
- return '<td class="num '+(cls||'')+'">'+mv(v)+
-        (base?'<i class="avin">'+pc(v,base)+'</i>':'')+'</td>';
+ var a=abre?' onclick="abreCaixa(event,\''+abre[0].replace(/'/g,"\\'")+'\',\''+abre[1]+'\',\''+abre[2]+'\')" class="num clic '+(cls||'')+'"'
+           :' class="num '+(cls||'')+'"';
+ return '<td'+a+'>'+mv(v)+(base?'<i class="avin">'+pc(v,base)+'</i>':'')+'</td>';
 }
-function linhaMat(rot,vals,bases,cls,chave,nivel){
+
+/* caixa de lancamentos: clicar no numero da conta abre a lista daquele mes */
+function abreCaixa(ev,ck,mes,reg){
+ ev.stopPropagation();
+ var b=bloco(ENT,reg,mes), its=(b.itens||[]).filter(function(i){return i[0]===ck});
+ var tot=its.reduce(function(a,i){return a+i[2]},0);
+ var nome=ck.split('|')[1], emp=(ENT==='consol')?'Consolidado':((D.ents[ENT]||{}).nome||ENT);
+ var h='<div class="cx-cab"><h4>'+nome+' · '+D.meses_nome[mes]+' · '+emp+'</h4>'+
+   '<button class="cx-x" onclick="fechaCaixa()">×</button></div>'+
+   '<div class="cx-sub"><span>'+its.length+' LANÇAMENTO(S)</span><b>TOTAL: '+mv(tot)+'</b></div>'+
+   '<div class="cx-nota">'+(reg==='comp'
+     ?'Lançamentos por competência, pela data de emissão — o mesmo critério da linha.'
+     :'Lançamentos pelo caixa, na data em que passaram no extrato — o mesmo critério da linha.')+'</div>';
+ if(!its.length){
+  h+='<div class="cx-vazio">Esta linha não tem lançamento detalhado.</div>';
+ }else{
+  h+='<table class="cx-tbl"><thead><tr><th>Data</th><th>Cliente / fornecedor</th>'+
+     '<th>Banco / conta</th><th>NF</th><th class="r">Valor</th></tr></thead><tbody>';
+  its.sort(function(a,b2){return Math.abs(b2[2])-Math.abs(a[2])}).forEach(function(i){
+   h+='<tr><td>'+i[1].slice(0,5)+'</td><td>'+(i[3]||'—')+'</td><td>'+(i[5]||'—')+'</td>'+
+      '<td>'+(i[4]||'—')+'</td><td class="r '+(i[2]<0?'neg':'pos')+'">'+mv(i[2])+'</td></tr>';
+  });
+  h+='</tbody></table>';
+ }
+ document.getElementById('cx-corpo').innerHTML=h;
+ document.getElementById('cx-fundo').classList.add('on');
+}
+function fechaCaixa(){document.getElementById('cx-fundo').classList.remove('on')}
+function linhaMat(rot,vals,bases,cls,chave,nivel,abreCk,abreReg){
  var t=vals.reduce(function(a,b){return a+b},0);
  var tb=bases?bases.reduce(function(a,b){return a+b},0):0;
  var o='<tr class="'+(cls||'')+'"'+(chave?' onclick="tog(\''+chave+'\')"':'')+'>'+
    '<td class="l n'+(nivel||0)+'">'+(chave?cv(chave):'')+rot+'</td>';
- vals.forEach(function(v,i){o+=cel(v,bases?bases[i]:0)});
+ vals.forEach(function(v,i){o+=cel(v,bases?bases[i]:0,null,
+   (abreCk?[abreCk,D.meses[i],abreReg]:null))});
  return o+cel(t,0,'tt')+'<td class="num avtot">'+(tb?pc(t,tb):'')+'</td></tr>';
 }
 
@@ -622,18 +688,8 @@ function matriz(reg){
     var sa=0,sb=0;MS.forEach(function(m){sa+=Math.abs(bl[m].contas[a]||0);sb+=Math.abs(bl[m].contas[b]||0)});
     return sb-sa}).forEach(function(ck){
     var vc=MS.map(function(m){return bl[m].contas[ck]||0}), kc=kg+'|c'+ck;
-    out+=linhaMat(ck.split('|')[1],vc,base,'lvl2'+(ABERTO[kc]?' open':''),kc,2);
-    if(!ABERTO[kc])return;
-    /* nivel 3: lancamento */
-    var its=[];
-    MS.forEach(function(m){(bl[m].itens||[]).forEach(function(i){if(i[0]===ck)its.push({m:m,d:i[1],v:i[2],q:i[3]})})});
-    its.sort(function(a,b){return a.d.slice(6)+a.d.slice(3,5)+a.d.slice(0,2)>b.d.slice(6)+b.d.slice(3,5)+b.d.slice(0,2)?1:-1});
-    if(!its.length)out+='<tr class="lvl3"><td class="l n3" colspan="'+(MS.length+2)+'">sem detalhe de lançamento</td></tr>';
-    its.forEach(function(i){
-     out+='<tr class="lvl3"><td class="l n3">'+i.d+' · '+(i.q||'—')+'</td>';
-     MS.forEach(function(m){out+=cel(m===i.m?i.v:0,0)});
-     out+='<td class="num"></td><td class="num"></td></tr>';
-    });
+    /* a conta e a folha: o lancamento abre na caixa, ao clicar no numero */
+    out+=linhaMat(ck.split('|')[1],vc,base,'lvl2',null,2,ck,reg);
    });
   });
  });
@@ -1034,7 +1090,7 @@ def pagina(socios=False):
 <button data-r="caixa" class="on" onclick="setRegime('caixa')">Fluxo de Caixa (DFC)</button>
 <button data-r="comp" onclick="setRegime('comp')">DRE (competência)</button></div>
 <div id="rep-fc" class="repwrap on"><table class="xtbl mat"><thead><tr id="fchead"></tr></thead><tbody id="fcbody"></tbody></table>
-<p class="repnote">Demonstração do fluxo de caixa pelo método direto, a partir da movimentação das contas no Omie. Clique em qualquer linha com seta para abrir: o bloco abre nos grupos, o grupo nas contas e a conta nos lançamentos. O saldo abre por empresa e por conta bancária.</p></div>
+<p class="repnote">Demonstração do fluxo de caixa pelo método direto, a partir da movimentação das contas no Omie. Clique na linha com seta para abrir o nível de baixo, e <b>clique em qualquer número para abrir a caixa com os lançamentos</b> daquela conta naquele mês. O saldo abre por empresa e por conta bancária.</p></div>
 <div id="rep-dre" class="repwrap"><table class="xtbl mat"><thead><tr id="drehead"></tr></thead><tbody id="drebody"></tbody></table>
 <div id="auditoria"></div>
 <p class="repnote">Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
@@ -1048,6 +1104,9 @@ def pagina(socios=False):
 <p>R$ 336.706,60 de compra da YO em agosto e setembro estão na conta genérica de insumos, sem separar proteína, hortifrúti, secos ou bebida. É por isso que o mix de cozinha e bar da YO não é confiável e o da Boldró é.</p></div></div></details>
 </div>
 </div></section>
+
+<div id="cx-fundo" class="cx-fundo" onclick="if(event.target===this)fechaCaixa()">
+<div class="cx" id="cx-corpo"></div></div>
 
 <footer class="foot"><div class="wrap"><div class="fg">
 <div><div class="sig">João Victor Andrade de Souza</div><div class="r">Sócio-fundador · Exact BR</div></div>
