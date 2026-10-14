@@ -134,6 +134,16 @@ td.av{color:var(--g500);font-size:12px}
 .foot .fg{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;
  padding-bottom:20px;border-bottom:1px solid var(--line)}
 .foot .sig{font-family:'Fraunces',serif;font-style:italic;font-size:19px;color:#fff}
+.ress{margin-top:30px;border:1px solid var(--g200);border-radius:12px;background:#fff}
+.ress summary{cursor:pointer;padding:15px 18px;font-size:13.5px;color:var(--ink2);
+ list-style:none;display:flex;align-items:center;gap:8px}
+.ress summary::-webkit-details-marker{display:none}
+.ress summary b{color:var(--ink)}
+.ress .chev{margin-left:auto;color:var(--orange);font-size:12px}
+.ress[open] .chev{transform:rotate(180deg)}
+.ress[open] summary{border-bottom:1px solid var(--g200)}
+.ressin{padding:16px 18px 6px}
+.ressin .aviso{margin-bottom:12px}
 .curva{display:flex;align-items:flex-end;gap:5px;margin:16px 0 8px;overflow-x:auto;padding-bottom:4px}
 .cb{flex:1 0 46px;text-align:center}
 .cbv{font-size:10px;color:var(--g500);margin-bottom:4px;white-space:nowrap}
@@ -172,7 +182,7 @@ td.av{color:var(--g500);font-size:12px}
 
 <nav class="nav"><div class="wrap">
 <div class="brand">Grupo <b>Yó / Boldró</b></div>
-<div class="nav-links"><a href="#geral" class="on">Visão geral</a><a href="#tend">Ano</a><a href="#orcado">Orçado × Real</a><a href="#pizza">Saídas</a><a href="#ponte">DRE × Caixa</a><a href="#operacao">Cozinha e bar</a><a href="#equilibrio">Equilíbrio</a><a href="#relatorios">Relatórios</a></div>
+<div class="nav-links"><a href="#geral" class="on">Visão geral</a><a href="#tend">DRE</a><a href="#relatorios">Caixa</a><a href="#vendas-sec">Vendas</a><a href="#orcado">Orçado × Real</a><a href="#equilibrio">Equilíbrio</a></div>
 <div class="entsw" id="entsw">
 <button data-ent="boldro" class="on" onclick="setEntity('boldro')">Boldró</button>
 <button data-ent="yo" onclick="setEntity('yo')">YO</button>
@@ -221,29 +231,13 @@ td.av{color:var(--g500);font-size:12px}
 <p class="repnote">Orçamento revisado enviado pelo Tiago. É <b>consolidado</b>: a planilha não separa YO de Boldró, então o confronto com o realizado só vale na visão Consolidado. O realizado vem do extrato das contas no Omie.</p>
 </div></section>
 
-<section id="pizza" class="sec-alt"><div class="wrap">
-<div class="sec-head"><div class="k">Para onde foi</div><h2>Para onde foi <span class="light">o dinheiro do mês</span></h2>
-<p class="lede">Tudo que saiu no mês, do insumo ao arrendamento, com o peso de cada bloco. É a conta que o gerente faz de cabeça antes de aprovar compra.</p></div>
-<div class="pz-grid">
-<div class="pz-chart"><svg id="pzSvg" viewBox="0 0 320 320"></svg>
-<div class="pz-mid"><span class="pz-t">total</span><b id="pzTot"></b></div></div>
-<div class="pz-leg" id="pzLeg"></div>
-</div>
-</div></section>
-
-<section id="ponte"><div class="wrap">
-<div class="bridge"><div class="bk">A leitura do mês</div>
-<h3 id="brTitle"></h3><p class="bsub" id="brSub"></p>
-<div class="bflow" id="bflow"></div></div>
-</div></section>
-
 <section id="operacao" class="sec-alt"><div class="wrap">
-<div class="sec-head"><div class="k">Cozinha, bar e salão</div>
+<div class="sec-head"><div class="k">Operação</div>
 <h2>Onde vai <span class="light">cada real vendido</span></h2>
-<p class="lede">Casa de comida se mede por food cost, bar cost e prime cost — não por diária e ocupação. As referências ao lado de cada número são escala de mercado para operação de praia com alta sazonalidade; não são meta aprovada.</p></div>
+<p class="lede">Para onde vai cada real que entra: insumo, equipe, casa e atrações. O custo de casa aberta é quanto o dia custa antes de vender o primeiro prato.</p></div>
 <div class="kpis" id="op-kpis" style="margin:0"></div>
 <div style="height:30px"></div>
-<h3 style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:17px;margin-bottom:14px">Mix de insumo <span class="light">— cozinha × bar</span></h3>
+<h3 style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:17px;margin-bottom:14px">Composição <span class="light">do que saiu</span></h3>
 <div id="op-mix"></div>
 <p class="repnote">Sem integração com o PDV não há ticket médio, número de couverts nem venda por canal — salão, bar, beach club e day use vivem no 3LM. O que dá para medir pelo financeiro é o <b>mix de compra</b>: quanto do insumo foi para a cozinha e quanto foi para o bar.</p>
 </div></section>
@@ -277,19 +271,13 @@ td.av{color:var(--g500);font-size:12px}
 <div id="auditoria"></div>
 <p class="repnote">Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
 
-<div style="margin-top:34px">
-<div class="aviso"><h4>A receita está pelo líquido da GetNet<span class="tag">ressalva</span></h4>
-<p>O que entra no banco é o repasse líquido da adquirente. A receita bruta e a taxa de cartão ainda não existem na base, e o custo de antecipação também não — com o extrato de vendas detalhado da GetNet isso é reclassificado e a margem muda.</p></div>
-<div class="aviso"><h4>Caixa e competência já não contam a mesma história</h4>
-<p>O fluxo de caixa é o que passou pelo banco em agosto e setembro de 2026. A competência vai além: a folha de setembro da Boldró e as compras a prazo que vencem em outubro já estão lançadas como título em aberto e entram no resultado do mês em que foram geradas — são 54 títulos que não vieram da conciliação bancária. Por isso a margem por competência é menor, e mais honesta, que a do caixa.</p></div>
-<div class="aviso"><h4>A YO está carregada, mas a casa fatura no CNPJ da Boldró<span class="tag">leitura</span></h4>
-<p>A base da YO está carregada até 09/10 e o caixa fecha com o extrato do Bradesco. A venda de salão aparece inteira na Boldró: na YO o que existe é obra, pré-operação, estoque inicial, equipe e arrendamento. A receita de setembro da YO é de R$ 5.998 e é o PIX que a Boldró mandou em 15/09 — até 12/10 havia R$ 5.206 a mais ali, que eram transferências da conta Mercado Pago da própria YO lançadas como receita e já foram reclassificadas.</p></div>
-<div class="aviso"><h4>Os dois caixas fecham no centavo com o extrato do banco<span class="tag">conciliado</span></h4>
-<p>Boldró em 30/09: R$ 599.857,30 no Omie e R$ 599.857,30 no Santander. YO em 30/09: R$ 142.214,80 no Omie e R$ 142.214,80 no Bradesco. Os 1.048 movimentos de setembro da Boldró batem um a um por data e valor. Três coisas tiveram que ser arrumadas na base para chegar aqui: as pernas da varredura automática das duas aplicações, que o banco mostra todo dia e o Omie não tinha; as quatro tarifas de PIX de 24/09 da YO, que faltavam na conciliação do CSC; e o piso de R$ 1,00 da conta corrente da YO, que estava contado duas vezes na abertura.</p></div>
-<div class="aviso"><h4>A conta corrente entre as duas não fecha<span class="tag">ressalva</span></h4>
-<p>Em 20/08 a YO transferiu R$ 100 mil para a Boldró — conferido no extrato do Santander, PIX recebido do CNPJ da YO. Esse par tem as duas pernas e foi eliminado no consolidado. Mas a Boldró ainda registra R$ 107.162,82 que pagou por conta da YO e que a YO nunca lançou do lado dela. Enquanto esse espelho não for feito, esse custo não aparece no resultado de nenhuma das duas.</p></div>
-<div class="aviso"><h4>O insumo da YO está num saco só</h4>
-<p>R$ 336.706,60 de compra da YO em agosto e setembro estão na conta genérica de insumos, sem separar proteína, hortifrúti, secos ou bebida. É por isso que o mix de cozinha e bar da YO não é confiável e o da Boldró é.</p></div>
+<details class="ress"><summary><b>Ressalvas e critérios</b> · 6 pontos que mudam a leitura dos números<span class="chev">▾</span></summary><div class="ressin"><div class="aviso"><h4>A receita está pelo líquido da GetNet<span class="tag">ressalva</span></h4>
+<p>O que entra no banco é o repasse líquido da adquirente. A receita bruta e a taxa de cartão ainda não existem na base, e o custo de antecipação também não — com o extrato de vendas detalhado da GetNet isso é reclassificado e a margem muda.</p></div><div class="aviso"><h4>Caixa e competência já não contam a mesma história</h4>
+<p>O fluxo de caixa é o que passou pelo banco em agosto e setembro de 2026. A competência vai além: a folha de setembro da Boldró e as compras a prazo que vencem em outubro já estão lançadas como título em aberto e entram no resultado do mês em que foram geradas — são 54 títulos que não vieram da conciliação bancária. Por isso a margem por competência é menor, e mais honesta, que a do caixa.</p></div><div class="aviso"><h4>A YO está carregada, mas a casa fatura no CNPJ da Boldró<span class="tag">leitura</span></h4>
+<p>A base da YO está carregada até 09/10 e o caixa fecha com o extrato do Bradesco. A venda de salão aparece inteira na Boldró: na YO o que existe é obra, pré-operação, estoque inicial, equipe e arrendamento. A receita de setembro da YO é de R$ 5.998 e é o PIX que a Boldró mandou em 15/09 — até 12/10 havia R$ 5.206 a mais ali, que eram transferências da conta Mercado Pago da própria YO lançadas como receita e já foram reclassificadas.</p></div><div class="aviso"><h4>Os dois caixas fecham no centavo com o extrato do banco<span class="tag">conciliado</span></h4>
+<p>Boldró em 30/09: R$ 599.857,30 no Omie e R$ 599.857,30 no Santander. YO em 30/09: R$ 142.214,80 no Omie e R$ 142.214,80 no Bradesco. Os 1.048 movimentos de setembro da Boldró batem um a um por data e valor. Três coisas tiveram que ser arrumadas na base para chegar aqui: as pernas da varredura automática das duas aplicações, que o banco mostra todo dia e o Omie não tinha; as quatro tarifas de PIX de 24/09 da YO, que faltavam na conciliação do CSC; e o piso de R$ 1,00 da conta corrente da YO, que estava contado duas vezes na abertura.</p></div><div class="aviso"><h4>A conta corrente entre as duas não fecha<span class="tag">ressalva</span></h4>
+<p>Em 20/08 a YO transferiu R$ 100 mil para a Boldró — conferido no extrato do Santander, PIX recebido do CNPJ da YO. Esse par tem as duas pernas e foi eliminado no consolidado. Mas a Boldró ainda registra R$ 107.162,82 que pagou por conta da YO e que a YO nunca lançou do lado dela. Enquanto esse espelho não for feito, esse custo não aparece no resultado de nenhuma das duas.</p></div><div class="aviso"><h4>O insumo da YO está num saco só</h4>
+<p>R$ 336.706,60 de compra da YO em agosto e setembro estão na conta genérica de insumos, sem separar proteína, hortifrúti, secos ou bebida. É por isso que o mix de cozinha e bar da YO não é confiável e o da Boldró é.</p></div></div></details>
 </div>
 </div></section>
 
@@ -460,7 +448,10 @@ function vendasBloco(){
  var tr=0; cats.forEach(function(k){tr+=V.abc[k].receita});
  h+='<tr class="dfcs"><td class="l">Venda de produtos</td><td class="num">'+brl(tr)+'</td>'+
     '<td class="av"></td><td class="num"></td><td class="av"></td><td class="num"></td><td class="num"></td></tr>';
- h+='</tbody></table><p class="repnote">Fonte: relatório de vendas do 3LM/Gourmet. '+
+ h+='</tbody></table><p class="repnote"><b>Ticket individual e por mesa continuam em construção:</b> '+
+    'o 3LM exporta a comanda, mas não o número de pessoas nem a mesa física. '+
+    'Com essas duas colunas na exportação os dois indicadores entram. '+
+    'Fonte: relatório de vendas do 3LM/Gourmet. '+
     'A curva de cada categoria é calculada sobre a receita daquela categoria, não sobre o total. '+
     'Classe A vai até 80% do faturamento do grupo, B de 80% a 95%, C os 5% finais. '+
     'A venda de produtos exclui taxa de serviço e rolha, por isso é menor que o recebido no mês.</p>';
@@ -508,8 +499,6 @@ function kpis(){
   ['Venda líquida',brl(k.venda),'o que a casa vendeu em '+D.meses_nome[MES],'líquido da maquininha'],
   ['Venda por dia',brl(k.venda/dias),dias+' dias de operação','é o número que o salão sente'],
   tkCard(),
-  ['Ticket médio individual',emC('o 3LM não exporta nº de pessoas por conta'),'',''],
-  ['Ticket médio por mesa',emC('o 3LM exporta comanda, não mesa física'),'',''],
   ['Margem EBITDA',pc(ebitda,k.venda),brl(ebitda)+' no mês','distorcida pelo recorte'],
   ['Dinheiro em caixa',brl(s.fim),'no banco ao fim do mês',
    fixo?('dá para '+(s.fim/fixo).toFixed(1).replace('.',',')+' mês de casa aberta'):''],
@@ -968,7 +957,7 @@ function render(){
  document.getElementById('wfTitle').textContent='Ponte do caixa · '+D.meses_nome[MES];
  document.getElementById('kpis').innerHTML=kpis();
  var t=document.getElementById('rsm'); if(t)t.innerHTML=rsm();
- pizza(); ponteTexto(); operacao(); equilibrio(); socios();
+ operacao(); equilibrio(); socios();
  var dh=document.getElementById('dfchead');
  if(dh){var th='<th class="l">Fluxo de caixa</th>';
   D.meses.forEach(function(m){th+='<th>'+D.meses_nome[m]+'</th>'});
