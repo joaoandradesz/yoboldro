@@ -147,6 +147,13 @@ td.av{color:var(--g500);font-size:12px}
 .foot .fg{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;
  padding-bottom:20px;border-bottom:1px solid var(--line)}
 .foot .sig{font-family:'Fraunces',serif;font-style:italic;font-size:19px;color:#fff}
+.xtbl.dfc{margin-bottom:10px}
+.xtbl tr.dfct td{background:var(--navy);color:#fff;font-size:11px;font-weight:700;
+ letter-spacing:.09em;text-transform:uppercase;padding:9px 12px}
+.xtbl tr.dfcs td{background:var(--orange-soft);font-weight:700;border-top:1.5px solid var(--orange)}
+.xtbl tr.dfcp td{font-size:11.5px;color:var(--g500);font-style:italic}
+.subt{margin:26px 0 10px;font-size:13px;font-weight:700;color:var(--ink2);
+ letter-spacing:.04em;text-transform:uppercase}
 .selo{margin-top:7px;font-size:11.5px;color:rgba(255,255,255,.5);letter-spacing:.01em}
 .selo b{color:rgba(255,255,255,.8);font-weight:600}
 .aviso.erro{border-color:var(--out);background:#FFF5F5}
@@ -174,17 +181,22 @@ function brl(v,c){c=c||0;var s=Math.abs(v).toLocaleString('pt-BR',{minimumFracti
  return (v<0?'−':'')+'R$ '+s}
 function pc(v,b){return b?(100*v/b).toFixed(1).replace('.',',')+'%':'—'}
 
-/* entidade virtual: consolidado soma as duas e elimina a conta corrente entre elas */
+function elim(k){return /YO Noronha|Yo - Boldr|corrente Boldr/i.test(k)}
+/* entidade virtual: consolidado soma as duas e elimina a conta corrente entre elas,
+   mas só no resultado — no caixa o dinheiro passou pelos dois bancos */
 function bloco(ent,reg,mes){
  if(ent==='consol'){
   var o={grupos:{},contas:{},lanc:{},familias:{},itens:[]};
   ['boldro','yo'].forEach(function(e){
    var b=((D.ents[e]||{})[reg]||{})[mes]; if(!b)return;
    Object.keys(b.familias||{}).forEach(function(f){o.familias[f]=(o.familias[f]||0)+b.familias[f]});
-   (b.itens||[]).forEach(function(i){if(!/YO Noronha|Yo - Boldr|corrente Boldr/i.test(i[0]))o.itens.push(i)});
+   /* a eliminacao intercompany vale para o RESULTADO, nao para o caixa: no extrato
+      o dinheiro saiu de um banco e entrou no outro de verdade. Eliminar no DFC fazia
+      a geracao de caixa final deixar de bater com a variacao do saldo. */
+   (b.itens||[]).forEach(function(i){if(reg!=='comp'||!elim(i[0]))o.itens.push(i)});
    Object.keys(b.grupos).forEach(function(g){o.grupos[g]=(o.grupos[g]||0)+b.grupos[g]});
    Object.keys(b.contas).forEach(function(k){
-    if(/YO Noronha|Yo - Boldr|corrente Boldr/i.test(k))return;  /* eliminação intercompany */
+    if(reg==='comp'&&elim(k))return;              /* eliminação intercompany: só no resultado */
     o.contas[k]=(o.contas[k]||0)+b.contas[k];
     o.lanc[k]=(o.lanc[k]||0)+(b.lanc[k]||0);
    });
@@ -396,6 +408,11 @@ function ponteTexto(){
 var ABERTO={};                     /* o que o usuario abriu: grupo e conta */
 function togNo(k){
  ABERTO[k]=!ABERTO[k];
+ var dh=document.getElementById('dfchead');
+ if(dh){var th='<th class="l">Fluxo de caixa</th>';
+  D.meses.forEach(function(m){th+='<th>'+D.meses_nome[m]+'</th>'});
+  dh.innerHTML=th+'<th>acumulado</th>';}
+ var db=document.getElementById('dfcbody'); if(db)db.innerHTML=dfcEstruturado();
  ['fc','dre'].forEach(function(t){
   var h=document.getElementById(t+'head'); if(!h)return;
   var th='<th class="l">'+(t==='fc'?'Demonstrativo do caixa':'Categoria')+'</th>';
@@ -413,6 +430,69 @@ function togNo(k){
  if(er.length&&window.console)console.error('auditoria da tabela:',er);
 }
 function tdMes(v){return '<td class="num">'+(v?brl(v):'<span class="z">—</span>')+'</td>'}
+
+/* DFC no formato do grupo: tres blocos fechando em geracao de caixa operacional
+   e geracao de caixa final. A linha e a soma dos grupos do plano gerencial. */
+var DFC=[
+ ['t','1. ATIVIDADES OPERACIONAIS',null],
+ ['l','Recebimentos de clientes',['1']],
+ ['l','Outros recebimentos (reembolso e rateio)',['OR']],
+ ['l','(−) Estornos e devoluções a clientes',['2']],
+ ['l','(−) Pagamentos de CMV (insumos e fretes)',['4']],
+ ['l','(−) Pessoal',['6']],
+ ['l','(−) Custos de operação',['5']],
+ ['l','(−) Ocupação',['7']],
+ ['l','(−) Artistas e entretenimento',['9']],
+ ['l','(−) Administrativas e gerais',['8']],
+ ['l','(−) Despesas variáveis de venda',['3']],
+ ['l','(+/−) Resultado financeiro',['10']],
+ ['s','(=) GERAÇÃO DE CAIXA OPERACIONAL',['1','OR','2','3','4','5','6','7','8','9','10']],
+ ['t','2. IMPLANTAÇÃO E INVESTIMENTO',null],
+ ['l','(−) Obra, equipamentos e pré-operação',['11']],
+ ['s','(=) Caixa líquido de investimento',['11']],
+ ['t','3. FINANCIAMENTO',null],
+ ['l','(+) Aporte de sócios e empréstimos',['12']],
+ ['s','(=) Caixa líquido de financiamento',['12']],
+ ['t','4. MOVIMENTAÇÕES ENTRE CONTAS DO GRUPO',null],
+ ['l','Transferência entre empresas do grupo',['CC']],
+ ['l','Transferência entre contas próprias e ajustes',['NEUTRO','13']],
+ ['s','(=) GERAÇÃO DE CAIXA FINAL',['1','OR','2','3','4','5','6','7','8','9','10','11','12','CC','NEUTRO','13']]
+];
+function dfcEstruturado(){
+ if(!temDado(ENT))return '<tr><td class="l" colspan="'+(D.meses.length+2)+'">Sem lançamento no Omie.</td></tr>';
+ var MS=D.meses, out='';
+ var base=0; MS.forEach(function(m){base+=Math.abs(soma(ENT,'caixa',m,['1']))}); base=base||1;
+ DFC.forEach(function(L){
+  var tipo=L[0], rot=L[1], gs=L[2];
+  if(tipo==='t'){
+   out+='<tr class="dfct"><td class="l" colspan="'+(MS.length+2)+'">'+rot+'</td></tr>';
+   return;
+  }
+  var v=MS.map(function(m){return soma(ENT,'caixa',m,gs)});
+  var t=v.reduce(function(a,b){return a+b},0);
+  if(tipo==='l'&&!t&&!v.some(function(x){return x}))return;          /* linha zerada some */
+  out+='<tr class="'+(tipo==='s'?'dfcs':'')+'"><td class="l">'+rot+'</td>';
+  v.forEach(function(x){out+=tdMes(x)});
+  out+='<td class="num tt">'+brl(t)+'</td></tr>';
+ });
+ /* saldo: vem do extrato, nao da soma das linhas */
+ var si=saldos(ENT,MS[0]), sf=saldos(ENT,MS[MS.length-1]);
+ out+='<tr class="dfct"><td class="l" colspan="'+(MS.length+2)+'">SALDO DE CAIXA</td></tr>';
+ out+='<tr><td class="l">Saldo inicial</td>';
+ MS.forEach(function(m){var x=saldos(ENT,m);out+=tdMes(x?x.ini:0)});
+ out+='<td class="num tt">'+brl(si?si.ini:0)+'</td></tr>';
+ out+='<tr class="dfcs"><td class="l">SALDO FINAL</td>';
+ MS.forEach(function(m){var x=saldos(ENT,m);out+=tdMes(x?x.fim:0)});
+ out+='<td class="num tt">'+brl(sf?sf.fim:0)+'</td></tr>';
+ /* prova: saldo final menos inicial tem que ser a geracao de caixa final */
+ var ger=MS.reduce(function(a,m){return a+soma(ENT,'caixa',m,
+   ['1','OR','2','3','4','5','6','7','8','9','10','11','12','CC','NEUTRO','13'])},0);
+ var var_=(sf?sf.fim:0)-(si?si.ini:0), dif=ger-var_;
+ out+='<tr class="dfcp"><td class="l">Prova: variação do saldo no extrato</td>';
+ MS.forEach(function(){out+='<td></td>'});
+ out+='<td class="num">'+brl(var_)+(Math.abs(dif)<0.02?' ✓':' <b>✗ '+brl(dif)+'</b>')+'</td></tr>';
+ return out;
+}
 
 /* Audita a tabela nos tres niveis contra o dado. Roda a cada render e, se algo nao
    fechar, aparece em tela em vez de passar batido. Nasceu do bug de 14/10, em que
@@ -636,6 +716,11 @@ function render(){
  document.getElementById('kpis').innerHTML=kpis();
  var t=document.getElementById('rsm'); if(t)t.innerHTML=rsm();
  pizza(); ponteTexto(); operacao(); equilibrio(); socios();
+ var dh=document.getElementById('dfchead');
+ if(dh){var th='<th class="l">Fluxo de caixa</th>';
+  D.meses.forEach(function(m){th+='<th>'+D.meses_nome[m]+'</th>'});
+  dh.innerHTML=th+'<th>acumulado</th>';}
+ var db=document.getElementById('dfcbody'); if(db)db.innerHTML=dfcEstruturado();
  ['fc','dre'].forEach(function(t){
   var h=document.getElementById(t+'head'); if(!h)return;
   var th='<th class="l">'+(t==='fc'?'Demonstrativo do caixa':'Categoria')+'</th>';
@@ -784,7 +869,11 @@ def pagina(socios=False):
 <div class="rep-switch">
 <button data-r="caixa" class="on" onclick="setRegime('caixa')">Fluxo de Caixa (DFC)</button>
 <button data-r="comp" onclick="setRegime('comp')">DRE (competência)</button></div>
-<div id="rep-fc" class="repwrap on"><table class="xtbl"><thead><tr id="fchead"></tr></thead><tbody id="fcbody"></tbody></table>
+<div id="rep-fc" class="repwrap on">
+<table class="xtbl dfc"><thead><tr id="dfchead"></tr></thead><tbody id="dfcbody"></tbody></table>
+<p class="repnote">Demonstração do fluxo de caixa pelo método direto, a partir da movimentação das contas correntes no Omie. O saldo inicial e o final vêm do extrato, não da soma das linhas — a última linha prova que as duas coisas fecham.</p>
+<h4 class="subt">Abertura por categoria e lançamento</h4>
+<table class="xtbl"><thead><tr id="fchead"></tr></thead><tbody id="fcbody"></tbody></table>
 <p class="repnote">Fonte: extrato das contas no Omie, conferido movimento a movimento contra o extrato do banco. Uma coluna por mês, sem somar. Clique no grupo para abrir as contas e na conta para abrir os lançamentos, com data e contraparte.</p></div>
 <div id="rep-dre" class="repwrap"><table class="xtbl"><thead><tr id="drehead"></tr></thead><tbody id="drebody"></tbody></table>
 <div id="auditoria"></div>
