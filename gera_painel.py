@@ -147,6 +147,15 @@ td.av{color:var(--g500);font-size:12px}
 .foot .fg{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;
  padding-bottom:20px;border-bottom:1px solid var(--line)}
 .foot .sig{font-family:'Fraunces',serif;font-style:italic;font-size:19px;color:#fff}
+.curva{display:flex;align-items:flex-end;gap:5px;margin:16px 0 8px;overflow-x:auto;padding-bottom:4px}
+.cb{flex:1 0 46px;text-align:center}
+.cbv{font-size:10px;color:var(--g500);margin-bottom:4px;white-space:nowrap}
+.cbb{background:var(--in);border-radius:3px 3px 0 0;margin:0 auto;width:72%}
+.cb.n .cbb{background:var(--out)}
+.cb.n .cbv{color:var(--out);font-weight:700}
+.cbl{font-size:10px;color:var(--g500);margin-top:5px;white-space:nowrap}
+.xtbl td.pos{color:var(--in)}
+.xtbl td.neg{color:var(--out)}
 .xtbl.dfc{margin-bottom:10px}
 .xtbl tr.dfct td{background:var(--navy);color:#fff;font-size:11px;font-weight:700;
  letter-spacing:.09em;text-transform:uppercase;padding:9px 12px}
@@ -413,6 +422,7 @@ function togNo(k){
   D.meses.forEach(function(m){th+='<th>'+D.meses_nome[m]+'</th>'});
   dh.innerHTML=th+'<th>acumulado</th>';}
  var db=document.getElementById('dfcbody'); if(db)db.innerHTML=dfcEstruturado();
+ orcado();
  ['fc','dre'].forEach(function(t){
   var h=document.getElementById(t+'head'); if(!h)return;
   var th='<th class="l">'+(t==='fc'?'Demonstrativo do caixa':'Categoria')+'</th>';
@@ -675,6 +685,63 @@ function equilibrio(){
  ].map(card).join('');
 }
 
+/* orcado x realizado e a curva de caixa projetada */
+function orcado(){
+ var cx=document.getElementById('orc-box'), pj=document.getElementById('orc-proj');
+ if(!cx)return;
+ var O=D.orcamento;
+ if(!O){cx.innerHTML='<div class="vazio"><h4>Orçamento não carregado</h4></div>';return}
+ if(ENT!=='consol'){
+  cx.innerHTML='<div class="vazio"><h4>O orçamento é consolidado</h4>'+
+   '<p>A planilha do Tiago projeta YO e Boldró juntas, sem separar por CNPJ. '+
+   'Troque para <b>Consolidado</b> no topo para ver o confronto.</p></div>';
+  pj.innerHTML=''; return;
+ }
+ /* meses em que ha orcamento E realizado */
+ var comuns=D.meses.filter(function(m){return O.linhas.saldo_fim&&(m in O.linhas.saldo_fim)});
+ var L=[['Entradas de clientes','entradas',['1','OR']],
+        ['Saídas operacionais','saidas_op',['2','3','4','5','6','7','8','9','10']],
+        ['Geração de caixa operacional','ger_operacional',['1','OR','2','3','4','5','6','7','8','9','10']],
+        ['Investimento','investimento',['11']],
+        ['Geração de caixa final','ger_final',['1','OR','2','3','4','5','6','7','8','9','10','11','12','CC','NEUTRO','13']]];
+ if(!comuns.length){
+  cx.innerHTML='<div class="vazio"><h4>Ainda não há mês com orçamento e realizado juntos</h4>'+
+   '<p>O orçamento começa em '+O.meses_nome[O.meses[0]]+' e o realizado vai até '+
+   D.meses_nome[D.meses[D.meses.length-1]]+'.</p></div>';
+ }else{
+  var h='<table class="xtbl"><thead><tr><th class="l">Linha</th>';
+  comuns.forEach(function(m){h+='<th>'+D.meses_nome[m]+' orçado</th><th>'+D.meses_nome[m]+' realizado</th><th>variação</th>'});
+  h+='</tr></thead><tbody>';
+  L.forEach(function(l){
+   h+='<tr'+(l[1].indexOf('ger_')===0?' class="dfcs"':'')+'><td class="l">'+l[0]+'</td>';
+   comuns.forEach(function(m){
+    var o=(O.linhas[l[1]]||{})[m]||0, r=soma(ENT,'caixa',m,l[2]);
+    var d=r-o, bom=(l[0].indexOf('Saídas')===0||l[0]==='Investimento')?(d>0):(d>=0);
+    h+=tdMes(o)+tdMes(r)+'<td class="num '+(Math.abs(d)<1?'':(bom?'pos':'neg'))+'">'+brl(d)+'</td>';
+   });
+   h+='</tr>';
+  });
+  h+='</tbody></table>';
+  cx.innerHTML=h;
+ }
+ /* curva do saldo projetado */
+ var sf=O.linhas.saldo_fim||{}, ms=O.meses.filter(function(m){return m in sf});
+ var vs=ms.map(function(m){return sf[m]}), mx=Math.max.apply(null,vs.map(Math.abs))||1;
+ var neg=ms.filter(function(m){return sf[m]<0});
+ var g='<div class="curva">';
+ ms.forEach(function(m){
+  var v=sf[m], alt=Math.max(4,Math.round(62*Math.abs(v)/mx));
+  g+='<div class="cb'+(v<0?' n':'')+'"><div class="cbv">'+brl(v/1000,0)+'k</div>'+
+     '<div class="cbb" style="height:'+alt+'px"></div>'+
+     '<div class="cbl">'+(O.meses_nome[m]||m)+'</div></div>';
+ });
+ g+='</div>';
+ if(neg.length)g+='<div class="aviso erro"><h4>O caixa projetado fica negativo em '+neg.length+' meses</h4>'+
+   '<p>'+neg.map(function(m){return O.meses_nome[m]+' ('+brl(sf[m])+')'}).join(' · ')+
+   '. O pior é '+O.meses_nome[neg.reduce(function(a,b){return sf[a]<sf[b]?a:b})]+'.</p></div>';
+ pj.innerHTML=g;
+}
+
 function socios(){
  var el=document.getElementById('soc-kpis'); if(!el)return;
  var pro=0,dist=0,adi=0;
@@ -721,6 +788,7 @@ function render(){
   D.meses.forEach(function(m){th+='<th>'+D.meses_nome[m]+'</th>'});
   dh.innerHTML=th+'<th>acumulado</th>';}
  var db=document.getElementById('dfcbody'); if(db)db.innerHTML=dfcEstruturado();
+ orcado();
  ['fc','dre'].forEach(function(t){
   var h=document.getElementById(t+'head'); if(!h)return;
   var th='<th class="l">'+(t==='fc'?'Demonstrativo do caixa':'Categoria')+'</th>';
@@ -782,8 +850,10 @@ SEC_ANO = """<section id="tend" class="sec-alt"><div class="wrap">
 <section id="orcado"><div class="wrap">
 <div class="sec-head"><div class="k">Orçamento 2026</div><h2>Orçado <span class="light">× realizado</span></h2>
 <p class="lede">Confronto do orçamento com o que de fato aconteceu, linha a linha, no plano de contas.</p></div>
-<div class="vazio"><h4>Não há orçamento aprovado para a Boldró nem para a YO</h4>
-<p>A seção existe no esqueleto e passa a ser preenchida assim que o orçamento de 2026 for fechado com o CSC — é aqui que, na Amana e na Topázio, entra o confronto linha a linha.</p></div>
+<div id="orc-box"></div>
+<h4 class="subt">Projeção de caixa até o fim de 2027</h4>
+<div id="orc-proj"></div>
+<p class="repnote">Orçamento revisado enviado pelo Tiago. É <b>consolidado</b>: a planilha não separa YO de Boldró, então o confronto com o realizado só vale na visão Consolidado. O realizado vem do extrato das contas no Omie.</p>
 </div></section>"""
 
 SEC_SOCIOS = """<section id="socios" class="sec-alt"><div class="wrap">
