@@ -147,6 +147,28 @@ td.av{color:var(--g500);font-size:12px}
 .foot .fg{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;
  padding-bottom:20px;border-bottom:1px solid var(--line)}
 .foot .sig{font-family:'Fraunces',serif;font-style:italic;font-size:19px;color:#fff}
+.xtbl.mat td,.xtbl.mat th{padding:6px 9px;font-size:12.5px}
+.xtbl.mat td.num{white-space:nowrap}
+.xtbl.mat i.av{display:block;font-style:normal;font-size:9.5px;color:var(--g400);margin-top:1px}
+.xtbl.mat .cv{display:inline-block;width:14px;color:var(--orange);font-size:10px}
+.xtbl.mat td.n1{padding-left:22px}
+.xtbl.mat td.n2{padding-left:40px;color:var(--ink2)}
+.xtbl.mat td.n3{padding-left:58px;color:var(--g500);font-size:11.5px}
+.xtbl.mat tr.xm td{font-weight:700;background:#F7F7F5;cursor:pointer}
+.xtbl.mat tr.lvl1 td{font-weight:600;cursor:pointer}
+.xtbl.mat tr.lvl2 td{cursor:pointer}
+.xtbl.mat tr.lvl3 td{background:#FCFCFB}
+.xtbl.mat tr.r0 td{font-weight:700;background:var(--navy3);color:#fff;cursor:pointer}
+.xtbl.mat tr.r0 .cv{color:var(--orange)}
+.xtbl.mat tr.sub td{font-weight:600;background:#EEF0F4;cursor:pointer}
+.xtbl.mat tr.scc td{background:#F6F7F9;color:var(--ink2);font-size:11.5px}
+.xtbl.mat tr.op td{font-weight:700;background:#EEF4FF;border-top:1px solid #C9D8F0}
+.xtbl.mat tr.ebit td{font-weight:800;background:var(--orange-soft);border-top:1.5px solid var(--orange)}
+.xtbl.mat tr.res td{font-weight:800;background:var(--navy);color:#fff;border-top:1.5px solid var(--navy)}
+.xtbl.mat tr.res i.av{color:rgba(255,255,255,.55)}
+.xtbl.mat tr.sep td{background:var(--navy2);color:rgba(255,255,255,.75);font-size:10.5px;
+ letter-spacing:.09em;text-transform:uppercase;font-weight:700;padding:8px 12px}
+.xtbl.mat td.tt{font-weight:700;border-left:1px solid var(--g200)}
 .ress{margin-top:30px;border:1px solid var(--g200);border-radius:12px;background:#fff}
 .ress summary{cursor:pointer;padding:15px 18px;font-size:13.5px;color:var(--ink2);
  list-style:none;display:flex;align-items:center;gap:8px}
@@ -493,275 +515,163 @@ function ponteTexto(){
   '</div><div class="d">'+b[2]+'</div></div>'}).join('');
 }
 
-var ABERTO={};                     /* o que o usuario abriu: grupo e conta */
-function togNo(k){
- ABERTO[k]=!ABERTO[k];
- var dh=document.getElementById('dfchead');
- if(dh){var th='<th class="l">Fluxo de caixa</th>';
-  D.meses.forEach(function(m){th+='<th>'+D.meses_nome[m]+'</th>'});
-  dh.innerHTML=th+'<th>acumulado</th>';}
- var db=document.getElementById('dfcbody'); if(db)db.innerHTML=dfcEstruturado();
- orcado(); vendasBloco();
+var ABERTO={};                  /* nos abertos, por chave */
+function tog(k){ABERTO[k]=!ABERTO[k];pintaRelatorios()}
+function cv(k){return '<span class="cv">'+(ABERTO[k]?'▾':'▸')+'</span>'}
+
+/* celula: valor com a analise vertical dentro, como no painel Amana/Topazio */
+function cel(v,base,cls){
+ if(!v)return '<td class="num '+(cls||'')+'"><span class="z">–</span></td>';
+ return '<td class="num '+(cls||'')+'">'+brl(v)+
+        (base?'<i class="av">'+pc(v,base)+'</i>':'')+'</td>';
+}
+function linhaMat(rot,vals,bases,cls,chave,nivel){
+ var t=vals.reduce(function(a,b){return a+b},0);
+ var tb=bases?bases.reduce(function(a,b){return a+b},0):0;
+ var o='<tr class="'+(cls||'')+'"'+(chave?' onclick="tog(\''+chave+'\')"':'')+'>'+
+   '<td class="l n'+(nivel||0)+'">'+(chave?cv(chave):'')+rot+'</td>';
+ vals.forEach(function(v,i){o+=cel(v,bases?bases[i]:0)});
+ return o+cel(t,0,'tt')+'<td class="av tot">'+(tb?pc(t,tb):'')+'</td></tr>';
+}
+
+/* ---- estrutura das duas demonstracoes, com os grupos do nosso plano ---- */
+var BLOCOS_DFC=[
+ ['(+) Recebimentos',['1','OR']],
+ ['(−) Deduções e estornos',['2']],
+ ['(−) Custos',['3','4','5']],
+ ['(−) Despesas',['6','7','8','9']],
+ ['(±) Resultado financeiro',['10']],
+ ['=GERAÇÃO DE CAIXA OPERACIONAL',['1','OR','2','3','4','5','6','7','8','9','10']],
+ ['(−) Investimentos',['11']],
+ ['(±) Financiamento',['12']],
+ ['(±) Não operacional e transferências',['CC','NEUTRO','13']],
+ ['*GERAÇÃO DE CAIXA FINAL',['1','OR','2','3','4','5','6','7','8','9','10','11','12','CC','NEUTRO','13']]
+];
+var BLOCOS_DRE=[
+ ['Receita bruta',['1']],
+ ['(−) Deduções',['2']],
+ ['+Receita líquida',['1','2']],
+ ['(−) CMV',['4']],
+ ['+Lucro bruto',['1','2','4']],
+ ['(−) Despesas variáveis de venda',['3']],
+ ['(−) Custos de operação',['5']],
+ ['(−) Pessoal operacional',['6']],
+ ['(−) Ocupação',['7']],
+ ['(−) Administrativas',['8']],
+ ['(−) Marketing e entretenimento',['9']],
+ ['=EBITDA',['1','2','3','4','5','6','7','8','9']],
+ ['(±) Resultado financeiro',['10']],
+ ['*LUCRO LÍQUIDO',['1','2','3','4','5','6','7','8','9','10']],
+ ['§ABAIXO DO EBITDA — CAPEX E NÃO OPERACIONAL',null],
+ ['(−) Investimentos (capex)',['11']],
+ ['(±) Financiamento',['12']],
+ ['(+) Outros recebimentos',['OR']],
+ ['(±) Transferências e ajustes',['CC','NEUTRO','13']],
+ ['*RESULTADO APÓS INVESTIMENTOS',['1','2','3','4','5','6','7','8','9','10','11','12','OR','CC','NEUTRO','13']]
+];
+
+function matriz(reg){
+ if(!temDado(ENT))return '<tr><td class="l" colspan="'+(D.meses.length+2)+'">Sem lançamento no Omie.</td></tr>';
+ var MS=D.meses, bl={}, out='';
+ MS.forEach(function(m){bl[m]=bloco(ENT,reg,m)});
+ /* a analise vertical e sobre a receita bruta DO MES, nao do periodo */
+ var base=MS.map(function(m){return Math.abs(bl[m].grupos['1']||0)||0});
+ if(!base.some(function(x){return x}))base=MS.map(function(m){
+   var v=0;Object.keys(bl[m].grupos).forEach(function(g){if(bl[m].grupos[g]<0)v-=bl[m].grupos[g]});return v||1});
+ var ESTR=(reg==='caixa')?BLOCOS_DFC:BLOCOS_DRE;
+
+ if(reg==='caixa')out+=linhaSaldo('ini',MS);
+ ESTR.forEach(function(B,bi){
+  var rot=B[0], gs=B[1], c0=rot.charAt(0);
+  if(c0==='§'){out+='<tr class="sep"><td class="l" colspan="'+(MS.length+2)+'">'+rot.slice(1)+'</td></tr>';return}
+  if(c0==='='||c0==='+'||c0==='*'){
+   out+=linhaMat(rot.slice(1),MS.map(function(m){return soma(ENT,reg,m,gs)}),base,
+                 c0==='='?'ebit':(c0==='*'?'res':'op'),null,0);
+   return;
+  }
+  var k=reg+'|b'+bi, vals=MS.map(function(m){return soma(ENT,reg,m,gs)});
+  if(!vals.some(function(v){return v}))return;
+  out+=linhaMat(rot,vals,base,'xm lvl0'+(ABERTO[k]?' open':''),k,0);
+  if(!ABERTO[k])return;
+  /* nivel 1: grupo do plano */
+  gs.forEach(function(g){
+   var vg=MS.map(function(m){return (bl[m].grupos[g]||0)});
+   if(!vg.some(function(v){return v}))return;
+   var kg=k+'|g'+g;
+   out+=linhaMat(D.grupo_nome[g]||g,vg,base,'lvl1'+(ABERTO[kg]?' open':''),kg,1);
+   if(!ABERTO[kg])return;
+   /* nivel 2: conta */
+   var contas={};
+   MS.forEach(function(m){Object.keys(bl[m].contas).forEach(function(ck){
+    if(ck.split('|')[0]===g)contas[ck]=1})});
+   Object.keys(contas).sort(function(a,b){
+    var sa=0,sb=0;MS.forEach(function(m){sa+=Math.abs(bl[m].contas[a]||0);sb+=Math.abs(bl[m].contas[b]||0)});
+    return sb-sa}).forEach(function(ck){
+    var vc=MS.map(function(m){return bl[m].contas[ck]||0}), kc=kg+'|c'+ck;
+    out+=linhaMat(ck.split('|')[1],vc,base,'lvl2'+(ABERTO[kc]?' open':''),kc,2);
+    if(!ABERTO[kc])return;
+    /* nivel 3: lancamento */
+    var its=[];
+    MS.forEach(function(m){(bl[m].itens||[]).forEach(function(i){if(i[0]===ck)its.push({m:m,d:i[1],v:i[2],q:i[3]})})});
+    its.sort(function(a,b){return a.d.slice(6)+a.d.slice(3,5)+a.d.slice(0,2)>b.d.slice(6)+b.d.slice(3,5)+b.d.slice(0,2)?1:-1});
+    if(!its.length)out+='<tr class="lvl3"><td class="l n3" colspan="'+(MS.length+2)+'">sem detalhe de lançamento</td></tr>';
+    its.forEach(function(i){
+     out+='<tr class="lvl3"><td class="l n3">'+i.d+' · '+(i.q||'—')+'</td>';
+     MS.forEach(function(m){out+=cel(m===i.m?i.v:0,0)});
+     out+='<td></td><td class="av"></td></tr>';
+    });
+   });
+  });
+ });
+ if(reg==='caixa')out+=linhaSaldo('fim',MS);
+ return out;
+}
+
+/* saldo abre por empresa e, dentro dela, por conta bancaria */
+function linhaSaldo(qual,MS){
+ var ents=(ENT==='consol')?['boldro','yo']:[ENT];
+ function sal(e,m){var x=((D.ents[e]||{}).saldos||{})[m];return x?x[qual]:0}
+ var tot=MS.map(function(m){var v=0;ents.forEach(function(e){v+=sal(e,m)});return v});
+ var k='sal|'+qual, o='';
+ o+='<tr class="r0'+(ABERTO[k]?' open':'')+'" onclick="tog(\''+k+'\')"><td class="l">'+cv(k)+
+    (qual==='ini'?'Saldo inicial':'Saldo final')+'</td>';
+ tot.forEach(function(v){o+=cel(v,0)});
+ o+=cel(qual==='ini'?tot[0]:tot[tot.length-1],0,'tt')+'<td class="av"></td></tr>';
+ if(!ABERTO[k])return o;
+ ents.forEach(function(e){
+  var ke=k+'|'+e, nome=(D.ents[e]||{}).nome||e;
+  o+='<tr class="sub'+(ABERTO[ke]?' open':'')+'" onclick="tog(\''+ke+'\')"><td class="l n1">'+cv(ke)+nome+'</td>';
+  MS.forEach(function(m){o+=cel(sal(e,m),0)});
+  o+='<td></td><td class="av"></td></tr>';
+  if(!ABERTO[ke])return;
+  var ccs={};
+  MS.forEach(function(m){var x=((D.ents[e]||{}).saldos||{})[m];
+   if(x&&x.contas)Object.keys(x.contas).forEach(function(c){ccs[c]=1})});
+  Object.keys(ccs).forEach(function(c){
+   o+='<tr class="scc"><td class="l n2">'+c+'</td>';
+   MS.forEach(function(m){var x=((D.ents[e]||{}).saldos||{})[m];
+    o+=cel(x&&x.contas?(x.contas[c]||0):0,0)});
+   o+='<td></td><td class="av"></td></tr>';
+  });
+ });
+ return o;
+}
+
+function pintaRelatorios(){
  ['fc','dre'].forEach(function(t){
   var h=document.getElementById(t+'head'); if(!h)return;
-  var th='<th class="l">'+(t==='fc'?'Demonstrativo do caixa':'Categoria')+'</th>';
+  var th='<th class="l">'+(t==='fc'?'Fluxo de caixa':'Categoria')+'</th>';
   D.meses.forEach(function(m){th+='<th>'+D.meses_nome[m]+'</th>'});
-  h.innerHTML=th+'<th>acumulado</th><th class="av">AV %</th>';
+  h.innerHTML=th+'<th>Total</th><th class="av">AV %</th>';
  });
- var fc=document.getElementById('fcbody'); if(fc)fc.innerHTML=tabela('caixa');
- var dr=document.getElementById('drebody'); if(dr)dr.innerHTML=tabela('comp');
+ var fc=document.getElementById('fcbody'); if(fc)fc.innerHTML=matriz('caixa');
+ var dr=document.getElementById('drebody'); if(dr)dr.innerHTML=matriz('comp');
  var er=auditaTabela('caixa').concat(auditaTabela('comp'));
  var av=document.getElementById('auditoria');
  if(av)av.innerHTML=er.length
   ?'<div class="aviso erro"><h4>A tabela não fecha — não confie nestes números</h4><p>'+
-    er.slice(0,8).join('<br>')+(er.length>8?'<br>… mais '+(er.length-8):'')+'</p></div>'
-  :'';
+    er.slice(0,8).join('<br>')+(er.length>8?'<br>… mais '+(er.length-8):'')+'</p></div>':'';
  if(er.length&&window.console)console.error('auditoria da tabela:',er);
-}
-function tdMes(v){return '<td class="num">'+(v?brl(v):'<span class="z">—</span>')+'</td>'}
-
-/* DFC no formato do grupo: tres blocos fechando em geracao de caixa operacional
-   e geracao de caixa final. A linha e a soma dos grupos do plano gerencial. */
-var DFC=[
- ['t','1. ATIVIDADES OPERACIONAIS',null],
- ['l','Recebimentos de clientes',['1']],
- ['l','Outros recebimentos (reembolso e rateio)',['OR']],
- ['l','(−) Estornos e devoluções a clientes',['2']],
- ['l','(−) Pagamentos de CMV (insumos e fretes)',['4']],
- ['l','(−) Pessoal',['6']],
- ['l','(−) Custos de operação',['5']],
- ['l','(−) Ocupação',['7']],
- ['l','(−) Artistas e entretenimento',['9']],
- ['l','(−) Administrativas e gerais',['8']],
- ['l','(−) Despesas variáveis de venda',['3']],
- ['l','(+/−) Resultado financeiro',['10']],
- ['s','(=) GERAÇÃO DE CAIXA OPERACIONAL',['1','OR','2','3','4','5','6','7','8','9','10']],
- ['t','2. IMPLANTAÇÃO E INVESTIMENTO',null],
- ['l','(−) Obra, equipamentos e pré-operação',['11']],
- ['s','(=) Caixa líquido de investimento',['11']],
- ['t','3. FINANCIAMENTO',null],
- ['l','(+) Aporte de sócios e empréstimos',['12']],
- ['s','(=) Caixa líquido de financiamento',['12']],
- ['t','4. MOVIMENTAÇÕES ENTRE CONTAS DO GRUPO',null],
- ['l','Transferência entre empresas do grupo',['CC']],
- ['l','Transferência entre contas próprias e ajustes',['NEUTRO','13']],
- ['s','(=) GERAÇÃO DE CAIXA FINAL',['1','OR','2','3','4','5','6','7','8','9','10','11','12','CC','NEUTRO','13']]
-];
-function dfcEstruturado(){
- if(!temDado(ENT))return '<tr><td class="l" colspan="'+(D.meses.length+2)+'">Sem lançamento no Omie.</td></tr>';
- var MS=D.meses, out='';
- var base=0; MS.forEach(function(m){base+=Math.abs(soma(ENT,'caixa',m,['1']))}); base=base||1;
- DFC.forEach(function(L){
-  var tipo=L[0], rot=L[1], gs=L[2];
-  if(tipo==='t'){
-   out+='<tr class="dfct"><td class="l" colspan="'+(MS.length+2)+'">'+rot+'</td></tr>';
-   return;
-  }
-  var v=MS.map(function(m){return soma(ENT,'caixa',m,gs)});
-  var t=v.reduce(function(a,b){return a+b},0);
-  if(tipo==='l'&&!t&&!v.some(function(x){return x}))return;          /* linha zerada some */
-  out+='<tr class="'+(tipo==='s'?'dfcs':'')+'"><td class="l">'+rot+'</td>';
-  v.forEach(function(x){out+=tdMes(x)});
-  out+='<td class="num tt">'+brl(t)+'</td></tr>';
- });
- /* saldo: vem do extrato, nao da soma das linhas */
- var si=saldos(ENT,MS[0]), sf=saldos(ENT,MS[MS.length-1]);
- out+='<tr class="dfct"><td class="l" colspan="'+(MS.length+2)+'">SALDO DE CAIXA</td></tr>';
- out+='<tr><td class="l">Saldo inicial</td>';
- MS.forEach(function(m){var x=saldos(ENT,m);out+=tdMes(x?x.ini:0)});
- out+='<td class="num tt">'+brl(si?si.ini:0)+'</td></tr>';
- out+='<tr class="dfcs"><td class="l">SALDO FINAL</td>';
- MS.forEach(function(m){var x=saldos(ENT,m);out+=tdMes(x?x.fim:0)});
- out+='<td class="num tt">'+brl(sf?sf.fim:0)+'</td></tr>';
- /* prova: saldo final menos inicial tem que ser a geracao de caixa final */
- var ger=MS.reduce(function(a,m){return a+soma(ENT,'caixa',m,
-   ['1','OR','2','3','4','5','6','7','8','9','10','11','12','CC','NEUTRO','13'])},0);
- var var_=(sf?sf.fim:0)-(si?si.ini:0), dif=ger-var_;
- out+='<tr class="dfcp"><td class="l">Prova: variação do saldo no extrato</td>';
- MS.forEach(function(){out+='<td></td>'});
- out+='<td class="num">'+brl(var_)+(Math.abs(dif)<0.02?' ✓':' <b>✗ '+brl(dif)+'</b>')+'</td></tr>';
- return out;
-}
-
-/* Audita a tabela nos tres niveis contra o dado. Roda a cada render e, se algo nao
-   fechar, aparece em tela em vez de passar batido. Nasceu do bug de 14/10, em que
-   o total de uma conta nao correspondia aos lancamentos abertos embaixo dela. */
-function auditaTabela(reg){
- var erros=[], MS=D.meses;
- MS.forEach(function(m){
-  var b=bloco(ENT,reg,m);
-  /* 1. conta = soma dos seus lancamentos */
-  var porConta={};
-  (b.itens||[]).forEach(function(i){porConta[i[0]]=(porConta[i[0]]||0)+i[2]});
-  Object.keys(b.contas).forEach(function(k){
-   var s=porConta[k]||0;
-   if(Math.abs(b.contas[k]-s)>0.011)
-    erros.push(m+' · '+k+': conta '+b.contas[k].toFixed(2)+' x lançamentos '+s.toFixed(2));
-  });
-  /* 2. lancamento orfao: item sem conta correspondente */
-  Object.keys(porConta).forEach(function(k){
-   if(!(k in b.contas))erros.push(m+' · '+k+': lançamento sem conta');
-  });
-  /* 3. grupo = soma das contas do grupo */
-  var porGrupo={};
-  Object.keys(b.contas).forEach(function(k){var g=k.split('|')[0];porGrupo[g]=(porGrupo[g]||0)+b.contas[k]});
-  Object.keys(b.grupos).forEach(function(g){
-   if(Math.abs(b.grupos[g]-(porGrupo[g]||0))>0.011)
-    erros.push(m+' · grupo '+g+': '+b.grupos[g].toFixed(2)+' x contas '+(porGrupo[g]||0).toFixed(2));
-  });
- });
- return erros;
-}
-
-/* tres niveis: grupo -> conta -> lancamento. Uma coluna por mes, nunca somado. */
-function tabela(reg){
- if(!temDado(ENT))return '<tr><td class="l" colspan="'+(D.meses.length+3)+'">Sem lançamento no Omie.</td></tr>';
- var MS=D.meses, blocos={}, base=0;
- MS.forEach(function(m){blocos[m]=bloco(ENT,reg,m); base+=Math.abs(blocos[m].grupos['1']||0)});
- base=base||1;
- var grupos={}, contas={};
- MS.forEach(function(m){
-  Object.keys(blocos[m].contas).forEach(function(k){
-   var g=k.split('|')[0];
-   grupos[g]=grupos[g]||{}; contas[g]=contas[g]||{};
-   grupos[g][m]=(blocos[m].grupos[g]||0);
-   contas[g][k]=contas[g][k]||{};
-   contas[g][k][m]=blocos[m].contas[k];
-  });
- });
- function tot(o){var t=0;MS.forEach(function(m){t+=o[m]||0});return t}
- var out='';
- Object.keys(grupos).filter(function(g){return !(reg==='comp'&&(g==='CC'||g==='NEUTRO'))})
- .sort(function(a,c){return Math.abs(tot(grupos[c]))-Math.abs(tot(grupos[a]))})
- .forEach(function(g){
-  var kg=reg+'|g|'+g, tg=tot(grupos[g]), ab=!!ABERTO[kg];
-  out+='<tr class="g abre" onclick="togNo(\''+kg+'\')"><td class="l"><span class="caret">'+
-       (ab?'▾':'▸')+'</span>'+(D.grupo_nome[g]||g)+'</td>';
-  MS.forEach(function(m){out+=tdMes(grupos[g][m])});
-  out+='<td class="num tt">'+brl(tg)+'</td><td class="av">'+pc(tg,base)+'</td></tr>';
-  if(!ab)return;
-  Object.keys(contas[g]).sort(function(a,c){return Math.abs(tot(contas[g][c]))-Math.abs(tot(contas[g][a]))})
-  .forEach(function(k){
-   var kc=reg+'|c|'+k, tc=tot(contas[g][k]), nome=k.split('|')[1], ac=!!ABERTO[kc];
-   out+='<tr class="c abre" onclick="togNo(\''+kc.replace(/'/g,"\\'")+'\')"><td class="l n2">'+
-        '<span class="caret">'+(ac?'▾':'▸')+'</span>'+nome+'</td>';
-   MS.forEach(function(m){out+=tdMes(contas[g][k][m])});
-   out+='<td class="num">'+brl(tc)+'</td><td class="av">'+pc(tc,base)+'</td></tr>';
-   if(!ac)return;
-   var itens=[];
-   MS.forEach(function(m){
-    ((blocos[m].itens)||[]).forEach(function(i){if(i[0]===k)itens.push({m:m,d:i[1],v:i[2],q:i[3]})});
-   });
-   itens.sort(function(a,b){return a.d.slice(6)+a.d.slice(3,5)+a.d.slice(0,2)>
-                                   b.d.slice(6)+b.d.slice(3,5)+b.d.slice(0,2)?1:-1});
-   if(!itens.length){
-    out+='<tr class="i"><td class="l n3" colspan="'+(MS.length+3)+'">sem detalhe de lançamento</td></tr>';
-   }
-   itens.forEach(function(i){
-    out+='<tr class="i"><td class="l n3">'+i.d+' · '+(i.q||'—')+'</td>';
-    MS.forEach(function(m){out+=tdMes(m===i.m?i.v:0)});
-    out+='<td class="num"></td><td class="av"></td></tr>';
-   });
-  });
- });
- return out;
-}
-
-function operacao(){
- var el=document.getElementById('op-kpis'); if(!el)return;
- if(!temDado(ENT)){el.innerHTML='<div class="vazio"><h4>A casa ainda não abriu no sistema</h4><p>A YO entra aqui quando a carga for feita.</p></div>';return}
- if(fase(ENT)==='pre_operacao'){
-  var inv=soGrupo(ENT,'comp',MES,['11']), ac={};
-  D.meses.forEach(function(m){var x=soGrupo(ENT,'comp',m,['11']);
-   Object.keys(x).forEach(function(c){ac[c]=(ac[c]||0)+x[c]})});
-  var tI=0;Object.keys(inv).forEach(function(c){tI+=inv[c]});
-  var tA=0;Object.keys(ac).forEach(function(c){tA+=ac[c]});
-  var fin=soma(ENT,'comp',MES,['12']), cmv=soma(ENT,'comp',MES,['4']),
-      pes=soma(ENT,'comp',MES,['6']), ocu=soma(ENT,'comp',MES,['7']);
-  el.innerHTML=[
-   ['Investimento no mês',brl(-tI),'obra, equipamento, frete de obra e pré-operação',
-    'no período todo: '+brl(-tA)],
-   ['Aporte no mês',brl(fin),'entrada de sócio','é o que banca a obra'],
-   ['Estoque e insumo já comprado',brl(-cmv),'comprado antes de abrir a casa',
-    'está quase todo em uma conta genérica de insumos'],
-   ['Equipe já contratada',brl(-pes),'folha, diarista, alimentação e passagem',
-    'a casa paga equipe antes de faturar'],
-   ['Arrendamento do ponto',brl(-ocu),'corre desde antes da abertura',''],
-   ['Receita no mês',brl(soma(ENT,'comp',MES,['1'])),'não é venda de salão',
-    'são reembolsos e outras receitas']
-  ].map(card).join('');
-  var mx0=document.getElementById('op-mix');
-  if(mx0){var ks=Object.keys(ac).sort(function(a,b){return ac[a]-ac[b]}),cor=['#F97316','#0E9F6E','#6366F1','#EAB308'];
-   mx0.innerHTML=ks.map(function(c,i){return '<div class="mixrow"><div class="mixlab">'+c+'</div>'+
-    '<div class="mixbar"><i style="width:'+(100*ac[c]/tA).toFixed(1)+'%;background:'+cor[i%4]+'"></i></div>'+
-    '<div class="mixval num">'+brl(-ac[c])+' · '+pc(ac[c],tA)+'</div></div>'}).join('')}
-  return;
- }
- var k=cozinha(MES), A=acumCozinha(), dias=(D.dias||{})[MES]||30;
- var fixo=k.pessoal+k.ocupacao+k.adm+k.mkt+k.operacao;
- el.innerHTML=[
-  ['Insumo de A&B',pc(k.cmv,k.venda),brl(k.cmv)+' de compra no mês',
-   'a abertura por cozinha e bar entra quando o insumo deixar de vir num balde só'],
-  ['Equipe',pc(k.pessoal,k.venda),brl(k.pessoal)+' entre fixos, diaristas e alojamento',
-   'referência: 25% a 32%'],
-  ['Custo de casa aberta',brl(fixo/dias),'por dia de operação',
-   'sem vender nada, a casa custa isso por dia'],
-  ['Ocupação',pc(k.ocupacao,k.venda),brl(k.ocupacao)+' de arrendamento','referência: até 10%'],
-  ['Atrações e mídia',pc(k.mkt,k.venda),brl(k.mkt)+' em DJ, música e divulgação','referência: 3% a 6%'],
-  ['Sobra depois de tudo',pc(k.venda-k.cmv-fixo,k.venda),
-   brl(k.venda-k.cmv-fixo)+' antes do financeiro','']
- ].map(card).join('');
-
- /* mix cozinha x bar */
- var mx=document.getElementById('op-mix'); if(!mx)return;
- var tot=k.food+k.bar+k.comum;
- if(!tot){mx.innerHTML='';return}
- mx.innerHTML=[['Cozinha',k.food,'#F97316'],['Bar',k.bar,'#0E9F6E'],['Frete e diversos',k.comum,'#6366F1']]
-  .map(function(i){return '<div class="mixrow"><div class="mixlab">'+i[0]+'</div>'+
-   '<div class="mixbar"><i style="width:'+(100*i[1]/tot).toFixed(1)+'%;background:'+i[2]+'"></i></div>'+
-   '<div class="mixval num">'+brl(i[1])+' · '+pc(i[1],tot)+'</div></div>'}).join('');
-}
-
-/* ponto de equilibrio: quanto a casa precisa vender para empatar */
-function equilibrio(){
- var el=document.getElementById('eq-box'); if(!el)return;
- if(!temDado(ENT)){el.innerHTML='<div class="vazio"><h4>Sem venda lançada</h4><p>O ponto de equilíbrio aparece quando houver movimento.</p></div>';return}
- if(fase(ENT)==='pre_operacao'){
-  var P0=D.premissas||{},q=0,ap=0;
-  D.meses.forEach(function(m){q+=soma(ENT,'comp',m,['4','5','6','7','8','9','11']);
-   ap+=soma(ENT,'comp',m,['12'])});
-  var s0=saldos(ENT,D.meses[0]),s1=saldos(ENT,D.meses[D.meses.length-1]);
-  el.innerHTML=[
-   ['Queima no período',brl(q),'tudo que saiu sem a casa estar vendendo',
-    'inclui obra, equipe, insumo e arrendamento'],
-   ['Aporte no período',brl(ap),'entrada de sócio no mesmo intervalo',
-    ap+q<0?('faltou '+brl(-(ap+q))+' de aporte para cobrir'):'cobriu a queima'],
-   ['Caixa que restou',brl(s1?s1.fim:0),'conta corrente mais aplicação',
-    s0?('começou o período com '+brl(s0.ini)):''],
-   ['Ponto de equilíbrio do plano',brl(P0.ponto_equilibrio||0),
-    'premissa do material de gestão orçamentária',
-    'passa a valer quando a casa abrir e faturar no CNPJ da YO']
-  ].map(card).join('');
-  return;
- }
- var P=D.premissas||{}, k=cozinha(MES);
- var fixo=k.pessoal+k.ocupacao+k.adm+k.mkt+k.operacao;
- var cmvPct=k.venda?k.cmv/k.venda:0, varPct=k.venda?(k.variaveis+k.deducoes)/k.venda:0;
- var mc=1-cmvPct-varPct;                         /* margem de contribuição real */
- var be=mc>0?fixo/mc:0;
- var falta=be-k.venda;
- var fixoPlano=P.fixo_mes||0;
- el.innerHTML=[
-  ['Precisa vender por mês',be?brl(be):'—','para empatar com a estrutura que existe HOJE',
-   'margem de contribuição de '+(100*mc).toFixed(0)+'%'],
-  ['Vendeu',brl(k.venda),'em '+D.meses_nome[MES],
-   falta>0?('faltaram '+brl(falta)):('passou em '+brl(-falta))],
-  ['Custo fixo de hoje',brl(fixo),'equipe, casa, administrativo e mídia',
-   fixoPlano?('o plano previa '+brl(fixoPlano)+' por mês'):''],
-  ['Equilíbrio com a casa cheia',brl(P.ponto_equilibrio||0),
-   'premissa do plano de investimento',
-   fixoPlano&&fixo?('a estrutura de hoje é '+(100*fixo/fixoPlano).toFixed(0)+'% da planejada'):'']
- ].map(card).join('');
 }
 
 /* orcado x realizado e a curva de caixa projetada */
@@ -821,6 +731,129 @@ function orcado(){
  pj.innerHTML=g;
 }
 
+function auditaTabela(reg){
+ var erros=[], MS=D.meses;
+ MS.forEach(function(m){
+  var b=bloco(ENT,reg,m);
+  /* 1. conta = soma dos seus lancamentos */
+  var porConta={};
+  (b.itens||[]).forEach(function(i){porConta[i[0]]=(porConta[i[0]]||0)+i[2]});
+  Object.keys(b.contas).forEach(function(k){
+   var s=porConta[k]||0;
+   if(Math.abs(b.contas[k]-s)>0.011)
+    erros.push(m+' · '+k+': conta '+b.contas[k].toFixed(2)+' x lançamentos '+s.toFixed(2));
+  });
+  /* 2. lancamento orfao: item sem conta correspondente */
+  Object.keys(porConta).forEach(function(k){
+   if(!(k in b.contas))erros.push(m+' · '+k+': lançamento sem conta');
+  });
+  /* 3. grupo = soma das contas do grupo */
+  var porGrupo={};
+  Object.keys(b.contas).forEach(function(k){var g=k.split('|')[0];porGrupo[g]=(porGrupo[g]||0)+b.contas[k]});
+  Object.keys(b.grupos).forEach(function(g){
+   if(Math.abs(b.grupos[g]-(porGrupo[g]||0))>0.011)
+    erros.push(m+' · grupo '+g+': '+b.grupos[g].toFixed(2)+' x contas '+(porGrupo[g]||0).toFixed(2));
+  });
+ });
+ return erros;
+}
+
+function operacao(){
+ var el=document.getElementById('op-kpis'); if(!el)return;
+ if(!temDado(ENT)){el.innerHTML='<div class="vazio"><h4>A casa ainda não abriu no sistema</h4><p>A YO entra aqui quando a carga for feita.</p></div>';return}
+ if(fase(ENT)==='pre_operacao'){
+  var inv=soGrupo(ENT,'comp',MES,['11']), ac={};
+  D.meses.forEach(function(m){var x=soGrupo(ENT,'comp',m,['11']);
+   Object.keys(x).forEach(function(c){ac[c]=(ac[c]||0)+x[c]})});
+  var tI=0;Object.keys(inv).forEach(function(c){tI+=inv[c]});
+  var tA=0;Object.keys(ac).forEach(function(c){tA+=ac[c]});
+  var fin=soma(ENT,'comp',MES,['12']), cmv=soma(ENT,'comp',MES,['4']),
+      pes=soma(ENT,'comp',MES,['6']), ocu=soma(ENT,'comp',MES,['7']);
+  el.innerHTML=[
+   ['Investimento no mês',brl(-tI),'obra, equipamento, frete de obra e pré-operação',
+    'no período todo: '+brl(-tA)],
+   ['Aporte no mês',brl(fin),'entrada de sócio','é o que banca a obra'],
+   ['Estoque e insumo já comprado',brl(-cmv),'comprado antes de abrir a casa',
+    'está quase todo em uma conta genérica de insumos'],
+   ['Equipe já contratada',brl(-pes),'folha, diarista, alimentação e passagem',
+    'a casa paga equipe antes de faturar'],
+   ['Arrendamento do ponto',brl(-ocu),'corre desde antes da abertura',''],
+   ['Receita no mês',brl(soma(ENT,'comp',MES,['1'])),'não é venda de salão',
+    'são reembolsos e outras receitas']
+  ].map(card).join('');
+  var mx0=document.getElementById('op-mix');
+  if(mx0){var ks=Object.keys(ac).sort(function(a,b){return ac[a]-ac[b]}),cor=['#F97316','#0E9F6E','#6366F1','#EAB308'];
+   mx0.innerHTML=ks.map(function(c,i){return '<div class="mixrow"><div class="mixlab">'+c+'</div>'+
+    '<div class="mixbar"><i style="width:'+(100*ac[c]/tA).toFixed(1)+'%;background:'+cor[i%4]+'"></i></div>'+
+    '<div class="mixval num">'+brl(-ac[c])+' · '+pc(ac[c],tA)+'</div></div>'}).join('')}
+  return;
+ }
+ var k=cozinha(MES), A=acumCozinha(), dias=(D.dias||{})[MES]||30;
+ var fixo=k.pessoal+k.ocupacao+k.adm+k.mkt+k.operacao;
+ el.innerHTML=[
+  ['Insumo de A&B',pc(k.cmv,k.venda),brl(k.cmv)+' de compra no mês',
+   'a abertura por cozinha e bar entra quando o insumo deixar de vir num balde só'],
+  ['Equipe',pc(k.pessoal,k.venda),brl(k.pessoal)+' entre fixos, diaristas e alojamento',
+   'referência: 25% a 32%'],
+  ['Custo de casa aberta',brl(fixo/dias),'por dia de operação',
+   'sem vender nada, a casa custa isso por dia'],
+  ['Ocupação',pc(k.ocupacao,k.venda),brl(k.ocupacao)+' de arrendamento','referência: até 10%'],
+  ['Atrações e mídia',pc(k.mkt,k.venda),brl(k.mkt)+' em DJ, música e divulgação','referência: 3% a 6%'],
+  ['Sobra depois de tudo',pc(k.venda-k.cmv-fixo,k.venda),
+   brl(k.venda-k.cmv-fixo)+' antes do financeiro','']
+ ].map(card).join('');
+
+ /* mix cozinha x bar */
+ var mx=document.getElementById('op-mix'); if(!mx)return;
+ var tot=k.food+k.bar+k.comum;
+ if(!tot){mx.innerHTML='';return}
+ mx.innerHTML=[['Cozinha',k.food,'#F97316'],['Bar',k.bar,'#0E9F6E'],['Frete e diversos',k.comum,'#6366F1']]
+  .map(function(i){return '<div class="mixrow"><div class="mixlab">'+i[0]+'</div>'+
+   '<div class="mixbar"><i style="width:'+(100*i[1]/tot).toFixed(1)+'%;background:'+i[2]+'"></i></div>'+
+   '<div class="mixval num">'+brl(i[1])+' · '+pc(i[1],tot)+'</div></div>'}).join('');
+}
+
+function equilibrio(){
+ var el=document.getElementById('eq-box'); if(!el)return;
+ if(!temDado(ENT)){el.innerHTML='<div class="vazio"><h4>Sem venda lançada</h4><p>O ponto de equilíbrio aparece quando houver movimento.</p></div>';return}
+ if(fase(ENT)==='pre_operacao'){
+  var P0=D.premissas||{},q=0,ap=0;
+  D.meses.forEach(function(m){q+=soma(ENT,'comp',m,['4','5','6','7','8','9','11']);
+   ap+=soma(ENT,'comp',m,['12'])});
+  var s0=saldos(ENT,D.meses[0]),s1=saldos(ENT,D.meses[D.meses.length-1]);
+  el.innerHTML=[
+   ['Queima no período',brl(q),'tudo que saiu sem a casa estar vendendo',
+    'inclui obra, equipe, insumo e arrendamento'],
+   ['Aporte no período',brl(ap),'entrada de sócio no mesmo intervalo',
+    ap+q<0?('faltou '+brl(-(ap+q))+' de aporte para cobrir'):'cobriu a queima'],
+   ['Caixa que restou',brl(s1?s1.fim:0),'conta corrente mais aplicação',
+    s0?('começou o período com '+brl(s0.ini)):''],
+   ['Ponto de equilíbrio do plano',brl(P0.ponto_equilibrio||0),
+    'premissa do material de gestão orçamentária',
+    'passa a valer quando a casa abrir e faturar no CNPJ da YO']
+  ].map(card).join('');
+  return;
+ }
+ var P=D.premissas||{}, k=cozinha(MES);
+ var fixo=k.pessoal+k.ocupacao+k.adm+k.mkt+k.operacao;
+ var cmvPct=k.venda?k.cmv/k.venda:0, varPct=k.venda?(k.variaveis+k.deducoes)/k.venda:0;
+ var mc=1-cmvPct-varPct;                         /* margem de contribuição real */
+ var be=mc>0?fixo/mc:0;
+ var falta=be-k.venda;
+ var fixoPlano=P.fixo_mes||0;
+ el.innerHTML=[
+  ['Precisa vender por mês',be?brl(be):'—','para empatar com a estrutura que existe HOJE',
+   'margem de contribuição de '+(100*mc).toFixed(0)+'%'],
+  ['Vendeu',brl(k.venda),'em '+D.meses_nome[MES],
+   falta>0?('faltaram '+brl(falta)):('passou em '+brl(-falta))],
+  ['Custo fixo de hoje',brl(fixo),'equipe, casa, administrativo e mídia',
+   fixoPlano?('o plano previa '+brl(fixoPlano)+' por mês'):''],
+  ['Equilíbrio com a casa cheia',brl(P.ponto_equilibrio||0),
+   'premissa do plano de investimento',
+   fixoPlano&&fixo?('a estrutura de hoje é '+(100*fixo/fixoPlano).toFixed(0)+'% da planejada'):'']
+ ].map(card).join('');
+}
+
 function socios(){
  var el=document.getElementById('soc-kpis'); if(!el)return;
  var pro=0,dist=0,adi=0;
@@ -862,27 +895,7 @@ function render(){
  document.getElementById('kpis').innerHTML=kpis();
  var t=document.getElementById('rsm'); if(t)t.innerHTML=rsm();
  operacao(); equilibrio(); socios();
- var dh=document.getElementById('dfchead');
- if(dh){var th='<th class="l">Fluxo de caixa</th>';
-  D.meses.forEach(function(m){th+='<th>'+D.meses_nome[m]+'</th>'});
-  dh.innerHTML=th+'<th>acumulado</th>';}
- var db=document.getElementById('dfcbody'); if(db)db.innerHTML=dfcEstruturado();
- orcado(); vendasBloco();
- ['fc','dre'].forEach(function(t){
-  var h=document.getElementById(t+'head'); if(!h)return;
-  var th='<th class="l">'+(t==='fc'?'Demonstrativo do caixa':'Categoria')+'</th>';
-  D.meses.forEach(function(m){th+='<th>'+D.meses_nome[m]+'</th>'});
-  h.innerHTML=th+'<th>acumulado</th><th class="av">AV %</th>';
- });
- var fc=document.getElementById('fcbody'); if(fc)fc.innerHTML=tabela('caixa');
- var dr=document.getElementById('drebody'); if(dr)dr.innerHTML=tabela('comp');
- var er=auditaTabela('caixa').concat(auditaTabela('comp'));
- var av=document.getElementById('auditoria');
- if(av)av.innerHTML=er.length
-  ?'<div class="aviso erro"><h4>A tabela não fecha — não confie nestes números</h4><p>'+
-    er.slice(0,8).join('<br>')+(er.length>8?'<br>… mais '+(er.length-8):'')+'</p></div>'
-  :'';
- if(er.length&&window.console)console.error('auditoria da tabela:',er);
+ pintaRelatorios();
  document.querySelectorAll('.repwrap').forEach(function(w){
   w.classList.toggle('on',(REG==='caixa')===(w.id==='rep-fc'))});
 }
@@ -1006,13 +1019,9 @@ def pagina(socios=False):
 <div class="rep-switch">
 <button data-r="caixa" class="on" onclick="setRegime('caixa')">Fluxo de Caixa (DFC)</button>
 <button data-r="comp" onclick="setRegime('comp')">DRE (competência)</button></div>
-<div id="rep-fc" class="repwrap on">
-<table class="xtbl dfc"><thead><tr id="dfchead"></tr></thead><tbody id="dfcbody"></tbody></table>
-<p class="repnote">Demonstração do fluxo de caixa pelo método direto, a partir da movimentação das contas correntes no Omie. O saldo inicial e o final vêm do extrato, não da soma das linhas — a última linha prova que as duas coisas fecham.</p>
-<h4 class="subt">Abertura por categoria e lançamento</h4>
-<table class="xtbl"><thead><tr id="fchead"></tr></thead><tbody id="fcbody"></tbody></table>
-<p class="repnote">Fonte: extrato das contas no Omie, conferido movimento a movimento contra o extrato do banco. Uma coluna por mês, sem somar. Clique no grupo para abrir as contas e na conta para abrir os lançamentos, com data e contraparte.</p></div>
-<div id="rep-dre" class="repwrap"><table class="xtbl"><thead><tr id="drehead"></tr></thead><tbody id="drebody"></tbody></table>
+<div id="rep-fc" class="repwrap on"><table class="xtbl mat"><thead><tr id="fchead"></tr></thead><tbody id="fcbody"></tbody></table>
+<p class="repnote">Demonstração do fluxo de caixa pelo método direto, a partir da movimentação das contas no Omie. Clique em qualquer linha com seta para abrir: o bloco abre nos grupos, o grupo nas contas e a conta nos lançamentos. O saldo abre por empresa e por conta bancária.</p></div>
+<div id="rep-dre" class="repwrap"><table class="xtbl mat"><thead><tr id="drehead"></tr></thead><tbody id="drebody"></tbody></table>
 <div id="auditoria"></div>
 <p class="repnote">Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
 
