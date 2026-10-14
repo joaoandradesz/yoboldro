@@ -147,6 +147,10 @@ td.av{color:var(--g500);font-size:12px}
 .foot .fg{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;
  padding-bottom:20px;border-bottom:1px solid var(--line)}
 .foot .sig{font-family:'Fraunces',serif;font-style:italic;font-size:19px;color:#fff}
+.selo{margin-top:7px;font-size:11.5px;color:rgba(255,255,255,.5);letter-spacing:.01em}
+.selo b{color:rgba(255,255,255,.8);font-weight:600}
+.aviso.erro{border-color:var(--out);background:#FFF5F5}
+.aviso.erro h4{color:var(--out)}
 .emc{display:inline-block;font-size:15px;font-weight:600;color:var(--orange);
  background:var(--orange-soft);border-radius:6px;padding:3px 9px;letter-spacing:-.01em}
 .emcm{display:block;margin-top:7px;font-size:11.5px;color:var(--g500);line-height:1.5;font-weight:400}
@@ -400,8 +404,45 @@ function togNo(k){
  });
  var fc=document.getElementById('fcbody'); if(fc)fc.innerHTML=tabela('caixa');
  var dr=document.getElementById('drebody'); if(dr)dr.innerHTML=tabela('comp');
+ var er=auditaTabela('caixa').concat(auditaTabela('comp'));
+ var av=document.getElementById('auditoria');
+ if(av)av.innerHTML=er.length
+  ?'<div class="aviso erro"><h4>A tabela não fecha — não confie nestes números</h4><p>'+
+    er.slice(0,8).join('<br>')+(er.length>8?'<br>… mais '+(er.length-8):'')+'</p></div>'
+  :'';
+ if(er.length&&window.console)console.error('auditoria da tabela:',er);
 }
 function tdMes(v){return '<td class="num">'+(v?brl(v):'<span class="z">—</span>')+'</td>'}
+
+/* Audita a tabela nos tres niveis contra o dado. Roda a cada render e, se algo nao
+   fechar, aparece em tela em vez de passar batido. Nasceu do bug de 14/10, em que
+   o total de uma conta nao correspondia aos lancamentos abertos embaixo dela. */
+function auditaTabela(reg){
+ var erros=[], MS=D.meses;
+ MS.forEach(function(m){
+  var b=bloco(ENT,reg,m);
+  /* 1. conta = soma dos seus lancamentos */
+  var porConta={};
+  (b.itens||[]).forEach(function(i){porConta[i[0]]=(porConta[i[0]]||0)+i[2]});
+  Object.keys(b.contas).forEach(function(k){
+   var s=porConta[k]||0;
+   if(Math.abs(b.contas[k]-s)>0.011)
+    erros.push(m+' · '+k+': conta '+b.contas[k].toFixed(2)+' x lançamentos '+s.toFixed(2));
+  });
+  /* 2. lancamento orfao: item sem conta correspondente */
+  Object.keys(porConta).forEach(function(k){
+   if(!(k in b.contas))erros.push(m+' · '+k+': lançamento sem conta');
+  });
+  /* 3. grupo = soma das contas do grupo */
+  var porGrupo={};
+  Object.keys(b.contas).forEach(function(k){var g=k.split('|')[0];porGrupo[g]=(porGrupo[g]||0)+b.contas[k]});
+  Object.keys(b.grupos).forEach(function(g){
+   if(Math.abs(b.grupos[g]-(porGrupo[g]||0))>0.011)
+    erros.push(m+' · grupo '+g+': '+b.grupos[g].toFixed(2)+' x contas '+(porGrupo[g]||0).toFixed(2));
+  });
+ });
+ return erros;
+}
 
 /* tres niveis: grupo -> conta -> lancamento. Uma coluna por mes, nunca somado. */
 function tabela(reg){
@@ -587,6 +628,7 @@ function render(){
   ? (SOCIOS?'Visão dos <b>sócios</b>':(fase(ENT)==='pre_operacao'
      ?'Implantação em <b>'+D.meses_nome[MES]+'</b>':'A casa em <b>'+D.meses_nome[MES]+'</b>'))
   : '<b>'+e.nome+'</b> — aguardando carga';
+ var sl=document.getElementById('selo'); if(sl)sl.textContent=D.gerado;
  document.getElementById('heroCnpj').textContent=e.nome+' · '+(e.cnpj?'CNPJ '+e.cnpj:'')+
   (e.conta?' · '+e.conta:'');
  document.getElementById('wf').innerHTML=ponteSVG();
@@ -602,6 +644,13 @@ function render(){
  });
  var fc=document.getElementById('fcbody'); if(fc)fc.innerHTML=tabela('caixa');
  var dr=document.getElementById('drebody'); if(dr)dr.innerHTML=tabela('comp');
+ var er=auditaTabela('caixa').concat(auditaTabela('comp'));
+ var av=document.getElementById('auditoria');
+ if(av)av.innerHTML=er.length
+  ?'<div class="aviso erro"><h4>A tabela não fecha — não confie nestes números</h4><p>'+
+    er.slice(0,8).join('<br>')+(er.length>8?'<br>… mais '+(er.length-8):'')+'</p></div>'
+  :'';
+ if(er.length&&window.console)console.error('auditoria da tabela:',er);
  document.querySelectorAll('.repwrap').forEach(function(w){
   w.classList.toggle('on',(REG==='caixa')===(w.id==='rep-fc'))});
 }
@@ -677,6 +726,7 @@ def pagina(socios=False):
 <div class="eyebrow">%s</div>
 <h1 id="heroTitle"></h1>
 <div class="cnpjline" id="heroCnpj"></div>
+<div class="selo">dados lidos do Omie em <b id="selo"></b></div>
 <div class="mespills" id="mespills"></div>
 <div class="regsw" id="regsw"><span class="reglab">Ver por:</span>
 <button data-r="caixa" class="on" onclick="setRegime('caixa')">Caixa</button>
@@ -737,6 +787,7 @@ def pagina(socios=False):
 <div id="rep-fc" class="repwrap on"><table class="xtbl"><thead><tr id="fchead"></tr></thead><tbody id="fcbody"></tbody></table>
 <p class="repnote">Fonte: extrato das contas no Omie, conferido movimento a movimento contra o extrato do banco. Uma coluna por mês, sem somar. Clique no grupo para abrir as contas e na conta para abrir os lançamentos, com data e contraparte.</p></div>
 <div id="rep-dre" class="repwrap"><table class="xtbl"><thead><tr id="drehead"></tr></thead><tbody id="drebody"></tbody></table>
+<div id="auditoria"></div>
 <p class="repnote">Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
 
 <div style="margin-top:34px">
