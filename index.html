@@ -81,9 +81,10 @@ table.rsm,table.xtbl{width:100%;border-collapse:collapse;font-size:13px;backgrou
  font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:10px 13px;text-align:right;white-space:nowrap}
 .rsm th.l,.xtbl th.l{text-align:left}
 .rsm td,.xtbl td{padding:8px 13px;border-bottom:1px solid var(--g200);text-align:right;white-space:nowrap}
+.xtbl.mat td{border-bottom:1px solid #EFEFEC}
 .rsm td.l,.xtbl td.l{text-align:left}
-.rsm tr:nth-child(even) td,.xtbl tr:nth-child(even) td{background:#FBFBF9}
-tr.res td{font-weight:800;background:var(--orange-soft)!important;border-top:1px solid #FDBA74}
+.rsm tr:nth-child(even) td,.xtbl:not(.mat) tr:nth-child(even) td{background:#FBFBF9}
+.rsm tr.res td{font-weight:800;background:var(--orange-soft);border-top:1px solid #FDBA74}
 tr.g td{font-weight:700}
 td.av{color:var(--g500);font-size:12px}
 .rsm-nota,.repnote{font-size:12.5px;color:var(--g500);margin-top:12px;max-width:880px}
@@ -134,28 +135,37 @@ td.av{color:var(--g500);font-size:12px}
 .foot .fg{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;
  padding-bottom:20px;border-bottom:1px solid var(--line)}
 .foot .sig{font-family:'Fraunces',serif;font-style:italic;font-size:19px;color:#fff}
-.xtbl.mat td,.xtbl.mat th{padding:6px 9px;font-size:12.5px}
-.xtbl.mat td.num{white-space:nowrap}
-.xtbl.mat i.av{display:block;font-style:normal;font-size:9.5px;color:var(--g400);margin-top:1px}
-.xtbl.mat .cv{display:inline-block;width:14px;color:var(--orange);font-size:10px}
-.xtbl.mat td.n1{padding-left:22px}
-.xtbl.mat td.n2{padding-left:40px;color:var(--ink2)}
-.xtbl.mat td.n3{padding-left:58px;color:var(--g500);font-size:11.5px}
-.xtbl.mat tr.xm td{font-weight:700;background:#F7F7F5;cursor:pointer}
-.xtbl.mat tr.lvl1 td{font-weight:600;cursor:pointer}
-.xtbl.mat tr.lvl2 td{cursor:pointer}
-.xtbl.mat tr.lvl3 td{background:#FCFCFB}
-.xtbl.mat tr.r0 td{font-weight:700;background:var(--navy3);color:#fff;cursor:pointer}
-.xtbl.mat tr.r0 .cv{color:var(--orange)}
-.xtbl.mat tr.sub td{font-weight:600;background:#EEF0F4;cursor:pointer}
-.xtbl.mat tr.scc td{background:#F6F7F9;color:var(--ink2);font-size:11.5px}
-.xtbl.mat tr.op td{font-weight:700;background:#EEF4FF;border-top:1px solid #C9D8F0}
-.xtbl.mat tr.ebit td{font-weight:800;background:var(--orange-soft);border-top:1.5px solid var(--orange)}
-.xtbl.mat tr.res td{font-weight:800;background:var(--navy);color:#fff;border-top:1.5px solid var(--navy)}
-.xtbl.mat tr.res i.av{color:rgba(255,255,255,.55)}
+.xtbl.mat{font-size:12px}
+.xtbl.mat th{background:#EEF0F4;color:#3B4252;font-weight:700;font-size:9.5px;
+ text-transform:uppercase;letter-spacing:.03em;padding:9px 11px;text-align:right}
+.xtbl.mat th.l{text-align:left}
+.xtbl.mat td{padding:6px 11px;font-size:12px;text-align:right;white-space:nowrap}
+.xtbl.mat td.l{text-align:left;white-space:normal}
+.xtbl.mat i.avin{display:block;font-style:normal;font-size:8.4px;color:#9CA3AF;margin-top:1px}
+.xtbl.mat .chv{display:inline-block;width:15px;color:var(--orange);font-size:10px}
+.xtbl.mat td.n1{padding-left:24px}
+.xtbl.mat td.n2{padding-left:48px;color:#4B5563;font-size:11.5px}
+.xtbl.mat td.n3{padding-left:68px;color:var(--g500);font-size:11px}
+.xtbl.mat tr.xm td{background:#F1F3F6;color:#374151;cursor:pointer}
+.xtbl.mat tr.lvl1 td{background:#F6F7F9;color:#374151;font-weight:600;cursor:pointer}
+.xtbl.mat tr.lvl2 td{background:#fff;color:#4B5563;font-weight:500;cursor:pointer}
+.xtbl.mat tr.lvl3 td{background:#fff}
+.xtbl.mat tr.r0 td{background:#1F2937;color:#fff;font-weight:800;cursor:pointer}
+.xtbl.mat tr.sub td{background:#fff;color:#374151;cursor:pointer}
+.xtbl.mat tr.sub td.n1{padding-left:26px}
+.xtbl.mat tr.scc td.n2{padding-left:44px}
+.xtbl.mat tr.scc td{background:#fff;color:#374151;font-size:11.5px}
+.xtbl.mat tr.op td{background:#EEF4FF;font-weight:700;border-top:1px solid #C9D8F0}
+.xtbl.mat tr.ebit td{background:#FFF7ED;color:#7A3E00;font-weight:800;
+ border-top:1.5px solid var(--orange)}
+.xtbl.mat tr.res td{background:#0D0F1A;color:#fff;font-weight:800;border-top:1.5px solid #0D0F1A}
+.xtbl.mat tr.res i.avin{color:rgba(255,255,255,.55)}
+.xtbl.mat tr.r0 i.avin{color:rgba(255,255,255,.55)}
 .xtbl.mat tr.sep td{background:var(--navy2);color:rgba(255,255,255,.75);font-size:10.5px;
- letter-spacing:.09em;text-transform:uppercase;font-weight:700;padding:8px 12px}
+ letter-spacing:.09em;text-transform:uppercase;font-weight:700;padding:8px 12px;text-align:left}
 .xtbl.mat td.tt{font-weight:700;border-left:1px solid var(--g200)}
+.xtbl.mat td.avtot{color:var(--g500);font-size:11px}
+.xtbl.mat tr.xm:hover td,.xtbl.mat tr.lvl1:hover td,.xtbl.mat tr.lvl2:hover td{background:var(--orange-soft)}
 .ress{margin-top:30px;border:1px solid var(--g200);border-radius:12px;background:#fff}
 .ress summary{cursor:pointer;padding:15px 18px;font-size:13.5px;color:var(--ink2);
  list-style:none;display:flex;align-items:center;gap:8px}
@@ -609,13 +619,17 @@ function ponteTexto(){
 
 var ABERTO={};                  /* nos abertos, por chave */
 function tog(k){ABERTO[k]=!ABERTO[k];pintaRelatorios()}
-function cv(k){return '<span class="cv">'+(ABERTO[k]?'▾':'▸')+'</span>'}
+function cv(k){return '<span class="chv">'+(ABERTO[k]?'▾':'▸')+'</span>'}
 
 /* celula: valor com a analise vertical dentro, como no painel Amana/Topazio */
+/* na matriz o numero vai sem "R$" e com centavos, como no painel Amana/Topazio:
+   cabe mais mes na largura e a soma visual fecha com o total. */
+function mv(v){return (v<0?'-':'')+Math.abs(v).toLocaleString('pt-BR',
+ {minimumFractionDigits:2,maximumFractionDigits:2})}
 function cel(v,base,cls){
- if(!v)return '<td class="num '+(cls||'')+'"><span class="z">–</span></td>';
- return '<td class="num '+(cls||'')+'">'+brl(v)+
-        (base?'<i class="av">'+pc(v,base)+'</i>':'')+'</td>';
+ if(!v)return '<td class="num '+(cls||'')+'">–</td>';
+ return '<td class="num '+(cls||'')+'">'+mv(v)+
+        (base?'<i class="avin">'+pc(v,base)+'</i>':'')+'</td>';
 }
 function linhaMat(rot,vals,bases,cls,chave,nivel){
  var t=vals.reduce(function(a,b){return a+b},0);
@@ -623,7 +637,7 @@ function linhaMat(rot,vals,bases,cls,chave,nivel){
  var o='<tr class="'+(cls||'')+'"'+(chave?' onclick="tog(\''+chave+'\')"':'')+'>'+
    '<td class="l n'+(nivel||0)+'">'+(chave?cv(chave):'')+rot+'</td>';
  vals.forEach(function(v,i){o+=cel(v,bases?bases[i]:0)});
- return o+cel(t,0,'tt')+'<td class="av tot">'+(tb?pc(t,tb):'')+'</td></tr>';
+ return o+cel(t,0,'tt')+'<td class="num avtot">'+(tb?pc(t,tb):'')+'</td></tr>';
 }
 
 /* ---- estrutura das duas demonstracoes, com os grupos do nosso plano ---- */
@@ -710,7 +724,7 @@ function matriz(reg){
     its.forEach(function(i){
      out+='<tr class="lvl3"><td class="l n3">'+i.d+' · '+(i.q||'—')+'</td>';
      MS.forEach(function(m){out+=cel(m===i.m?i.v:0,0)});
-     out+='<td></td><td class="av"></td></tr>';
+     out+='<td class="num"></td><td class="num"></td></tr>';
     });
    });
   });
@@ -728,13 +742,13 @@ function linhaSaldo(qual,MS){
  o+='<tr class="r0'+(ABERTO[k]?' open':'')+'" onclick="tog(\''+k+'\')"><td class="l">'+cv(k)+
     (qual==='ini'?'Saldo inicial':'Saldo final')+'</td>';
  tot.forEach(function(v){o+=cel(v,0)});
- o+=cel(qual==='ini'?tot[0]:tot[tot.length-1],0,'tt')+'<td class="av"></td></tr>';
+ o+=cel(qual==='ini'?tot[0]:tot[tot.length-1],0,'tt')+'<td class="num"></td></tr>';
  if(!ABERTO[k])return o;
  ents.forEach(function(e){
   var ke=k+'|'+e, nome=(D.ents[e]||{}).nome||e;
   o+='<tr class="sub'+(ABERTO[ke]?' open':'')+'" onclick="tog(\''+ke+'\')"><td class="l n1">'+cv(ke)+nome+'</td>';
   MS.forEach(function(m){o+=cel(sal(e,m),0)});
-  o+='<td></td><td class="av"></td></tr>';
+  o+='<td class="num"></td><td class="num"></td></tr>';
   if(!ABERTO[ke])return;
   var ccs={};
   MS.forEach(function(m){var x=((D.ents[e]||{}).saldos||{})[m];
@@ -743,7 +757,7 @@ function linhaSaldo(qual,MS){
    o+='<tr class="scc"><td class="l n2">'+c+'</td>';
    MS.forEach(function(m){var x=((D.ents[e]||{}).saldos||{})[m];
     o+=cel(x&&x.contas?(x.contas[c]||0):0,0)});
-   o+='<td></td><td class="av"></td></tr>';
+   o+='<td class="num"></td><td class="num"></td></tr>';
   });
  });
  return o;
