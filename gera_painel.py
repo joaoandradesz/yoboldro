@@ -279,6 +279,76 @@ function acumCozinha(){
 }
 function card(k){return '<div class="kpi"><div class="t">'+k[0]+'</div><div class="v num">'+k[1]+
  '</div><div class="d">'+k[2]+'</div>'+(k[3]?'<div class="ref">'+k[3]+'</div>':'')+'</div>'}
+/* KPIs que vem do relatorio de vendas do 3LM. So existem para quem fatura:
+   a venda esta no CNPJ da Boldro, entao na visao YO eles nao aparecem. */
+function vd(){var V=D.vendas; if(!V||ENT==='yo')return null;
+ return (MES===V.mes)?V:null}
+function tkCard(){var V=vd();
+ if(!V)return ['Ticket médio por conta',emC(ENT==='yo'?'a YO não fatura: a venda está no CNPJ da Boldró':'só há relatório de vendas de set/26'),'',''];
+ return ['Ticket médio por conta',brl(V.ticket),V.contas.toLocaleString('pt-BR')+' contas no mês',
+         'fonte: relatório do 3LM · por comanda, não por mesa']}
+function turnoCard(){var V=vd();
+ if(!V)return ['Share por turno',emC(ENT==='yo'?'a YO não fatura':'só há relatório de vendas de set/26'),'',''];
+ var t=V.turno;
+ return ['Consumo no almoço',(100*t.dia.pct).toFixed(1).replace('.',',')+'%',
+         brl(t.dia.valor)+' das 11h às 16h',
+         'fim de dia: '+(100*t.final.pct).toFixed(1).replace('.',',')+'% · '+brl(t.final.valor)]}
+function diaForteCard(){var V=vd();
+ if(!V)return ['Venda por dia da semana',emC(ENT==='yo'?'a YO não fatura':'só há relatório de vendas de set/26'),'',''];
+ var s={},c={};
+ V.dias.forEach(function(d){s[d.sem]=(s[d.sem]||0)+d.valor;c[d.sem]=(c[d.sem]||0)+d.contas});
+ var ks=Object.keys(s).sort(function(a,b){return s[b]-s[a]}), tot=0;
+ ks.forEach(function(k){tot+=s[k]});
+ var NOME={segunda:'segunda',terca:'terça',quarta:'quarta',quinta:'quinta',sexta:'sexta',sabado:'sábado',domingo:'domingo'};
+ return ['Dia mais forte',NOME[ks[0]],brl(s[ks[0]])+' · '+pc(s[ks[0]],tot)+' do mês',
+         'o mais fraco é '+NOME[ks[ks.length-1]]+' ('+pc(s[ks[ks.length-1]],tot)+')']}
+
+/* bloco de vendas: dia da semana e curva ABC */
+function vendasBloco(){
+ var el=document.getElementById('vendas'); if(!el)return;
+ var V=vd();
+ if(!V){
+  var temMes=D.vendas&&MES!==D.vendas.mes;
+  el.innerHTML='<div class="vazio"><h4>'+
+   (ENT==='yo'?'A YO não fatura':(temMes?'Sem relatório de vendas de '+D.meses_nome[MES]:'Sem relatório de vendas'))+'</h4>'+
+   '<p>'+(ENT==='yo'?'A venda de salão acontece no CNPJ da Boldró. Troque de empresa no topo.'
+    :'O 3LM não tem API: estes números vêm do relatório mensal em PDF, e hoje só existe o de '+
+      (D.vendas?D.meses_nome[D.vendas.mes]:'setembro')+'.')+'</p></div>';
+  return;
+ }
+ var s={},c={},NOME={segunda:'segunda',terca:'terça',quarta:'quarta',quinta:'quinta',sexta:'sexta',sabado:'sábado',domingo:'domingo'};
+ V.dias.forEach(function(d){s[d.sem]=(s[d.sem]||0)+d.valor;c[d.sem]=(c[d.sem]||0)+d.contas});
+ var ordem=['segunda','terca','quarta','quinta','sexta','sabado','domingo'];
+ var mx=Math.max.apply(null,ordem.map(function(k){return s[k]||0}))||1, tot=0;
+ ordem.forEach(function(k){tot+=s[k]||0});
+ var h='<h4 class="subt">Venda por dia da semana · '+D.meses_nome[V.mes]+'</h4><div class="curva">';
+ ordem.forEach(function(k){
+  var v=s[k]||0;
+  h+='<div class="cb"><div class="cbv">'+pc(v,tot)+'</div><div class="cbb" style="height:'+
+     Math.max(4,Math.round(68*v/mx))+'px"></div><div class="cbl">'+NOME[k].slice(0,3)+'</div>'+
+     '<div class="cbl" style="color:var(--g300)">'+brl(v/1000,0)+'k</div></div>';
+ });
+ h+='</div>';
+ h+='<h4 class="subt">Curva ABC por categoria</h4>'+
+    '<table class="xtbl"><thead><tr><th class="l">Categoria</th><th>Receita</th><th>Itens</th>'+
+    '<th>Classe A</th><th class="av">% em A</th><th>Classe B</th><th>Classe C</th></tr></thead><tbody>';
+ var cats=Object.keys(V.abc).sort(function(a,b){return V.abc[b].receita-V.abc[a].receita});
+ cats.forEach(function(k){var x=V.abc[k];
+  h+='<tr><td class="l">'+k+'</td><td class="num">'+brl(x.receita)+'</td><td class="av">'+x.itens+'</td>'+
+     '<td class="num">'+brl(x.A.valor)+' <span class="z">('+x.A.itens+')</span></td>'+
+     '<td class="av">'+(100*x.A.pct).toFixed(1).replace('.',',')+'%</td>'+
+     '<td class="num">'+brl(x.B.valor)+'</td><td class="num">'+brl(x.C.valor)+'</td></tr>';
+ });
+ var tr=0; cats.forEach(function(k){tr+=V.abc[k].receita});
+ h+='<tr class="dfcs"><td class="l">Venda de produtos</td><td class="num">'+brl(tr)+'</td>'+
+    '<td class="av"></td><td class="num"></td><td class="av"></td><td class="num"></td><td class="num"></td></tr>';
+ h+='</tbody></table><p class="repnote">Fonte: relatório de vendas do 3LM/Gourmet. '+
+    'A curva de cada categoria é calculada sobre a receita daquela categoria, não sobre o total. '+
+    'Classe A vai até 80% do faturamento do grupo, B de 80% a 95%, C os 5% finais. '+
+    'A venda de produtos exclui taxa de serviço e rolha, por isso é menor que o recebido no mês.</p>';
+ el.innerHTML=h;
+}
+
 function emC(motivo){return '<span class="emc">em construção</span><span class="emcm">'+motivo+'</span>'}
 function kpis(){
  if(!temDado(ENT)){
@@ -309,7 +379,7 @@ function kpis(){
    ['Receita no mês',brl(rec),'reembolso e outras receitas','não é venda de salão'],
    ['Dinheiro em caixa',brl(s.fim),'conta corrente mais aplicação',
     cus?('dá para '+(s.fim/-cus).toFixed(1).replace('.',',')+' mês de estrutura'):''],
-   ['Share por turno',emC('vem do relatório de vendas do 3LM'),'','']
+   ['Share por turno',emC('a YO não fatura: a venda está no CNPJ da Boldró'),'','']
   ].map(card).join('');
  }
  var k=cozinha(MES), A=acumCozinha(), dias=(D.dias||{})[MES]||30;
@@ -319,15 +389,13 @@ function kpis(){
  return [
   ['Venda líquida',brl(k.venda),'o que a casa vendeu em '+D.meses_nome[MES],'líquido da maquininha'],
   ['Venda por dia',brl(k.venda/dias),dias+' dias de operação','é o número que o salão sente'],
-  ['Ticket médio por conta',emC('depende da exportação de comandas do 3LM'),'',''],
+  tkCard(),
   ['Ticket médio individual',emC('o 3LM não exporta nº de pessoas por conta'),'',''],
   ['Ticket médio por mesa',emC('o 3LM exporta comanda, não mesa física'),'',''],
   ['Margem EBITDA',pc(ebitda,k.venda),brl(ebitda)+' no mês','distorcida pelo recorte'],
   ['Dinheiro em caixa',brl(s.fim),'no banco ao fim do mês',
    fixo?('dá para '+(s.fim/fixo).toFixed(1).replace('.',',')+' mês de casa aberta'):''],
-  ['Share por turno',emC('vem do relatório de vendas do 3LM'),'',''],
-  ['Curva ABC por categoria',emC('vem do relatório de vendas do 3LM'),'',''],
-  ['Venda por dia da semana',emC('vem do relatório de vendas do 3LM'),'','']
+  turnoCard(), diaForteCard()
  ].map(card).join('');
 }
 
@@ -422,7 +490,7 @@ function togNo(k){
   D.meses.forEach(function(m){th+='<th>'+D.meses_nome[m]+'</th>'});
   dh.innerHTML=th+'<th>acumulado</th>';}
  var db=document.getElementById('dfcbody'); if(db)db.innerHTML=dfcEstruturado();
- orcado();
+ orcado(); vendasBloco();
  ['fc','dre'].forEach(function(t){
   var h=document.getElementById(t+'head'); if(!h)return;
   var th='<th class="l">'+(t==='fc'?'Demonstrativo do caixa':'Categoria')+'</th>';
@@ -788,7 +856,7 @@ function render(){
   D.meses.forEach(function(m){th+='<th>'+D.meses_nome[m]+'</th>'});
   dh.innerHTML=th+'<th>acumulado</th>';}
  var db=document.getElementById('dfcbody'); if(db)db.innerHTML=dfcEstruturado();
- orcado();
+ orcado(); vendasBloco();
  ['fc','dre'].forEach(function(t){
   var h=document.getElementById(t+'head'); if(!h)return;
   var th='<th class="l">'+(t==='fc'?'Demonstrativo do caixa':'Categoria')+'</th>';
@@ -845,6 +913,12 @@ SEC_ANO = """<section id="tend" class="sec-alt"><div class="wrap">
 <p class="lede">Venda, custo de insumo, equipe e resultado, com o peso de cada linha sobre a venda do mês — a leitura vertical que se usa em operação de A&amp;B.</p></div>
 <div class="rsm-wrap"><table class="rsm" id="rsm"></table></div>
 <p class="rsm-nota">Análise vertical sobre a receita bruta do mês. <b>CMV</b> são os insumos de A&amp;B; <b>custos de operação</b> incluem energia, água, limpeza, manutenção e o alojamento da equipe, que por decisão de 22/09 é custo direto. Transferência entre empresas do grupo, transferência entre contas próprias e ajustes ficam fora do resultado.</p>
+</div></section>
+
+<section id="vendas-sec"><div class="wrap">
+<div class="sec-head"><div class="k">Vendas</div><h2>O que o salão <span class="light">vendeu</span></h2>
+<p class="lede">Dia da semana, turno e curva ABC — do relatório mensal do 3LM, que não tem API e entra por PDF.</p></div>
+<div id="vendas"></div>
 </div></section>
 
 <section id="orcado"><div class="wrap">
