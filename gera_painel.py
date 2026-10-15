@@ -219,6 +219,14 @@ td.av{color:var(--g500);font-size:12px}
 .cx-tbl th.r,.cx-tbl td.r{text-align:right}
 .cx-tbl td{padding:9px 22px;border-bottom:1px solid #F0F0ED}
 .cx-tbl td.pos{color:var(--in);font-weight:600}
+.cx-tbl tr.clA td{background:#F6FBF8}
+.cx-tbl tr.clC td{color:var(--g500)}
+.pil{display:inline-block;padding:1px 7px;border-radius:9px;font-size:10px;font-weight:700}
+.pil.A{background:#D9F2E5;color:#0B6B46}
+.pil.B{background:#FFF3D6;color:#8A5B00}
+.pil.C{background:#EFEFEC;color:#6B7280}
+.xtbl tr.abc-l{cursor:pointer}
+.xtbl tr.abc-l:hover td{background:var(--orange-soft)}
 .cx-tbl td.neg{color:var(--ink);font-weight:600}
 .ress{margin-top:30px;border:1px solid var(--g200);border-radius:12px;background:#fff}
 .ress summary{cursor:pointer;padding:15px 18px;font-size:13.5px;color:var(--ink2);
@@ -416,7 +424,8 @@ function vendasBloco(){
     '<th>Classe A</th><th class="av">% em A</th><th>Classe B</th><th>Classe C</th></tr></thead><tbody>';
  var cats=Object.keys(V.abc).sort(function(a,b){return V.abc[b].receita-V.abc[a].receita});
  cats.forEach(function(k){var x=V.abc[k];
-  h+='<tr><td class="l">'+k+'</td><td class="num">'+brl(x.receita)+'</td><td class="av">'+x.itens+'</td>'+
+  h+='<tr class="abc-l" onclick="abreABC(\''+k+'\')"><td class="l"><span class="chv">▸</span>'+k+
+     '</td><td class="num">'+brl(x.receita)+'</td><td class="av">'+x.itens+'</td>'+
      '<td class="num">'+brl(x.A.valor)+' <span class="z">('+x.A.itens+')</span></td>'+
      '<td class="av">'+(100*x.A.pct).toFixed(1).replace('.',',')+'%</td>'+
      '<td class="num">'+brl(x.B.valor)+'</td><td class="num">'+brl(x.C.valor)+'</td></tr>';
@@ -424,7 +433,27 @@ function vendasBloco(){
  var tr=0; cats.forEach(function(k){tr+=V.abc[k].receita});
  h+='<tr class="dfcs"><td class="l">Venda de produtos</td><td class="num">'+brl(tr)+'</td>'+
     '<td class="av"></td><td class="num"></td><td class="av"></td><td class="num"></td><td class="num"></td></tr>';
- h+='</tbody></table><p class="repnote"><b>Ticket individual e por mesa continuam em construção:</b> '+
+ h+='</tbody></table>';
+ /* dia a dia: conta, venda, ticket e a divisao do turno */
+ var hr={}; (V.horario||[]).forEach(function(x){hr[x.data]=x});
+ var NOM={segunda:'segunda',terca:'terça',quarta:'quarta',quinta:'quinta',sexta:'sexta',sabado:'sábado',domingo:'domingo'};
+ h+='<h4 class="subt">Dia a dia · '+D.meses_nome[V.mes]+'</h4>'+
+    '<table class="xtbl"><thead><tr><th class="l">Data</th><th class="l">Dia</th><th>Contas</th>'+
+    '<th>Venda</th><th>Ticket</th><th>Almoço</th><th>Fim de dia</th><th class="av">% almoço</th>'+
+    '</tr></thead><tbody>';
+ V.dias.forEach(function(d){
+  var x=hr[d.data]||{};
+  h+='<tr><td class="l">'+d.data+'</td><td class="l">'+(NOM[d.sem]||d.sem)+'</td>'+
+     '<td class="num">'+d.contas+'</td><td class="num">'+brl(d.valor)+'</td>'+
+     '<td class="num">'+brl(d.ticket)+'</td><td class="num">'+(x.dia?brl(x.dia):'–')+'</td>'+
+     '<td class="num">'+(x.final?brl(x.final):'–')+'</td>'+
+     '<td class="av">'+(x.pct_dia?(100*x.pct_dia).toFixed(0)+'%':'–')+'</td></tr>';
+ });
+ var tc=V.dias.reduce(function(a,d){return a+d.contas},0), tv=V.dias.reduce(function(a,d){return a+d.valor},0);
+ h+='<tr class="dfcs"><td class="l">Total do mês</td><td class="l"></td><td class="num">'+tc+'</td>'+
+    '<td class="num">'+brl(tv)+'</td><td class="num">'+brl(tv/tc)+'</td>'+
+    '<td class="num"></td><td class="num"></td><td class="av"></td></tr></tbody></table>';
+ h+='<p class="repnote"><b>Ticket individual e por mesa continuam em construção:</b> '+
     'o 3LM exporta a comanda, mas não o número de pessoas nem a mesa física. '+
     'Com essas duas colunas na exportação os dois indicadores entram. '+
     'Fonte: relatório de vendas do 3LM/Gourmet. '+
@@ -574,12 +603,36 @@ function cv(k){return '<span class="chv">'+(ABERTO[k]?'▾':'▸')+'</span>'}
    cabe mais mes na largura e a soma visual fecha com o total. */
 function mv(v){return (v<0?'-':'')+Math.abs(v).toLocaleString('pt-BR',
  {minimumFractionDigits:2,maximumFractionDigits:2})}
+function tdMes(v){return '<td class="num">'+(v?brl(v):'<span class="z">–</span>')+'</td>'}
 function cel(v,base,cls,abre){
  if(!v)return '<td class="num '+(cls||'')+'">–</td>';
  cls=(cls||'')+(v<0?' neg':'');
  var a=abre?' onclick="abreCaixa(event,\''+abre[0].replace(/'/g,"\\'")+'\',\''+abre[1]+'\',\''+abre[2]+'\')" class="num clic '+(cls||'')+'"'
            :' class="num '+(cls||'')+'"';
  return '<td'+a+'>'+mv(v)+(base?'<i class="avin">'+pc(v,base)+'</i>':'')+'</td>';
+}
+
+/* caixa dos itens de uma curva ABC */
+function abreABC(cat){
+ var V=D.vendas, x=V.abc[cat], its=x.itens_lista||[];
+ var h='<div class="cx-cab"><h4>Curva ABC · '+cat+' · '+D.meses_nome[V.mes]+'</h4>'+
+   '<button class="cx-x" onclick="fechaCaixa()">×</button></div>'+
+   '<div class="cx-sub"><span>'+its.length+' ITENS ATIVOS</span><b>RECEITA: '+mv(x.receita)+'</b></div>'+
+   '<div class="cx-nota">Classe A vai até 80% do faturamento da categoria, B de 80% a 95%, C os 5% finais. '+
+   'A curva é calculada sobre a receita desta categoria, não sobre o total do mês.</div>';
+ h+='<table class="cx-tbl"><thead><tr><th>#</th><th>Item</th><th class="r">Qtde</th>'+
+    '<th class="r">Preço médio</th><th class="r">Total</th><th class="r">% da categoria</th>'+
+    '<th class="r">Acumulado</th><th>Classe</th></tr></thead><tbody>';
+ its.forEach(function(i){
+  h+='<tr class="cl'+i.classe+'"><td>'+i.n+'</td><td>'+i.item+'</td><td class="r">'+
+     i.qtd.toLocaleString('pt-BR')+'</td><td class="r">'+mv(i.preco)+'</td>'+
+     '<td class="r pos">'+mv(i.total)+'</td><td class="r">'+(100*i.pct).toFixed(2).replace('.',',')+'%</td>'+
+     '<td class="r">'+(100*i.acum).toFixed(1).replace('.',',')+'%</td>'+
+     '<td><span class="pil '+i.classe+'">'+i.classe+'</span></td></tr>';
+ });
+ h+='</tbody></table>';
+ document.getElementById('cx-corpo').innerHTML=h;
+ document.getElementById('cx-fundo').classList.add('on');
 }
 
 /* caixa de lancamentos: clicar no numero da conta abre a lista daquele mes */
@@ -970,7 +1023,7 @@ function render(){
  document.getElementById('kpis').innerHTML=kpis();
  var t=document.getElementById('rsm'); if(t)t.innerHTML=rsm();
  operacao(); equilibrio(); socios();
- pintaRelatorios();
+ pintaRelatorios(); orcado(); vendasBloco();
  document.querySelectorAll('.repwrap').forEach(function(w){
   w.classList.toggle('on',(REG==='caixa')===(w.id==='rep-fc'))});
 }
