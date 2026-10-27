@@ -1,5 +1,5 @@
 {
- "gerado": "15/10/2026 às 17:31",
+ "gerado": "27/10/2026 às 01:12",
  "meses": [
   "2026-08",
   "2026-09"
@@ -2358,22 +2358,20 @@
    "comp": {
     "2026-08": {
      "grupos": {
-      "1": 167132.28,
+      "1": 175903.28,
       "CC": 52994.80000000001,
-      "10": 0.1,
       "NEUTRO": 9.17,
       "4": -171410.63000000003,
       "5": -9638.46,
       "8": -17043.760000000006,
-      "6": -15044.85,
+      "6": -17779.18,
       "9": -4385.0,
-      "2": -10909.369999999999,
+      "2": -8175.04,
       "3": -2010.0
      },
      "contas": {
-      "1|Receita operacional (salão)": 167132.28,
+      "1|Receita operacional (salão)": 175903.28,
       "CC|Conta corrente YO Noronha - entrada": 100000.0,
-      "10|Rendimentos de aplicações": 0.1,
       "NEUTRO|Ajustes e estornos - entrada": 9.17,
       "4|Secos e mercearia": -30411.870000000003,
       "4|Outros insumos e diversos": -17988.58,
@@ -2388,23 +2386,24 @@
       "9|Outros de marketing": -2000.0,
       "6|Passagens aéreas da equipe": -2010.0,
       "4|Proteínas (carnes e frutos do mar)": -32608.370000000006,
-      "4|Hortifrúti": -14636.61,
+      "4|Hortifrúti": -14349.61,
       "5|Reposição de utensílios": -180.0,
-      "4|Frios, laticínios e congelados": -25477.84,
+      "4|Frios, laticínios e congelados": -25764.84,
       "8|Viagens administrativas": -3500.0,
-      "2|ISS retido na fonte de prestadores": -2734.33,
+      "6|ISS | Permanência": -2734.33,
       "6|Alimentação de colaboradores": -2256.2,
       "8|Tarifas bancárias": -282.18000000000006,
       "4|Frete de insumos de alimentos e bebidas": -5377.52,
       "CC|Conta corrente YO Noronha - saída": -47005.200000000004,
       "6|FGTS e contribuições": -1845.51,
-      "2|Simples Nacional (DAS)": -8175.04,
+      "2|Simples Nacional (DAS)": -7914.2,
+      "2|PIS": -46.45,
+      "2|COFINS": -214.39,
       "3|Taxas de cartão": -2010.0
      },
      "lanc": {
-      "1|Receita operacional (salão)": 51,
+      "1|Receita operacional (salão)": 62,
       "CC|Conta corrente YO Noronha - entrada": 1,
-      "10|Rendimentos de aplicações": 1,
       "NEUTRO|Ajustes e estornos - entrada": 4,
       "4|Secos e mercearia": 15,
       "4|Outros insumos e diversos": 3,
@@ -2419,17 +2418,19 @@
       "9|Outros de marketing": 1,
       "6|Passagens aéreas da equipe": 1,
       "4|Proteínas (carnes e frutos do mar)": 12,
-      "4|Hortifrúti": 11,
+      "4|Hortifrúti": 10,
       "5|Reposição de utensílios": 1,
-      "4|Frios, laticínios e congelados": 11,
+      "4|Frios, laticínios e congelados": 12,
       "8|Viagens administrativas": 1,
-      "2|ISS retido na fonte de prestadores": 8,
+      "6|ISS | Permanência": 8,
       "6|Alimentação de colaboradores": 1,
       "8|Tarifas bancárias": 10,
       "4|Frete de insumos de alimentos e bebidas": 1,
       "CC|Conta corrente YO Noronha - saída": 11,
       "6|FGTS e contribuições": 1,
-      "2|Simples Nacional (DAS)": 3,
+      "2|Simples Nacional (DAS)": 1,
+      "2|PIS": 1,
+      "2|COFINS": 1,
       "3|Taxas de cartão": 1
      },
      "familias": {
@@ -2791,14 +2792,6 @@
        ""
       ],
       [
-       "10|Rendimentos de aplicações",
-       "28/08/2026",
-       0.1,
-       "BANCO SANTANDER",
-       "SEM NF",
-       ""
-      ],
-      [
        "1|Receita operacional (salão)",
        "28/08/2026",
        10533.99,
@@ -2892,6 +2885,94 @@
        2010,
        "GETNET",
        "TAXA GETNET",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "21/08/2026",
+       50,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "22/08/2026",
+       65,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "23/08/2026",
+       990,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "25/08/2026",
+       1537,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "26/08/2026",
+       644,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "27/08/2026",
+       470,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "28/08/2026",
+       1160,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "29/08/2026",
+       1540,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "30/08/2026",
+       650,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "31/08/2026",
+       1100,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "24/08/2026",
+       565,
+       "Cliente Consumidor / Sem Tomador",
+       "",
        ""
       ],
       [
@@ -3359,7 +3440,7 @@
        ""
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "31/08/2026",
        -300,
        "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
@@ -3367,7 +3448,7 @@
        ""
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "31/08/2026",
        -300,
        "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
@@ -3523,7 +3604,7 @@
        "13/08/2026",
        -33.5,
        "M B N INDUSTRIA E COMERCIO DE ALIMENTOS LTDA",
-       "NF 004385",
+       "55.930.477/0001-68",
        ""
       ],
       [
@@ -3548,14 +3629,6 @@
        -2850,
        "DISTRIBUIDORA NORONHENSE DE BEBIDAS LTDA",
        "NF 75197",
-       ""
-      ],
-      [
-       "4|Hortifrúti",
-       "26/08/2026",
-       -287,
-       "J A CALHEIROS DE MELO JUNIOR",
-       "NF 378041",
        ""
       ],
       [
@@ -3591,7 +3664,7 @@
        ""
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "31/08/2026",
        -660.79,
        "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
@@ -3599,7 +3672,7 @@
        ""
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "31/08/2026",
        -330.39,
        "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
@@ -3831,7 +3904,7 @@
        ""
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "31/08/2026",
        -300,
        "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
@@ -3839,7 +3912,7 @@
        ""
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "31/08/2026",
        -300,
        "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
@@ -3847,7 +3920,7 @@
        ""
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "31/08/2026",
        -300,
        "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
@@ -3903,7 +3976,7 @@
        ""
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "31/08/2026",
        -243.15,
        "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
@@ -3983,19 +4056,19 @@
        ""
       ],
       [
-       "2|Simples Nacional (DAS)",
+       "2|PIS",
        "31/08/2026",
        -46.45,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
+       "MINISTERIO DA FAZENDA",
+       "",
        ""
       ],
       [
-       "2|Simples Nacional (DAS)",
+       "2|COFINS",
        "31/08/2026",
        -214.39,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
+       "MINISTERIO DA FAZENDA",
+       "",
        ""
       ],
       [
@@ -4013,116 +4086,127 @@
        "GETNET",
        "TAXA GETNET",
        ""
+      ],
+      [
+       "4|Frios, laticínios e congelados",
+       "26/08/2026",
+       -287,
+       "J A CALHEIROS DE MELO JUNIOR",
+       "000378041/1",
+       ""
       ]
      ]
     },
     "2026-09": {
      "grupos": {
-      "1": 1079673.2899999998,
-      "10": 17.0,
+      "1": 1116625.1600000004,
       "NEUTRO": 1058.2300000000012,
-      "8": -62146.470000000016,
+      "8": -99307.47000000002,
       "9": -30715.83,
-      "6": -181585.93000000014,
-      "5": -43101.840000000004,
-      "4": -144981.94,
+      "6": -178935.53000000014,
+      "5": -54439.88,
+      "4": -240992.68000000002,
       "11": -10895.0,
-      "CC": -117815.82000000002,
-      "3": -22568.190000000002,
-      "2": -5300.0
+      "CC": -109420.10000000002,
+      "3": -50749.18,
+      "2": -40443.85
      },
      "contas": {
-      "1|Receita operacional (salão)": 1079673.2899999998,
-      "10|Rendimentos de aplicações": 17.0,
+      "1|Receita operacional (salão)": 1116625.1600000004,
       "NEUTRO|Ajustes e estornos - entrada": 1058.2300000000012,
-      "8|Sistemas": -949.0,
+      "8|Sistemas": -3943.38,
       "8|Viagens administrativas": -7900.0,
       "9|Outros de marketing": -3500.0,
       "8|Contabilidade, jurídico e consultorias": -7500.0,
-      "6|Diarista (OIA)": -37387.51,
+      "6|Diarista (OIA)": -46992.51,
       "5|Alojamento e ajuda de custo para moradia": -19070.65,
-      "6|Salários da operação": -89272.14000000004,
+      "6|Salários da operação": -87427.82000000004,
       "8|Telefonia e internet": -188.42,
-      "4|Proteínas (carnes e frutos do mar)": -44824.11,
-      "6|Alimentação de colaboradores": -29246.079999999998,
+      "4|Proteínas (carnes e frutos do mar)": -58279.09,
+      "6|Alimentação de colaboradores": -18135.0,
       "8|Correios e fretes administrativos": -186.95,
       "4|Outros insumos e diversos": -13469.26,
       "9|Cachê de artistas e atrações": -23215.83,
-      "6|Extras e freelancers": -16993.339999999997,
+      "6|Extras e freelancers": -17693.339999999997,
       "5|Gestor operacional PJ": -14666.67,
-      "8|Pró-labore": -28000.0,
+      "8|Pró-labore": -68000.0,
       "11|Equipamentos e mobiliário": -8895.0,
-      "8|Outras despesas administrativas": -14854.35,
-      "5|Manutenção de equipamentos": -1000.0,
-      "4|Secos e mercearia": -19713.89,
+      "4|Hortifrúti": -13523.23,
+      "5|Manutenção de equipamentos": -1960.0,
+      "4|Secos e mercearia": -58141.84999999999,
       "11|Obras e reformas": -2000.0,
-      "5|Limpeza e descartáveis": -7915.52,
+      "8|Outras despesas administrativas": -9020.970000000001,
+      "5|Limpeza e descartáveis": -3387.32,
       "8|Tarifas bancárias": -782.2500000000001,
-      "4|Bebidas alcoólicas": -38254.89,
+      "4|Bebidas alcoólicas": -68603.75,
       "6|Passagens aéreas da equipe": -3982.68,
       "6|Uniformes, EPI e exames": -1924.0,
-      "4|Hortifrúti": -6058.95,
       "9|Agência e conteúdo": -2500.0,
-      "CC|Conta corrente YO Noronha - saída": -114349.15000000002,
+      "CC|Conta corrente YO Noronha - saída": -105953.43000000002,
       "4|Frete de insumos de alimentos e bebidas": -14428.04,
       "CC|Conta corrente Pousada Topázio - saída": -3466.67,
-      "3|Comissões sobre vendas": -12116.62,
+      "3|Comissões sobre vendas": -40297.60999999999,
       "5|Transporte, veículo e combustível": -449.0,
       "9|Mídia paga": -1500.0,
+      "4|Frios, laticínios e congelados": -14547.46,
       "6|Rescisões": -2780.18,
-      "4|Frios, laticínios e congelados": -8232.8,
       "8|Material de escritório": -1785.5,
       "2|Cancelamentos e estornos": -5300.0,
-      "3|Taxas de cartão": -10451.57
+      "3|Taxas de cartão": -10451.57,
+      "2|COFINS": -28885.36,
+      "2|PIS": -6258.49,
+      "5|Diversos de operação": -14906.24
      },
      "lanc": {
-      "1|Receita operacional (salão)": 332,
-      "10|Rendimentos de aplicações": 8,
+      "1|Receita operacional (salão)": 354,
       "NEUTRO|Ajustes e estornos - entrada": 300,
-      "8|Sistemas": 1,
+      "8|Sistemas": 3,
       "8|Viagens administrativas": 3,
       "9|Outros de marketing": 2,
       "8|Contabilidade, jurídico e consultorias": 1,
-      "6|Diarista (OIA)": 55,
+      "6|Diarista (OIA)": 59,
       "5|Alojamento e ajuda de custo para moradia": 9,
-      "6|Salários da operação": 68,
+      "6|Salários da operação": 67,
       "8|Telefonia e internet": 1,
-      "4|Proteínas (carnes e frutos do mar)": 17,
-      "6|Alimentação de colaboradores": 13,
+      "4|Proteínas (carnes e frutos do mar)": 23,
+      "6|Alimentação de colaboradores": 9,
       "8|Correios e fretes administrativos": 1,
       "4|Outros insumos e diversos": 6,
       "9|Cachê de artistas e atrações": 24,
-      "6|Extras e freelancers": 13,
+      "6|Extras e freelancers": 14,
       "5|Gestor operacional PJ": 3,
-      "8|Pró-labore": 3,
+      "8|Pró-labore": 6,
       "11|Equipamentos e mobiliário": 4,
-      "8|Outras despesas administrativas": 11,
-      "5|Manutenção de equipamentos": 1,
-      "4|Secos e mercearia": 12,
+      "4|Hortifrúti": 10,
+      "5|Manutenção de equipamentos": 2,
+      "4|Secos e mercearia": 27,
       "11|Obras e reformas": 1,
-      "5|Limpeza e descartáveis": 8,
+      "8|Outras despesas administrativas": 7,
+      "5|Limpeza e descartáveis": 2,
       "8|Tarifas bancárias": 25,
-      "4|Bebidas alcoólicas": 9,
+      "4|Bebidas alcoólicas": 14,
       "6|Passagens aéreas da equipe": 4,
       "6|Uniformes, EPI e exames": 3,
-      "4|Hortifrúti": 4,
       "9|Agência e conteúdo": 1,
-      "CC|Conta corrente YO Noronha - saída": 51,
+      "CC|Conta corrente YO Noronha - saída": 46,
       "4|Frete de insumos de alimentos e bebidas": 2,
       "CC|Conta corrente Pousada Topázio - saída": 2,
-      "3|Comissões sobre vendas": 24,
+      "3|Comissões sobre vendas": 32,
       "5|Transporte, veículo e combustível": 1,
       "9|Mídia paga": 1,
+      "4|Frios, laticínios e congelados": 5,
       "6|Rescisões": 1,
-      "4|Frios, laticínios e congelados": 2,
       "8|Material de escritório": 1,
       "2|Cancelamentos e estornos": 3,
-      "3|Taxas de cartão": 1
+      "3|Taxas de cartão": 1,
+      "2|COFINS": 1,
+      "2|PIS": 1,
+      "5|Diversos de operação": 17
      },
      "familias": {
-      "cozinha": -78829.75,
+      "cozinha": -144491.63000000003,
       "comum": -27897.3,
-      "bar": -38254.89
+      "bar": -68603.75
      },
      "itens": [
       [
@@ -4278,14 +4362,6 @@
        ""
       ],
       [
-       "10|Rendimentos de aplicações",
-       "01/09/2026",
-       0.64,
-       "BANCO SANTANDER",
-       "SEM NF",
-       ""
-      ],
-      [
        "1|Receita operacional (salão)",
        "02/09/2026",
        239.68,
@@ -4430,14 +4506,6 @@
        ""
       ],
       [
-       "10|Rendimentos de aplicações",
-       "03/09/2026",
-       0.5,
-       "BANCO SANTANDER",
-       "SEM NF",
-       ""
-      ],
-      [
        "1|Receita operacional (salão)",
        "04/09/2026",
        14731.88,
@@ -4467,14 +4535,6 @@
        780.53,
        "GETNET",
        "FALTA NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "04/09/2026",
-       0.64,
-       "BANCO SANTANDER",
-       "SEM NF",
        ""
       ],
       [
@@ -4833,14 +4893,6 @@
        "1|Receita operacional (salão)",
        "09/09/2026",
        223,
-       "GETNET",
-       "FALTA NF",
-       ""
-      ],
-      [
-       "1|Receita operacional (salão)",
-       "09/09/2026",
-       0.1,
        "GETNET",
        "FALTA NF",
        ""
@@ -5214,14 +5266,6 @@
        ""
       ],
       [
-       "10|Rendimentos de aplicações",
-       "15/09/2026",
-       0.73,
-       "BANCO SANTANDER",
-       "SEM NF",
-       ""
-      ],
-      [
        "1|Receita operacional (salão)",
        "16/09/2026",
        3,
@@ -5403,14 +5447,6 @@
        929.05,
        "GETNET",
        "FALTA NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "18/09/2026",
-       0.17,
-       "BANCO SANTANDER",
-       "SEM NF",
        ""
       ],
       [
@@ -5794,14 +5830,6 @@
        "21/09/2026",
        808.64,
        "DANIELLE HERNANDES SANCHES",
-       "FALTA NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "22/09/2026",
-       0.66,
-       "BANCO SANTANDER",
        "FALTA NF",
        ""
       ],
@@ -6945,14 +6973,6 @@
        "NEUTRO|Ajustes e estornos - entrada",
        "24/09/2026",
        12.53,
-       "BANCO SANTANDER",
-       "SEM NF",
-       ""
-      ],
-      [
-       "1|Receita operacional (salão)",
-       "25/09/2026",
-       0.75,
        "BANCO SANTANDER",
        "SEM NF",
        ""
@@ -8534,14 +8554,6 @@
        ""
       ],
       [
-       "10|Rendimentos de aplicações",
-       "29/09/2026",
-       1.25,
-       "BANCO SANTANDER",
-       "SEM NF",
-       ""
-      ],
-      [
        "1|Receita operacional (salão)",
        "29/09/2026",
        19222.45,
@@ -8904,54 +8916,6 @@
       [
        "1|Receita operacional (salão)",
        "28/09/2026",
-       1070,
-       "Cliente Consumidor / Sem Tomador",
-       "FALTA NF",
-       ""
-      ],
-      [
-       "1|Receita operacional (salão)",
-       "28/09/2026",
-       1000,
-       "Cliente Consumidor / Sem Tomador",
-       "FALTA NF",
-       ""
-      ],
-      [
-       "1|Receita operacional (salão)",
-       "28/09/2026",
-       2000,
-       "Cliente Consumidor / Sem Tomador",
-       "FALTA NF",
-       ""
-      ],
-      [
-       "1|Receita operacional (salão)",
-       "28/09/2026",
-       2000,
-       "Cliente Consumidor / Sem Tomador",
-       "FALTA NF",
-       ""
-      ],
-      [
-       "1|Receita operacional (salão)",
-       "28/09/2026",
-       2000,
-       "Cliente Consumidor / Sem Tomador",
-       "FALTA NF",
-       ""
-      ],
-      [
-       "1|Receita operacional (salão)",
-       "28/09/2026",
-       2000,
-       "Cliente Consumidor / Sem Tomador",
-       "FALTA NF",
-       ""
-      ],
-      [
-       "1|Receita operacional (salão)",
-       "28/09/2026",
        63.29,
        "Cliente Consumidor / Sem Tomador",
        "FALTA NF",
@@ -9230,19 +9194,251 @@
        ""
       ],
       [
-       "10|Rendimentos de aplicações",
+       "1|Receita operacional (salão)",
        "30/09/2026",
-       12.41,
-       "BANCO SANTANDER",
+       10451.57,
+       "GETNET",
+       "TAXA GETNET",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "01/09/2026",
+       405.24,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/09/2026",
+       47,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "03/09/2026",
+       60,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "05/09/2026",
+       1355,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "05/09/2026",
+       1050,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "06/09/2026",
+       1865,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "07/09/2026",
+       700,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "08/09/2026",
+       310,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "09/09/2026",
+       1700,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "10/09/2026",
+       6147,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "11/09/2026",
+       3052,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "12/09/2026",
+       820,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "13/09/2026",
+       1592,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "14/09/2026",
+       1245,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "15/09/2026",
+       700,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "15/09/2026",
+       822,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "17/09/2026",
+       2200,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "18/09/2026",
+       468,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "19/09/2026",
+       2400,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "20/09/2026",
+       1350,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "21/09/2026",
+       2395,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "22/09/2026",
+       1357,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "23/09/2026",
+       735,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "24/09/2026",
+       5965,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "25/09/2026",
+       20,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "26/09/2026",
+       1455,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "27/09/2026",
+       2297.11,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "28/09/2026",
+       2080,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "29/09/2026",
+       1265,
+       "Cliente Consumidor / Sem Tomador",
        "",
        ""
       ],
       [
        "1|Receita operacional (salão)",
        "30/09/2026",
-       10451.57,
-       "GETNET",
-       "TAXA GETNET",
+       1165.37,
+       "Cliente Consumidor / Sem Tomador",
+       "",
        ""
       ],
       [
@@ -9702,11 +9898,19 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
-       "05/09/2026",
-       -1890,
+       "4|Hortifrúti",
+       "03/09/2026",
+       -1190,
        "MARCOS DOS SANTOS MELO",
-       "SEM NF",
+       "81994123215",
+       ""
+      ],
+      [
+       "6|Extras e freelancers",
+       "03/09/2026",
+       -700,
+       "MARCOS DOS SANTOS MELO",
+       "81994123215",
        ""
       ],
       [
@@ -9938,7 +10142,7 @@
        "05/09/2026",
        -1166.67,
        "EDMILSON DE LIMA JUNIOR",
-       "SEM NF",
+       "06471205422",
        ""
       ],
       [
@@ -10062,7 +10266,7 @@
        ""
       ],
       [
-       "5|Limpeza e descartáveis",
+       "4|Secos e mercearia",
        "03/09/2026",
        -346.21,
        "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
@@ -10286,7 +10490,7 @@
        ""
       ],
       [
-       "6|Alimentação de colaboradores",
+       "4|Proteínas (carnes e frutos do mar)",
        "07/09/2026",
        -71.92,
        "MERCADINHO E FRIGORIFICO POTY LTDA",
@@ -10318,7 +10522,7 @@
        ""
       ],
       [
-       "5|Limpeza e descartáveis",
+       "4|Secos e mercearia",
        "08/09/2026",
        -937.6,
        "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
@@ -10366,7 +10570,7 @@
        ""
       ],
       [
-       "6|Alimentação de colaboradores",
+       "4|Secos e mercearia",
        "02/09/2026",
        -4629.59,
        "PRASO PLATAFORMA DE COMERCIO LTDA.",
@@ -10374,7 +10578,7 @@
        ""
       ],
       [
-       "6|Alimentação de colaboradores",
+       "4|Secos e mercearia",
        "03/09/2026",
        -5969.97,
        "PRASO PLATAFORMA DE COMERCIO LTDA.",
@@ -10590,18 +10794,10 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "8|Sistemas",
        "20/09/2026",
        -2245.38,
        "L &amp; F TECNOLOGIA SISTEMAS E COMERCIO LTDA",
-       "FALTA NF",
-       ""
-      ],
-      [
-       "8|Outras despesas administrativas",
-       "15/09/2026",
-       -949,
-       "Omiexperience Ltda",
        "FALTA NF",
        ""
       ],
@@ -10742,7 +10938,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "8|Sistemas",
        "17/09/2026",
        -749,
        "SUFLEX TECNOLOGIA LTDA.",
@@ -11209,40 +11405,32 @@
        "6|Diarista (OIA)",
        "01/09/2026",
        -900,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
+       "JOAO VICTOR OLIVEIRA NERY",
+       "073.331.825-84",
        ""
       ],
       [
        "4|Proteínas (carnes e frutos do mar)",
        "01/09/2026",
        -4290,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
-       ""
-      ],
-      [
-       "4|Secos e mercearia",
-       "08/09/2026",
-       -1268.5,
-       "Cliente Consumidor / Sem Tomador",
-       "NF 254693",
+       "MARISOL CAVALCANTE DE ALBUQUERQUE",
+       "302.302.414-68",
        ""
       ],
       [
        "9|Mídia paga",
        "10/09/2026",
        -1500,
-       "Cliente Consumidor / Sem Tomador",
-       "FALTA NF",
+       "AZION MARKETING E PERFORMANCE LTDA",
+       "",
        ""
       ],
       [
        "6|Diarista (OIA)",
        "18/09/2026",
        -1025,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
+       "ANTONIO CARLOS CHERU",
+       "01458667774",
        ""
       ],
       [
@@ -11408,14 +11596,6 @@
       [
        "6|Salários da operação",
        "30/09/2026",
-       -1844.32,
-       "MAXIMILLIAN MARINHO DE LIMA",
-       "81996623498",
-       ""
-      ],
-      [
-       "6|Salários da operação",
-       "30/09/2026",
        -2026.32,
        "PAULO CESAR DA SILVA",
        "78452414404",
@@ -11481,8 +11661,8 @@
        "4|Secos e mercearia",
        "28/09/2026",
        -858,
-       "Cliente Consumidor / Sem Tomador",
-       "NF 255745",
+       "DISAL DISTRIBUIDORA DE ALIMENTOS LTDA",
+       "",
        ""
       ],
       [
@@ -11566,7 +11746,7 @@
        ""
       ],
       [
-       "5|Limpeza e descartáveis",
+       "4|Secos e mercearia",
        "11/09/2026",
        -1974.9,
        "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
@@ -11606,7 +11786,7 @@
        ""
       ],
       [
-       "6|Alimentação de colaboradores",
+       "4|Secos e mercearia",
        "19/09/2026",
        -439.6,
        "PRASO PLATAFORMA DE COMERCIO LTDA.",
@@ -11638,7 +11818,7 @@
        ""
       ],
       [
-       "5|Limpeza e descartáveis",
+       "4|Secos e mercearia",
        "16/09/2026",
        -435.37,
        "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
@@ -11678,7 +11858,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Frios, laticínios e congelados",
        "29/09/2026",
        -300,
        "CENTRAL DE ENVIOS NORONHA COMERCIO LTDA",
@@ -11823,14 +12003,6 @@
       ],
       [
        "CC|Conta corrente YO Noronha - saída",
-       "17/09/2026",
-       -5462.84,
-       "DISPAN DISTRIBUIDORA DE ALIMENTOS LTDA",
-       "NF 2888558",
-       ""
-      ],
-      [
-       "CC|Conta corrente YO Noronha - saída",
        "26/09/2026",
        -432,
        "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
@@ -11875,14 +12047,6 @@
        -969.9,
        "EMPORIO MIX DE HORTALICAS FINAS LIMITADA",
        "NF 000083",
-       ""
-      ],
-      [
-       "4|Proteínas (carnes e frutos do mar)",
-       "09/09/2026",
-       -2263.94,
-       "CARAPITANGA INDUSTRIA DE PESCADOS DO BRASIL LT",
-       "NF 179227",
        ""
       ],
       [
@@ -11934,7 +12098,7 @@
        ""
       ],
       [
-       "5|Limpeza e descartáveis",
+       "4|Secos e mercearia",
        "30/09/2026",
        -484.3,
        "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
@@ -12134,7 +12298,7 @@
        ""
       ],
       [
-       "5|Limpeza e descartáveis",
+       "4|Secos e mercearia",
        "30/09/2026",
        -349.82,
        "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
@@ -12217,96 +12381,96 @@
        "6|Salários da operação",
        "25/09/2026",
        -1319.67,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
+       "THIAGO MACHADO STORCK",
+       "48996383955",
        ""
       ],
       [
        "4|Proteínas (carnes e frutos do mar)",
        "18/09/2026",
        -2906,
-       "Cliente Consumidor / Sem Tomador",
-       "NF 041060",
+       "O REI DAS OVAS COMERCIO DE PESCADOS LTDA",
+       "",
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "29/09/2026",
        -989,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
+       "ADMILSA MARIA DA SILVA",
+       "81995160013",
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "5|Manutenção de equipamentos",
        "29/09/2026",
        -960,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
+       "54.254.556 JHONATHAN JARDIEL JERONIMO SILVA",
+       "54.254.556/0001-33",
        ""
       ],
       [
        "9|Cachê de artistas e atrações",
        "29/09/2026",
        -1500,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
+       "ANDRE LUIS SANTIAGO EIRAS",
+       "07173894484",
        ""
       ],
       [
        "9|Cachê de artistas e atrações",
        "29/09/2026",
        -1875,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
+       "BRUNO CELIO PORTELA DE SOUZA",
+       "21987482522",
        ""
       ],
       [
        "9|Cachê de artistas e atrações",
        "29/09/2026",
        -900,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
+       "ANDRE LUIZ GOMES VELOSO",
+       "velozonoronha@gmail.",
        ""
       ],
       [
        "9|Cachê de artistas e atrações",
        "29/09/2026",
        -550,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
+       "FLAVIO AUGUSTO LIMA DA SILVA",
+       "kwdm101@hotmail.com",
        ""
       ],
       [
        "9|Cachê de artistas e atrações",
        "29/09/2026",
        -1000,
-       "Cliente Consumidor / Sem Tomador",
+       "GEANDRO DE MOURA SILVA",
        "SEM NF",
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Hortifrúti",
        "17/09/2026",
        -683.88,
-       "Cliente Consumidor / Sem Tomador",
-       "NF379780",
+       "J A CALHEIROS DE MELO JUNIOR",
+       "",
        ""
       ],
       [
        "2|Cancelamentos e estornos",
        "25/09/2026",
        -800,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
+       "VITORIA NALLIN DE GODOY",
+       "43179794895",
        ""
       ],
       [
        "2|Cancelamentos e estornos",
        "25/09/2026",
        -3000,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
+       "VANDRE NOBREGA SANTIAGO",
+       "(81) 99755-1771",
        ""
       ],
       [
@@ -12350,6 +12514,22 @@
        ""
       ],
       [
+       "4|Hortifrúti",
+       "25/09/2026",
+       -385,
+       "MARCOS DOS SANTOS MELO",
+       "81994123215",
+       ""
+      ],
+      [
+       "4|Hortifrúti",
+       "30/09/2026",
+       -286,
+       "MARCOS DOS SANTOS MELO",
+       "81994123215",
+       ""
+      ],
+      [
        "4|Outros insumos e diversos",
        "21/09/2026",
        -2018.73,
@@ -12380,6 +12560,446 @@
        "GETNET",
        "TAXA GETNET",
        ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "09/09/2026",
+       -2198,
+       "CARAPITANGA INDUSTRIA DE PESCADOS DO BRASIL LT",
+       "000179227/1",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "09/09/2026",
+       -2198,
+       "CARAPITANGA INDUSTRIA DE PESCADOS DO BRASIL LT",
+       "000179227/2",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "09/09/2026",
+       -2198,
+       "CARAPITANGA INDUSTRIA DE PESCADOS DO BRASIL LT",
+       "000179227/3",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "17/09/2026",
+       -5462.84,
+       "DISPAN DISTRIBUIDORA DE ALIMENTOS LTDA",
+       "000288858/1",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "17/09/2026",
+       -5462.84,
+       "DISPAN DISTRIBUIDORA DE ALIMENTOS LTDA",
+       "000288858/2",
+       ""
+      ],
+      [
+       "4|Frios, laticínios e congelados",
+       "17/09/2026",
+       -3007.33,
+       "FORMAGGIO DISTRIBUICAO DE ALIMENTOS LTDA",
+       "",
+       ""
+      ],
+      [
+       "4|Frios, laticínios e congelados",
+       "17/09/2026",
+       -3007.33,
+       "FORMAGGIO DISTRIBUICAO DE ALIMENTOS LTDA",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "09/09/2026",
+       -4567.86,
+       "INGA - DISTRIBUIDORA LTDA",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "08/09/2026",
+       -7838.36,
+       "INGA - DISTRIBUIDORA LTDA",
+       "",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "18/09/2026",
+       -4032,
+       "CARAPITANGA INDUSTRIA DE PESCADOS DO BRASIL LT",
+       "",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "18/09/2026",
+       -4032,
+       "CARAPITANGA INDUSTRIA DE PESCADOS DO BRASIL LT",
+       "",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "28/09/2026",
+       -9932.32,
+       "PCA - POTIGUAR COMERCIO DE ALIMENTOS LTDA",
+       "000003046/1",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "08/09/2026",
+       -331.5,
+       "DISPAN DISTRIBUIDORA DE ALIMENTOS LTDA",
+       "000068345/1",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "08/09/2026",
+       -1268.5,
+       "DISAL DISTRIBUIDORA DE ALIMENTOS LTDA",
+       "CHAVE ALEATORIA",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -3173.82,
+       "RAFAELA PATRICIA MIRANDA DE ARAUJO",
+       "",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -4380.41,
+       "JOAO VICTOR OLIVEIRA NERY",
+       "07333182584",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -3966.72,
+       "YURI COSTA BARRETO",
+       "858.334.245-85",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -3553.03,
+       "EDMILSON DE LIMA JUNIOR",
+       "06471205422",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -3553.03,
+       "ALUISIO FREITAS DE MORAIS",
+       "099.920.674-54",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -4380.41,
+       "GABRIELLA ALVES NOVAES",
+       "81998045951",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -4173.57,
+       "MAXIMILLIAN MARINHO DE LIMA",
+       "81996623498",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "16/09/2026",
+       -5980.88,
+       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
+       "05.429.222/0001-48",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "16/09/2026",
+       -5980.88,
+       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
+       "001270442/2",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "16/09/2026",
+       -5980.88,
+       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
+       "001270442/3",
+       ""
+      ],
+      [
+       "2|COFINS",
+       "30/09/2026",
+       -28885.36,
+       "MINISTERIO DA FAZENDA",
+       "",
+       ""
+      ],
+      [
+       "2|PIS",
+       "30/09/2026",
+       -6258.49,
+       "MINISTERIO DA FAZENDA",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "26/09/2026",
+       -2580,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "27/09/2026",
+       -4300,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "29/09/2026",
+       -1725,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "30/09/2026",
+       -1000,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "06/09/2026",
+       -709,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "07/09/2026",
+       -450,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "08/09/2026",
+       -300,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "09/09/2026",
+       -200,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "10/09/2026",
+       -410,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "11/09/2026",
+       -924,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "12/09/2026",
+       -800,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "13/09/2026",
+       -1000,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "15/09/2026",
+       -700,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "17/09/2026",
+       -400,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "18/09/2026",
+       -468,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "19/09/2026",
+       -800,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "20/09/2026",
+       -1000,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "21/09/2026",
+       -1295,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "24/09/2026",
+       -4125,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "01/09/2026",
+       -325.24,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "05/09/2026",
+       -1000,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "8|Pró-labore",
+       "30/09/2026",
+       -20000,
+       "RENATO FERREIRA LIMA BATISTA GOMES",
+       "81996660444",
+       ""
+      ],
+      [
+       "8|Pró-labore",
+       "30/09/2026",
+       -10000,
+       "GEORGE CARTAXO MENDES COSTA",
+       "112.752.714-21",
+       ""
+      ],
+      [
+       "8|Pró-labore",
+       "30/09/2026",
+       -10000,
+       "MARCELA CAVALCANTI VILANOVA HURTADO",
+       "088.730.764-75",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "09/09/2026",
+       -1331.1,
+       "DISPAN DISTRIBUIDORA DE ALIMENTOS LTDA",
+       "000286464/1",
+       ""
+      ],
+      [
+       "4|Hortifrúti",
+       "30/09/2026",
+       -2459.7,
+       "GEORGE CARTAXO MENDES COSTA",
+       "112.752.714-21",
+       ""
+      ],
+      [
+       "4|Hortifrúti",
+       "30/09/2026",
+       -2459.7,
+       "GEORGE CARTAXO MENDES COSTA",
+       "112.752.714-21",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "30/09/2026",
+       -340,
+       "M B N INDUSTRIA E COMERCIO DE ALIMENTOS LTDA",
+       "55.930.477/0001-68",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -1000,
+       "JOAO VICTOR OLIVEIRA NERY",
+       "07333182584",
+       ""
       ]
      ]
     }
@@ -12388,19 +13008,19 @@
     "2026-08": {
      "grupos": {
       "NEUTRO": 9.169999999976426,
-      "2": -946.3399999999999,
+      "6": -11889.48,
       "4": -32246.059999999998,
       "5": -7574.0,
       "8": -17043.760000000002,
-      "6": -10943.14,
       "CC": 100000.0,
       "1": 165122.28,
       "9": -4385.0,
-      "10": 0.1
+      "10": 4.07,
+      "2": -0.03
      },
      "contas": {
       "NEUTRO|Ajustes e estornos - entrada": 9.17,
-      "2|ISS retido na fonte de prestadores": -946.3399999999999,
+      "6|ISS | Permanência": -946.3399999999999,
       "4|Secos e mercearia": -3774.9799999999996,
       "4|Outros insumos e diversos": -2800.0,
       "5|Alojamento e ajuda de custo para moradia": -7000.0,
@@ -12423,11 +13043,13 @@
       "5|Reposição de utensílios": -180.0,
       "4|Frios, laticínios e congelados": -1140.0,
       "8|Viagens administrativas": -3500.0,
-      "10|Rendimentos de aplicações": 0.1
+      "10|Rendimentos de aplicações": 4.45,
+      "10|IOF": -0.38,
+      "2|IRPJ": -0.03
      },
      "lanc": {
       "NEUTRO|Ajustes e estornos - entrada": 4,
-      "2|ISS retido na fonte de prestadores": 5,
+      "6|ISS | Permanência": 5,
       "4|Secos e mercearia": 5,
       "4|Outros insumos e diversos": 1,
       "5|Alojamento e ajuda de custo para moradia": 1,
@@ -12450,7 +13072,9 @@
       "5|Reposição de utensílios": 1,
       "4|Frios, laticínios e congelados": 1,
       "8|Viagens administrativas": 1,
-      "10|Rendimentos de aplicações": 1
+      "10|Rendimentos de aplicações": 1,
+      "10|IOF": 1,
+      "2|IRPJ": 1
      },
      "familias": {
       "cozinha": -13393.68,
@@ -12483,7 +13107,7 @@
        "Santander"
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "20/08/2026",
        -165.29,
        "DISTRITO ESTADUAL DE FERNANDO DE NORONHA",
@@ -12531,7 +13155,7 @@
        "Santander"
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "20/08/2026",
        -100,
        "DISTRITO ESTADUAL DE FERNANDO DE NORONHA",
@@ -12539,7 +13163,7 @@
        "Santander"
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "20/08/2026",
        -81.05,
        "DISTRITO ESTADUAL DE FERNANDO DE NORONHA",
@@ -12559,7 +13183,7 @@
        "20/08/2026",
        -88429.94,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander"
       ],
       [
@@ -12575,7 +13199,7 @@
        "21/08/2026",
        -446.6,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander"
       ],
       [
@@ -12687,7 +13311,7 @@
        "24/08/2026",
        -41885.05,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander"
       ],
       [
@@ -12847,7 +13471,7 @@
        "25/08/2026",
        1346.45,
        "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
+       "00000000",
        "Santander"
       ],
       [
@@ -13087,7 +13711,7 @@
        "26/08/2026",
        -10420.68,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander"
       ],
       [
@@ -13191,7 +13815,7 @@
        "27/08/2026",
        -11800.01,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander"
       ],
       [
@@ -13371,7 +13995,7 @@
        "Santander"
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "28/08/2026",
        -300,
        "DISTRITO ESTADUAL DE FERNANDO DE NORONHA",
@@ -13379,18 +14003,10 @@
        "Santander"
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "28/08/2026",
        -300,
        "DISTRITO ESTADUAL DE FERNANDO DE NORONHA",
-       "SEM NF",
-       "Santander"
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "28/08/2026",
-       0.1,
-       "BANCO SANTANDER",
        "SEM NF",
        "Santander"
       ],
@@ -13439,7 +14055,7 @@
        "28/08/2026",
        15865.51,
        "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
+       "00000000",
        "Santander"
       ],
       [
@@ -13559,7 +14175,7 @@
        "31/08/2026",
        -56222.83,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander"
       ],
       [
@@ -13567,7 +14183,7 @@
        "20/08/2026",
        88429.94,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -13575,7 +14191,7 @@
        "21/08/2026",
        446.6,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -13583,7 +14199,7 @@
        "24/08/2026",
        41885.05,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -13591,7 +14207,7 @@
        "25/08/2026",
        -1346.45,
        "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -13599,7 +14215,7 @@
        "26/08/2026",
        10420.68,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -13607,7 +14223,7 @@
        "27/08/2026",
        11800.01,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -13615,7 +14231,7 @@
        "28/08/2026",
        -15865.51,
        "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -13623,120 +14239,154 @@
        "31/08/2026",
        56222.83,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
+       "Santander - ContaMax"
+      ],
+      [
+       "10|Rendimentos de aplicações",
+       "31/08/2026",
+       4.45,
+       "BANCO SANTANDER",
+       "CONTAMAX",
+       "Santander - ContaMax"
+      ],
+      [
+       "10|IOF",
+       "31/08/2026",
+       -0.38,
+       "BANCO SANTANDER",
+       "CONTAMAX",
+       "Santander - ContaMax"
+      ],
+      [
+       "2|IRPJ",
+       "31/08/2026",
+       -0.03,
+       "BANCO SANTANDER",
+       "CONTAMAX",
        "Santander - ContaMax"
       ]
      ]
     },
     "2026-09": {
      "grupos": {
-      "1": 1069221.7200000002,
-      "4": -202841.26999999996,
-      "6": -124930.45999999998,
-      "8": -60511.97000000001,
+      "1": 1059150.87,
+      "4": -226272.15000069997,
+      "6": -116653.70999929996,
+      "8": -58621.97000000001,
       "9": -30715.83,
-      "5": -39665.51,
-      "10": 17.0,
+      "5": -36931.43,
       "11": -10895.0,
-      "NEUTRO": 1058.2299999994793,
-      "2": -15609.369999999999,
-      "CC": -165146.86999999997,
-      "3": -12116.62
+      "NEUTRO": 11128.229999999363,
+      "CC": -156751.15,
+      "2": -13476.54,
+      "3": -12116.620000000003,
+      "10": 28.54
      },
      "contas": {
-      "1|Receita operacional (salão)": 1069221.7200000002,
-      "4|Hortifrúti": -17202.61,
-      "6|Alimentação de colaboradores": -31502.28,
-      "4|Secos e mercearia": -44700.45,
+      "1|Receita operacional (salão)": 1059150.87,
+      "4|Hortifrúti": -18789.4900007,
+      "6|Alimentação de colaboradores": -20391.2,
+      "4|Secos e mercearia": -64896.529999999984,
       "8|Viagens administrativas": -7000.0,
       "9|Outros de marketing": -3500.0,
       "8|Contabilidade, jurídico e consultorias": -9500.0,
       "6|Diarista (OIA)": -36687.51,
       "5|Alojamento e ajuda de custo para moradia": -20070.65,
-      "10|Rendimentos de aplicações": 17.0,
       "11|Equipamentos e mobiliário": -8895.0,
-      "4|Proteínas (carnes e frutos do mar)": -60593.74,
+      "4|Proteínas (carnes e frutos do mar)": -61654.659999999996,
       "4|Bebidas alcoólicas": -29407.5,
       "11|Obras e reformas": -2000.0,
-      "8|Outras despesas administrativas": -14854.35,
-      "5|Limpeza e descartáveis": -9145.86,
+      "8|Outras despesas administrativas": -9020.970000000001,
+      "5|Limpeza e descartáveis": -5451.780000000001,
       "8|Tarifas bancárias": -782.2500000000001,
-      "NEUTRO|Transferência entre contas - entrada": 916797.98,
+      "NEUTRO|Transferência entre contas - entrada": 926867.98,
+      "4|Frios, laticínios e congelados": -26634.84,
       "NEUTRO|Transferência entre contas - saída": -916797.9800000001,
       "6|Salários da operação": -39208.299999999996,
       "5|Gestor operacional PJ": -9000.0,
-      "6|Extras e freelancers": -7000.0,
+      "6|Extras e freelancers": -7699.9999993,
       "8|Telefonia e internet": -188.42,
       "8|Correios e fretes administrativos": -186.95,
       "4|Outros insumos e diversos": -13513.569999999998,
       "9|Cachê de artistas e atrações": -23215.83,
       "8|Pró-labore": -28000.0,
-      "5|Manutenção de equipamentos": -1000.0,
-      "2|ISS retido na fonte de prestadores": -2134.33,
+      "5|Manutenção de equipamentos": -1960.0,
+      "6|ISS | Permanência": -2134.33,
       "6|Passagens aéreas da equipe": -3982.68,
       "6|Uniformes, EPI e exames": -1924.0,
-      "4|Frios, laticínios e congelados": -26047.84,
       "9|Mídia paga": -1500.0,
       "4|Frete de insumos de alimentos e bebidas": -11375.560000000001,
       "9|Agência e conteúdo": -2500.0,
-      "CC|Conta corrente YO Noronha - saída": -161680.19999999998,
+      "CC|Conta corrente YO Noronha - saída": -153284.47999999998,
       "6|FGTS e contribuições": -1845.51,
-      "2|Simples Nacional (DAS)": -8175.04,
+      "2|Simples Nacional (DAS)": -7914.2,
+      "8|Sistemas": -3943.38,
       "CC|Conta corrente Pousada Topázio - saída": -3466.67,
-      "3|Comissões sobre vendas": -12116.62,
+      "3|Comissões sobre vendas": -12116.620000000003,
       "5|Transporte, veículo e combustível": -449.0,
       "NEUTRO|Ajustes e estornos - entrada": 1058.2300000000012,
       "2|Cancelamentos e estornos": -5300.0,
-      "6|Rescisões": -2780.18
+      "2|COFINS": -214.39,
+      "2|PIS": -46.45,
+      "6|Rescisões": -2780.18,
+      "10|Rendimentos de aplicações": 34.94,
+      "10|IOF": -6.4,
+      "2|IRPJ": -1.5
      },
      "lanc": {
-      "1|Receita operacional (salão)": 331,
-      "4|Hortifrúti": 9,
-      "6|Alimentação de colaboradores": 14,
-      "4|Secos e mercearia": 19,
+      "1|Receita operacional (salão)": 323,
+      "4|Hortifrúti": 10,
+      "6|Alimentação de colaboradores": 10,
+      "4|Secos e mercearia": 27,
       "8|Viagens administrativas": 2,
       "9|Outros de marketing": 2,
       "8|Contabilidade, jurídico e consultorias": 2,
       "6|Diarista (OIA)": 54,
       "5|Alojamento e ajuda de custo para moradia": 10,
-      "10|Rendimentos de aplicações": 8,
       "11|Equipamentos e mobiliário": 4,
-      "4|Proteínas (carnes e frutos do mar)": 25,
+      "4|Proteínas (carnes e frutos do mar)": 27,
       "4|Bebidas alcoólicas": 7,
       "11|Obras e reformas": 1,
-      "8|Outras despesas administrativas": 11,
-      "5|Limpeza e descartáveis": 7,
+      "8|Outras despesas administrativas": 7,
+      "5|Limpeza e descartáveis": 3,
       "8|Tarifas bancárias": 25,
-      "NEUTRO|Transferência entre contas - entrada": 21,
+      "NEUTRO|Transferência entre contas - entrada": 27,
+      "4|Frios, laticínios e congelados": 13,
       "NEUTRO|Transferência entre contas - saída": 21,
       "6|Salários da operação": 40,
       "5|Gestor operacional PJ": 2,
-      "6|Extras e freelancers": 2,
+      "6|Extras e freelancers": 3,
       "8|Telefonia e internet": 1,
       "8|Correios e fretes administrativos": 1,
       "4|Outros insumos e diversos": 6,
       "9|Cachê de artistas e atrações": 24,
       "8|Pró-labore": 3,
-      "5|Manutenção de equipamentos": 1,
-      "2|ISS retido na fonte de prestadores": 6,
+      "5|Manutenção de equipamentos": 2,
+      "6|ISS | Permanência": 6,
       "6|Passagens aéreas da equipe": 4,
       "6|Uniformes, EPI e exames": 3,
-      "4|Frios, laticínios e congelados": 11,
       "9|Mídia paga": 1,
       "4|Frete de insumos de alimentos e bebidas": 2,
       "9|Agência e conteúdo": 1,
-      "CC|Conta corrente YO Noronha - saída": 63,
+      "CC|Conta corrente YO Noronha - saída": 58,
       "6|FGTS e contribuições": 1,
-      "2|Simples Nacional (DAS)": 3,
+      "2|Simples Nacional (DAS)": 1,
+      "8|Sistemas": 3,
       "CC|Conta corrente Pousada Topázio - saída": 2,
       "3|Comissões sobre vendas": 24,
       "5|Transporte, veículo e combustível": 1,
       "NEUTRO|Ajustes e estornos - entrada": 300,
       "2|Cancelamentos e estornos": 3,
-      "6|Rescisões": 1
+      "2|COFINS": 1,
+      "2|PIS": 1,
+      "6|Rescisões": 1,
+      "10|Rendimentos de aplicações": 1,
+      "10|IOF": 1,
+      "2|IRPJ": 1
      },
      "familias": {
-      "cozinha": -148544.64,
+      "cozinha": -171975.52000070002,
       "bar": -29407.5,
       "comum": -24889.13
      },
@@ -13982,14 +14632,6 @@
        "Santander"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "01/09/2026",
-       0.64,
-       "BANCO SANTANDER",
-       "SEM NF",
-       "Santander"
-      ],
-      [
        "6|Diarista (OIA)",
        "01/09/2026",
        -555,
@@ -14086,14 +14728,6 @@
        "Santander"
       ],
       [
-       "4|Secos e mercearia",
-       "01/09/2026",
-       -33.5,
-       "GRANNO SELECT",
-       "NF 004385",
-       "Santander"
-      ],
-      [
        "11|Equipamentos e mobiliário",
        "01/09/2026",
        -1400,
@@ -14139,14 +14773,6 @@
        -286.05,
        "PRESHH",
        "SEM NF",
-       "Santander"
-      ],
-      [
-       "4|Hortifrúti",
-       "01/09/2026",
-       -287,
-       "MANIHOT IGUARIAS",
-       "NF 378041",
        "Santander"
       ],
       [
@@ -14198,19 +14824,27 @@
        "Santander"
       ],
       [
-       "6|Diarista (OIA)",
-       "01/09/2026",
-       -900,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
-       "Santander"
-      ],
-      [
        "4|Proteínas (carnes e frutos do mar)",
        "01/09/2026",
        -4290,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
+       "MARISOL CAVALCANTE DE ALBUQUERQUE",
+       "302.302.414-68",
+       "Santander"
+      ],
+      [
+       "6|Diarista (OIA)",
+       "01/09/2026",
+       -900,
+       "JOAO VICTOR OLIVEIRA NERY",
+       "073.331.825-84",
+       "Santander"
+      ],
+      [
+       "4|Secos e mercearia",
+       "01/09/2026",
+       -33.5,
+       "GRANNO SELECT",
+       "55.930.477/0001-68",
        "Santander"
       ],
       [
@@ -14218,7 +14852,15 @@
        "01/09/2026",
        49738.32,
        "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
+       "00000000",
+       "Santander"
+      ],
+      [
+       "4|Frios, laticínios e congelados",
+       "01/09/2026",
+       -287,
+       "MANIHOT IGUARIAS",
+       "000378041/1",
        "Santander"
       ],
       [
@@ -14306,7 +14948,7 @@
        "02/09/2026",
        -14849.99,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander"
       ],
       [
@@ -14566,14 +15208,6 @@
        "Santander"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "03/09/2026",
-       0.5,
-       "BANCO SANTANDER",
-       "SEM NF",
-       "Santander"
-      ],
-      [
        "6|Salários da operação",
        "03/09/2026",
        -1493.33,
@@ -14608,14 +15242,6 @@
       [
        "6|Salários da operação",
        "03/09/2026",
-       -1166.67,
-       "EDMILSON DE LIMA JUNIOR",
-       "SEM NF",
-       "Santander"
-      ],
-      [
-       "6|Salários da operação",
-       "03/09/2026",
        -246.67,
        "GABRIEL JOSE DA SILVA SANTOS",
        "SEM NF",
@@ -14634,14 +15260,6 @@
        "03/09/2026",
        -293.33,
        "INACIO ADRIANO DE LIMA",
-       "SEM NF",
-       "Santander"
-      ],
-      [
-       "6|Salários da operação",
-       "03/09/2026",
-       -1166.67,
-       "JOAO VICTOR OLIVEIRA NERY",
        "SEM NF",
        "Santander"
       ],
@@ -14702,11 +15320,27 @@
        "Santander"
       ],
       [
+       "6|Salários da operação",
+       "03/09/2026",
+       -1166.67,
+       "JOAO VICTOR OLIVEIRA NERY",
+       "SEM NF",
+       "Santander"
+      ],
+      [
        "NEUTRO|Transferência entre contas - entrada",
        "03/09/2026",
        29298.57,
        "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
+       "00000000",
+       "Santander"
+      ],
+      [
+       "6|Salários da operação",
+       "03/09/2026",
+       -1166.67,
+       "EDMILSON DE LIMA JUNIOR",
+       "06471205422",
        "Santander"
       ],
       [
@@ -14934,11 +15568,19 @@
        "Santander"
       ],
       [
-       "8|Outras despesas administrativas",
+       "4|Hortifrúti",
        "04/09/2026",
-       -1890,
+       -1190.0,
        "MARCOS DOS SANTOS MELO",
-       "SEM NF",
+       "81994123215",
+       "Santander"
+      ],
+      [
+       "6|Extras e freelancers",
+       "04/09/2026",
+       -700.0,
+       "MARCOS DOS SANTOS MELO",
+       "81994123215",
        "Santander"
       ],
       [
@@ -15014,14 +15656,6 @@
        "Santander"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "04/09/2026",
-       0.64,
-       "BANCO SANTANDER",
-       "SEM NF",
-       "Santander"
-      ],
-      [
        "4|Bebidas alcoólicas",
        "04/09/2026",
        -400,
@@ -15058,7 +15692,7 @@
        "04/09/2026",
        55031.01,
        "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
+       "00000000",
        "Santander"
       ],
       [
@@ -15358,7 +15992,7 @@
        "Santander"
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "08/09/2026",
        -660.79,
        "DISTRITO ESTADUAL DE FERNANDO DE NORONHA",
@@ -15366,7 +16000,7 @@
        "Santander"
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "08/09/2026",
        -330.39,
        "DISTRITO ESTADUAL DE FERNANDO DE NORONHA",
@@ -15390,19 +16024,19 @@
        "Santander"
       ],
       [
-       "4|Secos e mercearia",
-       "08/09/2026",
-       -1268.5,
-       "Cliente Consumidor / Sem Tomador",
-       "NF 254693",
-       "Santander"
-      ],
-      [
        "NEUTRO|Transferência entre contas - saída",
        "08/09/2026",
        -170402.04,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
+       "Santander"
+      ],
+      [
+       "4|Secos e mercearia",
+       "08/09/2026",
+       -1268.5,
+       "DISAL DISTRIBUIDORA DE ALIMENTOS LTDA",
+       "CHAVE ALEATORIA",
        "Santander"
       ],
       [
@@ -15470,14 +16104,6 @@
        "Santander"
       ],
       [
-       "1|Receita operacional (salão)",
-       "09/09/2026",
-       0.1,
-       "GETNET",
-       "FALTA NF",
-       "Santander"
-      ],
-      [
        "4|Secos e mercearia",
        "09/09/2026",
        -1370.66,
@@ -15486,7 +16112,7 @@
        "Santander"
       ],
       [
-       "5|Limpeza e descartáveis",
+       "4|Secos e mercearia",
        "09/09/2026",
        -346.21,
        "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
@@ -15722,7 +16348,7 @@
        "09/09/2026",
        9373.52,
        "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
+       "00000000",
        "Santander"
       ],
       [
@@ -15830,18 +16456,18 @@
        "Santander"
       ],
       [
-       "9|Mídia paga",
-       "10/09/2026",
-       -1500,
-       "Cliente Consumidor / Sem Tomador",
-       "FALTA NF",
-       "Santander"
-      ],
-      [
        "NEUTRO|Transferência entre contas - saída",
        "10/09/2026",
        -26394.74,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
+       "00000000",
+       "Santander"
+      ],
+      [
+       "9|Mídia paga",
+       "10/09/2026",
+       -1500,
+       "AZION MARKETING E PERFORMANCE",
        "",
        "Santander"
       ],
@@ -15974,7 +16600,7 @@
        "Santander"
       ],
       [
-       "6|Alimentação de colaboradores",
+       "4|Proteínas (carnes e frutos do mar)",
        "11/09/2026",
        -71.92,
        "MERCADINHO E FRIGORIFICO POTY LTDA",
@@ -16062,7 +16688,7 @@
        "Santander"
       ],
       [
-       "5|Limpeza e descartáveis",
+       "4|Secos e mercearia",
        "11/09/2026",
        -937.6,
        "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
@@ -16098,7 +16724,7 @@
        "11/09/2026",
        -34214.94,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander"
       ],
       [
@@ -16294,7 +16920,7 @@
        "Santander"
       ],
       [
-       "6|Alimentação de colaboradores",
+       "4|Secos e mercearia",
        "14/09/2026",
        -4629.59,
        "PRASO PLATAFORMA DE COMERCIO LTDA.",
@@ -16302,7 +16928,7 @@
        "Santander"
       ],
       [
-       "6|Alimentação de colaboradores",
+       "4|Secos e mercearia",
        "14/09/2026",
        -5969.97,
        "PRASO PLATAFORMA DE COMERCIO LTDA.",
@@ -16386,7 +17012,7 @@
        "14/09/2026",
        -15598.75,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander"
       ],
       [
@@ -16427,14 +17053,6 @@
        368.34,
        "GETNET",
        "FALTA NF",
-       "Santander"
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "15/09/2026",
-       0.73,
-       "BANCO SANTANDER",
-       "SEM NF",
        "Santander"
       ],
       [
@@ -16638,7 +17256,7 @@
        "Santander"
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "15/09/2026",
        -300,
        "DISTRITO ESTADUAL DE FERNANDO DE NORONHA",
@@ -16646,7 +17264,7 @@
        "Santander"
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "15/09/2026",
        -300,
        "DISTRITO ESTADUAL DE FERNANDO DE NORONHA",
@@ -16654,7 +17272,7 @@
        "Santander"
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "15/09/2026",
        -300,
        "DISTRITO ESTADUAL DE FERNANDO DE NORONHA",
@@ -16686,18 +17304,10 @@
        "Santander"
       ],
       [
-       "8|Outras despesas administrativas",
+       "8|Sistemas",
        "15/09/2026",
        -2245.38,
        "3 L M INFORMATICA",
-       "FALTA NF",
-       "Santander"
-      ],
-      [
-       "8|Outras despesas administrativas",
-       "15/09/2026",
-       -949,
-       "Omiexperience",
        "FALTA NF",
        "Santander"
       ],
@@ -16730,7 +17340,15 @@
        "15/09/2026",
        36483.53,
        "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
+       "00000000",
+       "Santander"
+      ],
+      [
+       "8|Sistemas",
+       "15/09/2026",
+       -949,
+       "Omiexperience",
+       "RPS 3939846",
        "Santander"
       ],
       [
@@ -16874,7 +17492,7 @@
        "16/09/2026",
        -25872.79,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander"
       ],
       [
@@ -16962,15 +17580,7 @@
        "17/09/2026",
        -28206.89,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
-       "Santander"
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "18/09/2026",
-       0.17,
-       "BANCO SANTANDER",
-       "SEM NF",
+       "00000000",
        "Santander"
       ],
       [
@@ -17174,7 +17784,7 @@
        "Santander"
       ],
       [
-       "8|Outras despesas administrativas",
+       "8|Sistemas",
        "18/09/2026",
        -749,
        "SUFLEX TECNOLOGIA LTDA.",
@@ -17214,19 +17824,19 @@
        "Santander"
       ],
       [
-       "6|Diarista (OIA)",
-       "18/09/2026",
-       -1025,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
-       "Santander"
-      ],
-      [
        "NEUTRO|Transferência entre contas - entrada",
        "18/09/2026",
        5363.87,
        "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
+       "00000000",
+       "Santander"
+      ],
+      [
+       "6|Diarista (OIA)",
+       "18/09/2026",
+       -1025,
+       "ANTONIO CARLOS CHERU",
+       "01458667774",
        "Santander"
       ],
       [
@@ -17704,22 +18314,6 @@
       [
        "3|Comissões sobre vendas",
        "21/09/2026",
-       -622.09,
-       "MARIO ROBERTO DE OLIVEIRA LOPES",
-       "SEM NF",
-       "Santander"
-      ],
-      [
-       "3|Comissões sobre vendas",
-       "21/09/2026",
-       -622.09,
-       "MAXIMILLIAN MARINHO DE LIMA",
-       "SEM NF",
-       "Santander"
-      ],
-      [
-       "3|Comissões sobre vendas",
-       "21/09/2026",
        -388.81,
        "PAULO CESAR DA SILVA",
        "SEM NF",
@@ -17818,15 +18412,23 @@
        "21/09/2026",
        -144787.67,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "22/09/2026",
-       0.66,
-       "BANCO SANTANDER",
-       "FALTA NF",
+       "3|Comissões sobre vendas",
+       "21/09/2026",
+       -622.09,
+       "MAXIMILLIAN MARINHO DE LIMA",
+       "SEM NF",
+       "Santander"
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "21/09/2026",
+       -622.09,
+       "MARIO ROBERTO DE OLIVEIRA LOPES",
+       "SEM NF",
        "Santander"
       ],
       [
@@ -18030,7 +18632,7 @@
        "Santander"
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "22/09/2026",
        -243.15,
        "DISTRITO ESTADUAL DE FERNANDO DE NORONHA",
@@ -18170,7 +18772,7 @@
        "22/09/2026",
        16935.96,
        "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
+       "00000000",
        "Santander"
       ],
       [
@@ -18402,7 +19004,7 @@
        "23/09/2026",
        -11738.64,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander"
       ],
       [
@@ -19362,15 +19964,7 @@
        "24/09/2026",
        -63010.99,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
-       "Santander"
-      ],
-      [
-       "1|Receita operacional (salão)",
-       "25/09/2026",
-       0.75,
-       "BANCO SANTANDER",
-       "SEM NF",
+       "00000000",
        "Santander"
       ],
       [
@@ -20422,14 +21016,6 @@
        "Santander"
       ],
       [
-       "4|Secos e mercearia",
-       "25/09/2026",
-       -858,
-       "Cliente Consumidor / Sem Tomador",
-       "NF 255745",
-       "Santander"
-      ],
-      [
        "6|Alimentação de colaboradores",
        "25/09/2026",
        -3275,
@@ -20510,7 +21096,7 @@
        "Santander"
       ],
       [
-       "5|Limpeza e descartáveis",
+       "4|Secos e mercearia",
        "25/09/2026",
        -1974.9,
        "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
@@ -20550,7 +21136,7 @@
        "Santander"
       ],
       [
-       "6|Alimentação de colaboradores",
+       "4|Secos e mercearia",
        "25/09/2026",
        -439.6,
        "PRASO PLATAFORMA DE COMERCIO LTDA.",
@@ -20718,62 +21304,6 @@
        "Santander"
       ],
       [
-       "6|Salários da operação",
-       "25/09/2026",
-       -1319.67,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
-       "Santander"
-      ],
-      [
-       "2|Simples Nacional (DAS)",
-       "25/09/2026",
-       -46.45,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
-       "Santander"
-      ],
-      [
-       "2|Simples Nacional (DAS)",
-       "25/09/2026",
-       -214.39,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
-       "Santander"
-      ],
-      [
-       "4|Proteínas (carnes e frutos do mar)",
-       "25/09/2026",
-       -2906,
-       "Cliente Consumidor / Sem Tomador",
-       "NF 041060",
-       "Santander"
-      ],
-      [
-       "2|Cancelamentos e estornos",
-       "25/09/2026",
-       -800,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
-       "Santander"
-      ],
-      [
-       "2|Cancelamentos e estornos",
-       "25/09/2026",
-       -3000,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
-       "Santander"
-      ],
-      [
-       "NEUTRO|Transferência entre contas - entrada",
-       "25/09/2026",
-       22275.3,
-       "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
-       "Santander"
-      ],
-      [
        "4|Proteínas (carnes e frutos do mar)",
        "25/09/2026",
        -4800,
@@ -20803,6 +21333,70 @@
        -900,
        "ANTONIO DE PAULA FERNANDES TAVARES",
        "SEM NF",
+       "Santander"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "25/09/2026",
+       22275.3,
+       "Transf. Santander - ContaMax &gt;&gt; Santande",
+       "00000000",
+       "Santander"
+      ],
+      [
+       "2|Cancelamentos e estornos",
+       "25/09/2026",
+       -3000,
+       "VANDRE NOBREGA SANTIAGO",
+       "(81) 99755-1771",
+       "Santander"
+      ],
+      [
+       "2|Cancelamentos e estornos",
+       "25/09/2026",
+       -800,
+       "VITORIA NALLIN DE GODOY",
+       "43179794895",
+       "Santander"
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "25/09/2026",
+       -2906,
+       "O REI DAS OVAS COMERCIO DE PESCADOS LTDA",
+       "",
+       "Santander"
+      ],
+      [
+       "2|COFINS",
+       "25/09/2026",
+       -214.39,
+       "RECEITA FEDERAL",
+       "",
+       "Santander"
+      ],
+      [
+       "2|PIS",
+       "25/09/2026",
+       -46.45,
+       "RECEITA FEDERAL",
+       "",
+       "Santander"
+      ],
+      [
+       "4|Secos e mercearia",
+       "25/09/2026",
+       -858,
+       "DISAL DISTRIBUIDORA DE ALIMENTOS LTDA",
+       "",
+       "Santander"
+      ],
+      [
+       "6|Salários da operação",
+       "25/09/2026",
+       -1319.67,
+       "THIAGO MACHADO STORCK",
+       "48996383955",
        "Santander"
       ],
       [
@@ -21408,54 +22002,6 @@
       [
        "1|Receita operacional (salão)",
        "28/09/2026",
-       1070,
-       "Cliente Consumidor / Sem Tomador",
-       "FALTA NF",
-       "Santander"
-      ],
-      [
-       "1|Receita operacional (salão)",
-       "28/09/2026",
-       1000,
-       "Cliente Consumidor / Sem Tomador",
-       "FALTA NF",
-       "Santander"
-      ],
-      [
-       "1|Receita operacional (salão)",
-       "28/09/2026",
-       2000,
-       "Cliente Consumidor / Sem Tomador",
-       "FALTA NF",
-       "Santander"
-      ],
-      [
-       "1|Receita operacional (salão)",
-       "28/09/2026",
-       2000,
-       "Cliente Consumidor / Sem Tomador",
-       "FALTA NF",
-       "Santander"
-      ],
-      [
-       "1|Receita operacional (salão)",
-       "28/09/2026",
-       2000,
-       "Cliente Consumidor / Sem Tomador",
-       "FALTA NF",
-       "Santander"
-      ],
-      [
-       "1|Receita operacional (salão)",
-       "28/09/2026",
-       2000,
-       "Cliente Consumidor / Sem Tomador",
-       "FALTA NF",
-       "Santander"
-      ],
-      [
-       "1|Receita operacional (salão)",
-       "28/09/2026",
        63.29,
        "Cliente Consumidor / Sem Tomador",
        "FALTA NF",
@@ -21562,15 +22108,55 @@
        "28/09/2026",
        -107799.27,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "29/09/2026",
-       1.25,
-       "BANCO SANTANDER",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "28/09/2026",
+       2000,
+       "Transf. Fundo Fixo - Restaurante &gt;&gt; Sant",
+       "954125",
+       "Santander"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "28/09/2026",
+       2000,
+       "Transf. Fundo Fixo - Restaurante &gt;&gt; Sant",
+       "954136",
+       "Santander"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "28/09/2026",
+       2000,
+       "Transf. Fundo Fixo - Restaurante &gt;&gt; Sant",
+       "954147",
+       "Santander"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "28/09/2026",
+       2000,
+       "Transf. Fundo Fixo - Restaurante &gt;&gt; Sant",
+       "954158",
+       "Santander"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "28/09/2026",
+       1000,
+       "Transf. Fundo Fixo - Restaurante &gt;&gt; Sant",
+       "954411",
+       "Santander"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "28/09/2026",
+       1070,
+       "Transf. Fundo Fixo - Restaurante &gt;&gt; Sant",
+       "954422",
        "Santander"
       ],
       [
@@ -21606,7 +22192,7 @@
        "Santander"
       ],
       [
-       "5|Limpeza e descartáveis",
+       "4|Secos e mercearia",
        "29/09/2026",
        -435.37,
        "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
@@ -21642,14 +22228,6 @@
        "29/09/2026",
        -412.71,
        "PE GABINETE DO PRESIDENTE",
-       "SEM NF",
-       "Santander"
-      ],
-      [
-       "CC|Conta corrente YO Noronha - saída",
-       "29/09/2026",
-       -300,
-       "CENTRA DE ENVIOS NORONHA",
        "SEM NF",
        "Santander"
       ],
@@ -21795,14 +22373,6 @@
        -1710,
        "COMERCIAL PROLAC",
        "NF529143",
-       "Santander"
-      ],
-      [
-       "CC|Conta corrente YO Noronha - saída",
-       "29/09/2026",
-       -5462.84,
-       "DISPAN DISTRIBUIDORA DE ALIMENTOS LTDA",
-       "NF 2888558",
        "Santander"
       ],
       [
@@ -21958,78 +22528,6 @@
        "Santander"
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
-       "29/09/2026",
-       -989,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
-       "Santander"
-      ],
-      [
-       "CC|Conta corrente YO Noronha - saída",
-       "29/09/2026",
-       -960,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
-       "Santander"
-      ],
-      [
-       "9|Cachê de artistas e atrações",
-       "29/09/2026",
-       -1500,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
-       "Santander"
-      ],
-      [
-       "9|Cachê de artistas e atrações",
-       "29/09/2026",
-       -1875,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
-       "Santander"
-      ],
-      [
-       "9|Cachê de artistas e atrações",
-       "29/09/2026",
-       -900,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
-       "Santander"
-      ],
-      [
-       "9|Cachê de artistas e atrações",
-       "29/09/2026",
-       -550,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
-       "Santander"
-      ],
-      [
-       "9|Cachê de artistas e atrações",
-       "29/09/2026",
-       -1000,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
-       "Santander"
-      ],
-      [
-       "8|Contabilidade, jurídico e consultorias",
-       "29/09/2026",
-       -2000,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
-       "Santander"
-      ],
-      [
-       "CC|Conta corrente YO Noronha - saída",
-       "29/09/2026",
-       -683.88,
-       "Cliente Consumidor / Sem Tomador",
-       "NF379780",
-       "Santander"
-      ],
-      [
        "2|Cancelamentos e estornos",
        "29/09/2026",
        -1500,
@@ -22038,18 +22536,106 @@
        "Santander"
       ],
       [
-       "NEUTRO|Transferência entre contas - entrada",
-       "29/09/2026",
-       29975.81,
-       "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
-       "Santander"
-      ],
-      [
        "4|Outros insumos e diversos",
        "29/09/2026",
        -1865.97,
        "GERLANNE DIAS COSTA PINTO",
+       "SEM NF",
+       "Santander"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "29/09/2026",
+       29975.81,
+       "Transf. Santander - ContaMax &gt;&gt; Santande",
+       "00000000",
+       "Santander"
+      ],
+      [
+       "4|Secos e mercearia",
+       "29/09/2026",
+       -5462.84,
+       "DISPAN DISTRIBUIDORA DE ALIMENTOS LTDA",
+       "000288858/1",
+       "Santander"
+      ],
+      [
+       "4|Hortifrúti",
+       "29/09/2026",
+       -683.88,
+       "MANIHOT IGUARIAS",
+       "",
+       "Santander"
+      ],
+      [
+       "4|Frios, laticínios e congelados",
+       "29/09/2026",
+       -300,
+       "CENTRA DE ENVIOS NORONHA",
+       "SEM NF",
+       "Santander"
+      ],
+      [
+       "9|Cachê de artistas e atrações",
+       "29/09/2026",
+       -550,
+       "FLAVIO AUGUSTO LIMA DA SILVA",
+       "kwdm101@hotmail.com",
+       "Santander"
+      ],
+      [
+       "9|Cachê de artistas e atrações",
+       "29/09/2026",
+       -1875,
+       "BRUNO CELIO PORTELA DE SOUZA",
+       "21987482522",
+       "Santander"
+      ],
+      [
+       "9|Cachê de artistas e atrações",
+       "29/09/2026",
+       -1500,
+       "ANDRE LUIS SANTIAGO EIRAS",
+       "07173894484",
+       "Santander"
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "29/09/2026",
+       -989,
+       "ADMILSA MARIA DA SILVA",
+       "81995160013",
+       "Santander"
+      ],
+      [
+       "9|Cachê de artistas e atrações",
+       "29/09/2026",
+       -900,
+       "ANDRE LUIZ GOMES VELOSO",
+       "velozonoronha@gmail.",
+       "Santander"
+      ],
+      [
+       "5|Manutenção de equipamentos",
+       "29/09/2026",
+       -960,
+       "54.254.556 JHONATHAN JARDIEL JERONIMO SILVA",
+       "54.254.556/0001-33",
+       "Santander"
+      ],
+      [
+       "8|Contabilidade, jurídico e consultorias",
+       "29/09/2026",
+       -2000,
+       "ROGERIO ANDERSON RODRIGUES FERREIRA",
+       "81988555736",
+       "Santander"
+      ],
+      [
+       "9|Cachê de artistas e atrações",
+       "29/09/2026",
+       -1000,
+       "GEANDRO DE MOURA SILVA",
        "SEM NF",
        "Santander"
       ],
@@ -22194,7 +22780,7 @@
        "30/09/2026",
        -19445.38,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander"
       ],
       [
@@ -22202,7 +22788,7 @@
        "01/09/2026",
        -49738.32,
        "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -22210,7 +22796,7 @@
        "02/09/2026",
        14849.99,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -22218,7 +22804,7 @@
        "03/09/2026",
        -29298.57,
        "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -22226,7 +22812,7 @@
        "04/09/2026",
        -55031.01,
        "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -22234,7 +22820,7 @@
        "08/09/2026",
        170402.04,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -22242,7 +22828,7 @@
        "09/09/2026",
        -9373.52,
        "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -22250,7 +22836,7 @@
        "10/09/2026",
        26394.74,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -22258,7 +22844,7 @@
        "11/09/2026",
        34214.94,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -22266,7 +22852,7 @@
        "14/09/2026",
        15598.75,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -22274,7 +22860,7 @@
        "15/09/2026",
        -36483.53,
        "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -22282,7 +22868,7 @@
        "16/09/2026",
        25872.79,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -22290,7 +22876,7 @@
        "17/09/2026",
        28206.89,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -22298,7 +22884,7 @@
        "18/09/2026",
        -5363.87,
        "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -22306,7 +22892,7 @@
        "21/09/2026",
        144787.67,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -22314,7 +22900,7 @@
        "22/09/2026",
        -16935.96,
        "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -22322,7 +22908,7 @@
        "23/09/2026",
        11738.64,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -22330,7 +22916,7 @@
        "24/09/2026",
        63010.99,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -22338,7 +22924,7 @@
        "25/09/2026",
        -22275.3,
        "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -22346,7 +22932,7 @@
        "28/09/2026",
        107799.27,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -22354,7 +22940,7 @@
        "29/09/2026",
        -29975.81,
        "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
@@ -22362,15 +22948,31 @@
        "30/09/2026",
        19445.38,
        "Transf. Santander &gt;&gt; Santander - ContaMa",
-       "",
+       "00000000",
        "Santander - ContaMax"
       ],
       [
        "10|Rendimentos de aplicações",
        "30/09/2026",
-       12.41,
+       34.94,
        "BANCO SANTANDER",
-       "",
+       "CONTAMAX",
+       "Santander - ContaMax"
+      ],
+      [
+       "10|IOF",
+       "30/09/2026",
+       -6.4,
+       "BANCO SANTANDER",
+       "CONTAMAX",
+       "Santander - ContaMax"
+      ],
+      [
+       "2|IRPJ",
+       "30/09/2026",
+       -1.5,
+       "BANCO SANTANDER",
+       "CONTAMAX",
        "Santander - ContaMax"
       ]
      ]
@@ -22379,22 +22981,22 @@
    "saldos": {
     "2026-08": {
      "ini": 0.0,
-     "fim": 191993.25,
-     "entradas": 265122.38,
-     "saidas": -73138.3,
+     "fim": 191997.19,
+     "entradas": 265126.73,
+     "saidas": -73138.70999999999,
      "contas": {
-      "Santander": 0.1,
-      "Santander - ContaMax": 191993.15
+      "Santander": 0,
+      "Santander - ContaMax": 191997.19
      }
     },
     "2026-09": {
-     "ini": 191993.25,
-     "fim": 599857.3,
-     "entradas": 1069238.7200000002,
-     "saidas": -662432.9,
+     "ini": 191997.19,
+     "fim": 599870.43,
+     "entradas": 1059185.81,
+     "saidas": -662440.7999999999,
      "contas": {
-      "Santander": 5.54,
-      "Santander - ContaMax": 599851.76
+      "Santander": 0,
+      "Santander - ContaMax": 599870.43
      }
     }
    }
@@ -22409,10 +23011,10 @@
     "2026-08": {
      "grupos": {
       "CC": -101106.63,
-      "10": -935.99,
       "12": 1155386.76,
       "OR": 32550.210000000003,
-      "8": -40534.73999999999,
+      "10": -1058.22,
+      "8": -40522.73999999999,
       "7": -64986.92,
       "11": -453192.4800000001,
       "5": -98896.86,
@@ -22422,7 +23024,6 @@
      },
      "contas": {
       "CC|Conta corrente Amana - entrada": 6991.11,
-      "10|Rendimentos de aplicações": 122.23,
       "12|Aportes de sócios": 1155386.76,
       "OR|Outras receitas operacionais": 32550.210000000003,
       "10|Juros e multas": -1058.22,
@@ -22439,7 +23040,7 @@
       "4|Outros insumos e diversos": -117783.91999999998,
       "8|Telefonia e internet": -5780.38,
       "8|Sistemas": -2657.96,
-      "8|Tarifas bancárias": -711.72,
+      "8|Tarifas bancárias": -699.72,
       "6|Alimentação de colaboradores": -32936.22,
       "CC|Conta corrente Amana - saída": -8097.74,
       "5|Energia elétrica": -4106.5,
@@ -22461,7 +23062,6 @@
      },
      "lanc": {
       "CC|Conta corrente Amana - entrada": 1,
-      "10|Rendimentos de aplicações": 22,
       "12|Aportes de sócios": 8,
       "OR|Outras receitas operacionais": 13,
       "10|Juros e multas": 2,
@@ -22478,7 +23078,7 @@
       "4|Outros insumos e diversos": 85,
       "8|Telefonia e internet": 4,
       "8|Sistemas": 4,
-      "8|Tarifas bancárias": 21,
+      "8|Tarifas bancárias": 20,
       "6|Alimentação de colaboradores": 11,
       "CC|Conta corrente Amana - saída": 7,
       "5|Energia elétrica": 3,
@@ -22508,22 +23108,6 @@
        "05/08/2026",
        6991.11,
        "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "03/08/2026",
-       9.78,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "03/08/2026",
-       4.74,
-       "",
        "SEM NF",
        ""
       ],
@@ -22600,30 +23184,6 @@
        ""
       ],
       [
-       "10|Rendimentos de aplicações",
-       "06/08/2026",
-       0.38,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "06/08/2026",
-       0.7,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "07/08/2026",
-       1.73,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
        "OR|Outras receitas operacionais",
        "11/08/2026",
        690.26,
@@ -22640,146 +23200,10 @@
        ""
       ],
       [
-       "10|Rendimentos de aplicações",
-       "11/08/2026",
-       16.15,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "12/08/2026",
-       0.13,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "13/08/2026",
-       0.9,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "14/08/2026",
-       10.53,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "17/08/2026",
-       3.41,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
        "12|Aportes de sócios",
        "18/08/2026",
        200000,
        "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "19/08/2026",
-       34.09,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "20/08/2026",
-       1.78,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "20/08/2026",
-       1.25,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "20/08/2026",
-       16.19,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "21/08/2026",
-       3.04,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "21/08/2026",
-       0.69,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "24/08/2026",
-       3.89,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "25/08/2026",
-       3.71,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "26/08/2026",
-       1.05,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "28/08/2026",
-       1.93,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "28/08/2026",
-       4.74,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "31/08/2026",
-       1.42,
-       "",
        "SEM NF",
        ""
       ],
@@ -23019,7 +23443,7 @@
        "5|Transporte, veículo e combustível",
        "03/08/2026",
        -489.66,
-       "",
+       "BANCO BRADESCO S.A.",
        "NF 187039 - NF 02205",
        ""
       ],
@@ -23027,7 +23451,7 @@
        "6|Passagens aéreas da equipe",
        "03/08/2026",
        -15036.68,
-       "",
+       "BANCO BRADESCO S.A.",
        "NF 187039 - NF 02205",
        ""
       ],
@@ -23035,7 +23459,7 @@
        "8|Telefonia e internet",
        "03/08/2026",
        -747,
-       "",
+       "BANCO BRADESCO S.A.",
        "NF 187039 - NF 02205",
        ""
       ],
@@ -23043,7 +23467,7 @@
        "8|Sistemas",
        "03/08/2026",
        -490.8,
-       "",
+       "BANCO BRADESCO S.A.",
        "NF 187039 - NF 02205",
        ""
       ],
@@ -23051,7 +23475,7 @@
        "8|Tarifas bancárias",
        "03/08/2026",
        -38.66,
-       "",
+       "BANCO BRADESCO S.A.",
        "NF 187039 - NF 02205",
        ""
       ],
@@ -23059,7 +23483,7 @@
        "8|Outras despesas administrativas",
        "03/08/2026",
        -1925.37,
-       "",
+       "BANCO BRADESCO S.A.",
        "NF 187039 - NF 02205",
        ""
       ],
@@ -25851,7 +26275,7 @@
        "8|Tarifas bancárias",
        "03/08/2026",
        -8,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -25859,7 +26283,7 @@
        "8|Tarifas bancárias",
        "04/08/2026",
        -47.75,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -25867,15 +26291,7 @@
        "8|Tarifas bancárias",
        "05/08/2026",
        -36,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "8|Tarifas bancárias",
-       "06/08/2026",
-       -12,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -25883,7 +26299,7 @@
        "8|Tarifas bancárias",
        "07/08/2026",
        -67.25,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -25891,7 +26307,7 @@
        "8|Tarifas bancárias",
        "11/08/2026",
        -10,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -25899,7 +26315,7 @@
        "8|Tarifas bancárias",
        "12/08/2026",
        -15.75,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -25907,7 +26323,7 @@
        "8|Tarifas bancárias",
        "13/08/2026",
        -51.45,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -25915,7 +26331,7 @@
        "8|Tarifas bancárias",
        "14/08/2026",
        -170.25,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -25923,7 +26339,7 @@
        "8|Tarifas bancárias",
        "17/08/2026",
        -4,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -25931,7 +26347,7 @@
        "8|Tarifas bancárias",
        "18/08/2026",
        -33.45,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -25939,7 +26355,7 @@
        "8|Tarifas bancárias",
        "19/08/2026",
        -10,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -25947,7 +26363,7 @@
        "8|Tarifas bancárias",
        "20/08/2026",
        -6,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -25955,7 +26371,7 @@
        "8|Tarifas bancárias",
        "21/08/2026",
        -69.91,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -25963,7 +26379,7 @@
        "8|Tarifas bancárias",
        "24/08/2026",
        -21.75,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -25971,7 +26387,7 @@
        "8|Tarifas bancárias",
        "25/08/2026",
        -44,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -25979,7 +26395,7 @@
        "8|Tarifas bancárias",
        "26/08/2026",
        -12,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -25987,7 +26403,7 @@
        "8|Tarifas bancárias",
        "28/08/2026",
        -33.5,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -25995,7 +26411,7 @@
        "8|Tarifas bancárias",
        "28/08/2026",
        -12,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -26003,7 +26419,7 @@
        "8|Tarifas bancárias",
        "31/08/2026",
        -8,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -26099,156 +26515,88 @@
     },
     "2026-09": {
      "grupos": {
-      "10": -800.39,
       "OR": 5998.04,
       "NEUTRO": 5206.080000000001,
       "5": -71053.70999999999,
-      "6": -43731.270000000004,
+      "6": -36381.45,
       "7": -50500.0,
-      "11": -190766.26999999996,
-      "4": -81495.49,
-      "8": -50752.369999999995,
+      "11": -190598.54999999996,
+      "4": -88803.40999999999,
+      "8": -50943.99,
       "CC": -6096.85,
-      "9": -1500.0
+      "9": -1500.0,
+      "10": -938.02
      },
      "contas": {
-      "10|Rendimentos de aplicações": 137.63000000000002,
       "OR|Outras receitas operacionais": 5998.04,
       "NEUTRO|Transferência entre contas próprias - entrada": 5206.080000000001,
       "5|Transporte, veículo e combustível": -7241.04,
-      "6|Diarista (OIA)": -20811.96,
+      "6|Diarista (OIA)": -20770.059999999998,
       "7|Arrendamento e aluguel do ponto": -50500.0,
       "11|Pré-operação": -10102.84,
-      "4|Outros insumos e diversos": -75000.49,
-      "11|Equipamentos e mobiliário": -65280.20000000001,
+      "4|Outros insumos e diversos": -38853.18,
+      "11|Equipamentos e mobiliário": -65112.48000000001,
       "8|Outras despesas administrativas": -47105.909999999996,
       "11|Obras e reformas": -100989.6,
       "4|Água mineral": -4800.0,
-      "6|Alimentação de colaboradores": -17307.920000000002,
+      "4|Secos e mercearia": -11802.259999999998,
+      "6|Alimentação de colaboradores": -10000.0,
       "CC|Conta corrente Amana - saída": -6096.85,
       "6|Salários da operação": -4350.06,
       "5|Água e esgoto": -2210.8599999999997,
       "6|Passagens aéreas da equipe": -862.0,
       "9|Mídia paga": -1500.0,
       "5|Frete de materiais de operação": -51155.42999999999,
+      "4|Proteínas (carnes e frutos do mar)": -18818.07,
       "8|Contabilidade, jurídico e consultorias": -1682.21,
       "5|Alojamento e ajuda de custo para moradia": -9000.0,
-      "8|Sistemas": -1634.0,
+      "8|Sistemas": -1843.62,
       "4|Gás de cozinha": -1695.0,
       "11|Frete de equipamentos e obra": -14393.63,
+      "4|Hortifrúti": -12834.900000000001,
       "10|Juros e multas": -938.02,
       "6|Uniformes, EPI e exames": -399.33,
       "5|Energia elétrica": -1446.38,
-      "8|Tarifas bancárias": -330.25
+      "8|Tarifas bancárias": -312.25
      },
      "lanc": {
-      "10|Rendimentos de aplicações": 19,
       "OR|Outras receitas operacionais": 1,
       "NEUTRO|Transferência entre contas próprias - entrada": 12,
       "5|Transporte, veículo e combustível": 3,
-      "6|Diarista (OIA)": 9,
+      "6|Diarista (OIA)": 8,
       "7|Arrendamento e aluguel do ponto": 5,
       "11|Pré-operação": 4,
-      "4|Outros insumos e diversos": 27,
-      "11|Equipamentos e mobiliário": 14,
+      "4|Outros insumos e diversos": 15,
+      "11|Equipamentos e mobiliário": 13,
       "8|Outras despesas administrativas": 6,
       "11|Obras e reformas": 23,
       "4|Água mineral": 1,
-      "6|Alimentação de colaboradores": 6,
+      "4|Secos e mercearia": 4,
+      "6|Alimentação de colaboradores": 1,
       "CC|Conta corrente Amana - saída": 4,
       "6|Salários da operação": 2,
       "5|Água e esgoto": 2,
       "6|Passagens aéreas da equipe": 1,
       "9|Mídia paga": 1,
       "5|Frete de materiais de operação": 11,
+      "4|Proteínas (carnes e frutos do mar)": 10,
       "8|Contabilidade, jurídico e consultorias": 2,
       "5|Alojamento e ajuda de custo para moradia": 1,
-      "8|Sistemas": 3,
+      "8|Sistemas": 5,
       "4|Gás de cozinha": 1,
       "11|Frete de equipamentos e obra": 1,
+      "4|Hortifrúti": 3,
       "10|Juros e multas": 2,
       "6|Uniformes, EPI e exames": 1,
       "5|Energia elétrica": 1,
-      "8|Tarifas bancárias": 17
+      "8|Tarifas bancárias": 16
      },
      "familias": {
-      "comum": -75000.49,
+      "comum": -38853.18,
       "bar": -4800.0,
-      "cozinha": -1695.0
+      "cozinha": -45150.229999999996
      },
      "itens": [
-      [
-       "10|Rendimentos de aplicações",
-       "01/09/2026",
-       17.34,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "02/09/2026",
-       0.21,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "03/09/2026",
-       7.85,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "04/09/2026",
-       14.49,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "04/09/2026",
-       3.21,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "08/09/2026",
-       9.51,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "09/09/2026",
-       0.84,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "10/09/2026",
-       12.58,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "14/09/2026",
-       19.56,
-       "",
-       "SEM NF",
-       ""
-      ],
       [
        "OR|Outras receitas operacionais",
        "10/09/2026",
@@ -26258,34 +26606,10 @@
        ""
       ],
       [
-       "10|Rendimentos de aplicações",
-       "15/09/2026",
-       15.4,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "16/09/2026",
-       2.53,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "18/09/2026",
-       13.05,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
        "NEUTRO|Transferência entre contas próprias - entrada",
        "02/09/2026",
        78.97,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -26378,62 +26702,6 @@
        ""
       ],
       [
-       "10|Rendimentos de aplicações",
-       "21/09/2026",
-       0.15,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "22/09/2026",
-       8.88,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "24/09/2026",
-       0.41,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "25/09/2026",
-       4.44,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "25/09/2026",
-       0.09,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "28/09/2026",
-       2.23,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "29/09/2026",
-       4.86,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
        "5|Transporte, veículo e combustível",
        "01/09/2026",
        -2100,
@@ -26493,7 +26761,7 @@
        "8|Outras despesas administrativas",
        "01/09/2026",
        -34337.33,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -26538,7 +26806,7 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Secos e mercearia",
        "04/09/2026",
        -899.97,
        "PRASO PLATAFORMA DE COMERCIO LTDA.",
@@ -26706,7 +26974,7 @@
        ""
       ],
       [
-       "6|Alimentação de colaboradores",
+       "4|Proteínas (carnes e frutos do mar)",
        "01/09/2026",
        -2492.45,
        "MERCADINHO E FRIGORIFICO POTY LTDA",
@@ -26818,7 +27086,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "8|Sistemas",
        "09/09/2026",
        -41.9,
        "TILLBILL - DESENVOLVIMENTO DE SISTEMAS LTDA",
@@ -26890,7 +27158,7 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Proteínas (carnes e frutos do mar)",
        "04/09/2026",
        -1508,
        "O REI DAS OVAS COMERCIO DE PESCADOS LTDA",
@@ -26954,7 +27222,7 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Hortifrúti",
        "14/09/2026",
        -2615,
        "EMPORIO MIX DE HORTALICAS FINAS LIMITADA",
@@ -26962,7 +27230,7 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Hortifrúti",
        "14/09/2026",
        -4121.3,
        "EMPORIO MIX DE HORTALICAS FINAS LIMITADA",
@@ -26970,7 +27238,7 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Hortifrúti",
        "14/09/2026",
        -6098.6,
        "EMPORIO MIX DE HORTALICAS FINAS LIMITADA",
@@ -26978,7 +27246,7 @@
        ""
       ],
       [
-       "11|Equipamentos e mobiliário",
+       "8|Sistemas",
        "17/09/2026",
        -167.72,
        "RAJ TECNOLOGIA LTDA",
@@ -27050,7 +27318,7 @@
        ""
       ],
       [
-       "6|Alimentação de colaboradores",
+       "4|Proteínas (carnes e frutos do mar)",
        "09/09/2026",
        -748.45,
        "SANTISTA FRIGORIFICO &amp; DISTRIBUIDORA LTDA",
@@ -27058,7 +27326,7 @@
        ""
       ],
       [
-       "6|Alimentação de colaboradores",
+       "4|Proteínas (carnes e frutos do mar)",
        "09/09/2026",
        -1679.18,
        "SANTISTA FRIGORIFICO &amp; DISTRIBUIDORA LTDA",
@@ -27066,7 +27334,7 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Proteínas (carnes e frutos do mar)",
        "09/09/2026",
        -2107.91,
        "SANTISTA FRIGORIFICO &amp; DISTRIBUIDORA LTDA",
@@ -27122,7 +27390,7 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Secos e mercearia",
        "10/09/2026",
        -847.51,
        "PRASO PLATAFORMA DE COMERCIO LTDA.",
@@ -27154,7 +27422,7 @@
        ""
       ],
       [
-       "6|Alimentação de colaboradores",
+       "4|Proteínas (carnes e frutos do mar)",
        "09/09/2026",
        -736.19,
        "SANTISTA FRIGORIFICO &amp; DISTRIBUIDORA LTDA",
@@ -27162,7 +27430,7 @@
        ""
       ],
       [
-       "6|Alimentação de colaboradores",
+       "4|Proteínas (carnes e frutos do mar)",
        "09/09/2026",
        -1651.65,
        "SANTISTA FRIGORIFICO &amp; DISTRIBUIDORA LTDA",
@@ -27170,7 +27438,7 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Proteínas (carnes e frutos do mar)",
        "09/09/2026",
        -2073.36,
        "SANTISTA FRIGORIFICO &amp; DISTRIBUIDORA LTDA",
@@ -27197,7 +27465,7 @@
        "8|Tarifas bancárias",
        "01/09/2026",
        -25.75,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -27205,15 +27473,7 @@
        "8|Tarifas bancárias",
        "02/09/2026",
        -6,
-       "",
-       "SEM NF",
-       ""
-      ],
-      [
-       "8|Tarifas bancárias",
-       "03/09/2026",
-       -18,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -27221,7 +27481,7 @@
        "8|Tarifas bancárias",
        "04/09/2026",
        -2,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -27229,7 +27489,7 @@
        "8|Tarifas bancárias",
        "08/09/2026",
        -4,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -27237,7 +27497,7 @@
        "8|Tarifas bancárias",
        "09/09/2026",
        -22,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -27245,7 +27505,7 @@
        "8|Tarifas bancárias",
        "10/09/2026",
        -8,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -27253,7 +27513,7 @@
        "8|Tarifas bancárias",
        "11/09/2026",
        -6,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -27261,7 +27521,7 @@
        "8|Tarifas bancárias",
        "14/09/2026",
        -14,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -27269,7 +27529,7 @@
        "8|Tarifas bancárias",
        "15/09/2026",
        -168.5,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -27277,7 +27537,7 @@
        "8|Tarifas bancárias",
        "16/09/2026",
        -16,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -27285,7 +27545,7 @@
        "8|Tarifas bancárias",
        "17/09/2026",
        -10,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -27293,7 +27553,7 @@
        "8|Tarifas bancárias",
        "18/09/2026",
        -2,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -27426,7 +27686,7 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Proteínas (carnes e frutos do mar)",
        "21/09/2026",
        -2910.44,
        "SANTISTA FRIGORIFICO &amp; DISTRIBUIDORA LTDA",
@@ -27514,7 +27774,7 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Secos e mercearia",
        "21/09/2026",
        -460.98,
        "PRASO PLATAFORMA DE COMERCIO LTDA.",
@@ -27522,7 +27782,7 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Secos e mercearia",
        "22/09/2026",
        -9593.8,
        "PRASO PLATAFORMA DE COMERCIO LTDA.",
@@ -27570,7 +27830,7 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Proteínas (carnes e frutos do mar)",
        "21/09/2026",
        -2910.44,
        "SANTISTA FRIGORIFICO &amp; DISTRIBUIDORA LTDA",
@@ -27589,7 +27849,7 @@
        "8|Tarifas bancárias",
        "22/09/2026",
        -12,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -27597,7 +27857,7 @@
        "8|Tarifas bancárias",
        "29/09/2026",
        -6,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -27605,7 +27865,7 @@
        "8|Tarifas bancárias",
        "30/09/2026",
        -2,
-       "",
+       "BANCO BRADESCO S.A.",
        "SEM NF",
        ""
       ],
@@ -27613,7 +27873,7 @@
        "8|Tarifas bancárias",
        "24/09/2026",
        -8,
-       "",
+       "BANCO BRADESCO S.A.",
        "",
        ""
       ]
@@ -27624,21 +27884,20 @@
     "2026-08": {
      "grupos": {
       "CC": -100902.64,
-      "10": -427.3,
       "11": -462324.15,
       "7": -64986.92,
       "5": -111556.9599906788,
       "8": -37432.299933442686,
-      "6": -137570.08007587848,
+      "6": -139790.4300758785,
       "4": -168547.23,
-      "2": -2572.16,
       "OR": 35950.21,
-      "NEUTRO": 4.547473508864641e-11,
-      "12": 1155386.76
+      "NEUTRO": 5.646150214033696e-11,
+      "12": 1155386.76,
+      "10": -330.94,
+      "2": -387.27
      },
      "contas": {
       "CC|Conta corrente Amana - entrada": 6991.11,
-      "10|Rendimentos de aplicações": 122.23,
       "11|Equipamentos e mobiliário": -132273.02,
       "7|Arrendamento e aluguel do ponto": -61500.0,
       "11|Pré-operação": -25093.85,
@@ -27651,17 +27910,17 @@
       "6|Salários da operação": -3194.0,
       "4|Outros insumos e diversos": -162992.23000000004,
       "4|Água mineral": -2610.0,
-      "2|ISS retido na fonte de prestadores": -2220.3500000000004,
+      "6|ISS | Permanência": -2220.3500000000004,
       "6|Passagens aéreas da equipe": -34643.800075878506,
       "8|Outras despesas administrativas": -10310.2499305553,
       "8|Sistemas": -2657.9599743867,
       "8|Tarifas bancárias": -711.7199994859,
       "8|Telefonia e internet": -5780.3800290148,
       "OR|Outras receitas operacionais": 35950.21,
-      "NEUTRO|Transferência entre contas - entrada": 1928289.2499999998,
+      "NEUTRO|Transferência entre contas - entrada": 1928411.4799999997,
       "12|Aportes de sócios": 1155386.76,
       "6|Alimentação de colaboradores": -32936.22,
-      "NEUTRO|Transferência entre contas - saída": -1928289.25,
+      "NEUTRO|Transferência entre contas - saída": -1928411.4799999995,
       "CC|Conta corrente Amana - saída": -7893.75,
       "5|Energia elétrica": -2961.24,
       "8|Contabilidade, jurídico e consultorias": -2225.21,
@@ -27676,11 +27935,13 @@
       "6|FGTS e contribuições": -3719.53,
       "5|Limpeza e descartáveis": -3021.41,
       "7|Outros aluguéis": -2884.0,
-      "CC|Conta corrente Boldró - saída": -100000.0
+      "CC|Conta corrente Boldró - saída": -100000.0,
+      "10|Rendimentos de aplicações": 239.54,
+      "10|IOF": -20.95,
+      "2|IRPJ": -35.46
      },
      "lanc": {
       "CC|Conta corrente Amana - entrada": 1,
-      "10|Rendimentos de aplicações": 22,
       "11|Equipamentos e mobiliário": 45,
       "7|Arrendamento e aluguel do ponto": 7,
       "11|Pré-operação": 7,
@@ -27693,17 +27954,17 @@
       "6|Salários da operação": 2,
       "4|Outros insumos e diversos": 89,
       "4|Água mineral": 1,
-      "2|ISS retido na fonte de prestadores": 8,
+      "6|ISS | Permanência": 8,
       "6|Passagens aéreas da equipe": 10,
       "8|Outras despesas administrativas": 21,
       "8|Sistemas": 4,
-      "8|Tarifas bancárias": 21,
+      "8|Tarifas bancárias": 26,
       "8|Telefonia e internet": 4,
       "OR|Outras receitas operacionais": 14,
-      "NEUTRO|Transferência entre contas - entrada": 25,
+      "NEUTRO|Transferência entre contas - entrada": 47,
       "12|Aportes de sócios": 8,
       "6|Alimentação de colaboradores": 11,
-      "NEUTRO|Transferência entre contas - saída": 25,
+      "NEUTRO|Transferência entre contas - saída": 47,
       "CC|Conta corrente Amana - saída": 6,
       "5|Energia elétrica": 2,
       "8|Contabilidade, jurídico e consultorias": 3,
@@ -27718,7 +27979,10 @@
       "6|FGTS e contribuições": 2,
       "5|Limpeza e descartáveis": 4,
       "7|Outros aluguéis": 2,
-      "CC|Conta corrente Boldró - saída": 1
+      "CC|Conta corrente Boldró - saída": 1,
+      "10|Rendimentos de aplicações": 1,
+      "10|IOF": 1,
+      "2|IRPJ": 1
      },
      "familias": {
       "comum": -162992.23000000004,
@@ -27731,22 +27995,6 @@
        "03/08/2026",
        6991.11,
        "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
-       "Bradesco c/c"
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "03/08/2026",
-       9.78,
-       "BANCO BRADESCO",
-       "SEM NF",
-       "Bradesco c/c"
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "03/08/2026",
-       4.74,
-       "BANCO BRADESCO",
        "SEM NF",
        "Bradesco c/c"
       ],
@@ -27935,7 +28183,7 @@
        "Bradesco c/c"
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "03/08/2026",
        -300,
        "DISTRITO ESTADUAL DE FERNANDO DE NORONHA",
@@ -27983,7 +28231,7 @@
        "Bradesco c/c"
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "03/08/2026",
        -243.15,
        "DISTRITO ESTADUAL DE FERNANDO DE NORONHA",
@@ -28148,6 +28396,22 @@
        69821.87,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "",
+       "Bradesco c/c"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "03/08/2026",
+       9.78,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3808939",
+       "Bradesco c/c"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "03/08/2026",
+       4.74,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "4071854",
        "Bradesco c/c"
       ],
       [
@@ -28631,22 +28895,6 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "06/08/2026",
-       0.38,
-       "BANCO BRADESCO",
-       "SEM NF",
-       "Bradesco c/c"
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "06/08/2026",
-       0.7,
-       "BANCO BRADESCO",
-       "SEM NF",
-       "Bradesco c/c"
-      ],
-      [
        "7|Arrendamento e aluguel do ponto",
        "06/08/2026",
        -4000,
@@ -28695,14 +28943,6 @@
        "Bradesco c/c"
       ],
       [
-       "8|Tarifas bancárias",
-       "06/08/2026",
-       -12,
-       "BANCO BRADESCO",
-       "SEM NF",
-       "Bradesco c/c"
-      ],
-      [
        "OR|Outras receitas operacionais",
        "06/08/2026",
        1615,
@@ -28727,15 +28967,71 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "07/08/2026",
-       1.73,
+       "8|Tarifas bancárias",
+       "06/08/2026",
+       -2,
        "BANCO BRADESCO",
-       "SEM NF",
+       "40826",
        "Bradesco c/c"
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "8|Tarifas bancárias",
+       "06/08/2026",
+       -2,
+       "BANCO BRADESCO",
+       "40826",
+       "Bradesco c/c"
+      ],
+      [
+       "8|Tarifas bancárias",
+       "06/08/2026",
+       -2,
+       "BANCO BRADESCO",
+       "40826",
+       "Bradesco c/c"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "06/08/2026",
+       0.38,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "4071854",
+       "Bradesco c/c"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "06/08/2026",
+       0.7,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6638129",
+       "Bradesco c/c"
+      ],
+      [
+       "8|Tarifas bancárias",
+       "06/08/2026",
+       -2,
+       "BANCO BRADESCO",
+       "40826",
+       "Bradesco c/c"
+      ],
+      [
+       "8|Tarifas bancárias",
+       "06/08/2026",
+       -2,
+       "BANCO BRADESCO",
+       "40826",
+       "Bradesco c/c"
+      ],
+      [
+       "8|Tarifas bancárias",
+       "06/08/2026",
+       -2,
+       "BANCO BRADESCO",
+       "40826",
+       "Bradesco c/c"
+      ],
+      [
+       "6|ISS | Permanência",
        "07/08/2026",
        -246.15,
        "DISTRITO ESTADUAL DE FERNANDO DE NORONHA",
@@ -28751,7 +29047,7 @@
        "Bradesco c/c"
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "07/08/2026",
        -375,
        "DISTRITO ESTADUAL DE FERNANDO DE NORONHA",
@@ -28759,7 +29055,7 @@
        "Bradesco c/c"
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "07/08/2026",
        -375,
        "DISTRITO ESTADUAL DE FERNANDO DE NORONHA",
@@ -28815,6 +29111,14 @@
        "Bradesco c/c"
       ],
       [
+       "NEUTRO|Transferência entre contas - entrada",
+       "07/08/2026",
+       1.73,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6638129",
+       "Bradesco c/c"
+      ],
+      [
        "OR|Outras receitas operacionais",
        "11/08/2026",
        690.26,
@@ -28827,14 +29131,6 @@
        "11/08/2026",
        9000,
        "PERTINAZ",
-       "SEM NF",
-       "Bradesco c/c"
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "11/08/2026",
-       16.15,
-       "BANCO BRADESCO",
        "SEM NF",
        "Bradesco c/c"
       ],
@@ -29343,11 +29639,11 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "12/08/2026",
-       0.13,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "11/08/2026",
+       16.15,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6638129",
        "Bradesco c/c"
       ],
       [
@@ -29391,11 +29687,11 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "13/08/2026",
-       0.9,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "12/08/2026",
+       0.13,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6638129",
        "Bradesco c/c"
       ],
       [
@@ -29447,11 +29743,11 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "14/08/2026",
-       10.53,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "13/08/2026",
+       0.9,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6638129",
        "Bradesco c/c"
       ],
       [
@@ -29551,7 +29847,7 @@
        "Bradesco c/c"
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "14/08/2026",
        -300,
        "DISTRITO ESTADUAL DE FERNANDO DE NORONHA",
@@ -29655,11 +29951,11 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "17/08/2026",
-       3.41,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "14/08/2026",
+       10.53,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6638129",
        "Bradesco c/c"
       ],
       [
@@ -29743,6 +30039,14 @@
        "Bradesco c/c"
       ],
       [
+       "NEUTRO|Transferência entre contas - entrada",
+       "17/08/2026",
+       3.41,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6638129",
+       "Bradesco c/c"
+      ],
+      [
        "12|Aportes de sócios",
        "18/08/2026",
        200000,
@@ -29812,14 +30116,6 @@
        -193854.18,
        "Transf. Bradesco c/c &gt;&gt; Bradesco - INVES",
        "",
-       "Bradesco c/c"
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "19/08/2026",
-       34.09,
-       "BANCO BRADESCO",
-       "SEM NF",
        "Bradesco c/c"
       ],
       [
@@ -30087,7 +30383,7 @@
        "Bradesco c/c"
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "19/08/2026",
        -300,
        "DISTRITO ESTADUAL DE FERNANDO DE NORONHA",
@@ -30231,7 +30527,7 @@
        "Bradesco c/c"
       ],
       [
-       "2|ISS retido na fonte de prestadores",
+       "6|ISS | Permanência",
        "19/08/2026",
        -81.05,
        "DISTRITO ESTADUAL DE FERNANDO DE NORONHA",
@@ -30255,27 +30551,11 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "20/08/2026",
-       1.78,
-       "BANCO BRADESCO",
-       "SEM NF",
-       "Bradesco c/c"
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "20/08/2026",
-       1.25,
-       "BANCO BRADESCO",
-       "SEM NF",
-       "Bradesco c/c"
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "20/08/2026",
-       16.19,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "19/08/2026",
+       34.09,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6638129",
        "Bradesco c/c"
       ],
       [
@@ -30415,19 +30695,27 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "21/08/2026",
-       3.04,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "20/08/2026",
+       1.78,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "1733069",
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "21/08/2026",
-       0.69,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "20/08/2026",
+       1.25,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "1897130",
+       "Bradesco c/c"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "20/08/2026",
+       16.19,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6638129",
        "Bradesco c/c"
       ],
       [
@@ -30687,11 +30975,19 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "24/08/2026",
-       3.89,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "21/08/2026",
+       3.04,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "1733069",
+       "Bradesco c/c"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "21/08/2026",
+       0.69,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6207712",
        "Bradesco c/c"
       ],
       [
@@ -30807,11 +31103,11 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "25/08/2026",
-       3.71,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "24/08/2026",
+       3.89,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6207712",
        "Bradesco c/c"
       ],
       [
@@ -31071,11 +31367,11 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "26/08/2026",
-       1.05,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "25/08/2026",
+       3.71,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6207712",
        "Bradesco c/c"
       ],
       [
@@ -31151,11 +31447,11 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "27/08/2026",
-       1.93,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "26/08/2026",
+       1.05,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6207712",
        "Bradesco c/c"
       ],
       [
@@ -31211,15 +31507,15 @@
        "27/08/2026",
        18389.86,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "",
+       "6207712",
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "28/08/2026",
-       4.74,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "27/08/2026",
+       1.93,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6207712",
        "Bradesco c/c"
       ],
       [
@@ -31371,15 +31667,15 @@
        "28/08/2026",
        41021.95,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "",
+       "6207712",
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "31/08/2026",
-       1.42,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "28/08/2026",
+       4.74,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6207712",
        "Bradesco c/c"
       ],
       [
@@ -31419,7 +31715,15 @@
        "31/08/2026",
        10375.58,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "",
+       "6207712",
+       "Bradesco c/c"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "31/08/2026",
+       1.42,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6207712",
        "Bradesco c/c"
       ],
       [
@@ -31436,6 +31740,22 @@
        -69821.87,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "03/08/2026",
+       -9.78,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3808939",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "03/08/2026",
+       -4.74,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "4071854",
        "Bradesco - INVEST FAC"
       ],
       [
@@ -31472,10 +31792,34 @@
       ],
       [
        "NEUTRO|Transferência entre contas - saída",
+       "06/08/2026",
+       -0.38,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "4071854",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "06/08/2026",
+       -0.7,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6638129",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
        "07/08/2026",
        -20256.09,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "07/08/2026",
+       -1.73,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6638129",
        "Bradesco - INVEST FAC"
       ],
       [
@@ -31488,10 +31832,26 @@
       ],
       [
        "NEUTRO|Transferência entre contas - saída",
+       "11/08/2026",
+       -16.15,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6638129",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
        "12/08/2026",
        -1039.11,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "12/08/2026",
+       -0.13,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6638129",
        "Bradesco - INVEST FAC"
       ],
       [
@@ -31504,6 +31864,14 @@
       ],
       [
        "NEUTRO|Transferência entre contas - saída",
+       "13/08/2026",
+       -0.9,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6638129",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
        "14/08/2026",
        -69105.71,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
@@ -31512,10 +31880,26 @@
       ],
       [
        "NEUTRO|Transferência entre contas - saída",
+       "14/08/2026",
+       -10.53,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6638129",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
        "17/08/2026",
        -20043.28,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "17/08/2026",
+       -3.41,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6638129",
        "Bradesco - INVEST FAC"
       ],
       [
@@ -31532,6 +31916,14 @@
        -183231.38,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "19/08/2026",
+       -34.09,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6638129",
        "Bradesco - INVEST FAC"
       ],
       [
@@ -31560,6 +31952,30 @@
       ],
       [
        "NEUTRO|Transferência entre contas - saída",
+       "20/08/2026",
+       -1.78,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "1733069",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "20/08/2026",
+       -1.25,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "1897130",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "20/08/2026",
+       -16.19,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6638129",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
        "21/08/2026",
        -35937.95,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
@@ -31576,10 +31992,34 @@
       ],
       [
        "NEUTRO|Transferência entre contas - saída",
+       "21/08/2026",
+       -3.04,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "1733069",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "21/08/2026",
+       -0.69,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6207712",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
        "24/08/2026",
        -51587.74,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "24/08/2026",
+       -3.89,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6207712",
        "Bradesco - INVEST FAC"
       ],
       [
@@ -31592,6 +32032,14 @@
       ],
       [
        "NEUTRO|Transferência entre contas - saída",
+       "25/08/2026",
+       -3.71,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6207712",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
        "26/08/2026",
        -11051.95,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
@@ -31600,10 +32048,26 @@
       ],
       [
        "NEUTRO|Transferência entre contas - saída",
+       "26/08/2026",
+       -1.05,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6207712",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
        "27/08/2026",
        -18389.86,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "",
+       "6207712",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "27/08/2026",
+       -1.93,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6207712",
        "Bradesco - INVEST FAC"
       ],
       [
@@ -31611,7 +32075,15 @@
        "28/08/2026",
        -41021.95,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "",
+       "6207712",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "28/08/2026",
+       -4.74,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6207712",
        "Bradesco - INVEST FAC"
       ],
       [
@@ -31619,42 +32091,74 @@
        "31/08/2026",
        -10375.58,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "",
+       "6207712",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "31/08/2026",
+       -1.42,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6207712",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "10|Rendimentos de aplicações",
+       "31/08/2026",
+       239.54,
+       "BANCO BRADESCO",
+       "INVEST FACIL",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "10|IOF",
+       "31/08/2026",
+       -20.95,
+       "BANCO BRADESCO",
+       "INVEST FACIL",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "2|IRPJ",
+       "31/08/2026",
+       -35.46,
+       "BANCO BRADESCO",
+       "INVEST FACIL",
        "Bradesco - INVEST FAC"
       ]
      ]
     },
     "2026-09": {
      "grupos": {
-      "10": -800.39,
-      "8": -57524.81,
-      "11": -310657.63,
+      "8": -57734.43,
+      "11": -310489.91,
       "5": -80977.90000000001,
-      "4": -136559.91,
-      "6": -50533.71000000001,
+      "4": -143867.83,
+      "6": -43183.89,
       "7": -52600.0,
-      "NEUTRO": 5206.079999999853,
+      "NEUTRO": 5206.080000000134,
       "CC": -6300.84,
       "9": -1500.0,
       "OR": 5998.04,
-      "2": -48.339999999999996
+      "10": -855.3499999999999,
+      "2": -88.19999999999999
      },
      "contas": {
-      "10|Rendimentos de aplicações": 137.63000000000002,
       "8|Outras despesas administrativas": -52664.53,
       "11|Frete de equipamentos e obra": -29482.69,
       "11|Obras e reformas": -145113.75,
       "5|Transporte, veículo e combustível": -7241.04,
-      "4|Outros insumos e diversos": -130064.90999999997,
-      "6|Diarista (OIA)": -23845.96,
-      "11|Equipamentos e mobiliário": -114417.34000000001,
+      "4|Outros insumos e diversos": -106882.81999999996,
+      "6|Diarista (OIA)": -23804.059999999998,
+      "11|Equipamentos e mobiliário": -114249.62000000001,
       "7|Arrendamento e aluguel do ponto": -52600.0,
       "11|Pré-operação": -21643.85,
       "8|Tarifas bancárias": -330.25,
-      "NEUTRO|Transferência entre contas - entrada": 686307.41,
+      "NEUTRO|Transferência entre contas - entrada": 686437.0400000002,
       "NEUTRO|Transferência entre contas próprias - entrada": 5206.080000000001,
       "4|Água mineral": -4800.0,
-      "6|Alimentação de colaboradores": -17786.420000000002,
+      "4|Secos e mercearia": -1747.48,
+      "6|Alimentação de colaboradores": -10478.5,
       "CC|Conta corrente Amana - saída": -6300.84,
       "6|Salários da operação": -4350.06,
       "5|Limpeza e descartáveis": -5007.25,
@@ -31663,35 +32167,40 @@
       "6|Passagens aéreas da equipe": -862.0,
       "9|Mídia paga": -1500.0,
       "5|Energia elétrica": -2591.6400000000003,
+      "4|Proteínas (carnes e frutos do mar)": -15907.630000000001,
       "8|Contabilidade, jurídico e consultorias": -1682.21,
       "5|Alojamento e ajuda de custo para moradia": -9000.0,
       "8|Material de escritório": -817.82,
       "8|Licenças e alvarás": -396.0,
-      "8|Sistemas": -1634.0,
+      "8|Sistemas": -1843.62,
       "4|Gás de cozinha": -1695.0,
       "OR|Outras receitas operacionais": 5998.04,
+      "4|Hortifrúti": -12834.900000000001,
       "6|FGTS e contribuições": -3289.94,
       "10|Juros e multas": -938.02,
       "2|Simples Nacional (DAS)": -48.339999999999996,
       "6|Uniformes, EPI e exames": -399.33,
-      "NEUTRO|Transferência entre contas - saída": -686307.41
+      "NEUTRO|Transferência entre contas - saída": -686437.0400000002,
+      "10|Rendimentos de aplicações": 84.09,
+      "10|IOF": -1.42,
+      "2|IRPJ": -39.86
      },
      "lanc": {
-      "10|Rendimentos de aplicações": 19,
       "8|Outras despesas administrativas": 10,
       "11|Frete de equipamentos e obra": 5,
-      "11|Obras e reformas": 40,
+      "11|Obras e reformas": 39,
       "5|Transporte, veículo e combustível": 3,
-      "4|Outros insumos e diversos": 46,
-      "6|Diarista (OIA)": 9,
-      "11|Equipamentos e mobiliário": 35,
+      "4|Outros insumos e diversos": 37,
+      "6|Diarista (OIA)": 8,
+      "11|Equipamentos e mobiliário": 34,
       "7|Arrendamento e aluguel do ponto": 6,
       "11|Pré-operação": 6,
-      "8|Tarifas bancárias": 17,
-      "NEUTRO|Transferência entre contas - entrada": 22,
+      "8|Tarifas bancárias": 25,
+      "NEUTRO|Transferência entre contas - entrada": 41,
       "NEUTRO|Transferência entre contas próprias - entrada": 12,
       "4|Água mineral": 1,
-      "6|Alimentação de colaboradores": 7,
+      "4|Secos e mercearia": 2,
+      "6|Alimentação de colaboradores": 2,
       "CC|Conta corrente Amana - saída": 5,
       "6|Salários da operação": 2,
       "5|Limpeza e descartáveis": 3,
@@ -31700,33 +32209,30 @@
       "6|Passagens aéreas da equipe": 1,
       "9|Mídia paga": 1,
       "5|Energia elétrica": 2,
+      "4|Proteínas (carnes e frutos do mar)": 9,
       "8|Contabilidade, jurídico e consultorias": 2,
       "5|Alojamento e ajuda de custo para moradia": 1,
       "8|Material de escritório": 1,
       "8|Licenças e alvarás": 1,
-      "8|Sistemas": 3,
+      "8|Sistemas": 5,
       "4|Gás de cozinha": 1,
       "OR|Outras receitas operacionais": 1,
+      "4|Hortifrúti": 3,
       "6|FGTS e contribuições": 2,
       "10|Juros e multas": 2,
       "2|Simples Nacional (DAS)": 2,
       "6|Uniformes, EPI e exames": 1,
-      "NEUTRO|Transferência entre contas - saída": 22
+      "NEUTRO|Transferência entre contas - saída": 41,
+      "10|Rendimentos de aplicações": 1,
+      "10|IOF": 1,
+      "2|IRPJ": 1
      },
      "familias": {
-      "comum": -130064.90999999997,
+      "comum": -106882.81999999996,
       "bar": -4800.0,
-      "cozinha": -1695.0
+      "cozinha": -32185.01
      },
      "itens": [
-      [
-       "10|Rendimentos de aplicações",
-       "01/09/2026",
-       17.34,
-       "BANCO BRADESCO",
-       "SEM NF",
-       "Bradesco c/c"
-      ],
       [
        "8|Outras despesas administrativas",
        "01/09/2026",
@@ -31986,17 +32492,17 @@
       [
        "NEUTRO|Transferência entre contas - entrada",
        "01/09/2026",
-       114949.94,
+       17.34,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "",
+       "6207712",
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "02/09/2026",
-       0.21,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "01/09/2026",
+       114949.94,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6207712",
        "Bradesco c/c"
       ],
       [
@@ -32032,27 +32538,11 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "03/09/2026",
-       7.85,
-       "BANCO BRADESCO",
-       "SEM NF",
-       "Bradesco c/c"
-      ],
-      [
-       "11|Obras e reformas",
-       "03/09/2026",
-       -10000,
-       "POLILON COBERTURAS E POLICARBONATOS",
-       "NF 000704",
-       "Bradesco c/c"
-      ],
-      [
-       "11|Obras e reformas",
-       "03/09/2026",
-       -4500,
-       "POLILON COBERTURAS E POLICARBONATOS",
-       "FALTA NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "02/09/2026",
+       0.21,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6207712",
        "Bradesco c/c"
       ],
       [
@@ -32064,14 +32554,6 @@
        "Bradesco c/c"
       ],
       [
-       "8|Tarifas bancárias",
-       "03/09/2026",
-       -18,
-       "BANCO BRADESCO",
-       "SEM NF",
-       "Bradesco c/c"
-      ],
-      [
        "NEUTRO|Transferência entre contas - entrada",
        "03/09/2026",
        44478.15,
@@ -32080,19 +32562,91 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "04/09/2026",
-       14.49,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "03/09/2026",
+       7.85,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6207712",
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "04/09/2026",
-       3.21,
+       "11|Obras e reformas",
+       "03/09/2026",
+       -14500,
+       "POLILON COBERTURAS E POLICARBONATOS",
+       "",
+       "Bradesco c/c"
+      ],
+      [
+       "8|Tarifas bancárias",
+       "03/09/2026",
+       -2,
        "BANCO BRADESCO",
-       "SEM NF",
+       "10926",
+       "Bradesco c/c"
+      ],
+      [
+       "8|Tarifas bancárias",
+       "03/09/2026",
+       -2,
+       "BANCO BRADESCO",
+       "10926",
+       "Bradesco c/c"
+      ],
+      [
+       "8|Tarifas bancárias",
+       "03/09/2026",
+       -2,
+       "BANCO BRADESCO",
+       "10926",
+       "Bradesco c/c"
+      ],
+      [
+       "8|Tarifas bancárias",
+       "03/09/2026",
+       -2,
+       "BANCO BRADESCO",
+       "10926",
+       "Bradesco c/c"
+      ],
+      [
+       "8|Tarifas bancárias",
+       "03/09/2026",
+       -2,
+       "BANCO BRADESCO",
+       "10926",
+       "Bradesco c/c"
+      ],
+      [
+       "8|Tarifas bancárias",
+       "03/09/2026",
+       -2,
+       "BANCO BRADESCO",
+       "10926",
+       "Bradesco c/c"
+      ],
+      [
+       "8|Tarifas bancárias",
+       "03/09/2026",
+       -2,
+       "BANCO BRADESCO",
+       "10926",
+       "Bradesco c/c"
+      ],
+      [
+       "8|Tarifas bancárias",
+       "03/09/2026",
+       -2,
+       "BANCO BRADESCO",
+       "10926",
+       "Bradesco c/c"
+      ],
+      [
+       "8|Tarifas bancárias",
+       "03/09/2026",
+       -2,
+       "BANCO BRADESCO",
+       "10926",
        "Bradesco c/c"
       ],
       [
@@ -32120,7 +32674,7 @@
        "Bradesco c/c"
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Secos e mercearia",
        "04/09/2026",
        -899.97,
        "PRASO PLATAFORMA DE COMERCIO LTDA.",
@@ -32312,11 +32866,19 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "08/09/2026",
-       9.51,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "04/09/2026",
+       14.49,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6207712",
+       "Bradesco c/c"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "04/09/2026",
+       3.21,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
        "Bradesco c/c"
       ],
       [
@@ -32384,11 +32946,11 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "09/09/2026",
-       0.84,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "08/09/2026",
+       9.51,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
        "Bradesco c/c"
       ],
       [
@@ -32432,11 +32994,11 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "10/09/2026",
-       12.58,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "09/09/2026",
+       0.84,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
        "Bradesco c/c"
       ],
       [
@@ -32472,7 +33034,7 @@
        "Bradesco c/c"
       ],
       [
-       "6|Alimentação de colaboradores",
+       "4|Proteínas (carnes e frutos do mar)",
        "10/09/2026",
        -2492.45,
        "MERCADINHO E FRIGORIFICO POTY LTDA",
@@ -32648,6 +33210,14 @@
        "Bradesco c/c"
       ],
       [
+       "NEUTRO|Transferência entre contas - entrada",
+       "10/09/2026",
+       12.58,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
+       "Bradesco c/c"
+      ],
+      [
        "8|Tarifas bancárias",
        "11/09/2026",
        -6,
@@ -32661,14 +33231,6 @@
        10,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "",
-       "Bradesco c/c"
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "14/09/2026",
-       19.56,
-       "BANCO BRADESCO",
-       "SEM NF",
        "Bradesco c/c"
       ],
       [
@@ -32744,7 +33306,7 @@
        "Bradesco c/c"
       ],
       [
-       "6|Diarista (OIA)",
+       "8|Sistemas",
        "14/09/2026",
        -41.9,
        "TILLBILL - DESENVOLVIMENTO DE SISTEMAS LTDA",
@@ -32880,7 +33442,7 @@
        "Bradesco c/c"
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Proteínas (carnes e frutos do mar)",
        "14/09/2026",
        -1508,
        "O REI DAS OVAS COMERCIO DE PESCADOS LTDA",
@@ -32936,19 +33498,19 @@
        "Bradesco c/c"
       ],
       [
+       "NEUTRO|Transferência entre contas - entrada",
+       "14/09/2026",
+       19.56,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
+       "Bradesco c/c"
+      ],
+      [
        "OR|Outras receitas operacionais",
        "15/09/2026",
        5998.04,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
        "DACTE 098622 - YO",
-       "Bradesco c/c"
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "15/09/2026",
-       15.4,
-       "BANCO BRADESCO",
-       "SEM NF",
        "Bradesco c/c"
       ],
       [
@@ -33032,7 +33594,7 @@
        "Bradesco c/c"
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Hortifrúti",
        "15/09/2026",
        -2615,
        "EMPORIO MIX HORTALICAS FINAS",
@@ -33040,7 +33602,7 @@
        "Bradesco c/c"
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Hortifrúti",
        "15/09/2026",
        -4121.3,
        "EMPORIO MIX HORTALICAS FINAS",
@@ -33048,7 +33610,7 @@
        "Bradesco c/c"
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Hortifrúti",
        "15/09/2026",
        -6098.6,
        "EMPORIO MIX HORTALICAS FINAS",
@@ -33056,7 +33618,7 @@
        "Bradesco c/c"
       ],
       [
-       "11|Equipamentos e mobiliário",
+       "8|Sistemas",
        "15/09/2026",
        -167.72,
        "RAJ TECNOLOGIA",
@@ -33128,11 +33690,11 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "16/09/2026",
-       2.53,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "15/09/2026",
+       15.4,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
        "Bradesco c/c"
       ],
       [
@@ -33272,6 +33834,14 @@
        "Bradesco c/c"
       ],
       [
+       "NEUTRO|Transferência entre contas - entrada",
+       "16/09/2026",
+       2.53,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
+       "Bradesco c/c"
+      ],
+      [
        "8|Tarifas bancárias",
        "17/09/2026",
        -10,
@@ -33288,15 +33858,7 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "18/09/2026",
-       13.05,
-       "BANCO BRADESCO",
-       "SEM NF",
-       "Bradesco c/c"
-      ],
-      [
-       "6|Alimentação de colaboradores",
+       "4|Proteínas (carnes e frutos do mar)",
        "18/09/2026",
        -748.45,
        "SANTISTA FOOD BUSINESS",
@@ -33304,7 +33866,7 @@
        "Bradesco c/c"
       ],
       [
-       "6|Alimentação de colaboradores",
+       "4|Proteínas (carnes e frutos do mar)",
        "18/09/2026",
        -1679.18,
        "SANTISTA FOOD BUSINESS",
@@ -33312,7 +33874,7 @@
        "Bradesco c/c"
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Proteínas (carnes e frutos do mar)",
        "18/09/2026",
        -2107.91,
        "SANTISTA FOOD BUSINESS",
@@ -33384,7 +33946,7 @@
        "Bradesco c/c"
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Secos e mercearia",
        "18/09/2026",
        -847.51,
        "PRASO PLATAFORMA DE COMERCIO LTDA.",
@@ -33440,7 +34002,7 @@
        "Bradesco c/c"
       ],
       [
-       "6|Alimentação de colaboradores",
+       "4|Proteínas (carnes e frutos do mar)",
        "18/09/2026",
        -736.19,
        "SANTISTA FOOD BUSINESS",
@@ -33448,7 +34010,7 @@
        "Bradesco c/c"
       ],
       [
-       "6|Alimentação de colaboradores",
+       "4|Proteínas (carnes e frutos do mar)",
        "18/09/2026",
        -1651.65,
        "SANTISTA FOOD BUSINESS",
@@ -33456,7 +34018,7 @@
        "Bradesco c/c"
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Proteínas (carnes e frutos do mar)",
        "18/09/2026",
        -2073.36,
        "SANTISTA FOOD BUSINESS",
@@ -33504,11 +34066,11 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "21/09/2026",
-       0.15,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "18/09/2026",
+       13.05,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
        "Bradesco c/c"
       ],
       [
@@ -33528,11 +34090,11 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "22/09/2026",
-       8.88,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "21/09/2026",
+       0.15,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
        "Bradesco c/c"
       ],
       [
@@ -33656,11 +34218,11 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "24/09/2026",
-       0.41,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "22/09/2026",
+       8.88,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
        "Bradesco c/c"
       ],
       [
@@ -33688,19 +34250,11 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "25/09/2026",
-       4.44,
-       "BANCO BRADESCO",
-       "SEM NF",
-       "Bradesco c/c"
-      ],
-      [
-       "10|Rendimentos de aplicações",
-       "25/09/2026",
-       0.09,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "24/09/2026",
+       0.41,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
        "Bradesco c/c"
       ],
       [
@@ -33768,7 +34322,7 @@
        "Bradesco c/c"
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Proteínas (carnes e frutos do mar)",
        "25/09/2026",
        -2910.44,
        "SANTISTA FOOD BUSINESS",
@@ -33816,11 +34370,19 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "28/09/2026",
-       2.23,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "25/09/2026",
+       4.44,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco c/c"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "25/09/2026",
+       0.09,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
        "Bradesco c/c"
       ],
       [
@@ -33840,11 +34402,11 @@
        "Bradesco c/c"
       ],
       [
-       "10|Rendimentos de aplicações",
-       "29/09/2026",
-       4.86,
-       "BANCO BRADESCO",
-       "SEM NF",
+       "NEUTRO|Transferência entre contas - entrada",
+       "28/09/2026",
+       2.23,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
        "Bradesco c/c"
       ],
       [
@@ -33952,6 +34514,14 @@
        "Bradesco c/c"
       ],
       [
+       "NEUTRO|Transferência entre contas - entrada",
+       "29/09/2026",
+       4.86,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco c/c"
+      ],
+      [
        "8|Tarifas bancárias",
        "30/09/2026",
        -2,
@@ -33962,17 +34532,25 @@
       [
        "NEUTRO|Transferência entre contas - entrada",
        "30/09/2026",
-       10,
+       2,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "",
+       "300926",
        "Bradesco c/c"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "01/09/2026",
+       -17.34,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6207712",
+       "Bradesco - INVEST FAC"
       ],
       [
        "NEUTRO|Transferência entre contas - saída",
        "01/09/2026",
        -114949.94,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "",
+       "6207712",
        "Bradesco - INVEST FAC"
       ],
       [
@@ -33985,10 +34563,26 @@
       ],
       [
        "NEUTRO|Transferência entre contas - saída",
+       "02/09/2026",
+       -0.21,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6207712",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
        "03/09/2026",
        -44478.15,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "03/09/2026",
+       -7.85,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6207712",
        "Bradesco - INVEST FAC"
       ],
       [
@@ -34009,10 +34603,34 @@
       ],
       [
        "NEUTRO|Transferência entre contas - saída",
+       "04/09/2026",
+       -14.49,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "6207712",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "04/09/2026",
+       -3.21,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
        "08/09/2026",
        -51595.57,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "08/09/2026",
+       -9.51,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
        "Bradesco - INVEST FAC"
       ],
       [
@@ -34025,10 +34643,26 @@
       ],
       [
        "NEUTRO|Transferência entre contas - saída",
+       "09/09/2026",
+       -0.84,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
        "10/09/2026",
        -62772.4,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "10/09/2026",
+       -12.58,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
        "Bradesco - INVEST FAC"
       ],
       [
@@ -34049,6 +34683,14 @@
       ],
       [
        "NEUTRO|Transferência entre contas - saída",
+       "14/09/2026",
+       -19.56,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
        "15/09/2026",
        -68637.24,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
@@ -34057,10 +34699,26 @@
       ],
       [
        "NEUTRO|Transferência entre contas - saída",
+       "15/09/2026",
+       -15.4,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
        "16/09/2026",
        -10874.38,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -2.53,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
        "Bradesco - INVEST FAC"
       ],
       [
@@ -34081,10 +34739,26 @@
       ],
       [
        "NEUTRO|Transferência entre contas - saída",
+       "18/09/2026",
+       -13.05,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
        "21/09/2026",
        -601.4,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "21/09/2026",
+       -0.15,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
        "Bradesco - INVEST FAC"
       ],
       [
@@ -34097,10 +34771,26 @@
       ],
       [
        "NEUTRO|Transferência entre contas - saída",
+       "22/09/2026",
+       -8.88,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
        "24/09/2026",
        -1481.8,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "24/09/2026",
+       -0.41,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
        "Bradesco - INVEST FAC"
       ],
       [
@@ -34121,10 +34811,34 @@
       ],
       [
        "NEUTRO|Transferência entre contas - saída",
+       "25/09/2026",
+       -4.44,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "25/09/2026",
+       -0.09,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "8358031",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
        "28/09/2026",
        -9997.77,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "28/09/2026",
+       -2.23,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
        "Bradesco - INVEST FAC"
       ],
       [
@@ -34137,10 +34851,42 @@
       ],
       [
        "NEUTRO|Transferência entre contas - saída",
-       "30/09/2026",
-       -10,
+       "29/09/2026",
+       -4.86,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "",
+       "3345825",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "30/09/2026",
+       -2,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "300926",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "10|Rendimentos de aplicações",
+       "30/09/2026",
+       84.09,
+       "BANCO BRADESCO",
+       "INVEST FACIL",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "10|IOF",
+       "30/09/2026",
+       -1.42,
+       "BANCO BRADESCO",
+       "INVEST FACIL",
+       "Bradesco - INVEST FAC"
+      ],
+      [
+       "2|IRPJ",
+       "30/09/2026",
+       -39.86,
+       "BANCO BRADESCO",
+       "INVEST FACIL",
        "Bradesco - INVEST FAC"
       ]
      ]
@@ -34148,23 +34894,23 @@
    },
    "saldos": {
     "2026-08": {
-     "ini": 723496.98,
-     "fim": 828514.21,
-     "entradas": 1198450.31,
-     "saidas": -1093433.08,
+     "ini": 723574.76,
+     "fim": 828652.89,
+     "entradas": 1198567.62,
+     "saidas": -1093489.49,
      "contas": {
       "Bradesco c/c": 1,
-      "Bradesco - INVEST FAC": 828513.21
+      "Bradesco - INVEST FAC": 828651.89
      }
     },
     "2026-09": {
-     "ini": 828514.21,
-     "fim": 142214.8,
-     "entradas": 6135.67,
-     "saidas": -697641.16,
+     "ini": 828652.89,
+     "fim": 142258.66,
+     "entradas": 6082.13,
+     "saidas": -697682.44,
      "contas": {
-      "Bradesco c/c": 9,
-      "Bradesco - INVEST FAC": 142205.8
+      "Bradesco c/c": 1,
+      "Bradesco - INVEST FAC": 142257.66
      }
     }
    },
