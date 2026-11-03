@@ -44,18 +44,37 @@ def dt(s):
 # que apareceu entre 15 e 16/10 por edicao de movimento de setembro, ainda sem
 # explicacao. Fica declarada em DIVERGE para o painel mostrar, nao ser tapada.
 ANCORA_DATA = datetime.date(2026, 9, 30)
-# Saldo do EXTRATO DO BANCO na data da ancora. E o unico ancoramento externo que
-# existe: de 01/10 em diante so ha o que o Omie diz. A divergencia e calculada
-# contra a ancora em vez de escrita a mao, para nao ficar desatualizada.
-EXTRATO = {'boldro': 599857.30, 'yo': 142214.80}
-NOTA_DIVERGE = {'boldro': 'apareceu entre 15 e 16/10, por edicao de movimento de '
-                          'setembro depois do fechamento — nao foi lancamento novo'}
+# Saldo DOCUMENTADO na data da ancora, conferido em 27/10.
+#
+# Qual documento: o da APLICACAO, nao o extrato "C.C" do banco. Os dois existem
+# e os dois estao certos, em bases diferentes:
+#   - extrato C.C da Boldro fecha setembro em 599.844,89, que e a posicao
+#     liquida: so o rendimento ja varrido para a conta corrente
+#   - extrato da ContaMax declara SALDO BRUTO FINAL de 599.870,43, com o
+#     rendimento do mes apropriado (34,94 bruto, IOF 6,40, IR 1,50)
+# O Omie segue a base bruta e bate ao centavo com a aplicacao. Eu passei semanas
+# comparando com o C.C e chamando a diferenca de divergencia — nao era.
+#
+# YO: Invest Facil declara VALOR BRUTO de 142.249,66 em setembro; mais 9,00 da
+# conta corrente, fecha em 142.258,66, que e o que o Omie marca.
+EXTRATO = {'boldro': 599870.43, 'yo': 142258.66}
+# A ancora da Boldro soma mais que o documento do banco de proposito: inclui o
+# Fundo Fixo. Isso e declarado no painel, nao escondido.
+NOTA_DIVERGE = {'boldro': 'e o Fundo Fixo - Restaurante, dinheiro em especie do '
+                          'caixa do restaurante. Ele existe e esta no Omie, mas '
+                          'nao tem extrato bancario: fecha contra contagem de '
+                          'caixa, que o CSC ainda nao enviou'}
 
 EMP = {
     'boldro': {
         'nome': 'Boldró',
-        'ancora': {'Santander c/c': 5.44, 'Santander ContaMax': 599855.80,
-                   'Santander CDB': 0.00, 'Fundo Fixo - Restaurante': 0.00, 'GetNet': 0.00},
+        # A ContaMax carrega o saldo porque a varredura esvazia a conta corrente
+        # todo dia. O Fundo Fixo e dinheiro fisico do restaurante: existe, mas
+        # nao tem extrato bancario — fecha contra contagem de caixa, nao contra
+        # documento do banco, e por isso entra declarado a parte.
+        'ancora': {'Santander c/c': 0.00, 'Santander ContaMax': 599870.43,
+                   'Santander CDB': 0.00, 'Fundo Fixo - Restaurante': 19967.48,
+                   'GetNet': 0.00},
         'contas': [(2886694320, 'Santander c/c'), (2886694903, 'Santander ContaMax'),
                    (2886695824, 'Santander CDB'), (2878729940, 'Fundo Fixo - Restaurante'),
                    (2899732241, 'GetNet')],
@@ -63,7 +82,7 @@ EMP = {
     },
     'yo': {
         'nome': 'YO Noronha',
-        'ancora': {'Bradesco c/c': 9.00, 'Bradesco Invest Fácil': 142205.80,
+        'ancora': {'Bradesco c/c': 1.00, 'Bradesco Invest Fácil': 142257.66,
                    'Bradesco CDB': 0.00, 'Mercado Pago': 0.00},
         'contas': [(11806749900, 'Bradesco c/c'), (11806752455, 'Bradesco Invest Fácil'),
                    (11806755245, 'Bradesco CDB'), (11811341545, 'Mercado Pago')],

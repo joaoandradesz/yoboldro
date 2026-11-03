@@ -1,5 +1,5 @@
 {
- "gerado": "27/10/2026 às 01:12",
+ "gerado": "03/11/2026 às 14:22",
  "meses": [
   "2026-08",
   "2026-09"
@@ -2359,12 +2359,12 @@
     "2026-08": {
      "grupos": {
       "1": 175903.28,
-      "CC": 52994.80000000001,
+      "CC": 52994.8,
       "NEUTRO": 9.17,
-      "4": -171410.63000000003,
-      "5": -9638.46,
+      "4": -209582.91999999998,
+      "5": -11656.46,
       "8": -17043.760000000006,
-      "6": -17779.18,
+      "6": -18079.18,
       "9": -4385.0,
       "2": -8175.04,
       "3": -2010.0
@@ -2382,11 +2382,11 @@
       "9|Cachê de artistas e atrações": -2385.0,
       "5|Limpeza e descartáveis": -2458.46,
       "8|Contabilidade, jurídico e consultorias": -7500.0,
-      "4|Bebidas alcoólicas": -44909.84,
+      "4|Bebidas alcoólicas": -81145.29,
       "9|Outros de marketing": -2000.0,
       "6|Passagens aéreas da equipe": -2010.0,
       "4|Proteínas (carnes e frutos do mar)": -32608.370000000006,
-      "4|Hortifrúti": -14349.61,
+      "4|Hortifrúti": -14509.61,
       "5|Reposição de utensílios": -180.0,
       "4|Frios, laticínios e congelados": -25764.84,
       "8|Viagens administrativas": -3500.0,
@@ -2399,7 +2399,11 @@
       "2|Simples Nacional (DAS)": -7914.2,
       "2|PIS": -46.45,
       "2|COFINS": -214.39,
-      "3|Taxas de cartão": -2010.0
+      "3|Taxas de cartão": -2010.0,
+      "6|Extras e freelancers": -300.0,
+      "5|Transporte, veículo e combustível": -1418.0,
+      "5|Diversos de operação": -600.0,
+      "4|Bebidas não alcoólicas": -1776.84
      },
      "lanc": {
       "1|Receita operacional (salão)": 62,
@@ -2414,11 +2418,11 @@
       "9|Cachê de artistas e atrações": 2,
       "5|Limpeza e descartáveis": 2,
       "8|Contabilidade, jurídico e consultorias": 1,
-      "4|Bebidas alcoólicas": 10,
+      "4|Bebidas alcoólicas": 14,
       "9|Outros de marketing": 1,
       "6|Passagens aéreas da equipe": 1,
       "4|Proteínas (carnes e frutos do mar)": 12,
-      "4|Hortifrúti": 10,
+      "4|Hortifrúti": 11,
       "5|Reposição de utensílios": 1,
       "4|Frios, laticínios e congelados": 12,
       "8|Viagens administrativas": 1,
@@ -2431,12 +2435,16 @@
       "2|Simples Nacional (DAS)": 1,
       "2|PIS": 1,
       "2|COFINS": 1,
-      "3|Taxas de cartão": 1
+      "3|Taxas de cartão": 1,
+      "6|Extras e freelancers": 2,
+      "5|Transporte, veículo e combustível": 2,
+      "5|Diversos de operação": 1,
+      "4|Bebidas não alcoólicas": 3
      },
      "familias": {
-      "cozinha": -103134.68999999999,
+      "cozinha": -103294.68999999999,
       "comum": -23366.1,
-      "bar": -44909.84
+      "bar": -82922.12999999999
      },
      "itens": [
       [
@@ -3993,14 +4001,6 @@
       ],
       [
        "CC|Conta corrente YO Noronha - saída",
-       "26/08/2026",
-       -2564.15,
-       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
-       "NF1266243",
-       ""
-      ],
-      [
-       "CC|Conta corrente YO Noronha - saída",
        "27/08/2026",
        -790.32,
        "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
@@ -4029,22 +4029,6 @@
        -3956.4,
        "CARAPITANGA INDUSTRIA DE PESCADOS DO BRASIL LT",
        "NF 177956",
-       ""
-      ],
-      [
-       "4|Bebidas alcoólicas",
-       "27/08/2026",
-       -16442,
-       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
-       "NF1266401",
-       ""
-      ],
-      [
-       "4|Bebidas alcoólicas",
-       "26/08/2026",
-       -2564.14,
-       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
-       "NF1266243",
        ""
       ],
       [
@@ -4094,119 +4078,247 @@
        "J A CALHEIROS DE MELO JUNIOR",
        "000378041/1",
        ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "27/08/2026",
+       -16442,
+       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
+       "001266401/1",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "27/08/2026",
+       -16442,
+       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
+       "001266401/2",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "27/08/2026",
+       -16442,
+       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
+       "001266401/3",
+       ""
+      ],
+      [
+       "6|Extras e freelancers",
+       "28/08/2026",
+       -150,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "6|Extras e freelancers",
+       "29/08/2026",
+       -150,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Transporte, veículo e combustível",
+       "18/08/2026",
+       -898,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Transporte, veículo e combustível",
+       "21/08/2026",
+       -520,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "18/08/2026",
+       -600,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "4|Hortifrúti",
+       "31/08/2026",
+       -160,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "26/08/2026",
+       -1971.87,
+       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
+       "001266243/1",
+       ""
+      ],
+      [
+       "4|Bebidas não alcoólicas",
+       "26/08/2026",
+       -592.28,
+       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
+       "001266243/1",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "26/08/2026",
+       -1971.86,
+       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
+       "001266243/2",
+       ""
+      ],
+      [
+       "4|Bebidas não alcoólicas",
+       "26/08/2026",
+       -592.28,
+       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
+       "001266243/2",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "26/08/2026",
+       -1971.86,
+       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
+       "001266243/3",
+       ""
+      ],
+      [
+       "4|Bebidas não alcoólicas",
+       "26/08/2026",
+       -592.28,
+       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
+       "001266243/3",
+       ""
+      ],
+      [
+       "CC|Conta corrente YO Noronha - saída",
+       "26/08/2026",
+       -2564.15,
+       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
+       "RECRIADO 22/09",
+       ""
       ]
      ]
     },
     "2026-09": {
      "grupos": {
-      "1": 1116625.1600000004,
+      "1": 1116859.5200000005,
       "NEUTRO": 1058.2300000000012,
       "8": -99307.47000000002,
       "9": -30715.83,
-      "6": -178935.53000000014,
-      "5": -54439.88,
-      "4": -240992.68000000002,
+      "6": -206320.53000000014,
+      "5": -55818.369999999995,
+      "4": -253956.84999999995,
       "11": -10895.0,
       "CC": -109420.10000000002,
-      "3": -50749.18,
+      "3": -111227.71000000005,
       "2": -40443.85
      },
      "contas": {
-      "1|Receita operacional (salão)": 1116625.1600000004,
+      "1|Receita operacional (salão)": 1116859.5200000005,
       "NEUTRO|Ajustes e estornos - entrada": 1058.2300000000012,
       "8|Sistemas": -3943.38,
       "8|Viagens administrativas": -7900.0,
       "9|Outros de marketing": -3500.0,
       "8|Contabilidade, jurídico e consultorias": -7500.0,
-      "6|Diarista (OIA)": -46992.51,
+      "6|Diarista (OIA)": -74377.51000000001,
       "5|Alojamento e ajuda de custo para moradia": -19070.65,
       "6|Salários da operação": -87427.82000000004,
       "8|Telefonia e internet": -188.42,
       "4|Proteínas (carnes e frutos do mar)": -58279.09,
       "6|Alimentação de colaboradores": -18135.0,
       "8|Correios e fretes administrativos": -186.95,
-      "4|Outros insumos e diversos": -13469.26,
+      "4|Outros insumos e diversos": -18299.510000000002,
       "9|Cachê de artistas e atrações": -23215.83,
       "6|Extras e freelancers": -17693.339999999997,
       "5|Gestor operacional PJ": -14666.67,
       "8|Pró-labore": -68000.0,
       "11|Equipamentos e mobiliário": -8895.0,
-      "4|Hortifrúti": -13523.23,
-      "5|Manutenção de equipamentos": -1960.0,
+      "4|Hortifrúti": -14083.23,
+      "5|Manutenção de equipamentos": -2260.0,
       "4|Secos e mercearia": -58141.84999999999,
       "11|Obras e reformas": -2000.0,
       "8|Outras despesas administrativas": -9020.970000000001,
-      "5|Limpeza e descartáveis": -3387.32,
+      "5|Limpeza e descartáveis": -15314.45,
       "8|Tarifas bancárias": -782.2500000000001,
-      "4|Bebidas alcoólicas": -68603.75,
+      "4|Bebidas alcoólicas": -75037.67000000001,
       "6|Passagens aéreas da equipe": -3982.68,
       "6|Uniformes, EPI e exames": -1924.0,
       "9|Agência e conteúdo": -2500.0,
       "CC|Conta corrente YO Noronha - saída": -105953.43000000002,
       "4|Frete de insumos de alimentos e bebidas": -14428.04,
       "CC|Conta corrente Pousada Topázio - saída": -3466.67,
-      "3|Comissões sobre vendas": -40297.60999999999,
-      "5|Transporte, veículo e combustível": -449.0,
+      "3|Comissões sobre vendas": -100776.14000000003,
+      "5|Transporte, veículo e combustível": -549.0,
       "9|Mídia paga": -1500.0,
-      "4|Frios, laticínios e congelados": -14547.46,
+      "4|Frios, laticínios e congelados": -15687.46,
       "6|Rescisões": -2780.18,
       "8|Material de escritório": -1785.5,
       "2|Cancelamentos e estornos": -5300.0,
       "3|Taxas de cartão": -10451.57,
       "2|COFINS": -28885.36,
       "2|PIS": -6258.49,
-      "5|Diversos de operação": -14906.24
+      "5|Diversos de operação": -3957.6
      },
      "lanc": {
-      "1|Receita operacional (salão)": 354,
+      "1|Receita operacional (salão)": 355,
       "NEUTRO|Ajustes e estornos - entrada": 300,
       "8|Sistemas": 3,
       "8|Viagens administrativas": 3,
       "9|Outros de marketing": 2,
       "8|Contabilidade, jurídico e consultorias": 1,
-      "6|Diarista (OIA)": 59,
+      "6|Diarista (OIA)": 75,
       "5|Alojamento e ajuda de custo para moradia": 9,
       "6|Salários da operação": 67,
       "8|Telefonia e internet": 1,
       "4|Proteínas (carnes e frutos do mar)": 23,
       "6|Alimentação de colaboradores": 9,
       "8|Correios e fretes administrativos": 1,
-      "4|Outros insumos e diversos": 6,
+      "4|Outros insumos e diversos": 8,
       "9|Cachê de artistas e atrações": 24,
       "6|Extras e freelancers": 14,
       "5|Gestor operacional PJ": 3,
       "8|Pró-labore": 6,
       "11|Equipamentos e mobiliário": 4,
-      "4|Hortifrúti": 10,
-      "5|Manutenção de equipamentos": 2,
+      "4|Hortifrúti": 12,
+      "5|Manutenção de equipamentos": 3,
       "4|Secos e mercearia": 27,
       "11|Obras e reformas": 1,
       "8|Outras despesas administrativas": 7,
-      "5|Limpeza e descartáveis": 2,
+      "5|Limpeza e descartáveis": 5,
       "8|Tarifas bancárias": 25,
-      "4|Bebidas alcoólicas": 14,
+      "4|Bebidas alcoólicas": 18,
       "6|Passagens aéreas da equipe": 4,
       "6|Uniformes, EPI e exames": 3,
       "9|Agência e conteúdo": 1,
       "CC|Conta corrente YO Noronha - saída": 46,
       "4|Frete de insumos de alimentos e bebidas": 2,
       "CC|Conta corrente Pousada Topázio - saída": 2,
-      "3|Comissões sobre vendas": 32,
-      "5|Transporte, veículo e combustível": 1,
+      "3|Comissões sobre vendas": 53,
+      "5|Transporte, veículo e combustível": 3,
       "9|Mídia paga": 1,
-      "4|Frios, laticínios e congelados": 5,
+      "4|Frios, laticínios e congelados": 6,
       "6|Rescisões": 1,
       "8|Material de escritório": 1,
       "2|Cancelamentos e estornos": 3,
       "3|Taxas de cartão": 1,
       "2|COFINS": 1,
       "2|PIS": 1,
-      "5|Diversos de operação": 17
+      "5|Diversos de operação": 9
      },
      "familias": {
-      "cozinha": -144491.63000000003,
-      "comum": -27897.3,
-      "bar": -68603.75
+      "cozinha": -146191.63000000003,
+      "comum": -32727.550000000003,
+      "bar": -75037.67000000001
      },
      "itens": [
       [
@@ -9442,6 +9554,14 @@
        ""
       ],
       [
+       "1|Receita operacional (salão)",
+       "25/09/2026",
+       234.36,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
        "8|Sistemas",
        "03/09/2026",
        -949,
@@ -11338,14 +11458,6 @@
        ""
       ],
       [
-       "5|Limpeza e descartáveis",
-       "02/09/2026",
-       -2935.32,
-       "ADHFLEX EMBALAGENS FLEXIVEIS LTDA",
-       "NF 1730",
-       ""
-      ],
-      [
        "CC|Conta corrente YO Noronha - saída",
        "15/09/2026",
        -7191.79,
@@ -12066,14 +12178,6 @@
        ""
       ],
       [
-       "4|Bebidas alcoólicas",
-       "03/09/2026",
-       -1969.78,
-       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
-       "NF1268170",
-       ""
-      ],
-      [
        "4|Frios, laticínios e congelados",
        "14/09/2026",
        -6522.8,
@@ -12546,14 +12650,6 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
-       "08/09/2026",
-       -3975.73,
-       "CONBO DISTRIBUIDORA FBV LTDA",
-       "NF 032141",
-       ""
-      ],
-      [
        "3|Taxas de cartão",
        "30/09/2026",
        -10451.57,
@@ -12818,9 +12914,9 @@
        ""
       ],
       [
-       "5|Diversos de operação",
+       "6|Diarista (OIA)",
        "08/09/2026",
-       -300,
+       -1125,
        "Cliente Consumidor / Sem Tomador",
        "",
        ""
@@ -12842,25 +12938,25 @@
        ""
       ],
       [
-       "5|Diversos de operação",
+       "6|Diarista (OIA)",
        "11/09/2026",
-       -924,
+       -4225,
        "Cliente Consumidor / Sem Tomador",
        "",
        ""
       ],
       [
-       "5|Diversos de operação",
+       "6|Diarista (OIA)",
        "12/09/2026",
-       -800,
+       -875,
        "Cliente Consumidor / Sem Tomador",
        "",
        ""
       ],
       [
-       "5|Diversos de operação",
+       "6|Diarista (OIA)",
        "13/09/2026",
-       -1000,
+       -4550,
        "Cliente Consumidor / Sem Tomador",
        "",
        ""
@@ -12874,25 +12970,25 @@
        ""
       ],
       [
-       "5|Diversos de operação",
+       "6|Diarista (OIA)",
        "17/09/2026",
-       -400,
+       -710,
        "Cliente Consumidor / Sem Tomador",
        "",
        ""
       ],
       [
-       "5|Diversos de operação",
+       "6|Diarista (OIA)",
        "18/09/2026",
-       -468,
+       -700,
        "Cliente Consumidor / Sem Tomador",
        "",
        ""
       ],
       [
-       "5|Diversos de operação",
+       "6|Diarista (OIA)",
        "19/09/2026",
-       -800,
+       -400,
        "Cliente Consumidor / Sem Tomador",
        "",
        ""
@@ -12906,33 +13002,17 @@
        ""
       ],
       [
-       "5|Diversos de operação",
+       "6|Diarista (OIA)",
        "21/09/2026",
-       -1295,
+       -1875,
        "Cliente Consumidor / Sem Tomador",
        "",
        ""
       ],
       [
-       "5|Diversos de operação",
+       "6|Diarista (OIA)",
        "24/09/2026",
-       -4125,
-       "Cliente Consumidor / Sem Tomador",
-       "",
-       ""
-      ],
-      [
-       "5|Diversos de operação",
-       "01/09/2026",
-       -325.24,
-       "Cliente Consumidor / Sem Tomador",
-       "",
-       ""
-      ],
-      [
-       "5|Diversos de operação",
-       "05/09/2026",
-       -1000,
+       -2715,
        "Cliente Consumidor / Sem Tomador",
        "",
        ""
@@ -12999,6 +13079,398 @@
        -1000,
        "JOAO VICTOR OLIVEIRA NERY",
        "07333182584",
+       ""
+      ],
+      [
+       "5|Manutenção de equipamentos",
+       "25/09/2026",
+       -300,
+       "UMBERTO RICARDO DA SILVA",
+       "042.880.874-30",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -3097.12,
+       "LUIS FELLIPE COSTA BARROSO",
+       "031.670.021-58",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "09/09/2026",
+       -496.8,
+       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
+       "001268905/1",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "11/09/2026",
+       -1997.58,
+       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
+       "001269531/1",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "03/09/2026",
+       -1969.78,
+       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
+       "001268170/1",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "03/09/2026",
+       -1969.77,
+       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
+       "001268170/2",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "03/09/2026",
+       -1969.77,
+       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
+       "001268170/3",
+       ""
+      ],
+      [
+       "4|Outros insumos e diversos",
+       "02/09/2026",
+       -2935.32,
+       "ADHFLEX EMBALAGENS FLEXIVEIS LTDA",
+       "000001730/1",
+       ""
+      ],
+      [
+       "4|Outros insumos e diversos",
+       "02/09/2026",
+       -2935.33,
+       "ADHFLEX EMBALAGENS FLEXIVEIS LTDA",
+       "000001730/2",
+       ""
+      ],
+      [
+       "4|Outros insumos e diversos",
+       "02/09/2026",
+       -2935.33,
+       "ADHFLEX EMBALAGENS FLEXIVEIS LTDA",
+       "000001730/3",
+       ""
+      ],
+      [
+       "4|Frios, laticínios e congelados",
+       "28/09/2026",
+       -1140,
+       "COMERCIAL PROLAC LTDA.",
+       "000531322/1",
+       ""
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "08/09/2026",
+       -3975.73,
+       "CONBO DISTRIBUIDORA FBV LTDA",
+       "000032141/1",
+       ""
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "08/09/2026",
+       -3975.7,
+       "CONBO DISTRIBUIDORA FBV LTDA",
+       "000032141/2",
+       ""
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "08/09/2026",
+       -3975.7,
+       "CONBO DISTRIBUIDORA FBV LTDA",
+       "000032141/3",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/09/2026",
+       -1075,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "04/09/2026",
+       -935,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "05/09/2026",
+       -600,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "06/09/2026",
+       -2175,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "16/09/2026",
+       -3425,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "22/09/2026",
+       -775,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "23/09/2026",
+       -1225,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Transporte, veículo e combustível",
+       "04/09/2026",
+       -50,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Transporte, veículo e combustível",
+       "06/09/2026",
+       -50,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "08/09/2026",
+       -189.6,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "19/09/2026",
+       -50,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "4|Hortifrúti",
+       "16/09/2026",
+       -400,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "4|Hortifrúti",
+       "16/09/2026",
+       -160,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "11/09/2026",
+       -249,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -3966.72,
+       "GABRIEL JOSE DA SILVA SANTOS",
+       "81995705263",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -2208.55,
+       "SEVERINO ALEXANDRE DA SILVA",
+       "29793993880",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -3139.35,
+       "ROBINSON BARBOSA BORGES",
+       "81 99709-7848",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -2932.5,
+       "MARIO ROBERTO DE OLIVEIRA LOPES",
+       "053.081.318-13",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -1815.55,
+       "SWESLLEN SAYONARA SANTOS DE BRITO",
+       "116.618.224-01",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -1532.86,
+       "JOSE EDSON FRANCISCO DOS SANTOS",
+       "81 98621-3313",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -2518.82,
+       "REBECA RAYANE GOMES DE SOUZA",
+       "705.677.744-90",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -3966.72,
+       "THIAGO MACHADO STORCK",
+       "839.734.940-53",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -3966.72,
+       "VOLHA DRAZIELI SOARES DE SOUZA",
+       "87 98835-0451",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -3346.19,
+       "GLEICE KELLY DE OLIVEIRA GOMES DE SOUZA",
+       "81981029520",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -3346.19,
+       "INACIO ADRIANO DE LIMA",
+       "092.597.824-81",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -3346.19,
+       "PAULO CESAR DA SILVA",
+       "784.524.144-04",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -3966.72,
+       "DIEGO CLEOVANSOSTENES VITAL DE VASCONCELOS",
+       "057.751.844-59",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -3759.88,
+       "PEDRO FRANZO XAVIER",
+       "84998563280",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -2008.6,
+       "GLAUBER ANTONIO SILVA SANTANA",
+       "112.514.384-31",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -2311.97,
+       "ANTONIO JOSE DA SILVA JUNIOR",
+       "051.143.394-86",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -2311.97,
+       "JOSE MANOEL DOS SANTOS",
+       "81974011048",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -2311.97,
+       "ANTONIO CARLOS CHERU",
+       "014.586.677-74",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -2311.97,
+       "EDIVALDO IVAN DOS SANTOS",
+       "10940450470",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -2311.97,
+       "SEBASTIAO DO CARMO MAIA FARIAS",
+       "81979160464",
+       ""
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "02/09/2026",
+       -2935.32,
+       "ADHFLEX EMBALAGENS FLEXIVEIS LTDA",
+       "RECRIADO 22/09",
        ""
       ]
      ]
@@ -18690,25 +19162,9 @@
       [
        "CC|Conta corrente YO Noronha - saída",
        "22/09/2026",
-       -2564.15,
-       "DLP",
-       "NF1266243",
-       "Santander"
-      ],
-      [
-       "CC|Conta corrente YO Noronha - saída",
-       "22/09/2026",
        -790.32,
        "DLP",
        "NF1266587",
-       "Santander"
-      ],
-      [
-       "5|Limpeza e descartáveis",
-       "22/09/2026",
-       -2935.32,
-       "ADHFLEX EMBALAGENS FLEXIVEIS",
-       "NF 1730",
        "Santander"
       ],
       [
@@ -18773,6 +19229,22 @@
        16935.96,
        "Transf. Santander - ContaMax &gt;&gt; Santande",
        "00000000",
+       "Santander"
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "22/09/2026",
+       -2935.32,
+       "ADHFLEX EMBALAGENS FLEXIVEIS",
+       "RECRIADO 22/09",
+       "Santander"
+      ],
+      [
+       "CC|Conta corrente YO Noronha - saída",
+       "22/09/2026",
+       -2564.15,
+       "DLP",
+       "RECRIADO 22/09",
        "Santander"
       ],
       [
@@ -26516,12 +26988,12 @@
     "2026-09": {
      "grupos": {
       "OR": 5998.04,
-      "NEUTRO": 5206.080000000001,
+      "NEUTRO": -2.2737367544323206e-13,
+      "4": -82116.40000000001,
       "5": -71053.70999999999,
       "6": -36381.45,
       "7": -50500.0,
       "11": -190598.54999999996,
-      "4": -88803.40999999999,
       "8": -50943.99,
       "CC": -6096.85,
       "9": -1500.0,
@@ -26530,6 +27002,7 @@
      "contas": {
       "OR|Outras receitas operacionais": 5998.04,
       "NEUTRO|Transferência entre contas próprias - entrada": 5206.080000000001,
+      "4|Devoluções de Compra de Material de Consumo": 6687.009999999999,
       "5|Transporte, veículo e combustível": -7241.04,
       "6|Diarista (OIA)": -20770.059999999998,
       "7|Arrendamento e aluguel do ponto": -50500.0,
@@ -26557,11 +27030,13 @@
       "10|Juros e multas": -938.02,
       "6|Uniformes, EPI e exames": -399.33,
       "5|Energia elétrica": -1446.38,
-      "8|Tarifas bancárias": -312.25
+      "8|Tarifas bancárias": -312.25,
+      "NEUTRO|Transferência entre contas - saída": -5206.08
      },
      "lanc": {
       "OR|Outras receitas operacionais": 1,
       "NEUTRO|Transferência entre contas próprias - entrada": 12,
+      "4|Devoluções de Compra de Material de Consumo": 16,
       "5|Transporte, veículo e combustível": 3,
       "6|Diarista (OIA)": 8,
       "7|Arrendamento e aluguel do ponto": 5,
@@ -26589,7 +27064,8 @@
       "10|Juros e multas": 2,
       "6|Uniformes, EPI e exames": 1,
       "5|Energia elétrica": 1,
-      "8|Tarifas bancárias": 16
+      "8|Tarifas bancárias": 16,
+      "NEUTRO|Transferência entre contas - saída": 12
      },
      "familias": {
       "comum": -38853.18,
@@ -26699,6 +27175,134 @@
        153.23,
        "Cliente Consumidor / Sem Tomador",
        "SEM NF",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "01/09/2026",
+       78.97,
+       "Cliente Consumidor / Sem Tomador",
+       "B338NJXC1HX32Y2QV",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "15/09/2026",
+       1253.7,
+       "Cliente Consumidor / Sem Tomador",
+       "B33ATG1DXYV128290",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       156.1,
+       "Cliente Consumidor / Sem Tomador",
+       "B33ATXTE414DKRN9Y",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       153.23,
+       "Cliente Consumidor / Sem Tomador",
+       "B33AV4S6FC3KX1B7C",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       153.23,
+       "Cliente Consumidor / Sem Tomador",
+       "B33AV5FTZCA2J17WK",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       28.12,
+       "Cliente Consumidor / Sem Tomador",
+       "B33AVJM4AVVV9C6KE",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       186.39,
+       "Cliente Consumidor / Sem Tomador",
+       "B33AWC8MGKZQR4RZY",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       421.69,
+       "Cliente Consumidor / Sem Tomador",
+       "B33AWFZEZZ9F6JX20",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       275.35,
+       "Cliente Consumidor / Sem Tomador",
+       "B33AWP313A97NNWC0",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       1707.45,
+       "Cliente Consumidor / Sem Tomador",
+       "B33AWPMYM3C77DYWM",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       1606.44,
+       "Cliente Consumidor / Sem Tomador",
+       "B33AWZ03GFXPG1PVH",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       55.8,
+       "Cliente Consumidor / Sem Tomador",
+       "B33AWZ07DAYH995GP",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       78.99,
+       "Cliente Consumidor / Sem Tomador",
+       "B33AY5A3AZJ6GW32T",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       112.86,
+       "Cliente Consumidor / Sem Tomador",
+       "B33AZFEJSF28W0GNH",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "17/09/2026",
+       41.79,
+       "Cliente Consumidor / Sem Tomador",
+       "B33B1DYZTS9M8K5X7",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "18/09/2026",
+       376.9,
+       "Cliente Consumidor / Sem Tomador",
+       "B33B67PW1ER3MXXDB",
        ""
       ],
       [
@@ -27875,6 +28479,102 @@
        -8,
        "BANCO BRADESCO S.A.",
        "",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "02/09/2026",
+       -78.97,
+       "YO NORONHA LTDA",
+       "B338S5QF99G98T1QX",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -153.23,
+       "YO NORONHA LTDA",
+       "B33AX178347G9NAQC",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -383.31,
+       "YO NORONHA LTDA",
+       "B33AX16F87KCF1SX7",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -275.35,
+       "YO NORONHA LTDA",
+       "B33AX16F87KCF1SX7",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -186.39,
+       "YO NORONHA LTDA",
+       "B33AX15114C0Q1MNC",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -156.1,
+       "YO NORONHA LTDA",
+       "B33AX141W547F3P8A",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -28.12,
+       "YO NORONHA LTDA",
+       "B33AX0Q7QD6M06YEB",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -153.23,
+       "YO NORONHA LTDA",
+       "B33AX0NJXWZC5W2WY",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -421.69,
+       "YO NORONHA LTDA",
+       "B33AX0KZMJZNQW6M1",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -55.8,
+       "YO NORONHA LTDA",
+       "B33AX0GV5GVX969GW",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -1606.44,
+       "YO NORONHA LTDA",
+       "B33AX0FG7DH56X6AK",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -1707.45,
+       "YO NORONHA LTDA",
+       "B33AX082GGWECTH19",
        ""
       ]
      ]
@@ -32154,7 +32854,7 @@
       "7|Arrendamento e aluguel do ponto": -52600.0,
       "11|Pré-operação": -21643.85,
       "8|Tarifas bancárias": -330.25,
-      "NEUTRO|Transferência entre contas - entrada": 686437.0400000002,
+      "NEUTRO|Transferência entre contas - entrada": 686445.0400000002,
       "NEUTRO|Transferência entre contas próprias - entrada": 5206.080000000001,
       "4|Água mineral": -4800.0,
       "4|Secos e mercearia": -1747.48,
@@ -32180,7 +32880,7 @@
       "10|Juros e multas": -938.02,
       "2|Simples Nacional (DAS)": -48.339999999999996,
       "6|Uniformes, EPI e exames": -399.33,
-      "NEUTRO|Transferência entre contas - saída": -686437.0400000002,
+      "NEUTRO|Transferência entre contas - saída": -686445.0400000002,
       "10|Rendimentos de aplicações": 84.09,
       "10|IOF": -1.42,
       "2|IRPJ": -39.86
@@ -34510,7 +35210,7 @@
        "29/09/2026",
        21031.46,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "",
+       "3345825",
        "Bradesco c/c"
       ],
       [
@@ -34532,9 +35232,9 @@
       [
        "NEUTRO|Transferência entre contas - entrada",
        "30/09/2026",
-       2,
+       10,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "300926",
+       "3345825",
        "Bradesco c/c"
       ],
       [
@@ -34846,7 +35546,7 @@
        "29/09/2026",
        -21031.46,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "",
+       "3345825",
        "Bradesco - INVEST FAC"
       ],
       [
@@ -34855,14 +35555,6 @@
        -4.86,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "3345825",
-       "Bradesco - INVEST FAC"
-      ],
-      [
-       "NEUTRO|Transferência entre contas - saída",
-       "30/09/2026",
-       -2,
-       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "300926",
        "Bradesco - INVEST FAC"
       ],
       [
@@ -34888,6 +35580,14 @@
        "BANCO BRADESCO",
        "INVEST FACIL",
        "Bradesco - INVEST FAC"
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "30/09/2026",
+       -10,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco - INVEST FAC"
       ]
      ]
     }
@@ -34909,8 +35609,8 @@
      "entradas": 6082.13,
      "saidas": -697682.44,
      "contas": {
-      "Bradesco c/c": 1,
-      "Bradesco - INVEST FAC": 142257.66
+      "Bradesco c/c": 9,
+      "Bradesco - INVEST FAC": 142249.66
      }
     }
    },
