@@ -384,7 +384,7 @@ function passosPonte(){
  if(REG==='comp'){
   if(!temDado(ENT)||semDre(MES))return null;
   var rec=soma(ENT,'comp',MES,['FAT']), ded=soma(ENT,'comp',MES,['2']),
-      cus=soma(ENT,'comp',MES,['3','4','5']), des=soma(ENT,'comp',MES,['6','7','8','9']);
+      cus=soma(ENT,'comp',MES,['3','4','5']), des=soma(ENT,'comp',MES,['6','7','8','9','14']);
   if(!rec&&!ded&&!cus&&!des)return null;
   return [['Receita bruta',rec,'in'],['Deduções',ded,'out'],['Custos',cus,'out'],
           ['Despesas',des,'out'],['EBITDA',rec+ded+cus+des,'r']];
@@ -423,7 +423,7 @@ function cozinha(mes){
  return {venda:venda, cmv:-soma(ENT,'comp',mes,['4']), food:-(f.cozinha||0), bar:-(f.bar||0),
          comum:-(f.comum||0), pessoal:-soma(ENT,'comp',mes,['6']),
          operacao:-soma(ENT,'comp',mes,['5']), ocupacao:-soma(ENT,'comp',mes,['7']),
-         adm:-soma(ENT,'comp',mes,['8']), mkt:-soma(ENT,'comp',mes,['9']),
+         adm:-soma(ENT,'comp',mes,['8']), mkt:-soma(ENT,'comp',mes,['9','14']),
          variaveis:-soma(ENT,'comp',mes,['3']), deducoes:-soma(ENT,'comp',mes,['2'])};
 }
 function acumCozinha(){
@@ -546,12 +546,12 @@ function kpis(){
  var s=saldos(ENT,MES)||{ini:0,fim:0,entradas:0,saidas:0};
  if(fase(ENT)==='pre_operacao'){
   var inv=soma(ENT,'comp',MES,['11']), apo=soma(ENT,'comp',MES,['12']),
-      cus=soma(ENT,'comp',MES,['4','5','6','7','8','9']),
+      cus=soma(ENT,'comp',MES,['4','5','6','7','8','9','14']),
       /* na pre-operacao a receita e o grupo OR (outros recebimentos):
          a YO nao tem grupo 1, e o KPI saia R$ 0,00 com R$ 32.550,21 ao lado */
       rec=soma(ENT,'comp',MES,['1','OR']);
   var qT=0,iT=0,aT=0;
-  D.meses.forEach(function(m){qT+=soma(ENT,'comp',m,['4','5','6','7','8','9','11']);
+  D.meses.forEach(function(m){qT+=soma(ENT,'comp',m,['4','5','6','7','8','9','14','11']);
    iT+=soma(ENT,'comp',m,['11']);aT+=soma(ENT,'comp',m,['12'])});
   var ccq=soma(ENT,'comp',MES,['CC']);
   return [
@@ -571,7 +571,7 @@ function kpis(){
   ].map(card).join('');
  }
  var k=cozinha(MES), A=acumCozinha(), dias=(D.dias||{})[MES]||30;
- var ebitda=k.venda+soma(ENT,'comp',MES,['4','5','3','6','7','8','9']);
+ var ebitda=k.venda+soma(ENT,'comp',MES,['4','5','3','6','7','8','9','14']);
  var cc=soma(ENT,'comp',MES,['CC']);
  var fixo=k.pessoal+k.ocupacao+k.adm+k.mkt+k.operacao;
  /* Duas coisas diferentes travam um mes parcial, e elas nao andam juntas.
@@ -714,13 +714,13 @@ var BLOCOS_DFC=[
  ['(+) Recebimentos',['1','OR']],
  ['(−) Deduções e estornos',['2']],
  ['(−) Custos',['3','4','5']],
- ['(−) Despesas',['6','7','8','9']],
+ ['(−) Despesas',['6','7','8','9','14']],
  ['(±) Resultado financeiro',['10']],
- ['=GERAÇÃO DE CAIXA OPERACIONAL',['1','OR','2','3','4','5','6','7','8','9','10']],
+ ['=GERAÇÃO DE CAIXA OPERACIONAL',['1','OR','2','3','4','5','6','7','8','9','14','10']],
  ['(−) Investimentos',['11']],
  ['(±) Financiamento',['12']],
  ['(±) Não operacional e transferências',['CC','NEUTRO','13']],
- ['*GERAÇÃO DE CAIXA FINAL',['1','OR','2','3','4','5','6','7','8','9','10','11','12','CC','NEUTRO','13']]
+ ['*GERAÇÃO DE CAIXA FINAL',['1','OR','2','3','4','5','6','7','8','9','14','10','11','12','CC','NEUTRO','13']]
 ];
 var BLOCOS_DRE=[
  ['Receita bruta (faturamento)',['FAT']],
@@ -733,16 +733,17 @@ var BLOCOS_DRE=[
  ['(−) Pessoal operacional',['6']],
  ['(−) Ocupação',['7']],
  ['(−) Administrativas',['8']],
- ['(−) Marketing e entretenimento',['9']],
- ['=EBITDA',['FAT','2','3','4','5','6','7','8','9']],
+ ['(−) Marketing',['9']],
+ ['(−) Entretenimento',['14']],
+ ['=EBITDA',['FAT','2','3','4','5','6','7','8','9','14']],
  ['(±) Resultado financeiro',['10']],
- ['*LUCRO LÍQUIDO',['FAT','2','3','4','5','6','7','8','9','10']],
+ ['*LUCRO LÍQUIDO',['FAT','2','3','4','5','6','7','8','9','14','10']],
  ['§ABAIXO DO EBITDA — CAPEX E NÃO OPERACIONAL',null],
  ['(−) Investimentos (capex)',['11']],
  ['(±) Financiamento',['12']],
  ['(+) Outros recebimentos',['OR']],
  ['(±) Transferências e ajustes',['CC','NEUTRO','13']],
- ['*RESULTADO APÓS INVESTIMENTOS',['FAT','2','3','4','5','6','7','8','9','10','11','12','OR','CC','NEUTRO','13']],
+ ['*RESULTADO APÓS INVESTIMENTOS',['FAT','2','3','4','5','6','7','8','9','14','10','11','12','OR','CC','NEUTRO','13']],
  ['§RECONCILIAÇÃO DA RECEITA COM O OMIE',null],
  ['(=) Receita lançada no Omie, pela data do crédito',['1']],
  ['(±) Ajuste de competência da receita',['AJC']],
@@ -950,7 +951,7 @@ function socios(){
     credito no banco) esta pagina mostrava EBITDA POSITIVO de R$ 44.244,71 onde
     a DRE, na mesma base, mostra NEGATIVO de R$ 15.843,19. */
  var rl=D.meses.reduce(function(a,m){return a+soma(ENT,'comp',m,['FAT','2'])},0);
- var eb=D.meses.reduce(function(a,m){return a+soma(ENT,'comp',m,['FAT','2','4','5','3','6','7','8','9'])},0);
+ var eb=D.meses.reduce(function(a,m){return a+soma(ENT,'comp',m,['FAT','2','4','5','3','6','7','8','9','14'])},0);
  var s0=saldos(ENT,D.meses[0]),s1=saldos(ENT,D.meses[D.meses.length-1]);
  el.innerHTML=[
   ['Receita líquida do período',brl(rl),D.meses_nome[D.meses[0]]+' a '+D.meses_nome[D.meses[D.meses.length-1]],''],
@@ -1268,30 +1269,7 @@ def pagina(socios=False):
 <div id="auditoria"></div>
 <p class="repnote"><b>A receita bruta é o faturamento do mês da venda, não o crédito no banco.</b> Clique nela para abrir por forma de pagamento, e no número de cada forma para ver dia a dia o que foi vendido. Nos três meses ela vem da extração bruta do 3LM — R$ 163.548,50 em agosto, R$ 1.058.984,27 em setembro e R$ 1.193.067,36 em outubro — e abre em A&amp;B, taxa de serviço, couvert e taxa de rolha. Em agosto e setembro o clique abre também a forma de pagamento, reconstruída do Extrato de Vendas Detalhado da GetNet; em outubro não, porque não há extrato da GetNet do mês. O bloco de reconciliação no pé da tabela mostra o que o Omie lançou pela data do crédito e a diferença de competência entre os dois. Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
 
-<details class="ress"><summary><b>Ressalvas e critérios</b> · 9 pontos que mudam a leitura dos números<span class="chev">▾</span></summary><div class="ressin"><div class="aviso"><h4>Outubro entra no caixa, não na DRE<span class="tag">parcial</span></h4>
-<p>Outubro entrou a pedido do time, para o <b>fluxo de caixa</b>, e é só isso que ele mostra. A <b>DRE de outubro foi retirada</b> por decisão de 04/11: a despesa lançada no mês é de <b>R$ 250.131,98</b> contra R$ 901.518,74 em setembro, e nenhuma linha de resultado sobre uma despesa a 28%% diz a verdade — com ou sem a receita medida. Para dar a medida do que falta: o Santander da Boldró tem <b>61 movimentos</b> em outubro contra 1.048 em setembro, e a conta corrente fecha o mês com R$ 45.420,65 quando ela <b>zera todo dia</b> pela varredura automática.</p>
-<p>O que outubro <b>tem</b>: a venda do mês está documentada, R$ 1.193.067,36 em 18.714 itens no 3LM, e aparece no <b>cruzamento de faturamento</b>, ao lado dos R$ 97.473,08 que o Omie já lançou — que é onde a comparação é honesta. O <b>saldo de outubro é o do Omie, não do extrato</b>. Margem EBITDA, ticket médio e turno ficam em branco, e não há PIS nem COFINS lançados na competência. Agosto e setembro seguem conferidos movimento a movimento contra o extrato — <b>outubro não</b>. A DRE volta quando a carga e a conciliação do mês fecharem.</p></div><div class="aviso"><h4>O resultado melhorou R$ 381.276,90 por reclassificação, não por operação<span class="tag">leia antes</span></h4>
-<p>Em 04/11/2026 entraram <b>210 reclassificações</b> pedidas pela diretoria, nas duas empresas, cobrindo agosto, setembro e outubro. A maior parte delas tira despesa do resultado e põe em <b>investimento</b>: viagens, outras despesas administrativas, manutenção de equipamentos, passagens aéreas, uniformes, consultoria e o frete de material de obra da YO. O efeito está medido e é grande:</p>
-<div class="rsm-wrap"><table class="xtbl"><thead><tr><th class="l">EBITDA</th><th>ago/26</th><th>set/26</th><th>out/26</th><th>três meses</th></tr></thead><tbody>
-<tr><td class="l">Boldró, antes</td><td>&minus;172.725,81</td><td>116.726,47</td><td>&minus;152.658,90</td><td>&minus;208.658,24</td></tr>
-<tr><td class="l">Boldró, depois</td><td>&minus;155.248,43</td><td>190.354,12</td><td>&minus;121.152,23</td><td>&minus;86.046,54</td></tr>
-<tr class="res"><td class="l"><b>diferença</b></td><td>+17.477,38</td><td>+73.627,65</td><td>+31.506,67</td><td><b>+122.611,70</b></td></tr>
-<tr><td class="l">YO, queima — diferença</td><td>+132.843,72</td><td>+100.788,67</td><td>+25.032,81</td><td><b>+258.665,20</b></td></tr>
-</tbody></table></div>
-<p>A margem EBITDA da Boldró em setembro vai de <b>11,0%% para 18,0%%</b> sem que uma venda a mais tenha acontecido. <b>Isso não é melhora de operação.</b> É mudança de critério: o que antes era despesa do mês virou ativo, e o custo real da casa continua o mesmo. Quem comparar setembro com um mês futuro precisa saber que o critério mudou aqui.</p>
-<p>O que <b>não</b> entrou, e por quê: o <b>pró-labore</b> (R$ 68.000,00, 6 títulos) — a tabela da diretoria nomeia três pessoas e os títulos de setembro trazem outra, e os de 30/09 já vieram num padrão diferente do que valeria para setembro; um título de <b>R$ 10.000,00</b> na YO cuja observação diz "empréstimo, irá reembolsar a empresa", que é adiantamento a receber e não despesa; e <b>R$ 1.558,33</b> de uma prestadora que a própria diretoria pediu para identificar antes. Três contas novas foram criadas para receber o lote — Investimentos diversos, Prestadores de serviços gerais e Salário PJ. A linha de gestão que o pedido mandava criar já existia e foi reaproveitada.</p></div><div class="aviso"><h4>A receita vem da extração bruta do 3LM, nos três meses<span class="tag">retificado</span></h4>
-<p>A linha Receita bruta é o faturamento pelo mês da <b>venda</b>, e desde 04/11 a fonte é a mesma nos três meses: a <b>extração bruta do 3LM</b> — relatório "Vendas Por Funcionário", mês inteiro de uma vez. Ela soma exatamente o que o painel mostra, e abre em A&amp;B, taxa de serviço, couvert e taxa de rolha: <b>agosto R$ 163.548,50</b> (2.869 itens), <b>setembro R$ 1.058.984,27</b> (15.837) e <b>outubro R$ 1.193.067,36</b> (18.714). Todos são líquidos do desconto concedido no salão, que foi de R$ 32.112,41, R$ 74.569,72 e R$ 116.923,05.</p>
-<p><b>Agosto foi retificado.</b> Até 04/11 não havia relatório do 3LM de agosto e a receita era reconstruída da maquininha mais o fundo fixo: R$ 191.290,32. Com o relatório em mãos, o número correto é R$ 163.548,50 — <b>R$ 27.741,82 a menos</b>, e a diferença mede o erro do método reconstruído, que o painel declarava como reconstrução.</p>
-<p><b>Setembro tem dois relatórios, e eles não batem.</b> Além da extração do 3LM há o <i>Relatório de Vendas — Setembro 2026</i>, montado pela Diretoria Administrativo-Financeira em 02/10, que dá R$ 1.047.949,04 — <b>R$ 11.035,23 a menos</b>. A diferença fecha ao centavo em quatro linhas: o PDV tem <b>dois itens de couvert</b> e o relatório montado só pegou um, pelo preço de tabela (+R$ 5.170,84); a <b>taxa de rolha</b> foi deixada de fora por decisão declarada nele próprio (+R$ 4.439,74); a <b>taxa de serviço</b> lá sai por diferença e aqui é item do PDV (+R$ 5.210,93); e <b>A&amp;B</b> é R$ 3.786,28 maior lá, compatível com o fato de ele cobrir 01 a 29/09 por um relatório e 30/09 por outro. O painel usa a extração bruta, que é o documento de origem; o relatório montado continua válido para o que só ele traz — dia a dia, ticket por conta, turno e curva ABC — e cada um desses números traz a fonte ao lado.</p>
-<p>O Omie lança a receita pela data do <b>crédito no banco</b>, porque os títulos nascem da conciliação: R$ 175.903,28 em agosto, R$ 1.123.423,98 em setembro e R$ 97.473,08 em outubro. A diferença é descasamento de competência e está na linha de reconciliação, no pé da DRE. A <b>taxa de cartão já está lançada</b> como custo: R$ 2.010,00 em agosto e R$ 10.451,57 em setembro, que conferem no centavo com o extrato da GetNet; o <b>custo de antecipação</b> de setembro, R$ 6.564,46, está no resultado financeiro. Falta o extrato detalhado da GetNet de outubro — por isso a forma de pagamento de outubro não está reconstruída.</p></div><div class="aviso"><h4>Caixa e competência já não contam a mesma história</h4>
-<p>O fluxo de caixa é o que passou pelo banco em agosto e setembro de 2026, movimento a movimento conferido contra o extrato. A competência vai além: folha, pró-labore, tributos e compras a prazo entram no resultado do mês em que foram gerados, mesmo sem ter passado pelo banco. Com emissão até 30/09/2026 são <b>124 títulos em aberto, R$ 448.102,21</b> (somando outubro em diante, são 226 e R$ 735.733,09), e nenhum é estimativa: todos citam NF, recibo, guia ou a competência da folha. Os maiores são o COFINS de setembro (R$ 28.885,36), o pró-labore dos três sócios (R$ 40.000,00) e as três parcelas da NF1266401 da Distribuidora Logística (R$ 49.326,00). Dos 124, oito foram lançados por mim em 03/11: seis parcelas que faltavam em quatro notas e o par do custo de antecipação. Em 04/11 fechou a última que faltava: a NF385727 da INGÁ, de R$ 30.165,87, estava com só a parcela 1 lançada — as parcelas 2 e 3, <b>R$ 20.110,58</b>, entraram por retificação declarada de agosto, e o CMV do mês subiu de R$ 254.023,97 para R$ 274.134,55. O caixa não mudou: elas vencem em 23/10 e 22/11. Agora as cinco notas parceladas fecham com o total que a própria observação declara. Por isso a margem por competência é menor, e mais honesta, que a do caixa — e por isso a DRE não bate com o extrato, nem deve: quem bate com o extrato é o fluxo de caixa.</p></div><div class="aviso"><h4>Agosto declarou R$ 7.146 de R$ 163.548 vendidos<span class="tag">pergunta à contabilidade</span></h4>
-<p>O regime <b>está confirmado</b> desde 04/11: a contabilidade informou que Boldró e Yó são <b>Lucro Presumido</b>, e que a guia de R$ 7.914,20 paga em 18/09 é de <b>INSS</b>, não DAS do Simples — ela está lançada na conta de Simples Nacional, o que é erro de classificação a corrigir. Com isso a dedução pelos tributos pagos volta a valer: dividindo o PIS por 0,65%% e o COFINS por 3,00%% — as alíquotas do regime cumulativo — as duas contas, independentes, devolvem a mesma base.</p>
-<p><b>Agosto:</b> PIS R$ 46,45 e COFINS R$ 214,39 apontam base declarada de <b>R$ 7.146,24</b> (as duas contas diferem R$ 0,18) contra R$ 163.548,50 vendidos no 3LM. <b>Setembro:</b> PIS R$ 6.258,49 e COFINS R$ 28.885,36 apontam <b>R$ 962.844,97</b> contra R$ 1.058.984,27 — 90,9%% do vendido, ou 101,6%% se a taxa de serviço ficar fora da base tributável, o que explicaria o mês inteiro. <b>Outubro</b> não tem PIS nem COFINS lançados.</p>
-<p>Somando os dois meses: R$ 1.222.532,77 vendidos e R$ 969.991,21 declarados — <b>R$ 252.541,56 de diferença</b>, ou R$ 124.582,92 se a taxa de serviço dos dois meses (R$ 127.958,64) estiver legitimamente fora da base. <b>Agosto concentra praticamente tudo.</b> Isso é pergunta para a contabilidade, não conclusão: pode ser competência — nota de agosto emitida em setembro — e setembro, que está essencialmente declarado, é compatível com essa hipótese.</p></div><div class="aviso"><h4>A YO está carregada, mas a casa fatura no CNPJ da Boldró<span class="tag">leitura</span></h4>
-<p>A base da YO está carregada até 09/10 e o caixa fecha com o extrato do Bradesco. A venda de salão aparece inteira na Boldró: na YO o que existe é obra, pré-operação, estoque inicial, equipe e arrendamento. A receita de setembro da YO é de R$ 5.998 e é o PIX que a Boldró mandou em 15/09 — até 12/10 havia R$ 5.206 a mais ali, que eram transferências da conta Mercado Pago da própria YO lançadas como receita e já foram reclassificadas.</p></div><div class="aviso"><h4>Os movimentos batem um a um; o saldo ainda não tem extrato<span class="tag">parcial</span></h4>
-<p><b>O que está conferido:</b> os 1.048 movimentos de setembro da Boldró batem um a um com o extrato do Santander, por data e valor. <b>O que não está:</b> o saldo. O painel mostra R$ 599.870,43 na Boldró e R$ 143.789,03 na YO em 30/09 — este último passou a incluir a conta <b>Mercado Pago</b> (R$ 1.530,37), que existe no Omie desde fevereiro, está conciliada e estava fora do painel por omissão minha até 04/11, e <b>nenhum extrato no material sustenta esses dois números</b> — a conciliação que temos cobre só a conta corrente da Boldró, que zera todo dia pela varredura automática, e o saldo mora na aplicação. Os valores de R$ 599.857,30 e R$ 142.214,80, da conciliação de 09/10, ficaram para trás: a diferença é a apropriação do rendimento das aplicações, feita depois. Três coisas tiveram que ser arrumadas na base para chegar aqui: as pernas da varredura automática das duas aplicações, que o banco mostra todo dia e o Omie não tinha; as quatro tarifas de PIX de 24/09 da YO, que faltavam na conciliação do CSC; e o piso de R$ 1,00 da conta corrente da YO, que estava contado duas vezes na abertura.</p></div><div class="aviso"><h4>A conta corrente entre as duas não fecha<span class="tag">ressalva</span></h4>
-<p>Em 20/08 a YO transferiu R$ 100 mil para a Boldró — conferido no extrato do Santander, PIX recebido do CNPJ da YO. Esse par tem as duas pernas, é o único intercompany de verdade e segue na conta de controle. O resto não era intercompany: em 04/11 ficou definido que &ldquo;operação YO&rdquo; é a operação do restaurante Yó, <b>que fatura pela Boldró</b> — logo o custo é da própria Boldró, de quem vendeu a comida, e nada se lança na YO. <b>R$ 148.444,91 em 54 títulos</b> que estavam numa conta de controle, fora do resultado, voltaram para a DRE da Boldró, cada um na conta que a própria nota descreve: ago R$ 44.441,05 e set R$ 103.678,01, por retificação declarada dos dois meses fechados, mais R$ 325,85 em outubro. <b>O caixa não mudou</b> — os 58 já estavam baixados pelo Santander da Boldró, e o saldo de 30/09 segue em R$ 599.870,43. O que mudou foi onde o custo aparece: o CMV de setembro subiu R$ 81.043,52 e o de agosto R$ 44.441,05. <b>Ficam R$ 4.839,57 em 4 títulos</b>, com o motivo: uma parcela da NF1266243 lançada acima do total da própria nota (R$ 2.564,15, duplicidade a resolver com o boleto), a instalação do ar-condicionado do container (R$ 1.450,00 — investimento ou manutenção, o recibo não diz) e duas taxas do Tribunal de Justiça ligadas a protesto (R$ 412,71 cada).</p></div><div class="aviso"><h4>O insumo da YO está num saco só</h4>
-<p>R$ 336.706,60 de compra da YO em agosto e setembro estão na conta genérica de insumos, sem separar proteína, hortifrúti, secos ou bebida. É por isso que o mix de cozinha e bar da YO não é confiável e o da Boldró é.</p></div></div></details>
+
 </div>
 </div></section>
 

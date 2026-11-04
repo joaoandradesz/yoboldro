@@ -1,5 +1,5 @@
 {
- "gerado": "04/11/2026 às 20:06",
+ "gerado": "04/11/2026 às 20:15",
  "meses": [
   "2026-08",
   "2026-09",
@@ -22,7 +22,8 @@
   "6": "Pessoal operacional",
   "7": "Ocupação",
   "8": "Administrativas",
-  "9": "Marketing e entretenimento",
+  "9": "Marketing",
+  "14": "Entretenimento",
   "10": "Resultado financeiro",
   "11": "Investimentos",
   "12": "Financiamento",
@@ -2812,7 +2813,8 @@
       "11": -17477.38,
       "6": -15769.18,
       "8": -1876.3799999999999,
-      "9": -4385.0,
+      "14": -2385.0,
+      "9": -2000.0,
       "2": -8175.04,
       "3": -2010.0,
       "FAT": 163548.5
@@ -2827,7 +2829,7 @@
       "11|Investimentos diversos": -17477.38,
       "6|Diarista (OIA)": -8933.14,
       "8|Sistemas": -1594.1999999999998,
-      "9|Cachê de artistas e atrações": -2385.0,
+      "14|Cachê de artistas e atrações": -2385.0,
       "5|Limpeza e descartáveis": -2458.46,
       "4|Bebidas alcoólicas": -112891.80000000002,
       "9|Outros de marketing": -2000.0,
@@ -2863,7 +2865,7 @@
       "11|Investimentos diversos": 7,
       "6|Diarista (OIA)": 27,
       "8|Sistemas": 3,
-      "9|Cachê de artistas e atrações": 2,
+      "14|Cachê de artistas e atrações": 2,
       "5|Limpeza e descartáveis": 2,
       "4|Bebidas alcoólicas": 19,
       "9|Outros de marketing": 1,
@@ -3571,7 +3573,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "25/08/2026",
        -2000,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -4012,7 +4014,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "28/08/2026",
        -385,
        "FLAVIO AUGUSTO LIMA DA SILVA",
@@ -5327,10 +5329,11 @@
       "NEUTRO": 1058.2300000000012,
       "8": -80006.5,
       "11": -87472.65,
-      "9": -30715.83,
+      "9": -7500.0,
       "5": -78911.86,
       "6": -159797.20000000013,
       "4": -366406.57000000007,
+      "14": -23215.83,
       "CC": -3466.67,
       "3": -111227.71000000005,
       "2": -40739.06,
@@ -5353,7 +5356,7 @@
       "6|Alimentação de colaboradores": -22618.12,
       "8|Correios e fretes administrativos": -186.95,
       "4|Outros insumos e diversos": -9493.53,
-      "9|Cachê de artistas e atrações": -23215.83,
+      "14|Cachê de artistas e atrações": -23215.83,
       "6|Salario PJ": -14600.0,
       "5|Gestor operacional PJ": -14666.67,
       "8|Pró-labore": -68000.0,
@@ -5408,7 +5411,7 @@
       "6|Alimentação de colaboradores": 12,
       "8|Correios e fretes administrativos": 1,
       "4|Outros insumos e diversos": 5,
-      "9|Cachê de artistas e atrações": 24,
+      "14|Cachê de artistas e atrações": 24,
       "6|Salario PJ": 4,
       "5|Gestor operacional PJ": 3,
       "8|Pró-labore": 6,
@@ -11800,7 +11803,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "04/09/2026",
        -375,
        "JOAO LUIZ DO NASCIMENTO DA ROCHA",
@@ -12394,7 +12397,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "09/09/2026",
        -385,
        "FLAVIA PESSOA BAPTISTA",
@@ -12403,7 +12406,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "09/09/2026",
        -420,
        "FLAVIO AUGUSTO LIMA DA SILVA",
@@ -12412,7 +12415,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "09/09/2026",
        -385,
        "HELENA MARTINS DE MELLO",
@@ -12529,7 +12532,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "09/09/2026",
        -375,
        "JOAO LUIZ DO NASCIMENTO DA ROCHA",
@@ -12763,7 +12766,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "15/09/2026",
        -1387.5,
        "MARIANA BRANCO DA SILVA",
@@ -12772,7 +12775,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "15/09/2026",
        -158.33,
        "MARIANA MACHADO BUENO",
@@ -12790,7 +12793,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "15/09/2026",
        -900,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -12799,7 +12802,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "15/09/2026",
        -300,
        "JOAO LUIZ DO NASCIMENTO DA ROCHA",
@@ -12808,7 +12811,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "15/09/2026",
        -2925,
        "MARE NORONHA COMERCIO DE ALIMENTOS E BEBIDAS L",
@@ -13087,7 +13090,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "22/09/2026",
        -770,
        "FLAVIA PESSOA BAPTISTA",
@@ -13096,7 +13099,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "22/09/2026",
        -900,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -13114,7 +13117,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "22/09/2026",
        -750,
        "JOAO LUIZ DO NASCIMENTO DA ROCHA",
@@ -13123,7 +13126,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "22/09/2026",
        -2700,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -13132,7 +13135,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "22/09/2026",
        -700,
        "53.011.566 CLEITON DE SANTANA NASCIMENTO",
@@ -13384,7 +13387,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "21/09/2026",
        -2500,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -14176,7 +14179,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "29/09/2026",
        -375,
        "JOAO LUIZ DO NASCIMENTO DA ROCHA",
@@ -14185,7 +14188,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "29/09/2026",
        -385,
        "FLAVIA PESSOA BAPTISTA",
@@ -14194,7 +14197,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "29/09/2026",
        -700,
        "53.011.566 CLEITON DE SANTANA NASCIMENTO",
@@ -14662,7 +14665,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "29/09/2026",
        -1500,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -14671,7 +14674,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "29/09/2026",
        -1875,
        "BRUNO CELIO PORTELA DE SOUZA",
@@ -14680,7 +14683,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "29/09/2026",
        -900,
        "ANDRE LUIZ GOMES VELOSO",
@@ -14689,7 +14692,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "29/09/2026",
        -550,
        "FLAVIO AUGUSTO LIMA DA SILVA",
@@ -14698,7 +14701,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "29/09/2026",
        -1000,
        "GEANDRO DE MOURA SILVA",
@@ -16992,12 +16995,13 @@
      "grupos": {
       "1": 97473.08000000002,
       "8": -6392.05,
-      "5": -58543.51,
+      "5": -57293.51,
       "6": -17084.220000000005,
       "4": -87760.31999999999,
       "7": -18559.8,
-      "9": -25905.0,
+      "14": -21155.0,
       "11": -43758.69,
+      "9": -6000.0,
       "NEUTRO": -100000.0,
       "3": -4380.41
      },
@@ -17017,7 +17021,7 @@
       "7|Outros aluguéis": -17500.0,
       "4|Outros insumos e diversos": -5652.59,
       "5|Limpeza e descartáveis": -3486.05,
-      "9|Cachê de artistas e atrações": -19905.0,
+      "14|Cachê de artistas e atrações": -19905.0,
       "11|Investimentos diversos": -38339.76,
       "9|Marketing e divulgação de eventos": -6000.0,
       "5|Diversos de operação": -4807.46,
@@ -17031,7 +17035,7 @@
       "4|Bebidas alcoólicas": -19028.22,
       "4|Bebidas não alcoólicas": -2029.0,
       "7|Seguros": -1059.8,
-      "5|Artistas e couvert": -1250.0,
+      "14|Artistas e couvert": -1250.0,
       "11|Equipamentos e mobiliário": -5000.0,
       "11|Frete de equipamentos e obra": -418.93
      },
@@ -17051,7 +17055,7 @@
       "7|Outros aluguéis": 3,
       "4|Outros insumos e diversos": 3,
       "5|Limpeza e descartáveis": 3,
-      "9|Cachê de artistas e atrações": 16,
+      "14|Cachê de artistas e atrações": 16,
       "11|Investimentos diversos": 19,
       "9|Marketing e divulgação de eventos": 4,
       "5|Diversos de operação": 4,
@@ -17065,7 +17069,7 @@
       "4|Bebidas alcoólicas": 7,
       "4|Bebidas não alcoólicas": 3,
       "7|Seguros": 1,
-      "5|Artistas e couvert": 1,
+      "14|Artistas e couvert": 1,
       "11|Equipamentos e mobiliário": 1,
       "11|Frete de equipamentos e obra": 1
      },
@@ -17778,7 +17782,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "20/10/2026",
        -1000,
        "GEANDRO DE MOURA SILVA",
@@ -17787,7 +17791,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "20/10/2026",
        -1200,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -17796,7 +17800,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "20/10/2026",
        -925,
        "BRUNO CELIO PORTELA DE SOUZA",
@@ -17805,7 +17809,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "20/10/2026",
        -3000,
        "ANDRE LUIZ GOMES VELOSO",
@@ -17814,7 +17818,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "20/10/2026",
        -1000,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -17823,7 +17827,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "20/10/2026",
        -400,
        "FLAVIO AUGUSTO LIMA DA SILVA",
@@ -17832,7 +17836,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "20/10/2026",
        -700,
        "53.011.566 CLEITON DE SANTANA NASCIMENTO",
@@ -17841,7 +17845,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "20/10/2026",
        -1155,
        "FLAVIA PESSOA BAPTISTA",
@@ -18543,7 +18547,7 @@
        ""
       ],
       [
-       "5|Artistas e couvert",
+       "14|Artistas e couvert",
        "05/10/2026",
        -1250,
        "JOAO LUIZ DO NASCIMENTO DA ROCHA",
@@ -18552,7 +18556,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "05/10/2026",
        -450,
        "FLAVIA PESSOA BAPTISTA",
@@ -18561,7 +18565,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "05/10/2026",
        -1200,
        "ANDRE LUIZ GOMES VELOSO",
@@ -18570,7 +18574,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "05/10/2026",
        -3400,
        "ANDRE LUIZ GOMES VELOSO",
@@ -18579,7 +18583,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "05/10/2026",
        -400,
        "FLAVIO AUGUSTO LIMA DA SILVA",
@@ -18588,7 +18592,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "05/10/2026",
        -2200,
        "53.011.566 CLEITON DE SANTANA NASCIMENTO",
@@ -18597,7 +18601,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "05/10/2026",
        -1000,
        "GEANDRO DE MOURA SILVA",
@@ -18606,7 +18610,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "05/10/2026",
        -375,
        "BRUNO CELIO PORTELA DE SOUZA",
@@ -18615,7 +18619,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "05/10/2026",
        -1500,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -18943,7 +18947,8 @@
       "CC": 100000.0,
       "1": 165122.28,
       "8": -1876.3799999999999,
-      "9": -4385.0,
+      "14": -2385.0,
+      "9": -2000.0,
       "10": 4.07,
       "2": -0.03
      },
@@ -18960,7 +18965,7 @@
       "1|Receita operacional (salão)": 165122.28,
       "8|Tarifas bancárias": -282.18000000000006,
       "8|Sistemas": -1594.1999999999998,
-      "9|Cachê de artistas e atrações": -2385.0,
+      "14|Cachê de artistas e atrações": -2385.0,
       "5|Limpeza e descartáveis": -394.0,
       "4|Bebidas alcoólicas": -16052.38,
       "9|Outros de marketing": -2000.0,
@@ -18986,7 +18991,7 @@
       "1|Receita operacional (salão)": 50,
       "8|Tarifas bancárias": 10,
       "8|Sistemas": 3,
-      "9|Cachê de artistas e atrações": 2,
+      "14|Cachê de artistas e atrações": 2,
       "5|Limpeza e descartáveis": 1,
       "4|Bebidas alcoólicas": 5,
       "9|Outros de marketing": 1,
@@ -19312,7 +19317,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "25/08/2026",
        -2000,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -20023,7 +20028,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "28/08/2026",
        -385,
        "FLAVIO AUGUSTO LIMA DA SILVA",
@@ -20345,10 +20350,11 @@
       "4": -357256.19000070007,
       "6": -104959.32999929997,
       "11": -49282.649999999994,
-      "9": -30715.83,
+      "9": -7500.0,
       "5": -49818.94,
       "8": -40221.00000000001,
       "NEUTRO": 11128.229999999363,
+      "14": -23215.83,
       "2": -13771.75,
       "CC": -3466.67,
       "3": -12116.620000000003,
@@ -20380,7 +20386,7 @@
       "8|Telefonia e internet": -188.42,
       "8|Correios e fretes administrativos": -186.95,
       "4|Outros insumos e diversos": -38480.450000000004,
-      "9|Cachê de artistas e atrações": -23215.83,
+      "14|Cachê de artistas e atrações": -23215.83,
       "8|Pró-labore": -28000.0,
       "6|Extras e freelancers": -3504.1599993,
       "6|ISS | Permanência": -2134.33,
@@ -20433,7 +20439,7 @@
       "8|Telefonia e internet": 1,
       "8|Correios e fretes administrativos": 1,
       "4|Outros insumos e diversos": 9,
-      "9|Cachê de artistas e atrações": 24,
+      "14|Cachê de artistas e atrações": 24,
       "8|Pró-labore": 3,
       "6|Extras e freelancers": 7,
       "6|ISS | Permanência": 6,
@@ -21719,7 +21725,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "04/09/2026",
        -375,
        "JOAO LUIZ DO NASCIMENTO DA ROCHA",
@@ -22529,7 +22535,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "09/09/2026",
        -385,
        "FLAVIA PESSOA BAPTISTA",
@@ -22538,7 +22544,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "09/09/2026",
        -420,
        "FLAVIO AUGUSTO LIMA DA SILVA",
@@ -22547,7 +22553,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "09/09/2026",
        -385,
        "HELENA MARTINS DE MELLO",
@@ -22943,7 +22949,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "11/09/2026",
        -375,
        "JOAO LUIZ DO NASCIMENTO DA ROCHA",
@@ -23564,7 +23570,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "15/09/2026",
        -1387.5,
        "MARIANA BRANCO DA SILVA",
@@ -23573,7 +23579,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "15/09/2026",
        -158.33,
        "MARIANA MACHADO BUENO",
@@ -23600,7 +23606,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "15/09/2026",
        -900,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -23609,7 +23615,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "15/09/2026",
        -300,
        "JOAO LUIZ DO NASCIMENTO DA ROCHA",
@@ -23618,7 +23624,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "15/09/2026",
        -2925,
        "MARE NORONHA COMERCIO DE ALIMENTOS E BEBIDAS L",
@@ -24680,7 +24686,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "21/09/2026",
        -770,
        "FLAVIA PESSOA BAPTISTA",
@@ -24689,7 +24695,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "21/09/2026",
        -900,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -24707,7 +24713,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "21/09/2026",
        -750,
        "JOAO LUIZ DO NASCIMENTO DA ROCHA",
@@ -24716,7 +24722,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "21/09/2026",
        -2700,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -24725,7 +24731,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "21/09/2026",
        -700,
        "53.011.566 CLEITON DE SANTANA NASCIMENTO",
@@ -24959,7 +24965,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "21/09/2026",
        -2500,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -29396,7 +29402,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "29/09/2026",
        -375,
        "JOAO LUIZ DO NASCIMENTO DA ROCHA",
@@ -29405,7 +29411,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "29/09/2026",
        -385,
        "FLAVIA PESSOA BAPTISTA",
@@ -29414,7 +29420,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "29/09/2026",
        -700,
        "53.011.566 CLEITON DE SANTANA NASCIMENTO",
@@ -29684,7 +29690,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "29/09/2026",
        -550,
        "FLAVIO AUGUSTO LIMA DA SILVA",
@@ -29693,7 +29699,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "29/09/2026",
        -1875,
        "BRUNO CELIO PORTELA DE SOUZA",
@@ -29702,7 +29708,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "29/09/2026",
        -1500,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -29720,7 +29726,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "29/09/2026",
        -900,
        "ANDRE LUIZ GOMES VELOSO",
@@ -29747,7 +29753,7 @@
        ""
       ],
       [
-       "9|Cachê de artistas e atrações",
+       "14|Cachê de artistas e atrações",
        "29/09/2026",
        -1000,
        "GEANDRO DE MOURA SILVA",
