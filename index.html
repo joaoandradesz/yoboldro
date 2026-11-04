@@ -48,6 +48,8 @@ body{font-family:'Inter',sans-serif;background:var(--offwhite);color:var(--ink);
 .mespills button.on{background:var(--orange);color:var(--navy);border-color:var(--orange)}
 .regsw{display:flex;align-items:center;gap:7px;margin-bottom:8px}
 .reglab{font-size:12px;color:#8A91A6}
+.regnota{font-size:11.5px;color:#8A91A6;margin-left:12px;line-height:1.45;max-width:420px}
+@media(max-width:820px){.regnota{display:block;margin:8px 0 0}}
 .regsw button{font-family:'Plus Jakarta Sans';font-size:12px;font-weight:700;color:#B8BECF;
  background:rgba(255,255,255,.06);border:none;padding:6px 13px;border-radius:7px;cursor:pointer}
 .regsw button.on{background:#fff;color:var(--navy)}
@@ -288,9 +290,9 @@ td.av{color:var(--g500);font-size:12px}
 <div class="cnpjline" id="heroCnpj"></div>
 <div class="selo">dados lidos do Omie em <b id="selo"></b></div>
 <div class="mespills" id="mespills"></div>
-<div class="regsw" id="regsw"><span class="reglab">Ver por:</span>
+<div class="regsw" id="regsw"><span class="reglab">Ver a ponte e as tabelas por:</span>
 <button data-r="caixa" class="on" onclick="setRegime('caixa')">Caixa</button>
-<button data-r="comp" onclick="setRegime('comp')">Competência</button></div>
+<button data-r="comp" onclick="setRegime('comp')">Competência</button><span class="regnota">os indicadores abaixo são sempre por competência — ticket médio e turno vêm do 3LM e não têm versão pelo caixa</span></div>
 <div class="waterfall">
 <div class="wf-head"><span class="t" id="wfTitle">Ponte do caixa</span>
 <span class="h" id="wfHint">Saldo inicial → entradas → saídas → resultado → saldo final</span></div>
@@ -336,7 +338,7 @@ td.av{color:var(--g500);font-size:12px}
 
 <section id="socios" class="sec-alt"><div class="wrap">
 <div class="sec-head"><div class="k">Para os sócios</div><h2>O que sobrou <span class="light">e o que foi retirado</span></h2>
-<p class="lede">Resultado do período, o que já saiu como pró-labore e distribuição, e o que está preso em conta corrente com as outras empresas do grupo.</p></div>
+<p class="lede">Resultado do período, o que já saiu como pró-labore e distribuição, e o que está preso em conta corrente com as outras empresas do grupo.</p><p class="repnote" style="margin:10px 0 0"><b>Os números desta seção são do período inteiro</b> — agosto e setembro somados. Eles não mudam quando você troca o mês lá em cima: a escolha do mês vale para a ponte e para os indicadores do topo.</p></div>
 <div class="kpis" id="soc-kpis" style="margin:0"></div>
 </div></section>
 <section id="relatorios"><div class="wrap">
