@@ -1,12 +1,17 @@
 {
- "gerado": "04/11/2026 às 10:49",
+ "gerado": "04/11/2026 às 11:40",
  "meses": [
   "2026-08",
-  "2026-09"
+  "2026-09",
+  "2026-10"
+ ],
+ "parciais": [
+  "2026-10"
  ],
  "meses_nome": {
   "2026-08": "ago/26",
-  "2026-09": "set/26"
+  "2026-09": "set/26",
+  "2026-10": "out/26"
  },
  "grupo_nome": {
   "1": "Receita bruta",
@@ -16792,6 +16797,1773 @@
       "fonte": "3LM",
       "detalhe": "Relatorio de Vendas do 3LM/Gourmet de setembro/2026, total recebido, 1.540 contas, ticket medio R$ 680,49. Reconstruido pela GetNet daria R$ 1.054.028,59, 0,58% acima."
      }
+    },
+    "2026-10": {
+     "grupos": {
+      "1": 97473.08000000002,
+      "8": -4146.67,
+      "5": -47764.44,
+      "6": -61180.520000000004,
+      "4": -65288.019999999975,
+      "7": -12559.8,
+      "9": -25905.0,
+      "NEUTRO": -100000.0,
+      "3": -4380.41,
+      "11": -5000.0
+     },
+     "contas": {
+      "1|Receita operacional (salão)": 97473.08000000002,
+      "8|Sistemas": -1146.67,
+      "5|Alojamento e ajuda de custo para moradia": -38000.0,
+      "6|Rescisões": -325.85,
+      "6|ISS | Permanência": -1343.2399999999998,
+      "4|Proteínas (carnes e frutos do mar)": -21386.99,
+      "6|Diarista (OIA)": -38244.26,
+      "7|Arrendamento e aluguel do ponto": -10000.0,
+      "6|Salários da operação": -400.0,
+      "6|Alimentação de colaboradores": -11580.0,
+      "4|Hortifrúti": -5784.96,
+      "4|Água mineral": -6530.0,
+      "8|Contabilidade, jurídico e consultorias": -3000.0,
+      "7|Outros aluguéis": -1500.0,
+      "4|Outros insumos e diversos": -3653.25,
+      "5|Limpeza e descartáveis": -2338.05,
+      "9|Cachê de artistas e atrações": -19905.0,
+      "5|Manutenção de equipamentos": -950.0,
+      "9|Marketing e divulgação de eventos": -6000.0,
+      "5|Diversos de operação": -4807.46,
+      "4|Frete de insumos de alimentos e bebidas": -8849.050000000001,
+      "6|Extras e freelancers": -6628.17,
+      "4|Secos e mercearia": -4153.8099999999995,
+      "NEUTRO|Transferência entre contas - saída": -100000.0,
+      "3|Comissões sobre vendas": -4380.41,
+      "4|Frios, laticínios e congelados": -2287.96,
+      "6|Uniformes, EPI e exames": -126.02,
+      "4|Bebidas alcoólicas": -10613.0,
+      "4|Bebidas não alcoólicas": -2029.0,
+      "6|Passagens aéreas da equipe": -2532.98,
+      "7|Seguros": -1059.8,
+      "5|Artistas e couvert": -1250.0,
+      "11|Equipamentos e mobiliário": -5000.0,
+      "5|Frete de materiais de operação": -418.93
+     },
+     "lanc": {
+      "1|Receita operacional (salão)": 42,
+      "8|Sistemas": 2,
+      "5|Alojamento e ajuda de custo para moradia": 9,
+      "6|Rescisões": 1,
+      "6|ISS | Permanência": 5,
+      "4|Proteínas (carnes e frutos do mar)": 13,
+      "6|Diarista (OIA)": 26,
+      "7|Arrendamento e aluguel do ponto": 2,
+      "6|Salários da operação": 1,
+      "6|Alimentação de colaboradores": 3,
+      "4|Hortifrúti": 7,
+      "4|Água mineral": 3,
+      "8|Contabilidade, jurídico e consultorias": 2,
+      "7|Outros aluguéis": 1,
+      "4|Outros insumos e diversos": 2,
+      "5|Limpeza e descartáveis": 2,
+      "9|Cachê de artistas e atrações": 16,
+      "5|Manutenção de equipamentos": 1,
+      "9|Marketing e divulgação de eventos": 4,
+      "5|Diversos de operação": 4,
+      "4|Frete de insumos de alimentos e bebidas": 7,
+      "6|Extras e freelancers": 12,
+      "4|Secos e mercearia": 5,
+      "NEUTRO|Transferência entre contas - saída": 1,
+      "3|Comissões sobre vendas": 1,
+      "4|Frios, laticínios e congelados": 2,
+      "6|Uniformes, EPI e exames": 1,
+      "4|Bebidas alcoólicas": 3,
+      "4|Bebidas não alcoólicas": 3,
+      "6|Passagens aéreas da equipe": 1,
+      "7|Seguros": 1,
+      "5|Artistas e couvert": 1,
+      "11|Equipamentos e mobiliário": 1,
+      "5|Frete de materiais de operação": 1
+     },
+     "familias": {
+      "cozinha": -33613.72,
+      "bar": -19172.0,
+      "comum": -12502.300000000001
+     },
+     "itens": [
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       17289.38,
+       "GETNET",
+       "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       396.24,
+       "GETNET",
+       "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       2016.28,
+       "GETNET",
+       "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       76.59,
+       "GETNET",
+       "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       21934.75,
+       "GETNET",
+       "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       309.94,
+       "GETNET",
+       "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       2618.53,
+       "GETNET",
+       "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       1487.68,
+       "GETNET",
+       "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       96.32,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       535,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       250,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       334,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       25.9,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       42.56,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       800,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       8.4,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       545.44,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       34.16,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       17.5,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       400,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       400,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       892.64,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       6770,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       2770,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "03/10/2026",
+       835,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "04/10/2026",
+       1237,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "05/10/2026",
+       36,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "06/10/2026",
+       377,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "07/10/2026",
+       1060,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "08/10/2026",
+       4407,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "09/10/2026",
+       2656,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "10/10/2026",
+       4070,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "11/10/2026",
+       4550,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "12/10/2026",
+       2756,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "13/10/2026",
+       670,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "14/10/2026",
+       715,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "15/10/2026",
+       770.77,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "16/10/2026",
+       3465,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "17/10/2026",
+       1950,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "18/10/2026",
+       1418,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "19/10/2026",
+       4077,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "20/10/2026",
+       2372,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "8|Sistemas",
+       "03/10/2026",
+       -949,
+       "Omiexperience Ltda",
+       "RPS 4020462",
+       "",
+       ""
+      ],
+      [
+       "5|Alojamento e ajuda de custo para moradia",
+       "01/10/2026",
+       -1000,
+       "BEN HUR BEZERRA DA CUNHA",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "6|Rescisões",
+       "02/10/2026",
+       -325.85,
+       "CAIXA ECONOMICA FEDERAL",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "6|ISS | Permanência",
+       "01/10/2026",
+       -300,
+       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
+       "",
+       "",
+       ""
+      ],
+      [
+       "6|ISS | Permanência",
+       "01/10/2026",
+       -330.09,
+       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "02/10/2026",
+       -2068.8,
+       "ANTONIO DE PAULA FERNANDES TAVARES",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "02/10/2026",
+       -1694.4,
+       "ANTONIO DE PAULA FERNANDES TAVARES",
+       "RECIBO 30091",
+       "",
+       ""
+      ],
+      [
+       "6|ISS | Permanência",
+       "02/10/2026",
+       -243.15,
+       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -400,
+       "THIAGO MACHADO STORCK",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -400,
+       "INACIO ADRIANO DE LIMA",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -350,
+       "PAULO CESAR DA SILVA",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -300,
+       "JOSE EVANDRO DA SILVA",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -300,
+       "JOAO WICTTOR MARCELINO MEDEIROS",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -400,
+       "EDIVALDO IVAN DOS SANTOS",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -400,
+       "ANTONIO JOSE DA SILVA JUNIOR",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -450,
+       "VOLHA DRAZIELI SOARES DE SOUZA",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -400,
+       "GLEICE KELLY DE OLIVEIRA GOMES DE SOUZA",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "7|Arrendamento e aluguel do ponto",
+       "04/10/2026",
+       -4000,
+       "DIEGO JOSE CANDIDO DO NASCIMENTO",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "5|Alojamento e ajuda de custo para moradia",
+       "05/10/2026",
+       -2500,
+       "GENTIL PAULO DA SILVA",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "05/10/2026",
+       -400,
+       "DYON GALDINO ALVES",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "6|Alimentação de colaboradores",
+       "06/10/2026",
+       -310,
+       "CENTRAL DE ENVIOS NORONHA COMERCIO LTDA",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "4|Hortifrúti",
+       "01/10/2026",
+       -875,
+       "EMPORIO MIX DE HORTALICAS FINAS LIMITADA",
+       "",
+       "",
+       ""
+      ],
+      [
+       "4|Água mineral",
+       "01/10/2026",
+       -2930,
+       "AGUA CACIMBA DO PADRE",
+       "NF 010171",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -412.5,
+       "DIOGO BRISOLA MARTINELLI",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "8|Contabilidade, jurídico e consultorias",
+       "01/10/2026",
+       -2000,
+       "ROGERIO ANDERSON RODRIGUES FERREIRA",
+       "81988555736",
+       "",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "02/10/2026",
+       -648,
+       "MARLOS SANTOS DO AMARANTE",
+       "81995679225",
+       "",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "02/10/2026",
+       -1334,
+       "ADMILSA MARIA DA SILVA",
+       "81995160013",
+       "",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "02/10/2026",
+       -1316,
+       "MARLOS SANTOS DO AMARANTE",
+       "81995679225",
+       "",
+       ""
+      ],
+      [
+       "7|Outros aluguéis",
+       "02/10/2026",
+       -1500,
+       "RUAN PAULO PEREIRA DOS SANTOS",
+       "100.320.994-79",
+       "",
+       ""
+      ],
+      [
+       "5|Alojamento e ajuda de custo para moradia",
+       "04/10/2026",
+       -4000,
+       "MARCIA MARIA PEREIRA DA SILVA",
+       "81997143067",
+       "",
+       ""
+      ],
+      [
+       "8|Contabilidade, jurídico e consultorias",
+       "05/10/2026",
+       -1000,
+       "MYRELLA FLOR PEREIRA DA SILVA",
+       "700.327.884-79",
+       "",
+       ""
+      ],
+      [
+       "6|Alimentação de colaboradores",
+       "05/10/2026",
+       -10000,
+       "CLAUDIO HENRIQUE BEZERRA XAVIER",
+       "03883534498",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -900,
+       "MARIANA GOICOECHEA",
+       "REcibo",
+       "",
+       ""
+      ],
+      [
+       "4|Outros insumos e diversos",
+       "02/10/2026",
+       -1865.97,
+       "GERLANNE DIAS COSTA PINTO",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "05/10/2026",
+       -1880.19,
+       "PINHO &amp; PINHO LTDA",
+       "",
+       "",
+       ""
+      ],
+      [
+       "6|ISS | Permanência",
+       "20/10/2026",
+       -270,
+       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
+       "",
+       "",
+       ""
+      ],
+      [
+       "9|Cachê de artistas e atrações",
+       "20/10/2026",
+       -1000,
+       "GEANDRO DE MOURA SILVA",
+       "16.915.885/0001-99",
+       "",
+       ""
+      ],
+      [
+       "9|Cachê de artistas e atrações",
+       "20/10/2026",
+       -1200,
+       "ANDRE LUIS SANTIAGO EIRAS",
+       "071.738.944-84",
+       "",
+       ""
+      ],
+      [
+       "9|Cachê de artistas e atrações",
+       "20/10/2026",
+       -925,
+       "BRUNO CELIO PORTELA DE SOUZA",
+       "21987482522",
+       "",
+       ""
+      ],
+      [
+       "9|Cachê de artistas e atrações",
+       "20/10/2026",
+       -3000,
+       "ANDRE LUIZ GOMES VELOSO",
+       "velozonoronha@gmail.",
+       "",
+       ""
+      ],
+      [
+       "9|Cachê de artistas e atrações",
+       "20/10/2026",
+       -1000,
+       "ANDRE LUIS SANTIAGO EIRAS",
+       "071.738.944-84",
+       "",
+       ""
+      ],
+      [
+       "9|Cachê de artistas e atrações",
+       "20/10/2026",
+       -400,
+       "FLAVIO AUGUSTO LIMA DA SILVA",
+       "kwdm101@hotmail.com",
+       "",
+       ""
+      ],
+      [
+       "9|Cachê de artistas e atrações",
+       "20/10/2026",
+       -700,
+       "53.011.566 CLEITON DE SANTANA NASCIMENTO",
+       "53.011.566/0001-85",
+       "",
+       ""
+      ],
+      [
+       "9|Cachê de artistas e atrações",
+       "20/10/2026",
+       -1155,
+       "FLAVIA PESSOA BAPTISTA",
+       "113.141.116-12",
+       "",
+       ""
+      ],
+      [
+       "5|Manutenção de equipamentos",
+       "20/10/2026",
+       -950,
+       "54.254.556 JHONATHAN JARDIEL JERONIMO SILVA",
+       "54.254.556.0001.33",
+       "",
+       ""
+      ],
+      [
+       "5|Alojamento e ajuda de custo para moradia",
+       "31/10/2026",
+       -1000,
+       "NORACY LAISA SIMOES",
+       "03598234910",
+       "",
+       ""
+      ],
+      [
+       "5|Alojamento e ajuda de custo para moradia",
+       "31/10/2026",
+       -1000,
+       "CLAUDENICE VICENTE DA SILVA",
+       "479.652.312-04",
+       "",
+       ""
+      ],
+      [
+       "5|Alojamento e ajuda de custo para moradia",
+       "31/10/2026",
+       -1000,
+       "AUREA ALEXANDRINA FERREIRA GOMES",
+       "81996786147",
+       "",
+       ""
+      ],
+      [
+       "5|Alojamento e ajuda de custo para moradia",
+       "31/10/2026",
+       -3500,
+       "EVNY LWIZE ALVES DA SILVA",
+       "alvesevny@gmail.com",
+       "",
+       ""
+      ],
+      [
+       "9|Marketing e divulgação de eventos",
+       "06/10/2026",
+       -4500,
+       "LG OPERACOES COMERCIAIS LTDA",
+       "67.609.779/0001-18",
+       "",
+       ""
+      ],
+      [
+       "4|Hortifrúti",
+       "03/10/2026",
+       -671,
+       "MARCOS DOS SANTOS MELO",
+       "81994123215",
+       "",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "05/10/2026",
+       -1630,
+       "ANTONIO DE PAULA FERNANDES TAVARES",
+       "81996681230",
+       "",
+       ""
+      ],
+      [
+       "7|Arrendamento e aluguel do ponto",
+       "31/10/2026",
+       -6000,
+       "CLAUDIO HENRIQUE BEZERRA XAVIER",
+       "03883534498",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "05/10/2026",
+       -325,
+       "FACTOR SAUDE AMBIENTAL LTDA",
+       "12.504.776/0001-28",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "05/10/2026",
+       -1400,
+       "FACTOR SAUDE AMBIENTAL LTDA",
+       "12.504.776/0001-28",
+       "",
+       ""
+      ],
+      [
+       "4|Frete de insumos de alimentos e bebidas",
+       "20/10/2026",
+       -6780,
+       "TORRE ALTA SERVICOS E REPRESENTACOES LTDA",
+       "",
+       "",
+       ""
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "20/10/2026",
+       -457.86,
+       "SENTIDOS INDUSTRIA E COMERCIO DE PERFUMES LTDA",
+       "13.188.663/0001-23",
+       "",
+       ""
+      ],
+      [
+       "6|Extras e freelancers",
+       "20/10/2026",
+       -400,
+       "EDIVALDO IVAN DOS SANTOS",
+       "109.404.504-70",
+       "",
+       ""
+      ],
+      [
+       "6|Extras e freelancers",
+       "20/10/2026",
+       -500,
+       "THIAGO MACHADO STORCK",
+       "839.734.940-53",
+       "",
+       ""
+      ],
+      [
+       "6|Extras e freelancers",
+       "20/10/2026",
+       -450,
+       "INACIO ADRIANO DE LIMA",
+       "092.597.824-81",
+       "",
+       ""
+      ],
+      [
+       "6|Extras e freelancers",
+       "20/10/2026",
+       -500,
+       "PAULO CESAR DA SILVA",
+       "784.524.144-04",
+       "",
+       ""
+      ],
+      [
+       "6|Extras e freelancers",
+       "21/10/2026",
+       -450,
+       "ANTONIO JOSE DA SILVA JUNIOR",
+       "051.143.394-86",
+       "",
+       ""
+      ],
+      [
+       "6|Extras e freelancers",
+       "21/10/2026",
+       -400,
+       "VOLHA DRAZIELI SOARES DE SOUZA",
+       "87 98835-0451",
+       "",
+       ""
+      ],
+      [
+       "6|Extras e freelancers",
+       "21/10/2026",
+       -500,
+       "JOAO WICTTOR MARCELINO MEDEIROS",
+       "81 99223-3361",
+       "",
+       ""
+      ],
+      [
+       "6|Extras e freelancers",
+       "21/10/2026",
+       -537.5,
+       "DIOGO BRISOLA MARTINELLI",
+       "81 99736-2728",
+       "",
+       ""
+      ],
+      [
+       "6|Extras e freelancers",
+       "21/10/2026",
+       -1066.67,
+       "JOSE EVANDRO DA SILVA",
+       "136.059.994-09",
+       "",
+       ""
+      ],
+      [
+       "6|Extras e freelancers",
+       "08/10/2026",
+       -300,
+       "EDIVALDO IVAN DOS SANTOS",
+       "109.404.504-70",
+       "",
+       ""
+      ],
+      [
+       "6|Alimentação de colaboradores",
+       "02/10/2026",
+       -1270,
+       "JOSE RAMALHO MIRANDA DA SILVA",
+       "738.480.854-53",
+       "",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "21/10/2026",
+       -59.99,
+       "J L G DUARTE FILHO LTDA",
+       "50.446.226/0001-99",
+       "",
+       ""
+      ],
+      [
+       "6|ISS | Permanência",
+       "21/10/2026",
+       -200,
+       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
+       "",
+       "",
+       ""
+      ],
+      [
+       "4|Água mineral",
+       "08/10/2026",
+       -2000,
+       "AGUA MINERAL GOTAS DE CRISTAL S.A.",
+       "04.385.120.0001-05",
+       "",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "21/10/2026",
+       -100000,
+       "YO NORONHA LTDA",
+       "04.385.120.0001-05",
+       "",
+       ""
+      ],
+      [
+       "5|Alojamento e ajuda de custo para moradia",
+       "31/10/2026",
+       -9000,
+       "DAYSE SANTANA ALVES FONTINO BARBOSA",
+       "81991749293",
+       "",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "21/10/2026",
+       -4380.41,
+       "RAFAELA PATRICIA MIRANDA DE ARAUJO",
+       "81 99223-3361",
+       "",
+       ""
+      ],
+      [
+       "4|Hortifrúti",
+       "09/10/2026",
+       -550,
+       "MARCOS DOS SANTOS MELO",
+       "81994123215",
+       "",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "15/10/2026",
+       -1708,
+       "JOSE WELITON DA SILVA",
+       "06269754410",
+       "",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "20/10/2026",
+       -1400,
+       "JOSE WELITON DA SILVA",
+       "06269754410",
+       "",
+       ""
+      ],
+      [
+       "8|Sistemas",
+       "02/10/2026",
+       -197.67,
+       "RAJ TECNOLOGIA LTDA",
+       "",
+       "",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "08/10/2026",
+       -2340,
+       "PARAGUAIO PESCADOS COMERCIO ATACADISTA &amp; V",
+       "",
+       "",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "14/10/2026",
+       -2334.5,
+       "PRASO PLATAFORMA DE COMERCIO LTDA.",
+       "001104090/1",
+       "",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "14/10/2026",
+       -1477.86,
+       "PRASO PLATAFORMA DE COMERCIO LTDA.",
+       "001104122/1",
+       "",
+       ""
+      ],
+      [
+       "4|Frios, laticínios e congelados",
+       "07/10/2026",
+       -287,
+       "J A CALHEIROS DE MELO JUNIOR",
+       "000381387/1",
+       "",
+       ""
+      ],
+      [
+       "4|Frios, laticínios e congelados",
+       "15/10/2026",
+       -2000.96,
+       "PRASO PLATAFORMA DE COMERCIO LTDA.",
+       "001104968/1",
+       "",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "19/10/2026",
+       -2257.2,
+       "EMPRESA DE PESCA BANCO SUESTE LTDA",
+       "26648539000145",
+       "",
+       ""
+      ],
+      [
+       "6|Uniformes, EPI e exames",
+       "15/10/2026",
+       -126.02,
+       "DISTRINOX DISTRIBUIDORA DE ARTEFATOS AGRICOLAS",
+       "09992067454",
+       "",
+       ""
+      ],
+      [
+       "4|Hortifrúti",
+       "20/10/2026",
+       -900,
+       "EMPORIO MIX DE HORTALICAS FINAS LIMITADA",
+       "000000097/1",
+       "",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "15/10/2026",
+       -119.8,
+       "PRASO PLATAFORMA DE COMERCIO LTDA.",
+       "001105682/1",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "19/10/2026",
+       -696,
+       "PIPA &amp; XAVIER DISTRIBUIDORA DE BEBIDAS LTD",
+       "000074248/1",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas não alcoólicas",
+       "19/10/2026",
+       -1510,
+       "PIPA &amp; XAVIER DISTRIBUIDORA DE BEBIDAS LTD",
+       "000074248/1",
+       "",
+       ""
+      ],
+      [
+       "4|Água mineral",
+       "19/10/2026",
+       -1600,
+       "PIPA &amp; XAVIER DISTRIBUIDORA DE BEBIDAS LTD",
+       "000074248/1",
+       "",
+       ""
+      ],
+      [
+       "9|Marketing e divulgação de eventos",
+       "31/10/2026",
+       -500,
+       "BRUNA DA SILVA QUARESMA",
+       "702.723.83490",
+       "",
+       ""
+      ],
+      [
+       "9|Marketing e divulgação de eventos",
+       "31/10/2026",
+       -500,
+       "BRUNA DA SILVA QUARESMA",
+       "702.723.83490",
+       "",
+       ""
+      ],
+      [
+       "9|Marketing e divulgação de eventos",
+       "31/10/2026",
+       -500,
+       "BRUNA DA SILVA QUARESMA",
+       "702.723.83490",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "01/10/2026",
+       -3195.44,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -925,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "03/10/2026",
+       -700,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "04/10/2026",
+       -1066.59,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "07/10/2026",
+       -2821.67,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "08/10/2026",
+       -4990,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "09/10/2026",
+       -2504.17,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "10/10/2026",
+       -3375,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "11/10/2026",
+       -1837.46,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "12/10/2026",
+       -1350,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "13/10/2026",
+       -632.9,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "6|Extras e freelancers",
+       "14/10/2026",
+       -1199,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "15/10/2026",
+       -625,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "16/10/2026",
+       -2175,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "17/10/2026",
+       -2236.99,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "18/10/2026",
+       -3000,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "19/10/2026",
+       -3934,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "4|Hortifrúti",
+       "20/10/2026",
+       -100,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "14/10/2026",
+       -1245,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "4|Outros insumos e diversos",
+       "20/10/2026",
+       -1787.28,
+       "NOMU BISTRO RESTAURANTE LTDA",
+       "000000588/1",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "13/10/2026",
+       -4958.5,
+       "PIPA &amp; XAVIER DISTRIBUIDORA DE BEBIDAS LTD",
+       "000074015/1",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas não alcoólicas",
+       "13/10/2026",
+       -259.5,
+       "PIPA &amp; XAVIER DISTRIBUIDORA DE BEBIDAS LTD",
+       "000074015/1",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "13/10/2026",
+       -4958.5,
+       "PIPA &amp; XAVIER DISTRIBUIDORA DE BEBIDAS LTD",
+       "000074015/2",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas não alcoólicas",
+       "13/10/2026",
+       -259.5,
+       "PIPA &amp; XAVIER DISTRIBUIDORA DE BEBIDAS LTD",
+       "000074015/2",
+       "",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "09/10/2026",
+       -566.59,
+       "NORDESTE COMERCIO E IMPORTADORA DE ALIMENTOS L",
+       "001705604/1",
+       "",
+       ""
+      ],
+      [
+       "6|Passagens aéreas da equipe",
+       "22/10/2026",
+       -2532.98,
+       "AZUL LINHAS AEREAS BRASILEIRAS S.A.",
+       "",
+       "",
+       ""
+      ],
+      [
+       "7|Seguros",
+       "31/10/2026",
+       -1059.8,
+       "MAPFRE SEGUROS GERAIS S.A.",
+       "",
+       "",
+       ""
+      ],
+      [
+       "6|Extras e freelancers",
+       "26/10/2026",
+       -325,
+       "JOSE MANOEL DOS SANTOS",
+       "711.713.024-52",
+       "",
+       ""
+      ],
+      [
+       "5|Artistas e couvert",
+       "05/10/2026",
+       -1250,
+       "JOAO LUIZ DO NASCIMENTO DA ROCHA",
+       "034.362.754-09",
+       "",
+       ""
+      ],
+      [
+       "9|Cachê de artistas e atrações",
+       "05/10/2026",
+       -450,
+       "FLAVIA PESSOA BAPTISTA",
+       "113.141.116-12",
+       "",
+       ""
+      ],
+      [
+       "9|Cachê de artistas e atrações",
+       "05/10/2026",
+       -1200,
+       "ANDRE LUIZ GOMES VELOSO",
+       "",
+       "",
+       ""
+      ],
+      [
+       "9|Cachê de artistas e atrações",
+       "05/10/2026",
+       -3400,
+       "ANDRE LUIZ GOMES VELOSO",
+       "071.738.944-84",
+       "",
+       ""
+      ],
+      [
+       "9|Cachê de artistas e atrações",
+       "05/10/2026",
+       -400,
+       "FLAVIO AUGUSTO LIMA DA SILVA",
+       "kwdm101@hotmail.com",
+       "",
+       ""
+      ],
+      [
+       "9|Cachê de artistas e atrações",
+       "05/10/2026",
+       -2200,
+       "53.011.566 CLEITON DE SANTANA NASCIMENTO",
+       "53.011.566/0001-85",
+       "",
+       ""
+      ],
+      [
+       "9|Cachê de artistas e atrações",
+       "05/10/2026",
+       -1000,
+       "GEANDRO DE MOURA SILVA",
+       "16.915.885/0001-99",
+       "",
+       ""
+      ],
+      [
+       "9|Cachê de artistas e atrações",
+       "05/10/2026",
+       -375,
+       "BRUNO CELIO PORTELA DE SOUZA",
+       "21987482522",
+       "",
+       ""
+      ],
+      [
+       "9|Cachê de artistas e atrações",
+       "05/10/2026",
+       -1500,
+       "ANDRE LUIS SANTIAGO EIRAS",
+       "071.738.944-84",
+       "",
+       ""
+      ],
+      [
+       "4|Hortifrúti",
+       "09/10/2026",
+       -300.6,
+       "EMPORIO MIX DE HORTALICAS FINAS LIMITADA",
+       "000000092/1",
+       "",
+       ""
+      ],
+      [
+       "11|Equipamentos e mobiliário",
+       "31/10/2026",
+       -5000,
+       "BRAYNER ALVES DE SOUZA SILVA",
+       "81991613116",
+       "",
+       ""
+      ],
+      [
+       "5|Alojamento e ajuda de custo para moradia",
+       "31/10/2026",
+       -15000,
+       "CICERO VITAL NUNES",
+       "142.275.174-00",
+       "",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "01/10/2026",
+       -1810,
+       "ANCORA PESCADOS LTDA",
+       "000060637/1",
+       "",
+       ""
+      ],
+      [
+       "4|Hortifrúti",
+       "02/10/2026",
+       -2388.36,
+       "PCA - POTIGUAR COMERCIO DE ALIMENTOS LTDA",
+       "000003071/1",
+       "",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "13/10/2026",
+       -2614,
+       "ANTONIO DE PAULA FERNANDES TAVARES",
+       "8199668-1230",
+       "",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "08/10/2026",
+       -161.66,
+       "PRASO PLATAFORMA DE COMERCIO LTDA.",
+       "001096648/1",
+       "",
+       ""
+      ],
+      [
+       "4|Frete de insumos de alimentos e bebidas",
+       "08/10/2026",
+       -344.85,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA ME",
+       "000102763/1",
+       "",
+       ""
+      ],
+      [
+       "4|Frete de insumos de alimentos e bebidas",
+       "08/10/2026",
+       -344.84,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA ME",
+       "000102764/1",
+       "",
+       ""
+      ],
+      [
+       "4|Frete de insumos de alimentos e bebidas",
+       "08/10/2026",
+       -344.84,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA ME",
+       "000102765/1",
+       "",
+       ""
+      ],
+      [
+       "4|Frete de insumos de alimentos e bebidas",
+       "08/10/2026",
+       -344.84,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA ME",
+       "000102766/1",
+       "",
+       ""
+      ],
+      [
+       "4|Frete de insumos de alimentos e bebidas",
+       "08/10/2026",
+       -344.84,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA ME",
+       "000102767/1",
+       "",
+       ""
+      ],
+      [
+       "4|Frete de insumos de alimentos e bebidas",
+       "08/10/2026",
+       -344.84,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA ME",
+       "000102768/1",
+       "",
+       ""
+      ],
+      [
+       "5|Frete de materiais de operação",
+       "12/10/2026",
+       -418.93,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA ME",
+       "000103452/1",
+       "",
+       ""
+      ]
+     ]
     }
    },
    "caixa": {
@@ -27998,6 +29770,631 @@
        ""
       ]
      ]
+    },
+    "2026-10": {
+     "grupos": {
+      "1": 50511.31000000001,
+      "6": -6995.74,
+      "NEUTRO": 0.0,
+      "4": -58564.01,
+      "7": -4000.0,
+      "5": -2500.0,
+      "8": -900.0
+     },
+     "contas": {
+      "1|Receita operacional (salão)": 50511.31000000001,
+      "6|ISS | Permanência": -873.2399999999999,
+      "NEUTRO|Transferência entre contas - saída": -110993.63,
+      "4|Proteínas (carnes e frutos do mar)": -8271.140000000001,
+      "4|Secos e mercearia": -1744.3799999999999,
+      "6|Diarista (OIA)": -5412.5,
+      "4|Bebidas alcoólicas": -16728.93,
+      "7|Arrendamento e aluguel do ponto": -4000.0,
+      "4|Frios, laticínios e congelados": -6522.8,
+      "5|Alojamento e ajuda de custo para moradia": -2500.0,
+      "6|Salários da operação": -400.0,
+      "4|Hortifrúti": -902.25,
+      "6|Alimentação de colaboradores": -310.0,
+      "4|Frete de insumos de alimentos e bebidas": -8430.0,
+      "4|Água mineral": -2930.0,
+      "8|Viagens administrativas": -900.0,
+      "4|Outros insumos e diversos": -13034.51,
+      "NEUTRO|Transferência entre contas - entrada": 110993.63
+     },
+     "lanc": {
+      "1|Receita operacional (salão)": 22,
+      "6|ISS | Permanência": 3,
+      "NEUTRO|Transferência entre contas - saída": 2,
+      "4|Proteínas (carnes e frutos do mar)": 4,
+      "4|Secos e mercearia": 3,
+      "6|Diarista (OIA)": 12,
+      "4|Bebidas alcoólicas": 4,
+      "7|Arrendamento e aluguel do ponto": 1,
+      "4|Frios, laticínios e congelados": 1,
+      "5|Alojamento e ajuda de custo para moradia": 1,
+      "6|Salários da operação": 1,
+      "4|Hortifrúti": 1,
+      "6|Alimentação de colaboradores": 1,
+      "4|Frete de insumos de alimentos e bebidas": 1,
+      "4|Água mineral": 1,
+      "8|Viagens administrativas": 1,
+      "4|Outros insumos e diversos": 2,
+      "NEUTRO|Transferência entre contas - entrada": 2
+     },
+     "familias": {
+      "cozinha": -17440.57,
+      "bar": -19658.93,
+      "comum": -21464.510000000002
+     },
+     "itens": [
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       17289.38,
+       "GETNET",
+       "FALTA NF",
+       "Santander",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       396.24,
+       "GETNET",
+       "FALTA NF",
+       "Santander",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       2016.28,
+       "GETNET",
+       "FALTA NF",
+       "Santander",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       76.59,
+       "GETNET",
+       "FALTA NF",
+       "Santander",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       96.32,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "Santander",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       535,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "Santander",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       250,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "Santander",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       334,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "Santander",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       25.9,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "Santander",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       42.56,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "Santander",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "01/10/2026",
+       800,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "Santander",
+       ""
+      ],
+      [
+       "6|ISS | Permanência",
+       "01/10/2026",
+       -300,
+       "DISTRITO ESTADUAL DE FERNANDO DE NORONHA",
+       "",
+       "Santander",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "01/10/2026",
+       -21562.27,
+       "Transf. Santander &gt;&gt; Santander - ContaMa",
+       "00000000",
+       "Santander",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       21934.75,
+       "GETNET",
+       "FALTA NF",
+       "Santander",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       309.94,
+       "GETNET",
+       "FALTA NF",
+       "Santander",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       2618.53,
+       "GETNET",
+       "FALTA NF",
+       "Santander",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       1487.68,
+       "GETNET",
+       "FALTA NF",
+       "Santander",
+       ""
+      ],
+      [
+       "6|ISS | Permanência",
+       "02/10/2026",
+       -330.09,
+       "DISTRITO ESTADUAL DE FERNANDO DE NORONHA",
+       "SEM NF",
+       "Santander",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "02/10/2026",
+       -2068.8,
+       "ANTONIO DE PAULA FERNANDES TAVARES",
+       "SEM NF",
+       "Santander",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "02/10/2026",
+       -1694.4,
+       "ANTONIO DE PAULA FERNANDES TAVARES",
+       "RECIBO 30091",
+       "Santander",
+       ""
+      ],
+      [
+       "6|ISS | Permanência",
+       "02/10/2026",
+       -243.15,
+       "DISTRITO ESTADUAL DE FERNANDO DE NORONHA",
+       "SEM NF",
+       "Santander",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "02/10/2026",
+       -556.26,
+       "PRASO PLATAFORMA DE COMERCIO LTDA.",
+       "NF 1076439",
+       "Santander",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -400,
+       "THIAGO MACHADO STORCK",
+       "SEM NF",
+       "Santander",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -400,
+       "INACIO ADRIANO DE LIMA",
+       "SEM NF",
+       "Santander",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -350,
+       "PAULO CESAR DA SILVA",
+       "SEM NF",
+       "Santander",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -300,
+       "JOSE EVANDRO DA SILVA",
+       "SEM NF",
+       "Santander",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -300,
+       "JOAO WICTTOR MARCELINO MEDEIROS",
+       "SEM NF",
+       "Santander",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -400,
+       "EDIVALDO IVAN DOS SANTOS",
+       "SEM NF",
+       "Santander",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -400,
+       "ANTONIO JOSE DA SILVA JUNIOR",
+       "SEM NF",
+       "Santander",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -450,
+       "VOLHA DRAZIELI SOARES DE SOUZA",
+       "SEM NF",
+       "Santander",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -400,
+       "GLEICE KELLY DE OLIVEIRA GOMES DE SOUZA",
+       "SEM NF",
+       "Santander",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "02/10/2026",
+       -4797,
+       "DISTRIBUIDORA DOIS IRMAOS",
+       "NF 073575",
+       "Santander",
+       ""
+      ],
+      [
+       "7|Arrendamento e aluguel do ponto",
+       "02/10/2026",
+       -4000,
+       "DIEGO JOSE CANDIDO DO NASCIMENTO",
+       "SEM NF",
+       "Santander",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "02/10/2026",
+       -790.32,
+       "DLP",
+       "NF1266587",
+       "Santander",
+       ""
+      ],
+      [
+       "4|Frios, laticínios e congelados",
+       "02/10/2026",
+       -6522.8,
+       "FORMAGGIO DISTRIBUICAO DE ALIMENTOS LTDA",
+       "NF962584",
+       "Santander",
+       ""
+      ],
+      [
+       "5|Alojamento e ajuda de custo para moradia",
+       "02/10/2026",
+       -2500,
+       "GENTIL PAULO DA SILVA",
+       "SEM NF",
+       "Santander",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "02/10/2026",
+       -703.82,
+       "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
+       "NF 028861",
+       "Santander",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -700,
+       "PEDROEROL CLIMATIZACAO LTDA",
+       "NF 0654",
+       "Santander",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "02/10/2026",
+       -484.3,
+       "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
+       "NF 028897",
+       "Santander",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "02/10/2026",
+       -400,
+       "DYON GALDINO ALVES",
+       "SEM NF",
+       "Santander",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "02/10/2026",
+       -5621.5,
+       "DISTRIBUIDORA DOIS IRMAOS",
+       "NF073421",
+       "Santander",
+       ""
+      ],
+      [
+       "4|Hortifrúti",
+       "02/10/2026",
+       -902.25,
+       "EMPORIO MIX HORTALICAS FINAS",
+       "NF 000087",
+       "Santander",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "02/10/2026",
+       -5520.11,
+       "DISTRIBUIDORA DOIS IRMAOS",
+       "NF 073628",
+       "Santander",
+       ""
+      ],
+      [
+       "6|Alimentação de colaboradores",
+       "02/10/2026",
+       -310,
+       "CENTRA DE ENVIOS NORONHA",
+       "SEM NF",
+       "Santander",
+       ""
+      ],
+      [
+       "4|Frete de insumos de alimentos e bebidas",
+       "02/10/2026",
+       -8430,
+       "TORRE ALTA SERVICOS E REPRESENTACOES LTDA",
+       "SEM NF",
+       "Santander",
+       ""
+      ],
+      [
+       "4|Água mineral",
+       "02/10/2026",
+       -2930,
+       "AGUA CACIMBA DO PADRE",
+       "NF 010171",
+       "Santander",
+       ""
+      ],
+      [
+       "8|Viagens administrativas",
+       "02/10/2026",
+       -900,
+       "POUSADA GOLFINHO LTDA",
+       "NF 0662",
+       "Santander",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -412.5,
+       "DIOGO BRISOLA MARTINELLI",
+       "SEM NF",
+       "Santander",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       8.4,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "Santander",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       545.44,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "Santander",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       34.16,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "Santander",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       17.5,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "Santander",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       400,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "Santander",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       400,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "Santander",
+       ""
+      ],
+      [
+       "1|Receita operacional (salão)",
+       "02/10/2026",
+       892.64,
+       "Cliente Consumidor / Sem Tomador",
+       "FALTA NF",
+       "Santander",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -900,
+       "MARIANA GOICOECHEA",
+       "REcibo",
+       "Santander",
+       ""
+      ],
+      [
+       "4|Outros insumos e diversos",
+       "02/10/2026",
+       -2018.73,
+       "NOMU BISTRO RESTAURANTE LTDA",
+       "NF 507",
+       "Santander",
+       ""
+      ],
+      [
+       "4|Outros insumos e diversos",
+       "02/10/2026",
+       -11015.78,
+       "DLP",
+       "NF001263157",
+       "Santander",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "02/10/2026",
+       -2244,
+       "EMPRESA DE PESCA BANCO SUESTE LTDA",
+       "NF 003294",
+       "Santander",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "02/10/2026",
+       -2263.94,
+       "CARAPITANGA PESCADOS DO BRASIL",
+       "000179227/1",
+       "Santander",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "02/10/2026",
+       89431.36,
+       "Transf. Santander - ContaMax &gt;&gt; Santande",
+       "00000000",
+       "Santander",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "01/10/2026",
+       21562.27,
+       "Transf. Santander &gt;&gt; Santander - ContaMa",
+       "00000000",
+       "Santander - ContaMax",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "02/10/2026",
+       -89431.36,
+       "Transf. Santander - ContaMax &gt;&gt; Santande",
+       "00000000",
+       "Santander - ContaMax",
+       ""
+      ]
+     ]
     }
    },
    "saldos": {
@@ -28019,6 +30416,16 @@
      "contas": {
       "Santander": 0,
       "Santander - ContaMax": 599870.43
+     }
+    },
+    "2026-10": {
+     "ini": 599870.43,
+     "fim": 577421.99,
+     "entradas": 50511.31,
+     "saidas": -72959.75,
+     "contas": {
+      "Santander": 45420.65,
+      "Santander - ContaMax": 532001.34
      }
     }
    }
@@ -33760,6 +36167,123 @@
        -1707.45,
        "YO NORONHA LTDA",
        "B33AX082GGWECTH19",
+       "",
+       ""
+      ]
+     ]
+    },
+    "2026-10": {
+     "grupos": {
+      "8": -25737.81,
+      "7": -27100.0,
+      "6": -6000.0,
+      "CC": -5801.0
+     },
+     "contas": {
+      "8|Sistemas": -309.0,
+      "8|Licenças e alvarás": -396.0,
+      "7|Arrendamento e aluguel do ponto": -27100.0,
+      "6|Diarista (OIA)": -6000.0,
+      "8|Outras despesas administrativas": -25032.81,
+      "CC|Conta corrente Amana - saída": -5801.0
+     },
+     "lanc": {
+      "8|Sistemas": 1,
+      "8|Licenças e alvarás": 1,
+      "7|Arrendamento e aluguel do ponto": 2,
+      "6|Diarista (OIA)": 2,
+      "8|Outras despesas administrativas": 2,
+      "CC|Conta corrente Amana - saída": 2
+     },
+     "familias": {},
+     "itens": [
+      [
+       "8|Sistemas",
+       "03/10/2026",
+       -309,
+       "Omiexperience Ltda",
+       "RPS 4020156",
+       "",
+       ""
+      ],
+      [
+       "8|Licenças e alvarás",
+       "09/10/2026",
+       -396,
+       "Cliente Consumidor / Sem Tomador",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "7|Arrendamento e aluguel do ponto",
+       "01/10/2026",
+       -2100,
+       "Cliente Consumidor / Sem Tomador",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "01/10/2026",
+       -4000,
+       "KARINA PONTES SANTOS LIMA ARAUJO",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "8|Outras despesas administrativas",
+       "01/10/2026",
+       -22032.81,
+       "BANCO BRADESCO S.A.",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "01/10/2026",
+       -2000,
+       "HIGOR RAPHAEL DA SILVA TORRES",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "CC|Conta corrente Amana - saída",
+       "05/10/2026",
+       -2149,
+       "FRANCISCO EDUARDO OLIVEIRA DE SOUZA",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "CC|Conta corrente Amana - saída",
+       "05/10/2026",
+       -3652,
+       "THYAGO MESSIAS DO NASCIMENTO",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "7|Arrendamento e aluguel do ponto",
+       "05/10/2026",
+       -25000,
+       "GERSON ALVES DE SOUZA",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "8|Outras despesas administrativas",
+       "05/10/2026",
+       -3000,
+       "RENATO FERREIRA LIMA BATISTA GOMES",
+       "FALTA NF",
        "",
        ""
       ]
@@ -41646,6 +44170,856 @@
        ""
       ]
      ]
+    },
+    "2026-10": {
+     "grupos": {
+      "8": -25876.960000000003,
+      "6": -2966.0,
+      "NEUTRO": -1.4551915228366852e-11,
+      "4": -12965.22,
+      "5": -6003.21,
+      "11": -2927.2,
+      "CC": -5801.0,
+      "7": -25000.0
+     },
+     "contas": {
+      "8|Outras despesas administrativas": -25032.81,
+      "6|Diarista (OIA)": -2966.0,
+      "NEUTRO|Transferência entre contas - entrada": 322894.23,
+      "8|Tarifas bancárias": -234.25,
+      "4|Secos e mercearia": -10054.779999999999,
+      "5|Manutenção de equipamentos": -486.5,
+      "5|Frete de materiais de operação": -3885.9300000000003,
+      "11|Obras e reformas": -2927.2,
+      "CC|Conta corrente Amana - saída": -5801.0,
+      "7|Arrendamento e aluguel do ponto": -25000.0,
+      "8|Material de escritório": -609.9,
+      "4|Proteínas (carnes e frutos do mar)": -2910.44,
+      "5|Diversos de operação": -1630.78,
+      "NEUTRO|Transferência entre contas - saída": -322894.23
+     },
+     "lanc": {
+      "8|Outras despesas administrativas": 2,
+      "6|Diarista (OIA)": 2,
+      "NEUTRO|Transferência entre contas - entrada": 19,
+      "8|Tarifas bancárias": 34,
+      "4|Secos e mercearia": 2,
+      "5|Manutenção de equipamentos": 1,
+      "5|Frete de materiais de operação": 2,
+      "11|Obras e reformas": 2,
+      "CC|Conta corrente Amana - saída": 2,
+      "7|Arrendamento e aluguel do ponto": 1,
+      "8|Material de escritório": 1,
+      "4|Proteínas (carnes e frutos do mar)": 1,
+      "5|Diversos de operação": 1,
+      "NEUTRO|Transferência entre contas - saída": 19
+     },
+     "familias": {
+      "cozinha": -12965.22
+     },
+     "itens": [
+      [
+       "8|Outras despesas administrativas",
+       "01/10/2026",
+       -22032.81,
+       "BANCO BRADESCO",
+       "SEM NF",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "01/10/2026",
+       -2000,
+       "HIGOR RAPHAEL DA SILVA TORRES",
+       "SEM NF",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "01/10/2026",
+       24028.88,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "01/10/2026",
+       5.93,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "01/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "290926",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "01/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "290926",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "01/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "290926",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "01/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "290926",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "01/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "290926",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "01/10/2026",
+       8,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "151875",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "02/10/2026",
+       -460.98,
+       "PRASO PLATAFORMA DE COMERCIO LTDA.",
+       "NF 1070059",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "02/10/2026",
+       -9593.8,
+       "PRASO PLATAFORMA DE COMERCIO LTDA.",
+       "NF 1070675",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "5|Manutenção de equipamentos",
+       "02/10/2026",
+       -486.5,
+       "TACTCOOL E TORQ &amp; CIA",
+       "NF 000700",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "5|Frete de materiais de operação",
+       "02/10/2026",
+       -1766.91,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
+       "DACTE 100821, 100822",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "5|Frete de materiais de operação",
+       "02/10/2026",
+       -2119.02,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
+       "DACTE 101231, 101232",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "6|Diarista (OIA)",
+       "02/10/2026",
+       -966,
+       "Cliente Consumidor / Sem Tomador",
+       "NF 53",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "11|Obras e reformas",
+       "02/10/2026",
+       -590.8,
+       "TACTCOOL E TORQ &amp; CIA",
+       "NF 000706",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "CC|Conta corrente Amana - saída",
+       "02/10/2026",
+       -2149,
+       "FRANCISCO EDUARDO OLIVEIRA DE SOUZA",
+       "SEM NF",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "CC|Conta corrente Amana - saída",
+       "02/10/2026",
+       -3652,
+       "THYAGO MESSIAS DO NASCIMENTO",
+       "SEM NF",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "7|Arrendamento e aluguel do ponto",
+       "02/10/2026",
+       -25000,
+       "GERSON ALVES DE SOUZA",
+       "SEM NF",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Outras despesas administrativas",
+       "02/10/2026",
+       -3000,
+       "RENATO FERREIRA LIMA BATISTA GOMES",
+       "FALTA NF",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "11|Obras e reformas",
+       "02/10/2026",
+       -2336.4,
+       "HIDRELETRICA",
+       "NF026172",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Material de escritório",
+       "02/10/2026",
+       -609.9,
+       "NAGEM",
+       "NF 044151",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "02/10/2026",
+       -2910.44,
+       "SANTISTA FOOD BUSINESS",
+       "NF367525",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "5|Diversos de operação",
+       "02/10/2026",
+       -1630.78,
+       "UNIVERSO DA CONSTRUCAO",
+       "NF 351",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "02/10/2026",
+       57257.94,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "02/10/2026",
+       14.59,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "05/10/2026",
+       1799.53,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "05/10/2026",
+       0.47,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "06/10/2026",
+       10,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "06/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "21026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "07/10/2026",
+       43725.49,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "07/10/2026",
+       12.18,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "09/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "71026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "09/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "71026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "09/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "71026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "09/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "71026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "09/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "71026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "09/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "71026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "09/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "71026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "09/10/2026",
+       -97878.49,
+       "Transf. Bradesco c/c &gt;&gt; Bradesco - INVES",
+       "9910621",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "14/10/2026",
+       5000.45,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "14/10/2026",
+       1.55,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "14/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "91026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "15/10/2026",
+       10383.51,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "15/10/2026",
+       82743.72,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "9910621",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "15/10/2026",
+       3.3,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "15/10/2026",
+       0.2,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "9910621",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "15/10/2026",
+       -168.5,
+       "BANCO BRADESCO",
+       "11026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "15/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "131026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "15/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "131026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "15/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "131026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "15/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "131026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "15/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "131026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "15/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "131026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "15/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "131026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "15/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "131026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "15/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "131026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "15/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "131026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "15/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "131026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "16/10/2026",
+       10,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "9910621",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "16/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "141026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "19/10/2026",
+       10,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "9910621",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "19/10/2026",
+       -1.75,
+       "BANCO BRADESCO",
+       "151026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "19/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "151026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "19/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "151026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "19/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "151026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "19/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "151026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "19/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "151026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "19/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "151026",
+       "Bradesco c/c",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "01/10/2026",
+       -24028.88,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco - INVEST FAC",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "01/10/2026",
+       -5.93,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco - INVEST FAC",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "01/10/2026",
+       -8,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "151875",
+       "Bradesco - INVEST FAC",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "02/10/2026",
+       -57257.94,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco - INVEST FAC",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "02/10/2026",
+       -14.59,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco - INVEST FAC",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "05/10/2026",
+       -1799.53,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco - INVEST FAC",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "05/10/2026",
+       -0.47,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco - INVEST FAC",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "06/10/2026",
+       -10,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco - INVEST FAC",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "07/10/2026",
+       -43725.49,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco - INVEST FAC",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "07/10/2026",
+       -12.18,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco - INVEST FAC",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "09/10/2026",
+       97878.49,
+       "Transf. Bradesco c/c &gt;&gt; Bradesco - INVES",
+       "9910621",
+       "Bradesco - INVEST FAC",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "14/10/2026",
+       -5000.45,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco - INVEST FAC",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "14/10/2026",
+       -1.55,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco - INVEST FAC",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "15/10/2026",
+       -10383.51,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco - INVEST FAC",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "15/10/2026",
+       -82743.72,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "9910621",
+       "Bradesco - INVEST FAC",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "15/10/2026",
+       -3.3,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco - INVEST FAC",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "15/10/2026",
+       -0.2,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "9910621",
+       "Bradesco - INVEST FAC",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/10/2026",
+       -10,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "9910621",
+       "Bradesco - INVEST FAC",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "19/10/2026",
+       -10,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "9910621",
+       "Bradesco - INVEST FAC",
+       ""
+      ]
+     ]
     }
    },
    "saldos": {
@@ -41667,6 +45041,16 @@
      "contas": {
       "Bradesco c/c": 9,
       "Bradesco - INVEST FAC": 142249.66
+     }
+    },
+    "2026-10": {
+     "ini": 142258.66,
+     "fim": 60719.07000000001,
+     "entradas": 0.0,
+     "saidas": -81539.59000000003,
+     "contas": {
+      "Bradesco c/c": 45606.66,
+      "Bradesco - INVEST FAC": 15112.41
      }
     }
    },
