@@ -1,5 +1,5 @@
 {
- "gerado": "04/11/2026 às 11:40",
+ "gerado": "04/11/2026 às 17:29",
  "meses": [
   "2026-08",
   "2026-09",
@@ -2650,11 +2650,28 @@
  },
  "receita": {
   "2026-08": {
-   "fonte_3lm": "reconstruido",
-   "recebido": 191290.32,
-   "produtos": null,
-   "servico": null,
-   "servico_pc": null,
+   "fonte_3lm": "3LM",
+   "recebido": 163548.5,
+   "produtos": 146768.39,
+   "servico": 16780.11,
+   "servico_pc": 11.43,
+   "abertura": [
+    [
+     "A&B",
+     146568.39
+    ],
+    [
+     "Taxa de servico",
+     16780.11
+    ],
+    [
+     "Taxa de rolha",
+     200.0
+    ]
+   ],
+   "desconto": 32112.41,
+   "itens": 2869,
+   "divergencia": null,
    "grupos": null,
    "pis": 46.45,
    "cofins": 214.39,
@@ -2667,28 +2684,66 @@
   },
   "2026-09": {
    "fonte_3lm": "3LM",
-   "recebido": 1047949.04,
-   "produtos": 941981.44,
-   "servico": 105967.6,
-   "servico_pc": 11.25,
-   "grupos": [
+   "recebido": 1058984.27,
+   "produtos": 947805.74,
+   "servico": 111178.53,
+   "servico_pc": 11.73,
+   "abertura": [
     [
-     "Bebida",
-     410131.4
+     "A&B",
+     926645.16
     ],
     [
-     "Entrada",
-     256974.64
+     "Taxa de servico",
+     111178.53
     ],
     [
-     "Prato Principal",
-     230852.0
+     "Couvert",
+     16720.84
     ],
     [
-     "Outros",
-     44023.4
+     "Taxa de rolha",
+     4439.74
     ]
    ],
+   "desconto": 74569.72,
+   "itens": 15837,
+   "divergencia": {
+    "arquivo": "YO_Noronha_Vendas_Setembro2026.pdf — montado pela Diretoria Adm-Financeira em 02/10/2026",
+    "total": 1047949.04,
+    "diferenca": 11035.23,
+    "linhas": [
+     [
+      "A&B (sem couvert e sem rolha)",
+      930431.44,
+      926645.16,
+      -3786.28,
+      "o relatorio da diretoria cobre 01 a 29/09 pelo Itens Vendidos Analitico e 30/09 pelo Sintetico; os dois cortes tratam o desconto de forma diferente"
+     ],
+     [
+      "Couvert",
+      11550.0,
+      16720.84,
+      5170.84,
+      "o PDV tem DOIS itens de couvert: *Couvert Artistico (385) e Couvert codigo 99997 (181, R$ 5.239,83). O relatorio da diretoria so pegou o primeiro, e pelo preco de tabela (385 x R$ 30,00), sem deduzir R$ 68,99 de desconto"
+     ],
+     [
+      "Taxa de rolha",
+      0.0,
+      4439.74,
+      4439.74,
+      "o relatorio da diretoria declara na propria pagina que exclui a taxa de rolha; sao 35 cobrancas reais"
+     ],
+     [
+      "Taxa de servico",
+      105967.6,
+      111178.53,
+      5210.93,
+      "na diretoria sai por diferenca (recebido menos produtos); no 3LM e item do PDV, codigo 100000, lancado no funcionario 0 SERVICO"
+     ]
+    ]
+   },
+   "grupos": null,
    "pis": 6258.49,
    "cofins": 28885.36,
    "base_pis": 962844.62,
@@ -2696,6 +2751,43 @@
    "declarada": 962844.97,
    "nota": null,
    "omie": 1123423.98,
+   "extra": null
+  },
+  "2026-10": {
+   "fonte_3lm": "3LM",
+   "recebido": 1193067.36,
+   "produtos": 1067009.32,
+   "servico": 126058.04,
+   "servico_pc": 11.81,
+   "abertura": [
+    [
+     "A&B",
+     1017816.85
+    ],
+    [
+     "Taxa de servico",
+     126058.04
+    ],
+    [
+     "Couvert",
+     42466.87
+    ],
+    [
+     "Taxa de rolha",
+     6725.6
+    ]
+   ],
+   "desconto": 116923.05,
+   "itens": 18714,
+   "divergencia": null,
+   "grupos": null,
+   "pis": 0.0,
+   "cofins": 0.0,
+   "base_pis": null,
+   "base_cofins": null,
+   "declarada": null,
+   "nota": "não há PIS nem COFINS lançados nesta competência",
+   "omie": 97473.08,
    "extra": null
   }
  },
@@ -2710,16 +2802,16 @@
     "2026-08": {
      "grupos": {
       "1": 175903.28,
-      "CC": 97435.85,
+      "CC": 100000.0,
       "NEUTRO": 9.17,
-      "4": -274134.55,
+      "4": -274924.87,
       "5": -11656.46,
       "8": -17043.760000000006,
       "6": -18079.18,
       "9": -4385.0,
       "2": -8175.04,
       "3": -2010.0,
-      "FAT": 191290.32
+      "FAT": 163548.5
      },
      "contas": {
       "1|Receita operacional (salão)": 175903.28,
@@ -2734,7 +2826,7 @@
       "9|Cachê de artistas e atrações": -2385.0,
       "5|Limpeza e descartáveis": -2458.46,
       "8|Contabilidade, jurídico e consultorias": -7500.0,
-      "4|Bebidas alcoólicas": -112101.48000000001,
+      "4|Bebidas alcoólicas": -112891.80000000002,
       "9|Outros de marketing": -2000.0,
       "6|Passagens aéreas da equipe": -2010.0,
       "4|Proteínas (carnes e frutos do mar)": -37443.97000000001,
@@ -2755,11 +2847,11 @@
       "5|Transporte, veículo e combustível": -1418.0,
       "5|Diversos de operação": -600.0,
       "4|Bebidas não alcoólicas": -1776.84,
-      "CC|Conta corrente YO Noronha - saída": -2564.15,
       "FAT|Cartão de crédito à vista": 155488.33,
       "FAT|Cartão de débito": 18295.56,
       "FAT|Dinheiro (fundo fixo)": 8771.0,
-      "FAT|PIX": 8735.43
+      "FAT|PIX": 8735.43,
+      "FAT|Ajuste ao total do 3LM": -27741.82
      },
      "lanc": {
       "1|Receita operacional (salão)": 62,
@@ -2774,7 +2866,7 @@
       "9|Cachê de artistas e atrações": 2,
       "5|Limpeza e descartáveis": 2,
       "8|Contabilidade, jurídico e consultorias": 1,
-      "4|Bebidas alcoólicas": 18,
+      "4|Bebidas alcoólicas": 19,
       "9|Outros de marketing": 1,
       "6|Passagens aéreas da equipe": 1,
       "4|Proteínas (carnes e frutos do mar)": 14,
@@ -2795,16 +2887,16 @@
       "5|Transporte, veículo e combustível": 2,
       "5|Diversos de operação": 1,
       "4|Bebidas não alcoólicas": 3,
-      "CC|Conta corrente YO Noronha - saída": 1,
       "FAT|Cartão de crédito à vista": 12,
       "FAT|Cartão de débito": 11,
       "FAT|Dinheiro (fundo fixo)": 11,
-      "FAT|PIX": 11
+      "FAT|PIX": 11,
+      "FAT|Ajuste ao total do 3LM": 1
      },
      "familias": {
       "cozinha": -114858.56999999998,
       "comum": -45397.659999999996,
-      "bar": -113878.32
+      "bar": -114668.64000000001
      },
      "itens": [
       [
@@ -4555,15 +4647,6 @@
       ],
       [
        "4|Bebidas alcoólicas",
-       "27/08/2026",
-       -790.32,
-       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
-       "NF1266587",
-       "",
-       ""
-      ],
-      [
-       "4|Bebidas alcoólicas",
        "13/08/2026",
        -10055.29,
        "INGA - DISTRIBUIDORA LTDA",
@@ -4586,15 +4669,6 @@
        -3956.4,
        "CARAPITANGA INDUSTRIA DE PESCADOS DO BRASIL LT",
        "NF 177956",
-       "",
-       ""
-      ],
-      [
-       "4|Bebidas alcoólicas",
-       "27/08/2026",
-       -790.32,
-       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
-       "NF1266587",
        "",
        ""
       ],
@@ -4779,15 +4853,6 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
-       "26/08/2026",
-       -2564.15,
-       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
-       "RECRIADO 22/09",
-       "",
-       ""
-      ],
-      [
        "4|Bebidas alcoólicas",
        "13/08/2026",
        -10055.29,
@@ -4804,6 +4869,33 @@
        "NF385727",
        "",
        "compra considerada 100% no mes da competencia (13/08/2026). Parcela 3, vencimento 22/11/2026 — no fluxo de caixa ela aparece na data do pagamento, nao"
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "27/08/2026",
+       -790.32,
+       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
+       "001266587/1",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "27/08/2026",
+       -790.32,
+       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
+       "001266587/2",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "27/08/2026",
+       -790.32,
+       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
+       "001266587/3",
+       "",
+       ""
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -5209,12 +5301,28 @@
        "",
        "",
        ""
+      ],
+      [
+       "FAT|Ajuste ao total do 3LM",
+       "",
+       -27741.82,
+       "diferença entre o reconstruído pela GetNet e o relatório do 3LM",
+       "",
+       "",
+       "16.96% do total"
       ]
      ],
      "fat": {
-      "valor": 191290.32,
-      "fonte": "reconstruido",
-      "detalhe": "GetNet cartao R$ 173.783,89 + PIX R$ 8.735,43 (Extrato de Vendas Detalhado, EC 11890027, por data da venda) + dinheiro do fundo fixo R$ 8.771,00 (Omie). Nao ha relatorio do 3LM de agosto."
+      "valor": 163548.5,
+      "fonte": "3LM",
+      "detalhe": "Extracao bruta do 3LM, 'Vendas Por Funcionario (Backup)', 01 a 31/08/2026, 2.869 itens. Total liquido de desconto; o desconto concedido no mes foi R$ 32.112,41, que levaria o bruto a R$ 195.660,91.",
+      "abertura": {
+       "A&B": 146568.39,
+       "Taxa de servico": 16780.11,
+       "Taxa de rolha": 200.0
+      },
+      "desconto": 32112.41,
+      "itens": 2869
      }
     },
     "2026-09": {
@@ -5223,16 +5331,16 @@
       "NEUTRO": 1058.2300000000012,
       "8": -104427.47000000002,
       "9": -30715.83,
-      "6": -214207.8100000001,
-      "5": -63650.369999999995,
-      "4": -373915.4700000001,
+      "6": -218394.7100000001,
+      "5": -69521.03000000001,
+      "4": -366406.57000000007,
       "11": -13845.0,
       "CC": -3466.67,
       "3": -111227.71000000005,
       "2": -40739.06,
       "7": -825.42,
       "10": -6564.46,
-      "FAT": 1047949.04
+      "FAT": 1058984.27
      },
      "contas": {
       "1|Receita operacional (salão)": 1123423.9800000004,
@@ -5248,7 +5356,7 @@
       "4|Proteínas (carnes e frutos do mar)": -106902.46,
       "6|Alimentação de colaboradores": -22618.12,
       "8|Correios e fretes administrativos": -186.95,
-      "4|Outros insumos e diversos": -18299.510000000002,
+      "4|Outros insumos e diversos": -9493.53,
       "9|Cachê de artistas e atrações": -23215.83,
       "6|Extras e freelancers": -21097.5,
       "5|Gestor operacional PJ": -14666.67,
@@ -5256,12 +5364,12 @@
       "11|Equipamentos e mobiliário": -10345.0,
       "4|Hortifrúti": -18342.13,
       "5|Manutenção de equipamentos": -3660.0,
-      "4|Secos e mercearia": -67760.20000000001,
+      "4|Secos e mercearia": -78539.91000000002,
       "11|Obras e reformas": -3500.0,
       "8|Outras despesas administrativas": -9020.970000000001,
-      "5|Limpeza e descartáveis": -15746.45,
+      "5|Limpeza e descartáveis": -21617.11,
       "8|Tarifas bancárias": -782.2500000000001,
-      "4|Bebidas alcoólicas": -117000.86000000002,
+      "4|Bebidas alcoólicas": -118122.94,
       "6|Passagens aéreas da equipe": -3982.68,
       "6|Uniformes, EPI e exames": -1924.0,
       "9|Agência e conteúdo": -2500.0,
@@ -5274,9 +5382,9 @@
       "5|Transporte, veículo e combustível": -549.0,
       "9|Mídia paga": -1500.0,
       "4|Água mineral": -6792.0,
-      "4|Frios, laticínios e congelados": -22210.27,
+      "4|Frios, laticínios e congelados": -11430.560000000001,
       "6|Rescisões": -2780.18,
-      "4|Bebidas não alcoólicas": -1180.0,
+      "4|Bebidas não alcoólicas": -1355.0,
       "8|Material de escritório": -1785.5,
       "2|Cancelamentos e estornos": -5300.0,
       "3|Taxas de cartão": -10451.57,
@@ -5284,11 +5392,12 @@
       "2|PIS": -6258.49,
       "5|Diversos de operação": -3957.6,
       "10|Custo de antecipação de recebíveis": -6564.46,
+      "6|FGTS e contribuições": -4186.9,
       "FAT|Cartão de crédito à vista": 819896.32,
       "FAT|Cartão de débito": 114362.71,
       "FAT|PIX": 72746.84,
       "FAT|Dinheiro (fundo fixo)": 47022.72,
-      "FAT|Ajuste ao total do 3LM": -6079.55
+      "FAT|Ajuste ao total do 3LM": 4955.68
      },
      "lanc": {
       "1|Receita operacional (salão)": 356,
@@ -5304,7 +5413,7 @@
       "4|Proteínas (carnes e frutos do mar)": 34,
       "6|Alimentação de colaboradores": 12,
       "8|Correios e fretes administrativos": 1,
-      "4|Outros insumos e diversos": 8,
+      "4|Outros insumos e diversos": 5,
       "9|Cachê de artistas e atrações": 24,
       "6|Extras e freelancers": 21,
       "5|Gestor operacional PJ": 3,
@@ -5312,12 +5421,12 @@
       "11|Equipamentos e mobiliário": 5,
       "4|Hortifrúti": 16,
       "5|Manutenção de equipamentos": 4,
-      "4|Secos e mercearia": 32,
+      "4|Secos e mercearia": 34,
       "11|Obras e reformas": 2,
       "8|Outras despesas administrativas": 7,
-      "5|Limpeza e descartáveis": 6,
+      "5|Limpeza e descartáveis": 8,
       "8|Tarifas bancárias": 25,
-      "4|Bebidas alcoólicas": 25,
+      "4|Bebidas alcoólicas": 26,
       "6|Passagens aéreas da equipe": 4,
       "6|Uniformes, EPI e exames": 3,
       "9|Agência e conteúdo": 1,
@@ -5332,7 +5441,7 @@
       "4|Água mineral": 1,
       "4|Frios, laticínios e congelados": 7,
       "6|Rescisões": 1,
-      "4|Bebidas não alcoólicas": 1,
+      "4|Bebidas não alcoólicas": 3,
       "8|Material de escritório": 1,
       "2|Cancelamentos e estornos": 3,
       "3|Taxas de cartão": 1,
@@ -5340,6 +5449,7 @@
       "2|PIS": 1,
       "5|Diversos de operação": 9,
       "10|Custo de antecipação de recebíveis": 1,
+      "6|FGTS e contribuições": 1,
       "FAT|Cartão de crédito à vista": 30,
       "FAT|Cartão de débito": 30,
       "FAT|Dinheiro (fundo fixo)": 28,
@@ -5347,9 +5457,9 @@
       "FAT|Ajuste ao total do 3LM": 1
      },
      "familias": {
-      "cozinha": -216215.06,
-      "comum": -32727.550000000003,
-      "bar": -124972.86000000002
+      "cozinha": -216215.06000000003,
+      "comum": -23921.57,
+      "bar": -126269.94000000002
      },
      "itens": [
       [
@@ -14200,15 +14310,6 @@
        ""
       ],
       [
-       "4|Frios, laticínios e congelados",
-       "14/09/2026",
-       -6522.8,
-       "FORMAGGIO DISTRIBUICAO DE ALIMENTOS LTDA",
-       "NF962584",
-       "",
-       ""
-      ],
-      [
        "4|Secos e mercearia",
        "28/09/2026",
        -703.82,
@@ -14250,15 +14351,6 @@
        -902.25,
        "EMPORIO MIX DE HORTALICAS FINAS LIMITADA",
        "NF 000087",
-       "",
-       ""
-      ],
-      [
-       "4|Bebidas alcoólicas",
-       "29/09/2026",
-       -5520.11,
-       "PIPA &amp; XAVIER DISTRIBUIDORA DE BEBIDAS LTD",
-       "NF 073628",
        "",
        ""
       ],
@@ -15280,7 +15372,7 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
+       "5|Limpeza e descartáveis",
        "02/09/2026",
        -2935.32,
        "ADHFLEX EMBALAGENS FLEXIVEIS LTDA",
@@ -15289,7 +15381,7 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
+       "5|Limpeza e descartáveis",
        "02/09/2026",
        -2935.33,
        "ADHFLEX EMBALAGENS FLEXIVEIS LTDA",
@@ -15298,7 +15390,7 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
+       "5|Limpeza e descartáveis",
        "02/09/2026",
        -2935.33,
        "ADHFLEX EMBALAGENS FLEXIVEIS LTDA",
@@ -15649,15 +15741,6 @@
        ""
       ],
       [
-       "5|Limpeza e descartáveis",
-       "02/09/2026",
-       -2935.32,
-       "ADHFLEX EMBALAGENS FLEXIVEIS LTDA",
-       "RECRIADO 22/09",
-       "",
-       ""
-      ],
-      [
        "10|Custo de antecipação de recebíveis",
        "30/09/2026",
        -6564.46,
@@ -15665,24 +15748,6 @@
        "ANTEC GETNET",
        "",
        ""
-      ],
-      [
-       "4|Bebidas alcoólicas",
-       "29/09/2026",
-       -5520.11,
-       "PIPA &amp; XAVIER DISTRIBUIDORA DE BEBIDAS LTD",
-       "NF073628",
-       "",
-       "compra considerada 100% no mes da competencia (29/09/2026). Parcela 2, vencimento 13/10/2026 — no fluxo de caixa ela aparece na data do pagamento, nao"
-      ],
-      [
-       "4|Frios, laticínios e congelados",
-       "14/09/2026",
-       -6522.81,
-       "FORMAGGIO DISTRIBUICAO DE ALIMENTOS LTDA",
-       "NF962584",
-       "",
-       "compra considerada 100% no mes da competencia (14/09/2026). Parcela 2, vencimento 12/10/2026 — no fluxo de caixa ela aparece na data do pagamento, nao"
       ],
       [
        "4|Proteínas (carnes e frutos do mar)",
@@ -15719,6 +15784,96 @@
        "NF388070",
        "",
        "compra considerada 100% no mes da competencia (08/09/2026). Parcela 4, vencimento 06/01/2027 — no fluxo de caixa ela aparece na data do pagamento, nao"
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "04/09/2026",
+       -1297.08,
+       "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
+       "001268503/1",
+       "",
+       ""
+      ],
+      [
+       "4|Frios, laticínios e congelados",
+       "14/09/2026",
+       -1132.95,
+       "FORMAGGIO DISTRIBUICAO DE ALIMENTOS LTDA",
+       "000962584/1",
+       "",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "14/09/2026",
+       -5389.85,
+       "FORMAGGIO DISTRIBUICAO DE ALIMENTOS LTDA",
+       "000962584/1",
+       "",
+       ""
+      ],
+      [
+       "4|Frios, laticínios e congelados",
+       "14/09/2026",
+       -1132.95,
+       "FORMAGGIO DISTRIBUICAO DE ALIMENTOS LTDA",
+       "000962584/2",
+       "",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "14/09/2026",
+       -5389.86,
+       "FORMAGGIO DISTRIBUICAO DE ALIMENTOS LTDA",
+       "000962584/2",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "29/09/2026",
+       -5432.61,
+       "PIPA &amp; XAVIER DISTRIBUIDORA DE BEBIDAS LTD",
+       "000073628/1",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas não alcoólicas",
+       "29/09/2026",
+       -87.5,
+       "PIPA &amp; XAVIER DISTRIBUIDORA DE BEBIDAS LTD",
+       "000073628/1",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "29/09/2026",
+       -5432.61,
+       "PIPA &amp; XAVIER DISTRIBUIDORA DE BEBIDAS LTD",
+       "000073628/2",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas não alcoólicas",
+       "29/09/2026",
+       -87.5,
+       "PIPA &amp; XAVIER DISTRIBUIDORA DE BEBIDAS LTD",
+       "000073628/2",
+       "",
+       ""
+      ],
+      [
+       "6|FGTS e contribuições",
+       "30/09/2026",
+       -4186.9,
+       "CAIXA ECONOMICA FEDERAL",
+       "",
+       "",
+       ""
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -16785,26 +16940,69 @@
       [
        "FAT|Ajuste ao total do 3LM",
        "",
-       -6079.55,
+       4955.68,
        "diferença entre o reconstruído pela GetNet e o relatório do 3LM",
        "",
        "",
-       "0.58% do total"
+       "0.47% do total"
       ]
      ],
      "fat": {
-      "valor": 1047949.04,
+      "valor": 1058984.27,
       "fonte": "3LM",
-      "detalhe": "Relatorio de Vendas do 3LM/Gourmet de setembro/2026, total recebido, 1.540 contas, ticket medio R$ 680,49. Reconstruido pela GetNet daria R$ 1.054.028,59, 0,58% acima."
+      "detalhe": "Extracao bruta do 3LM, 'Vendas Por Funcionario (Backup)', 01 a 30/09/2026, 15.837 itens. Desconto concedido R$ 74.569,72 (bruto R$ 1.133.553,99). O relatorio montado pela diretoria da R$ 1.047.949,04 — ver _divergencia.",
+      "abertura": {
+       "A&B": 926645.16,
+       "Taxa de servico": 111178.53,
+       "Couvert": 16720.84,
+       "Taxa de rolha": 4439.74
+      },
+      "desconto": 74569.72,
+      "itens": 15837,
+      "divergencia": {
+       "arquivo": "YO_Noronha_Vendas_Setembro2026.pdf — montado pela Diretoria Adm-Financeira em 02/10/2026",
+       "total": 1047949.04,
+       "diferenca": 11035.23,
+       "linhas": [
+        [
+         "A&B (sem couvert e sem rolha)",
+         930431.44,
+         926645.16,
+         -3786.28,
+         "o relatorio da diretoria cobre 01 a 29/09 pelo Itens Vendidos Analitico e 30/09 pelo Sintetico; os dois cortes tratam o desconto de forma diferente"
+        ],
+        [
+         "Couvert",
+         11550.0,
+         16720.84,
+         5170.84,
+         "o PDV tem DOIS itens de couvert: *Couvert Artistico (385) e Couvert codigo 99997 (181, R$ 5.239,83). O relatorio da diretoria so pegou o primeiro, e pelo preco de tabela (385 x R$ 30,00), sem deduzir R$ 68,99 de desconto"
+        ],
+        [
+         "Taxa de rolha",
+         0.0,
+         4439.74,
+         4439.74,
+         "o relatorio da diretoria declara na propria pagina que exclui a taxa de rolha; sao 35 cobrancas reais"
+        ],
+        [
+         "Taxa de servico",
+         105967.6,
+         111178.53,
+         5210.93,
+         "na diretoria sai por diferenca (recebido menos produtos); no 3LM e item do PDV, codigo 100000, lancado no funcionario 0 SERVICO"
+        ]
+       ]
+      }
      }
     },
     "2026-10": {
      "grupos": {
       "1": 97473.08000000002,
-      "8": -4146.67,
-      "5": -47764.44,
-      "6": -61180.520000000004,
-      "4": -65288.019999999975,
+      "8": -6392.05,
+      "5": -55912.44,
+      "6": -64473.979999999996,
+      "4": -80508.29999999997,
       "7": -12559.8,
       "9": -25905.0,
       "NEUTRO": -100000.0,
@@ -16813,21 +17011,21 @@
      },
      "contas": {
       "1|Receita operacional (salão)": 97473.08000000002,
-      "8|Sistemas": -1146.67,
-      "5|Alojamento e ajuda de custo para moradia": -38000.0,
+      "8|Sistemas": -3392.05,
+      "5|Alojamento e ajuda de custo para moradia": -45000.0,
       "6|Rescisões": -325.85,
-      "6|ISS | Permanência": -1343.2399999999998,
-      "4|Proteínas (carnes e frutos do mar)": -21386.99,
+      "6|ISS | Permanência": -2261.39,
+      "4|Proteínas (carnes e frutos do mar)": -31730.93,
       "6|Diarista (OIA)": -38244.26,
       "7|Arrendamento e aluguel do ponto": -10000.0,
       "6|Salários da operação": -400.0,
-      "6|Alimentação de colaboradores": -11580.0,
+      "6|Alimentação de colaboradores": -13955.310000000001,
       "4|Hortifrúti": -5784.96,
       "4|Água mineral": -6530.0,
       "8|Contabilidade, jurídico e consultorias": -3000.0,
       "7|Outros aluguéis": -1500.0,
-      "4|Outros insumos e diversos": -3653.25,
-      "5|Limpeza e descartáveis": -2338.05,
+      "4|Outros insumos e diversos": -5652.59,
+      "5|Limpeza e descartáveis": -3486.05,
       "9|Cachê de artistas e atrações": -19905.0,
       "5|Manutenção de equipamentos": -950.0,
       "9|Marketing e divulgação de eventos": -6000.0,
@@ -16839,7 +17037,7 @@
       "3|Comissões sobre vendas": -4380.41,
       "4|Frios, laticínios e congelados": -2287.96,
       "6|Uniformes, EPI e exames": -126.02,
-      "4|Bebidas alcoólicas": -10613.0,
+      "4|Bebidas alcoólicas": -13490.0,
       "4|Bebidas não alcoólicas": -2029.0,
       "6|Passagens aéreas da equipe": -2532.98,
       "7|Seguros": -1059.8,
@@ -16849,21 +17047,21 @@
      },
      "lanc": {
       "1|Receita operacional (salão)": 42,
-      "8|Sistemas": 2,
-      "5|Alojamento e ajuda de custo para moradia": 9,
+      "8|Sistemas": 3,
+      "5|Alojamento e ajuda de custo para moradia": 10,
       "6|Rescisões": 1,
-      "6|ISS | Permanência": 5,
-      "4|Proteínas (carnes e frutos do mar)": 13,
+      "6|ISS | Permanência": 8,
+      "4|Proteínas (carnes e frutos do mar)": 16,
       "6|Diarista (OIA)": 26,
       "7|Arrendamento e aluguel do ponto": 2,
       "6|Salários da operação": 1,
-      "6|Alimentação de colaboradores": 3,
+      "6|Alimentação de colaboradores": 8,
       "4|Hortifrúti": 7,
       "4|Água mineral": 3,
       "8|Contabilidade, jurídico e consultorias": 2,
       "7|Outros aluguéis": 1,
-      "4|Outros insumos e diversos": 2,
-      "5|Limpeza e descartáveis": 2,
+      "4|Outros insumos e diversos": 3,
+      "5|Limpeza e descartáveis": 3,
       "9|Cachê de artistas e atrações": 16,
       "5|Manutenção de equipamentos": 1,
       "9|Marketing e divulgação de eventos": 4,
@@ -16875,7 +17073,7 @@
       "3|Comissões sobre vendas": 1,
       "4|Frios, laticínios e congelados": 2,
       "6|Uniformes, EPI e exames": 1,
-      "4|Bebidas alcoólicas": 3,
+      "4|Bebidas alcoólicas": 4,
       "4|Bebidas não alcoólicas": 3,
       "6|Passagens aéreas da equipe": 1,
       "7|Seguros": 1,
@@ -16884,9 +17082,9 @@
       "5|Frete de materiais de operação": 1
      },
      "familias": {
-      "cozinha": -33613.72,
-      "bar": -19172.0,
-      "comum": -12502.300000000001
+      "cozinha": -43957.66,
+      "bar": -22049.0,
+      "comum": -14501.640000000001
      },
      "itens": [
       [
@@ -17269,7 +17467,7 @@
       ],
       [
        "8|Sistemas",
-       "03/10/2026",
+       "31/10/2026",
        -949,
        "Omiexperience Ltda",
        "RPS 4020462",
@@ -18560,6 +18758,150 @@
        -418.93,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA ME",
        "000103452/1",
+       "",
+       ""
+      ],
+      [
+       "5|Alojamento e ajuda de custo para moradia",
+       "30/10/2026",
+       -7000,
+       "GENTIL PAULO DA SILVA",
+       "81994744803",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "05/10/2026",
+       -2877,
+       "PIPA &amp; XAVIER DISTRIBUIDORA DE BEBIDAS LTD",
+       "000073825/1",
+       "",
+       ""
+      ],
+      [
+       "4|Outros insumos e diversos",
+       "05/10/2026",
+       -1999.34,
+       "NOMU BISTRO RESTAURANTE LTDA",
+       "000000538/1",
+       "",
+       ""
+      ],
+      [
+       "6|Alimentação de colaboradores",
+       "01/10/2026",
+       -394.2,
+       "PRASO PLATAFORMA DE COMERCIO LTDA.",
+       "001085056/1",
+       "",
+       ""
+      ],
+      [
+       "6|Alimentação de colaboradores",
+       "01/10/2026",
+       -719.6,
+       "PRASO PLATAFORMA DE COMERCIO LTDA.",
+       "001085609/1",
+       "",
+       ""
+      ],
+      [
+       "6|Alimentação de colaboradores",
+       "01/10/2026",
+       -364.27,
+       "PRASO PLATAFORMA DE COMERCIO LTDA.",
+       "001085057/1",
+       "",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "06/10/2026",
+       -2726.94,
+       "EMPRESA DE PESCA BANCO SUESTE LTDA",
+       "26648539000145",
+       "",
+       ""
+      ],
+      [
+       "6|ISS | Permanência",
+       "13/10/2026",
+       -375,
+       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
+       "",
+       "",
+       ""
+      ],
+      [
+       "6|ISS | Permanência",
+       "13/10/2026",
+       -300,
+       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
+       "",
+       "",
+       ""
+      ],
+      [
+       "6|Alimentação de colaboradores",
+       "06/10/2026",
+       -450.24,
+       "PRASO PLATAFORMA DE COMERCIO LTDA.",
+       "",
+       "",
+       ""
+      ],
+      [
+       "6|Alimentação de colaboradores",
+       "06/10/2026",
+       -447,
+       "PRASO PLATAFORMA DE COMERCIO LTDA.",
+       "001091885/1",
+       "",
+       ""
+      ],
+      [
+       "6|ISS | Permanência",
+       "14/10/2026",
+       -243.15,
+       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
+       "",
+       "",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "31/10/2026",
+       -5160,
+       "JOSE WELITON DA SILVA",
+       "06269754410",
+       "",
+       ""
+      ],
+      [
+       "8|Sistemas",
+       "31/10/2026",
+       -2245.38,
+       "L &amp; F TECNOLOGIA SISTEMAS E COMERCIO LTDA",
+       "",
+       "",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "13/10/2026",
+       -2457,
+       "PARAGUAIO PESCADOS COMERCIO ATACADISTA &amp; V",
+       "000000043/1",
+       "",
+       ""
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "31/10/2026",
+       -1148,
+       "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
+       "000029302/1",
        "",
        ""
       ]
@@ -19981,15 +20323,15 @@
     "2026-09": {
      "grupos": {
       "1": 1059150.87,
-      "4": -351756.72000070004,
+      "4": -357256.19000070007,
       "6": -124866.83999929996,
       "8": -63741.97000000001,
       "9": -30715.83,
-      "5": -44763.43,
+      "5": -41828.11,
       "11": -13845.0,
       "NEUTRO": 11128.229999999363,
       "2": -13771.75,
-      "CC": -6030.82,
+      "CC": -3466.67,
       "3": -12116.620000000003,
       "7": -825.42,
       "10": 28.54
@@ -20006,10 +20348,10 @@
       "5|Alojamento e ajuda de custo para moradia": -26070.65,
       "11|Equipamentos e mobiliário": -10345.0,
       "4|Proteínas (carnes e frutos do mar)": -111081.62999999998,
-      "4|Bebidas alcoólicas": -53856.01,
+      "4|Bebidas alcoólicas": -55827.879991740505,
       "11|Obras e reformas": -3500.0,
       "8|Outras despesas administrativas": -9020.970000000001,
-      "5|Limpeza e descartáveis": -5883.780000000001,
+      "5|Limpeza e descartáveis": -2948.46,
       "8|Tarifas bancárias": -782.2500000000001,
       "NEUTRO|Transferência entre contas - entrada": 926867.98,
       "4|Frios, laticínios e congelados": -28842.12,
@@ -20019,7 +20361,7 @@
       "6|Extras e freelancers": -11104.1599993,
       "8|Telefonia e internet": -188.42,
       "8|Correios e fretes administrativos": -186.95,
-      "4|Outros insumos e diversos": -35545.130000000005,
+      "4|Outros insumos e diversos": -38480.450000000004,
       "9|Cachê de artistas e atrações": -23215.83,
       "8|Pró-labore": -28000.0,
       "5|Manutenção de equipamentos": -3360.0,
@@ -20038,14 +20380,13 @@
       "2|ICMS-ST e DIFAL": -295.21,
       "7|Taxas distritais, TPU, TLL e IPTU": -825.42,
       "5|Transporte, veículo e combustível": -449.0,
-      "CC|Conta corrente YO Noronha - saída": -2564.15,
+      "4|Bebidas não alcoólicas": -1772.2800082595,
       "NEUTRO|Ajustes e estornos - entrada": 1058.2300000000012,
       "4|Água mineral": -6792.0,
       "2|Cancelamentos e estornos": -5300.0,
       "2|COFINS": -214.39,
       "2|PIS": -46.45,
       "6|Rescisões": -3106.0299999999997,
-      "4|Bebidas não alcoólicas": -1180.0,
       "10|Rendimentos de aplicações": 34.94,
       "10|IOF": -6.4,
       "2|IRPJ": -1.5
@@ -20062,10 +20403,10 @@
       "5|Alojamento e ajuda de custo para moradia": 12,
       "11|Equipamentos e mobiliário": 5,
       "4|Proteínas (carnes e frutos do mar)": 39,
-      "4|Bebidas alcoólicas": 12,
+      "4|Bebidas alcoólicas": 13,
       "11|Obras e reformas": 2,
       "8|Outras despesas administrativas": 7,
-      "5|Limpeza e descartáveis": 4,
+      "5|Limpeza e descartáveis": 3,
       "8|Tarifas bancárias": 25,
       "NEUTRO|Transferência entre contas - entrada": 27,
       "4|Frios, laticínios e congelados": 15,
@@ -20075,7 +20416,7 @@
       "6|Extras e freelancers": 10,
       "8|Telefonia e internet": 1,
       "8|Correios e fretes administrativos": 1,
-      "4|Outros insumos e diversos": 8,
+      "4|Outros insumos e diversos": 9,
       "9|Cachê de artistas e atrações": 24,
       "8|Pró-labore": 3,
       "5|Manutenção de equipamentos": 3,
@@ -20094,22 +20435,21 @@
       "2|ICMS-ST e DIFAL": 1,
       "7|Taxas distritais, TPU, TLL e IPTU": 2,
       "5|Transporte, veículo e combustível": 1,
-      "CC|Conta corrente YO Noronha - saída": 1,
+      "4|Bebidas não alcoólicas": 2,
       "NEUTRO|Ajustes e estornos - entrada": 300,
       "4|Água mineral": 1,
       "2|Cancelamentos e estornos": 3,
       "2|COFINS": 1,
       "2|PIS": 1,
       "6|Rescisões": 2,
-      "4|Bebidas não alcoólicas": 1,
       "10|Rendimentos de aplicações": 1,
       "10|IOF": 1,
       "2|IRPJ": 1
      },
      "familias": {
       "cozinha": -243008.02000070002,
-      "bar": -61828.01,
-      "comum": -46920.69
+      "bar": -64392.16,
+      "comum": -49856.01
      },
      "itens": [
       [
@@ -24946,15 +25286,6 @@
        ""
       ],
       [
-       "4|Bebidas alcoólicas",
-       "22/09/2026",
-       -790.32,
-       "DLP",
-       "NF1266587",
-       "Santander",
-       ""
-      ],
-      [
        "4|Proteínas (carnes e frutos do mar)",
        "22/09/2026",
        -7191.79,
@@ -25027,20 +25358,38 @@
        ""
       ],
       [
-       "5|Limpeza e descartáveis",
+       "4|Bebidas alcoólicas",
        "22/09/2026",
-       -2935.32,
-       "ADHFLEX EMBALAGENS FLEXIVEIS",
-       "RECRIADO 22/09",
+       -790.32,
+       "DLP",
+       "001266587/1",
        "Santander",
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Outros insumos e diversos",
        "22/09/2026",
-       -2564.15,
+       -2935.32,
+       "ADHFLEX EMBALAGENS FLEXIVEIS",
+       "000001730/1",
+       "Santander",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "22/09/2026",
+       -1971.87,
        "DLP",
-       "RECRIADO 22/09",
+       "001266243/1",
+       "Santander",
+       ""
+      ],
+      [
+       "4|Bebidas não alcoólicas",
+       "22/09/2026",
+       -592.28,
+       "DLP",
+       "001266243/1",
        "Santander",
        ""
       ],
@@ -29776,7 +30125,7 @@
       "1": 50511.31000000001,
       "6": -6995.74,
       "NEUTRO": 0.0,
-      "4": -58564.01,
+      "4": -45730.78,
       "7": -4000.0,
       "5": -2500.0,
       "8": -900.0
@@ -29788,9 +30137,8 @@
       "4|Proteínas (carnes e frutos do mar)": -8271.140000000001,
       "4|Secos e mercearia": -1744.3799999999999,
       "6|Diarista (OIA)": -5412.5,
-      "4|Bebidas alcoólicas": -16728.93,
+      "4|Bebidas alcoólicas": -10418.5,
       "7|Arrendamento e aluguel do ponto": -4000.0,
-      "4|Frios, laticínios e congelados": -6522.8,
       "5|Alojamento e ajuda de custo para moradia": -2500.0,
       "6|Salários da operação": -400.0,
       "4|Hortifrúti": -902.25,
@@ -29808,9 +30156,8 @@
       "4|Proteínas (carnes e frutos do mar)": 4,
       "4|Secos e mercearia": 3,
       "6|Diarista (OIA)": 12,
-      "4|Bebidas alcoólicas": 4,
+      "4|Bebidas alcoólicas": 2,
       "7|Arrendamento e aluguel do ponto": 1,
-      "4|Frios, laticínios e congelados": 1,
       "5|Alojamento e ajuda de custo para moradia": 1,
       "6|Salários da operação": 1,
       "4|Hortifrúti": 1,
@@ -29822,8 +30169,8 @@
       "NEUTRO|Transferência entre contas - entrada": 2
      },
      "familias": {
-      "cozinha": -17440.57,
-      "bar": -19658.93,
+      "cozinha": -10917.77,
+      "bar": -13348.5,
       "comum": -21464.510000000002
      },
      "itens": [
@@ -30125,24 +30472,6 @@
        ""
       ],
       [
-       "4|Bebidas alcoólicas",
-       "02/10/2026",
-       -790.32,
-       "DLP",
-       "NF1266587",
-       "Santander",
-       ""
-      ],
-      [
-       "4|Frios, laticínios e congelados",
-       "02/10/2026",
-       -6522.8,
-       "FORMAGGIO DISTRIBUICAO DE ALIMENTOS LTDA",
-       "NF962584",
-       "Santander",
-       ""
-      ],
-      [
        "5|Alojamento e ajuda de custo para moradia",
        "02/10/2026",
        -2500,
@@ -30202,15 +30531,6 @@
        -902.25,
        "EMPORIO MIX HORTALICAS FINAS",
        "NF 000087",
-       "Santander",
-       ""
-      ],
-      [
-       "4|Bebidas alcoólicas",
-       "02/10/2026",
-       -5520.11,
-       "DISTRIBUIDORA DOIS IRMAOS",
-       "NF 073628",
        "Santander",
        ""
       ],
@@ -30420,11 +30740,11 @@
     },
     "2026-10": {
      "ini": 599870.43,
-     "fim": 577421.99,
+     "fim": 590255.22,
      "entradas": 50511.31,
-     "saidas": -72959.75,
+     "saidas": -60126.51999999999,
      "contas": {
-      "Santander": 45420.65,
+      "Santander": 58253.88,
       "Santander - ContaMax": 532001.34
      }
     }
@@ -41080,10 +41400,10 @@
       "8": -58046.68,
       "11": -320489.91,
       "5": -80977.90000000001,
-      "4": -133156.24999999997,
+      "4": -126469.23999999992,
       "6": -43583.22,
       "7": -52600.0,
-      "NEUTRO": 5206.080000000134,
+      "NEUTRO": 1.3244516594568267e-10,
       "CC": -6300.84,
       "9": -1500.0,
       "OR": 5998.04,
@@ -41128,10 +41448,11 @@
       "6|FGTS e contribuições": -3289.94,
       "10|Juros e multas": -938.02,
       "2|Simples Nacional (DAS)": -48.339999999999996,
-      "NEUTRO|Transferência entre contas - saída": -686445.0400000002,
+      "NEUTRO|Transferência entre contas - saída": -691651.12,
       "10|Rendimentos de aplicações": 84.09,
       "10|IOF": -1.42,
-      "2|IRPJ": -39.86
+      "2|IRPJ": -39.86,
+      "4|Devoluções de Compra de Material de Consumo": 6687.009999999999
      },
      "lanc": {
       "8|Outras despesas administrativas": 10,
@@ -41171,10 +41492,11 @@
       "6|FGTS e contribuições": 2,
       "10|Juros e multas": 2,
       "2|Simples Nacional (DAS)": 2,
-      "NEUTRO|Transferência entre contas - saída": 41,
+      "NEUTRO|Transferência entre contas - saída": 53,
       "10|Rendimentos de aplicações": 1,
       "10|IOF": 1,
-      "2|IRPJ": 1
+      "2|IRPJ": 1,
+      "4|Devoluções de Compra de Material de Consumo": 16
      },
      "familias": {
       "cozinha": -117773.06999999998,
@@ -44168,6 +44490,258 @@
        "3345825",
        "Bradesco - INVEST FAC",
        ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "01/09/2026",
+       78.97,
+       "Cliente Consumidor / Sem Tomador",
+       "B338NJXC1HX32Y2QV",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "02/09/2026",
+       -78.97,
+       "YO NORONHA LTDA",
+       "B338S5QF99G98T1QX",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "15/09/2026",
+       1253.7,
+       "Cliente Consumidor / Sem Tomador",
+       "B33ATG1DXYV128290",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       156.1,
+       "Cliente Consumidor / Sem Tomador",
+       "B33ATXTE414DKRN9Y",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       153.23,
+       "Cliente Consumidor / Sem Tomador",
+       "B33AV4S6FC3KX1B7C",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       153.23,
+       "Cliente Consumidor / Sem Tomador",
+       "B33AV5FTZCA2J17WK",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       28.12,
+       "Cliente Consumidor / Sem Tomador",
+       "B33AVJM4AVVV9C6KE",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       186.39,
+       "Cliente Consumidor / Sem Tomador",
+       "B33AWC8MGKZQR4RZY",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       421.69,
+       "Cliente Consumidor / Sem Tomador",
+       "B33AWFZEZZ9F6JX20",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       275.35,
+       "Cliente Consumidor / Sem Tomador",
+       "B33AWP313A97NNWC0",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       1707.45,
+       "Cliente Consumidor / Sem Tomador",
+       "B33AWPMYM3C77DYWM",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       1606.44,
+       "Cliente Consumidor / Sem Tomador",
+       "B33AWZ03GFXPG1PVH",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       55.8,
+       "Cliente Consumidor / Sem Tomador",
+       "B33AWZ07DAYH995GP",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       78.99,
+       "Cliente Consumidor / Sem Tomador",
+       "B33AY5A3AZJ6GW32T",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "16/09/2026",
+       112.86,
+       "Cliente Consumidor / Sem Tomador",
+       "B33AZFEJSF28W0GNH",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -153.23,
+       "YO NORONHA LTDA",
+       "B33AX178347G9NAQC",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -383.31,
+       "YO NORONHA LTDA",
+       "B33AX16F87KCF1SX7",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -186.39,
+       "YO NORONHA LTDA",
+       "B33AX15114C0Q1MNC",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -156.1,
+       "YO NORONHA LTDA",
+       "B33AX141W547F3P8A",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -28.12,
+       "YO NORONHA LTDA",
+       "B33AX0Q7QD6M06YEB",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -153.23,
+       "YO NORONHA LTDA",
+       "B33AX0NJXWZC5W2WY",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -421.69,
+       "YO NORONHA LTDA",
+       "B33AX0KZMJZNQW6M1",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -55.8,
+       "YO NORONHA LTDA",
+       "B33AX0GV5GVX969GW",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -1606.44,
+       "YO NORONHA LTDA",
+       "B33AX0FG7DH56X6AK",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -1707.45,
+       "YO NORONHA LTDA",
+       "B33AX082GGWECTH19",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "16/09/2026",
+       -275.35,
+       "YO NORONHA LTDA",
+       "B33AX16F87KCF1SX7",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "17/09/2026",
+       41.79,
+       "Cliente Consumidor / Sem Tomador",
+       "B33B1DYZTS9M8K5X7",
+       "Mercado Pago",
+       ""
+      ],
+      [
+       "4|Devoluções de Compra de Material de Consumo",
+       "18/09/2026",
+       376.9,
+       "Cliente Consumidor / Sem Tomador",
+       "B33B67PW1ER3MXXDB",
+       "Mercado Pago",
+       ""
       ]
      ]
     },
@@ -45024,33 +45598,36 @@
    },
    "saldos": {
     "2026-08": {
-     "ini": 723574.76,
-     "fim": 828652.89,
+     "ini": 723624.2,
+     "fim": 828702.33,
      "entradas": 1198567.62,
      "saidas": -1093489.4900000002,
      "contas": {
       "Bradesco c/c": 1,
-      "Bradesco - INVEST FAC": 828651.89
+      "Bradesco - INVEST FAC": 828651.89,
+      "Mercado Pago": 49.44
      }
     },
     "2026-09": {
-     "ini": 828652.89,
-     "fim": 142258.66,
-     "entradas": 11288.209999999963,
+     "ini": 828702.33,
+     "fim": 143789.03,
+     "entradas": 12769.14000000013,
      "saidas": -697682.4400000001,
      "contas": {
       "Bradesco c/c": 9,
-      "Bradesco - INVEST FAC": 142249.66
+      "Bradesco - INVEST FAC": 142249.66,
+      "Mercado Pago": 1530.37
      }
     },
     "2026-10": {
-     "ini": 142258.66,
-     "fim": 60719.07000000001,
+     "ini": 143789.03,
+     "fim": 62249.44,
      "entradas": 0.0,
      "saidas": -81539.59000000003,
      "contas": {
       "Bradesco c/c": 45606.66,
-      "Bradesco - INVEST FAC": 15112.41
+      "Bradesco - INVEST FAC": 15112.41,
+      "Mercado Pago": 1530.37
      }
     }
    },
