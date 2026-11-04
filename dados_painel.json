@@ -1,5 +1,5 @@
 {
- "gerado": "04/11/2026 às 00:45",
+ "gerado": "04/11/2026 às 08:38",
  "meses": [
   "2026-08",
   "2026-09"
@@ -2367,7 +2367,8 @@
       "6": -18079.18,
       "9": -4385.0,
       "2": -8175.04,
-      "3": -2010.0
+      "3": -2010.0,
+      "FAT": 191290.32
      },
      "contas": {
       "1|Receita operacional (salão)": 175903.28,
@@ -2444,10 +2445,10 @@
       "5|Transporte, veículo e combustível": 2,
       "5|Diversos de operação": 1,
       "4|Bebidas não alcoólicas": 3,
-      "FAT|Cartão de crédito à vista": 345,
-      "FAT|Cartão de débito": 71,
+      "FAT|Cartão de crédito à vista": 12,
+      "FAT|Cartão de débito": 11,
       "FAT|Dinheiro (fundo fixo)": 11,
-      "FAT|PIX": 25
+      "FAT|PIX": 11
      },
      "familias": {
       "cozinha": -103294.68999999999,
@@ -4860,7 +4861,8 @@
       "CC": -109420.10000000002,
       "3": -111227.71000000005,
       "2": -40443.85,
-      "10": -6564.46
+      "10": -6564.46,
+      "FAT": 1047949.04
      },
      "contas": {
       "1|Receita operacional (salão)": 1123423.9800000004,
@@ -4960,11 +4962,11 @@
       "2|PIS": 1,
       "5|Diversos de operação": 9,
       "10|Custo de antecipação de recebíveis": 1,
-      "FAT|Cartão de crédito à vista": 1651,
-      "FAT|Cartão de débito": 350,
-      "FAT|PIX": 201,
-      "FAT|Dinheiro (fundo fixo)": 30,
-      "FAT|Ajuste ao total do 3LM": 0
+      "FAT|Cartão de crédito à vista": 30,
+      "FAT|Cartão de débito": 30,
+      "FAT|Dinheiro (fundo fixo)": 28,
+      "FAT|PIX": 30,
+      "FAT|Ajuste ao total do 3LM": 1
      },
      "familias": {
       "cozinha": -156746.44000000003,
