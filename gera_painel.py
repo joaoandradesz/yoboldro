@@ -186,6 +186,11 @@ td.av{color:var(--g500);font-size:12px}
 .xtbl.mat.dfc tr.res td{background:#0D0F1A;color:#fff;font-weight:800;border-top:1.5px solid #0D0F1A}
 .xtbl.mat.dfc tr.res i.avin,.xtbl.mat tr.r0 i.avin{color:rgba(255,255,255,.55)}
 .xtbl.mat tr.zero td{opacity:.42}
+.cx-tbl tr.flagged td{background:#FFFBEA}
+.cx-tbl .flag{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:9px;
+ background:#FDE68A;color:#6B4E00;font-size:10px;font-weight:700;letter-spacing:.2px;
+ cursor:help;white-space:nowrap}
+.cx-nota .flagtxt{color:#6B4E00}
 .xtbl.mat tr.sep td{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#9AA1AE;
  font-size:10px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;
  padding:14px 11px 6px;text-align:left;border-bottom:none}
@@ -647,14 +652,21 @@ function abreCaixa(ev,ck,mes,reg){
    '<div class="cx-sub"><span>'+its.length+' LANÇAMENTO(S)</span><b>TOTAL: '+mv(tot)+'</b></div>'+
    '<div class="cx-nota">'+(reg==='comp'
      ?'Lançamentos por competência, pela data de emissão — o mesmo critério da linha.'
-     :'Lançamentos pelo caixa, na data em que passaram no extrato — o mesmo critério da linha.')+'</div>';
+     :'Lançamentos pelo caixa, na data em que passaram no extrato — o mesmo critério da linha.')+
+   (its.some(function(i){return i[6]})
+     ?' <b class="flagtxt">Os lançamentos marcados em amarelo são compras parceladas lançadas '+
+      'por inteiro no mês da emissão da nota.</b> A forma de pagamento — parcela e vencimento — '+
+      'aparece ao passar o mouse na marca, e o desembolso de cada parcela aparece no Fluxo de '+
+      'Caixa na data em que for pago.':'')+'</div>';
  if(!its.length){
   h+='<div class="cx-vazio">Esta linha não tem lançamento detalhado.</div>';
  }else{
   h+='<table class="cx-tbl"><thead><tr><th>Data</th><th>Cliente / fornecedor</th>'+
      '<th>Banco / conta</th><th>NF</th><th class="r">Valor</th></tr></thead><tbody>';
   its.sort(function(a,b2){return Math.abs(b2[2])-Math.abs(a[2])}).forEach(function(i){
-   h+='<tr><td>'+i[1].slice(0,5)+'</td><td>'+(i[3]||'—')+'</td><td>'+(i[5]||'—')+'</td>'+
+   var av=i[6]?' <span class="flag" title="'+i[6].replace(/"/g,'&quot;')+'">100% na competência</span>':'';
+   h+='<tr'+(i[6]?' class="flagged"':'')+'><td>'+i[1].slice(0,5)+'</td><td>'+(i[3]||'—')+av+
+      '</td><td>'+(i[5]||'—')+'</td>'+
       '<td>'+(i[4]||'—')+'</td><td class="r '+(i[2]<0?'neg':'pos')+'">'+mv(i[2])+'</td></tr>';
   });
   h+='</tbody></table>';
@@ -699,16 +711,14 @@ var BLOCOS_DRE=[
  ['(−) Administrativas',['8']],
  ['(−) Marketing e entretenimento',['9']],
  ['=EBITDA',['1','2','3','4','5','6','7','8','9']],
- ['(−) Depreciação e amortização',['DEP']],
- ['+Resultado operacional (EBIT)',['1','2','3','4','5','6','7','8','9','DEP']],
  ['(±) Resultado financeiro',['10']],
- ['*LUCRO LÍQUIDO',['1','2','3','4','5','6','7','8','9','DEP','10']],
+ ['*LUCRO LÍQUIDO',['1','2','3','4','5','6','7','8','9','10']],
  ['§ABAIXO DO EBITDA — CAPEX E NÃO OPERACIONAL',null],
  ['(−) Investimentos (capex)',['11']],
  ['(±) Financiamento',['12']],
  ['(+) Outros recebimentos',['OR']],
  ['(±) Transferências e ajustes',['CC','NEUTRO','13']],
- ['*RESULTADO APÓS INVESTIMENTOS',['1','2','3','4','5','6','7','8','9','10','DEP','11','12','OR','CC','NEUTRO','13']]
+ ['*RESULTADO APÓS INVESTIMENTOS',['1','2','3','4','5','6','7','8','9','10','11','12','OR','CC','NEUTRO','13']]
 ];
 
 function matriz(reg){
@@ -1044,7 +1054,7 @@ def pagina(socios=False):
 <p class="repnote">Demonstração do fluxo de caixa pelo método direto, a partir da movimentação das contas no Omie. Clique na linha com seta para abrir o nível de baixo, e <b>clique em qualquer número para abrir a caixa com os lançamentos</b> daquela conta naquele mês. O saldo abre por empresa e por conta bancária.</p></div>
 <div id="rep-dre" class="repwrap"><table class="xtbl mat dre"><thead><tr id="drehead"></tr></thead><tbody id="drebody"></tbody></table>
 <div id="auditoria"></div>
-<p class="repnote"><b>Depreciação e amortização ficam em zero de propósito.</b> A obra e os equipamentos estão registrados como desembolso de capex, não como ativo imobilizado com vida útil — não há contabilidade fechada nas duas empresas. Enquanto isso, o resultado operacional (EBIT) é igual ao EBITDA, e a linha fica à vista para não parecer esquecida. Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
+<p class="repnote">Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
 
 <details class="ress"><summary><b>Ressalvas e critérios</b> · 6 pontos que mudam a leitura dos números<span class="chev">▾</span></summary><div class="ressin"><div class="aviso"><h4>A receita entra pela data do crédito, não pela venda<span class="tag">ressalva</span></h4>
 <p>A receita de setembro da Boldró fecha com o relatório do 3LM quando se corrige a competência: dos R$ 1.116.859,52 lançados, R$ 124.140,08 são crédito de vendas de agosto (a própria observação declara "VENDAS 28.08.26") e faltam R$ 39.224,13 de vendas de setembro que só foram creditadas em outubro. Ajustado, dá R$ 1.031.943,57 contra R$ 1.047.949,04 do 3LM — resíduo de 1,53%%, que é a taxa de cartão. Ou seja: a receita está pelo líquido e a taxa de cartão não existe como custo. Enquanto o extrato de vendas detalhado da GetNet não entrar, a margem bruta está superestimada e o CMV sobre receita, subestimado.</p></div><div class="aviso"><h4>Caixa e competência já não contam a mesma história</h4>
