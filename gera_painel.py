@@ -138,33 +138,10 @@ td.av{color:var(--g500);font-size:12px}
 .vazio{background:#fff;border:1px dashed var(--g300);border-radius:14px;padding:28px 30px;text-align:center}
 .vazio h4{font-family:'Plus Jakarta Sans';font-size:15px;font-weight:700;margin-bottom:6px}
 .vazio p{font-size:13.5px;color:var(--ink2);max-width:660px;margin:0 auto}
-.dec{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 28px}
-.dec .d1{background:var(--card);border:1px solid var(--g200);border-left:3px solid var(--orange);
- border-radius:12px;padding:16px 18px 15px;display:flex;flex-direction:column}
-.dec .acao{font-family:'Plus Jakarta Sans';font-size:14.5px;font-weight:700;line-height:1.3;letter-spacing:-.01em}
-.dec .ganho{font-family:'Plus Jakarta Sans';font-size:25px;font-weight:800;letter-spacing:-.025em;
- color:var(--navy);margin:9px 0 2px}
-.dec .un{font-family:'Inter';font-size:11px;font-weight:600;text-transform:uppercase;
- letter-spacing:.08em;color:var(--orange)}
-.dec .pq{font-family:'Inter';font-size:12px;color:var(--ink2);line-height:1.5;margin-top:9px;flex:1}
-.dec .ev{font-family:'Inter';font-size:11px;color:var(--g500);line-height:1.45;margin-top:9px;
- border-top:1px solid var(--g200);padding-top:8px}
-.tx-som{display:flex;gap:26px;flex-wrap:wrap;margin:0 0 22px;padding:15px 18px;background:#FBFBF9;
- border:1px solid var(--g200);border-radius:12px}
-.tx-som div{min-width:150px}
-.tx-som .t{font-family:'Plus Jakarta Sans';font-size:10.5px;font-weight:700;text-transform:uppercase;
- letter-spacing:.09em;color:#6B7280}
-.tx-som .v{font-family:'Plus Jakarta Sans';font-size:19px;font-weight:700;margin-top:5px;letter-spacing:-.02em}
-.tx-som .s{font-family:'Inter';font-size:11.5px;color:var(--g500);margin-top:2px}
-.xtbl tr.caro td{background:#FEF3F2}
-.xtbl tr.ref0 td{background:#F0FDF4}
-.selo-ref{font-family:'Inter';font-size:10px;font-weight:600;color:#15803D;background:#DCFCE7;
- border-radius:4px;padding:1px 5px;margin-left:6px}
-.selo-caro{font-family:'Inter';font-size:10px;font-weight:600;color:#B42318;background:#FEE4E2;
- border-radius:4px;padding:1px 5px;margin-left:6px}
-.selo-nd{font-family:'Inter';font-size:10px;font-weight:600;color:#6B7280;background:#F2F4F7;
- border-radius:4px;padding:1px 5px;margin-left:6px}
-@media(max-width:900px){.dec{grid-template-columns:1fr}}
+.tx-h3{font-family:'Plus Jakarta Sans';font-weight:700;font-size:17px;margin:30px 0 6px}
+.tx-sub{font-family:'Inter';font-size:12.5px;color:var(--ink2);line-height:1.55;
+ max-width:860px;margin-bottom:13px}
+.xtbl td.neg{color:#B42318}
 .aviso{background:#fff;border:1px solid var(--g200);border-left:3px solid var(--orange);border-radius:12px;
  padding:16px 19px;margin-bottom:12px;box-shadow:var(--shadow)}
 .aviso h4{font-family:'Plus Jakarta Sans';font-size:14px;font-weight:700;margin-bottom:4px}
@@ -976,33 +953,16 @@ function socios(){
 }
 
 /* ---- custo de receber: taxa de cartao e antecipacao ----
-   A pergunta do gestor nao e "quanto foi de taxa" — e "onde eu perco e o que eu
-   faco amanha". Entao a secao abre pelas decisoes, com o dinheiro de cada uma, e
-   so depois mostra a conta. Cada alavanca e comparada com o preco que a casa JA
-   consegue hoje (a bandeira mais barata que ela mesma pratica), nunca com uma
-   meta inventada. */
-function txDe(){
+   Dado, nao conclusao. A tela mostra a taxa efetiva de cada bandeira, o ticket,
+   a participacao de cada meio e a serie diaria da antecipacao contra o saldo. O
+   que cortar e ate quando antecipar depende de coisa que o numero nao sabe —
+   contrato com a adquirente, o que o cliente usa, compromisso que ainda nao
+   virou titulo — entao quem conclui e quem le. */
+function txDe(m){
  if(!D.taxas||ENT==='yo')return null;
- return D.taxas[MES]||null;
+ return D.taxas[m||MES]||null;
 }
-function txLinha(l,refc,refd){
- /* vermelho so para diferenca que vira decisao (>= 0,30 p.p.). Pintar de
-    vermelho os 0,05 p.p. da Mastercard faria a tabela gritar onde nao ha o que
-    fazer, e o gestor para de confiar no vermelho. */
- var ref=(l.modalidade==='Crédito')?refc:refd, d=l.pc-ref,
-     caro=d>=0.30, melhor=d<=0.001;
- return '<tr class="'+(caro?'caro':(melhor?'ref0':''))+'">'+
-  '<td class="l">'+l.bandeira+' · '+l.modalidade+
-   (caro?'<span class="selo-caro">+'+d.toFixed(2).replace('.',',')+' p.p.</span>'
-        :(melhor?'<span class="selo-ref">melhor preço</span>'
-                :'<span class="selo-nd">+'+d.toFixed(2).replace('.',',')+' p.p.</span>'))+'</td>'+
-  '<td>'+l.n.toLocaleString('pt-BR')+'</td>'+
-  '<td>'+mv(l.bruto)+'</td><td>'+mv(l.taxa)+'</td>'+
-  '<td><b>'+l.pc.toFixed(2).replace('.',',')+'%</b></td>'+
-  /* o excesso e fato e aparece em toda linha que nao e o melhor preco; o
-     vermelho e que e reservado para o que vira decisao */
-  '<td>'+(melhor?'—':mv(l.excesso))+'</td></tr>';
-}
+function txPc(v){return v.toFixed(2).replace('.',',')+'%'}
 function taxas(){
  var el=document.getElementById('tx-corpo'); if(!el)return;
  var t=txDe();
@@ -1012,86 +972,76 @@ function taxas(){
              :'Não há extrato detalhado da adquirente para '+D.meses_nome[MES]+'.')+'</p></div>';
   return;
  }
- var rec=t.cartao.bruto+t.pix.bruto;                   /* recebido por meio eletronico */
- var custo=t.cartao.taxa+(t.antecipacao.custo||0);
- var a=t.antecipacao;
+ var rec=t.cartao.bruto+t.pix.bruto, a=t.antecipacao;
 
- /* alavanca 1: bandeira que cobra acima do que a propria casa consegue */
- var exc=0; t.linhas.forEach(function(l){exc+=l.excesso||0});
- /* so entra na alavanca a bandeira com diferenca MATERIAL (>= 0,3 p.p.). A
-    Mastercard fica 0,05 p.p. acima da Visa: isso nao e decisao, e ruido — e
-    ninguem deixa de aceitar Mastercard por 5 centesimos. Vender esse excesso
-    como economia seria prometer o que nao se entrega. */
- var caras=t.linhas.filter(function(l){
-   var ref=(l.modalidade==='Crédito')?t.ref_credito:t.ref_debito;
-   return (l.pc-ref)>=0.30 && (l.excesso||0)>0})
-   .sort(function(x,y){return y.excesso-x.excesso});
- var excCaras=0; caras.forEach(function(l){excCaras+=l.excesso});
- /* alavanca 2: cada 10 p.p. de volume que sai do cartao para o PIX */
- var pix10=t.cartao.bruto*0.10*t.cartao.pc/100;
- /* alavanca 3: desligar a antecipacao a partir do dia em que o caixa aguenta */
- var dec=[];
- if(a.ganho>0)dec.push(['Antecipar só até o caixa virar',brl(a.ganho),'por mês',
-  'Desligar a antecipação a partir de '+a.corte.slice(0,5)+' e segurar um piso de '+
-  brl(a.piso)+' em conta. São '+brl(a.desnecessario)+' que não precisavam ser puxados — '+
-  Math.round(100*a.ganho/a.custo)+'% do que se pagou de antecipação no mês.',
-  'Sem antecipar <b>nada</b> o mês fecharia em '+brl(a.sem_antec_fim)+
-  ', então a do começo foi necessária. Cortando em '+a.corte.slice(0,5)+
-  ' o menor saldo ainda seria '+brl(a.menor_se_cortar)+'.']);
- if(caras.length)dec.push(['Tirar as bandeiras caras da frente',brl(excCaras),'por mês',
-  caras[0].bandeira+' cobra '+caras[0].pc.toFixed(2).replace('.',',')+'%, contra '+
-  t.ref_credito.toFixed(2).replace('.',',')+'% que a casa já paga na '+
-  (t.linhas.filter(function(l){return l.modalidade==='Crédito'&&l.pc<=t.ref_credito+0.001})[0]||{}).bandeira+
-  '. Ou renegocia, ou deixa de oferecer: são '+caras[0].n+' vendas no mês'+
-  (caras.length>1?', mais '+(caras.length-1)+' outra(s) faixa(s) acima do melhor preço':'')+'.',
-  'Cada bandeira comparada com a <b>mais barata que a própria casa pratica hoje</b>, '+
-  'crédito com crédito e débito com débito — não é meta, é preço que ela já tem. '+
-  'Só entra aqui quem está <b>0,30 p.p. ou mais</b> acima: a diferença de 0,05 p.p. da '+
-  'Mastercard aparece na tabela, mas não vira promessa de economia.']);
- dec.push(['Empurrar venda para o PIX',brl(pix10),'por mês, a cada 10 p.p.',
-  'O PIX custou <b>zero</b> nos '+t.pix.n.toLocaleString('pt-BR')+' recebimentos de '+
-  brl(t.pix.bruto)+' do mês. Hoje ele é só '+pc(t.pix.bruto,rec)+' do que entra por meio eletrônico.',
-  'Cada 10 pontos de volume que saem do cartão para o PIX valem '+brl(pix10)+
-  ' à taxa média de '+t.cartao.pc.toFixed(2).replace('.',',')+'%.']);
+ /* os meses lado a lado, para a leitura da evolucao ser do gestor */
+ var h='<div class="rsm-wrap"><table class="xtbl"><thead><tr><th class="l">Recebimento eletrônico</th>'+
+  D.meses.map(function(m){return '<th>'+D.meses_nome[m]+'</th>'}).join('')+'</tr></thead><tbody>';
+ function lin(rot,f,cls){
+  return '<tr'+(cls?' class="'+cls+'"':'')+'><td class="l">'+rot+'</td>'+
+   D.meses.map(function(m){var x=txDe(m);return '<td>'+(x?f(x):'—')+'</td>'}).join('')+'</tr>';
+ }
+ h+=lin('Bruto no cartão',function(x){return mv(x.cartao.bruto)});
+ h+=lin('Vendas no cartão',function(x){return x.cartao.n.toLocaleString('pt-BR')});
+ h+=lin('Ticket médio no cartão',function(x){return mv(x.cartao.bruto/x.cartao.n)});
+ h+=lin('Taxa de cartão (MDR)',function(x){return mv(x.cartao.taxa)});
+ h+=lin('Taxa efetiva',function(x){return txPc(x.cartao.pc)});
+ h+=lin('Bruto no PIX',function(x){return mv(x.pix.bruto)});
+ h+=lin('Taxa do PIX',function(x){return mv(0)});
+ h+=lin('PIX sobre o recebimento',function(x){return pc(x.pix.bruto,x.cartao.bruto+x.pix.bruto)});
+ h+=lin('Recebível antecipado',function(x){return x.antecipacao.base?mv(x.antecipacao.base):'—'});
+ h+=lin('Custo de antecipação',function(x){return x.antecipacao.custo?mv(x.antecipacao.custo):'—'});
+ h+=lin('Taxa da antecipação',function(x){return x.antecipacao.custo?txPc(x.antecipacao.pc):'—'});
+ h+=lin('Custo de receber',function(x){
+   return mv(x.cartao.taxa+(x.antecipacao.custo||0))},'res');
+ h+=lin('Sobre o recebimento',function(x){
+   return pc(x.cartao.taxa+(x.antecipacao.custo||0),x.cartao.bruto+x.pix.bruto)},'res');
+ h+='</tbody></table></div>';
 
- var h='<div class="dec">'+dec.map(function(d){
-  return '<div class="d1"><div class="acao">'+d[0]+'</div>'+
-   '<div class="ganho">'+d[1]+'</div><div class="un">'+d[2]+'</div>'+
-   '<div class="pq">'+d[3]+'</div><div class="ev">'+d[4]+'</div></div>'}).join('')+'</div>';
-
- h+='<div class="tx-som">'+
-  '<div><div class="t">Custo de receber</div><div class="v num">'+brl(custo)+'</div>'+
-   '<div class="s">'+pc(custo,rec)+' do que entrou por cartão e PIX</div></div>'+
-  '<div><div class="t">Taxa de cartão (MDR)</div><div class="v num">'+brl(t.cartao.taxa)+'</div>'+
-   '<div class="s">'+t.cartao.pc.toFixed(2).replace('.',',')+'% sobre '+brl(t.cartao.bruto)+
-   ' em '+t.cartao.n.toLocaleString('pt-BR')+' vendas</div></div>'+
-  '<div><div class="t">Custo de antecipação</div><div class="v num">'+
-   (a.custo?brl(a.custo):'—')+'</div><div class="s">'+
-   /* ausencia de titulo nao prova ausencia de antecipacao: em ago/26 nao ha
-      conciliacao diaria carregada para afirmar isso */
-   (a.custo?a.pc.toFixed(2).replace('.',',')+'% sobre '+brl(a.base)+' de recebível'
-          :'nenhum custo de antecipação lançado neste mês')+
-   '</div></div>'+
-  '<div><div class="t">PIX</div><div class="v num">'+brl(t.pix.bruto)+'</div>'+
-   '<div class="s">taxa zero · '+pc(t.pix.bruto,rec)+' do recebimento</div></div>'+
-  '</div>';
-
- h+='<div class="rsm-wrap"><table class="xtbl"><thead><tr><th class="l">Bandeira e modalidade</th>'+
-  '<th>Vendas</th><th>Bruto</th><th>Taxa</th><th>% efetivo</th>'+
-  '<th>Excesso sobre o melhor preço</th></tr></thead><tbody>'+
-  t.linhas.map(function(l){return txLinha(l,t.ref_credito,t.ref_debito)}).join('')+
+ /* bandeira a bandeira, no mes selecionado */
+ h+='<h3 class="tx-h3">Por bandeira <span class="light">em '+D.meses_nome[MES]+'</span></h3>'+
+  '<div class="rsm-wrap"><table class="xtbl"><thead><tr><th class="l">Bandeira e modalidade</th>'+
+  '<th>Vendas</th><th>Bruto</th><th>% do bruto</th><th>Ticket médio</th>'+
+  '<th>Taxa</th><th>% efetivo</th></tr></thead><tbody>'+
+  t.linhas.map(function(l){
+   return '<tr><td class="l">'+l.bandeira+' · '+l.modalidade+'</td>'+
+    '<td>'+l.n.toLocaleString('pt-BR')+'</td><td>'+mv(l.bruto)+'</td>'+
+    '<td>'+pc(l.bruto,t.cartao.bruto)+'</td><td>'+mv(l.ticket)+'</td>'+
+    '<td>'+mv(l.taxa)+'</td><td><b>'+txPc(l.pc)+'</b></td></tr>'}).join('')+
   '<tr class="res"><td class="l">Total no cartão</td><td>'+t.cartao.n.toLocaleString('pt-BR')+
-  '</td><td>'+mv(t.cartao.bruto)+'</td><td>'+mv(t.cartao.taxa)+'</td><td>'+
-  t.cartao.pc.toFixed(2).replace('.',',')+'%</td><td>'+mv(exc)+'</td></tr>'+
+  '</td><td>'+mv(t.cartao.bruto)+'</td><td>100,0%</td><td>'+mv(t.cartao.bruto/t.cartao.n)+
+  '</td><td>'+mv(t.cartao.taxa)+'</td><td>'+txPc(t.cartao.pc)+'</td></tr>'+
+  '<tr><td class="l">PIX</td><td>'+t.pix.n.toLocaleString('pt-BR')+'</td><td>'+mv(t.pix.bruto)+
+  '</td><td>'+pc(t.pix.bruto,rec)+' do recebimento</td><td>'+mv(t.pix.bruto/t.pix.n)+
+  '</td><td>'+mv(0)+'</td><td>0,00%</td></tr>'+
   '</tbody></table></div>';
 
- h+='<p class="repnote">Venda a venda, do <b>Extrato de Vendas Detalhado</b> da GetNet (EC 11890027), '+
-  'só transação aprovada — a taxa é a que o próprio adquirente cobrou em cada venda. A soma '+
-  'confere com o título de taxa de cartão lançado no Omie em '+D.meses_nome[MES]+
-  ' (R$ '+brl(t.cartao.taxa).replace('R$ ','')+'), e o script não gera esta tela se divergir. '+
+ /* antecipacao dia a dia */
+ if(t.serie&&t.serie.length){
+  h+='<h3 class="tx-h3">Antecipação <span class="light">dia a dia, contra o saldo</span></h3>'+
+   '<p class="tx-sub">Quanto a GetNet creditou de antecipação em cada dia, o saldo em que a conta '+
+   'fechou, e o saldo que teria havido se nada tivesse sido antecipado — a mesma aritmética do '+
+   'extrato, com os créditos de antecipação retirados.</p>'+
+   '<div class="rsm-wrap"><table class="xtbl"><thead><tr><th class="l">Dia</th>'+
+   '<th>Antecipado no dia</th><th>Saldo</th><th>Saldo sem antecipar nada</th>'+
+   '</tr></thead><tbody>'+
+   t.serie.map(function(d){
+    return '<tr><td class="l">'+d.dia.slice(0,5)+'</td><td>'+
+     (d.antecipado?mv(d.antecipado):'—')+'</td><td>'+mv(d.saldo)+'</td>'+
+     '<td class="'+(d.sem_antecipar<0?'neg':'')+'">'+mv(d.sem_antecipar)+'</td></tr>'}).join('')+
+   '<tr class="res"><td class="l">No mês</td><td>'+mv(a.total_creditado)+'</td><td>'+
+   mv(t.serie[t.serie.length-1].saldo)+'</td><td class="neg">'+
+   mv(t.serie[t.serie.length-1].sem_antecipar)+'</td></tr>'+
+   '</tbody></table></div>';
+ }
+
+ h+='<p class="repnote">Venda a venda, do <b>Extrato de Vendas Detalhado</b> da GetNet '+
+  '(EC 11890027), só transação aprovada — a taxa é a que o próprio adquirente cobrou em cada '+
+  'venda. A soma confere com o título de taxa de cartão lançado no Omie em '+D.meses_nome[MES]+
+  ' (R$ '+brl(t.cartao.taxa).replace('R$ ','')+'), e esta tela não é gerada se divergir. '+
   'O MDR é custo de vender e fica acima do EBITDA; o custo de antecipação é financeiro e fica '+
-  'abaixo. O saldo diário usado na conta de antecipação vem do extrato conciliado do Santander, '+
-  'sem as pernas da varredura automática da ContaMax, que são transferência interna.</p>';
+  'abaixo. O saldo diário vem do extrato conciliado do Santander, sem as pernas da varredura '+
+  'automática da ContaMax, que são transferência entre contas próprias.</p>';
  el.innerHTML=h;
 }
 function render(){
@@ -1167,7 +1117,7 @@ SEC_ANO = """<section id="tend" class="sec-alt"><div class="wrap">
 SEC_TAXAS = """<section id="taxas"><div class="wrap">
 <div class="sec-head"><div class="k">Custo de receber</div>
 <h2>Quanto custa <span class="light">o dinheiro entrar</span></h2>
-<p class="lede">Taxa de cartão venda a venda, do extrato detalhado da adquirente, e o custo de antecipar o recebível. Primeiro o que fazer e quanto cada decisão devolve por mês; depois a conta que sustenta cada uma.</p></div>
+<p class="lede">Taxa de cartão venda a venda, do extrato detalhado da adquirente, e o custo de antecipar o recebível. Bandeira por bandeira, com ticket e taxa efetiva, e a antecipação dia a dia contra o saldo da conta.</p></div>
 <div id="tx-corpo"></div>
 </div></section>
 """
