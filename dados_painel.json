@@ -1,5 +1,5 @@
 {
- "gerado": "04/11/2026 às 20:15",
+ "gerado": "04/11/2026 às 20:37",
  "meses": [
   "2026-08",
   "2026-09",
@@ -2812,7 +2812,7 @@
       "5": -11656.46,
       "11": -17477.38,
       "6": -15769.18,
-      "8": -1876.3799999999999,
+      "8": -29876.380000000005,
       "14": -2385.0,
       "9": -2000.0,
       "2": -8175.04,
@@ -2839,6 +2839,9 @@
       "4|Frios, laticínios e congelados": -27972.12,
       "6|ISS | Permanência": -2734.33,
       "6|Alimentação de colaboradores": -2256.2,
+      "8|Ajuda de custos diretoria": -2800.0,
+      "8|Remuneracao PJ diretoria": -5600.0,
+      "8|Pró-labore": -19600.0,
       "8|Tarifas bancárias": -282.18000000000006,
       "4|Frete de insumos de alimentos e bebidas": -5377.52,
       "6|FGTS e contribuições": -1845.51,
@@ -2875,6 +2878,9 @@
       "4|Frios, laticínios e congelados": 14,
       "6|ISS | Permanência": 8,
       "6|Alimentação de colaboradores": 1,
+      "8|Ajuda de custos diretoria": 2,
+      "8|Remuneracao PJ diretoria": 1,
+      "8|Pró-labore": 2,
       "8|Tarifas bancárias": 10,
       "4|Frete de insumos de alimentos e bebidas": 1,
       "6|FGTS e contribuições": 1,
@@ -4091,6 +4097,51 @@
        -614.68,
        "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
        "NF028402",
+       "",
+       ""
+      ],
+      [
+       "8|Ajuda de custos diretoria",
+       "31/08/2026",
+       -1400,
+       "GEORGE CARTAXO MENDES COSTA",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "8|Remuneracao PJ diretoria",
+       "31/08/2026",
+       -5600,
+       "GEORGE CARTAXO MENDES COSTA",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "8|Pró-labore",
+       "31/08/2026",
+       -5600,
+       "MARCELA CAVALCANTI VILANOVA HURTADO",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "8|Ajuda de custos diretoria",
+       "31/08/2026",
+       -1400,
+       "MARCELA CAVALCANTI VILANOVA HURTADO",
+       "SEM NF",
+       "",
+       ""
+      ],
+      [
+       "8|Pró-labore",
+       "31/08/2026",
+       -14000,
+       "RENATO FERREIRA LIMA BATISTA GOMES",
+       "SEM NF",
        "",
        ""
       ],
@@ -5327,7 +5378,7 @@
      "grupos": {
       "1": 1123423.9800000004,
       "NEUTRO": 1058.2300000000012,
-      "8": -80006.5,
+      "8": -52006.5,
       "11": -87472.65,
       "9": -7500.0,
       "5": -78911.86,
@@ -5359,7 +5410,6 @@
       "14|Cachê de artistas e atrações": -23215.83,
       "6|Salario PJ": -14600.0,
       "5|Gestor operacional PJ": -14666.67,
-      "8|Pró-labore": -68000.0,
       "11|Equipamentos e mobiliário": -10345.0,
       "4|Hortifrúti": -18342.13,
       "6|Extras e freelancers": -5497.5,
@@ -5388,6 +5438,9 @@
       "2|COFINS": -28885.36,
       "2|PIS": -6258.49,
       "5|Diversos de operação": -3957.6,
+      "8|Pró-labore": -28000.0,
+      "8|Ajuda de custos diretoria": -4000.0,
+      "8|Remuneracao PJ diretoria": -8000.0,
       "10|Custo de antecipação de recebíveis": -6564.46,
       "6|FGTS e contribuições": -4186.9,
       "FAT|Cartão de crédito à vista": 819896.32,
@@ -5414,7 +5467,6 @@
       "14|Cachê de artistas e atrações": 24,
       "6|Salario PJ": 4,
       "5|Gestor operacional PJ": 3,
-      "8|Pró-labore": 6,
       "11|Equipamentos e mobiliário": 5,
       "4|Hortifrúti": 16,
       "6|Extras e freelancers": 16,
@@ -5443,6 +5495,9 @@
       "2|COFINS": 1,
       "2|PIS": 1,
       "5|Diversos de operação": 9,
+      "8|Pró-labore": 2,
+      "8|Ajuda de custos diretoria": 2,
+      "8|Remuneracao PJ diretoria": 1,
       "10|Custo de antecipação de recebíveis": 1,
       "6|FGTS e contribuições": 1,
       "FAT|Cartão de crédito à vista": 30,
@@ -11830,33 +11885,6 @@
        ""
       ],
       [
-       "8|Pró-labore",
-       "04/09/2026",
-       -7000,
-       "GEORGE CARTAXO MENDES COSTA",
-       "SEM NF",
-       "",
-       ""
-      ],
-      [
-       "8|Pró-labore",
-       "04/09/2026",
-       -7000,
-       "MARCELA CAVALCANTI VILANOVA HURTADO",
-       "SEM NF",
-       "",
-       ""
-      ],
-      [
-       "8|Pró-labore",
-       "04/09/2026",
-       -14000,
-       "RENATO FERREIRA LIMA BATISTA GOMES",
-       "SEM NF",
-       "",
-       ""
-      ],
-      [
        "5|Alojamento e ajuda de custo para moradia",
        "04/09/2026",
        -4000,
@@ -15241,9 +15269,18 @@
        ""
       ],
       [
-       "8|Pró-labore",
+       "8|Ajuda de custos diretoria",
        "30/09/2026",
-       -10000,
+       -2000,
+       "GEORGE CARTAXO MENDES COSTA",
+       "112.752.714-21",
+       "",
+       ""
+      ],
+      [
+       "8|Remuneracao PJ diretoria",
+       "30/09/2026",
+       -8000,
        "GEORGE CARTAXO MENDES COSTA",
        "112.752.714-21",
        "",
@@ -15252,7 +15289,16 @@
       [
        "8|Pró-labore",
        "30/09/2026",
-       -10000,
+       -8000,
+       "MARCELA CAVALCANTI VILANOVA HURTADO",
+       "088.730.764-75",
+       "",
+       ""
+      ],
+      [
+       "8|Ajuda de custos diretoria",
+       "30/09/2026",
+       -2000,
        "MARCELA CAVALCANTI VILANOVA HURTADO",
        "088.730.764-75",
        "",
@@ -20387,7 +20433,9 @@
       "8|Correios e fretes administrativos": -186.95,
       "4|Outros insumos e diversos": -38480.450000000004,
       "14|Cachê de artistas e atrações": -23215.83,
-      "8|Pró-labore": -28000.0,
+      "8|Remuneracao PJ diretoria": -5600.0,
+      "8|Ajuda de custos diretoria": -2800.0,
+      "8|Pró-labore": -19600.0,
       "6|Extras e freelancers": -3504.1599993,
       "6|ISS | Permanência": -2134.33,
       "9|Mídia paga": -1500.0,
@@ -20440,7 +20488,9 @@
       "8|Correios e fretes administrativos": 1,
       "4|Outros insumos e diversos": 9,
       "14|Cachê de artistas e atrações": 24,
-      "8|Pró-labore": 3,
+      "8|Remuneracao PJ diretoria": 1,
+      "8|Ajuda de custos diretoria": 2,
+      "8|Pró-labore": 2,
       "6|Extras e freelancers": 7,
       "6|ISS | Permanência": 6,
       "9|Mídia paga": 1,
@@ -21752,9 +21802,18 @@
        ""
       ],
       [
-       "8|Pró-labore",
+       "8|Remuneracao PJ diretoria",
        "04/09/2026",
-       -7000,
+       -5600.0,
+       "GEORGE CARTAXO MENDES COSTA",
+       "SEM NF",
+       "Santander",
+       ""
+      ],
+      [
+       "8|Ajuda de custos diretoria",
+       "04/09/2026",
+       -1400.0,
        "GEORGE CARTAXO MENDES COSTA",
        "SEM NF",
        "Santander",
@@ -21763,7 +21822,16 @@
       [
        "8|Pró-labore",
        "04/09/2026",
-       -7000,
+       -5600.0,
+       "MARCELA CAVALCANTI VILANOVA HURTADO",
+       "SEM NF",
+       "Santander",
+       ""
+      ],
+      [
+       "8|Ajuda de custos diretoria",
+       "04/09/2026",
+       -1400.0,
        "MARCELA CAVALCANTI VILANOVA HURTADO",
        "SEM NF",
        "Santander",
@@ -34735,9 +34803,10 @@
       "7": -36500.0,
       "11": -301387.22,
       "CC": -6096.85,
-      "6": -14350.06,
+      "6": -4350.06,
       "9": -1500.0,
-      "10": -938.02
+      "10": -938.02,
+      "13": -10000.0
      },
      "contas": {
       "OR|Outras receitas operacionais": 5998.04,
@@ -34769,7 +34838,7 @@
       "10|Juros e multas": -938.02,
       "5|Energia elétrica": -1446.38,
       "8|Tarifas bancárias": -312.25,
-      "6|Diarista (OIA)": -10000.0,
+      "13|Emprestimo concedido - saida": -10000.0,
       "4|Frios, laticínios e congelados": -2527.64,
       "5|Diversos de operação": -1630.78,
       "NEUTRO|Transferência entre contas - saída": -5206.08
@@ -34804,7 +34873,7 @@
       "10|Juros e multas": 2,
       "5|Energia elétrica": 1,
       "8|Tarifas bancárias": 16,
-      "6|Diarista (OIA)": 1,
+      "13|Emprestimo concedido - saida": 1,
       "4|Frios, laticínios e congelados": 1,
       "5|Diversos de operação": 1,
       "NEUTRO|Transferência entre contas - saída": 12
@@ -36219,7 +36288,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "13|Emprestimo concedido - saida",
        "28/09/2026",
        -10000,
        "Cliente Consumidor / Sem Tomador",
@@ -41448,11 +41517,12 @@
       "7": -36500.0,
       "NEUTRO": 1.3244516594568267e-10,
       "CC": -6300.84,
-      "6": -18118.5,
+      "6": -8118.5,
       "9": -1500.0,
       "OR": 5998.04,
       "10": -855.3499999999999,
-      "2": -88.19999999999999
+      "2": -88.19999999999999,
+      "13": -10000.0
      },
      "contas": {
       "11|Investimentos diversos": -54625.19,
@@ -41491,7 +41561,7 @@
       "6|FGTS e contribuições": -3289.94,
       "10|Juros e multas": -938.02,
       "2|Simples Nacional (DAS)": -48.339999999999996,
-      "6|Diarista (OIA)": -10000.0,
+      "13|Emprestimo concedido - saida": -10000.0,
       "NEUTRO|Transferência entre contas - saída": -691651.12,
       "10|Rendimentos de aplicações": 84.09,
       "10|IOF": -1.42,
@@ -41535,7 +41605,7 @@
       "6|FGTS e contribuições": 2,
       "10|Juros e multas": 2,
       "2|Simples Nacional (DAS)": 2,
-      "6|Diarista (OIA)": 1,
+      "13|Emprestimo concedido - saida": 1,
       "NEUTRO|Transferência entre contas - saída": 53,
       "10|Rendimentos de aplicações": 1,
       "10|IOF": 1,
@@ -43969,7 +44039,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "13|Emprestimo concedido - saida",
        "28/09/2026",
        -10000,
        "Cliente Consumidor / Sem Tomador",
