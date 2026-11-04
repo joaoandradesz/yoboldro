@@ -172,6 +172,7 @@ td.av{color:var(--g500);font-size:12px}
 .xtbl.mat.dfc tr.ebit td{background:#FFF7ED;color:#7A3E00;font-weight:800;border-top:1.5px solid var(--orange)}
 .xtbl.mat.dfc tr.res td{background:#0D0F1A;color:#fff;font-weight:800;border-top:1.5px solid #0D0F1A}
 .xtbl.mat.dfc tr.res i.avin,.xtbl.mat tr.r0 i.avin{color:rgba(255,255,255,.55)}
+.xtbl.mat tr.zero td{opacity:.42}
 .xtbl.mat tr.sep td{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#9AA1AE;
  font-size:10px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;
  padding:14px 11px 6px;text-align:left;border-bottom:none}
@@ -812,9 +813,11 @@ function matriz(reg){
    return;
   }
   var k=reg+'|b'+bi, vals=MS.map(function(m){return soma(ENT,reg,m,gs)});
-  if(!vals.some(function(v){return v}))return;
-  out+=linhaMat(rot,vals,base,'xm lvl0'+(ABERTO[k]?' open':''),k,0);
-  if(!ABERTO[k])return;
+  var vazia=!vals.some(function(v){return v});
+  if(vazia&&reg==='caixa')return;                 /* no DFC a linha vazia nao informa nada */
+  out+=linhaMat(rot,vals,base,(vazia?'xm lvl0 zero':'xm lvl0'+(ABERTO[k]?' open':'')),
+                vazia?null:k,0);
+  if(vazia||!ABERTO[k])return;
   /* nivel 1: grupo do plano */
   gs.forEach(function(g){
    var vg=MS.map(function(m){return (bl[m].grupos[g]||0)});
