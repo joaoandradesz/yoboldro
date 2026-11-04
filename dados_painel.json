@@ -1,5 +1,5 @@
 {
- "gerado": "04/11/2026 às 08:38",
+ "gerado": "04/11/2026 às 09:17",
  "meses": [
   "2026-08",
   "2026-09"
@@ -2347,6 +2347,296 @@
   ],
   "media_diaria": 34931.63,
   "ticket": 680.49
+ },
+ "taxas": {
+  "2026-08": {
+   "cartao": {
+    "bruto": 173783.89,
+    "taxa": 2010.0,
+    "pc": 1.157,
+    "n": 416
+   },
+   "pix": {
+    "bruto": 8735.43,
+    "n": 25
+   },
+   "linhas": [
+    {
+     "bandeira": "Mastercard",
+     "modalidade": "Crédito",
+     "n": 163,
+     "bruto": 75883.16,
+     "taxa": 834.71,
+     "pc": 1.1,
+     "excesso": 37.94
+    },
+    {
+     "bandeira": "Visa",
+     "modalidade": "Crédito",
+     "n": 158,
+     "bruto": 65832.14,
+     "taxa": 691.23,
+     "pc": 1.05,
+     "excesso": 0.0
+    },
+    {
+     "bandeira": "Mastercard",
+     "modalidade": "Débito",
+     "n": 44,
+     "bruto": 12055.62,
+     "taxa": 113.32,
+     "pc": 0.94,
+     "excesso": 6.03
+    },
+    {
+     "bandeira": "Amex",
+     "modalidade": "Crédito",
+     "n": 16,
+     "bruto": 8307.51,
+     "taxa": 211.84,
+     "pc": 2.55,
+     "excesso": 124.61
+    },
+    {
+     "bandeira": "Visa",
+     "modalidade": "Débito",
+     "n": 25,
+     "bruto": 5959.44,
+     "taxa": 53.05,
+     "pc": 0.89,
+     "excesso": 0.0
+    },
+    {
+     "bandeira": "Elo",
+     "modalidade": "Crédito",
+     "n": 8,
+     "bruto": 5465.52,
+     "taxa": 101.11,
+     "pc": 1.85,
+     "excesso": 43.72
+    },
+    {
+     "bandeira": "Elo",
+     "modalidade": "Débito",
+     "n": 2,
+     "bruto": 280.5,
+     "taxa": 4.74,
+     "pc": 1.69,
+     "excesso": 2.24
+    }
+   ],
+   "ref_credito": 1.05,
+   "ref_debito": 0.89,
+   "melhor": 0.89,
+   "antecipacao": {
+    "custo": 0.0,
+    "base": 0.0,
+    "pc": 0
+   }
+  },
+  "2026-09": {
+   "cartao": {
+    "bruto": 934259.03,
+    "taxa": 10451.57,
+    "pc": 1.119,
+    "n": 2001
+   },
+   "pix": {
+    "bruto": 72746.84,
+    "n": 201
+   },
+   "linhas": [
+    {
+     "bandeira": "Mastercard",
+     "modalidade": "Crédito",
+     "n": 816,
+     "bruto": 395095.68,
+     "taxa": 4345.97,
+     "pc": 1.1,
+     "excesso": 197.55
+    },
+    {
+     "bandeira": "Visa",
+     "modalidade": "Crédito",
+     "n": 744,
+     "bruto": 381247.25,
+     "taxa": 4003.17,
+     "pc": 1.05,
+     "excesso": 0.0
+    },
+    {
+     "bandeira": "Mastercard",
+     "modalidade": "Débito",
+     "n": 220,
+     "bruto": 69568.16,
+     "taxa": 653.95,
+     "pc": 0.94,
+     "excesso": 34.78
+    },
+    {
+     "bandeira": "Visa",
+     "modalidade": "Débito",
+     "n": 122,
+     "bruto": 42439.4,
+     "taxa": 377.7,
+     "pc": 0.89,
+     "excesso": 0.0
+    },
+    {
+     "bandeira": "Amex",
+     "modalidade": "Crédito",
+     "n": 53,
+     "bruto": 32170.28,
+     "taxa": 820.34,
+     "pc": 2.55,
+     "excesso": 482.55
+    },
+    {
+     "bandeira": "Elo",
+     "modalidade": "Crédito",
+     "n": 38,
+     "bruto": 11383.11,
+     "taxa": 210.63,
+     "pc": 1.85,
+     "excesso": 91.06
+    },
+    {
+     "bandeira": "Elo",
+     "modalidade": "Débito",
+     "n": 8,
+     "bruto": 2355.15,
+     "taxa": 39.81,
+     "pc": 1.69,
+     "excesso": 18.84
+    }
+   ],
+   "ref_credito": 1.05,
+   "ref_debito": 0.89,
+   "melhor": 0.89,
+   "antecipacao": {
+    "custo": 6564.46,
+    "base": 437830.41,
+    "pc": 1.499,
+    "total_creditado": 792229.64,
+    "piso": 150000.0,
+    "menor_saldo": 72779.28,
+    "menor_dia": "04/09/2026",
+    "saldo_fim": 599843.39,
+    "sem_antec_fim": -192386.25,
+    "sem_antec_menor": -198451.85,
+    "corte": "16/09/2026",
+    "desnecessario": 431265.95,
+    "menor_se_cortar": 162511.84,
+    "ganho": 3572.74
+   },
+   "serie": [
+    {
+     "dia": "01/09/2026",
+     "saldo": 142258.87,
+     "antecipado": 12900.83
+    },
+    {
+     "dia": "02/09/2026",
+     "saldo": 157108.86,
+     "antecipado": 11215.31
+    },
+    {
+     "dia": "03/09/2026",
+     "saldo": 127810.29,
+     "antecipado": 10360.34
+    },
+    {
+     "dia": "04/09/2026",
+     "saldo": 72779.28,
+     "antecipado": 14731.88
+    },
+    {
+     "dia": "08/09/2026",
+     "saldo": 243181.32,
+     "antecipado": 148058.92
+    },
+    {
+     "dia": "09/09/2026",
+     "saldo": 233807.8,
+     "antecipado": 25766.9
+    },
+    {
+     "dia": "10/09/2026",
+     "saldo": 260202.54,
+     "antecipado": 19517.17
+    },
+    {
+     "dia": "11/09/2026",
+     "saldo": 294417.48,
+     "antecipado": 32732.95
+    },
+    {
+     "dia": "14/09/2026",
+     "saldo": 310016.23,
+     "antecipado": 71906.53
+    },
+    {
+     "dia": "15/09/2026",
+     "saldo": 273532.7,
+     "antecipado": 13772.86
+    },
+    {
+     "dia": "16/09/2026",
+     "saldo": 299405.49,
+     "antecipado": 16543.63
+    },
+    {
+     "dia": "17/09/2026",
+     "saldo": 327612.38,
+     "antecipado": 30614.06
+    },
+    {
+     "dia": "18/09/2026",
+     "saldo": 322248.51,
+     "antecipado": 23423.68
+    },
+    {
+     "dia": "21/09/2026",
+     "saldo": 467036.18,
+     "antecipado": 112360.1
+    },
+    {
+     "dia": "22/09/2026",
+     "saldo": 450100.22,
+     "antecipado": 31948.56
+    },
+    {
+     "dia": "23/09/2026",
+     "saldo": 461838.86,
+     "antecipado": 25585.03
+    },
+    {
+     "dia": "24/09/2026",
+     "saldo": 524849.85,
+     "antecipado": 49198.14
+    },
+    {
+     "dia": "25/09/2026",
+     "saldo": 502574.55,
+     "antecipado": 30353.5
+    },
+    {
+     "dia": "28/09/2026",
+     "saldo": 610373.82,
+     "antecipado": 78637.02
+    },
+    {
+     "dia": "29/09/2026",
+     "saldo": 580398.01,
+     "antecipado": 19222.45
+    },
+    {
+     "dia": "30/09/2026",
+     "saldo": 599843.39,
+     "antecipado": 13379.78
+    }
+   ]
+  }
  },
  "ents": {
   "boldro": {
