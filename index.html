@@ -288,9 +288,9 @@ td.av{color:var(--g500);font-size:12px}
 <button data-r="comp" onclick="setRegime('comp')">Competência</button></div>
 <div class="waterfall">
 <div class="wf-head"><span class="t" id="wfTitle">Ponte do caixa</span>
-<span class="h">Saldo inicial → entradas → saídas → resultado → saldo final</span></div>
+<span class="h" id="wfHint">Saldo inicial → entradas → saídas → resultado → saldo final</span></div>
 <svg id="wf" viewBox="0 0 1080 236"></svg>
-<div class="wf-x"><span>Saldo inicial</span><span>Entradas</span><span>Saídas</span><span>Resultado</span><span>Saldo final</span></div>
+<div class="wf-x" id="wfX"></div>
 </div>
 </div></header>
 <div class="wrap"><div class="kpis" id="kpis"></div></div>
@@ -418,13 +418,29 @@ function setMes(m){MES=m;document.querySelectorAll('.mespills button').forEach(f
 function setRegime(r){REG=r;document.querySelectorAll('.regsw button,.rep-switch button').forEach(function(b){
  b.classList.toggle('on',b.dataset.r===r)});render()}
 
-function ponteSVG(){
+function passosPonte(){
+ /* a ponte segue o regime escolhido: no caixa e saldo -> entradas -> saidas;
+    na competencia e receita -> custo -> despesa -> EBITDA, que e o que mostra o
+    faturamento do mes em vez do que passou no banco. */
+ if(REG==='comp'){
+  if(!temDado(ENT))return null;
+  var rec=soma(ENT,'comp',MES,['1']), ded=soma(ENT,'comp',MES,['2']),
+      cus=soma(ENT,'comp',MES,['3','4','5']), des=soma(ENT,'comp',MES,['6','7','8','9']);
+  if(!rec&&!ded&&!cus&&!des)return null;
+  return [['Receita bruta',rec,'in'],['Deduções',ded,'out'],['Custos',cus,'out'],
+          ['Despesas',des,'out'],['EBITDA',rec+ded+cus+des,'r']];
+ }
  var s=saldos(ENT,MES);
- if(!s)return '<text x="540" y="120" text-anchor="middle" fill="#6D748A" font-size="14" font-family="Inter">sem movimento lançado neste mês</text>';
- var passos=[['Saldo inicial',s.ini,'n'],['Entradas',s.entradas,'in'],['Saídas',s.saidas,'out'],
-             ['Resultado',s.entradas+s.saidas,'r'],['Saldo final',s.fim,'n']];
+ if(!s)return null;
+ return [['Saldo inicial',s.ini,'n'],['Entradas',s.entradas,'in'],['Saídas',s.saidas,'out'],
+         ['Resultado',s.entradas+s.saidas,'r'],['Saldo final',s.fim,'n']];
+}
+function ponteSVG(){
+ var passos=passosPonte();
+ if(!passos)return '<text x="540" y="120" text-anchor="middle" fill="#6D748A" font-size="14" font-family="Inter">sem movimento lançado neste mês</text>';
  var mx=Math.max.apply(null,passos.map(function(p){return Math.abs(p[1])}))||1;
- var W=1080,H=236,cw=W/5,bw=92,base=H-38,esc=base-30,out='',acum=s.ini;
+ var W=1080,H=236,cw=W/passos.length,bw=Math.min(92,cw-24),base=H-38,esc=base-30,out='',
+     acum=(passos[0][2]==='n')?passos[0][1]:0;
  passos.forEach(function(p,i){
   var cx=i*cw+cw/2,cor,y,alt;
   if(p[2]==='in'){cor='#34D399';alt=Math.abs(p[1])/mx*esc;y=base-((acum+p[1])/mx*esc);acum+=p[1]}
@@ -657,31 +673,6 @@ function pizza(){
  document.getElementById('pzTot').textContent=brl(tot);
 }
 
-function ponteTexto(){
- if(!temDado(ENT)){
-  document.getElementById('brTitle').innerHTML='A YO ainda <b>não tem lançamento</b> no Omie';
-  document.getElementById('brSub').textContent='Plano de contas aplicado e contas bancárias cadastradas, mas nenhum título lançado. Os números da conciliação do CSC servem de dimensão, não de resultado.';
-  document.getElementById('bflow').innerHTML='';return;
- }
- var s=saldos(ENT,MES)||{ini:0,fim:0,entradas:0,saidas:0};
- var rl=soma(ENT,'comp',MES,['1','2']);
- var ebitda=rl+soma(ENT,'comp',MES,['4','5','3','6','7','8','9']);
- var cc=soma(ENT,'comp',MES,['CC']),inv=soma(ENT,'comp',MES,['11']);
- document.getElementById('brTitle').innerHTML='O caixa variou <b>'+brl(s.fim-s.ini)+
-  '</b> e o resultado do mês foi <b>'+brl(ebitda)+'</b>';
- document.getElementById('brSub').textContent='A diferença de '+brl((s.fim-s.ini)-ebitda)+
-  ' é o que não passa pela DRE: conta corrente com o grupo, investimento e o descasamento entre a emissão do título e o pagamento.';
- document.getElementById('bflow').innerHTML=[
-  ['Saldo inicial',brl(s.ini),'início de '+D.meses_nome[MES]],
-  ['Entradas',brl(s.entradas),'tudo que creditou'],
-  ['Saídas',brl(Math.abs(s.saidas)),'tudo que debitou'],
-  ['EBITDA do mês',brl(ebitda),'competência'],
-  ['Investimento',brl(Math.abs(inv)),'fora do EBITDA'],
-  ['Saldo final',brl(s.fim),'fim de '+D.meses_nome[MES]]
- ].map(function(b){return '<div class="bx"><div class="t">'+b[0]+'</div><div class="v num">'+b[1]+
-  '</div><div class="d">'+b[2]+'</div></div>'}).join('');
-}
-
 var ABERTO={};                  /* nos abertos, por chave */
 function tog(k){ABERTO[k]=!ABERTO[k];pintaRelatorios()}
 function cv(k){return '<span class="chv">'+(ABERTO[k]?'▾':'▸')+'</span>'}
@@ -828,24 +819,29 @@ function matriz(reg){
   out+=linhaMat(rot,vals,base,(vazia?'xm lvl0 zero':'xm lvl0'+(ABERTO[k]?' open':'')),
                 vazia?null:k,0);
   if(vazia||!ABERTO[k])return;
-  /* nivel 1: grupo do plano */
-  gs.forEach(function(g){
-   var vg=MS.map(function(m){return (bl[m].grupos[g]||0)});
-   if(!vg.some(function(v){return v}))return;
-   var kg=k+'|g'+g;
-   out+=linhaMat(D.grupo_nome[g]||g,vg,base,'lvl1'+(ABERTO[kg]?' open':''),kg,1);
-   if(!ABERTO[kg])return;
-   /* nivel 2: conta */
+  /* as contas de um grupo, ordenadas pelo peso no periodo */
+  function contasDe(g,nivel){
    var contas={};
    MS.forEach(function(m){Object.keys(bl[m].contas).forEach(function(ck){
     if(ck.split('|')[0]===g)contas[ck]=1})});
    Object.keys(contas).sort(function(a,b){
     var sa=0,sb=0;MS.forEach(function(m){sa+=Math.abs(bl[m].contas[a]||0);sb+=Math.abs(bl[m].contas[b]||0)});
     return sb-sa}).forEach(function(ck){
-    var vc=MS.map(function(m){return bl[m].contas[ck]||0}), kc=kg+'|c'+ck;
+    var vc=MS.map(function(m){return bl[m].contas[ck]||0});
     /* a conta e a folha: o lancamento abre na caixa, ao clicar no numero */
-    out+=linhaMat(ck.split('|')[1],vc,base,'lvl2',null,2,ck,reg);
+    out+=linhaMat(ck.split('|')[1],vc,base,'lvl'+nivel,null,nivel,ck,reg);
    });
+  }
+  /* bloco de um grupo so: o nivel do grupo repetiria o nome do bloco, entao o
+     clique vai direto para as contas. Com mais de um grupo o nivel informa. */
+  if(gs.length===1){contasDe(gs[0],1);return}
+  gs.forEach(function(g){
+   var vg=MS.map(function(m){return (bl[m].grupos[g]||0)});
+   if(!vg.some(function(v){return v}))return;
+   var kg=k+'|g'+g;
+   out+=linhaMat(D.grupo_nome[g]||g,vg,base,'lvl1'+(ABERTO[kg]?' open':''),kg,1);
+   if(!ABERTO[kg])return;
+   contasDe(g,2);
   });
  });
  if(reg==='caixa')out+=linhaSaldo('fim',MS);
@@ -1017,8 +1013,14 @@ function render(){
  var sl=document.getElementById('selo'); if(sl)sl.textContent=D.gerado;
  document.getElementById('heroCnpj').textContent=e.nome+' · '+(e.cnpj?'CNPJ '+e.cnpj:'')+
   (e.conta?' · '+e.conta:'');
+ var pp=passosPonte();
  document.getElementById('wf').innerHTML=ponteSVG();
- document.getElementById('wfTitle').textContent='Ponte do caixa · '+D.meses_nome[MES];
+ document.getElementById('wfTitle').textContent=
+  (REG==='comp'?'Ponte do resultado · ':'Ponte do caixa · ')+D.meses_nome[MES];
+ document.getElementById('wfHint').textContent=(pp||[]).map(function(x){return x[0]}).join(' → ')
+  ||(REG==='comp'?'receita → deduções → custos → despesas → EBITDA':'saldo inicial → entradas → saídas → resultado → saldo final');
+ document.getElementById('wfX').innerHTML=(pp||[]).map(function(x){
+  return '<span>'+x[0]+'</span>'}).join('');
  document.getElementById('kpis').innerHTML=kpis();
  var t=document.getElementById('rsm'); if(t)t.innerHTML=rsm();
  operacao(); socios();
