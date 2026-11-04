@@ -1094,7 +1094,7 @@ function taxas(){
  h+=lin('Bruto no PIX',function(x){return mv(x.pix.bruto)});
  h+=lin('Taxa do PIX',function(x){return mv(0)});
  h+=lin('PIX sobre o recebimento',function(x){return pc(x.pix.bruto,x.cartao.bruto+x.pix.bruto)});
- h+=lin('Recebível antecipado',function(x){return x.antecipacao.base?mv(x.antecipacao.base):'—'});
+ h+=lin('Recebível antecipado (base da taxa)',function(x){return x.antecipacao.base?mv(x.antecipacao.base):'—'});
  h+=lin('Custo de antecipação',function(x){return x.antecipacao.custo?mv(x.antecipacao.custo):'—'});
  h+=lin('Taxa da antecipação',function(x){return x.antecipacao.custo?txPc(x.antecipacao.pc):'—'});
  h+=lin('Custo de receber',function(x){
@@ -1134,7 +1134,7 @@ function taxas(){
     return '<tr><td class="l">'+d.dia.slice(0,5)+'</td><td>'+
      (d.antecipado?mv(d.antecipado):'—')+'</td><td>'+mv(d.saldo)+'</td>'+
      '<td class="'+(d.sem_antecipar<0?'neg':'')+'">'+mv(d.sem_antecipar)+'</td></tr>'}).join('')+
-   '<tr class="res"><td class="l">No mês</td><td>'+mv(a.total_creditado)+'</td><td>'+
+   '<tr class="res"><td class="l">Creditado no mês</td><td>'+mv(a.total_creditado)+'</td><td>'+
    mv(t.serie[t.serie.length-1].saldo)+'</td><td class="neg">'+
    mv(t.serie[t.serie.length-1].sem_antecipar)+'</td></tr>'+
    '</tbody></table></div>';
