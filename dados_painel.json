@@ -1,5 +1,5 @@
 {
- "gerado": "04/11/2026 às 17:29",
+ "gerado": "04/11/2026 às 20:06",
  "meses": [
   "2026-08",
   "2026-09",
@@ -318,6 +318,9 @@
    }
   }
  },
+ "sem_dre": [
+  "2026-10"
+ ],
  "vendas": {
   "mes": "2026-09",
   "fonte": "Relatório de Vendas do 3LM/Gourmet — setembro/2026",
@@ -2806,8 +2809,9 @@
       "NEUTRO": 9.17,
       "4": -274924.87,
       "5": -11656.46,
-      "8": -17043.760000000006,
-      "6": -18079.18,
+      "11": -17477.38,
+      "6": -15769.18,
+      "8": -1876.3799999999999,
       "9": -4385.0,
       "2": -8175.04,
       "3": -2010.0,
@@ -2820,20 +2824,17 @@
       "4|Secos e mercearia": -34932.87,
       "4|Outros insumos e diversos": -40020.14,
       "5|Alojamento e ajuda de custo para moradia": -7000.0,
-      "8|Outras despesas administrativas": -4167.38,
+      "11|Investimentos diversos": -17477.38,
       "6|Diarista (OIA)": -8933.14,
       "8|Sistemas": -1594.1999999999998,
       "9|Cachê de artistas e atrações": -2385.0,
       "5|Limpeza e descartáveis": -2458.46,
-      "8|Contabilidade, jurídico e consultorias": -7500.0,
       "4|Bebidas alcoólicas": -112891.80000000002,
       "9|Outros de marketing": -2000.0,
-      "6|Passagens aéreas da equipe": -2010.0,
       "4|Proteínas (carnes e frutos do mar)": -37443.97000000001,
       "4|Hortifrúti": -14509.61,
       "5|Reposição de utensílios": -180.0,
       "4|Frios, laticínios e congelados": -27972.12,
-      "8|Viagens administrativas": -3500.0,
       "6|ISS | Permanência": -2734.33,
       "6|Alimentação de colaboradores": -2256.2,
       "8|Tarifas bancárias": -282.18000000000006,
@@ -2843,7 +2844,6 @@
       "2|PIS": -46.45,
       "2|COFINS": -214.39,
       "3|Taxas de cartão": -2010.0,
-      "6|Extras e freelancers": -300.0,
       "5|Transporte, veículo e combustível": -1418.0,
       "5|Diversos de operação": -600.0,
       "4|Bebidas não alcoólicas": -1776.84,
@@ -2860,20 +2860,17 @@
       "4|Secos e mercearia": 17,
       "4|Outros insumos e diversos": 5,
       "5|Alojamento e ajuda de custo para moradia": 1,
-      "8|Outras despesas administrativas": 2,
+      "11|Investimentos diversos": 7,
       "6|Diarista (OIA)": 27,
       "8|Sistemas": 3,
       "9|Cachê de artistas e atrações": 2,
       "5|Limpeza e descartáveis": 2,
-      "8|Contabilidade, jurídico e consultorias": 1,
       "4|Bebidas alcoólicas": 19,
       "9|Outros de marketing": 1,
-      "6|Passagens aéreas da equipe": 1,
       "4|Proteínas (carnes e frutos do mar)": 14,
       "4|Hortifrúti": 11,
       "5|Reposição de utensílios": 1,
       "4|Frios, laticínios e congelados": 14,
-      "8|Viagens administrativas": 1,
       "6|ISS | Permanência": 8,
       "6|Alimentação de colaboradores": 1,
       "8|Tarifas bancárias": 10,
@@ -2883,7 +2880,6 @@
       "2|PIS": 1,
       "2|COFINS": 1,
       "3|Taxas de cartão": 1,
-      "6|Extras e freelancers": 2,
       "5|Transporte, veículo e combustível": 2,
       "5|Diversos de operação": 1,
       "4|Bebidas não alcoólicas": 3,
@@ -3530,7 +3526,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "20/08/2026",
        -427.38,
        "TILLBILL - DESENVOLVIMENTO DE SISTEMAS LTDA",
@@ -3593,7 +3589,7 @@
        ""
       ],
       [
-       "8|Contabilidade, jurídico e consultorias",
+       "11|Investimentos diversos",
        "25/08/2026",
        -7500,
        "CRISTINA LIMA DE CASTRO",
@@ -3863,7 +3859,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "27/08/2026",
        -2010,
        "EDMILSON DE LIMA JUNIOR",
@@ -3998,7 +3994,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "13/08/2026",
        -3740,
        "ANCORA PESCADOS LTDA",
@@ -4007,7 +4003,7 @@
        ""
       ],
       [
-       "8|Viagens administrativas",
+       "11|Investimentos diversos",
        "25/08/2026",
        -3500,
        "POUSADA PRAIANA NORONHA LTDA",
@@ -4745,7 +4741,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "11|Investimentos diversos",
        "28/08/2026",
        -150,
        "Cliente Consumidor / Sem Tomador",
@@ -4754,7 +4750,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "11|Investimentos diversos",
        "29/08/2026",
        -150,
        "Cliente Consumidor / Sem Tomador",
@@ -5329,12 +5325,12 @@
      "grupos": {
       "1": 1123423.9800000004,
       "NEUTRO": 1058.2300000000012,
-      "8": -104427.47000000002,
+      "8": -80006.5,
+      "11": -87472.65,
       "9": -30715.83,
-      "6": -218394.7100000001,
-      "5": -69521.03000000001,
+      "5": -78911.86,
+      "6": -159797.20000000013,
       "4": -366406.57000000007,
-      "11": -13845.0,
       "CC": -3466.67,
       "3": -111227.71000000005,
       "2": -40739.06,
@@ -5346,11 +5342,11 @@
       "1|Receita operacional (salão)": 1123423.9800000004,
       "NEUTRO|Ajustes e estornos - entrada": 1058.2300000000012,
       "8|Sistemas": -3943.38,
-      "8|Viagens administrativas": -7900.0,
+      "11|Investimentos diversos": -73627.65,
       "9|Outros de marketing": -3500.0,
-      "8|Contabilidade, jurídico e consultorias": -12620.0,
-      "6|Diarista (OIA)": -74377.51000000001,
+      "5|Prestadores de servicos gerais": -13050.83,
       "5|Alojamento e ajuda de custo para moradia": -25070.65,
+      "6|Diarista (OIA)": -22686.68,
       "6|Salários da operação": -87427.82000000004,
       "8|Telefonia e internet": -188.42,
       "4|Proteínas (carnes e frutos do mar)": -106902.46,
@@ -5358,24 +5354,22 @@
       "8|Correios e fretes administrativos": -186.95,
       "4|Outros insumos e diversos": -9493.53,
       "9|Cachê de artistas e atrações": -23215.83,
-      "6|Extras e freelancers": -21097.5,
+      "6|Salario PJ": -14600.0,
       "5|Gestor operacional PJ": -14666.67,
       "8|Pró-labore": -68000.0,
       "11|Equipamentos e mobiliário": -10345.0,
       "4|Hortifrúti": -18342.13,
-      "5|Manutenção de equipamentos": -3660.0,
+      "6|Extras e freelancers": -5497.5,
       "4|Secos e mercearia": -78539.91000000002,
       "11|Obras e reformas": -3500.0,
-      "8|Outras despesas administrativas": -9020.970000000001,
       "5|Limpeza e descartáveis": -21617.11,
       "8|Tarifas bancárias": -782.2500000000001,
       "4|Bebidas alcoólicas": -118122.94,
-      "6|Passagens aéreas da equipe": -3982.68,
-      "6|Uniformes, EPI e exames": -1924.0,
       "9|Agência e conteúdo": -2500.0,
       "4|Frete de insumos de alimentos e bebidas": -14428.04,
       "4|Gás de cozinha": -1000.0,
       "CC|Conta corrente Pousada Topázio - saída": -3466.67,
+      "8|Contabilidade, jurídico e consultorias": -5120.0,
       "3|Comissões sobre vendas": -100776.14000000003,
       "2|ICMS-ST e DIFAL": -295.21,
       "7|Taxas distritais, TPU, TLL e IPTU": -825.42,
@@ -5403,11 +5397,11 @@
       "1|Receita operacional (salão)": 356,
       "NEUTRO|Ajustes e estornos - entrada": 300,
       "8|Sistemas": 3,
-      "8|Viagens administrativas": 3,
+      "11|Investimentos diversos": 44,
       "9|Outros de marketing": 2,
-      "8|Contabilidade, jurídico e consultorias": 3,
-      "6|Diarista (OIA)": 75,
+      "5|Prestadores de servicos gerais": 16,
       "5|Alojamento e ajuda de custo para moradia": 11,
+      "6|Diarista (OIA)": 38,
       "6|Salários da operação": 67,
       "8|Telefonia e internet": 1,
       "4|Proteínas (carnes e frutos do mar)": 34,
@@ -5415,24 +5409,22 @@
       "8|Correios e fretes administrativos": 1,
       "4|Outros insumos e diversos": 5,
       "9|Cachê de artistas e atrações": 24,
-      "6|Extras e freelancers": 21,
+      "6|Salario PJ": 4,
       "5|Gestor operacional PJ": 3,
       "8|Pró-labore": 6,
       "11|Equipamentos e mobiliário": 5,
       "4|Hortifrúti": 16,
-      "5|Manutenção de equipamentos": 4,
+      "6|Extras e freelancers": 16,
       "4|Secos e mercearia": 34,
       "11|Obras e reformas": 2,
-      "8|Outras despesas administrativas": 7,
       "5|Limpeza e descartáveis": 8,
       "8|Tarifas bancárias": 25,
       "4|Bebidas alcoólicas": 26,
-      "6|Passagens aéreas da equipe": 4,
-      "6|Uniformes, EPI e exames": 3,
       "9|Agência e conteúdo": 1,
       "4|Frete de insumos de alimentos e bebidas": 2,
       "4|Gás de cozinha": 1,
       "CC|Conta corrente Pousada Topázio - saída": 2,
+      "8|Contabilidade, jurídico e consultorias": 2,
       "3|Comissões sobre vendas": 53,
       "2|ICMS-ST e DIFAL": 1,
       "7|Taxas distritais, TPU, TLL e IPTU": 2,
@@ -11376,7 +11368,7 @@
        ""
       ],
       [
-       "8|Viagens administrativas",
+       "11|Investimentos diversos",
        "01/09/2026",
        -3500,
        "POUSADA PRAIANA NORONHA LTDA",
@@ -11394,7 +11386,7 @@
        ""
       ],
       [
-       "8|Contabilidade, jurídico e consultorias",
+       "11|Investimentos diversos",
        "01/09/2026",
        -7500,
        "CRISTINA LIMA DE CASTRO",
@@ -11403,7 +11395,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "01/09/2026",
        -800,
        "NILSON DOUGLAS RODRIGUES DA PAZ",
@@ -11448,7 +11440,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "01/09/2026",
        -255,
        "HOELL TEODOSIO DOS SANTOS",
@@ -11484,7 +11476,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "01/09/2026",
        -800,
        "RAMATHYS AGRYLAR MENEZES DA SILVA",
@@ -11502,7 +11494,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "01/09/2026",
        -150,
        "VALDENIRA DOS SANTOS PEREIRA",
@@ -11754,7 +11746,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "02/09/2026",
        -250,
        "JOSE FORTUNATO DA COSTA",
@@ -11763,7 +11755,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "02/09/2026",
        -1712.5,
        "MARIANA BRANCO DA SILVA",
@@ -11817,7 +11809,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Salario PJ",
        "04/09/2026",
        -3733.33,
        "JOAO WICTTOR MARCELINO MEDEIROS",
@@ -11898,7 +11890,7 @@
        ""
       ],
       [
-       "5|Manutenção de equipamentos",
+       "5|Prestadores de servicos gerais",
        "05/09/2026",
        -1000,
        "JOSE FORTUNATO DA COSTA",
@@ -11925,7 +11917,7 @@
        ""
       ],
       [
-       "8|Viagens administrativas",
+       "11|Investimentos diversos",
        "08/09/2026",
        -3500,
        "POUSADA PRAIANA NORONHA LTDA",
@@ -11952,7 +11944,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "01/09/2026",
        -262.5,
        "HOELL TEODOSIO DOS SANTOS",
@@ -12060,7 +12052,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "02/09/2026",
        -286.05,
        "PRESHH ALUGUEL DE MAQUINAS LTDA",
@@ -12195,7 +12187,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Salario PJ",
        "05/09/2026",
        -3266.67,
        "JOAO WICTTOR MARCELINO MEDEIROS",
@@ -12276,7 +12268,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "08/09/2026",
        -1563.6,
        "DYON GALDINO ALVES",
@@ -12348,7 +12340,7 @@
        ""
       ],
       [
-       "6|Uniformes, EPI e exames",
+       "11|Investimentos diversos",
        "09/09/2026",
        -150,
        "FRANCISCO EDUARDO OLIVEIRA DE SOUZA",
@@ -12357,7 +12349,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "09/09/2026",
        -680,
        "EDMILSON DE LIMA JUNIOR",
@@ -12384,7 +12376,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "09/09/2026",
        -250,
        "MAURO VIEIRA DA CUNHA JUNIOR",
@@ -12510,7 +12502,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "10/09/2026",
        -2800,
        "KATIANA MARQUES DA ROCHA CAMPELO 01439107440",
@@ -12555,7 +12547,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "11/09/2026",
        -689.08,
        "AZUL LINHAS AEREAS BRASILEIRAS S.A.",
@@ -12663,7 +12655,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "14/09/2026",
        -1050,
        "AZUL LINHAS AEREAS BRASILEIRAS S.A.",
@@ -12843,7 +12835,7 @@
        ""
       ],
       [
-       "6|Uniformes, EPI e exames",
+       "11|Investimentos diversos",
        "15/09/2026",
        -1496,
        "NEURONHA COMERCIO DE ARTIGOS ESPORTIVOS LTDA",
@@ -12852,7 +12844,7 @@
        ""
       ],
       [
-       "6|Uniformes, EPI e exames",
+       "11|Investimentos diversos",
        "15/09/2026",
        -278,
        "NEURONHA COMERCIO DE ARTIGOS ESPORTIVOS LTDA",
@@ -12960,7 +12952,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "18/09/2026",
        -64.92,
        "EDMILSON DE LIMA JUNIOR",
@@ -13113,7 +13105,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "22/09/2026",
        -375,
        "BRUNO CELIO PORTELA DE SOUZA",
@@ -13149,7 +13141,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "22/09/2026",
        -700,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -13158,7 +13150,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "22/09/2026",
        -840,
        "FLAVIO AUGUSTO LIMA DA SILVA",
@@ -13383,7 +13375,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "21/09/2026",
        -5300,
        "NORONHA ONLINE TELECOMUNICACOES LTDA",
@@ -13599,7 +13591,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "5|Prestadores de servicos gerais",
        "30/09/2026",
        -1000,
        "JOSE FORTUNATO DA COSTA",
@@ -13608,7 +13600,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Salario PJ",
        "30/09/2026",
        -7000,
        "JOAO WICTTOR MARCELINO MEDEIROS",
@@ -13887,7 +13879,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "25/09/2026",
        -1620.83,
        "MARIANA MACHADO BUENO",
@@ -13959,7 +13951,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "27/09/2026",
        -600,
        "MAURO VIEIRA DA CUNHA JUNIOR",
@@ -13968,7 +13960,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "27/09/2026",
        -2800,
        "MAURO VIEIRA DA CUNHA JUNIOR",
@@ -14049,7 +14041,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "27/09/2026",
        -250,
        "MAURO VIEIRA DA CUNHA JUNIOR",
@@ -14103,7 +14095,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Salario PJ",
        "29/09/2026",
        -600,
        "JOAO WICTTOR MARCELINO MEDEIROS",
@@ -14256,7 +14248,7 @@
        ""
       ],
       [
-       "5|Manutenção de equipamentos",
+       "11|Investimentos diversos",
        "02/09/2026",
        -1400,
        "PROTETORES ARGUS LTDA",
@@ -14319,7 +14311,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "29/09/2026",
        -700,
        "PEDROEROL CLIMATIZACAO LTDA",
@@ -14553,7 +14545,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "25/09/2026",
        -1785,
        "FLAVIA MARIA SILVA TORRES",
@@ -14562,7 +14554,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "25/09/2026",
        -800,
        "MARIANA GOICOECHEA",
@@ -14571,7 +14563,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "29/09/2026",
        -20,
        "EDMILSON DE LIMA JUNIOR",
@@ -14580,7 +14572,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "29/09/2026",
        -300,
        "EDMILSON DE LIMA JUNIOR",
@@ -14625,7 +14617,7 @@
        ""
       ],
       [
-       "8|Viagens administrativas",
+       "11|Investimentos diversos",
        "30/09/2026",
        -900,
        "POUSADA GOLFINHO LTDA",
@@ -14661,7 +14653,7 @@
        ""
       ],
       [
-       "5|Manutenção de equipamentos",
+       "11|Investimentos diversos",
        "29/09/2026",
        -960,
        "54.254.556 JHONATHAN JARDIEL JERONIMO SILVA",
@@ -15066,7 +15058,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "26/09/2026",
        -2580,
        "Cliente Consumidor / Sem Tomador",
@@ -15075,7 +15067,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "27/09/2026",
        -4300,
        "Cliente Consumidor / Sem Tomador",
@@ -15084,7 +15076,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "29/09/2026",
        -1725,
        "Cliente Consumidor / Sem Tomador",
@@ -15093,7 +15085,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "30/09/2026",
        -1000,
        "Cliente Consumidor / Sem Tomador",
@@ -15120,7 +15112,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "08/09/2026",
        -1125,
        "Cliente Consumidor / Sem Tomador",
@@ -15147,7 +15139,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "11/09/2026",
        -4225,
        "Cliente Consumidor / Sem Tomador",
@@ -15156,7 +15148,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "12/09/2026",
        -875,
        "Cliente Consumidor / Sem Tomador",
@@ -15165,7 +15157,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "13/09/2026",
        -4550,
        "Cliente Consumidor / Sem Tomador",
@@ -15183,7 +15175,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "17/09/2026",
        -710,
        "Cliente Consumidor / Sem Tomador",
@@ -15192,7 +15184,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "18/09/2026",
        -700,
        "Cliente Consumidor / Sem Tomador",
@@ -15201,7 +15193,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "19/09/2026",
        -400,
        "Cliente Consumidor / Sem Tomador",
@@ -15219,7 +15211,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "21/09/2026",
        -1875,
        "Cliente Consumidor / Sem Tomador",
@@ -15228,7 +15220,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "24/09/2026",
        -2715,
        "Cliente Consumidor / Sem Tomador",
@@ -15309,7 +15301,7 @@
        ""
       ],
       [
-       "5|Manutenção de equipamentos",
+       "11|Investimentos diversos",
        "25/09/2026",
        -300,
        "UMBERTO RICARDO DA SILVA",
@@ -15435,7 +15427,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "02/09/2026",
        -1075,
        "Cliente Consumidor / Sem Tomador",
@@ -15444,7 +15436,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "04/09/2026",
        -935,
        "Cliente Consumidor / Sem Tomador",
@@ -15453,7 +15445,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "05/09/2026",
        -600,
        "Cliente Consumidor / Sem Tomador",
@@ -15462,7 +15454,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "06/09/2026",
        -2175,
        "Cliente Consumidor / Sem Tomador",
@@ -15471,7 +15463,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "16/09/2026",
        -3425,
        "Cliente Consumidor / Sem Tomador",
@@ -15480,7 +15472,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "22/09/2026",
        -775,
        "Cliente Consumidor / Sem Tomador",
@@ -15489,7 +15481,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "23/09/2026",
        -1225,
        "Cliente Consumidor / Sem Tomador",
@@ -17000,90 +16992,86 @@
      "grupos": {
       "1": 97473.08000000002,
       "8": -6392.05,
-      "5": -55912.44,
-      "6": -64473.979999999996,
-      "4": -80508.29999999997,
-      "7": -12559.8,
+      "5": -58543.51,
+      "6": -17084.220000000005,
+      "4": -87760.31999999999,
+      "7": -18559.8,
       "9": -25905.0,
+      "11": -43758.69,
       "NEUTRO": -100000.0,
-      "3": -4380.41,
-      "11": -5000.0
+      "3": -4380.41
      },
      "contas": {
       "1|Receita operacional (salão)": 97473.08000000002,
       "8|Sistemas": -3392.05,
-      "5|Alojamento e ajuda de custo para moradia": -45000.0,
+      "5|Alojamento e ajuda de custo para moradia": -49000.0,
       "6|Rescisões": -325.85,
       "6|ISS | Permanência": -2261.39,
       "4|Proteínas (carnes e frutos do mar)": -31730.93,
-      "6|Diarista (OIA)": -38244.26,
-      "7|Arrendamento e aluguel do ponto": -10000.0,
+      "6|Diarista (OIA)": -4712.5,
       "6|Salários da operação": -400.0,
-      "6|Alimentação de colaboradores": -13955.310000000001,
-      "4|Hortifrúti": -5784.96,
+      "6|Alimentação de colaboradores": -3955.3100000000004,
+      "4|Hortifrúti": -7498.76,
       "4|Água mineral": -6530.0,
       "8|Contabilidade, jurídico e consultorias": -3000.0,
-      "7|Outros aluguéis": -1500.0,
+      "7|Outros aluguéis": -17500.0,
       "4|Outros insumos e diversos": -5652.59,
       "5|Limpeza e descartáveis": -3486.05,
       "9|Cachê de artistas e atrações": -19905.0,
-      "5|Manutenção de equipamentos": -950.0,
+      "11|Investimentos diversos": -38339.76,
       "9|Marketing e divulgação de eventos": -6000.0,
       "5|Diversos de operação": -4807.46,
       "4|Frete de insumos de alimentos e bebidas": -8849.050000000001,
-      "6|Extras e freelancers": -6628.17,
+      "6|Extras e freelancers": -4929.17,
+      "6|Salario PJ": -500.0,
       "4|Secos e mercearia": -4153.8099999999995,
       "NEUTRO|Transferência entre contas - saída": -100000.0,
       "3|Comissões sobre vendas": -4380.41,
       "4|Frios, laticínios e congelados": -2287.96,
-      "6|Uniformes, EPI e exames": -126.02,
-      "4|Bebidas alcoólicas": -13490.0,
+      "4|Bebidas alcoólicas": -19028.22,
       "4|Bebidas não alcoólicas": -2029.0,
-      "6|Passagens aéreas da equipe": -2532.98,
       "7|Seguros": -1059.8,
       "5|Artistas e couvert": -1250.0,
       "11|Equipamentos e mobiliário": -5000.0,
-      "5|Frete de materiais de operação": -418.93
+      "11|Frete de equipamentos e obra": -418.93
      },
      "lanc": {
       "1|Receita operacional (salão)": 42,
       "8|Sistemas": 3,
-      "5|Alojamento e ajuda de custo para moradia": 10,
+      "5|Alojamento e ajuda de custo para moradia": 11,
       "6|Rescisões": 1,
       "6|ISS | Permanência": 8,
       "4|Proteínas (carnes e frutos do mar)": 16,
-      "6|Diarista (OIA)": 26,
-      "7|Arrendamento e aluguel do ponto": 2,
+      "6|Diarista (OIA)": 11,
       "6|Salários da operação": 1,
-      "6|Alimentação de colaboradores": 8,
-      "4|Hortifrúti": 7,
+      "6|Alimentação de colaboradores": 7,
+      "4|Hortifrúti": 8,
       "4|Água mineral": 3,
       "8|Contabilidade, jurídico e consultorias": 2,
-      "7|Outros aluguéis": 1,
+      "7|Outros aluguéis": 3,
       "4|Outros insumos e diversos": 3,
       "5|Limpeza e descartáveis": 3,
       "9|Cachê de artistas e atrações": 16,
-      "5|Manutenção de equipamentos": 1,
+      "11|Investimentos diversos": 19,
       "9|Marketing e divulgação de eventos": 4,
       "5|Diversos de operação": 4,
       "4|Frete de insumos de alimentos e bebidas": 7,
-      "6|Extras e freelancers": 12,
+      "6|Extras e freelancers": 10,
+      "6|Salario PJ": 1,
       "4|Secos e mercearia": 5,
       "NEUTRO|Transferência entre contas - saída": 1,
       "3|Comissões sobre vendas": 1,
       "4|Frios, laticínios e congelados": 2,
-      "6|Uniformes, EPI e exames": 1,
-      "4|Bebidas alcoólicas": 4,
+      "4|Bebidas alcoólicas": 7,
       "4|Bebidas não alcoólicas": 3,
-      "6|Passagens aéreas da equipe": 1,
       "7|Seguros": 1,
       "5|Artistas e couvert": 1,
       "11|Equipamentos e mobiliário": 1,
-      "5|Frete de materiais de operação": 1
+      "11|Frete de equipamentos e obra": 1
      },
      "familias": {
-      "cozinha": -43957.66,
-      "bar": -22049.0,
+      "cozinha": -45671.46000000001,
+      "bar": -27587.22,
       "comum": -14501.640000000001
      },
      "itens": [
@@ -17619,7 +17607,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "5|Alojamento e ajuda de custo para moradia",
        "04/10/2026",
        -4000,
        "DIEGO JOSE CANDIDO DO NASCIMENTO",
@@ -17745,7 +17733,7 @@
        ""
       ],
       [
-       "6|Alimentação de colaboradores",
+       "7|Outros aluguéis",
        "05/10/2026",
        -10000,
        "CLAUDIO HENRIQUE BEZERRA XAVIER",
@@ -17862,7 +17850,7 @@
        ""
       ],
       [
-       "5|Manutenção de equipamentos",
+       "11|Investimentos diversos",
        "20/10/2026",
        -950,
        "54.254.556 JHONATHAN JARDIEL JERONIMO SILVA",
@@ -17934,7 +17922,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "7|Outros aluguéis",
        "31/10/2026",
        -6000,
        "CLAUDIO HENRIQUE BEZERRA XAVIER",
@@ -18033,7 +18021,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Salario PJ",
        "21/10/2026",
        -500,
        "JOAO WICTTOR MARCELINO MEDEIROS",
@@ -18222,7 +18210,7 @@
        ""
       ],
       [
-       "6|Uniformes, EPI e exames",
+       "11|Investimentos diversos",
        "15/10/2026",
        -126.02,
        "DISTRINOX DISTRIBUIDORA DE ARTEFATOS AGRICOLAS",
@@ -18303,7 +18291,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "01/10/2026",
        -3195.44,
        "Cliente Consumidor / Sem Tomador",
@@ -18312,7 +18300,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "02/10/2026",
        -925,
        "Cliente Consumidor / Sem Tomador",
@@ -18321,7 +18309,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "03/10/2026",
        -700,
        "Cliente Consumidor / Sem Tomador",
@@ -18330,7 +18318,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "04/10/2026",
        -1066.59,
        "Cliente Consumidor / Sem Tomador",
@@ -18339,7 +18327,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "07/10/2026",
        -2821.67,
        "Cliente Consumidor / Sem Tomador",
@@ -18348,7 +18336,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "08/10/2026",
        -4990,
        "Cliente Consumidor / Sem Tomador",
@@ -18357,7 +18345,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "09/10/2026",
        -2504.17,
        "Cliente Consumidor / Sem Tomador",
@@ -18366,7 +18354,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "10/10/2026",
        -3375,
        "Cliente Consumidor / Sem Tomador",
@@ -18384,7 +18372,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "12/10/2026",
        -1350,
        "Cliente Consumidor / Sem Tomador",
@@ -18393,7 +18381,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "13/10/2026",
        -632.9,
        "Cliente Consumidor / Sem Tomador",
@@ -18402,7 +18390,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "11|Investimentos diversos",
        "14/10/2026",
        -1199,
        "Cliente Consumidor / Sem Tomador",
@@ -18411,7 +18399,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "15/10/2026",
        -625,
        "Cliente Consumidor / Sem Tomador",
@@ -18420,7 +18408,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "16/10/2026",
        -2175,
        "Cliente Consumidor / Sem Tomador",
@@ -18429,7 +18417,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "17/10/2026",
        -2236.99,
        "Cliente Consumidor / Sem Tomador",
@@ -18438,7 +18426,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "18/10/2026",
        -3000,
        "Cliente Consumidor / Sem Tomador",
@@ -18447,7 +18435,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "19/10/2026",
        -3934,
        "Cliente Consumidor / Sem Tomador",
@@ -18528,7 +18516,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "22/10/2026",
        -2532.98,
        "AZUL LINHAS AEREAS BRASILEIRAS S.A.",
@@ -18753,7 +18741,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "12/10/2026",
        -418.93,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA ME",
@@ -18904,6 +18892,42 @@
        "000029302/1",
        "",
        ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "30/10/2026",
+       -1846.08,
+       "INGA - DISTRIBUIDORA LTDA",
+       "000392581/1",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "30/10/2026",
+       -1846.07,
+       "INGA - DISTRIBUIDORA LTDA",
+       "000392581/2",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "30/10/2026",
+       -1846.07,
+       "INGA - DISTRIBUIDORA LTDA",
+       "000392581/3",
+       "",
+       ""
+      ],
+      [
+       "4|Hortifrúti",
+       "30/10/2026",
+       -1713.8,
+       "EMPORIO MIX DE HORTALICAS FINAS LIMITADA",
+       "000000104/1",
+       "",
+       ""
       ]
      ]
     }
@@ -18912,12 +18936,13 @@
     "2026-08": {
      "grupos": {
       "NEUTRO": 9.169999999976426,
-      "6": -11889.48,
+      "6": -9879.48,
       "4": -32246.059999999998,
       "5": -7574.0,
-      "8": -17043.760000000002,
+      "11": -17177.38,
       "CC": 100000.0,
       "1": 165122.28,
+      "8": -1876.3799999999999,
       "9": -4385.0,
       "10": 4.07,
       "2": -0.03
@@ -18928,7 +18953,7 @@
       "4|Secos e mercearia": -3774.9799999999996,
       "4|Outros insumos e diversos": -2800.0,
       "5|Alojamento e ajuda de custo para moradia": -7000.0,
-      "8|Outras despesas administrativas": -4167.38,
+      "11|Investimentos diversos": -17177.38,
       "6|Diarista (OIA)": -8933.14,
       "CC|Conta corrente YO Noronha - entrada": 100000.0,
       "NEUTRO|Transferência entre contas - saída": -226417.07000000007,
@@ -18937,16 +18962,13 @@
       "8|Sistemas": -1594.1999999999998,
       "9|Cachê de artistas e atrações": -2385.0,
       "5|Limpeza e descartáveis": -394.0,
-      "8|Contabilidade, jurídico e consultorias": -7500.0,
       "4|Bebidas alcoólicas": -16052.38,
       "9|Outros de marketing": -2000.0,
       "NEUTRO|Transferência entre contas - entrada": 226417.07,
-      "6|Passagens aéreas da equipe": -2010.0,
       "4|Proteínas (carnes e frutos do mar)": -5888.0,
       "4|Hortifrúti": -2590.7,
       "5|Reposição de utensílios": -180.0,
       "4|Frios, laticínios e congelados": -1140.0,
-      "8|Viagens administrativas": -3500.0,
       "10|Rendimentos de aplicações": 4.45,
       "10|IOF": -0.38,
       "2|IRPJ": -0.03
@@ -18957,7 +18979,7 @@
       "4|Secos e mercearia": 5,
       "4|Outros insumos e diversos": 1,
       "5|Alojamento e ajuda de custo para moradia": 1,
-      "8|Outras despesas administrativas": 2,
+      "11|Investimentos diversos": 5,
       "6|Diarista (OIA)": 27,
       "CC|Conta corrente YO Noronha - entrada": 1,
       "NEUTRO|Transferência entre contas - saída": 8,
@@ -18966,16 +18988,13 @@
       "8|Sistemas": 3,
       "9|Cachê de artistas e atrações": 2,
       "5|Limpeza e descartáveis": 1,
-      "8|Contabilidade, jurídico e consultorias": 1,
       "4|Bebidas alcoólicas": 5,
       "9|Outros de marketing": 1,
       "NEUTRO|Transferência entre contas - entrada": 8,
-      "6|Passagens aéreas da equipe": 1,
       "4|Proteínas (carnes e frutos do mar)": 1,
       "4|Hortifrúti": 5,
       "5|Reposição de utensílios": 1,
       "4|Frios, laticínios e congelados": 1,
-      "8|Viagens administrativas": 1,
       "10|Rendimentos de aplicações": 1,
       "10|IOF": 1,
       "2|IRPJ": 1
@@ -19050,7 +19069,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "20/08/2026",
        -427.38,
        "TILLBILL - DESENVOLVIMENTO DE SISTEMAS LTDA",
@@ -19311,7 +19330,7 @@
        ""
       ],
       [
-       "8|Contabilidade, jurídico e consultorias",
+       "11|Investimentos diversos",
        "25/08/2026",
        -7500,
        "CRISTINA LIMA DE CASTRO",
@@ -19734,7 +19753,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "27/08/2026",
        -2010,
        "EDMILSON DE LIMA JUNIOR",
@@ -19986,7 +20005,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "28/08/2026",
        -3740,
        "ANCORA PESCADOS",
@@ -19995,7 +20014,7 @@
        ""
       ],
       [
-       "8|Viagens administrativas",
+       "11|Investimentos diversos",
        "28/08/2026",
        -3500,
        "POUSADA PRAIANA NORONHA",
@@ -20324,11 +20343,11 @@
      "grupos": {
       "1": 1059150.87,
       "4": -357256.19000070007,
-      "6": -124866.83999929996,
-      "8": -63741.97000000001,
+      "6": -104959.32999929997,
+      "11": -49282.649999999994,
       "9": -30715.83,
-      "5": -41828.11,
-      "11": -13845.0,
+      "5": -49818.94,
+      "8": -40221.00000000001,
       "NEUTRO": 11128.229999999363,
       "2": -13771.75,
       "CC": -3466.67,
@@ -20341,16 +20360,15 @@
       "4|Hortifrúti": -23048.3900007,
       "6|Alimentação de colaboradores": -24874.32,
       "4|Secos e mercearia": -79035.87999999999,
-      "8|Viagens administrativas": -7000.0,
+      "11|Investimentos diversos": -35437.65,
       "9|Outros de marketing": -3500.0,
-      "8|Contabilidade, jurídico e consultorias": -14620.0,
-      "6|Diarista (OIA)": -36687.51,
+      "5|Prestadores de servicos gerais": -11350.83,
       "5|Alojamento e ajuda de custo para moradia": -26070.65,
+      "6|Diarista (OIA)": -22686.68,
       "11|Equipamentos e mobiliário": -10345.0,
       "4|Proteínas (carnes e frutos do mar)": -111081.62999999998,
       "4|Bebidas alcoólicas": -55827.879991740505,
       "11|Obras e reformas": -3500.0,
-      "8|Outras despesas administrativas": -9020.970000000001,
       "5|Limpeza e descartáveis": -2948.46,
       "8|Tarifas bancárias": -782.2500000000001,
       "NEUTRO|Transferência entre contas - entrada": 926867.98,
@@ -20358,16 +20376,14 @@
       "NEUTRO|Transferência entre contas - saída": -916797.9800000001,
       "6|Salários da operação": -39208.299999999996,
       "5|Gestor operacional PJ": -9000.0,
-      "6|Extras e freelancers": -11104.1599993,
+      "6|Salario PJ": -7600.0,
       "8|Telefonia e internet": -188.42,
       "8|Correios e fretes administrativos": -186.95,
       "4|Outros insumos e diversos": -38480.450000000004,
       "9|Cachê de artistas e atrações": -23215.83,
       "8|Pró-labore": -28000.0,
-      "5|Manutenção de equipamentos": -3360.0,
+      "6|Extras e freelancers": -3504.1599993,
       "6|ISS | Permanência": -2134.33,
-      "6|Passagens aéreas da equipe": -3982.68,
-      "6|Uniformes, EPI e exames": -1924.0,
       "9|Mídia paga": -1500.0,
       "4|Frete de insumos de alimentos e bebidas": -11375.560000000001,
       "9|Agência e conteúdo": -2500.0,
@@ -20376,6 +20392,7 @@
       "8|Sistemas": -3943.38,
       "4|Gás de cozinha": -1000.0,
       "CC|Conta corrente Pousada Topázio - saída": -3466.67,
+      "8|Contabilidade, jurídico e consultorias": -7120.0,
       "3|Comissões sobre vendas": -12116.620000000003,
       "2|ICMS-ST e DIFAL": -295.21,
       "7|Taxas distritais, TPU, TLL e IPTU": -825.42,
@@ -20396,16 +20413,15 @@
       "4|Hortifrúti": 14,
       "6|Alimentação de colaboradores": 13,
       "4|Secos e mercearia": 34,
-      "8|Viagens administrativas": 2,
+      "11|Investimentos diversos": 22,
       "9|Outros de marketing": 2,
-      "8|Contabilidade, jurídico e consultorias": 4,
-      "6|Diarista (OIA)": 54,
+      "5|Prestadores de servicos gerais": 14,
       "5|Alojamento e ajuda de custo para moradia": 12,
+      "6|Diarista (OIA)": 38,
       "11|Equipamentos e mobiliário": 5,
       "4|Proteínas (carnes e frutos do mar)": 39,
       "4|Bebidas alcoólicas": 13,
       "11|Obras e reformas": 2,
-      "8|Outras despesas administrativas": 7,
       "5|Limpeza e descartáveis": 3,
       "8|Tarifas bancárias": 25,
       "NEUTRO|Transferência entre contas - entrada": 27,
@@ -20413,16 +20429,14 @@
       "NEUTRO|Transferência entre contas - saída": 21,
       "6|Salários da operação": 40,
       "5|Gestor operacional PJ": 2,
-      "6|Extras e freelancers": 10,
+      "6|Salario PJ": 3,
       "8|Telefonia e internet": 1,
       "8|Correios e fretes administrativos": 1,
       "4|Outros insumos e diversos": 9,
       "9|Cachê de artistas e atrações": 24,
       "8|Pró-labore": 3,
-      "5|Manutenção de equipamentos": 3,
+      "6|Extras e freelancers": 7,
       "6|ISS | Permanência": 6,
-      "6|Passagens aéreas da equipe": 4,
-      "6|Uniformes, EPI e exames": 3,
       "9|Mídia paga": 1,
       "4|Frete de insumos de alimentos e bebidas": 2,
       "9|Agência e conteúdo": 1,
@@ -20431,6 +20445,7 @@
       "8|Sistemas": 3,
       "4|Gás de cozinha": 1,
       "CC|Conta corrente Pousada Topázio - saída": 2,
+      "8|Contabilidade, jurídico e consultorias": 3,
       "3|Comissões sobre vendas": 24,
       "2|ICMS-ST e DIFAL": 1,
       "7|Taxas distritais, TPU, TLL e IPTU": 2,
@@ -20543,7 +20558,7 @@
        ""
       ],
       [
-       "8|Viagens administrativas",
+       "11|Investimentos diversos",
        "01/09/2026",
        -3500,
        "POUSADA PRAIANA NORONHA",
@@ -20561,7 +20576,7 @@
        ""
       ],
       [
-       "8|Contabilidade, jurídico e consultorias",
+       "11|Investimentos diversos",
        "01/09/2026",
        -7500,
        "CRISTINA LIMA DE CASTRO",
@@ -20570,7 +20585,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "01/09/2026",
        -800,
        "NILSON DOUGLAS RODRIGUES DA PAZ",
@@ -20615,7 +20630,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "01/09/2026",
        -255,
        "HOELL TEODOSIO DOS SANTOS",
@@ -20651,7 +20666,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "01/09/2026",
        -800,
        "RAMATHYS AGRYLAR MENEZES DA SILVA",
@@ -20669,7 +20684,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "01/09/2026",
        -150,
        "VALDENIRA DOS SANTOS PEREIRA",
@@ -20741,7 +20756,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "01/09/2026",
        -262.5,
        "HOELL TEODOSIO DOS SANTOS",
@@ -20876,7 +20891,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "01/09/2026",
        -286.05,
        "PRESHH",
@@ -21434,7 +21449,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Salario PJ",
        "03/09/2026",
        -3266.67,
        "JOAO WICTTOR MARCELINO MEDEIROS",
@@ -21641,7 +21656,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "04/09/2026",
        -250,
        "JOSE FORTUNATO DA COSTA",
@@ -21650,7 +21665,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "04/09/2026",
        -1712.5,
        "MARIANA BRANCO DA SILVA",
@@ -21713,7 +21728,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Salario PJ",
        "04/09/2026",
        -3733.33,
        "JOAO WICTTOR MARCELINO MEDEIROS",
@@ -21794,7 +21809,7 @@
        ""
       ],
       [
-       "5|Manutenção de equipamentos",
+       "5|Prestadores de servicos gerais",
        "04/09/2026",
        -1000,
        "JOSE FORTUNATO DA COSTA",
@@ -21830,7 +21845,7 @@
        ""
       ],
       [
-       "8|Viagens administrativas",
+       "11|Investimentos diversos",
        "04/09/2026",
        -3500,
        "POUSADA PRAIANA NORONHA",
@@ -22271,7 +22286,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "08/09/2026",
        -1563.6,
        "DYON GALDINO ALVES",
@@ -22442,7 +22457,7 @@
        ""
       ],
       [
-       "6|Uniformes, EPI e exames",
+       "11|Investimentos diversos",
        "09/09/2026",
        -150,
        "FRANCISCO EDUARDO OLIVEIRA DE SOUZA",
@@ -22451,7 +22466,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "09/09/2026",
        -680,
        "EDMILSON DE LIMA JUNIOR",
@@ -22478,7 +22493,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "09/09/2026",
        -250,
        "MAURO VIEIRA DA CUNHA JUNIOR",
@@ -22901,7 +22916,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "11/09/2026",
        -2800,
        "KATIANA MARQUES DA ROCHA CAMPELO 01439107440",
@@ -22982,7 +22997,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "11/09/2026",
        -689.08,
        "AZUL LINHAS AEREAS BRASILEIRAS S.A.",
@@ -23369,7 +23384,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "14/09/2026",
        -1050,
        "AZUL LINHAS AEREAS BRASILEIRAS S.A.",
@@ -23630,7 +23645,7 @@
        ""
       ],
       [
-       "6|Uniformes, EPI e exames",
+       "11|Investimentos diversos",
        "15/09/2026",
        -1496,
        "NEURONHA",
@@ -23639,7 +23654,7 @@
        ""
       ],
       [
-       "6|Uniformes, EPI e exames",
+       "11|Investimentos diversos",
        "15/09/2026",
        -278,
        "NEURONHA",
@@ -24152,7 +24167,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "18/09/2026",
        -64.92,
        "EDMILSON DE LIMA JUNIOR",
@@ -24683,7 +24698,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "21/09/2026",
        -375,
        "BRUNO CELIO PORTELA DE SOUZA",
@@ -24719,7 +24734,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "21/09/2026",
        -700,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -24728,7 +24743,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "21/09/2026",
        -840,
        "FLAVIO AUGUSTO LIMA DA SILVA",
@@ -24935,7 +24950,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "21/09/2026",
        -5300,
        "NORONHA ONLINE TELECOMUNICACOES LTDA",
@@ -27941,7 +27956,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "25/09/2026",
        -1620.83,
        "MARIANA MACHADO BUENO",
@@ -28013,7 +28028,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "25/09/2026",
        -600,
        "MAURO VIEIRA DA CUNHA JUNIOR",
@@ -28022,7 +28037,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "25/09/2026",
        -2800,
        "MAURO VIEIRA DA CUNHA JUNIOR",
@@ -28103,7 +28118,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "25/09/2026",
        -1785,
        "FLAVIA MARIA SILVA TORRES",
@@ -28112,7 +28127,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "25/09/2026",
        -800,
        "MARIANA GOICOECHEA",
@@ -28121,7 +28136,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "25/09/2026",
        -20,
        "EDMILSON DE LIMA JUNIOR",
@@ -28130,7 +28145,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "25/09/2026",
        -300,
        "EDMILSON DE LIMA JUNIOR",
@@ -29255,7 +29270,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "29/09/2026",
        -250,
        "MAURO VIEIRA DA CUNHA JUNIOR",
@@ -29300,7 +29315,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Salario PJ",
        "29/09/2026",
        -600,
        "JOAO WICTTOR MARCELINO MEDEIROS",
@@ -29462,7 +29477,7 @@
        ""
       ],
       [
-       "5|Manutenção de equipamentos",
+       "11|Investimentos diversos",
        "29/09/2026",
        -1400,
        "PROTETORES ARGUS",
@@ -29714,7 +29729,7 @@
        ""
       ],
       [
-       "5|Manutenção de equipamentos",
+       "11|Investimentos diversos",
        "29/09/2026",
        -960,
        "54.254.556 JHONATHAN JARDIEL JERONIMO SILVA",
@@ -30123,12 +30138,11 @@
     "2026-10": {
      "grupos": {
       "1": 50511.31000000001,
-      "6": -6995.74,
+      "6": -6295.74,
       "NEUTRO": 0.0,
       "4": -45730.78,
-      "7": -4000.0,
-      "5": -2500.0,
-      "8": -900.0
+      "5": -7200.0,
+      "11": -900.0
      },
      "contas": {
       "1|Receita operacional (salão)": 50511.31000000001,
@@ -30136,16 +30150,16 @@
       "NEUTRO|Transferência entre contas - saída": -110993.63,
       "4|Proteínas (carnes e frutos do mar)": -8271.140000000001,
       "4|Secos e mercearia": -1744.3799999999999,
-      "6|Diarista (OIA)": -5412.5,
+      "6|Diarista (OIA)": -4712.5,
       "4|Bebidas alcoólicas": -10418.5,
-      "7|Arrendamento e aluguel do ponto": -4000.0,
-      "5|Alojamento e ajuda de custo para moradia": -2500.0,
+      "5|Alojamento e ajuda de custo para moradia": -6500.0,
+      "5|Prestadores de servicos gerais": -700.0,
       "6|Salários da operação": -400.0,
       "4|Hortifrúti": -902.25,
       "6|Alimentação de colaboradores": -310.0,
       "4|Frete de insumos de alimentos e bebidas": -8430.0,
       "4|Água mineral": -2930.0,
-      "8|Viagens administrativas": -900.0,
+      "11|Investimentos diversos": -900.0,
       "4|Outros insumos e diversos": -13034.51,
       "NEUTRO|Transferência entre contas - entrada": 110993.63
      },
@@ -30155,16 +30169,16 @@
       "NEUTRO|Transferência entre contas - saída": 2,
       "4|Proteínas (carnes e frutos do mar)": 4,
       "4|Secos e mercearia": 3,
-      "6|Diarista (OIA)": 12,
+      "6|Diarista (OIA)": 11,
       "4|Bebidas alcoólicas": 2,
-      "7|Arrendamento e aluguel do ponto": 1,
-      "5|Alojamento e ajuda de custo para moradia": 1,
+      "5|Alojamento e ajuda de custo para moradia": 2,
+      "5|Prestadores de servicos gerais": 1,
       "6|Salários da operação": 1,
       "4|Hortifrúti": 1,
       "6|Alimentação de colaboradores": 1,
       "4|Frete de insumos de alimentos e bebidas": 1,
       "4|Água mineral": 1,
-      "8|Viagens administrativas": 1,
+      "11|Investimentos diversos": 1,
       "4|Outros insumos e diversos": 2,
       "NEUTRO|Transferência entre contas - entrada": 2
      },
@@ -30463,7 +30477,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "5|Alojamento e ajuda de custo para moradia",
        "02/10/2026",
        -4000,
        "DIEGO JOSE CANDIDO DO NASCIMENTO",
@@ -30490,7 +30504,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "02/10/2026",
        -700,
        "PEDROEROL CLIMATIZACAO LTDA",
@@ -30562,7 +30576,7 @@
        ""
       ],
       [
-       "8|Viagens administrativas",
+       "11|Investimentos diversos",
        "02/10/2026",
        -900,
        "POUSADA GOLFINHO LTDA",
@@ -30763,11 +30777,11 @@
       "12": 1155386.76,
       "OR": 32550.210000000003,
       "10": -1058.22,
-      "8": -46508.33999999999,
-      "7": -64986.92,
-      "11": -459192.4800000001,
-      "5": -110915.54,
-      "6": -143558.22999999998,
+      "8": -27090.24,
+      "7": -34986.92,
+      "11": -592036.2,
+      "5": -82445.93999999999,
+      "6": -88602.21,
       "4": -90306.9,
       "2": -48.339999999999996
      },
@@ -30777,40 +30791,39 @@
       "OR|Outras receitas operacionais": 32550.210000000003,
       "10|Juros e multas": -1058.22,
       "8|Contabilidade, jurídico e consultorias": -4225.21,
-      "7|Arrendamento e aluguel do ponto": -61500.0,
+      "7|Outros aluguéis": -9384.0,
       "11|Pré-operação": -13552.84,
       "5|Transporte, veículo e combustível": -8561.699999999999,
-      "6|Diarista (OIA)": -61926.53,
+      "5|Prestadores de servicos gerais": -1000.0,
+      "6|Diarista (OIA)": -36726.53,
       "11|Equipamentos e mobiliário": -137879.25000000003,
       "6|Salários da operação": -3194.0,
-      "6|Passagens aéreas da equipe": -34643.8,
+      "11|Investimentos diversos": -70455.69,
       "11|Obras e reformas": -259798.69999999998,
-      "8|Outras despesas administrativas": -15868.87,
       "5|Reposição de utensílios": -2530.94,
       "5|Diversos de operação": -2599.7200000000003,
+      "6|Passagens aéreas da equipe": -15036.68,
       "8|Telefonia e internet": -5780.38,
       "8|Sistemas": -2657.96,
       "8|Tarifas bancárias": -5353.619999999999,
-      "6|Alimentação de colaboradores": -35355.06,
+      "8|Outras despesas administrativas": -1925.37,
+      "7|Arrendamento e aluguel do ponto": -25000.0,
+      "6|Alimentação de colaboradores": -30355.06,
       "CC|Conta corrente Amana - saída": -8097.74,
+      "8|Gestor administrativo PJ": -4700.0,
       "4|Proteínas (carnes e frutos do mar)": -27672.510000000002,
       "5|Energia elétrica": -4106.5,
-      "8|Viagens administrativas": -10174.6,
       "5|Limpeza e descartáveis": -11242.58,
-      "5|Alojamento e ajuda de custo para moradia": -13168.9,
+      "5|Alojamento e ajuda de custo para moradia": -48168.9,
       "8|Licenças e alvarás": -1172.78,
       "7|Taxas distritais, TPU, TLL e IPTU": -602.92,
       "5|Água e esgoto": -4235.599999999999,
       "4|Gás de cozinha": -2945.0,
       "4|Secos e mercearia": -36442.829999999994,
-      "11|Frete de equipamentos e obra": -47961.69,
-      "6|Uniformes, EPI e exames": -5148.9,
-      "5|Manutenção de equipamentos": -2081.5699999999997,
+      "11|Frete de equipamentos e obra": -110349.72,
       "8|Material de escritório": -1274.92,
-      "5|Frete de materiais de operação": -62388.03,
       "4|Frios, laticínios e congelados": -5964.5,
       "4|Frete de insumos de alimentos e bebidas": -1581.46,
-      "7|Outros aluguéis": -2884.0,
       "CC|Conta corrente Boldró - saída": -100000.0,
       "4|Hortifrúti": -9759.580000000002,
       "4|Bebidas alcoólicas": -5629.5,
@@ -30824,40 +30837,39 @@
       "OR|Outras receitas operacionais": 13,
       "10|Juros e multas": 2,
       "8|Contabilidade, jurídico e consultorias": 4,
-      "7|Arrendamento e aluguel do ponto": 7,
+      "7|Outros aluguéis": 4,
       "11|Pré-operação": 5,
       "5|Transporte, veículo e combustível": 5,
-      "6|Diarista (OIA)": 40,
+      "5|Prestadores de servicos gerais": 1,
+      "6|Diarista (OIA)": 27,
       "11|Equipamentos e mobiliário": 57,
       "6|Salários da operação": 2,
-      "6|Passagens aéreas da equipe": 10,
+      "11|Investimentos diversos": 60,
       "11|Obras e reformas": 68,
-      "8|Outras despesas administrativas": 25,
       "5|Reposição de utensílios": 5,
       "5|Diversos de operação": 4,
+      "6|Passagens aéreas da equipe": 1,
       "8|Telefonia e internet": 4,
       "8|Sistemas": 4,
       "8|Tarifas bancárias": 21,
-      "6|Alimentação de colaboradores": 12,
+      "8|Outras despesas administrativas": 1,
+      "7|Arrendamento e aluguel do ponto": 1,
+      "6|Alimentação de colaboradores": 11,
       "CC|Conta corrente Amana - saída": 7,
+      "8|Gestor administrativo PJ": 1,
       "4|Proteínas (carnes e frutos do mar)": 16,
       "5|Energia elétrica": 3,
-      "8|Viagens administrativas": 5,
       "5|Limpeza e descartáveis": 10,
-      "5|Alojamento e ajuda de custo para moradia": 5,
+      "5|Alojamento e ajuda de custo para moradia": 10,
       "8|Licenças e alvarás": 1,
       "7|Taxas distritais, TPU, TLL e IPTU": 1,
       "5|Água e esgoto": 2,
       "4|Gás de cozinha": 2,
       "4|Secos e mercearia": 22,
-      "11|Frete de equipamentos e obra": 8,
-      "6|Uniformes, EPI e exames": 5,
-      "5|Manutenção de equipamentos": 6,
+      "11|Frete de equipamentos e obra": 17,
       "8|Material de escritório": 4,
-      "5|Frete de materiais de operação": 9,
       "4|Frios, laticínios e congelados": 5,
       "4|Frete de insumos de alimentos e bebidas": 1,
-      "7|Outros aluguéis": 2,
       "CC|Conta corrente Boldró - saída": 1,
       "4|Hortifrúti": 6,
       "4|Bebidas alcoólicas": 3,
@@ -31088,7 +31100,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "7|Outros aluguéis",
        "02/08/2026",
        -1500,
        "RUAN PAULO PEREIRA DOS SANTOS",
@@ -31124,7 +31136,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "05/08/2026",
        -1000,
        "MYRELLA FLOR PEREIRA DA SILVA",
@@ -31160,7 +31172,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "03/08/2026",
        -1776.32,
        "EDMILSON DE LIMA JUNIOR",
@@ -31169,7 +31181,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "03/08/2026",
        -1563,
        "EDMILSON DE LIMA JUNIOR",
@@ -31205,7 +31217,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "03/08/2026",
        -3447.68,
        "ANA PAULA BELIK",
@@ -31313,7 +31325,7 @@
        ""
       ],
       [
-       "6|Alimentação de colaboradores",
+       "7|Outros aluguéis",
        "05/08/2026",
        -5000,
        "CLAUDIO HENRIQUE BEZERRA XAVIER",
@@ -31376,7 +31388,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "04/08/2026",
        -49,
        "GLEICE KELLY DE OLIVEIRA GOMES DE SOUZA",
@@ -31403,7 +31415,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "04/08/2026",
        -40,
        "JOAO VICTOR OLIVEIRA NERY",
@@ -31592,7 +31604,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "8|Gestor administrativo PJ",
        "05/08/2026",
        -4700,
        "KARINA PONTES SANTOS LIMA ARAUJO",
@@ -31637,7 +31649,7 @@
        ""
       ],
       [
-       "8|Viagens administrativas",
+       "11|Investimentos diversos",
        "03/08/2026",
        -4500,
        "POUSADA DO GOLFINHO LTDA",
@@ -31682,7 +31694,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "5|Alojamento e ajuda de custo para moradia",
        "04/08/2026",
        -4000,
        "Cliente Consumidor / Sem Tomador",
@@ -31691,7 +31703,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "5|Alojamento e ajuda de custo para moradia",
        "04/08/2026",
        -4000,
        "DIEGO JOSE CANDIDO DO NASCIMENTO",
@@ -31817,7 +31829,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "5|Alojamento e ajuda de custo para moradia",
        "12/08/2026",
        -5000,
        "LEONARDO SOUZA DOS SANTOS",
@@ -31880,7 +31892,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "07/08/2026",
        -200,
        "SEBASTIAO DO CARMO MAIA FARIAS",
@@ -31889,7 +31901,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "07/08/2026",
        -135,
        "EDMILSON DE LIMA JUNIOR",
@@ -31943,7 +31955,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "10/08/2026",
        -499.96,
        "JOAO WICTTOR MARCELINO MEDEIROS",
@@ -31961,7 +31973,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "11/08/2026",
        -663.64,
        "EDMILSON DE LIMA JUNIOR",
@@ -32006,7 +32018,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "11/08/2026",
        -1000,
        "Cliente Consumidor / Sem Tomador",
@@ -32024,7 +32036,7 @@
        ""
       ],
       [
-       "6|Uniformes, EPI e exames",
+       "11|Investimentos diversos",
        "11/08/2026",
        -1100,
        "CRISTIANE MARIA DE OLIVEIRA SANDES",
@@ -32042,7 +32054,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "11/08/2026",
        -92.92,
        "MARE NORONHA COMERCIO DE ALIMENTOS E BEBIDAS L",
@@ -32051,7 +32063,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "11/08/2026",
        -100,
        "MARE NORONHA COMERCIO DE ALIMENTOS E BEBIDAS L",
@@ -32069,7 +32081,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "11/08/2026",
        -400,
        "Cliente Consumidor / Sem Tomador",
@@ -32078,7 +32090,7 @@
        ""
       ],
       [
-       "5|Manutenção de equipamentos",
+       "11|Investimentos diversos",
        "11/08/2026",
        -159,
        "CLAUDIO PAULINO DIAS",
@@ -32168,7 +32180,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "11/08/2026",
        -1500,
        "Cliente Consumidor / Sem Tomador",
@@ -32213,7 +32225,7 @@
        ""
       ],
       [
-       "5|Manutenção de equipamentos",
+       "11|Investimentos diversos",
        "11/08/2026",
        -224.99,
        "Cliente Consumidor / Sem Tomador",
@@ -32231,7 +32243,7 @@
        ""
       ],
       [
-       "8|Viagens administrativas",
+       "11|Investimentos diversos",
        "11/08/2026",
        -474.6,
        "Cliente Consumidor / Sem Tomador",
@@ -32249,7 +32261,7 @@
        ""
       ],
       [
-       "5|Manutenção de equipamentos",
+       "11|Investimentos diversos",
        "12/08/2026",
        -229.8,
        "Cliente Consumidor / Sem Tomador",
@@ -32258,7 +32270,7 @@
        ""
       ],
       [
-       "5|Manutenção de equipamentos",
+       "11|Investimentos diversos",
        "12/08/2026",
        -694.49,
        "Cliente Consumidor / Sem Tomador",
@@ -32267,7 +32279,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "13/08/2026",
        -700,
        "Cliente Consumidor / Sem Tomador",
@@ -32303,7 +32315,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "08/08/2026",
        -24833.2,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -32321,7 +32333,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "14/08/2026",
        -45,
        "EDMILSON DE LIMA JUNIOR",
@@ -32366,7 +32378,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "14/08/2026",
        -135,
        "JOAO VICTOR OLIVEIRA NERY",
@@ -32375,7 +32387,7 @@
        ""
       ],
       [
-       "6|Uniformes, EPI e exames",
+       "11|Investimentos diversos",
        "14/08/2026",
        -50,
        "CRISTIANE MARIA DE OLIVEIRA SANDES",
@@ -32411,7 +32423,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "14/08/2026",
        -2102.16,
        "EDMILSON DE LIMA JUNIOR",
@@ -32447,7 +32459,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "14/08/2026",
        -697.7,
        "Cliente Consumidor / Sem Tomador",
@@ -32483,7 +32495,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "17/08/2026",
        -3750,
        "Cliente Consumidor / Sem Tomador",
@@ -32492,7 +32504,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "17/08/2026",
        -200,
        "Cliente Consumidor / Sem Tomador",
@@ -32501,7 +32513,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "17/08/2026",
        -1406.4,
        "Cliente Consumidor / Sem Tomador",
@@ -32510,7 +32522,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "17/08/2026",
        -2039.38,
        "VAI DE PROMO VIAGENS E TURISMO LTDA",
@@ -32519,7 +32531,7 @@
        ""
       ],
       [
-       "5|Manutenção de equipamentos",
+       "11|Investimentos diversos",
        "17/08/2026",
        -286.79,
        "MERCADO PAGO INSTITUICAO DE PAGAMENTO LTDA",
@@ -32582,7 +32594,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "5|Alojamento e ajuda de custo para moradia",
        "15/08/2026",
        -15000,
        "CICERO VITAL NUNES",
@@ -32609,7 +32621,7 @@
        ""
       ],
       [
-       "8|Viagens administrativas",
+       "11|Investimentos diversos",
        "18/08/2026",
        -3600,
        "GLAUCIA LAURENTINO DOS SANTOS",
@@ -32645,7 +32657,7 @@
        ""
       ],
       [
-       "8|Viagens administrativas",
+       "11|Investimentos diversos",
        "18/08/2026",
        -1200,
        "IRIS MARTINS SOBRINHO",
@@ -32699,7 +32711,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "18/08/2026",
        -178.42,
        "GEORGE CARTAXO MENDES COSTA",
@@ -32906,7 +32918,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "5|Alojamento e ajuda de custo para moradia",
        "19/08/2026",
        -7000,
        "Cliente Consumidor / Sem Tomador",
@@ -32924,7 +32936,7 @@
        ""
       ],
       [
-       "6|Uniformes, EPI e exames",
+       "11|Investimentos diversos",
        "19/08/2026",
        -3190.67,
        "NOHA SHOES - NEGOCIOS E PARTICIPACOES LTDA",
@@ -32987,7 +32999,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "20/08/2026",
        -159.69,
        "THYAGO MESSIAS DO NASCIMENTO",
@@ -33032,7 +33044,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "20/08/2026",
        -2000,
        "ALISON DOUGLAS DA SILVA",
@@ -33041,7 +33053,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "20/08/2026",
        -2852.16,
        "EDMILSON DE LIMA JUNIOR",
@@ -33086,7 +33098,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "21/08/2026",
        -182,
        "JOAO WICTTOR MARCELINO MEDEIROS",
@@ -33104,7 +33116,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "18/08/2026",
        -300,
        "Cliente Consumidor / Sem Tomador",
@@ -33167,7 +33179,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "21/08/2026",
        -508,
        "JOAO VICTOR OLIVEIRA NERY",
@@ -33194,7 +33206,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "21/08/2026",
        -468.14,
        "Cliente Consumidor / Sem Tomador",
@@ -33221,7 +33233,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "21/08/2026",
        -7980,
        "P I D SILVA AGENCIAMENTO",
@@ -33230,7 +33242,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "21/08/2026",
        -200,
        "GEORGE CARTAXO MENDES COSTA",
@@ -33320,7 +33332,7 @@
        ""
       ],
       [
-       "6|Uniformes, EPI e exames",
+       "11|Investimentos diversos",
        "12/08/2026",
        -408.9,
        "GRUPO ONI LTDA",
@@ -33347,7 +33359,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "22/08/2026",
        -5170,
        "EDMILSON DE LIMA JUNIOR",
@@ -33392,7 +33404,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "11/08/2026",
        -4139.99,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -33419,7 +33431,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "25/08/2026",
        -250,
        "MAURO VIEIRA DA CUNHA JUNIOR",
@@ -33437,7 +33449,7 @@
        ""
       ],
       [
-       "8|Viagens administrativas",
+       "11|Investimentos diversos",
        "25/08/2026",
        -400,
        "Cliente Consumidor / Sem Tomador",
@@ -33455,7 +33467,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "25/08/2026",
        -769,
        "EDMILSON DE LIMA JUNIOR",
@@ -33464,7 +33476,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "25/08/2026",
        -311.51,
        "Cliente Consumidor / Sem Tomador",
@@ -33635,7 +33647,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "26/08/2026",
        -3200,
        "Cliente Consumidor / Sem Tomador",
@@ -33644,7 +33656,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "26/08/2026",
        -3200,
        "Cliente Consumidor / Sem Tomador",
@@ -33653,7 +33665,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "26/08/2026",
        -5000,
        "Cliente Consumidor / Sem Tomador",
@@ -33698,7 +33710,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "28/08/2026",
        -9690,
        "P I D SILVA AGENCIAMENTO",
@@ -33716,7 +33728,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "15/08/2026",
        -1581.41,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -33743,7 +33755,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "19/08/2026",
        -5194.93,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -33824,7 +33836,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "25/08/2026",
        -199.92,
        "EDMILSON DE LIMA JUNIOR",
@@ -33842,7 +33854,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "23/08/2026",
        -1210.89,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -33851,7 +33863,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "28/08/2026",
        -100,
        "Cliente Consumidor / Sem Tomador",
@@ -33887,7 +33899,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "04/08/2026",
        -2989.29,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -33959,7 +33971,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "28/08/2026",
        -350,
        "ROBSON BARBOZA DA SILVA",
@@ -34103,7 +34115,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "29/08/2026",
        -7657.61,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -34211,7 +34223,7 @@
        ""
       ],
       [
-       "6|Uniformes, EPI e exames",
+       "11|Investimentos diversos",
        "12/08/2026",
        -399.33,
        "GRUPO ONI LTDA",
@@ -34220,7 +34232,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "12/08/2026",
        -630,
        "CIL - COMERCIO DE INFORMATICA LTDA",
@@ -34625,7 +34637,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "20/08/2026",
        -1589.33,
        "Cliente Consumidor / Sem Tomador",
@@ -34688,7 +34700,7 @@
        ""
       ],
       [
-       "5|Manutenção de equipamentos",
+       "11|Investimentos diversos",
        "27/08/2026",
        -486.5,
        "TORQ &amp; CIA LTDA",
@@ -34712,12 +34724,12 @@
       "OR": 5998.04,
       "NEUTRO": -2.2737367544323206e-13,
       "4": -69563.47000000002,
-      "5": -72684.48999999999,
-      "6": -36381.45,
-      "7": -50500.0,
-      "11": -200598.54999999996,
-      "8": -51866.14,
+      "5": -51033.119999999995,
+      "8": -8760.23,
+      "7": -36500.0,
+      "11": -301387.22,
       "CC": -6096.85,
+      "6": -14350.06,
       "9": -1500.0,
       "10": -938.02
      },
@@ -34726,33 +34738,32 @@
       "NEUTRO|Transferência entre contas próprias - entrada": 5206.080000000001,
       "4|Devoluções de Compra de Material de Consumo": 6687.009999999999,
       "5|Transporte, veículo e combustível": -7241.04,
-      "6|Diarista (OIA)": -20770.059999999998,
-      "7|Arrendamento e aluguel do ponto": -50500.0,
+      "8|Gestor administrativo PJ": -4000.0,
+      "7|Outros aluguéis": -11500.0,
       "11|Pré-operação": -10102.84,
       "4|Hortifrúti": -13340.400000000001,
       "11|Equipamentos e mobiliário": -65112.48000000001,
-      "8|Outras despesas administrativas": -47105.909999999996,
+      "11|Investimentos diversos": -49633.24,
       "11|Obras e reformas": -110989.6,
       "4|Água mineral": -4800.0,
       "4|Secos e mercearia": -28416.449999999997,
-      "6|Alimentação de colaboradores": -10000.0,
+      "7|Arrendamento e aluguel do ponto": -25000.0,
+      "5|Prestadores de servicos gerais": -5504.06,
       "CC|Conta corrente Amana - saída": -6096.85,
       "6|Salários da operação": -4350.06,
       "5|Água e esgoto": -2210.8599999999997,
-      "6|Passagens aéreas da equipe": -862.0,
       "9|Mídia paga": -1500.0,
-      "5|Frete de materiais de operação": -51155.42999999999,
+      "11|Frete de equipamentos e obra": -65549.06,
       "8|Material de escritório": -922.15,
+      "5|Alojamento e ajuda de custo para moradia": -33000.0,
       "4|Proteínas (carnes e frutos do mar)": -22046.07,
       "8|Contabilidade, jurídico e consultorias": -1682.21,
-      "5|Alojamento e ajuda de custo para moradia": -9000.0,
       "8|Sistemas": -1843.62,
       "4|Gás de cozinha": -5119.92,
-      "11|Frete de equipamentos e obra": -14393.63,
       "10|Juros e multas": -938.02,
-      "6|Uniformes, EPI e exames": -399.33,
       "5|Energia elétrica": -1446.38,
       "8|Tarifas bancárias": -312.25,
+      "6|Diarista (OIA)": -10000.0,
       "4|Frios, laticínios e congelados": -2527.64,
       "5|Diversos de operação": -1630.78,
       "NEUTRO|Transferência entre contas - saída": -5206.08
@@ -34762,33 +34773,32 @@
       "NEUTRO|Transferência entre contas próprias - entrada": 12,
       "4|Devoluções de Compra de Material de Consumo": 16,
       "5|Transporte, veículo e combustível": 3,
-      "6|Diarista (OIA)": 8,
-      "7|Arrendamento e aluguel do ponto": 5,
+      "8|Gestor administrativo PJ": 1,
+      "7|Outros aluguéis": 2,
       "11|Pré-operação": 4,
       "4|Hortifrúti": 4,
       "11|Equipamentos e mobiliário": 13,
-      "8|Outras despesas administrativas": 6,
+      "11|Investimentos diversos": 10,
       "11|Obras e reformas": 24,
       "4|Água mineral": 1,
       "4|Secos e mercearia": 9,
-      "6|Alimentação de colaboradores": 1,
+      "7|Arrendamento e aluguel do ponto": 1,
+      "5|Prestadores de servicos gerais": 4,
       "CC|Conta corrente Amana - saída": 4,
       "6|Salários da operação": 2,
       "5|Água e esgoto": 2,
-      "6|Passagens aéreas da equipe": 1,
       "9|Mídia paga": 1,
-      "5|Frete de materiais de operação": 11,
+      "11|Frete de equipamentos e obra": 12,
       "8|Material de escritório": 2,
+      "5|Alojamento e ajuda de custo para moradia": 4,
       "4|Proteínas (carnes e frutos do mar)": 11,
       "8|Contabilidade, jurídico e consultorias": 2,
-      "5|Alojamento e ajuda de custo para moradia": 1,
       "8|Sistemas": 5,
       "4|Gás de cozinha": 4,
-      "11|Frete de equipamentos e obra": 1,
       "10|Juros e multas": 2,
-      "6|Uniformes, EPI e exames": 1,
       "5|Energia elétrica": 1,
       "8|Tarifas bancárias": 16,
+      "6|Diarista (OIA)": 1,
       "4|Frios, laticínios e congelados": 1,
       "5|Diversos de operação": 1,
       "NEUTRO|Transferência entre contas - saída": 12
@@ -35069,7 +35079,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "8|Gestor administrativo PJ",
        "01/09/2026",
        -4000,
        "KARINA PONTES SANTOS LIMA ARAUJO",
@@ -35078,7 +35088,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "7|Outros aluguéis",
        "02/09/2026",
        -1500,
        "RUAN PAULO PEREIRA DOS SANTOS",
@@ -35123,7 +35133,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "01/09/2026",
        -34337.33,
        "BANCO BRADESCO S.A.",
@@ -35195,7 +35205,7 @@
        ""
       ],
       [
-       "6|Alimentação de colaboradores",
+       "7|Outros aluguéis",
        "05/09/2026",
        -10000,
        "CLAUDIO HENRIQUE BEZERRA XAVIER",
@@ -35204,7 +35214,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "05/09/2026",
        -1000,
        "MYRELLA FLOR PEREIRA DA SILVA",
@@ -35276,7 +35286,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "04/09/2026",
        -862,
        "DYON GALDINO ALVES",
@@ -35303,7 +35313,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "08/09/2026",
        -10019.5,
        "P I D SILVA AGENCIAMENTO",
@@ -35348,7 +35358,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "08/09/2026",
        -12810,
        "P I D SILVA AGENCIAMENTO",
@@ -35357,7 +35367,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "5|Alojamento e ajuda de custo para moradia",
        "09/09/2026",
        -4000,
        "Cliente Consumidor / Sem Tomador",
@@ -35411,7 +35421,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "5|Alojamento e ajuda de custo para moradia",
        "12/09/2026",
        -5000,
        "LEONARDO SOUZA DOS SANTOS",
@@ -35447,7 +35457,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "02/09/2026",
        -5869.56,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -35456,7 +35466,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "11/09/2026",
        -300,
        "Cliente Consumidor / Sem Tomador",
@@ -35483,7 +35493,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "09/09/2026",
        -3000,
        "KELLINY VIEIRA BANDEIRA DE MELO 04071730480",
@@ -35528,7 +35538,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "07/09/2026",
        -981.84,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -35537,7 +35547,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "06/09/2026",
        -864.94,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -35546,7 +35556,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "5|Alojamento e ajuda de custo para moradia",
        "15/09/2026",
        -15000,
        "CICERO VITAL NUNES",
@@ -35600,7 +35610,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "15/09/2026",
        -4900,
        "DANUBIO CARLOS FONSECA FERNANDES",
@@ -35627,7 +35637,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "17/09/2026",
        -1707.45,
        "Cliente Consumidor / Sem Tomador",
@@ -35717,7 +35727,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "16/09/2026",
        -5150,
        "P I D SILVA AGENCIAMENTO",
@@ -35807,7 +35817,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "15/09/2026",
        -1920,
        "Cliente Consumidor / Sem Tomador",
@@ -35816,7 +35826,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "20/09/2026",
        -104.06,
        "TIM S A",
@@ -35825,7 +35835,7 @@
        ""
       ],
       [
-       "6|Uniformes, EPI e exames",
+       "11|Investimentos diversos",
        "21/09/2026",
        -399.33,
        "GRUPO ONI LTDA",
@@ -35852,7 +35862,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "22/09/2026",
        -7000,
        "P I D SILVA AGENCIAMENTO",
@@ -35897,7 +35907,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "15/09/2026",
        -4307.17,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -35906,7 +35916,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "18/09/2026",
        -2445.93,
        "MS DISTRIBUIDORA LTDA",
@@ -36113,7 +36123,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "01/09/2026",
        -1400,
        "FACTOR SAUDE AMBIENTAL LTDA",
@@ -36149,7 +36159,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "19/09/2026",
        -266.49,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -36248,7 +36258,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "30/09/2026",
        -1795.2,
        "MHI AUTOMACAO LTDA",
@@ -36284,7 +36294,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "24/09/2026",
        -1766.91,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -36293,7 +36303,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "28/09/2026",
        -2119.02,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -36302,7 +36312,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "02/09/2026",
        -966,
        "Cliente Consumidor / Sem Tomador",
@@ -36494,26 +36504,34 @@
     },
     "2026-10": {
      "grupos": {
-      "8": -25737.81,
-      "7": -27100.0,
-      "6": -6000.0,
-      "CC": -5801.0
+      "8": -4705.0,
+      "5": -2100.0,
+      "11": -27784.31,
+      "6": -2000.0,
+      "CC": -5801.0,
+      "7": -25000.0
      },
      "contas": {
       "8|Sistemas": -309.0,
       "8|Licenças e alvarás": -396.0,
-      "7|Arrendamento e aluguel do ponto": -27100.0,
-      "6|Diarista (OIA)": -6000.0,
-      "8|Outras despesas administrativas": -25032.81,
-      "CC|Conta corrente Amana - saída": -5801.0
+      "5|Alojamento e ajuda de custo para moradia": -2100.0,
+      "8|Gestor administrativo PJ": -4000.0,
+      "11|Investimentos diversos": -25032.81,
+      "6|Diarista (OIA)": -2000.0,
+      "CC|Conta corrente Amana - saída": -5801.0,
+      "7|Arrendamento e aluguel do ponto": -25000.0,
+      "11|Frete de equipamentos e obra": -2751.5
      },
      "lanc": {
       "8|Sistemas": 1,
       "8|Licenças e alvarás": 1,
-      "7|Arrendamento e aluguel do ponto": 2,
-      "6|Diarista (OIA)": 2,
-      "8|Outras despesas administrativas": 2,
-      "CC|Conta corrente Amana - saída": 2
+      "5|Alojamento e ajuda de custo para moradia": 1,
+      "8|Gestor administrativo PJ": 1,
+      "11|Investimentos diversos": 2,
+      "6|Diarista (OIA)": 1,
+      "CC|Conta corrente Amana - saída": 2,
+      "7|Arrendamento e aluguel do ponto": 1,
+      "11|Frete de equipamentos e obra": 2
      },
      "familias": {},
      "itens": [
@@ -36536,7 +36554,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "5|Alojamento e ajuda de custo para moradia",
        "01/10/2026",
        -2100,
        "Cliente Consumidor / Sem Tomador",
@@ -36545,7 +36563,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "8|Gestor administrativo PJ",
        "01/10/2026",
        -4000,
        "KARINA PONTES SANTOS LIMA ARAUJO",
@@ -36554,7 +36572,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "01/10/2026",
        -22032.81,
        "BANCO BRADESCO S.A.",
@@ -36599,11 +36617,29 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "05/10/2026",
        -3000,
        "RENATO FERREIRA LIMA BATISTA GOMES",
        "FALTA NF",
+       "",
+       ""
+      ],
+      [
+       "11|Frete de equipamentos e obra",
+       "30/10/2026",
+       -1375.75,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
+       "000106330/1",
+       "",
+       ""
+      ],
+      [
+       "11|Frete de equipamentos e obra",
+       "30/10/2026",
+       -1375.75,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
+       "000106329/1",
        "",
        ""
       ]
@@ -36614,11 +36650,11 @@
     "2026-08": {
      "grupos": {
       "CC": -100902.64,
-      "11": -468324.15,
-      "7": -64986.92,
-      "5": -132233.23999067882,
-      "8": -43417.8999334427,
-      "6": -149478.2800758785,
+      "11": -587065.8100000003,
+      "7": -34986.92,
+      "5": -111907.7499906788,
+      "8": -29558.4199334427,
+      "6": -94921.5900758785,
       "4": -126197.50000000001,
       "OR": 35950.21,
       "NEUTRO": 5.646150214033696e-11,
@@ -36629,34 +36665,38 @@
      "contas": {
       "CC|Conta corrente Amana - entrada": 6991.11,
       "11|Equipamentos e mobiliário": -138273.02,
-      "7|Arrendamento e aluguel do ponto": -61500.0,
+      "7|Outros aluguéis": -9384.0,
       "11|Pré-operação": -25093.85,
       "5|Transporte, veículo e combustível": -8561.6999906788,
-      "8|Viagens administrativas": -15448.6,
+      "8|Viagens administrativas": -5274.0,
       "11|Obras e reformas": -272084.65,
-      "5|Alojamento e ajuda de custo para moradia": -14168.9,
-      "5|Frete de materiais de operação": -78608.11,
-      "6|Diarista (OIA)": -61926.53,
+      "5|Alojamento e ajuda de custo para moradia": -49168.9,
+      "5|Frete de materiais de operação": -23877.690000000002,
+      "5|Prestadores de servicos gerais": -1000.0,
+      "6|Diarista (OIA)": -36726.53,
       "6|Salários da operação": -3194.0,
       "4|Frios, laticínios e congelados": -11608.43,
       "4|Proteínas (carnes e frutos do mar)": -31756.370000000003,
       "4|Secos e mercearia": -49296.509999999995,
       "4|Água mineral": -2610.0,
       "6|ISS | Permanência": -2220.3500000000004,
-      "6|Passagens aéreas da equipe": -34643.800075878506,
-      "8|Outras despesas administrativas": -10310.2499305553,
+      "11|Investimentos diversos": -64011.240000000005,
       "5|Reposição de utensílios": -2530.94,
       "5|Diversos de operação": -2599.7200000000003,
       "8|Sistemas": -2657.9599743867,
       "8|Tarifas bancárias": -5365.619999485899,
       "8|Telefonia e internet": -5780.3800290148,
+      "6|Passagens aéreas da equipe": -15036.680075878501,
+      "8|Outras despesas administrativas": -1925.3699305552998,
       "OR|Outras receitas operacionais": 35950.21,
       "NEUTRO|Transferência entre contas - entrada": 1928411.4799999997,
       "12|Aportes de sócios": 1155386.76,
-      "6|Alimentação de colaboradores": -39024.5,
+      "7|Arrendamento e aluguel do ponto": -25000.0,
       "NEUTRO|Transferência entre contas - saída": -1928411.4799999995,
+      "6|Alimentação de colaboradores": -34024.5,
       "CC|Conta corrente Amana - saída": -7893.75,
       "5|Limpeza e descartáveis": -16971.96,
+      "8|Gestor administrativo PJ": -4700.0,
       "5|Energia elétrica": -2961.24,
       "4|Hortifrúti": -11173.34,
       "4|Bebidas alcoólicas": -14914.87,
@@ -36666,14 +36706,11 @@
       "5|Água e esgoto": -4235.599999999999,
       "4|Gás de cozinha": -2945.0,
       "10|Juros e multas": -549.53,
-      "11|Frete de equipamentos e obra": -32872.63,
-      "6|Uniformes, EPI e exames": -4749.57,
+      "11|Frete de equipamentos e obra": -87603.05,
       "2|Simples Nacional (DAS)": -351.81,
-      "5|Manutenção de equipamentos": -1595.07,
       "8|Material de escritório": -457.1,
       "4|Frete de insumos de alimentos e bebidas": -1581.46,
       "6|FGTS e contribuições": -3719.53,
-      "7|Outros aluguéis": -2884.0,
       "CC|Conta corrente Boldró - saída": -100000.0,
       "4|Bebidas não alcoólicas": -311.52,
       "10|Rendimentos de aplicações": 239.54,
@@ -36683,34 +36720,38 @@
      "lanc": {
       "CC|Conta corrente Amana - entrada": 1,
       "11|Equipamentos e mobiliário": 47,
-      "7|Arrendamento e aluguel do ponto": 7,
+      "7|Outros aluguéis": 4,
       "11|Pré-operação": 7,
       "5|Transporte, veículo e combustível": 5,
-      "8|Viagens administrativas": 6,
+      "8|Viagens administrativas": 1,
       "11|Obras e reformas": 63,
-      "5|Alojamento e ajuda de custo para moradia": 6,
-      "5|Frete de materiais de operação": 10,
-      "6|Diarista (OIA)": 40,
+      "5|Alojamento e ajuda de custo para moradia": 11,
+      "5|Frete de materiais de operação": 2,
+      "5|Prestadores de servicos gerais": 1,
+      "6|Diarista (OIA)": 27,
       "6|Salários da operação": 2,
       "4|Frios, laticínios e congelados": 6,
       "4|Proteínas (carnes e frutos do mar)": 15,
       "4|Secos e mercearia": 21,
       "4|Água mineral": 1,
       "6|ISS | Permanência": 8,
-      "6|Passagens aéreas da equipe": 10,
-      "8|Outras despesas administrativas": 21,
+      "11|Investimentos diversos": 54,
       "5|Reposição de utensílios": 5,
       "5|Diversos de operação": 4,
       "8|Sistemas": 4,
       "8|Tarifas bancárias": 27,
       "8|Telefonia e internet": 4,
+      "6|Passagens aéreas da equipe": 1,
+      "8|Outras despesas administrativas": 1,
       "OR|Outras receitas operacionais": 14,
       "NEUTRO|Transferência entre contas - entrada": 47,
       "12|Aportes de sócios": 8,
-      "6|Alimentação de colaboradores": 15,
+      "7|Arrendamento e aluguel do ponto": 1,
       "NEUTRO|Transferência entre contas - saída": 47,
+      "6|Alimentação de colaboradores": 14,
       "CC|Conta corrente Amana - saída": 6,
       "5|Limpeza e descartáveis": 11,
+      "8|Gestor administrativo PJ": 1,
       "5|Energia elétrica": 2,
       "4|Hortifrúti": 7,
       "4|Bebidas alcoólicas": 3,
@@ -36720,14 +36761,11 @@
       "5|Água e esgoto": 2,
       "4|Gás de cozinha": 2,
       "10|Juros e multas": 1,
-      "11|Frete de equipamentos e obra": 4,
-      "6|Uniformes, EPI e exames": 4,
+      "11|Frete de equipamentos e obra": 12,
       "2|Simples Nacional (DAS)": 1,
-      "5|Manutenção de equipamentos": 5,
       "8|Material de escritório": 3,
       "4|Frete de insumos de alimentos e bebidas": 1,
       "6|FGTS e contribuições": 2,
-      "7|Outros aluguéis": 2,
       "CC|Conta corrente Boldró - saída": 1,
       "4|Bebidas não alcoólicas": 1,
       "10|Rendimentos de aplicações": 1,
@@ -36759,7 +36797,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "7|Outros aluguéis",
        "03/08/2026",
        -1500,
        "RUAN PAULO PEREIRA DOS SANTOS",
@@ -36858,7 +36896,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "03/08/2026",
        -1000,
        "MYRELLA FLOR PEREIRA DA SILVA",
@@ -37020,7 +37058,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "03/08/2026",
        -1776.32,
        "EDMILSON DE LIMA JUNIOR",
@@ -37029,7 +37067,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "03/08/2026",
        -1563,
        "EDMILSON DE LIMA JUNIOR",
@@ -37065,7 +37103,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "03/08/2026",
        -3447.68,
        "ANA PAULA BELIK",
@@ -37263,7 +37301,7 @@
        ""
       ],
       [
-       "6|Alimentação de colaboradores",
+       "7|Outros aluguéis",
        "04/08/2026",
        -5000,
        "CLAUDIO HENRIQUE BEZERRA XAVIER",
@@ -37389,7 +37427,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "05/08/2026",
        -49,
        "GLEICE KELLY DE OLIVEIRA GOMES DE SOUZA",
@@ -37416,7 +37454,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "05/08/2026",
        -40,
        "JOAO VICTOR OLIVEIRA NERY",
@@ -37614,7 +37652,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "8|Gestor administrativo PJ",
        "05/08/2026",
        -4700,
        "KARINA PONTES SANTOS LIMA ARAUJO",
@@ -37659,7 +37697,7 @@
        ""
       ],
       [
-       "8|Viagens administrativas",
+       "11|Investimentos diversos",
        "05/08/2026",
        -4500,
        "POUSADA DO GOLFINHO",
@@ -37758,7 +37796,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "5|Alojamento e ajuda de custo para moradia",
        "06/08/2026",
        -4000,
        "Cliente Consumidor / Sem Tomador",
@@ -37767,7 +37805,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "5|Alojamento e ajuda de custo para moradia",
        "06/08/2026",
        -4000,
        "DIEGO JOSE CANDIDO DO NASCIMENTO",
@@ -38118,7 +38156,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "5|Alojamento e ajuda de custo para moradia",
        "11/08/2026",
        -5000,
        "LEONARDO SOUZA DOS SANTOS",
@@ -38181,7 +38219,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "11/08/2026",
        -200,
        "SEBASTIAO DO CARMO MAIA FARIAS",
@@ -38190,7 +38228,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "11/08/2026",
        -135,
        "EDMILSON DE LIMA JUNIOR",
@@ -38253,7 +38291,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "11/08/2026",
        -499.96,
        "JOAO WICTTOR MARCELINO MEDEIROS",
@@ -38271,7 +38309,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "11/08/2026",
        -663.64,
        "EDMILSON DE LIMA JUNIOR",
@@ -38316,7 +38354,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "11/08/2026",
        -1000,
        "Cliente Consumidor / Sem Tomador",
@@ -38343,7 +38381,7 @@
        ""
       ],
       [
-       "6|Uniformes, EPI e exames",
+       "11|Investimentos diversos",
        "11/08/2026",
        -1100,
        "CRISTIANE MARIA DE OLIVEIRA SANDES",
@@ -38370,7 +38408,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "11/08/2026",
        -92.92,
        "MARE NORONHA COMERCIO DE ALIMENTOS E BEBIDAS L",
@@ -38379,7 +38417,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "11/08/2026",
        -100,
        "MARE NORONHA COMERCIO DE ALIMENTOS E BEBIDAS L",
@@ -38397,7 +38435,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "11/08/2026",
        -400,
        "Cliente Consumidor / Sem Tomador",
@@ -38406,7 +38444,7 @@
        ""
       ],
       [
-       "5|Manutenção de equipamentos",
+       "11|Investimentos diversos",
        "11/08/2026",
        -159,
        "RELUZ LAMPADAS E MATERIAIS ELETRICOS",
@@ -38496,7 +38534,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "11/08/2026",
        -1500,
        "Cliente Consumidor / Sem Tomador",
@@ -38541,7 +38579,7 @@
        ""
       ],
       [
-       "5|Manutenção de equipamentos",
+       "11|Investimentos diversos",
        "11/08/2026",
        -224.99,
        "Cliente Consumidor / Sem Tomador",
@@ -38559,7 +38597,7 @@
        ""
       ],
       [
-       "8|Viagens administrativas",
+       "11|Investimentos diversos",
        "11/08/2026",
        -474.6,
        "Cliente Consumidor / Sem Tomador",
@@ -38613,7 +38651,7 @@
        ""
       ],
       [
-       "5|Manutenção de equipamentos",
+       "11|Investimentos diversos",
        "12/08/2026",
        -229.8,
        "Cliente Consumidor / Sem Tomador",
@@ -38622,7 +38660,7 @@
        ""
       ],
       [
-       "5|Manutenção de equipamentos",
+       "11|Investimentos diversos",
        "12/08/2026",
        -694.49,
        "Cliente Consumidor / Sem Tomador",
@@ -38658,7 +38696,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "13/08/2026",
        -700,
        "Cliente Consumidor / Sem Tomador",
@@ -38739,7 +38777,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "14/08/2026",
        -24833.2,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -38757,7 +38795,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "14/08/2026",
        -45,
        "EDMILSON DE LIMA JUNIOR",
@@ -38838,7 +38876,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "14/08/2026",
        -135,
        "JOAO VICTOR OLIVEIRA NERY",
@@ -38847,7 +38885,7 @@
        ""
       ],
       [
-       "6|Uniformes, EPI e exames",
+       "11|Investimentos diversos",
        "14/08/2026",
        -50,
        "CRISTIANE MARIA DE OLIVEIRA SANDES",
@@ -38883,7 +38921,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "14/08/2026",
        -2102.16,
        "EDMILSON DE LIMA JUNIOR",
@@ -38919,7 +38957,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "14/08/2026",
        -697.7,
        "Cliente Consumidor / Sem Tomador",
@@ -38982,7 +39020,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "17/08/2026",
        -3750,
        "Cliente Consumidor / Sem Tomador",
@@ -38991,7 +39029,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "17/08/2026",
        -200,
        "Cliente Consumidor / Sem Tomador",
@@ -39000,7 +39038,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "17/08/2026",
        -1406.4,
        "Cliente Consumidor / Sem Tomador",
@@ -39009,7 +39047,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "17/08/2026",
        -2039.38,
        "VAI DE PROMO",
@@ -39018,7 +39056,7 @@
        ""
       ],
       [
-       "5|Manutenção de equipamentos",
+       "11|Investimentos diversos",
        "17/08/2026",
        -286.79,
        "MERCADO PAGO INSTITUICAO DE PAGAMENTO LTDA",
@@ -39135,7 +39173,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "5|Alojamento e ajuda de custo para moradia",
        "19/08/2026",
        -15000,
        "CICERO VITAL NUNES",
@@ -39162,7 +39200,7 @@
        ""
       ],
       [
-       "8|Viagens administrativas",
+       "11|Investimentos diversos",
        "19/08/2026",
        -3600,
        "GLAUCIA LAURENTINO DOS SANTOS",
@@ -39198,7 +39236,7 @@
        ""
       ],
       [
-       "8|Viagens administrativas",
+       "11|Investimentos diversos",
        "19/08/2026",
        -1200,
        "IRIS MARTINS SOBRINHO",
@@ -39252,7 +39290,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "19/08/2026",
        -178.42,
        "GEORGE CARTAXO MENDES COSTA",
@@ -39531,7 +39569,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "5|Alojamento e ajuda de custo para moradia",
        "19/08/2026",
        -7000,
        "Cliente Consumidor / Sem Tomador",
@@ -39549,7 +39587,7 @@
        ""
       ],
       [
-       "6|Uniformes, EPI e exames",
+       "11|Investimentos diversos",
        "19/08/2026",
        -3190.67,
        "NOHA SHOES - NEGOCIOS E PARTICIPACOES LTDA",
@@ -39648,7 +39686,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "20/08/2026",
        -159.69,
        "THYAGO MESSIAS DO NASCIMENTO",
@@ -39693,7 +39731,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "20/08/2026",
        -2000,
        "ALISON DOUGLAS DA SILVA",
@@ -39702,7 +39740,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "20/08/2026",
        -2852.16,
        "EDMILSON DE LIMA JUNIOR",
@@ -39819,7 +39857,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "21/08/2026",
        -182,
        "JOAO WICTTOR MARCELINO MEDEIROS",
@@ -39837,7 +39875,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "21/08/2026",
        -300,
        "Cliente Consumidor / Sem Tomador",
@@ -39900,7 +39938,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "21/08/2026",
        -508,
        "JOAO VICTOR OLIVEIRA NERY",
@@ -39927,7 +39965,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "21/08/2026",
        -468.14,
        "Cliente Consumidor / Sem Tomador",
@@ -39954,7 +39992,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "21/08/2026",
        -7980,
        "TORRE ALTA SERVICOS E REPRESENTACOES",
@@ -39963,7 +40001,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "21/08/2026",
        -200,
        "GEORGE CARTAXO MENDES COSTA",
@@ -40125,7 +40163,7 @@
        ""
       ],
       [
-       "6|Uniformes, EPI e exames",
+       "11|Investimentos diversos",
        "24/08/2026",
        -408.9,
        "GRUPO ONI LTDA",
@@ -40152,7 +40190,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "24/08/2026",
        -5170,
        "EDMILSON DE LIMA JUNIOR",
@@ -40251,7 +40289,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "25/08/2026",
        -4139.99,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -40287,7 +40325,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "25/08/2026",
        -250,
        "MAURO VIEIRA DA CUNHA JUNIOR",
@@ -40305,7 +40343,7 @@
        ""
       ],
       [
-       "8|Viagens administrativas",
+       "11|Investimentos diversos",
        "25/08/2026",
        -400,
        "Cliente Consumidor / Sem Tomador",
@@ -40323,7 +40361,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "25/08/2026",
        -769,
        "EDMILSON DE LIMA JUNIOR",
@@ -40332,7 +40370,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "25/08/2026",
        -311.51,
        "Cliente Consumidor / Sem Tomador",
@@ -40566,7 +40604,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "26/08/2026",
        -3200,
        "Cliente Consumidor / Sem Tomador",
@@ -40575,7 +40613,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "26/08/2026",
        -3200,
        "Cliente Consumidor / Sem Tomador",
@@ -40584,7 +40622,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "26/08/2026",
        -5000,
        "Cliente Consumidor / Sem Tomador",
@@ -40665,7 +40703,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "27/08/2026",
        -9690,
        "TORRE ALTA SERVICOS E REPRESENTACOES",
@@ -40710,7 +40748,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "28/08/2026",
        -1581.41,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -40746,7 +40784,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "28/08/2026",
        -5194.93,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -40827,7 +40865,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "28/08/2026",
        -199.92,
        "EDMILSON DE LIMA JUNIOR",
@@ -40845,7 +40883,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "28/08/2026",
        -1210.89,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -40854,7 +40892,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "28/08/2026",
        -100,
        "Cliente Consumidor / Sem Tomador",
@@ -41397,57 +41435,57 @@
     },
     "2026-09": {
      "grupos": {
-      "8": -58046.68,
-      "11": -320489.91,
-      "5": -80977.90000000001,
+      "11": -430042.2100000001,
+      "5": -57654.85,
       "4": -126469.23999999992,
-      "6": -43583.22,
-      "7": -52600.0,
+      "8": -13382.15,
+      "7": -36500.0,
       "NEUTRO": 1.3244516594568267e-10,
       "CC": -6300.84,
+      "6": -18118.5,
       "9": -1500.0,
       "OR": 5998.04,
       "10": -855.3499999999999,
       "2": -88.19999999999999
      },
      "contas": {
-      "8|Outras despesas administrativas": -52664.53,
-      "11|Frete de equipamentos e obra": -29482.69,
+      "11|Investimentos diversos": -54625.19,
+      "11|Frete de equipamentos e obra": -84409.8,
       "11|Obras e reformas": -155113.75,
       "5|Transporte, veículo e combustível": -7241.04,
       "4|Secos e mercearia": -49912.63,
-      "6|Diarista (OIA)": -23804.059999999998,
+      "8|Gestor administrativo PJ": -8000.0,
       "11|Equipamentos e mobiliário": -114249.62000000001,
       "4|Hortifrúti": -21040.54,
-      "7|Arrendamento e aluguel do ponto": -52600.0,
+      "7|Outros aluguéis": -11500.0,
       "11|Pré-operação": -21643.85,
       "8|Tarifas bancárias": -330.25,
       "NEUTRO|Transferência entre contas - entrada": 686445.0400000002,
       "NEUTRO|Transferência entre contas próprias - entrada": 5206.080000000001,
       "4|Água mineral": -4800.0,
       "4|Proteínas (carnes e frutos do mar)": -35947.840000000004,
-      "6|Alimentação de colaboradores": -10478.5,
+      "7|Arrendamento e aluguel do ponto": -25000.0,
+      "5|Prestadores de servicos gerais": -5504.06,
       "CC|Conta corrente Amana - saída": -6300.84,
       "6|Salários da operação": -4350.06,
       "5|Limpeza e descartáveis": -5007.25,
-      "5|Frete de materiais de operação": -54927.10999999999,
       "5|Água e esgoto": -2210.8599999999997,
       "4|Bebidas alcoólicas": -10583.18,
       "4|Frios, laticínios e congelados": -5752.139999999999,
-      "6|Passagens aéreas da equipe": -862.0,
       "9|Mídia paga": -1500.0,
       "8|Material de escritório": -1130.0700000000002,
       "5|Energia elétrica": -2591.6400000000003,
+      "5|Alojamento e ajuda de custo para moradia": -35100.0,
       "8|Contabilidade, jurídico e consultorias": -1682.21,
-      "5|Alojamento e ajuda de custo para moradia": -9000.0,
-      "6|Uniformes, EPI e exames": -798.66,
       "8|Licenças e alvarás": -396.0,
+      "6|Alimentação de colaboradores": -478.5,
       "8|Sistemas": -1843.62,
       "4|Gás de cozinha": -5119.92,
       "OR|Outras receitas operacionais": 5998.04,
       "6|FGTS e contribuições": -3289.94,
       "10|Juros e multas": -938.02,
       "2|Simples Nacional (DAS)": -48.339999999999996,
+      "6|Diarista (OIA)": -10000.0,
       "NEUTRO|Transferência entre contas - saída": -691651.12,
       "10|Rendimentos de aplicações": 84.09,
       "10|IOF": -1.42,
@@ -41455,43 +41493,43 @@
       "4|Devoluções de Compra de Material de Consumo": 6687.009999999999
      },
      "lanc": {
-      "8|Outras despesas administrativas": 10,
-      "11|Frete de equipamentos e obra": 5,
+      "11|Investimentos diversos": 14,
+      "11|Frete de equipamentos e obra": 15,
       "11|Obras e reformas": 40,
       "5|Transporte, veículo e combustível": 3,
       "4|Secos e mercearia": 17,
-      "6|Diarista (OIA)": 8,
+      "8|Gestor administrativo PJ": 2,
       "11|Equipamentos e mobiliário": 34,
       "4|Hortifrúti": 6,
-      "7|Arrendamento e aluguel do ponto": 6,
+      "7|Outros aluguéis": 2,
       "11|Pré-operação": 6,
       "8|Tarifas bancárias": 25,
       "NEUTRO|Transferência entre contas - entrada": 41,
       "NEUTRO|Transferência entre contas próprias - entrada": 12,
       "4|Água mineral": 1,
       "4|Proteínas (carnes e frutos do mar)": 18,
-      "6|Alimentação de colaboradores": 2,
+      "7|Arrendamento e aluguel do ponto": 1,
+      "5|Prestadores de servicos gerais": 4,
       "CC|Conta corrente Amana - saída": 5,
       "6|Salários da operação": 2,
       "5|Limpeza e descartáveis": 3,
-      "5|Frete de materiais de operação": 10,
       "5|Água e esgoto": 2,
       "4|Bebidas alcoólicas": 2,
       "4|Frios, laticínios e congelados": 2,
-      "6|Passagens aéreas da equipe": 1,
       "9|Mídia paga": 1,
       "8|Material de escritório": 2,
       "5|Energia elétrica": 2,
+      "5|Alojamento e ajuda de custo para moradia": 5,
       "8|Contabilidade, jurídico e consultorias": 2,
-      "5|Alojamento e ajuda de custo para moradia": 1,
-      "6|Uniformes, EPI e exames": 2,
       "8|Licenças e alvarás": 1,
+      "6|Alimentação de colaboradores": 1,
       "8|Sistemas": 5,
       "4|Gás de cozinha": 4,
       "OR|Outras receitas operacionais": 1,
       "6|FGTS e contribuições": 2,
       "10|Juros e multas": 2,
       "2|Simples Nacional (DAS)": 2,
+      "6|Diarista (OIA)": 1,
       "NEUTRO|Transferência entre contas - saída": 53,
       "10|Rendimentos de aplicações": 1,
       "10|IOF": 1,
@@ -41504,7 +41542,7 @@
      },
      "itens": [
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "01/09/2026",
        -2989.29,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -41576,7 +41614,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "01/09/2026",
        -350,
        "ROBSON BARBOZA DA SILVA",
@@ -41603,7 +41641,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "8|Gestor administrativo PJ",
        "01/09/2026",
        -4000,
        "KARINA PONTES SANTOS LIMA ARAUJO",
@@ -41648,7 +41686,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "7|Outros aluguéis",
        "01/09/2026",
        -1500,
        "RUAN PAULO PEREIRA DOS SANTOS",
@@ -41765,7 +41803,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "01/09/2026",
        -34337.33,
        "BANCO BRADESCO",
@@ -42026,7 +42064,7 @@
        ""
       ],
       [
-       "6|Alimentação de colaboradores",
+       "7|Outros aluguéis",
        "04/09/2026",
        -10000,
        "CLAUDIO HENRIQUE BEZERRA XAVIER",
@@ -42035,7 +42073,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "04/09/2026",
        -1000,
        "MYRELLA FLOR PEREIRA DA SILVA",
@@ -42098,7 +42136,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "04/09/2026",
        -7657.61,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -42179,7 +42217,7 @@
        ""
       ],
       [
-       "6|Passagens aéreas da equipe",
+       "11|Investimentos diversos",
        "04/09/2026",
        -862,
        "DYON GALDINO ALVES",
@@ -42251,7 +42289,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "08/09/2026",
        -10019.5,
        "TORRE ALTA SERVICOS E REPRESENTACOES",
@@ -42377,7 +42415,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "10/09/2026",
        -12810,
        "TORRE ALTA SERVICOS E REPRESENTACOES",
@@ -42395,7 +42433,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "5|Alojamento e ajuda de custo para moradia",
        "10/09/2026",
        -4000,
        "Cliente Consumidor / Sem Tomador",
@@ -42494,7 +42532,7 @@
        ""
       ],
       [
-       "6|Uniformes, EPI e exames",
+       "11|Investimentos diversos",
        "10/09/2026",
        -399.33,
        "GRUPO ONI LTDA",
@@ -42503,7 +42541,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "10/09/2026",
        -630,
        "NAGEM",
@@ -42512,7 +42550,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "5|Alojamento e ajuda de custo para moradia",
        "10/09/2026",
        -5000,
        "LEONARDO SOUZA DOS SANTOS",
@@ -42638,7 +42676,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "14/09/2026",
        -5869.56,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -42647,7 +42685,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "14/09/2026",
        -300,
        "Cliente Consumidor / Sem Tomador",
@@ -42701,7 +42739,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "14/09/2026",
        -3000,
        "KELLINY VIEIRA BANDEIRA DE MELO 04071730480",
@@ -42746,7 +42784,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "14/09/2026",
        -981.84,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -42755,7 +42793,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "14/09/2026",
        -864.94,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -42764,7 +42802,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "5|Alojamento e ajuda de custo para moradia",
        "14/09/2026",
        -15000,
        "CICERO VITAL NUNES",
@@ -42989,7 +43027,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "15/09/2026",
        -4900,
        "DANUBIO CARLOS FONSECA FERNANDES",
@@ -43016,7 +43054,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "15/09/2026",
        -1707.45,
        "Cliente Consumidor / Sem Tomador",
@@ -43151,7 +43189,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "16/09/2026",
        -5150,
        "TORRE ALTA SERVICOS E REPRESENTACOES",
@@ -43403,7 +43441,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "18/09/2026",
        -1920,
        "Cliente Consumidor / Sem Tomador",
@@ -43412,7 +43450,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "18/09/2026",
        -104.06,
        "TIM S A",
@@ -43421,7 +43459,7 @@
        ""
       ],
       [
-       "6|Uniformes, EPI e exames",
+       "11|Investimentos diversos",
        "18/09/2026",
        -399.33,
        "GRUPO ONI LTDA",
@@ -43448,7 +43486,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "18/09/2026",
        -7000,
        "TORRE ALTA SERVICOS E REPRESENTACOES",
@@ -43520,7 +43558,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "18/09/2026",
        -4307.17,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -43538,7 +43576,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "18/09/2026",
        -2445.93,
        "MS DISTRIBUIDORA LTDA",
@@ -43682,7 +43720,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "22/09/2026",
        -1589.33,
        "Cliente Consumidor / Sem Tomador",
@@ -43799,7 +43837,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "5|Prestadores de servicos gerais",
        "25/09/2026",
        -1400,
        "FACTOR SAUDE",
@@ -43835,7 +43873,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "25/09/2026",
        -266.49,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -44015,7 +44053,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "29/09/2026",
        -1795.2,
        "MHI SOLUCOES EM TECNOLOGIA",
@@ -44024,7 +44062,7 @@
        ""
       ],
       [
-       "7|Arrendamento e aluguel do ponto",
+       "5|Alojamento e ajuda de custo para moradia",
        "29/09/2026",
        -2100,
        "Cliente Consumidor / Sem Tomador",
@@ -44033,7 +44071,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "8|Gestor administrativo PJ",
        "29/09/2026",
        -4000,
        "KARINA PONTES SANTOS LIMA ARAUJO",
@@ -44747,23 +44785,22 @@
     },
     "2026-10": {
      "grupos": {
-      "8": -25876.960000000003,
-      "6": -2966.0,
+      "11": -33298.44,
+      "6": -2000.0,
       "NEUTRO": -1.4551915228366852e-11,
+      "8": -844.15,
       "4": -12965.22,
-      "5": -6003.21,
-      "11": -2927.2,
       "CC": -5801.0,
-      "7": -25000.0
+      "7": -25000.0,
+      "5": -1630.78
      },
      "contas": {
-      "8|Outras despesas administrativas": -25032.81,
-      "6|Diarista (OIA)": -2966.0,
+      "11|Investimentos diversos": -26485.31,
+      "6|Diarista (OIA)": -2000.0,
       "NEUTRO|Transferência entre contas - entrada": 322894.23,
       "8|Tarifas bancárias": -234.25,
       "4|Secos e mercearia": -10054.779999999999,
-      "5|Manutenção de equipamentos": -486.5,
-      "5|Frete de materiais de operação": -3885.9300000000003,
+      "11|Frete de equipamentos e obra": -3885.9300000000003,
       "11|Obras e reformas": -2927.2,
       "CC|Conta corrente Amana - saída": -5801.0,
       "7|Arrendamento e aluguel do ponto": -25000.0,
@@ -44773,13 +44810,12 @@
       "NEUTRO|Transferência entre contas - saída": -322894.23
      },
      "lanc": {
-      "8|Outras despesas administrativas": 2,
-      "6|Diarista (OIA)": 2,
+      "11|Investimentos diversos": 4,
+      "6|Diarista (OIA)": 1,
       "NEUTRO|Transferência entre contas - entrada": 19,
       "8|Tarifas bancárias": 34,
       "4|Secos e mercearia": 2,
-      "5|Manutenção de equipamentos": 1,
-      "5|Frete de materiais de operação": 2,
+      "11|Frete de equipamentos e obra": 2,
       "11|Obras e reformas": 2,
       "CC|Conta corrente Amana - saída": 2,
       "7|Arrendamento e aluguel do ponto": 1,
@@ -44793,7 +44829,7 @@
      },
      "itens": [
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "01/10/2026",
        -22032.81,
        "BANCO BRADESCO",
@@ -44901,7 +44937,7 @@
        ""
       ],
       [
-       "5|Manutenção de equipamentos",
+       "11|Investimentos diversos",
        "02/10/2026",
        -486.5,
        "TACTCOOL E TORQ &amp; CIA",
@@ -44910,7 +44946,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "02/10/2026",
        -1766.91,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -44919,7 +44955,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de equipamentos e obra",
        "02/10/2026",
        -2119.02,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -44928,7 +44964,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "11|Investimentos diversos",
        "02/10/2026",
        -966,
        "Cliente Consumidor / Sem Tomador",
@@ -44973,7 +45009,7 @@
        ""
       ],
       [
-       "8|Outras despesas administrativas",
+       "11|Investimentos diversos",
        "02/10/2026",
        -3000,
        "RENATO FERREIRA LIMA BATISTA GOMES",
