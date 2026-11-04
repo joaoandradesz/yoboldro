@@ -1,5 +1,5 @@
 {
- "gerado": "04/11/2026 às 10:26",
+ "gerado": "04/11/2026 às 10:49",
  "meses": [
   "2026-08",
   "2026-09"
@@ -2707,7 +2707,7 @@
       "1": 175903.28,
       "CC": 97435.85,
       "NEUTRO": 9.17,
-      "4": -254023.97,
+      "4": -274134.55,
       "5": -11656.46,
       "8": -17043.760000000006,
       "6": -18079.18,
@@ -2729,7 +2729,7 @@
       "9|Cachê de artistas e atrações": -2385.0,
       "5|Limpeza e descartáveis": -2458.46,
       "8|Contabilidade, jurídico e consultorias": -7500.0,
-      "4|Bebidas alcoólicas": -91990.9,
+      "4|Bebidas alcoólicas": -112101.48000000001,
       "9|Outros de marketing": -2000.0,
       "6|Passagens aéreas da equipe": -2010.0,
       "4|Proteínas (carnes e frutos do mar)": -37443.97000000001,
@@ -2769,7 +2769,7 @@
       "9|Cachê de artistas e atrações": 2,
       "5|Limpeza e descartáveis": 2,
       "8|Contabilidade, jurídico e consultorias": 1,
-      "4|Bebidas alcoólicas": 16,
+      "4|Bebidas alcoólicas": 18,
       "9|Outros de marketing": 1,
       "6|Passagens aéreas da equipe": 1,
       "4|Proteínas (carnes e frutos do mar)": 14,
@@ -2799,7 +2799,7 @@
      "familias": {
       "cozinha": -114858.56999999998,
       "comum": -45397.659999999996,
-      "bar": -93767.73999999999
+      "bar": -113878.32
      },
      "itens": [
       [
@@ -4781,6 +4781,24 @@
        "RECRIADO 22/09",
        "",
        ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "13/08/2026",
+       -10055.29,
+       "INGA - DISTRIBUIDORA LTDA",
+       "NF385727",
+       "",
+       "compra considerada 100% no mes da competencia (13/08/2026). Parcela 2, vencimento 23/10/2026 — no fluxo de caixa ela aparece na data do pagamento, nao"
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "13/08/2026",
+       -10055.29,
+       "INGA - DISTRIBUIDORA LTDA",
+       "NF385727",
+       "",
+       "compra considerada 100% no mes da competencia (13/08/2026). Parcela 3, vencimento 22/11/2026 — no fluxo de caixa ela aparece na data do pagamento, nao"
       ],
       [
        "FAT|Cartão de crédito à vista",
