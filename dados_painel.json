@@ -1,5 +1,5 @@
 {
- "gerado": "04/11/2026 às 09:26",
+ "gerado": "04/11/2026 às 09:37",
  "meses": [
   "2026-08",
   "2026-09"
@@ -2654,9 +2654,9 @@
     "2026-08": {
      "grupos": {
       "1": 175903.28,
-      "CC": 52994.8,
+      "CC": 97435.85,
       "NEUTRO": 9.17,
-      "4": -209582.91999999998,
+      "4": -254023.97,
       "5": -11656.46,
       "8": -17043.760000000006,
       "6": -18079.18,
@@ -2669,8 +2669,8 @@
       "1|Receita operacional (salão)": 175903.28,
       "CC|Conta corrente YO Noronha - entrada": 100000.0,
       "NEUTRO|Ajustes e estornos - entrada": 9.17,
-      "4|Secos e mercearia": -30411.870000000003,
-      "4|Outros insumos e diversos": -17988.58,
+      "4|Secos e mercearia": -34932.87,
+      "4|Outros insumos e diversos": -40020.14,
       "5|Alojamento e ajuda de custo para moradia": -7000.0,
       "8|Outras despesas administrativas": -4167.38,
       "6|Diarista (OIA)": -8933.14,
@@ -2678,19 +2678,18 @@
       "9|Cachê de artistas e atrações": -2385.0,
       "5|Limpeza e descartáveis": -2458.46,
       "8|Contabilidade, jurídico e consultorias": -7500.0,
-      "4|Bebidas alcoólicas": -81145.29,
+      "4|Bebidas alcoólicas": -91990.9,
       "9|Outros de marketing": -2000.0,
       "6|Passagens aéreas da equipe": -2010.0,
-      "4|Proteínas (carnes e frutos do mar)": -32608.370000000006,
+      "4|Proteínas (carnes e frutos do mar)": -37443.97000000001,
       "4|Hortifrúti": -14509.61,
       "5|Reposição de utensílios": -180.0,
-      "4|Frios, laticínios e congelados": -25764.84,
+      "4|Frios, laticínios e congelados": -27972.12,
       "8|Viagens administrativas": -3500.0,
       "6|ISS | Permanência": -2734.33,
       "6|Alimentação de colaboradores": -2256.2,
       "8|Tarifas bancárias": -282.18000000000006,
       "4|Frete de insumos de alimentos e bebidas": -5377.52,
-      "CC|Conta corrente YO Noronha - saída": -47005.200000000004,
       "6|FGTS e contribuições": -1845.51,
       "2|Simples Nacional (DAS)": -7914.2,
       "2|PIS": -46.45,
@@ -2700,6 +2699,7 @@
       "5|Transporte, veículo e combustível": -1418.0,
       "5|Diversos de operação": -600.0,
       "4|Bebidas não alcoólicas": -1776.84,
+      "CC|Conta corrente YO Noronha - saída": -2564.15,
       "FAT|Cartão de crédito à vista": 155488.33,
       "FAT|Cartão de débito": 18295.56,
       "FAT|Dinheiro (fundo fixo)": 8771.0,
@@ -2709,8 +2709,8 @@
       "1|Receita operacional (salão)": 62,
       "CC|Conta corrente YO Noronha - entrada": 1,
       "NEUTRO|Ajustes e estornos - entrada": 4,
-      "4|Secos e mercearia": 15,
-      "4|Outros insumos e diversos": 3,
+      "4|Secos e mercearia": 17,
+      "4|Outros insumos e diversos": 5,
       "5|Alojamento e ajuda de custo para moradia": 1,
       "8|Outras despesas administrativas": 2,
       "6|Diarista (OIA)": 27,
@@ -2718,19 +2718,18 @@
       "9|Cachê de artistas e atrações": 2,
       "5|Limpeza e descartáveis": 2,
       "8|Contabilidade, jurídico e consultorias": 1,
-      "4|Bebidas alcoólicas": 14,
+      "4|Bebidas alcoólicas": 16,
       "9|Outros de marketing": 1,
       "6|Passagens aéreas da equipe": 1,
-      "4|Proteínas (carnes e frutos do mar)": 12,
+      "4|Proteínas (carnes e frutos do mar)": 14,
       "4|Hortifrúti": 11,
       "5|Reposição de utensílios": 1,
-      "4|Frios, laticínios e congelados": 12,
+      "4|Frios, laticínios e congelados": 14,
       "8|Viagens administrativas": 1,
       "6|ISS | Permanência": 8,
       "6|Alimentação de colaboradores": 1,
       "8|Tarifas bancárias": 10,
       "4|Frete de insumos de alimentos e bebidas": 1,
-      "CC|Conta corrente YO Noronha - saída": 11,
       "6|FGTS e contribuições": 1,
       "2|Simples Nacional (DAS)": 1,
       "2|PIS": 1,
@@ -2740,15 +2739,16 @@
       "5|Transporte, veículo e combustível": 2,
       "5|Diversos de operação": 1,
       "4|Bebidas não alcoólicas": 3,
+      "CC|Conta corrente YO Noronha - saída": 1,
       "FAT|Cartão de crédito à vista": 12,
       "FAT|Cartão de débito": 11,
       "FAT|Dinheiro (fundo fixo)": 11,
       "FAT|PIX": 11
      },
      "familias": {
-      "cozinha": -103294.68999999999,
-      "comum": -23366.1,
-      "bar": -82922.12999999999
+      "cozinha": -114858.56999999998,
+      "comum": -45397.659999999996,
+      "bar": -93767.73999999999
      },
      "itens": [
       [
@@ -4363,7 +4363,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Frios, laticínios e congelados",
        "20/08/2026",
        -902.28,
        "FORMAGGIO DISTRIBUICAO DE ALIMENTOS LTDA",
@@ -4372,7 +4372,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Secos e mercearia",
        "26/08/2026",
        -4304,
        "M B N INDUSTRIA E COMERCIO DE ALIMENTOS LTDA",
@@ -4381,7 +4381,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Frios, laticínios e congelados",
        "24/08/2026",
        -1305,
        "COMERCIAL PROLAC LTDA.",
@@ -4390,7 +4390,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Secos e mercearia",
        "27/08/2026",
        -217,
        "M B N INDUSTRIA E COMERCIO DE ALIMENTOS LTDA",
@@ -4444,7 +4444,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Outros insumos e diversos",
        "12/08/2026",
        -11015.78,
        "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
@@ -4453,7 +4453,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "25/08/2026",
        -879.2,
        "CARAPITANGA INDUSTRIA DE PESCADOS DO BRASIL LT",
@@ -4462,7 +4462,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "25/08/2026",
        -3956.4,
        "CARAPITANGA INDUSTRIA DE PESCADOS DO BRASIL LT",
@@ -4489,7 +4489,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Outros insumos e diversos",
        "12/08/2026",
        -11015.78,
        "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
@@ -4498,7 +4498,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Bebidas alcoólicas",
        "27/08/2026",
        -790.32,
        "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
@@ -4507,7 +4507,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Bebidas alcoólicas",
        "13/08/2026",
        -10055.29,
        "INGA - DISTRIBUIDORA LTDA",
@@ -5147,15 +5147,15 @@
      "grupos": {
       "1": 1123423.9800000004,
       "NEUTRO": 1058.2300000000012,
-      "8": -99307.47000000002,
+      "8": -104427.47000000002,
       "9": -30715.83,
-      "6": -206320.53000000014,
-      "5": -55818.369999999995,
-      "4": -292871.95,
-      "11": -10895.0,
-      "CC": -109420.10000000002,
+      "6": -214207.8100000001,
+      "5": -63650.369999999995,
+      "4": -373915.4700000001,
+      "11": -12395.0,
+      "CC": -5742.09,
       "3": -111227.71000000005,
-      "2": -40443.85,
+      "2": -40739.06,
       "10": -6564.46,
       "FAT": 1047949.04
      },
@@ -5165,39 +5165,43 @@
       "8|Sistemas": -3943.38,
       "8|Viagens administrativas": -7900.0,
       "9|Outros de marketing": -3500.0,
-      "8|Contabilidade, jurídico e consultorias": -7500.0,
+      "8|Contabilidade, jurídico e consultorias": -12620.0,
       "6|Diarista (OIA)": -74377.51000000001,
-      "5|Alojamento e ajuda de custo para moradia": -19070.65,
+      "5|Alojamento e ajuda de custo para moradia": -25070.65,
       "6|Salários da operação": -87427.82000000004,
       "8|Telefonia e internet": -188.42,
-      "4|Proteínas (carnes e frutos do mar)": -62311.09,
-      "6|Alimentação de colaboradores": -18135.0,
+      "4|Proteínas (carnes e frutos do mar)": -106902.46,
+      "6|Alimentação de colaboradores": -22618.12,
       "8|Correios e fretes administrativos": -186.95,
       "4|Outros insumos e diversos": -18299.510000000002,
       "9|Cachê de artistas e atrações": -23215.83,
-      "6|Extras e freelancers": -17693.339999999997,
+      "6|Extras e freelancers": -21097.5,
       "5|Gestor operacional PJ": -14666.67,
       "8|Pró-labore": -68000.0,
       "11|Equipamentos e mobiliário": -8895.0,
-      "4|Hortifrúti": -14083.23,
-      "5|Manutenção de equipamentos": -2260.0,
-      "4|Secos e mercearia": -58141.84999999999,
-      "11|Obras e reformas": -2000.0,
+      "4|Hortifrúti": -18342.13,
+      "5|Manutenção de equipamentos": -3660.0,
+      "4|Secos e mercearia": -67760.20000000001,
+      "11|Obras e reformas": -3500.0,
       "8|Outras despesas administrativas": -9020.970000000001,
-      "5|Limpeza e descartáveis": -15314.45,
+      "5|Limpeza e descartáveis": -15746.45,
       "8|Tarifas bancárias": -782.2500000000001,
-      "4|Bebidas alcoólicas": -103397.96,
+      "4|Bebidas alcoólicas": -117000.86000000002,
       "6|Passagens aéreas da equipe": -3982.68,
       "6|Uniformes, EPI e exames": -1924.0,
       "9|Agência e conteúdo": -2500.0,
-      "CC|Conta corrente YO Noronha - saída": -105953.43000000002,
       "4|Frete de insumos de alimentos e bebidas": -14428.04,
+      "4|Gás de cozinha": -1000.0,
+      "CC|Conta corrente YO Noronha - saída": -2275.42,
       "CC|Conta corrente Pousada Topázio - saída": -3466.67,
       "3|Comissões sobre vendas": -100776.14000000003,
+      "2|ICMS-ST e DIFAL": -295.21,
       "5|Transporte, veículo e combustível": -549.0,
       "9|Mídia paga": -1500.0,
+      "4|Água mineral": -6792.0,
       "4|Frios, laticínios e congelados": -22210.27,
       "6|Rescisões": -2780.18,
+      "4|Bebidas não alcoólicas": -1180.0,
       "8|Material de escritório": -1785.5,
       "2|Cancelamentos e estornos": -5300.0,
       "3|Taxas de cartão": -10451.57,
@@ -5217,39 +5221,43 @@
       "8|Sistemas": 3,
       "8|Viagens administrativas": 3,
       "9|Outros de marketing": 2,
-      "8|Contabilidade, jurídico e consultorias": 1,
+      "8|Contabilidade, jurídico e consultorias": 3,
       "6|Diarista (OIA)": 75,
-      "5|Alojamento e ajuda de custo para moradia": 9,
+      "5|Alojamento e ajuda de custo para moradia": 11,
       "6|Salários da operação": 67,
       "8|Telefonia e internet": 1,
-      "4|Proteínas (carnes e frutos do mar)": 24,
-      "6|Alimentação de colaboradores": 9,
+      "4|Proteínas (carnes e frutos do mar)": 34,
+      "6|Alimentação de colaboradores": 12,
       "8|Correios e fretes administrativos": 1,
       "4|Outros insumos e diversos": 8,
       "9|Cachê de artistas e atrações": 24,
-      "6|Extras e freelancers": 14,
+      "6|Extras e freelancers": 21,
       "5|Gestor operacional PJ": 3,
       "8|Pró-labore": 6,
       "11|Equipamentos e mobiliário": 4,
-      "4|Hortifrúti": 12,
-      "5|Manutenção de equipamentos": 3,
-      "4|Secos e mercearia": 27,
-      "11|Obras e reformas": 1,
+      "4|Hortifrúti": 16,
+      "5|Manutenção de equipamentos": 4,
+      "4|Secos e mercearia": 32,
+      "11|Obras e reformas": 2,
       "8|Outras despesas administrativas": 7,
-      "5|Limpeza e descartáveis": 5,
+      "5|Limpeza e descartáveis": 6,
       "8|Tarifas bancárias": 25,
-      "4|Bebidas alcoólicas": 22,
+      "4|Bebidas alcoólicas": 25,
       "6|Passagens aéreas da equipe": 4,
       "6|Uniformes, EPI e exames": 3,
       "9|Agência e conteúdo": 1,
-      "CC|Conta corrente YO Noronha - saída": 46,
       "4|Frete de insumos de alimentos e bebidas": 2,
+      "4|Gás de cozinha": 1,
+      "CC|Conta corrente YO Noronha - saída": 3,
       "CC|Conta corrente Pousada Topázio - saída": 2,
       "3|Comissões sobre vendas": 53,
+      "2|ICMS-ST e DIFAL": 1,
       "5|Transporte, veículo e combustível": 3,
       "9|Mídia paga": 1,
+      "4|Água mineral": 1,
       "4|Frios, laticínios e congelados": 7,
       "6|Rescisões": 1,
+      "4|Bebidas não alcoólicas": 1,
       "8|Material de escritório": 1,
       "2|Cancelamentos e estornos": 3,
       "3|Taxas de cartão": 1,
@@ -5264,9 +5272,9 @@
       "FAT|Ajuste ao total do 3LM": 1
      },
      "familias": {
-      "cozinha": -156746.44000000003,
+      "cozinha": -216215.06,
       "comum": -32727.550000000003,
-      "bar": -103397.96
+      "bar": -124972.86000000002
      },
      "itens": [
       [
@@ -12497,7 +12505,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "5|Alojamento e ajuda de custo para moradia",
        "10/09/2026",
        -3500,
        "EVNY LWIZE ALVES DA SILVA",
@@ -12596,7 +12604,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Secos e mercearia",
        "15/09/2026",
        -118,
        "M B N INDUSTRIA E COMERCIO DE ALIMENTOS LTDA",
@@ -12668,7 +12676,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Bebidas alcoólicas",
        "09/09/2026",
        -4342.6,
        "PIPA &amp; XAVIER DISTRIBUIDORA DE BEBIDAS LTD",
@@ -12758,7 +12766,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Gás de cozinha",
        "18/09/2026",
        -1000,
        "BOLDRO PRAIA EMPREENDIMENTOS LTDA",
@@ -12776,7 +12784,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "5|Alojamento e ajuda de custo para moradia",
        "18/09/2026",
        -2500,
        "GENTIL PAULO DA SILVA",
@@ -12785,7 +12793,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "18/09/2026",
        -420,
        "MARLOS SANTOS DO AMARANTE",
@@ -12794,7 +12802,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "6|Alimentação de colaboradores",
        "18/09/2026",
        -4235,
        "JOSE RAMALHO MIRANDA DA SILVA",
@@ -12812,7 +12820,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "18/09/2026",
        -1648,
        "ANTONIO DE PAULA FERNANDES TAVARES",
@@ -12821,7 +12829,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Hortifrúti",
        "18/09/2026",
        -800,
        "GILVAN JOSE MARTINS SOBRINHO",
@@ -12839,7 +12847,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Bebidas alcoólicas",
        "14/09/2026",
        -3296,
        "PIPA &amp; XAVIER DISTRIBUIDORA DE BEBIDAS LTD",
@@ -12848,7 +12856,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Hortifrúti",
        "16/09/2026",
        -430,
        "EMPORIO MIX DE HORTALICAS FINAS LIMITADA",
@@ -12866,7 +12874,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "8|Contabilidade, jurídico e consultorias",
        "18/09/2026",
        -120,
        "JEFFERSON DO MONTE VASCONCELOS",
@@ -13226,7 +13234,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Bebidas alcoólicas",
        "16/09/2026",
        -5964.3,
        "BOLDRO PRAIA EMPREENDIMENTOS LTDA",
@@ -13235,7 +13243,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "17/09/2026",
        -4262.99,
        "CREDIX FINANCE SECURITIZADORA III S.A.",
@@ -13244,7 +13252,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "18/09/2026",
        -5444,
        "GC COMERCIO DE PESCADOS LTDA",
@@ -13253,7 +13261,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "18/09/2026",
        -6800,
        "GC COMERCIO DE PESCADOS LTDA",
@@ -13280,7 +13288,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Secos e mercearia",
        "10/09/2026",
        -3299.5,
        "J A CALHEIROS DE MELO JUNIOR",
@@ -13289,7 +13297,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Secos e mercearia",
        "18/09/2026",
        -2580.22,
        "ATACAMAX IMPORTADORA DE ALIMENTOS LTDA",
@@ -13298,7 +13306,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "14/09/2026",
        -1554.94,
        "MASTERBOI LTDA.",
@@ -13307,7 +13315,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "15/09/2026",
        -7191.79,
        "MASTERBOI LTDA.",
@@ -13316,7 +13324,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "16/09/2026",
        -8547.65,
        "PRASO PLATAFORMA DE COMERCIO LTDA.",
@@ -13325,7 +13333,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "2|ICMS-ST e DIFAL",
        "28/09/2026",
        -295.21,
        "SECRETARIA DA FAZENDA",
@@ -13604,7 +13612,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Água mineral",
        "17/09/2026",
        -6792,
        "BOLDRO PRAIA EMPREENDIMENTOS LTDA",
@@ -13847,7 +13855,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "6|Alimentação de colaboradores",
        "10/09/2026",
        -124.36,
        "PRASO PLATAFORMA DE COMERCIO LTDA.",
@@ -13865,7 +13873,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "6|Alimentação de colaboradores",
        "13/09/2026",
        -123.76,
        "PRASO PLATAFORMA DE COMERCIO LTDA.",
@@ -13901,7 +13909,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "11|Obras e reformas",
        "29/09/2026",
        -1500,
        "JOSE FORTUNATO DA COSTA",
@@ -13910,7 +13918,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "6|Extras e freelancers",
        "29/09/2026",
        -600,
        "JOAO WICTTOR MARCELINO MEDEIROS",
@@ -13919,7 +13927,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "6|Extras e freelancers",
        "29/09/2026",
        -100,
        "VOLHA DRAZIELI SOARES DE SOUZA",
@@ -13928,7 +13936,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "6|Extras e freelancers",
        "29/09/2026",
        -300,
        "THIAGO MACHADO STORCK",
@@ -13937,7 +13945,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "6|Extras e freelancers",
        "29/09/2026",
        -300,
        "PAULO CESAR DA SILVA",
@@ -13946,7 +13954,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "6|Extras e freelancers",
        "29/09/2026",
        -100,
        "INACIO ADRIANO DE LIMA",
@@ -13955,7 +13963,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "6|Extras e freelancers",
        "29/09/2026",
        -445.83,
        "JOSE EVANDRO DA SILVA",
@@ -14018,7 +14026,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "16/09/2026",
        -6442.8,
        "EPITACIO PESCADOS IMPORTADORA LTDA",
@@ -14027,7 +14035,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Secos e mercearia",
        "16/09/2026",
        -390.25,
        "DISPAN DISTRIBUIDORA DE ALIMENTOS LTDA",
@@ -14045,7 +14053,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "5|Limpeza e descartáveis",
        "26/09/2026",
        -432,
        "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
@@ -14054,7 +14062,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Hortifrúti",
        "25/09/2026",
        -2059,
        "EMPORIO MIX DE HORTALICAS FINAS LIMITADA",
@@ -14063,7 +14071,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "5|Manutenção de equipamentos",
        "02/09/2026",
        -1400,
        "PROTETORES ARGUS LTDA",
@@ -14072,7 +14080,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Secos e mercearia",
        "11/09/2026",
        -3230.38,
        "DISPAN DISTRIBUIDORA DE ALIMENTOS LTDA",
@@ -14081,7 +14089,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Bebidas não alcoólicas",
        "25/09/2026",
        -1180,
        "DISTRIBUIDORA NORONHENSE DE BEBIDAS LTDA",
@@ -14090,7 +14098,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Hortifrúti",
        "26/09/2026",
        -969.9,
        "EMPORIO MIX DE HORTALICAS FINAS LIMITADA",
@@ -14414,7 +14422,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "6|Extras e freelancers",
        "29/09/2026",
        -1558.33,
        "FLAVIA MARIA SILVA TORRES",
@@ -14423,7 +14431,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "8|Contabilidade, jurídico e consultorias",
        "25/09/2026",
        -5000,
        "EXACT APOIO ADMINISTRATIVO LTDA",
@@ -14432,7 +14440,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "25/09/2026",
        -2279.2,
        "EMPRESA DE PESCA BANCO SUESTE LTDA",
@@ -18131,126 +18139,132 @@
     "2026-09": {
      "grupos": {
       "1": 1059150.87,
-      "4": -226272.15000069997,
-      "6": -116653.70999929996,
-      "8": -58621.97000000001,
+      "4": -351756.72000070004,
+      "6": -124866.83999929996,
+      "8": -63741.97000000001,
       "9": -30715.83,
-      "5": -36931.43,
-      "11": -10895.0,
+      "5": -44763.43,
+      "11": -12395.0,
       "NEUTRO": 11128.229999999363,
-      "CC": -156455.94,
       "2": -13771.75,
+      "CC": -8306.24,
       "3": -12116.620000000003,
       "10": 28.54
      },
      "contas": {
       "1|Receita operacional (salão)": 1059150.87,
-      "4|Hortifrúti": -18789.4900007,
-      "6|Alimentação de colaboradores": -20391.2,
-      "4|Secos e mercearia": -64896.529999999984,
+      "4|Hortifrúti": -23048.3900007,
+      "6|Alimentação de colaboradores": -24874.32,
+      "4|Secos e mercearia": -79035.87999999999,
       "8|Viagens administrativas": -7000.0,
       "9|Outros de marketing": -3500.0,
-      "8|Contabilidade, jurídico e consultorias": -9500.0,
+      "8|Contabilidade, jurídico e consultorias": -14620.0,
       "6|Diarista (OIA)": -36687.51,
-      "5|Alojamento e ajuda de custo para moradia": -20070.65,
+      "5|Alojamento e ajuda de custo para moradia": -26070.65,
       "11|Equipamentos e mobiliário": -8895.0,
-      "4|Proteínas (carnes e frutos do mar)": -61654.659999999996,
-      "4|Bebidas alcoólicas": -29407.5,
-      "11|Obras e reformas": -2000.0,
+      "4|Proteínas (carnes e frutos do mar)": -111081.62999999998,
+      "4|Bebidas alcoólicas": -53856.01,
+      "11|Obras e reformas": -3500.0,
       "8|Outras despesas administrativas": -9020.970000000001,
-      "5|Limpeza e descartáveis": -5451.780000000001,
+      "5|Limpeza e descartáveis": -5883.780000000001,
       "8|Tarifas bancárias": -782.2500000000001,
       "NEUTRO|Transferência entre contas - entrada": 926867.98,
-      "4|Frios, laticínios e congelados": -26634.84,
+      "4|Frios, laticínios e congelados": -28842.12,
       "NEUTRO|Transferência entre contas - saída": -916797.9800000001,
       "6|Salários da operação": -39208.299999999996,
       "5|Gestor operacional PJ": -9000.0,
-      "6|Extras e freelancers": -7699.9999993,
+      "6|Extras e freelancers": -11104.1599993,
       "8|Telefonia e internet": -188.42,
       "8|Correios e fretes administrativos": -186.95,
-      "4|Outros insumos e diversos": -13513.569999999998,
+      "4|Outros insumos e diversos": -35545.130000000005,
       "9|Cachê de artistas e atrações": -23215.83,
       "8|Pró-labore": -28000.0,
-      "5|Manutenção de equipamentos": -1960.0,
+      "5|Manutenção de equipamentos": -3360.0,
       "6|ISS | Permanência": -2134.33,
       "6|Passagens aéreas da equipe": -3982.68,
       "6|Uniformes, EPI e exames": -1924.0,
       "9|Mídia paga": -1500.0,
       "4|Frete de insumos de alimentos e bebidas": -11375.560000000001,
       "9|Agência e conteúdo": -2500.0,
-      "CC|Conta corrente YO Noronha - saída": -152989.27,
       "6|FGTS e contribuições": -1845.51,
       "2|Simples Nacional (DAS)": -7914.2,
       "8|Sistemas": -3943.38,
+      "4|Gás de cozinha": -1000.0,
+      "CC|Conta corrente YO Noronha - saída": -4839.570000000001,
       "CC|Conta corrente Pousada Topázio - saída": -3466.67,
       "3|Comissões sobre vendas": -12116.620000000003,
       "2|ICMS-ST e DIFAL": -295.21,
       "5|Transporte, veículo e combustível": -449.0,
       "NEUTRO|Ajustes e estornos - entrada": 1058.2300000000012,
+      "4|Água mineral": -6792.0,
       "2|Cancelamentos e estornos": -5300.0,
       "2|COFINS": -214.39,
       "2|PIS": -46.45,
-      "6|Rescisões": -2780.18,
+      "6|Rescisões": -3106.0299999999997,
+      "4|Bebidas não alcoólicas": -1180.0,
       "10|Rendimentos de aplicações": 34.94,
       "10|IOF": -6.4,
       "2|IRPJ": -1.5
      },
      "lanc": {
       "1|Receita operacional (salão)": 323,
-      "4|Hortifrúti": 10,
-      "6|Alimentação de colaboradores": 10,
-      "4|Secos e mercearia": 27,
+      "4|Hortifrúti": 14,
+      "6|Alimentação de colaboradores": 13,
+      "4|Secos e mercearia": 34,
       "8|Viagens administrativas": 2,
       "9|Outros de marketing": 2,
-      "8|Contabilidade, jurídico e consultorias": 2,
+      "8|Contabilidade, jurídico e consultorias": 4,
       "6|Diarista (OIA)": 54,
-      "5|Alojamento e ajuda de custo para moradia": 10,
+      "5|Alojamento e ajuda de custo para moradia": 12,
       "11|Equipamentos e mobiliário": 4,
-      "4|Proteínas (carnes e frutos do mar)": 27,
-      "4|Bebidas alcoólicas": 7,
-      "11|Obras e reformas": 1,
+      "4|Proteínas (carnes e frutos do mar)": 39,
+      "4|Bebidas alcoólicas": 12,
+      "11|Obras e reformas": 2,
       "8|Outras despesas administrativas": 7,
-      "5|Limpeza e descartáveis": 3,
+      "5|Limpeza e descartáveis": 4,
       "8|Tarifas bancárias": 25,
       "NEUTRO|Transferência entre contas - entrada": 27,
-      "4|Frios, laticínios e congelados": 13,
+      "4|Frios, laticínios e congelados": 15,
       "NEUTRO|Transferência entre contas - saída": 21,
       "6|Salários da operação": 40,
       "5|Gestor operacional PJ": 2,
-      "6|Extras e freelancers": 3,
+      "6|Extras e freelancers": 10,
       "8|Telefonia e internet": 1,
       "8|Correios e fretes administrativos": 1,
-      "4|Outros insumos e diversos": 6,
+      "4|Outros insumos e diversos": 8,
       "9|Cachê de artistas e atrações": 24,
       "8|Pró-labore": 3,
-      "5|Manutenção de equipamentos": 2,
+      "5|Manutenção de equipamentos": 3,
       "6|ISS | Permanência": 6,
       "6|Passagens aéreas da equipe": 4,
       "6|Uniformes, EPI e exames": 3,
       "9|Mídia paga": 1,
       "4|Frete de insumos de alimentos e bebidas": 2,
       "9|Agência e conteúdo": 1,
-      "CC|Conta corrente YO Noronha - saída": 57,
       "6|FGTS e contribuições": 1,
       "2|Simples Nacional (DAS)": 1,
       "8|Sistemas": 3,
+      "4|Gás de cozinha": 1,
+      "CC|Conta corrente YO Noronha - saída": 4,
       "CC|Conta corrente Pousada Topázio - saída": 2,
       "3|Comissões sobre vendas": 24,
       "2|ICMS-ST e DIFAL": 1,
       "5|Transporte, veículo e combustível": 1,
       "NEUTRO|Ajustes e estornos - entrada": 300,
+      "4|Água mineral": 1,
       "2|Cancelamentos e estornos": 3,
       "2|COFINS": 1,
       "2|PIS": 1,
-      "6|Rescisões": 1,
+      "6|Rescisões": 2,
+      "4|Bebidas não alcoólicas": 1,
       "10|Rendimentos de aplicações": 1,
       "10|IOF": 1,
       "2|IRPJ": 1
      },
      "familias": {
-      "cozinha": -171975.52000070002,
-      "bar": -29407.5,
-      "comum": -24889.13
+      "cozinha": -243008.02000070002,
+      "bar": -61828.01,
+      "comum": -46920.69
      },
      "itens": [
       [
@@ -21251,7 +21265,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "5|Alojamento e ajuda de custo para moradia",
        "15/09/2026",
        -3500,
        "EVNY LWIZE ALVES DA SILVA",
@@ -21269,7 +21283,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Frios, laticínios e congelados",
        "15/09/2026",
        -902.28,
        "FORMAGGIO DISTRIBUICAO DE ALIMENTOS LTDA",
@@ -21287,7 +21301,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Secos e mercearia",
        "15/09/2026",
        -4304,
        "GRANNO SELECT",
@@ -21368,7 +21382,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Secos e mercearia",
        "15/09/2026",
        -118,
        "GRANNO SELECT",
@@ -21377,7 +21391,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Frios, laticínios e congelados",
        "15/09/2026",
        -1305,
        "COMERCIAL PROLAC",
@@ -21449,7 +21463,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Bebidas alcoólicas",
        "15/09/2026",
        -4342.6,
        "DISTRIBUIDORA DOIS IRMAOS",
@@ -21458,7 +21472,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Secos e mercearia",
        "15/09/2026",
        -217,
        "GRANNO SELECT",
@@ -21944,7 +21958,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Gás de cozinha",
        "18/09/2026",
        -1000,
        "BOLDRO PRAIA EMPREENDIMENTOS LTDA",
@@ -21962,7 +21976,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "5|Alojamento e ajuda de custo para moradia",
        "18/09/2026",
        -2500,
        "GENTIL PAULO DA SILVA",
@@ -21971,7 +21985,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "18/09/2026",
        -420,
        "MARLOS SANTOS DO AMARANTE",
@@ -21980,7 +21994,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "6|Alimentação de colaboradores",
        "18/09/2026",
        -4235,
        "JOSE RAMALHO MIRANDA DA SILVA",
@@ -21998,7 +22012,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "18/09/2026",
        -1648,
        "ANTONIO DE PAULA FERNANDES TAVARES",
@@ -22007,7 +22021,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Hortifrúti",
        "18/09/2026",
        -800,
        "GILVAN JOSE MARTINS SOBRINHO",
@@ -22025,7 +22039,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Outros insumos e diversos",
        "18/09/2026",
        -11015.78,
        "DLP",
@@ -22034,7 +22048,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Bebidas alcoólicas",
        "18/09/2026",
        -3296,
        "DISTRIBUIDORA DOIS IRMAOS",
@@ -22043,7 +22057,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "18/09/2026",
        -879.2,
        "CARAPITANGA PESCADOS DO BRASIL",
@@ -22052,7 +22066,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "18/09/2026",
        -3956.4,
        "CARAPITANGA PESCADOS DO BRASIL",
@@ -22061,7 +22075,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Hortifrúti",
        "18/09/2026",
        -430,
        "EMPORIO MIX HORTALICAS FINAS",
@@ -22079,7 +22093,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "8|Contabilidade, jurídico e consultorias",
        "18/09/2026",
        -120,
        "JEFFERSON DO MONTE VASCONCELOS",
@@ -22979,7 +22993,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Bebidas alcoólicas",
        "22/09/2026",
        -5964.3,
        "BOLDRO PRAIA EMPREENDIMENTOS LTDA",
@@ -22997,7 +23011,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "22/09/2026",
        -4262.99,
        "CREDIX FINANCE SECURITIZADORA III S.A.",
@@ -23006,7 +23020,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "22/09/2026",
        -5444,
        "GC COMERCIO DE PESCADOS LTDA",
@@ -23015,7 +23029,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "22/09/2026",
        -6800,
        "GC COMERCIO DE PESCADOS LTDA",
@@ -23051,7 +23065,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Secos e mercearia",
        "22/09/2026",
        -3299.5,
        "MANIHOT IGUARIAS",
@@ -23060,7 +23074,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Secos e mercearia",
        "22/09/2026",
        -2580.22,
        "ATACAMAX",
@@ -23069,7 +23083,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "22/09/2026",
        -1554.94,
        "MASTERBOI",
@@ -23078,7 +23092,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Outros insumos e diversos",
        "22/09/2026",
        -11015.78,
        "DLP",
@@ -23087,7 +23101,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Bebidas alcoólicas",
        "22/09/2026",
        -790.32,
        "DLP",
@@ -23096,7 +23110,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "22/09/2026",
        -7191.79,
        "MASTERBOI",
@@ -23105,7 +23119,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "22/09/2026",
        -8547.65,
        "PRASO PLATAFORMA DE COMERCIO LTDA.",
@@ -23339,7 +23353,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Bebidas alcoólicas",
        "23/09/2026",
        -10055.29,
        "INGA - DISTRIBUIDORA LTDA",
@@ -23348,7 +23362,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Água mineral",
        "23/09/2026",
        -6792,
        "BOLDRO PRAIA EMPREENDIMENTOS LTDA",
@@ -27038,7 +27052,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "6|Alimentação de colaboradores",
        "29/09/2026",
        -124.36,
        "PRASO PLATAFORMA DE COMERCIO LTDA.",
@@ -27056,7 +27070,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "6|Alimentação de colaboradores",
        "29/09/2026",
        -123.76,
        "PRASO PLATAFORMA DE COMERCIO LTDA.",
@@ -27083,7 +27097,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "11|Obras e reformas",
        "29/09/2026",
        -1500,
        "JOSE FORTUNATO DA COSTA",
@@ -27092,7 +27106,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "6|Extras e freelancers",
        "29/09/2026",
        -600,
        "JOAO WICTTOR MARCELINO MEDEIROS",
@@ -27101,7 +27115,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "6|Extras e freelancers",
        "29/09/2026",
        -100,
        "VOLHA DRAZIELI SOARES DE SOUZA",
@@ -27110,7 +27124,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "6|Extras e freelancers",
        "29/09/2026",
        -300,
        "THIAGO MACHADO STORCK",
@@ -27119,7 +27133,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "6|Extras e freelancers",
        "29/09/2026",
        -300,
        "PAULO CESAR DA SILVA",
@@ -27128,7 +27142,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "6|Extras e freelancers",
        "29/09/2026",
        -100,
        "INACIO ADRIANO DE LIMA",
@@ -27137,7 +27151,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "6|Extras e freelancers",
        "29/09/2026",
        -445.83,
        "JOSE EVANDRO DA SILVA",
@@ -27200,7 +27214,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "29/09/2026",
        -6442.8,
        "TUDO DO MAR PESCADOS",
@@ -27209,7 +27223,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Secos e mercearia",
        "29/09/2026",
        -390.25,
        "DISPAN DISTRIBUIDORA DE ALIMENTOS LTDA",
@@ -27236,7 +27250,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "5|Limpeza e descartáveis",
        "29/09/2026",
        -432,
        "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
@@ -27245,7 +27259,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Hortifrúti",
        "29/09/2026",
        -2059,
        "EMPORIO MIX HORTALICAS FINAS",
@@ -27254,7 +27268,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "5|Manutenção de equipamentos",
        "29/09/2026",
        -1400,
        "PROTETORES ARGUS",
@@ -27263,7 +27277,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Secos e mercearia",
        "29/09/2026",
        -3230.38,
        "DISPAN DISTRIBUIDORA DE ALIMENTOS LTDA",
@@ -27272,7 +27286,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Bebidas não alcoólicas",
        "29/09/2026",
        -1180,
        "PAVONIA DISTRIBUIDORA",
@@ -27281,7 +27295,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Hortifrúti",
        "29/09/2026",
        -969.9,
        "EMPORIO MIX HORTALICAS FINAS",
@@ -27290,7 +27304,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "6|Rescisões",
        "29/09/2026",
        -325.85,
        "CEF MATRIZ",
@@ -27299,7 +27313,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "6|Extras e freelancers",
        "29/09/2026",
        -1558.33,
        "FLAVIA MARIA SILVA TORRES",
@@ -27308,7 +27322,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "8|Contabilidade, jurídico e consultorias",
        "29/09/2026",
        -5000,
        "EXACT APOIO ADMINISTRATIVO LTDA",
@@ -27317,7 +27331,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "4|Proteínas (carnes e frutos do mar)",
        "29/09/2026",
        -2279.2,
        "EMPRESA DE PESCA BANCO SUESTE LTDA",
