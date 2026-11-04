@@ -1,5 +1,5 @@
 {
- "gerado": "04/11/2026 às 00:11",
+ "gerado": "04/11/2026 às 00:45",
  "meses": [
   "2026-08",
   "2026-09"
@@ -2403,7 +2403,11 @@
       "6|Extras e freelancers": -300.0,
       "5|Transporte, veículo e combustível": -1418.0,
       "5|Diversos de operação": -600.0,
-      "4|Bebidas não alcoólicas": -1776.84
+      "4|Bebidas não alcoólicas": -1776.84,
+      "FAT|Cartão de crédito à vista": 155488.33,
+      "FAT|Cartão de débito": 18295.56,
+      "FAT|Dinheiro (fundo fixo)": 8771.0,
+      "FAT|PIX": 8735.43
      },
      "lanc": {
       "1|Receita operacional (salão)": 62,
@@ -2439,7 +2443,11 @@
       "6|Extras e freelancers": 2,
       "5|Transporte, veículo e combustível": 2,
       "5|Diversos de operação": 1,
-      "4|Bebidas não alcoólicas": 3
+      "4|Bebidas não alcoólicas": 3,
+      "FAT|Cartão de crédito à vista": 345,
+      "FAT|Cartão de débito": 71,
+      "FAT|Dinheiro (fundo fixo)": 11,
+      "FAT|PIX": 25
      },
      "familias": {
       "cozinha": -103294.68999999999,
@@ -4426,8 +4434,418 @@
        "RECRIADO 22/09",
        "",
        ""
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "18/08/2026",
+       1.0,
+       "1 venda(s)",
+       "",
+       "",
+       "taxa R$ 0.01"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "21/08/2026",
+       7098.7,
+       "12 venda(s)",
+       "",
+       "",
+       "taxa R$ 77.09"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "22/08/2026",
+       16946.06,
+       "40 venda(s)",
+       "",
+       "",
+       "taxa R$ 191.96"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "23/08/2026",
+       14497.71,
+       "35 venda(s)",
+       "",
+       "",
+       "taxa R$ 163.58"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "24/08/2026",
+       14762.78,
+       "40 venda(s)",
+       "",
+       "",
+       "taxa R$ 167.63"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "25/08/2026",
+       14494.53,
+       "28 venda(s)",
+       "",
+       "",
+       "taxa R$ 209.47"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "26/08/2026",
+       12686.28,
+       "31 venda(s)",
+       "",
+       "",
+       "taxa R$ 160.57"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "27/08/2026",
+       10837.32,
+       "20 venda(s)",
+       "",
+       "",
+       "taxa R$ 133.00"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "28/08/2026",
+       20299.26,
+       "27 venda(s)",
+       "",
+       "",
+       "taxa R$ 223.25"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "29/08/2026",
+       15158.37,
+       "41 venda(s)",
+       "",
+       "",
+       "taxa R$ 164.71"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "30/08/2026",
+       15431.19,
+       "41 venda(s)",
+       "",
+       "",
+       "taxa R$ 175.08"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "31/08/2026",
+       13275.13,
+       "29 venda(s)",
+       "",
+       "",
+       "taxa R$ 172.54"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "21/08/2026",
+       894.0,
+       "3 venda(s)",
+       "",
+       "",
+       "taxa R$ 8.30"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "22/08/2026",
+       360.8,
+       "1 venda(s)",
+       "",
+       "",
+       "taxa R$ 3.39"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "23/08/2026",
+       2877.82,
+       "5 venda(s)",
+       "",
+       "",
+       "taxa R$ 25.96"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "24/08/2026",
+       2301.3,
+       "9 venda(s)",
+       "",
+       "",
+       "taxa R$ 23.42"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "25/08/2026",
+       3651.2,
+       "6 venda(s)",
+       "",
+       "",
+       "taxa R$ 34.32"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "26/08/2026",
+       835.06,
+       "6 venda(s)",
+       "",
+       "",
+       "taxa R$ 7.88"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "27/08/2026",
+       1366.7,
+       "8 venda(s)",
+       "",
+       "",
+       "taxa R$ 12.75"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "28/08/2026",
+       325.24,
+       "4 venda(s)",
+       "",
+       "",
+       "taxa R$ 2.92"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "29/08/2026",
+       2818.28,
+       "14 venda(s)",
+       "",
+       "",
+       "taxa R$ 25.53"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "30/08/2026",
+       1887.29,
+       "9 venda(s)",
+       "",
+       "",
+       "taxa R$ 17.45"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "31/08/2026",
+       977.87,
+       "6 venda(s)",
+       "",
+       "",
+       "taxa R$ 9.19"
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "21/08/2026",
+       50.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "22/08/2026",
+       65.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "23/08/2026",
+       990.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "24/08/2026",
+       565.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "25/08/2026",
+       1537.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "26/08/2026",
+       644.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "27/08/2026",
+       470.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "28/08/2026",
+       1160.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "29/08/2026",
+       1540.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "30/08/2026",
+       650.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "31/08/2026",
+       1100.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "21/08/2026",
+       446.6,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "22/08/2026",
+       52.8,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "23/08/2026",
+       634.9,
+       "4 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "24/08/2026",
+       528.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "25/08/2026",
+       2815.84,
+       "3 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "26/08/2026",
+       394.24,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "27/08/2026",
+       620.0,
+       "2 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "28/08/2026",
+       1514.13,
+       "4 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "29/08/2026",
+       50.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "30/08/2026",
+       572.36,
+       "4 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "31/08/2026",
+       1106.56,
+       "3 venda(s)",
+       "",
+       "",
+       ""
       ]
-     ]
+     ],
+     "fat": {
+      "valor": 191290.32,
+      "fonte": "reconstruido",
+      "detalhe": "GetNet cartao R$ 173.783,89 + PIX R$ 8.735,43 (Extrato de Vendas Detalhado, EC 11890027, por data da venda) + dinheiro do fundo fixo R$ 8.771,00 (Omie). Nao ha relatorio do 3LM de agosto."
+     }
     },
     "2026-09": {
      "grupos": {
@@ -4489,7 +4907,12 @@
       "2|COFINS": -28885.36,
       "2|PIS": -6258.49,
       "5|Diversos de operação": -3957.6,
-      "10|Custo de antecipação de recebíveis": -6564.46
+      "10|Custo de antecipação de recebíveis": -6564.46,
+      "FAT|Cartão de crédito à vista": 819896.32,
+      "FAT|Cartão de débito": 114362.71,
+      "FAT|PIX": 72746.84,
+      "FAT|Dinheiro (fundo fixo)": 47022.72,
+      "FAT|Ajuste ao total do 3LM": -6079.55
      },
      "lanc": {
       "1|Receita operacional (salão)": 356,
@@ -4536,7 +4959,12 @@
       "2|COFINS": 1,
       "2|PIS": 1,
       "5|Diversos de operação": 9,
-      "10|Custo de antecipação de recebíveis": 1
+      "10|Custo de antecipação de recebíveis": 1,
+      "FAT|Cartão de crédito à vista": 1651,
+      "FAT|Cartão de débito": 350,
+      "FAT|PIX": 201,
+      "FAT|Dinheiro (fundo fixo)": 30,
+      "FAT|Ajuste ao total do 3LM": 0
      },
      "familias": {
       "cozinha": -156746.44000000003,
@@ -14911,8 +15339,1084 @@
        "NF388070",
        "",
        "compra considerada 100% no mes da competencia (08/09/2026). Parcela 4, vencimento 06/01/2027 — no fluxo de caixa ela aparece na data do pagamento, nao"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "01/09/2026",
+       11514.88,
+       "34 venda(s)",
+       "",
+       "",
+       "taxa R$ 124.18"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "02/09/2026",
+       10673.25,
+       "26 venda(s)",
+       "",
+       "",
+       "taxa R$ 139.90"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "03/09/2026",
+       15433.36,
+       "44 venda(s)",
+       "",
+       "",
+       "taxa R$ 186.22"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "04/09/2026",
+       38123.82,
+       "51 venda(s)",
+       "",
+       "",
+       "taxa R$ 454.81"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "05/09/2026",
+       34631.97,
+       "74 venda(s)",
+       "",
+       "",
+       "taxa R$ 378.35"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "06/09/2026",
+       44732.04,
+       "91 venda(s)",
+       "",
+       "",
+       "taxa R$ 513.03"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "07/09/2026",
+       34505.89,
+       "69 venda(s)",
+       "",
+       "",
+       "taxa R$ 390.61"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "08/09/2026",
+       26470.92,
+       "44 venda(s)",
+       "",
+       "",
+       "taxa R$ 301.03"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "09/09/2026",
+       20546.64,
+       "50 venda(s)",
+       "",
+       "",
+       "taxa R$ 234.77"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "10/09/2026",
+       33675.79,
+       "67 venda(s)",
+       "",
+       "",
+       "taxa R$ 396.19"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "11/09/2026",
+       30674.8,
+       "65 venda(s)",
+       "",
+       "",
+       "taxa R$ 353.65"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "12/09/2026",
+       22233.04,
+       "47 venda(s)",
+       "",
+       "",
+       "taxa R$ 241.95"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "13/09/2026",
+       20924.89,
+       "39 venda(s)",
+       "",
+       "",
+       "taxa R$ 233.23"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "14/09/2026",
+       14140.04,
+       "33 venda(s)",
+       "",
+       "",
+       "taxa R$ 151.77"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "15/09/2026",
+       17003.83,
+       "47 venda(s)",
+       "",
+       "",
+       "taxa R$ 201.46"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "16/09/2026",
+       31461.36,
+       "45 venda(s)",
+       "",
+       "",
+       "taxa R$ 336.03"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "17/09/2026",
+       24807.58,
+       "65 venda(s)",
+       "",
+       "",
+       "taxa R$ 297.53"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "18/09/2026",
+       20864.61,
+       "41 venda(s)",
+       "",
+       "",
+       "taxa R$ 224.49"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "19/09/2026",
+       54001.2,
+       "79 venda(s)",
+       "",
+       "",
+       "taxa R$ 614.02"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "20/09/2026",
+       40493.77,
+       "80 venda(s)",
+       "",
+       "",
+       "taxa R$ 452.97"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "21/09/2026",
+       32811.43,
+       "78 venda(s)",
+       "",
+       "",
+       "taxa R$ 363.18"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "22/09/2026",
+       26285.5,
+       "57 venda(s)",
+       "",
+       "",
+       "taxa R$ 300.31"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "23/09/2026",
+       50595.89,
+       "90 venda(s)",
+       "",
+       "",
+       "taxa R$ 576.11"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "24/09/2026",
+       31204.06,
+       "65 venda(s)",
+       "",
+       "",
+       "taxa R$ 359.75"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "25/09/2026",
+       25252.71,
+       "57 venda(s)",
+       "",
+       "",
+       "taxa R$ 287.21"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "26/09/2026",
+       17680.59,
+       "32 venda(s)",
+       "",
+       "",
+       "taxa R$ 222.10"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "27/09/2026",
+       37865.11,
+       "67 venda(s)",
+       "",
+       "",
+       "taxa R$ 457.33"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "28/09/2026",
+       19742.9,
+       "42 venda(s)",
+       "",
+       "",
+       "taxa R$ 219.81"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "29/09/2026",
+       13758.6,
+       "27 venda(s)",
+       "",
+       "",
+       "taxa R$ 169.57"
+      ],
+      [
+       "FAT|Cartão de crédito à vista",
+       "30/09/2026",
+       17785.85,
+       "45 venda(s)",
+       "",
+       "",
+       "taxa R$ 198.55"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "01/09/2026",
+       2509.48,
+       "7 venda(s)",
+       "",
+       "",
+       "taxa R$ 22.81"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "02/09/2026",
+       2412.13,
+       "7 venda(s)",
+       "",
+       "",
+       "taxa R$ 22.23"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "03/09/2026",
+       1438.61,
+       "7 venda(s)",
+       "",
+       "",
+       "taxa R$ 13.13"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "04/09/2026",
+       1380.45,
+       "7 venda(s)",
+       "",
+       "",
+       "taxa R$ 12.70"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "05/09/2026",
+       3201.28,
+       "13 venda(s)",
+       "",
+       "",
+       "taxa R$ 29.64"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "06/09/2026",
+       5666.76,
+       "14 venda(s)",
+       "",
+       "",
+       "taxa R$ 62.94"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "07/09/2026",
+       4328.7,
+       "12 venda(s)",
+       "",
+       "",
+       "taxa R$ 41.04"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "08/09/2026",
+       1959.88,
+       "5 venda(s)",
+       "",
+       "",
+       "taxa R$ 18.30"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "09/09/2026",
+       3523.82,
+       "12 venda(s)",
+       "",
+       "",
+       "taxa R$ 32.73"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "10/09/2026",
+       1727.25,
+       "5 venda(s)",
+       "",
+       "",
+       "taxa R$ 15.62"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "11/09/2026",
+       3019.93,
+       "10 venda(s)",
+       "",
+       "",
+       "taxa R$ 27.92"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "12/09/2026",
+       3210.04,
+       "9 venda(s)",
+       "",
+       "",
+       "taxa R$ 28.79"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "13/09/2026",
+       3627.25,
+       "12 venda(s)",
+       "",
+       "",
+       "taxa R$ 33.96"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "14/09/2026",
+       2748.64,
+       "6 venda(s)",
+       "",
+       "",
+       "taxa R$ 25.71"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "15/09/2026",
+       1564.94,
+       "7 venda(s)",
+       "",
+       "",
+       "taxa R$ 14.62"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "16/09/2026",
+       2262.11,
+       "13 venda(s)",
+       "",
+       "",
+       "taxa R$ 20.91"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "17/09/2026",
+       3530.76,
+       "10 venda(s)",
+       "",
+       "",
+       "taxa R$ 32.98"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "18/09/2026",
+       3288.42,
+       "10 venda(s)",
+       "",
+       "",
+       "taxa R$ 30.49"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "19/09/2026",
+       7033.83,
+       "18 venda(s)",
+       "",
+       "",
+       "taxa R$ 64.77"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "20/09/2026",
+       8311.02,
+       "29 venda(s)",
+       "",
+       "",
+       "taxa R$ 77.36"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "21/09/2026",
+       7448.9,
+       "19 venda(s)",
+       "",
+       "",
+       "taxa R$ 68.62"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "22/09/2026",
+       4121.08,
+       "12 venda(s)",
+       "",
+       "",
+       "taxa R$ 37.71"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "23/09/2026",
+       5959.1,
+       "19 venda(s)",
+       "",
+       "",
+       "taxa R$ 55.26"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "24/09/2026",
+       7880.49,
+       "22 venda(s)",
+       "",
+       "",
+       "taxa R$ 72.06"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "25/09/2026",
+       3692.46,
+       "14 venda(s)",
+       "",
+       "",
+       "taxa R$ 37.44"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "26/09/2026",
+       3383.72,
+       "13 venda(s)",
+       "",
+       "",
+       "taxa R$ 31.45"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "27/09/2026",
+       6390.89,
+       "14 venda(s)",
+       "",
+       "",
+       "taxa R$ 58.80"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "28/09/2026",
+       3352.88,
+       "9 venda(s)",
+       "",
+       "",
+       "taxa R$ 31.04"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "29/09/2026",
+       2875.2,
+       "8 venda(s)",
+       "",
+       "",
+       "taxa R$ 26.85"
+      ],
+      [
+       "FAT|Cartão de débito",
+       "30/09/2026",
+       2512.69,
+       "7 venda(s)",
+       "",
+       "",
+       "taxa R$ 23.58"
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "01/09/2026",
+       405.24,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "02/09/2026",
+       47.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "03/09/2026",
+       60.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "05/09/2026",
+       2405.0,
+       "2 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "06/09/2026",
+       1865.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "07/09/2026",
+       700.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "08/09/2026",
+       310.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "09/09/2026",
+       1700.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "10/09/2026",
+       6147.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "11/09/2026",
+       3052.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "12/09/2026",
+       820.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "13/09/2026",
+       1592.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "14/09/2026",
+       1245.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "15/09/2026",
+       1522.0,
+       "2 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "17/09/2026",
+       2200.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "18/09/2026",
+       468.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "19/09/2026",
+       2400.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "20/09/2026",
+       1350.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "21/09/2026",
+       2395.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "22/09/2026",
+       1357.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "23/09/2026",
+       735.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "24/09/2026",
+       5965.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "25/09/2026",
+       20.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "26/09/2026",
+       1455.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "27/09/2026",
+       2297.11,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "28/09/2026",
+       2080.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "29/09/2026",
+       1265.0,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Dinheiro (fundo fixo)",
+       "30/09/2026",
+       1165.37,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "01/09/2026",
+       2278.66,
+       "6 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "02/09/2026",
+       1274.14,
+       "5 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "03/09/2026",
+       543.16,
+       "4 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "04/09/2026",
+       1563.92,
+       "7 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "05/09/2026",
+       1783.01,
+       "9 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "06/09/2026",
+       3395.76,
+       "6 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "07/09/2026",
+       2655.33,
+       "6 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "08/09/2026",
+       867.36,
+       "6 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "09/09/2026",
+       2942.32,
+       "4 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "10/09/2026",
+       3016.04,
+       "6 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "11/09/2026",
+       2479.9,
+       "5 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "12/09/2026",
+       2541.16,
+       "7 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "13/09/2026",
+       913.7,
+       "4 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "14/09/2026",
+       237.34,
+       "1 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "15/09/2026",
+       1206.24,
+       "2 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "16/09/2026",
+       7310.34,
+       "10 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "17/09/2026",
+       372.71,
+       "4 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "18/09/2026",
+       1773.92,
+       "5 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "19/09/2026",
+       7749.04,
+       "9 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "20/09/2026",
+       1562.66,
+       "7 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "21/09/2026",
+       3119.92,
+       "9 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "22/09/2026",
+       6208.32,
+       "13 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "23/09/2026",
+       1396.73,
+       "6 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "24/09/2026",
+       4171.84,
+       "11 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "25/09/2026",
+       2686.09,
+       "11 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "26/09/2026",
+       832.44,
+       "4 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "27/09/2026",
+       2082.99,
+       "9 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "28/09/2026",
+       2748.52,
+       "6 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "29/09/2026",
+       1096.51,
+       "8 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|PIX",
+       "30/09/2026",
+       1936.77,
+       "11 venda(s)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "FAT|Ajuste ao total do 3LM",
+       "",
+       -6079.55,
+       "diferença entre o reconstruído pela GetNet e o relatório do 3LM",
+       "",
+       "",
+       "0.58% do total"
       ]
-     ]
+     ],
+     "fat": {
+      "valor": 1047949.04,
+      "fonte": "3LM",
+      "detalhe": "Relatorio de Vendas do 3LM/Gourmet de setembro/2026, total recebido, 1.540 contas, ticket medio R$ 680,49. Reconstruido pela GetNet daria R$ 1.054.028,59, 0,58% acima."
+     }
     }
    },
    "caixa": {

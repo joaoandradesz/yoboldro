@@ -711,7 +711,7 @@ var BLOCOS_DFC=[
  ['*GERAÇÃO DE CAIXA FINAL',['1','OR','2','3','4','5','6','7','8','9','10','11','12','CC','NEUTRO','13']]
 ];
 var BLOCOS_DRE=[
- ['+Receita bruta (faturamento)',['FAT']],
+ ['Receita bruta (faturamento)',['FAT']],
  ['(−) Deduções',['2']],
  ['+Receita líquida',['FAT','2']],
  ['(−) CMV',['4']],
@@ -1082,7 +1082,7 @@ def pagina(socios=False):
 <p class="repnote">Demonstração do fluxo de caixa pelo método direto, a partir da movimentação das contas no Omie. Clique na linha com seta para abrir o nível de baixo, e <b>clique em qualquer número para abrir a caixa com os lançamentos</b> daquela conta naquele mês. O saldo abre por empresa e por conta bancária.</p></div>
 <div id="rep-dre" class="repwrap"><table class="xtbl mat dre"><thead><tr id="drehead"></tr></thead><tbody id="drebody"></tbody></table>
 <div id="auditoria"></div>
-<p class="repnote"><b>A receita bruta é o faturamento do mês da venda, não o crédito no banco.</b> Em setembro ela vem do relatório de vendas do 3LM (R$ 1.047.949,04, 1.540 contas); em agosto, do Extrato de Vendas Detalhado da GetNet por data da venda mais o dinheiro do fundo fixo, porque não há relatório do 3LM de agosto. O bloco de reconciliação no pé da tabela mostra o que o Omie lançou pela data do crédito e a diferença de competência entre os dois. Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
+<p class="repnote"><b>A receita bruta é o faturamento do mês da venda, não o crédito no banco.</b> Clique nela para abrir por forma de pagamento, e no número de cada forma para ver dia a dia o que foi vendido. Em setembro ela vem do relatório de vendas do 3LM (R$ 1.047.949,04, 1.540 contas); em agosto, do Extrato de Vendas Detalhado da GetNet por data da venda mais o dinheiro do fundo fixo, porque não há relatório do 3LM de agosto. O bloco de reconciliação no pé da tabela mostra o que o Omie lançou pela data do crédito e a diferença de competência entre os dois. Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
 
 <details class="ress"><summary><b>Ressalvas e critérios</b> · 6 pontos que mudam a leitura dos números<span class="chev">▾</span></summary><div class="ressin"><div class="aviso"><h4>A receita da DRE é o faturamento; o Omie lança pelo crédito<span class="tag">resolvido</span></h4>
 <p>A linha Receita bruta é o faturamento do mês da <b>venda</b>. Em setembro vem do relatório do 3LM: R$ 1.047.949,04 em 1.540 contas. Em agosto, do Extrato de Vendas Detalhado da GetNet por data da venda (cartão R$ 173.783,89 + PIX R$ 8.735,43) mais o dinheiro do fundo fixo (R$ 8.771,00), porque não existe relatório do 3LM de agosto — reconstrução declarada, não medição. Em setembro os dois métodos convivem e diferem 0,58%%, o que dá a medida do erro do método reconstruído.</p>
