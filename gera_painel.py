@@ -315,7 +315,28 @@ function bloco(ent,reg,mes){
 }
 function E(){return ENT==='consol'?{nome:'Consolidado Yó + Boldró',cnpj:'45.270.781/0002-53 e 55.526.039/0001-39',
  status:'ok',conta:'soma das duas bases, sem a conta corrente entre elas'}:D.ents[ENT]}
-function soma(ent,reg,mes,ks){var b=bloco(ent,reg,mes),t=0;ks.forEach(function(k){t+=b.grupos[k]||0});return t}
+/* FAT e o faturamento declarado do mes — a receita pelo mes da VENDA, nao do
+   credito no banco. AJC e a ponte: faturamento menos o que o Omie lancou no
+   grupo 1. Quem nao tem faturamento declarado cai no grupo 1, e AJC fica zero. */
+function fatDe(ent,reg,mes){
+ if(reg!=='comp')return null;
+ if(ent==='consol'){
+  var t=0,achou=false;
+  ['boldro','yo'].forEach(function(e){
+   var b=((D.ents[e]||{}).comp||{})[mes]; if(!b)return;
+   if(b.fat){t+=b.fat.valor;achou=true}else{t+=b.grupos['1']||0}
+  });
+  return achou?t:null;
+ }
+ var b=((D.ents[ent]||{}).comp||{})[mes];
+ return (b&&b.fat)?b.fat.valor:null;
+}
+function soma(ent,reg,mes,ks){var b=bloco(ent,reg,mes),t=0;
+ ks.forEach(function(k){
+  if(k==='FAT'){var f=fatDe(ent,reg,mes);t+=(f===null)?(b.grupos['1']||0):f;return}
+  if(k==='AJC'){var f2=fatDe(ent,reg,mes);t+=(f2===null)?0:(f2-(b.grupos['1']||0));return}
+  t+=b.grupos[k]||0});
+ return t}
 function saldos(ent,mes){
  if(ent!=='consol')return ((D.ents[ent]||{}).saldos||{})[mes];
  var o=null;['boldro','yo'].forEach(function(e){var s=((D.ents[e]||{}).saldos||{})[mes];if(!s)return;
@@ -342,7 +363,7 @@ function passosPonte(){
     faturamento do mes em vez do que passou no banco. */
  if(REG==='comp'){
   if(!temDado(ENT))return null;
-  var rec=soma(ENT,'comp',MES,['1']), ded=soma(ENT,'comp',MES,['2']),
+  var rec=soma(ENT,'comp',MES,['FAT']), ded=soma(ENT,'comp',MES,['2']),
       cus=soma(ENT,'comp',MES,['3','4','5']), des=soma(ENT,'comp',MES,['6','7','8','9']);
   if(!rec&&!ded&&!cus&&!des)return null;
   return [['Receita bruta',rec,'in'],['Deduções',ded,'out'],['Custos',cus,'out'],
@@ -375,7 +396,7 @@ function ponteSVG(){
 
 function cozinha(mes){
  var b=bloco(ENT,'comp',mes), f=b.familias||{};
- var venda=soma(ENT,'comp',mes,['1','2']);
+ var venda=soma(ENT,'comp',mes,['FAT','2']);
  return {venda:venda, cmv:-soma(ENT,'comp',mes,['4']), food:-(f.cozinha||0), bar:-(f.bar||0),
          comum:-(f.comum||0), pessoal:-soma(ENT,'comp',mes,['6']),
          operacao:-soma(ENT,'comp',mes,['5']), ocupacao:-soma(ENT,'comp',mes,['7']),
@@ -533,7 +554,7 @@ function kpis(){
  ].map(card).join('');
 }
 
-var LINHAS=[['1','Receita bruta','g'],['2','Deduções',''],['=RL','Receita líquida','res'],
+var LINHAS=[['FAT','Receita bruta (faturamento)','g'],['2','Deduções',''],['=RL','Receita líquida','res'],
  ['4','CMV',''],['5','Custos de operação',''],['=LB','Lucro bruto','res'],
  ['3','Despesas variáveis de venda',''],['6','Pessoal operacional',''],['7','Ocupação',''],
  ['8','Administrativas',''],['9','Marketing e entretenimento',''],['=EB','EBITDA','res'],
@@ -541,10 +562,10 @@ var LINHAS=[['1','Receita bruta','g'],['2','Deduções',''],['=RL','Receita líq
  ['11','Investimentos',''],['12','Financiamento','']];
 function valorLinha(mes,cod){
  var f=function(ks){return soma(ENT,'comp',mes,ks)};
- if(cod==='=RL')return f(['1','2']);
- if(cod==='=LB')return f(['1','2','4','5']);
- if(cod==='=EB')return f(['1','2','4','5','3','6','7','8','9']);
- if(cod==='=LL')return f(['1','2','4','5','3','6','7','8','9','10']);
+ if(cod==='=RL')return f(['FAT','2']);
+ if(cod==='=LB')return f(['FAT','2','4','5']);
+ if(cod==='=EB')return f(['FAT','2','4','5','3','6','7','8','9']);
+ if(cod==='=LL')return f(['FAT','2','4','5','3','6','7','8','9','10']);
  return f([cod]);
 }
 function rsm(){
@@ -552,12 +573,12 @@ function rsm(){
  var th='<tr><th class="l">Linha</th>';
  D.meses.forEach(function(m){th+='<th>'+D.meses_nome[m]+'</th><th class="av">AV%</th>'});
  th+='<th>acumulado</th><th class="av">AV%</th></tr>';
- var rbt=D.meses.reduce(function(a,m){return a+soma(ENT,'comp',m,['1'])},0),body='';
+ var rbt=D.meses.reduce(function(a,m){return a+soma(ENT,'comp',m,['FAT'])},0),body='';
  LINHAS.forEach(function(l){
   var tot=0,tds='';
   D.meses.forEach(function(m){
    var v=valorLinha(m,l[0]);tot+=v;
-   tds+='<td class="num">'+brl(v)+'</td><td class="av">'+pc(v,soma(ENT,'comp',m,['1']))+'</td>';
+   tds+='<td class="num">'+brl(v)+'</td><td class="av">'+pc(v,soma(ENT,'comp',m,['FAT']))+'</td>';
   });
   body+='<tr class="'+l[2]+'"><td class="l">'+l[1]+'</td>'+tds+'<td class="num">'+brl(tot)+
         '</td><td class="av">'+pc(tot,rbt)+'</td></tr>';
@@ -690,26 +711,30 @@ var BLOCOS_DFC=[
  ['*GERAÇÃO DE CAIXA FINAL',['1','OR','2','3','4','5','6','7','8','9','10','11','12','CC','NEUTRO','13']]
 ];
 var BLOCOS_DRE=[
- ['Receita bruta',['1']],
+ ['Receita bruta (faturamento)',['FAT']],
  ['(−) Deduções',['2']],
- ['+Receita líquida',['1','2']],
+ ['+Receita líquida',['FAT','2']],
  ['(−) CMV',['4']],
- ['+Lucro bruto',['1','2','4']],
+ ['+Lucro bruto',['FAT','2','4']],
  ['(−) Despesas variáveis de venda',['3']],
  ['(−) Custos de operação',['5']],
  ['(−) Pessoal operacional',['6']],
  ['(−) Ocupação',['7']],
  ['(−) Administrativas',['8']],
  ['(−) Marketing e entretenimento',['9']],
- ['=EBITDA',['1','2','3','4','5','6','7','8','9']],
+ ['=EBITDA',['FAT','2','3','4','5','6','7','8','9']],
  ['(±) Resultado financeiro',['10']],
- ['*LUCRO LÍQUIDO',['1','2','3','4','5','6','7','8','9','10']],
+ ['*LUCRO LÍQUIDO',['FAT','2','3','4','5','6','7','8','9','10']],
  ['§ABAIXO DO EBITDA — CAPEX E NÃO OPERACIONAL',null],
  ['(−) Investimentos (capex)',['11']],
  ['(±) Financiamento',['12']],
  ['(+) Outros recebimentos',['OR']],
  ['(±) Transferências e ajustes',['CC','NEUTRO','13']],
- ['*RESULTADO APÓS INVESTIMENTOS',['1','2','3','4','5','6','7','8','9','10','11','12','OR','CC','NEUTRO','13']]
+ ['*RESULTADO APÓS INVESTIMENTOS',['FAT','2','3','4','5','6','7','8','9','10','11','12','OR','CC','NEUTRO','13']],
+ ['§RECONCILIAÇÃO DA RECEITA COM O OMIE',null],
+ ['(=) Receita lançada no Omie, pela data do crédito',['1']],
+ ['(±) Ajuste de competência da receita',['AJC']],
+ ['*Receita bruta da DRE, pelo mês da venda',['FAT']]
 ];
 
 function matriz(reg){
@@ -717,7 +742,8 @@ function matriz(reg){
  var MS=D.meses, bl={}, out='';
  MS.forEach(function(m){bl[m]=bloco(ENT,reg,m)});
  /* a analise vertical e sobre a receita bruta DO MES, nao do periodo */
- var base=MS.map(function(m){return Math.abs(bl[m].grupos['1']||0)||0});
+ var base=MS.map(function(m){return Math.abs(
+   (reg==='comp'?soma(ENT,reg,m,['FAT']):(bl[m].grupos['1']||0)))||0});
  if(!base.some(function(x){return x}))base=MS.map(function(m){
    var v=0;Object.keys(bl[m].grupos).forEach(function(g){if(bl[m].grupos[g]<0)v-=bl[m].grupos[g]});return v||1});
  var ESTR=(reg==='caixa')?BLOCOS_DFC:BLOCOS_DRE;
@@ -1056,7 +1082,7 @@ def pagina(socios=False):
 <p class="repnote">Demonstração do fluxo de caixa pelo método direto, a partir da movimentação das contas no Omie. Clique na linha com seta para abrir o nível de baixo, e <b>clique em qualquer número para abrir a caixa com os lançamentos</b> daquela conta naquele mês. O saldo abre por empresa e por conta bancária.</p></div>
 <div id="rep-dre" class="repwrap"><table class="xtbl mat dre"><thead><tr id="drehead"></tr></thead><tbody id="drebody"></tbody></table>
 <div id="auditoria"></div>
-<p class="repnote">Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
+<p class="repnote"><b>A receita bruta é o faturamento do mês da venda, não o crédito no banco.</b> Em setembro ela vem do relatório de vendas do 3LM (R$ 1.047.949,04, 1.540 contas); em agosto, do Extrato de Vendas Detalhado da GetNet por data da venda mais o dinheiro do fundo fixo, porque não há relatório do 3LM de agosto. O bloco de reconciliação no pé da tabela mostra o que o Omie lançou pela data do crédito e a diferença de competência entre os dois. Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
 
 <details class="ress"><summary><b>Ressalvas e critérios</b> · 6 pontos que mudam a leitura dos números<span class="chev">▾</span></summary><div class="ressin"><div class="aviso"><h4>A receita entra pela data do crédito, não pela venda<span class="tag">ressalva</span></h4>
 <p>A receita de setembro da Boldró fecha com o relatório do 3LM quando se corrige a competência: dos R$ 1.116.859,52 lançados, R$ 124.140,08 são crédito de vendas de agosto (a própria observação declara "VENDAS 28.08.26") e faltam R$ 39.224,13 de vendas de setembro que só foram creditadas em outubro. Ajustado, dá R$ 1.031.943,57 contra R$ 1.047.949,04 do 3LM — resíduo de 1,53%%, que é a taxa de cartão. Ou seja: a receita está pelo líquido e a taxa de cartão não existe como custo. Enquanto o extrato de vendas detalhado da GetNet não entrar, a margem bruta está superestimada e o CMV sobre receita, subestimado.</p></div><div class="aviso"><h4>Caixa e competência já não contam a mesma história</h4>
