@@ -142,6 +142,7 @@ td.av{color:var(--g500);font-size:12px}
 .tx-sub{font-family:'Inter';font-size:12.5px;color:var(--ink2);line-height:1.55;
  max-width:860px;margin-bottom:13px}
 .xtbl td.neg{color:#B42318}
+.xtbl td.obs{font-family:'Inter';font-size:11.5px;color:var(--g500);white-space:normal;max-width:430px;line-height:1.45}
 .aviso{background:#fff;border:1px solid var(--g200);border-left:3px solid var(--orange);border-radius:12px;
  padding:16px 19px;margin-bottom:12px;box-shadow:var(--shadow)}
 .aviso h4{font-family:'Plus Jakarta Sans';font-size:14px;font-weight:700;margin-bottom:4px}
@@ -1044,6 +1045,51 @@ function taxas(){
   'automática da ContaMax, que são transferência entre contas próprias.</p>';
  el.innerHTML=h;
 }
+/* ---- o faturamento por tres fontes independentes ----
+   3LM (o PDV), receita declarada (deduzida do PIS e do COFINS pagos) e Omie
+   (pela data do credito no banco). Tres criterios diferentes para o mesmo mes:
+   a tabela poe os tres lado a lado e mostra a diferenca. Nao conclui nada —
+   dizer por que diferem depende de informacao que o numero nao tem. */
+function receita(){
+ var el=document.getElementById('rec-cruz'); if(!el)return;
+ var R=D.receita&&ENT!=='yo'?D.receita[MES]:null;
+ if(!R){el.innerHTML='';return}
+ function l(rot,v,obs,cls){
+  return '<tr'+(cls?' class="'+cls+'"':'')+'><td class="l">'+rot+'</td><td>'+
+   (v===null||v===undefined?'—':mv(v))+'</td><td class="l obs">'+(obs||'')+'</td></tr>';
+ }
+ var h='<h3 class="tx-h3">O mesmo faturamento <span class="light">por três fontes</span></h3>'+
+  '<div class="rsm-wrap"><table class="xtbl"><thead><tr><th class="l">Fonte e composição</th>'+
+  '<th>'+D.meses_nome[MES]+'</th><th class="l">De onde vem</th></tr></thead><tbody>';
+ if(R.grupos){
+  R.grupos.forEach(function(g){h+=l('&nbsp;&nbsp;'+g[0],g[1],'grupo do cardápio no 3LM')});
+  h+=l('Produtos vendidos (A&amp;B)',R.produtos,'soma dos grupos acima','res');
+  h+=l('Taxa de serviço e demais',R.servico,
+       R.servico_pc.toFixed(2).replace('.',',')+'% sobre os produtos — não sai como item no 3LM, '+
+       'é a diferença entre o recebido e os produtos');
+ }
+ h+=l('<b>Recebido no 3LM</b>',R.recebido,
+      R.fonte_3lm==='3LM'?'relatório de vendas do mês':'reconstruído: GetNet por data da venda + dinheiro do fundo fixo','res');
+ if(R.declarada!==null&&R.declarada!==undefined){
+  h+=l('<b>Receita declarada</b>',R.declarada,
+   'base deduzida dos tributos pagos: PIS '+mv(R.pis)+' a 0,65% e COFINS '+mv(R.cofins)+
+   ' a 3,00%. As duas contas devolvem a mesma base, com diferença de '+
+   mv(Math.abs(R.base_pis-R.base_cofins))+' — é o que confirma a alíquota.','res');
+  h+=l('3LM menos declarada',R.recebido-R.declarada,
+   'a declarada é '+pc(R.declarada,R.recebido)+' do recebido no 3LM');
+ }else{
+  h+='<tr><td class="l"><b>Receita declarada</b></td><td>—</td><td class="l obs">'+
+     (R.nota||'')+'</td></tr>';
+ }
+ h+=l('<b>Lançado no Omie</b>',R.omie,
+      'receita do grupo 1, pela data do crédito no banco — critério diferente dos dois acima, '+
+      'por isso não é para bater','res');
+ h+='</tbody></table></div>'+
+  '<p class="repnote">Faturamento extra — aluguel de espaço, evento — <b>não existe como grupo '+
+  'no 3LM</b>: os quatro grupos são todos de cardápio. O couvert artístico aparece dentro de '+
+  '&ldquo;Entrada&rdquo;. Se houve receita de evento no mês, ela não passou pelo PDV.</p>';
+ el.innerHTML=h;
+}
 function render(){
  var e=E();
  document.getElementById('heroTitle').innerHTML=temDado(ENT)
@@ -1063,7 +1109,7 @@ function render(){
   return '<span>'+x[0]+'</span>'}).join('');
  document.getElementById('kpis').innerHTML=kpis();
  var t=document.getElementById('rsm'); if(t)t.innerHTML=rsm();
- operacao(); socios(); taxas();
+ operacao(); socios(); taxas(); receita();
  pintaRelatorios(); vendasBloco();
  document.querySelectorAll('.repwrap').forEach(function(w){
   w.classList.toggle('on',(REG==='caixa')===(w.id==='rep-fc'))});
@@ -1108,7 +1154,8 @@ SEC_ANO = """<section id="tend" class="sec-alt"><div class="wrap">
 
 <section id="vendas-sec"><div class="wrap">
 <div class="sec-head"><div class="k">Vendas</div><h2>O que o salão <span class="light">vendeu</span></h2>
-<p class="lede">Dia da semana, turno e curva ABC — do relatório mensal do 3LM, que não tem API e entra por PDF.</p></div>
+<p class="lede">Dia da semana, turno e curva ABC — do relatório mensal do 3LM, que não tem API e entra por PDF. Antes disso, o mesmo faturamento visto por três fontes independentes.</p></div>
+<div id="rec-cruz"></div>
 <div id="vendas"></div>
 </div></section>
 

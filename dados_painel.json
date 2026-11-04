@@ -1,5 +1,5 @@
 {
- "gerado": "04/11/2026 às 09:37",
+ "gerado": "04/11/2026 às 09:59",
  "meses": [
   "2026-08",
   "2026-09"
@@ -2643,6 +2643,57 @@
    ]
   }
  },
+ "receita": {
+  "2026-08": {
+   "fonte_3lm": "reconstruido",
+   "recebido": 191290.32,
+   "produtos": null,
+   "servico": null,
+   "servico_pc": null,
+   "grupos": null,
+   "pis": 46.45,
+   "cofins": 214.39,
+   "base_pis": 7146.15,
+   "base_cofins": 7146.33,
+   "declarada": 7146.24,
+   "nota": null,
+   "omie": 175903.28,
+   "extra": null
+  },
+  "2026-09": {
+   "fonte_3lm": "3LM",
+   "recebido": 1047949.04,
+   "produtos": 941981.44,
+   "servico": 105967.6,
+   "servico_pc": 11.25,
+   "grupos": [
+    [
+     "Bebida",
+     410131.4
+    ],
+    [
+     "Entrada",
+     256974.64
+    ],
+    [
+     "Prato Principal",
+     230852.0
+    ],
+    [
+     "Outros",
+     44023.4
+    ]
+   ],
+   "pis": 6258.49,
+   "cofins": 28885.36,
+   "base_pis": 962844.62,
+   "base_cofins": 962845.33,
+   "declarada": 962844.97,
+   "nota": null,
+   "omie": 1123423.98,
+   "extra": null
+  }
+ },
  "ents": {
   "boldro": {
    "nome": "Boldró Praia Empreendimentos",
@@ -5152,10 +5203,11 @@
       "6": -214207.8100000001,
       "5": -63650.369999999995,
       "4": -373915.4700000001,
-      "11": -12395.0,
-      "CC": -5742.09,
+      "11": -13845.0,
+      "CC": -3466.67,
       "3": -111227.71000000005,
       "2": -40739.06,
+      "7": -825.42,
       "10": -6564.46,
       "FAT": 1047949.04
      },
@@ -5178,7 +5230,7 @@
       "6|Extras e freelancers": -21097.5,
       "5|Gestor operacional PJ": -14666.67,
       "8|Pró-labore": -68000.0,
-      "11|Equipamentos e mobiliário": -8895.0,
+      "11|Equipamentos e mobiliário": -10345.0,
       "4|Hortifrúti": -18342.13,
       "5|Manutenção de equipamentos": -3660.0,
       "4|Secos e mercearia": -67760.20000000001,
@@ -5192,10 +5244,10 @@
       "9|Agência e conteúdo": -2500.0,
       "4|Frete de insumos de alimentos e bebidas": -14428.04,
       "4|Gás de cozinha": -1000.0,
-      "CC|Conta corrente YO Noronha - saída": -2275.42,
       "CC|Conta corrente Pousada Topázio - saída": -3466.67,
       "3|Comissões sobre vendas": -100776.14000000003,
       "2|ICMS-ST e DIFAL": -295.21,
+      "7|Taxas distritais, TPU, TLL e IPTU": -825.42,
       "5|Transporte, veículo e combustível": -549.0,
       "9|Mídia paga": -1500.0,
       "4|Água mineral": -6792.0,
@@ -5234,7 +5286,7 @@
       "6|Extras e freelancers": 21,
       "5|Gestor operacional PJ": 3,
       "8|Pró-labore": 6,
-      "11|Equipamentos e mobiliário": 4,
+      "11|Equipamentos e mobiliário": 5,
       "4|Hortifrúti": 16,
       "5|Manutenção de equipamentos": 4,
       "4|Secos e mercearia": 32,
@@ -5248,10 +5300,10 @@
       "9|Agência e conteúdo": 1,
       "4|Frete de insumos de alimentos e bebidas": 2,
       "4|Gás de cozinha": 1,
-      "CC|Conta corrente YO Noronha - saída": 3,
       "CC|Conta corrente Pousada Topázio - saída": 2,
       "3|Comissões sobre vendas": 53,
       "2|ICMS-ST e DIFAL": 1,
+      "7|Taxas distritais, TPU, TLL e IPTU": 2,
       "5|Transporte, veículo e combustível": 3,
       "9|Mídia paga": 1,
       "4|Água mineral": 1,
@@ -12811,7 +12863,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "11|Equipamentos e mobiliário",
        "18/09/2026",
        -1450,
        "PEDROEROL CLIMATIZACAO LTDA",
@@ -13342,7 +13394,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "7|Taxas distritais, TPU, TLL e IPTU",
        "23/09/2026",
        -412.71,
        "PERNAMBUCO TRIBUNAL DE JUSTICA",
@@ -13882,7 +13934,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "7|Taxas distritais, TPU, TLL e IPTU",
        "29/09/2026",
        -412.71,
        "PERNAMBUCO TRIBUNAL DE JUSTICA",
@@ -18144,11 +18196,12 @@
       "8": -63741.97000000001,
       "9": -30715.83,
       "5": -44763.43,
-      "11": -12395.0,
+      "11": -13845.0,
       "NEUTRO": 11128.229999999363,
       "2": -13771.75,
-      "CC": -8306.24,
+      "CC": -6030.82,
       "3": -12116.620000000003,
+      "7": -825.42,
       "10": 28.54
      },
      "contas": {
@@ -18161,7 +18214,7 @@
       "8|Contabilidade, jurídico e consultorias": -14620.0,
       "6|Diarista (OIA)": -36687.51,
       "5|Alojamento e ajuda de custo para moradia": -26070.65,
-      "11|Equipamentos e mobiliário": -8895.0,
+      "11|Equipamentos e mobiliário": -10345.0,
       "4|Proteínas (carnes e frutos do mar)": -111081.62999999998,
       "4|Bebidas alcoólicas": -53856.01,
       "11|Obras e reformas": -3500.0,
@@ -18190,11 +18243,12 @@
       "2|Simples Nacional (DAS)": -7914.2,
       "8|Sistemas": -3943.38,
       "4|Gás de cozinha": -1000.0,
-      "CC|Conta corrente YO Noronha - saída": -4839.570000000001,
       "CC|Conta corrente Pousada Topázio - saída": -3466.67,
       "3|Comissões sobre vendas": -12116.620000000003,
       "2|ICMS-ST e DIFAL": -295.21,
+      "7|Taxas distritais, TPU, TLL e IPTU": -825.42,
       "5|Transporte, veículo e combustível": -449.0,
+      "CC|Conta corrente YO Noronha - saída": -2564.15,
       "NEUTRO|Ajustes e estornos - entrada": 1058.2300000000012,
       "4|Água mineral": -6792.0,
       "2|Cancelamentos e estornos": -5300.0,
@@ -18216,7 +18270,7 @@
       "8|Contabilidade, jurídico e consultorias": 4,
       "6|Diarista (OIA)": 54,
       "5|Alojamento e ajuda de custo para moradia": 12,
-      "11|Equipamentos e mobiliário": 4,
+      "11|Equipamentos e mobiliário": 5,
       "4|Proteínas (carnes e frutos do mar)": 39,
       "4|Bebidas alcoólicas": 12,
       "11|Obras e reformas": 2,
@@ -18245,11 +18299,12 @@
       "2|Simples Nacional (DAS)": 1,
       "8|Sistemas": 3,
       "4|Gás de cozinha": 1,
-      "CC|Conta corrente YO Noronha - saída": 4,
       "CC|Conta corrente Pousada Topázio - saída": 2,
       "3|Comissões sobre vendas": 24,
       "2|ICMS-ST e DIFAL": 1,
+      "7|Taxas distritais, TPU, TLL e IPTU": 2,
       "5|Transporte, veículo e combustível": 1,
+      "CC|Conta corrente YO Noronha - saída": 1,
       "NEUTRO|Ajustes e estornos - entrada": 300,
       "4|Água mineral": 1,
       "2|Cancelamentos e estornos": 3,
@@ -22003,7 +22058,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "11|Equipamentos e mobiliário",
        "18/09/2026",
        -1450,
        "PEDROEROL CLIMATIZACAO LTDA",
@@ -23137,7 +23192,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "7|Taxas distritais, TPU, TLL e IPTU",
        "22/09/2026",
        -412.71,
        "PE GABINETE DO PRESIDENTE",
@@ -27079,7 +27134,7 @@
        ""
       ],
       [
-       "CC|Conta corrente YO Noronha - saída",
+       "7|Taxas distritais, TPU, TLL e IPTU",
        "29/09/2026",
        -412.71,
        "PE GABINETE DO PRESIDENTE",
