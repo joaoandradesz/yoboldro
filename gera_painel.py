@@ -570,38 +570,6 @@ function kpis(){
  ].map(card).join('');
 }
 
-var LINHAS=[['FAT','Receita bruta (faturamento)','g'],['2','Deduções',''],['=RL','Receita líquida','res'],
- ['4','CMV',''],['5','Custos de operação',''],['=LB','Lucro bruto','res'],
- ['3','Despesas variáveis de venda',''],['6','Pessoal operacional',''],['7','Ocupação',''],
- ['8','Administrativas',''],['9','Marketing e entretenimento',''],['=EB','EBITDA','res'],
- ['10','Resultado financeiro',''],['=LL','Lucro líquido','res'],
- ['11','Investimentos',''],['12','Financiamento','']];
-function valorLinha(mes,cod){
- var f=function(ks){return soma(ENT,'comp',mes,ks)};
- if(cod==='=RL')return f(['FAT','2']);
- if(cod==='=LB')return f(['FAT','2','4','5']);
- if(cod==='=EB')return f(['FAT','2','4','5','3','6','7','8','9']);
- if(cod==='=LL')return f(['FAT','2','4','5','3','6','7','8','9','10']);
- return f([cod]);
-}
-function rsm(){
- if(!temDado(ENT))return '<tr><td class="l" colspan="9">Sem lançamento no Omie.</td></tr>';
- var th='<tr><th class="l">Linha</th>';
- D.meses.forEach(function(m){th+='<th>'+D.meses_nome[m]+'</th><th class="av">AV%</th>'});
- th+='<th>acumulado</th><th class="av">AV%</th></tr>';
- var rbt=D.meses.reduce(function(a,m){return a+soma(ENT,'comp',m,['FAT'])},0),body='';
- LINHAS.forEach(function(l){
-  var tot=0,tds='';
-  D.meses.forEach(function(m){
-   var v=valorLinha(m,l[0]);tot+=v;
-   tds+='<td class="num">'+brl(v)+'</td><td class="av">'+pc(v,soma(ENT,'comp',m,['FAT']))+'</td>';
-  });
-  body+='<tr class="'+l[2]+'"><td class="l">'+l[1]+'</td>'+tds+'<td class="num">'+brl(tot)+
-        '</td><td class="av">'+pc(tot,rbt)+'</td></tr>';
- });
- return '<thead>'+th+'</thead><tbody>'+body+'</tbody>';
-}
-
 var CORES=['#F97316','#0D0F1A','#0E9F6E','#DC2626','#6366F1','#D97706','#0891B2','#7C3AED',
  '#BE185D','#4D7C0F','#9CA3AF','#334155'];
 function pizza(){
@@ -1123,7 +1091,6 @@ function render(){
  document.getElementById('wfX').innerHTML=(pp||[]).map(function(x){
   return '<span>'+x[0]+'</span>'}).join('');
  document.getElementById('kpis').innerHTML=kpis();
- var t=document.getElementById('rsm'); if(t)t.innerHTML=rsm();
  operacao(); socios(); taxas(); receita();
  pintaRelatorios(); vendasBloco();
  document.querySelectorAll('.repwrap').forEach(function(w){
@@ -1141,9 +1108,10 @@ window.addEventListener('scroll',function(){
 render();
 """
 
-NAV_LINKS = ('<a href="#geral" class="on">Visão geral</a><a href="#tend">DRE</a>'
-             '<a href="#relatorios">Caixa</a><a href="#vendas-sec">Vendas</a>'
-             '<a href="#taxas">Taxas</a>')
+NAV_LINKS = ('<a href="#geral" class="on">Visão geral</a>'
+             '<a href="#relatorios" onclick="setRegime(\'comp\')">DRE</a>'
+             '<a href="#relatorios" onclick="setRegime(\'caixa\')">Caixa</a>'
+             '<a href="#vendas-sec">Vendas</a><a href="#taxas">Taxas</a>')
 NAV_LINKS_SOC = ('<a href="#geral" class="on">Visão geral</a><a href="#socios">Sócios</a>'
                  '<a href="#operacao">Operação</a>')
 
@@ -1160,14 +1128,7 @@ ENTSW_SOC = """<div class="entsw" id="entsw">
 <a href="index.html" class="on">Sócios</a>
 </div>"""
 
-SEC_ANO = """<section id="tend" class="sec-alt"><div class="wrap">
-<div class="sec-head"><div class="k">O período de 2026</div><h2>A casa <span class="light">mês a mês</span></h2>
-<p class="lede">Venda, custo de insumo, equipe e resultado, com o peso de cada linha sobre a venda do mês — a leitura vertical que se usa em operação de A&amp;B.</p></div>
-<div class="rsm-wrap"><table class="rsm" id="rsm"></table></div>
-<p class="rsm-nota">Análise vertical sobre a receita bruta do mês. <b>CMV</b> são os insumos de A&amp;B; <b>custos de operação</b> incluem energia, água, limpeza, manutenção e o alojamento da equipe, que por decisão de 22/09 é custo direto. Transferência entre empresas do grupo, transferência entre contas próprias e ajustes ficam fora do resultado.</p>
-</div></section>
-
-<section id="vendas-sec"><div class="wrap">
+SEC_ANO = """<section id="vendas-sec"><div class="wrap">
 <div class="sec-head"><div class="k">Vendas</div><h2>O que o salão <span class="light">vendeu</span></h2>
 <p class="lede">Dia da semana, turno e curva ABC — do relatório mensal do 3LM, que não tem API e entra por PDF. Antes disso, o mesmo faturamento visto por três fontes independentes.</p></div>
 <div id="rec-cruz"></div>
