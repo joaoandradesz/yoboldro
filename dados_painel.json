@@ -1,5 +1,5 @@
 {
- "gerado": "03/11/2026 às 21:05",
+ "gerado": "03/11/2026 às 22:20",
  "meses": [
   "2026-08",
   "2026-09"
@@ -23486,12 +23486,12 @@
       "12": 1155386.76,
       "OR": 32550.210000000003,
       "10": -1058.22,
-      "8": -41854.43999999999,
+      "8": -46508.33999999999,
       "7": -64986.92,
-      "11": -459372.4800000001,
-      "5": -108135.81999999999,
+      "11": -459192.4800000001,
+      "5": -110915.54,
       "6": -143558.22999999998,
-      "4": -97560.51999999999,
+      "4": -90306.9,
       "2": -48.339999999999996
      },
      "contas": {
@@ -23504,16 +23504,16 @@
       "11|Pré-operação": -13552.84,
       "5|Transporte, veículo e combustível": -8561.699999999999,
       "6|Diarista (OIA)": -61926.53,
-      "11|Equipamentos e mobiliário": -138059.25000000003,
+      "11|Equipamentos e mobiliário": -137879.25000000003,
       "6|Salários da operação": -3194.0,
       "6|Passagens aéreas da equipe": -34643.8,
       "11|Obras e reformas": -259798.69999999998,
       "8|Outras despesas administrativas": -15868.87,
-      "5|Reposição de utensílios": -2350.94,
-      "4|Outros insumos e diversos": -7923.62,
+      "5|Reposição de utensílios": -2530.94,
+      "5|Diversos de operação": -2599.7200000000003,
       "8|Telefonia e internet": -5780.38,
       "8|Sistemas": -2657.96,
-      "8|Tarifas bancárias": -699.72,
+      "8|Tarifas bancárias": -5353.619999999999,
       "6|Alimentação de colaboradores": -35355.06,
       "CC|Conta corrente Amana - saída": -8097.74,
       "4|Proteínas (carnes e frutos do mar)": -27672.510000000002,
@@ -23525,7 +23525,7 @@
       "7|Taxas distritais, TPU, TLL e IPTU": -602.92,
       "5|Água e esgoto": -4235.599999999999,
       "4|Gás de cozinha": -2945.0,
-      "4|Secos e mercearia": -35772.829999999994,
+      "4|Secos e mercearia": -36442.829999999994,
       "11|Frete de equipamentos e obra": -47961.69,
       "6|Uniformes, EPI e exames": -5148.9,
       "5|Manutenção de equipamentos": -2081.5699999999997,
@@ -23551,16 +23551,16 @@
       "11|Pré-operação": 5,
       "5|Transporte, veículo e combustível": 5,
       "6|Diarista (OIA)": 40,
-      "11|Equipamentos e mobiliário": 58,
+      "11|Equipamentos e mobiliário": 57,
       "6|Salários da operação": 2,
       "6|Passagens aéreas da equipe": 10,
       "11|Obras e reformas": 68,
       "8|Outras despesas administrativas": 25,
-      "5|Reposição de utensílios": 4,
-      "4|Outros insumos e diversos": 6,
+      "5|Reposição de utensílios": 5,
+      "5|Diversos de operação": 4,
       "8|Telefonia e internet": 4,
       "8|Sistemas": 4,
-      "8|Tarifas bancárias": 20,
+      "8|Tarifas bancárias": 21,
       "6|Alimentação de colaboradores": 12,
       "CC|Conta corrente Amana - saída": 7,
       "4|Proteínas (carnes e frutos do mar)": 16,
@@ -23572,7 +23572,7 @@
       "7|Taxas distritais, TPU, TLL e IPTU": 1,
       "5|Água e esgoto": 2,
       "4|Gás de cozinha": 2,
-      "4|Secos e mercearia": 21,
+      "4|Secos e mercearia": 22,
       "11|Frete de equipamentos e obra": 8,
       "6|Uniformes, EPI e exames": 5,
       "5|Manutenção de equipamentos": 6,
@@ -23589,8 +23589,8 @@
       "2|Simples Nacional (DAS)": 2
      },
      "familias": {
-      "comum": -9505.08,
-      "cozinha": -82114.42,
+      "cozinha": -82784.42,
+      "comum": -1581.46,
       "bar": -5941.02
      },
      "itens": [
@@ -23923,7 +23923,7 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
+       "5|Diversos de operação",
        "03/08/2026",
        -394.55,
        "Cliente Consumidor / Sem Tomador",
@@ -24379,7 +24379,7 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
+       "8|Tarifas bancárias",
        "07/08/2026",
        -4653.9,
        "Cliente Consumidor / Sem Tomador",
@@ -24763,7 +24763,7 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
+       "5|Diversos de operação",
        "11/08/2026",
        -358.32,
        "Cliente Consumidor / Sem Tomador",
@@ -25451,7 +25451,7 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
+       "5|Diversos de operação",
        "19/08/2026",
        -806.85,
        "Cliente Consumidor / Sem Tomador",
@@ -25651,7 +25651,7 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Secos e mercearia",
        "21/08/2026",
        -670,
        "EDMILSON DE LIMA JUNIOR",
@@ -26035,7 +26035,7 @@
        ""
       ],
       [
-       "11|Equipamentos e mobiliário",
+       "5|Reposição de utensílios",
        "26/08/2026",
        -180,
        "Cliente Consumidor / Sem Tomador",
@@ -26099,7 +26099,7 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
+       "5|Diversos de operação",
        "28/08/2026",
        -1040,
        "Cliente Consumidor / Sem Tomador",
@@ -27008,8 +27008,8 @@
      "grupos": {
       "OR": 5998.04,
       "NEUTRO": -2.2737367544323206e-13,
-      "4": -71194.25000000001,
-      "5": -71053.70999999999,
+      "4": -69563.47000000002,
+      "5": -72684.48999999999,
       "6": -36381.45,
       "7": -50500.0,
       "11": -200598.54999999996,
@@ -27051,7 +27051,7 @@
       "5|Energia elétrica": -1446.38,
       "8|Tarifas bancárias": -312.25,
       "4|Frios, laticínios e congelados": -2527.64,
-      "4|Outros insumos e diversos": -1630.78,
+      "5|Diversos de operação": -1630.78,
       "NEUTRO|Transferência entre contas - saída": -5206.08
      },
      "lanc": {
@@ -27087,13 +27087,12 @@
       "5|Energia elétrica": 1,
       "8|Tarifas bancárias": 16,
       "4|Frios, laticínios e congelados": 1,
-      "4|Outros insumos e diversos": 1,
+      "5|Diversos de operação": 1,
       "NEUTRO|Transferência entre contas - saída": 12
      },
      "familias": {
       "cozinha": -71450.48000000001,
-      "bar": -4800.0,
-      "comum": -1630.78
+      "bar": -4800.0
      },
      "itens": [
       [
@@ -28465,7 +28464,7 @@
        ""
       ],
       [
-       "4|Outros insumos e diversos",
+       "5|Diversos de operação",
        "28/09/2026",
        -1630.78,
        "UNIVERSO COMERCIO VAREJISTA E REPRESENTACOES L",
@@ -28607,12 +28606,12 @@
     "2026-08": {
      "grupos": {
       "CC": -100902.64,
-      "11": -468504.15,
+      "11": -468324.15,
       "7": -64986.92,
-      "5": -129453.51999067877,
-      "8": -38763.99993344269,
+      "5": -132233.23999067882,
+      "8": -43417.8999334427,
       "6": -149478.2800758785,
-      "4": -133451.12000000005,
+      "4": -126197.50000000001,
       "OR": 35950.21,
       "NEUTRO": 5.646150214033696e-11,
       "12": 1155386.76,
@@ -28621,7 +28620,7 @@
      },
      "contas": {
       "CC|Conta corrente Amana - entrada": 6991.11,
-      "11|Equipamentos e mobiliário": -138453.02,
+      "11|Equipamentos e mobiliário": -138273.02,
       "7|Arrendamento e aluguel do ponto": -61500.0,
       "11|Pré-operação": -25093.85,
       "5|Transporte, veículo e combustível": -8561.6999906788,
@@ -28633,15 +28632,15 @@
       "6|Salários da operação": -3194.0,
       "4|Frios, laticínios e congelados": -11608.43,
       "4|Proteínas (carnes e frutos do mar)": -31756.370000000003,
-      "4|Secos e mercearia": -48626.509999999995,
+      "4|Secos e mercearia": -49296.509999999995,
       "4|Água mineral": -2610.0,
       "6|ISS | Permanência": -2220.3500000000004,
       "6|Passagens aéreas da equipe": -34643.800075878506,
       "8|Outras despesas administrativas": -10310.2499305553,
-      "5|Reposição de utensílios": -2350.94,
-      "4|Outros insumos e diversos": -7923.62,
+      "5|Reposição de utensílios": -2530.94,
+      "5|Diversos de operação": -2599.7200000000003,
       "8|Sistemas": -2657.9599743867,
-      "8|Tarifas bancárias": -711.7199994859,
+      "8|Tarifas bancárias": -5365.619999485899,
       "8|Telefonia e internet": -5780.3800290148,
       "OR|Outras receitas operacionais": 35950.21,
       "NEUTRO|Transferência entre contas - entrada": 1928411.4799999997,
@@ -28675,7 +28674,7 @@
      },
      "lanc": {
       "CC|Conta corrente Amana - entrada": 1,
-      "11|Equipamentos e mobiliário": 48,
+      "11|Equipamentos e mobiliário": 47,
       "7|Arrendamento e aluguel do ponto": 7,
       "11|Pré-operação": 7,
       "5|Transporte, veículo e combustível": 5,
@@ -28687,15 +28686,15 @@
       "6|Salários da operação": 2,
       "4|Frios, laticínios e congelados": 6,
       "4|Proteínas (carnes e frutos do mar)": 15,
-      "4|Secos e mercearia": 20,
+      "4|Secos e mercearia": 21,
       "4|Água mineral": 1,
       "6|ISS | Permanência": 8,
       "6|Passagens aéreas da equipe": 10,
       "8|Outras despesas administrativas": 21,
-      "5|Reposição de utensílios": 4,
-      "4|Outros insumos e diversos": 6,
+      "5|Reposição de utensílios": 5,
+      "5|Diversos de operação": 4,
       "8|Sistemas": 4,
-      "8|Tarifas bancárias": 26,
+      "8|Tarifas bancárias": 27,
       "8|Telefonia e internet": 4,
       "OR|Outras receitas operacionais": 14,
       "NEUTRO|Transferência entre contas - entrada": 47,
@@ -28728,9 +28727,9 @@
       "2|IRPJ": 1
      },
      "familias": {
-      "cozinha": -106109.65000000001,
+      "cozinha": -106779.65000000001,
       "bar": -17836.39,
-      "comum": -9505.08
+      "comum": -1581.46
      },
      "itens": [
       [
@@ -29054,7 +29053,7 @@
        "Bradesco c/c"
       ],
       [
-       "4|Outros insumos e diversos",
+       "5|Diversos de operação",
        "03/08/2026",
        -394.55,
        "Cliente Consumidor / Sem Tomador",
@@ -29814,7 +29813,7 @@
        "Bradesco c/c"
       ],
       [
-       "4|Outros insumos e diversos",
+       "8|Tarifas bancárias",
        "07/08/2026",
        -4653.9,
        "Cliente Consumidor / Sem Tomador",
@@ -30310,7 +30309,7 @@
        "Bradesco c/c"
       ],
       [
-       "4|Outros insumos e diversos",
+       "5|Diversos de operação",
        "11/08/2026",
        -358.32,
        "Cliente Consumidor / Sem Tomador",
@@ -31262,7 +31261,7 @@
        "Bradesco c/c"
       ],
       [
-       "4|Outros insumos e diversos",
+       "5|Diversos de operação",
        "19/08/2026",
        -806.85,
        "Cliente Consumidor / Sem Tomador",
@@ -31558,7 +31557,7 @@
        "Bradesco c/c"
       ],
       [
-       "4|Outros insumos e diversos",
+       "4|Secos e mercearia",
        "21/08/2026",
        -670,
        "EDMILSON DE LIMA JUNIOR",
@@ -32118,7 +32117,7 @@
        "Bradesco c/c"
       ],
       [
-       "11|Equipamentos e mobiliário",
+       "5|Reposição de utensílios",
        "26/08/2026",
        -180,
        "Cliente Consumidor / Sem Tomador",
@@ -32214,7 +32213,7 @@
        "Bradesco c/c"
       ],
       [
-       "4|Outros insumos e diversos",
+       "5|Diversos de operação",
        "27/08/2026",
        -1040,
        "Cliente Consumidor / Sem Tomador",
