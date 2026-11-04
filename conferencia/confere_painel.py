@@ -254,35 +254,50 @@ def confere(D):
                                 falha(onde, 'G conta eliminada "%s" esta no grupo %s, nao em CC: '
                                             'o grupo perde valor sem o par' % (ck, ck.split('|')[0]))
 
-            # F: a ponte do caixa
+            # F: a ponte do caixa, nas DUAS identidades
+            #
+            # A primeira versao deste teste nunca rodou: lia saldos['ini'][mes]
+            # quando o contrato e saldos[mes]['ini'], entao sal.get('ini')
+            # devolvia None e toda iteracao caia no continue. A trava dizia OK
+            # sem testar nada. Foi um agente de varredura que pegou, e a ponte
+            # estava quebrada em R$ 11.128,23 havia dias.
+            #
+            # Sao duas identidades diferentes e as duas tem que valer:
+            #   F1  ini + soma dos grupos = fim     -> a tabela do DFC
+            #   F2  ini + entradas + saidas = fim   -> a cascata do topo
+            # F1 passava e F2 nao: o numero da capa contradizia a tabela.
             if reg == 'caixa':
                 for mes in MS:
                     b = bloco(D, ent, reg, mes)
                     if not b['grupos']:
                         continue
-                    sal = (D['ents'].get(ent) or {}).get('saldos') if ent != 'consol' else None
                     if ent == 'consol':
-                        ini = fim = 0.0
-                        tem = False
+                        s = {}
                         for e in ('boldro', 'yo'):
-                            s = (D['ents'].get(e) or {}).get('saldos') or {}
-                            if mes in (s.get('ini') or {}):
-                                ini += s['ini'][mes]
-                                fim += (s.get('fim') or {}).get(mes, 0)
-                                tem = True
-                        if not tem:
+                            x = ((D['ents'].get(e) or {}).get('saldos') or {}).get(mes)
+                            if not x:
+                                continue
+                            for k in ('ini', 'fim', 'entradas', 'saidas'):
+                                s[k] = s.get(k, 0.0) + x.get(k, 0.0)
+                        if not s:
                             continue
                     else:
-                        sal = sal or {}
-                        if mes not in (sal.get('ini') or {}):
+                        s = ((D['ents'].get(ent) or {}).get('saldos') or {}).get(mes)
+                        if not s:
                             continue
-                        ini, fim = sal['ini'][mes], (sal.get('fim') or {}).get(mes, 0)
+                    onde = '%s/caixa/%s' % (ent, mes)
                     mov = sum(b['grupos'].values())
-                    if abs(R2(ini + mov) - R2(fim)) > TOL:
-                        falha('%s/caixa/%s' % (ent, mes),
-                              'F saldo inicial %.2f + movimento %.2f = %.2f, mas o saldo final '
-                              'exibido e %.2f (dif %.2f)' % (ini, mov, ini + mov, fim,
-                                                             R2(ini + mov) - R2(fim)))
+                    if abs(R2(s['ini'] + mov) - R2(s['fim'])) > TOL:
+                        falha(onde, 'F1 saldo inicial %.2f + movimento dos grupos %.2f = %.2f, '
+                                    'mas o saldo final exibido e %.2f (dif %.2f)'
+                              % (s['ini'], mov, s['ini'] + mov, s['fim'],
+                                 R2(s['ini'] + mov) - R2(s['fim'])))
+                    ponte = s['ini'] + s.get('entradas', 0) + s.get('saidas', 0)
+                    if abs(R2(ponte) - R2(s['fim'])) > TOL:
+                        falha(onde, 'F2 a ponte do topo nao fecha: inicial %.2f + entradas %.2f '
+                                    '+ saidas %.2f = %.2f, e o saldo final e %.2f (dif %.2f)'
+                              % (s['ini'], s.get('entradas', 0), s.get('saidas', 0), ponte,
+                                 s['fim'], R2(ponte) - R2(s['fim'])))
 
 
 def main():
