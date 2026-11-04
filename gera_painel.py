@@ -698,14 +698,16 @@ var BLOCOS_DRE=[
  ['(−) Administrativas',['8']],
  ['(−) Marketing e entretenimento',['9']],
  ['=EBITDA',['1','2','3','4','5','6','7','8','9']],
+ ['(−) Depreciação e amortização',['DEP']],
+ ['+Resultado operacional (EBIT)',['1','2','3','4','5','6','7','8','9','DEP']],
  ['(±) Resultado financeiro',['10']],
- ['*LUCRO LÍQUIDO',['1','2','3','4','5','6','7','8','9','10']],
+ ['*LUCRO LÍQUIDO',['1','2','3','4','5','6','7','8','9','DEP','10']],
  ['§ABAIXO DO EBITDA — CAPEX E NÃO OPERACIONAL',null],
  ['(−) Investimentos (capex)',['11']],
  ['(±) Financiamento',['12']],
  ['(+) Outros recebimentos',['OR']],
  ['(±) Transferências e ajustes',['CC','NEUTRO','13']],
- ['*RESULTADO APÓS INVESTIMENTOS',['1','2','3','4','5','6','7','8','9','10','11','12','OR','CC','NEUTRO','13']]
+ ['*RESULTADO APÓS INVESTIMENTOS',['1','2','3','4','5','6','7','8','9','10','DEP','11','12','OR','CC','NEUTRO','13']]
 ];
 
 function matriz(reg){
@@ -802,63 +804,6 @@ function pintaRelatorios(){
  if(er.length&&window.console)console.error('auditoria da tabela:',er);
 }
 
-/* orcado x realizado e a curva de caixa projetada */
-function orcado(){
- var cx=document.getElementById('orc-box'), pj=document.getElementById('orc-proj');
- if(!cx)return;
- var O=D.orcamento;
- if(!O){cx.innerHTML='<div class="vazio"><h4>Orçamento não carregado</h4></div>';return}
- if(ENT!=='consol'){
-  cx.innerHTML='<div class="vazio"><h4>O orçamento é consolidado</h4>'+
-   '<p>A planilha do Tiago projeta YO e Boldró juntas, sem separar por CNPJ. '+
-   'Troque para <b>Consolidado</b> no topo para ver o confronto.</p></div>';
-  pj.innerHTML=''; return;
- }
- /* meses em que ha orcamento E realizado */
- var comuns=D.meses.filter(function(m){return O.linhas.saldo_fim&&(m in O.linhas.saldo_fim)});
- var L=[['Entradas de clientes','entradas',['1','OR']],
-        ['Saídas operacionais','saidas_op',['2','3','4','5','6','7','8','9','10']],
-        ['Geração de caixa operacional','ger_operacional',['1','OR','2','3','4','5','6','7','8','9','10']],
-        ['Investimento','investimento',['11']],
-        ['Geração de caixa final','ger_final',['1','OR','2','3','4','5','6','7','8','9','10','11','12','CC','NEUTRO','13']]];
- if(!comuns.length){
-  cx.innerHTML='<div class="vazio"><h4>Ainda não há mês com orçamento e realizado juntos</h4>'+
-   '<p>O orçamento começa em '+O.meses_nome[O.meses[0]]+' e o realizado vai até '+
-   D.meses_nome[D.meses[D.meses.length-1]]+'.</p></div>';
- }else{
-  var h='<table class="xtbl"><thead><tr><th class="l">Linha</th>';
-  comuns.forEach(function(m){h+='<th>'+D.meses_nome[m]+' orçado</th><th>'+D.meses_nome[m]+' realizado</th><th>variação</th>'});
-  h+='</tr></thead><tbody>';
-  L.forEach(function(l){
-   h+='<tr'+(l[1].indexOf('ger_')===0?' class="dfcs"':'')+'><td class="l">'+l[0]+'</td>';
-   comuns.forEach(function(m){
-    var o=(O.linhas[l[1]]||{})[m]||0, r=soma(ENT,'caixa',m,l[2]);
-    var d=r-o, bom=(l[0].indexOf('Saídas')===0||l[0]==='Investimento')?(d>0):(d>=0);
-    h+=tdMes(o)+tdMes(r)+'<td class="num '+(Math.abs(d)<1?'':(bom?'pos':'neg'))+'">'+brl(d)+'</td>';
-   });
-   h+='</tr>';
-  });
-  h+='</tbody></table>';
-  cx.innerHTML=h;
- }
- /* curva do saldo projetado */
- var sf=O.linhas.saldo_fim||{}, ms=O.meses.filter(function(m){return m in sf});
- var vs=ms.map(function(m){return sf[m]}), mx=Math.max.apply(null,vs.map(Math.abs))||1;
- var neg=ms.filter(function(m){return sf[m]<0});
- var g='<div class="curva">';
- ms.forEach(function(m){
-  var v=sf[m], alt=Math.max(4,Math.round(62*Math.abs(v)/mx));
-  g+='<div class="cb'+(v<0?' n':'')+'"><div class="cbv">'+brl(v/1000,0)+'k</div>'+
-     '<div class="cbb" style="height:'+alt+'px"></div>'+
-     '<div class="cbl">'+(O.meses_nome[m]||m)+'</div></div>';
- });
- g+='</div>';
- if(neg.length)g+='<div class="aviso erro"><h4>O caixa projetado fica negativo em '+neg.length+' meses</h4>'+
-   '<p>'+neg.map(function(m){return O.meses_nome[m]+' ('+brl(sf[m])+')'}).join(' · ')+
-   '. O pior é '+O.meses_nome[neg.reduce(function(a,b){return sf[a]<sf[b]?a:b})]+'.</p></div>';
- pj.innerHTML=g;
-}
-
 function auditaTabela(reg){
  var erros=[], MS=D.meses;
  MS.forEach(function(m){
@@ -941,47 +886,6 @@ function operacao(){
    '<div class="mixval num">'+brl(i[1])+' · '+pc(i[1],tot)+'</div></div>'}).join('');
 }
 
-function equilibrio(){
- var el=document.getElementById('eq-box'); if(!el)return;
- if(!temDado(ENT)){el.innerHTML='<div class="vazio"><h4>Sem venda lançada</h4><p>O ponto de equilíbrio aparece quando houver movimento.</p></div>';return}
- if(fase(ENT)==='pre_operacao'){
-  var P0=D.premissas||{},q=0,ap=0;
-  D.meses.forEach(function(m){q+=soma(ENT,'comp',m,['4','5','6','7','8','9','11']);
-   ap+=soma(ENT,'comp',m,['12'])});
-  var s0=saldos(ENT,D.meses[0]),s1=saldos(ENT,D.meses[D.meses.length-1]);
-  el.innerHTML=[
-   ['Queima no período',brl(q),'tudo que saiu sem a casa estar vendendo',
-    'inclui obra, equipe, insumo e arrendamento'],
-   ['Aporte no período',brl(ap),'entrada de sócio no mesmo intervalo',
-    ap+q<0?('faltou '+brl(-(ap+q))+' de aporte para cobrir'):'cobriu a queima'],
-   ['Caixa que restou',brl(s1?s1.fim:0),'conta corrente mais aplicação',
-    s0?('começou o período com '+brl(s0.ini)):''],
-   ['Ponto de equilíbrio do plano',brl(P0.ponto_equilibrio||0),
-    'premissa do material de gestão orçamentária',
-    'passa a valer quando a casa abrir e faturar no CNPJ da YO']
-  ].map(card).join('');
-  return;
- }
- var P=D.premissas||{}, k=cozinha(MES);
- var fixo=k.pessoal+k.ocupacao+k.adm+k.mkt+k.operacao;
- var cmvPct=k.venda?k.cmv/k.venda:0, varPct=k.venda?(k.variaveis+k.deducoes)/k.venda:0;
- var mc=1-cmvPct-varPct;                         /* margem de contribuição real */
- var be=mc>0?fixo/mc:0;
- var falta=be-k.venda;
- var fixoPlano=P.fixo_mes||0;
- el.innerHTML=[
-  ['Precisa vender por mês',be?brl(be):'—','para empatar com a estrutura que existe HOJE',
-   'margem de contribuição de '+(100*mc).toFixed(0)+'%'],
-  ['Vendeu',brl(k.venda),'em '+D.meses_nome[MES],
-   falta>0?('faltaram '+brl(falta)):('passou em '+brl(-falta))],
-  ['Custo fixo de hoje',brl(fixo),'equipe, casa, administrativo e mídia',
-   fixoPlano?('o plano previa '+brl(fixoPlano)+' por mês'):''],
-  ['Equilíbrio com a casa cheia',brl(P.ponto_equilibrio||0),
-   'premissa do plano de investimento',
-   fixoPlano&&fixo?('a estrutura de hoje é '+(100*fixo/fixoPlano).toFixed(0)+'% da planejada'):'']
- ].map(card).join('');
-}
-
 function socios(){
  var el=document.getElementById('soc-kpis'); if(!el)return;
  var pro=0,dist=0,adi=0;
@@ -1022,8 +926,8 @@ function render(){
  document.getElementById('wfTitle').textContent='Ponte do caixa · '+D.meses_nome[MES];
  document.getElementById('kpis').innerHTML=kpis();
  var t=document.getElementById('rsm'); if(t)t.innerHTML=rsm();
- operacao(); equilibrio(); socios();
- pintaRelatorios(); orcado(); vendasBloco();
+ operacao(); socios();
+ pintaRelatorios(); vendasBloco();
  document.querySelectorAll('.repwrap').forEach(function(w){
   w.classList.toggle('on',(REG==='caixa')===(w.id==='rep-fc'))});
 }
@@ -1040,8 +944,7 @@ render();
 """
 
 NAV_LINKS = ('<a href="#geral" class="on">Visão geral</a><a href="#tend">DRE</a>'
-             '<a href="#relatorios">Caixa</a><a href="#vendas-sec">Vendas</a>'
-             '<a href="#orcado">Orçado × Real</a><a href="#equilibrio">Equilíbrio</a>')
+             '<a href="#relatorios">Caixa</a><a href="#vendas-sec">Vendas</a>')
 NAV_LINKS_SOC = ('<a href="#geral" class="on">Visão geral</a><a href="#socios">Sócios</a>'
                  '<a href="#operacao">Operação</a>')
 
@@ -1071,14 +974,7 @@ SEC_ANO = """<section id="tend" class="sec-alt"><div class="wrap">
 <div id="vendas"></div>
 </div></section>
 
-<section id="orcado"><div class="wrap">
-<div class="sec-head"><div class="k">Orçamento 2026</div><h2>Orçado <span class="light">× realizado</span></h2>
-<p class="lede">Confronto do orçamento com o que de fato aconteceu, linha a linha, no plano de contas.</p></div>
-<div id="orc-box"></div>
-<h4 class="subt">Projeção de caixa até o fim de 2027</h4>
-<div id="orc-proj"></div>
-<p class="repnote">Orçamento revisado enviado pelo Tiago. É <b>consolidado</b>: a planilha não separa YO de Boldró, então o confronto com o realizado só vale na visão Consolidado. O realizado vem do extrato das contas no Omie.</p>
-</div></section>"""
+"""
 
 SEC_SOCIOS = """<section id="socios" class="sec-alt"><div class="wrap">
 <div class="sec-head"><div class="k">Para os sócios</div><h2>O que sobrou <span class="light">e o que foi retirado</span></h2>
@@ -1132,13 +1028,7 @@ def pagina(socios=False):
 <p class="repnote">Sem integração com o PDV não há ticket médio, número de couverts nem venda por canal — salão, bar, beach club e day use vivem no 3LM. O que dá para medir pelo financeiro é o <b>mix de compra</b>: quanto do insumo foi para a cozinha e quanto foi para o bar.</p>
 </div></section>
 
-<section id="equilibrio"><div class="wrap">
-<div class="sec-head"><div class="k">Ponto de equilíbrio</div>
-<h2>Quanto a casa precisa <span class="light">vender para empatar</span></h2>
-<p class="lede">Calculado com a estrutura real do mês: custo fixo dividido pela margem de contribuição que sobra depois do CMV e das deduções. Ao lado, a premissa que o plano de investimento assumiu.</p></div>
-<div class="kpis" id="eq-box" style="margin:0"></div>
-<p class="repnote"><b>Os dois números não se contradizem — medem casas diferentes.</b> O da esquerda é o que a operação de hoje precisa vender para empatar, com a equipe e a estrutura que existem agora. O da direita é o equilíbrio da casa em regime pleno, como o plano de investimento projetou: CMV de 33%%, impostos e comissões de 17%% e custo fixo com folha de R$ 510.000 por mês. Conforme o quadro de pessoal e a operação completam, o número da esquerda sobe em direção ao da direita — e é essa convergência que vale acompanhar mês a mês.</p>
-</div></section>
+
 %s
 <section id="relatorios"><div class="wrap">
 <div class="sec-head"><div class="k">Relatório detalhado</div>
@@ -1151,10 +1041,10 @@ def pagina(socios=False):
 <p class="repnote">Demonstração do fluxo de caixa pelo método direto, a partir da movimentação das contas no Omie. Clique na linha com seta para abrir o nível de baixo, e <b>clique em qualquer número para abrir a caixa com os lançamentos</b> daquela conta naquele mês. O saldo abre por empresa e por conta bancária.</p></div>
 <div id="rep-dre" class="repwrap"><table class="xtbl mat dre"><thead><tr id="drehead"></tr></thead><tbody id="drebody"></tbody></table>
 <div id="auditoria"></div>
-<p class="repnote">Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
+<p class="repnote"><b>Depreciação e amortização ficam em zero de propósito.</b> A obra e os equipamentos estão registrados como desembolso de capex, não como ativo imobilizado com vida útil — não há contabilidade fechada nas duas empresas. Enquanto isso, o resultado operacional (EBIT) é igual ao EBITDA, e a linha fica à vista para não parecer esquecida. Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
 
-<details class="ress"><summary><b>Ressalvas e critérios</b> · 6 pontos que mudam a leitura dos números<span class="chev">▾</span></summary><div class="ressin"><div class="aviso"><h4>A receita está pelo líquido da GetNet<span class="tag">ressalva</span></h4>
-<p>O que entra no banco é o repasse líquido da adquirente. A receita bruta e a taxa de cartão ainda não existem na base, e o custo de antecipação também não — com o extrato de vendas detalhado da GetNet isso é reclassificado e a margem muda.</p></div><div class="aviso"><h4>Caixa e competência já não contam a mesma história</h4>
+<details class="ress"><summary><b>Ressalvas e critérios</b> · 6 pontos que mudam a leitura dos números<span class="chev">▾</span></summary><div class="ressin"><div class="aviso"><h4>A receita entra pela data do crédito, não pela venda<span class="tag">ressalva</span></h4>
+<p>A receita de setembro da Boldró fecha com o relatório do 3LM quando se corrige a competência: dos R$ 1.116.859,52 lançados, R$ 124.140,08 são crédito de vendas de agosto (a própria observação declara "VENDAS 28.08.26") e faltam R$ 39.224,13 de vendas de setembro que só foram creditadas em outubro. Ajustado, dá R$ 1.031.943,57 contra R$ 1.047.949,04 do 3LM — resíduo de 1,53%%, que é a taxa de cartão. Ou seja: a receita está pelo líquido e a taxa de cartão não existe como custo. Enquanto o extrato de vendas detalhado da GetNet não entrar, a margem bruta está superestimada e o CMV sobre receita, subestimado.</p></div><div class="aviso"><h4>Caixa e competência já não contam a mesma história</h4>
 <p>O fluxo de caixa é o que passou pelo banco em agosto e setembro de 2026. A competência vai além: a folha de setembro da Boldró e as compras a prazo que vencem em outubro já estão lançadas como título em aberto e entram no resultado do mês em que foram geradas — são 54 títulos que não vieram da conciliação bancária. Por isso a margem por competência é menor, e mais honesta, que a do caixa.</p></div><div class="aviso"><h4>A YO está carregada, mas a casa fatura no CNPJ da Boldró<span class="tag">leitura</span></h4>
 <p>A base da YO está carregada até 09/10 e o caixa fecha com o extrato do Bradesco. A venda de salão aparece inteira na Boldró: na YO o que existe é obra, pré-operação, estoque inicial, equipe e arrendamento. A receita de setembro da YO é de R$ 5.998 e é o PIX que a Boldró mandou em 15/09 — até 12/10 havia R$ 5.206 a mais ali, que eram transferências da conta Mercado Pago da própria YO lançadas como receita e já foram reclassificadas.</p></div><div class="aviso"><h4>Os dois caixas fecham no centavo com o extrato do banco<span class="tag">conciliado</span></h4>
 <p>Boldró em 30/09: R$ 599.857,30 no Omie e R$ 599.857,30 no Santander. YO em 30/09: R$ 142.214,80 no Omie e R$ 142.214,80 no Bradesco. Os 1.048 movimentos de setembro da Boldró batem um a um por data e valor. Três coisas tiveram que ser arrumadas na base para chegar aqui: as pernas da varredura automática das duas aplicações, que o banco mostra todo dia e o Omie não tinha; as quatro tarifas de PIX de 24/09 da YO, que faltavam na conciliação do CSC; e o piso de R$ 1,00 da conta corrente da YO, que estava contado duas vezes na abertura.</p></div><div class="aviso"><h4>A conta corrente entre as duas não fecha<span class="tag">ressalva</span></h4>
@@ -1171,7 +1061,7 @@ def pagina(socios=False):
 <div style="text-align:right"><div class="r" style="margin-bottom:4px">Disciplina Gera Lucro</div>
 <div style="font-family:'Plus Jakarta Sans';font-size:13px;font-weight:500;color:rgba(255,255,255,.85)">Exact BR · Recife — PE</div></div>
 </div>
-<p class="disc">Relatório gerencial · Grupo Yó / Boldró. Resultado apurado por competência, pela data de emissão dos documentos; fluxo de caixa apurado pela movimentação bancária, conferido contra o extrato bancário de cada empresa até 30 de setembro de 2026 — Santander 13002614-6 na Boldró e Bradesco mais aplicação na YO — com saldo igual ao da conciliação do CSC. A conta corrente entre as empresas do grupo é transferência, não custo, e fica fora do resultado; no consolidado, o par Yó↔Boldró é eliminado. A receita está lançada pelo valor líquido repassado pela adquirente enquanto o extrato de vendas detalhado da GetNet não é incorporado. Dados lidos da API do Omie em %s.</p>
+<p class="disc">Relatório gerencial · Grupo Yó / Boldró. Resultado apurado por competência, pela data de emissão dos documentos; fluxo de caixa apurado pela movimentação bancária, conferido contra o extrato bancário de cada empresa até 30 de setembro de 2026 — Santander 13002614-6 na Boldró e Bradesco mais aplicação na YO — com saldo igual ao da conciliação do CSC. A conta corrente entre as empresas do grupo é transferência, não custo, e fica fora do resultado; no consolidado, o par Yó↔Boldró é eliminado. A receita está lançada pelo valor líquido repassado pela adquirente e pela data do crédito no banco, enquanto o extrato de vendas detalhado da GetNet não é incorporado; a reconciliação com o relatório do 3LM de setembro fecha com resíduo de 1,53%%, que é a taxa de cartão. Orçado × realizado e ponto de equilíbrio foram retirados em 03/11/2026 por não se sustentarem: o orçamento não separa YO de Boldró e a margem de contribuição depende de uma receita bruta que a base ainda não tem. Dados lidos da API do Omie em %s.</p>
 </div></footer>
 
 <script>const D=%s;var SOCIOS=%s;%s</script>
