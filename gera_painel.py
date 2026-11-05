@@ -533,17 +533,14 @@ function vendasBloco(){
  h+='<p class="repnote"><b>Ticket individual e por mesa continuam em construção:</b> '+
     'o 3LM exporta a comanda, mas não o número de pessoas nem a mesa física. '+
     'Com essas duas colunas na exportação os dois indicadores entram. '+
-    'Fonte: relatório de vendas do 3LM/Gourmet. '+
-    'A curva de cada categoria é calculada sobre a receita daquela categoria, não sobre o total. '+
-    'Classe A vai até 80% do faturamento do grupo, B de 80% a 95%, C os 5% finais. '+
-    'A venda de produtos exclui taxa de serviço e rolha, por isso é menor que o recebido no mês.</p>';
+    'Fonte: relatório de vendas do 3LM/Gourmet.</p>';
  dia.innerHTML=h;
  var hm='<h4 class="subt">Curva ABC por categoria</h4>'+
     '<table class="xtbl"><thead><tr><th class="l">Categoria</th><th>Receita</th><th>Itens</th>'+
     '<th>Classe A</th><th class="av">% em A</th><th>Classe B</th><th>Classe C</th></tr></thead><tbody>';
  var cats=Object.keys(V.abc).sort(function(a,b){return V.abc[b].receita-V.abc[a].receita});
  cats.forEach(function(k){var x=V.abc[k];
-  h+='<tr class="abc-l" onclick="abreABC(\''+k+'\')"><td class="l"><span class="chv">▸</span>'+k+
+  hm+='<tr class="abc-l" onclick="abreABC(\''+k+'\')"><td class="l"><span class="chv">▸</span>'+k+
      '</td><td class="num">'+brl(x.receita)+'</td><td class="av">'+x.itens+'</td>'+
      '<td class="num">'+brl(x.A.valor)+' <span class="z">('+x.A.itens+')</span></td>'+
      '<td class="av">'+(100*x.A.pct).toFixed(1).replace('.',',')+'%</td>'+
@@ -553,6 +550,10 @@ function vendasBloco(){
  hm+='<tr class="dfcs"><td class="l">Venda de produtos</td><td class="num">'+brl(tr)+'</td>'+
     '<td class="av"></td><td class="num"></td><td class="av"></td><td class="num"></td><td class="num"></td></tr>';
  hm+='</tbody></table>';
+ hm+='<p class="repnote">A curva de cada categoria é calculada sobre a receita daquela '+
+    'categoria, não sobre o total. Classe A vai até 80% do faturamento do grupo, B de 80% a '+
+    '95%, C os 5% finais. Clique na categoria para abrir os itens. A venda de produtos exclui '+
+    'taxa de serviço e rolha, por isso é menor que a venda bruta do mês.</p>';
  hm+=pgtoTabela()+horarioTabela();
  mix.innerHTML=hm;
 }
