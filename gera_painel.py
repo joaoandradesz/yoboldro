@@ -413,8 +413,22 @@ function passosPonte(){
  }
  var s=saldos(ENT,MES);
  if(!s)return null;
- return [['Saldo inicial',s.ini,'n'],['Entradas',s.entradas,'in'],['Saídas',s.saidas,'out'],
-         ['Resultado',s.entradas+s.saidas,'r'],['Saldo final',s.fim,'n']];
+ /* pedido do Tiago em 05/11: entradas x saidas nao dizem se a operacao gera
+    caixa. A ponte agora separa o que a casa gerou do que foi obra e aporte,
+    nos mesmos grupos da DRE: acima do EBITDA = operacional; 11 = investimento;
+    12 = financiamento; o resto (13, CC, OR, neutras) e transferencia e ajuste.
+    A ultima perna e o residuo, entao a ponte fecha no saldo do banco sempre. */
+ var mov=s.entradas+s.saidas,
+     op=soma(ENT,'caixa',MES,['1','2','3','4','5','6','7','8','9','10','14']),
+     inv=soma(ENT,'caixa',MES,['11']),
+     fin=soma(ENT,'caixa',MES,['12']),
+     res=mov-op-inv-fin;
+ return [['Saldo inicial',s.ini,'n'],
+         ['Geração de caixa operacional',op,op<0?'out':'in'],
+         ['Investimentos',inv,inv>0?'in':'out'],
+         ['Financiamento',fin,fin<0?'out':'in'],
+         ['Outros e transferências',res,res<0?'out':'in'],
+         ['Saldo final',s.fim,'n']];
 }
 function ponteSVG(){
  var passos=passosPonte();
@@ -1160,7 +1174,7 @@ function render(){
  document.getElementById('wfTitle').textContent=
   (REG==='comp'?(semDre(MES)?'Sem DRE · ':'Ponte do resultado · '):'Ponte do caixa · ')+D.meses_nome[MES];
  document.getElementById('wfHint').textContent=(pp||[]).map(function(x){return x[0]}).join(' → ')
-  ||(REG==='comp'?'receita → deduções → custos → despesas → EBITDA':'saldo inicial → entradas → saídas → resultado → saldo final');
+  ||(REG==='comp'?'receita → deduções → custos → despesas → EBITDA':'saldo inicial → geração operacional → investimentos → financiamento → saldo final');
  document.getElementById('wfX').innerHTML=(pp||[]).map(function(x){
   return '<span>'+x[0]+'</span>'}).join('');
  document.getElementById('kpis').innerHTML=kpis();
@@ -1286,7 +1300,7 @@ def pagina(socios=False):
 <button data-r="comp" onclick="setRegime('comp')">Competência</button><span class="regnota">os indicadores e as tabelas abaixo não mudam com este botão: a DRE é sempre por competência e o DFC sempre pelo caixa</span></div>
 <div class="waterfall">
 <div class="wf-head"><span class="t" id="wfTitle">Ponte do caixa</span>
-<span class="h" id="wfHint">Saldo inicial → entradas → saídas → resultado → saldo final</span></div>
+<span class="h" id="wfHint">Saldo inicial → geração de caixa operacional → investimentos → financiamento → saldo final</span></div>
 <svg id="wf" viewBox="0 0 1080 236"></svg>
 <div class="wf-x" id="wfX"></div>
 </div>
