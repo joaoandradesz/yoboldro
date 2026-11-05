@@ -1168,7 +1168,8 @@ NAV_LINKS = ('<a href="#geral" class="on">Visão geral</a>'
              '<a href="#venda-mix">Curva e mix</a>'
              '<a href="#operacao">Operação</a>'
              '<a href="#auditoria">Auditoria</a>'
-             '<a href="#vendas-sec">Composição</a>')
+             '<a href="#vendas-sec">Composição</a>'
+             '<a href="simulador.html">Simulador</a>')
 
 ENTSW = """<div class="entsw" id="entsw">
 <button data-ent="consol" class="on" onclick="setEntity('consol')">Consolidado</button>
