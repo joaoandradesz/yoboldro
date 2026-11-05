@@ -399,6 +399,13 @@ function setMes(m){MES=m;document.querySelectorAll('.mespills button').forEach(f
 function setRegime(r){REG=r;document.querySelectorAll('.regsw button,.rep-switch button').forEach(function(b){
  b.classList.toggle('on',b.dataset.r===r)});render()}
 
+/* Quais grupos sao OPERACIONAIS no caixa. Mora aqui, sozinho, porque tres
+   blocos mostram esse numero com o mesmo nome — o card do cabecalho, a ponte e a
+   linha da tabela do DFC. Cada um com a sua lista ja deu dois numeros na mesma
+   tela (05/11/2026): a ponte esquecia o grupo OR e dizia 204.926,04 enquanto o
+   card e a tabela diziam 210.924,08. */
+var GRUPOS_OP=['1','OR','2','3','4','5','6','7','8','9','14','10'];
+
 function passosPonte(){
  /* a ponte segue o regime escolhido: no caixa e saldo -> entradas -> saidas;
     na competencia e receita -> custo -> despesa -> EBITDA, que e o que mostra o
@@ -421,7 +428,7 @@ function passosPonte(){
     senao a ponte e a tabela mostram dois numeros com o mesmo nome na mesma tela.
     A ultima perna e o residuo, entao a ponte fecha no saldo do banco sempre. */
  var mov=s.entradas+s.saidas,
-     op=soma(ENT,'caixa',MES,BLOCOS_DFC[5][1]),
+     op=soma(ENT,'caixa',MES,GRUPOS_OP),
      inv=soma(ENT,'caixa',MES,['11']),
      fin=soma(ENT,'caixa',MES,['12']),
      res=mov-op-inv-fin;
@@ -717,7 +724,7 @@ function kpis(){
  var bruta=soma(ENT,'comp',MES,['FAT']);
  /* geracao de caixa OPERACIONAL: a mesma linha do DFC, sem investimento,
     financiamento nem transferencia. E caixa, entao sai do regime 'caixa'. */
- var gco=soma(ENT,'caixa',MES,['1','OR','2','3','4','5','6','7','8','9','14','10']);
+ var gco=soma(ENT,'caixa',MES,GRUPOS_OP);
  var custoEmCarga=parcial(MES);
  return [
   semVenda?['Vendas brutas',emC('a venda do 3LM não entra na DRE enquanto o custo do mês estiver em carga — ela está na abertura da venda'),'','']
@@ -859,11 +866,11 @@ var BLOCOS_DFC=[
  ['(−) Custos',['3','4','5']],
  ['(−) Despesas',['6','7','8','9','14']],
  ['(±) Resultado financeiro',['10']],
- ['=GERAÇÃO DE CAIXA OPERACIONAL',['1','OR','2','3','4','5','6','7','8','9','14','10']],
+ ['=GERAÇÃO DE CAIXA OPERACIONAL',GRUPOS_OP],
  ['(−) Investimentos',['11']],
  ['(±) Financiamento',['12']],
  ['(±) Não operacional e transferências',['CC','NEUTRO','13']],
- ['*GERAÇÃO DE CAIXA FINAL',['1','OR','2','3','4','5','6','7','8','9','14','10','11','12','CC','NEUTRO','13']]
+ ['*GERAÇÃO DE CAIXA FINAL',GRUPOS_OP.concat(['11','12','CC','NEUTRO','13'])]
 ];
 var BLOCOS_DRE=[
  ['Receita bruta (faturamento)',['FAT']],
