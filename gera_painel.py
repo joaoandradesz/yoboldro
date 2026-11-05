@@ -286,6 +286,8 @@ td.av{color:var(--g500);font-size:12px}
 .xtbl tr.dfct td{background:var(--navy);color:#fff;font-size:11px;font-weight:700;
  letter-spacing:.09em;text-transform:uppercase;padding:9px 12px}
 .xtbl tr.dfcs td{background:var(--orange-soft);font-weight:700;border-top:1.5px solid var(--orange)}
+.xtbl td .pq{display:block;font-size:10.5px;font-weight:500;color:var(--g400);line-height:1.3}
+.xtbl tr.dfcs td .pq{color:#A8632A;font-weight:700}
 .xtbl tr.dfcp td{font-size:11.5px;color:var(--g500);font-style:italic}
 .subt{font-family:'Plus Jakarta Sans',sans-serif;margin:30px 0 12px;font-size:14px;font-weight:600;color:var(--ink2);letter-spacing:.02em}
 .selo{margin-top:7px;font-size:11.5px;color:rgba(255,255,255,.5);letter-spacing:.01em}
@@ -514,22 +516,38 @@ function vendasBloco(){
  /* dia a dia: conta, venda, ticket e a divisao do turno */
  var hr={}; (V.horario||[]).forEach(function(x){hr[x.data]=x});
  var NOM={segunda:'segunda',terca:'terça',quarta:'quarta',quinta:'quinta',sexta:'sexta',sabado:'sábado',domingo:'domingo'};
+ /* o percentual anda junto do valor do turno, nao numa coluna solta: o que a
+    diretoria le e "quanto do dia foi almoco", e isso e do almoco, nao da linha.
+    A base e o que tem hora registrada naquele dia — almoco + fim de dia +
+    inicio do dia — por isso os dois nao somam 100%. */
+ function turno(v,base){
+  if(!v)return '<td class="num">–</td>';
+  return '<td class="num">'+brl(v)+'<span class="pq">'+
+   (base?(100*v/base).toFixed(0).replace('.',',')+'%':'–')+'</span></td>';
+ }
  h+='<h4 class="subt">Dia a dia · '+D.meses_nome[V.mes]+'</h4>'+
     '<table class="xtbl"><thead><tr><th class="l">Data</th><th class="l">Dia</th><th>Contas</th>'+
-    '<th>Venda</th><th>Ticket</th><th>Almoço</th><th>Fim de dia</th><th class="av">% almoço</th>'+
+    '<th>Venda</th><th>Ticket</th><th>Almoço</th><th>Fim de dia</th>'+
     '</tr></thead><tbody>';
+ var sd=0,sf=0,sa=0;
  V.dias.forEach(function(d){
-  var x=hr[d.data]||{};
+  var x=hr[d.data]||{}, bs=(x.dia||0)+(x.final||0)+(x.antes||0);
+  sd+=x.dia||0; sf+=x.final||0; sa+=x.antes||0;
   h+='<tr><td class="l">'+d.data+'</td><td class="l">'+(NOM[d.sem]||d.sem)+'</td>'+
      '<td class="num">'+d.contas+'</td><td class="num">'+brl(d.valor)+'</td>'+
-     '<td class="num">'+brl(d.ticket)+'</td><td class="num">'+(x.dia?brl(x.dia):'–')+'</td>'+
-     '<td class="num">'+(x.final?brl(x.final):'–')+'</td>'+
-     '<td class="av">'+(x.pct_dia?(100*x.pct_dia).toFixed(0)+'%':'–')+'</td></tr>';
+     '<td class="num">'+brl(d.ticket)+'</td>'+turno(x.dia,bs)+turno(x.final,bs)+'</tr>';
  });
  var tc=V.dias.reduce(function(a,d){return a+d.contas},0), tv=V.dias.reduce(function(a,d){return a+d.valor},0);
+ var sb=sd+sf+sa;
  h+='<tr class="dfcs"><td class="l">Total do mês</td><td class="l"></td><td class="num">'+tc+'</td>'+
     '<td class="num">'+brl(tv)+'</td><td class="num">'+brl(tv/tc)+'</td>'+
-    '<td class="num"></td><td class="num"></td><td class="av"></td></tr></tbody></table>';
+    turno(sd,sb)+turno(sf,sb)+'</tr></tbody></table>'+
+    '<p class="repnote" style="margin-top:8px">No mês, <b>'+
+    (sb?(100*sd/sb).toFixed(1).replace('.',',')+'%':'–')+' da venda com hora registrada é almoço</b> ('+
+    brl(sd)+') e <b>'+(sb?(100*sf/sb).toFixed(1).replace('.',',')+'%':'–')+' é fim de dia</b> ('+
+    brl(sf)+'). O resto, '+(sb?(100*sa/sb).toFixed(1).replace('.',',')+'%':'–')+' ('+brl(sa)+
+    '), é início do dia. A base são os '+brl(sb)+' que o 3LM carimba com hora — '+
+    pc(sb,V.recebido)+' do mês: ele não carimba hora na taxa de serviço nem no dia 30/09.</p>';
  h+='<p class="repnote"><b>Ticket individual e por mesa continuam em construção:</b> '+
     'o 3LM exporta a comanda, mas não o número de pessoas nem a mesa física. '+
     'Com essas duas colunas na exportação os dois indicadores entram. '+

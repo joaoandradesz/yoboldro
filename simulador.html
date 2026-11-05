@@ -336,6 +336,14 @@ td.av{color:var(--g500);font-size:12px}
 .xtbl.sim .cdl{display:block;font-size:10.5px;font-weight:600;color:var(--g400)}
 .xtbl.sim .cdl.up{color:var(--in)}.xtbl.sim .cdl.dn{color:var(--out)}
 .xtbl.sim th.ath{color:var(--orange)}
+/* receita, EBITDA e lucro liquido sao as tres linhas que a diretoria procura:
+   ficam marcadas em laranja em vez de se perderem entre as outras. */
+.xtbl.sim tr.res td{background:var(--orange-soft);border-top:1.5px solid var(--orange);
+ border-bottom:1.5px solid var(--orange)}
+.xtbl.sim tr.res td.l,.xtbl.sim tr.res .cvl{font-family:'Plus Jakarta Sans';font-weight:800;
+ color:#7A3E00}
+.xtbl.sim tr.res .cvl{font-size:14px}
+.xtbl.sim tr.res .cpc{color:#A8632A;font-weight:600}
 .vtag{font-size:9px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
  color:var(--orange);border:1px solid var(--orange);border-radius:10px;padding:0 5px;
  margin-left:6px;vertical-align:1px}
