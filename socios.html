@@ -230,6 +230,9 @@ td.av{color:var(--g500);font-size:12px}
 .xtbl tr.abc-l{cursor:pointer}
 .xtbl tr.abc-l:hover td{background:var(--orange-soft)}
 .cx-tbl td.neg{color:var(--ink);font-weight:600}
+.xtbl.soma .sin{display:inline-block;width:16px;color:var(--orange);font-weight:700}
+.xtbl.soma tr.memo td{color:var(--g500);font-size:12.5px}
+.rep-t{font-family:'Plus Jakarta Sans';font-weight:700;font-size:17px;margin:26px 0 12px}
 .ress{margin-top:30px;border:1px solid var(--g200);border-radius:12px;background:#fff}
 .ress summary{cursor:pointer;padding:15px 18px;font-size:13.5px;color:var(--ink2);
  list-style:none;display:flex;align-items:center;gap:8px}
@@ -277,7 +280,7 @@ td.av{color:var(--g500);font-size:12px}
 
 <nav class="nav"><div class="wrap">
 <div class="brand">Grupo <b>Yó / Boldró</b></div>
-<div class="nav-links"><a href="#geral" class="on">Visão geral</a><a href="#socios">Sócios</a><a href="#operacao">Operação</a></div>
+<div class="nav-links"><a href="#geral" class="on">Visão geral</a><a href="#relatorios">DRE e DFC</a><a href="#venda-dia">Venda por dia</a><a href="#venda-mix">Curva e mix</a><a href="#operacao">Operação</a><a href="#auditoria">Auditoria</a><a href="#vendas-sec">Composição</a></div>
 <div class="entsw" id="entsw">
 <button data-ent="consol" class="on" onclick="setEntity('consol')">Consolidado</button>
 <button data-ent="boldro" onclick="setEntity('boldro')">Boldró</button>
@@ -292,9 +295,9 @@ td.av{color:var(--g500);font-size:12px}
 <div class="cnpjline" id="heroCnpj"></div>
 <div class="selo">dados lidos do Omie em <b id="selo"></b></div>
 <div class="mespills" id="mespills"></div>
-<div class="regsw" id="regsw"><span class="reglab">Ver a ponte e as tabelas por:</span>
+<div class="regsw" id="regsw"><span class="reglab">Ver a ponte do topo por:</span>
 <button data-r="caixa" class="on" onclick="setRegime('caixa')">Caixa</button>
-<button data-r="comp" onclick="setRegime('comp')">Competência</button><span class="regnota">os indicadores abaixo são sempre por competência — ticket médio e turno vêm do 3LM e não têm versão pelo caixa</span></div>
+<button data-r="comp" onclick="setRegime('comp')">Competência</button><span class="regnota">os indicadores e as tabelas abaixo não mudam com este botão: a DRE é sempre por competência e o DFC sempre pelo caixa</span></div>
 <div class="waterfall">
 <div class="wf-head"><span class="t" id="wfTitle">Ponte do caixa</span>
 <span class="h" id="wfHint">Saldo inicial → entradas → saídas → resultado → saldo final</span></div>
@@ -304,11 +307,37 @@ td.av{color:var(--g500);font-size:12px}
 </div></header>
 <div class="wrap"><div class="kpis" id="kpis"></div></div>
 
-<section id="socios" class="sec-alt"><div class="wrap">
-<div class="sec-head"><div class="k">Para os sócios</div><h2>O que sobrou <span class="light">e o que foi retirado</span></h2>
-<p class="lede">Resultado do período, o que já saiu como pró-labore e distribuição, e o que está preso em conta corrente com as outras empresas do grupo.</p><p class="repnote" style="margin:10px 0 0"><b>Os números desta seção são do período inteiro</b> — agosto e setembro somados. Eles não mudam quando você troca o mês lá em cima: a escolha do mês vale para a ponte e para os indicadores do topo.</p></div>
-<div class="kpis" id="soc-kpis" style="margin:0"></div>
+<section id="relatorios"><div class="wrap">
+<div class="sec-head"><div class="k">Relatório detalhado</div>
+<h2>Tabelas por categoria <span class="light">— grupo e conta</span></h2>
+<p class="lede">O mesmo número de duas maneiras: por competência, como entra na DRE; e pelo caixa, como saiu do extrato. Clique no grupo para abrir as contas e na conta para abrir os lançamentos.</p></div>
+<h3 class="rep-t">DRE (competência)</h3>
+<div id="rep-dre" class="repwrap on"><table class="xtbl mat dre"><thead><tr id="drehead"></tr></thead><tbody id="drebody"></tbody></table>
+<div id="tbl-alerta"></div>
+<p class="repnote"><b>A receita bruta é o faturamento do mês da venda, não o crédito no banco.</b> Clique nela para abrir por forma de pagamento, e no número de cada forma para ver dia a dia o que foi vendido. Nos três meses ela vem da extração bruta do 3LM — R$ 163.548,50 em agosto, R$ 1.058.984,27 em setembro e R$ 1.193.067,36 em outubro — e abre em A&amp;B, taxa de serviço, couvert e taxa de rolha. Em agosto e setembro o clique abre também a forma de pagamento, reconstruída do Extrato de Vendas Detalhado da GetNet; em outubro não, porque não há extrato da GetNet do mês.  Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
+
+
+<h3 class="rep-t">Fluxo de caixa (DFC)</h3>
+<div id="rep-fc" class="repwrap on"><table class="xtbl mat dfc"><thead><tr id="fchead"></tr></thead><tbody id="fcbody"></tbody></table>
+<p class="repnote">Demonstração do fluxo de caixa pelo método direto, a partir da movimentação das contas no Omie. Clique na linha com seta para abrir o nível de baixo, e <b>clique em qualquer número para abrir a caixa com os lançamentos</b> daquela conta naquele mês. O saldo abre por empresa e por conta bancária.</p></div>
+</div>
 </div></section>
+
+<section id="venda-dia"><div class="wrap">
+<div class="sec-head"><div class="k">Venda por dia</div>
+<h2>Quando a casa <span class="light">vende</span></h2>
+<p class="lede">Dia da semana e dia a dia, do relatório mensal do 3LM — que não tem API e entra por PDF.</p></div>
+<div id="v-dia"></div>
+</div></section>
+
+<section id="venda-mix" class="sec-alt"><div class="wrap">
+<div class="sec-head"><div class="k">Curva e mix</div>
+<h2>O que vende <span class="light">e como o cliente paga</span></h2>
+<p class="lede">Curva ABC por categoria do cardápio, forma de pagamento venda a venda e a divisão do faturamento por horário.</p></div>
+<div id="v-mix"></div>
+</div></section>
+
+
 
 <section id="operacao" class="sec-alt"><div class="wrap">
 <div class="sec-head"><div class="k">Operação</div>
@@ -322,23 +351,24 @@ td.av{color:var(--g500);font-size:12px}
 </div></section>
 
 
-
-<section id="relatorios"><div class="wrap">
-<div class="sec-head"><div class="k">Relatório detalhado</div>
-<h2>Tabelas por categoria <span class="light">— grupo e conta</span></h2>
-<p class="lede">O mesmo número de duas maneiras: pelo caixa, como saiu do extrato; e por competência, como entra na DRE.</p></div>
-<div class="rep-switch">
-<button data-r="caixa" class="on" onclick="setRegime('caixa')">Fluxo de Caixa (DFC)</button>
-<button data-r="comp" onclick="setRegime('comp')">DRE (competência)</button></div>
-<div id="rep-fc" class="repwrap on"><table class="xtbl mat dfc"><thead><tr id="fchead"></tr></thead><tbody id="fcbody"></tbody></table>
-<p class="repnote">Demonstração do fluxo de caixa pelo método direto, a partir da movimentação das contas no Omie. Clique na linha com seta para abrir o nível de baixo, e <b>clique em qualquer número para abrir a caixa com os lançamentos</b> daquela conta naquele mês. O saldo abre por empresa e por conta bancária.</p></div>
-<div id="rep-dre" class="repwrap"><table class="xtbl mat dre"><thead><tr id="drehead"></tr></thead><tbody id="drebody"></tbody></table>
-<div id="tbl-alerta"></div>
-<p class="repnote"><b>A receita bruta é o faturamento do mês da venda, não o crédito no banco.</b> Clique nela para abrir por forma de pagamento, e no número de cada forma para ver dia a dia o que foi vendido. Nos três meses ela vem da extração bruta do 3LM — R$ 163.548,50 em agosto, R$ 1.058.984,27 em setembro e R$ 1.193.067,36 em outubro — e abre em A&amp;B, taxa de serviço, couvert e taxa de rolha. Em agosto e setembro o clique abre também a forma de pagamento, reconstruída do Extrato de Vendas Detalhado da GetNet; em outubro não, porque não há extrato da GetNet do mês.  Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
-
-
-</div>
+<section id="auditoria" class="sec-alt"><div class="wrap">
+<div class="sec-head"><div class="k">Auditoria</div>
+<h2>O que não bate <span class="light">e por quê</span></h2>
+<p class="lede">Papel de trabalho, não leitura gerencial: a abertura da venda do mês item a item e a diferença entre os dois relatórios de vendas. Está aqui para quem precisa auditar o número — o painel acima já usa a conclusão.</p></div>
+<details class="ress"><summary><b>Abrir o dash de auditoria</b> — abertura da venda e divergência entre relatórios<span class="chev">▼</span></summary>
+<div class="ressin">
+<div id="rec-cruz"></div>
+</div></details>
 </div></section>
+<section id="vendas-sec"><div class="wrap">
+<div class="sec-head"><div class="k">Composição da venda</div>
+<h2>O que o salão <span class="light">vendeu</span></h2>
+<p class="lede">A conta fechada do mês: o que o PDV registrou, item por item, somando até o faturamento bruto.</p></div>
+<div id="vendas"></div>
+</div></section>
+
+
+
 
 <div id="cx-fundo" class="cx-fundo" onclick="if(event.target===this)fechaCaixa()">
 <div class="cx" id="cx-corpo"></div></div>
@@ -529,11 +559,12 @@ function diaForteCard(){var V=vd();
 
 /* bloco de vendas: dia da semana e curva ABC */
 function vendasBloco(){
- var el=document.getElementById('vendas'); if(!el)return;
+ var dia=document.getElementById('v-dia'), mix=document.getElementById('v-mix');
+ if(!dia||!mix)return;
  var V=vd();
  if(!V){
   var temMes=D.vendas&&MES!==D.vendas.mes;
-  el.innerHTML='<div class="vazio"><h4>'+
+  dia.innerHTML=mix.innerHTML='<div class="vazio"><h4>'+
    (ENT==='yo'?'A YO não fatura':(temMes?'Sem relatório de vendas de '+D.meses_nome[MES]:'Sem relatório de vendas'))+'</h4>'+
    '<p>'+(ENT==='yo'?'A venda de salão acontece no CNPJ da Boldró. Troque de empresa no topo.'
     :'O 3LM não tem API: estes números vêm do relatório mensal em PDF, e hoje só existe o de '+
@@ -553,21 +584,6 @@ function vendasBloco(){
      '<div class="cbl" style="color:var(--g300)">'+brl(v/1000,0)+'k</div></div>';
  });
  h+='</div>';
- h+='<h4 class="subt">Curva ABC por categoria</h4>'+
-    '<table class="xtbl"><thead><tr><th class="l">Categoria</th><th>Receita</th><th>Itens</th>'+
-    '<th>Classe A</th><th class="av">% em A</th><th>Classe B</th><th>Classe C</th></tr></thead><tbody>';
- var cats=Object.keys(V.abc).sort(function(a,b){return V.abc[b].receita-V.abc[a].receita});
- cats.forEach(function(k){var x=V.abc[k];
-  h+='<tr class="abc-l" onclick="abreABC(\''+k+'\')"><td class="l"><span class="chv">▸</span>'+k+
-     '</td><td class="num">'+brl(x.receita)+'</td><td class="av">'+x.itens+'</td>'+
-     '<td class="num">'+brl(x.A.valor)+' <span class="z">('+x.A.itens+')</span></td>'+
-     '<td class="av">'+(100*x.A.pct).toFixed(1).replace('.',',')+'%</td>'+
-     '<td class="num">'+brl(x.B.valor)+'</td><td class="num">'+brl(x.C.valor)+'</td></tr>';
- });
- var tr=0; cats.forEach(function(k){tr+=V.abc[k].receita});
- h+='<tr class="dfcs"><td class="l">Venda de produtos</td><td class="num">'+brl(tr)+'</td>'+
-    '<td class="av"></td><td class="num"></td><td class="av"></td><td class="num"></td><td class="num"></td></tr>';
- h+='</tbody></table>';
  /* dia a dia: conta, venda, ticket e a divisao do turno */
  var hr={}; (V.horario||[]).forEach(function(x){hr[x.data]=x});
  var NOM={segunda:'segunda',terca:'terça',quarta:'quarta',quinta:'quinta',sexta:'sexta',sabado:'sábado',domingo:'domingo'};
@@ -594,7 +610,99 @@ function vendasBloco(){
     'A curva de cada categoria é calculada sobre a receita daquela categoria, não sobre o total. '+
     'Classe A vai até 80% do faturamento do grupo, B de 80% a 95%, C os 5% finais. '+
     'A venda de produtos exclui taxa de serviço e rolha, por isso é menor que o recebido no mês.</p>';
- el.innerHTML=h;
+ dia.innerHTML=h;
+ var hm='<h4 class="subt">Curva ABC por categoria</h4>'+
+    '<table class="xtbl"><thead><tr><th class="l">Categoria</th><th>Receita</th><th>Itens</th>'+
+    '<th>Classe A</th><th class="av">% em A</th><th>Classe B</th><th>Classe C</th></tr></thead><tbody>';
+ var cats=Object.keys(V.abc).sort(function(a,b){return V.abc[b].receita-V.abc[a].receita});
+ cats.forEach(function(k){var x=V.abc[k];
+  h+='<tr class="abc-l" onclick="abreABC(\''+k+'\')"><td class="l"><span class="chv">▸</span>'+k+
+     '</td><td class="num">'+brl(x.receita)+'</td><td class="av">'+x.itens+'</td>'+
+     '<td class="num">'+brl(x.A.valor)+' <span class="z">('+x.A.itens+')</span></td>'+
+     '<td class="av">'+(100*x.A.pct).toFixed(1).replace('.',',')+'%</td>'+
+     '<td class="num">'+brl(x.B.valor)+'</td><td class="num">'+brl(x.C.valor)+'</td></tr>';
+ });
+ var tr=0; cats.forEach(function(k){tr+=V.abc[k].receita});
+ hm+='<tr class="dfcs"><td class="l">Venda de produtos</td><td class="num">'+brl(tr)+'</td>'+
+    '<td class="av"></td><td class="num"></td><td class="av"></td><td class="num"></td><td class="num"></td></tr>';
+ hm+='</tbody></table>';
+ hm+=pgtoTabela()+horarioTabela();
+ mix.innerHTML=hm;
+}
+
+/* forma de pagamento: a mesma abertura que abre no clique da receita bruta */
+function pgtoTabela(){
+ var F=formasDe();
+ if(!F)return '<h4 class="subt">Como o cliente pagou</h4><p class="repnote">'+
+  (ENT==='yo'?'A YO não fatura.':'Depende do Extrato de Vendas Detalhado da adquirente, que só existe em agosto e setembro.')+'</p>';
+ var o=F.linhas.slice().sort(function(a,b){return b[1]-a[1]});
+ var h='<h4 class="subt">Como o cliente pagou · '+D.meses_nome[MES]+'</h4>'+
+  '<table class="xtbl"><thead><tr><th class="l">Forma de pagamento</th><th>Valor</th>'+
+  '<th class="av">% do total</th></tr></thead><tbody>';
+ o.forEach(function(x){h+='<tr><td class="l">'+x[0]+'</td><td class="num">'+brl(x[1])+
+  '</td><td class="av">'+pc(x[1],F.total)+'</td></tr>'});
+ h+='<tr class="dfcs"><td class="l">Total</td><td class="num">'+brl(F.total)+
+  '</td><td class="av">100,0%</td></tr></tbody></table>'+
+  '<p class="repnote">Venda a venda do Extrato de Vendas Detalhado da GetNet, mais o dinheiro do fundo fixo. '+
+  'O total fecha com a venda bruta do mês a menos do ajuste de medição do 3LM.</p>';
+ return h;
+}
+
+/* faturamento por horario: o 3LM separa antes do almoco, almoco e fim de dia */
+function horarioTabela(){
+ var V=vd(); if(!V||!V.turno)return '';
+ var t=V.turno, L=[['Início do dia',(t.antes||{}).valor||0],['Almoço (11h às 16h)',t.dia.valor],
+  ['Fim de dia',t.final.valor]], tot=0;
+ L.forEach(function(x){tot+=x[1]});
+ var h='<h4 class="subt">Faturamento por horário · '+D.meses_nome[V.mes]+'</h4>'+
+  '<table class="xtbl"><thead><tr><th class="l">Horário</th><th>Valor</th>'+
+  '<th class="av">% do total</th></tr></thead><tbody>';
+ L.forEach(function(x){h+='<tr><td class="l">'+x[0]+'</td><td class="num">'+brl(x[1])+
+  '</td><td class="av">'+pc(x[1],tot)+'</td></tr>'});
+ h+='<tr class="dfcs"><td class="l">Com hora registrada</td><td class="num">'+brl(tot)+
+  '</td><td class="av">100,0%</td></tr></tbody></table>'+
+  '<p class="repnote">A base do relatório de horário é '+pc(tot,V.recebido)+' do mês: '+
+  'o 3LM não carimba hora na taxa de serviço nem no dia 30/09. Os percentuais são sobre '+
+  'o que tem hora registrada, não sobre o faturamento do mês.</p>';
+ return h;
+}
+
+/* forma de pagamento: vem do Extrato de Vendas Detalhado da GetNet mais o
+   dinheiro do fundo fixo. So existe onde ha extrato da adquirente. */
+function formasDe(mes){
+ if(ENT==='yo')return null;
+ var c=bloco(ENT,'comp',mes||MES).contas, o=[], tot=0;
+ Object.keys(c).forEach(function(k){
+  if(k.indexOf('FAT|')!==0)return;
+  var nome=k.slice(4);
+  /* o ajuste ao total do 3LM e residuo de medicao, nao forma de pagamento */
+  if(nome.indexOf('Ajuste')===0)return;
+  /* no mes sem extrato da adquirente o detalhe e a abertura por item, nao
+     forma de pagamento — a leitura seria outra coisa com o mesmo rotulo */
+  if(nome==='A&B'||nome==='Taxa de servico'||nome==='Couvert'||nome==='Taxa de rolha')return;
+  o.push([nome,c[k]]); tot+=c[k];
+ });
+ return tot?{linhas:o,total:tot}:null;
+}
+function pgtoCard(){
+ var F=formasDe();
+ if(!F)return ['Como o cliente pagou',emC(ENT==='yo'?'a YO não fatura'
+   :'depende do extrato detalhado da adquirente, que só existe em ago e set'),'',''];
+ var o=F.linhas.slice().sort(function(a,b){return b[1]-a[1]});
+ function curto(n){return n.replace('Cartão de crédito à vista','crédito')
+  .replace('Cartão de débito','débito').replace('Dinheiro (fundo fixo)','dinheiro')}
+ return ['Como o cliente pagou',pc(o[0][1],F.total)+' '+curto(o[0][0]),
+  o.slice(1).map(function(x){return pc(x[1],F.total)+' '+curto(x[0])}).join(' · '),
+  'sobre '+brl(F.total)+' · GetNet venda a venda mais o dinheiro do fundo fixo'];
+}
+function contasCard(){
+ var V=vd();
+ if(!V)return ['Contas no mês',emC(ENT==='yo'?'a YO não fatura':'só há relatório de vendas de set/26'),'',''];
+ var pr=(D.prereserva||{})[MES];
+ return ['Contas no mês',V.contas.toLocaleString('pt-BR'),
+  pr===undefined?'pré-reserva: aguardando a gerência operacional'
+   :pc(pr,V.contas)+' vieram de pré-reserva ('+pr.toLocaleString('pt-BR')+')',
+  'fonte: 3LM · por comanda, não por mesa'];
 }
 
 function emC(motivo){return '<span class="emc">em construção</span><span class="emcm">'+motivo+'</span>'}
@@ -644,17 +752,25 @@ function kpis(){
       indicador de RESULTADO vira elogio falso — em outubro a receita esta
       inteira (3LM) e o custo esta em ~6% do movimento de setembro. */
  var semVenda=parcial(MES)&&fatDe(ENT,'comp',MES)===null;
+ var bruta=soma(ENT,'comp',MES,['FAT']);
+ /* geracao de caixa OPERACIONAL: a mesma linha do DFC, sem investimento,
+    financiamento nem transferencia. E caixa, entao sai do regime 'caixa'. */
+ var gco=soma(ENT,'caixa',MES,['1','OR','2','3','4','5','6','7','8','9','14','10']);
  var custoEmCarga=parcial(MES);
  return [
-  semVenda?['Venda líquida',emC('a venda do 3LM não entra na DRE enquanto o custo do mês estiver em carga — ela está no cruzamento de faturamento'),'','']
-         :['Venda líquida',brl(k.venda),'o que a casa vendeu em '+D.meses_nome[MES],'receita bruta menos tributos sobre a venda'],
+  semVenda?['Vendas brutas',emC('a venda do 3LM não entra na DRE enquanto o custo do mês estiver em carga — ela está na abertura da venda'),'','']
+         :['Vendas brutas',brl(bruta),'o que a casa vendeu em '+D.meses_nome[MES],
+           'antes dos tributos · líquida: '+brl(k.venda)],
   semVenda?['Venda por dia',emC('depende da venda do mês'),'','']
-         :['Venda por dia',brl(k.venda/dias),dias+' dias de operação','é o número que o salão sente'],
+         :['Venda por dia',brl(bruta/dias),dias+' dias de operação','é o número que o salão sente'],
   tkCard(),
   (semVenda||custoEmCarga)
     ?['Margem EBITDA',emC(semVenda?'depende da venda do mês'
         :'a venda do mês já está medida, mas o custo ainda está em carga: margem aqui seria elogio falso'),'','']
-    :['Margem EBITDA',pc(ebitda,k.venda),brl(ebitda)+' no mês','distorcida pelo recorte'],
+    :['Margem EBITDA',pc(ebitda,bruta),brl(ebitda)+' no mês','sobre a venda bruta'],
+  ['Geração de caixa operacional',brl(gco),'entrou menos saiu na operação, pelo extrato',
+   'investimento e aporte ficam fora · caixa do mês: '+brl(s.fim-s.ini)],
+  pgtoCard(), contasCard(),
   ['Dinheiro em caixa',brl(s.fim),'no banco ao fim do mês',
    fixo?('dá para '+(s.fim/fixo).toFixed(1).replace('.',',')+' mês de casa aberta'):''],
   turnoCard(), diaForteCard()
@@ -688,8 +804,9 @@ function pizza(){
 }
 
 var ABERTO={};                  /* nos abertos, por chave */
-function tog(k){ABERTO[k]=!ABERTO[k];pintaRelatorios()}
-function cv(k){return '<span class="chv">'+(ABERTO[k]?'▾':'▸')+'</span>'}
+/* na visao dos socios a DRE e o DFC nao abrem: e leitura, nao conferencia */
+function tog(k){if(SOCIOS)return;ABERTO[k]=!ABERTO[k];pintaRelatorios()}
+function cv(k){return SOCIOS?'':'<span class="chv">'+(ABERTO[k]?'▾':'▸')+'</span>'}
 
 /* celula: valor com a analise vertical dentro, como no painel Amana/Topazio */
 /* na matriz o numero vai sem "R$" e com centavos, como no painel Amana/Topazio:
@@ -700,7 +817,7 @@ function tdMes(v){return '<td class="num">'+(v?brl(v):'<span class="z">–</span
 function cel(v,base,cls,abre){
  if(!v)return '<td class="num '+(cls||'')+'">–</td>';
  cls=(cls||'')+(v<0?' neg':'');
- var a=abre?' onclick="abreCaixa(event,\''+abre[0].replace(/'/g,"\\'")+'\',\''+abre[1]+'\',\''+abre[2]+'\')" class="num clic '+(cls||'')+'"'
+ var a=(abre&&!SOCIOS)?' onclick="abreCaixa(event,\''+abre[0].replace(/'/g,"\\'")+'\',\''+abre[1]+'\',\''+abre[2]+'\')" class="num clic '+(cls||'')+'"'
            :' class="num '+(cls||'')+'"';
  return '<td'+a+'>'+mv(v)+(base?'<i class="avin">'+pc(v,base)+'</i>':'')+'</td>';
 }
@@ -730,6 +847,7 @@ function abreABC(cat){
 
 /* caixa de lancamentos: clicar no numero da conta abre a lista daquele mes */
 function abreCaixa(ev,ck,mes,reg){
+ if(SOCIOS)return;
  ev.stopPropagation();
  var b=bloco(ENT,reg,mes), its=(b.itens||[]).filter(function(i){return i[0]===ck});
  var tot=its.reduce(function(a,i){return a+i[2]},0);
@@ -993,36 +1111,6 @@ function operacao(){
    '<div class="mixval num">'+brl(i[1])+' · '+pc(i[1],tot)+'</div></div>'}).join('');
 }
 
-function socios(){
- var el=document.getElementById('soc-kpis'); if(!el)return;
- var pro=0,dist=0,adi=0;
- D.meses.forEach(function(m){
-  var b=bloco(ENT,'comp',m);
-  Object.keys(b.contas).forEach(function(k){
-   var n=k.split('|')[1].toLowerCase();
-   if(n.indexOf('pró-labore')>=0||n.indexOf('pro-labore')>=0)pro+=b.contas[k];
-   if(n.indexOf('distribuição de lucros')>=0)dist+=b.contas[k];
-   if(n.indexOf('adiantamento de resultado')>=0)adi+=b.contas[k];
-  });
- });
- /* FAT, nao '1': a cascata toda — receita liquida, EBITDA, analise vertical —
-    usa o faturamento pelo mes da VENDA. Com o grupo 1 (receita pela data do
-    credito no banco) esta pagina mostrava EBITDA POSITIVO de R$ 44.244,71 onde
-    a DRE, na mesma base, mostra NEGATIVO de R$ 15.843,19. */
- var rl=D.meses.reduce(function(a,m){return a+soma(ENT,'comp',m,['FAT','2'])},0);
- var eb=D.meses.reduce(function(a,m){return a+soma(ENT,'comp',m,['FAT','2','4','5','3','6','7','8','9','14'])},0);
- var s0=saldos(ENT,D.meses[0]),s1=saldos(ENT,D.meses[D.meses.length-1]);
- el.innerHTML=[
-  ['Receita líquida do período',brl(rl),D.meses_nome[D.meses[0]]+' a '+D.meses_nome[D.meses[D.meses.length-1]],''],
-  ['EBITDA do período',brl(eb),pc(eb,rl)+' sobre a receita','com o pró-labore já deduzido (D8)'],
-  ['Pró-labore',brl(Math.abs(pro)),'acima do EBITDA, decisão D8',''],
-  ['Distribuição de lucros',brl(Math.abs(dist)),'financiamento, fora do resultado',''],
-  ['Adiantamento a sócio operador',brl(Math.abs(adi)),'compensa na distribuição',''],
-  ['Caixa no fim',s1?brl(s1.fim):'—','conta corrente',s0?('abriu em '+brl(s0.ini)):''],
-  ['Investimento',brl(Math.abs(D.meses.reduce(function(a,m){return a+soma(ENT,'comp',m,['11'])},0))),
-   'fora do EBITDA','critério D7']
- ].map(card).join('');
-}
 
 /* ---- custo de receber: taxa de cartao e antecipacao ----
    Dado, nao conclusao. A tela mostra a taxa efetiva de cada bandeira, o ticket,
@@ -1035,155 +1123,82 @@ function txDe(m){
  return D.taxas[m||MES]||null;
 }
 function txPc(v){return v.toFixed(2).replace('.',',')+'%'}
-function taxas(){
- var el=document.getElementById('tx-corpo'); if(!el)return;
- var t=txDe();
- if(!t){
-  el.innerHTML='<div class="vazio"><h4>Sem venda em cartão</h4><p>'+
-   (ENT==='yo'?'A YO não tem receita operacional: a venda do restaurante está no CNPJ da Boldró.'
-             :'Não há extrato detalhado da adquirente para '+D.meses_nome[MES]+'.')+'</p></div>';
-  return;
- }
- var rec=t.cartao.bruto+t.pix.bruto, a=t.antecipacao;
-
- /* os meses lado a lado, para a leitura da evolucao ser do gestor */
- var h='<div class="rsm-wrap"><table class="xtbl"><thead><tr><th class="l">Recebimento eletrônico</th>'+
-  D.meses.map(function(m){return '<th>'+D.meses_nome[m]+'</th>'}).join('')+'</tr></thead><tbody>';
- function lin(rot,f,cls){
-  return '<tr'+(cls?' class="'+cls+'"':'')+'><td class="l">'+rot+'</td>'+
-   D.meses.map(function(m){var x=txDe(m);return '<td>'+(x?f(x):'—')+'</td>'}).join('')+'</tr>';
- }
- h+=lin('Bruto no cartão',function(x){return mv(x.cartao.bruto)});
- h+=lin('Vendas no cartão',function(x){return x.cartao.n.toLocaleString('pt-BR')});
- h+=lin('Ticket médio no cartão',function(x){return mv(x.cartao.bruto/x.cartao.n)});
- h+=lin('Taxa de cartão (MDR)',function(x){return mv(x.cartao.taxa)});
- h+=lin('Taxa efetiva',function(x){return txPc(x.cartao.pc)});
- h+=lin('Bruto no PIX',function(x){return mv(x.pix.bruto)});
- h+=lin('Taxa do PIX',function(x){return mv(0)});
- h+=lin('PIX sobre o recebimento',function(x){return pc(x.pix.bruto,x.cartao.bruto+x.pix.bruto)});
- h+=lin('Recebível antecipado (base da taxa)',function(x){return x.antecipacao.base?mv(x.antecipacao.base):'—'});
- h+=lin('Custo de antecipação',function(x){return x.antecipacao.custo?mv(x.antecipacao.custo):'—'});
- h+=lin('Taxa da antecipação',function(x){return x.antecipacao.custo?txPc(x.antecipacao.pc):'—'});
- h+=lin('Custo de receber',function(x){
-   return mv(x.cartao.taxa+(x.antecipacao.custo||0))},'res');
- h+=lin('Sobre o recebimento',function(x){
-   return pc(x.cartao.taxa+(x.antecipacao.custo||0),x.cartao.bruto+x.pix.bruto)},'res');
- h+='</tbody></table></div>';
-
- /* bandeira a bandeira, no mes selecionado */
- h+='<h3 class="tx-h3">Por bandeira <span class="light">em '+D.meses_nome[MES]+'</span></h3>'+
-  '<div class="rsm-wrap"><table class="xtbl"><thead><tr><th class="l">Bandeira e modalidade</th>'+
-  '<th>Vendas</th><th>Bruto</th><th>% do bruto</th><th>Ticket médio</th>'+
-  '<th>Taxa</th><th>% efetivo</th></tr></thead><tbody>'+
-  t.linhas.map(function(l){
-   return '<tr><td class="l">'+l.bandeira+' · '+l.modalidade+'</td>'+
-    '<td>'+l.n.toLocaleString('pt-BR')+'</td><td>'+mv(l.bruto)+'</td>'+
-    '<td>'+pc(l.bruto,t.cartao.bruto)+'</td><td>'+mv(l.ticket)+'</td>'+
-    '<td>'+mv(l.taxa)+'</td><td><b>'+txPc(l.pc)+'</b></td></tr>'}).join('')+
-  '<tr class="res"><td class="l">Total no cartão</td><td>'+t.cartao.n.toLocaleString('pt-BR')+
-  '</td><td>'+mv(t.cartao.bruto)+'</td><td>100,0%</td><td>'+mv(t.cartao.bruto/t.cartao.n)+
-  '</td><td>'+mv(t.cartao.taxa)+'</td><td>'+txPc(t.cartao.pc)+'</td></tr>'+
-  '<tr><td class="l">PIX</td><td>'+t.pix.n.toLocaleString('pt-BR')+'</td><td>'+mv(t.pix.bruto)+
-  '</td><td>'+pc(t.pix.bruto,rec)+' do recebimento</td><td>'+mv(t.pix.bruto/t.pix.n)+
-  '</td><td>'+mv(0)+'</td><td>0,00%</td></tr>'+
-  '</tbody></table></div>';
-
- /* antecipacao dia a dia */
- if(t.serie&&t.serie.length){
-  h+='<h3 class="tx-h3">Antecipação <span class="light">dia a dia, contra o saldo</span></h3>'+
-   '<p class="tx-sub">Quanto a GetNet creditou de antecipação em cada dia, o saldo em que a conta '+
-   'fechou, e o saldo que teria havido se nada tivesse sido antecipado — a mesma aritmética do '+
-   'extrato, com os créditos de antecipação retirados.</p>'+
-   '<div class="rsm-wrap"><table class="xtbl"><thead><tr><th class="l">Dia</th>'+
-   '<th>Antecipado no dia</th><th>Saldo</th><th>Saldo sem antecipar nada</th>'+
-   '</tr></thead><tbody>'+
-   t.serie.map(function(d){
-    return '<tr><td class="l">'+d.dia.slice(0,5)+'</td><td>'+
-     (d.antecipado?mv(d.antecipado):'—')+'</td><td>'+mv(d.saldo)+'</td>'+
-     '<td class="'+(d.sem_antecipar<0?'neg':'')+'">'+mv(d.sem_antecipar)+'</td></tr>'}).join('')+
-   '<tr class="res"><td class="l">Creditado no mês</td><td>'+mv(a.total_creditado)+'</td><td>'+
-   mv(t.serie[t.serie.length-1].saldo)+'</td><td class="neg">'+
-   mv(t.serie[t.serie.length-1].sem_antecipar)+'</td></tr>'+
-   '</tbody></table></div>';
- }
-
- h+='<p class="repnote">Venda a venda, do <b>Extrato de Vendas Detalhado</b> da GetNet '+
-  '(EC 11890027), só transação aprovada — a taxa é a que o próprio adquirente cobrou em cada '+
-  'venda. A soma confere com o título de taxa de cartão lançado no Omie em '+D.meses_nome[MES]+
-  ' (R$ '+brl(t.cartao.taxa).replace('R$ ','')+'), e esta tela não é gerada se divergir. '+
-  'O MDR é custo de vender e fica acima do EBITDA; o custo de antecipação é financeiro e fica '+
-  'abaixo. O saldo diário vem do extrato conciliado do Santander, sem as pernas da varredura '+
-  'automática da ContaMax, que são transferência entre contas próprias.</p>';
- el.innerHTML=h;
-}
 /* ---- o faturamento por tres fontes independentes ----
    3LM (o PDV), receita declarada (deduzida do PIS e do COFINS pagos) e Omie
    (pela data do credito no banco). Tres criterios diferentes para o mesmo mes:
    a tabela poe os tres lado a lado e mostra a diferenca. Nao conclui nada —
    dizer por que diferem depende de informacao que o numero nao tem. */
 function receita(){
- var el=document.getElementById('rec-cruz'); if(!el)return;
+ var el=document.getElementById('vendas'), au=document.getElementById('rec-cruz');
  var R=D.receita&&ENT!=='yo'?D.receita[MES]:null;
- if(!R){el.innerHTML='';return}
- function l(rot,v,obs,cls){
-  return '<tr'+(cls?' class="'+cls+'"':'')+'><td class="l">'+rot+'</td><td>'+
-   (v===null||v===undefined?'—':mv(v))+'</td><td class="l obs">'+(obs||'')+'</td></tr>';
- }
- var h='<h3 class="tx-h3">A venda do mês <span class="light">aberta item a item</span></h3>'+
-  '<div class="rsm-wrap"><table class="xtbl"><thead><tr><th class="l">Fonte e composição</th>'+
-  '<th>'+D.meses_nome[MES]+'</th><th class="l">De onde vem</th></tr></thead><tbody>';
- /* a abertura e do proprio 3LM: cada linha e um item do PDV e as quatro somam
-    exatamente o recebido. Era o pedido do Tiago em 04/11 — discriminar A&B,
-    faturamento extra e taxa de servico. */
+ if(el&&!R)el.innerHTML='<div class="vazio"><h4>'+(ENT==='yo'?'A YO não fatura'
+   :'Sem relatório de vendas de '+D.meses_nome[MES])+'</h4><p>'+
+   (ENT==='yo'?'A venda de salão acontece no CNPJ da Boldró. Troque de empresa no topo.'
+             :'A composição vem da extração do 3LM, que não tem API e entra por PDF.')+'</p></div>';
+ if(au)au.innerHTML='';
+ if(!R)return;
+
+ /* a soma e o ponto: cada linha e um item do PDV e as quatro fecham o bruto.
+    Era o pedido da diretoria em 05/11 — deixar a conta visivel, com os %. */
  var OBS={'A&B':'comida e bebida do cardápio, líquido do desconto dado no salão',
-  'Taxa de servico':'item do PDV (código 100000), lançado no funcionário 0 SERVICO — não é derivado por diferença',
+  'Taxa de servico':'item do PDV (código 100000), lançado no funcionário 0 SERVICO',
   'Couvert':'dois itens no PDV: *Couvert Artístico e Couvert (99997)',
   'Taxa de rolha':'cobrança de rolha, item do PDV'};
- if(R.abertura){
-  R.abertura.forEach(function(a){
-   h+=l('&nbsp;&nbsp;'+(a[0]==='Taxa de servico'?'Taxa de serviço':a[0]),a[1],OBS[a[0]]||'item do 3LM')});
+ var h='';
+ if(el){
+  h='<table class="xtbl soma"><thead><tr><th class="l">Composição da venda</th><th>'+
+   D.meses_nome[MES]+'</th><th class="av">% do bruto</th><th class="l">De onde vem</th>'+
+   '</tr></thead><tbody>';
+  function l(sin,rot,v,obs,cls){
+   return '<tr'+(cls?' class="'+cls+'"':'')+'><td class="l"><span class="sin">'+(sin||'')+
+    '</span>'+rot+'</td><td class="num">'+(v===null?'—':mv(v))+'</td>'+
+    '<td class="av">'+(v===null?'':pc(v,R.recebido))+'</td>'+
+    '<td class="l obs">'+(obs||'')+'</td></tr>';
+  }
+  if(R.abertura){
+   R.abertura.forEach(function(a,i){
+    h+=l(i?'+':'',(a[0]==='Taxa de servico'?'Taxa de serviço':a[0]),a[1],OBS[a[0]]||'item do 3LM')});
+  }else if(R.grupos){
+   R.grupos.forEach(function(g,i){h+=l(i?'+':'',g[0],g[1],'grupo do cardápio no 3LM')});
+  }
+  h+=l('=','<b>Venda bruta do mês</b>',R.recebido,
+   R.fonte_3lm==='3LM'?'extração bruta do 3LM — '+(R.itens?R.itens.toLocaleString('pt-BR')+' itens, ':'')+
+   'líquido de desconto':'reconstruído: GetNet por data da venda + dinheiro do fundo fixo','res');
   if(R.servico&&R.produtos)
-   h+=l('Produtos vendidos (A&amp;B, couvert e rolha)',R.produtos,
-        'a taxa de serviço é '+R.servico_pc.toFixed(2).replace('.',',')+'% sobre eles','res');
- }else if(R.grupos){
-  R.grupos.forEach(function(g){h+=l('&nbsp;&nbsp;'+g[0],g[1],'grupo do cardápio no 3LM')});
-  h+=l('Produtos vendidos (A&amp;B)',R.produtos,'soma dos grupos acima','res');
+   h+=l('','&nbsp;&nbsp;<i>memo:</i> produtos vendidos (A&amp;B, couvert e rolha)',R.produtos,
+        'a taxa de serviço é '+R.servico_pc.toFixed(2).replace('.',',')+'% sobre eles','memo');
+  if(R.desconto)
+   h+=l('','&nbsp;&nbsp;<i>memo:</i> desconto concedido no salão',-R.desconto,
+        'já deduzido das linhas acima — não é dedução da DRE','memo');
+  if(R.declarada!==null&&R.declarada!==undefined){
+   h+=l('','&nbsp;&nbsp;<i>memo:</i> receita declarada ao fisco',R.declarada,
+    'base deduzida de PIS a 0,65% e COFINS a 3,00% — '+pc(R.declarada,R.recebido)+
+    ' do que o salão vendeu','memo');
+  }
+  h+='</tbody></table>'+
+   '<p class="repnote"><b>Faturamento extra — aluguel de espaço, evento — não aparece como item '+
+   'no 3LM:</b> tudo que está aqui é cardápio, couvert, rolha e serviço. Se houve receita de '+
+   'evento no mês, ela não passou pelo PDV e não está nesta conta.</p>';
+  el.innerHTML=h;
  }
- h+=l('<b>Recebido no 3LM</b>',R.recebido,
-      R.fonte_3lm==='3LM'?'extração bruta do 3LM — '+(R.itens?R.itens.toLocaleString('pt-BR')+' itens, ':'')+'líquido de desconto':'reconstruído: GetNet por data da venda + dinheiro do fundo fixo','res');
- if(R.declarada!==null&&R.declarada!==undefined){
-  h+=l('<b>Receita declarada</b>',R.declarada,
-   'base deduzida dos tributos pagos: PIS '+mv(R.pis)+' a 0,65% e COFINS '+mv(R.cofins)+
-   ' a 3,00%. As duas contas devolvem a mesma base, com diferença de '+
-   mv(Math.abs(R.base_pis-R.base_cofins))+' — é o que confirma a alíquota.','res');
-  h+=l('3LM menos declarada',R.recebido-R.declarada,
-   'a declarada é '+pc(R.declarada,R.recebido)+' do recebido no 3LM');
- }else{
-  h+='<tr><td class="l"><b>Receita declarada</b></td><td>—</td><td class="l obs">'+
-     (R.nota||'')+'</td></tr>';
- }
- h+='</tbody></table></div>';
- if(R.desconto)h+='<p class="repnote">O 3LM traz ainda <b>'+mv(R.desconto)+'</b> de <b>desconto '+
-  'concedido</b> no mês, já deduzido dos valores acima. <b>Faturamento extra</b> — aluguel de '+
-  'espaço, evento — <b>não aparece como item no 3LM</b>: tudo que está lá é cardápio, couvert, '+
-  'rolha e serviço. Se houve receita de evento no mês, ela não passou pelo PDV.</p>';
- if(R.divergencia){
-  var V=R.divergencia;
-  h+='<div class="aviso"><h4>Setembro tem um segundo relatório, e ele dá '+mv(V.total)+
-   '<span class="tag">divergência</span></h4><p>O <i>'+V.arquivo+'</i> fica '+mv(V.diferenca)+
-   ' abaixo da extração bruta do 3LM. A diferença fecha ao centavo em quatro linhas:</p>'+
-   '<div class="rsm-wrap"><table class="xtbl"><thead><tr><th class="l">Linha</th>'+
+
+ /* a divergencia entre os dois relatorios e conferencia: fica na auditoria */
+ if(au&&R.divergencia){
+  var V=R.divergencia, a='<div class="aviso"><h4>Setembro tem um segundo relatório, e ele dá '+
+   mv(V.total)+'<span class="tag">divergência</span></h4><p>O <i>'+V.arquivo+'</i> fica '+
+   mv(V.diferenca)+' abaixo da extração bruta do 3LM. A diferença fecha ao centavo em quatro '+
+   'linhas:</p><div class="rsm-wrap"><table class="xtbl"><thead><tr><th class="l">Linha</th>'+
    '<th>relatório montado</th><th>3LM bruto</th><th>diferença</th><th class="l">Por quê</th>'+
    '</tr></thead><tbody>';
   V.linhas.forEach(function(x){
-   h+='<tr><td class="l">'+x[0]+'</td><td>'+mv(x[1])+'</td><td>'+mv(x[2])+'</td><td>'+
+   a+='<tr><td class="l">'+x[0]+'</td><td>'+mv(x[1])+'</td><td>'+mv(x[2])+'</td><td>'+
       mv(x[3])+'</td><td class="l obs">'+x[4]+'</td></tr>';
   });
-  h+='<tr class="res"><td class="l"><b>Total</b></td><td>'+mv(V.total)+'</td><td>'+
+  a+='<tr class="res"><td class="l"><b>Total</b></td><td>'+mv(V.total)+'</td><td>'+
      mv(R.recebido)+'</td><td>'+mv(V.diferenca)+'</td><td class="l obs">o painel usa a '+
      'extração bruta, que é o documento de origem</td></tr></tbody></table></div></div>';
+  au.innerHTML=a;
  }
- el.innerHTML=h;
 }
 function render(){
  var e=E();
@@ -1203,10 +1218,8 @@ function render(){
  document.getElementById('wfX').innerHTML=(pp||[]).map(function(x){
   return '<span>'+x[0]+'</span>'}).join('');
  document.getElementById('kpis').innerHTML=kpis();
- operacao(); socios(); taxas(); receita();
+ operacao(); receita();
  pintaRelatorios(); vendasBloco();
- document.querySelectorAll('.repwrap').forEach(function(w){
-  w.classList.toggle('on',(REG==='caixa')===(w.id==='rep-fc'))});
 }
 document.getElementById('mespills').innerHTML=D.meses.map(function(m){
  return '<button data-m="'+m+'" class="'+(m===MES?'on':'')+(parcial(m)?' parc':'')+
