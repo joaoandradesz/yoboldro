@@ -289,7 +289,7 @@ td.av{color:var(--g500);font-size:12px}
 """
 
 JS = r"""
-var ENT=(typeof ENT0!=='undefined'?ENT0:'boldro'), MES=D.meses[D.meses.length-1], REG='caixa';
+var ENT=(typeof ENT0!=='undefined'?ENT0:'consol'), MES=D.meses[D.meses.length-1], REG='caixa';
 var SOCIOS=(typeof SOCIOS!=='undefined')&&SOCIOS;
 function brl(v,c){c=c||0;var s=Math.abs(v).toLocaleString('pt-BR',{minimumFractionDigits:c,maximumFractionDigits:c});
  return (v<0?'−':'')+'R$ '+s}
@@ -722,6 +722,7 @@ var BLOCOS_DFC=[
  ['(±) Não operacional e transferências',['CC','NEUTRO','13']],
  ['*GERAÇÃO DE CAIXA FINAL',['1','OR','2','3','4','5','6','7','8','9','14','10','11','12','CC','NEUTRO','13']]
 ];
+var SEP_AUD='\u00a7RECONCILIA\u00c7\u00c3O DA RECEITA COM O OMIE';
 var BLOCOS_DRE=[
  ['Receita bruta (faturamento)',['FAT']],
  ['(−) Deduções',['2']],
@@ -760,6 +761,10 @@ function matriz(reg){
  if(!base.some(function(x){return x}))base=MS.map(function(m){
    var v=0;Object.keys(bl[m].grupos).forEach(function(g){if(bl[m].grupos[g]<0)v-=bl[m].grupos[g]});return v||1});
  var ESTR=(reg==='caixa')?BLOCOS_DFC:BLOCOS_DRE;
+ /* a reconciliacao com o Omie e papel de trabalho: sai da DRE e vai para a
+    secao de auditoria. Fica em BLOCOS_DRE porque a trava de cobertura le dali. */
+ if(reg==='comp'){var ia=ESTR.map(function(b){return b[0]}).indexOf(SEP_AUD);
+  if(ia>=0)ESTR=ESTR.slice(0,ia)}
 
  if(reg==='caixa')out+=linhaSaldo('ini',MS);
  ESTR.forEach(function(B,bi){
@@ -845,7 +850,7 @@ function pintaRelatorios(){
  var fc=document.getElementById('fcbody'); if(fc)fc.innerHTML=matriz('caixa');
  var dr=document.getElementById('drebody'); if(dr)dr.innerHTML=matriz('comp');
  var er=auditaTabela('caixa').concat(auditaTabela('comp'));
- var av=document.getElementById('auditoria');
+ var av=document.getElementById('tbl-alerta');
  if(av)av.innerHTML=er.length
   ?'<div class="aviso erro"><h4>A tabela não fecha — não confie nestes números</h4><p>'+
     er.slice(0,8).join('<br>')+(er.length>8?'<br>… mais '+(er.length-8):'')+'</p></div>':'';
@@ -1062,6 +1067,30 @@ function taxas(){
    (pela data do credito no banco). Tres criterios diferentes para o mesmo mes:
    a tabela poe os tres lado a lado e mostra a diferenca. Nao conclui nada —
    dizer por que diferem depende de informacao que o numero nao tem. */
+/* reconciliacao da receita: tres criterios diferentes para o mesmo mes, e o
+   porque de nao baterem. Papel de trabalho — mora na auditoria. */
+function reconc(){
+ var el=document.getElementById('aud-reconc'); if(!el)return;
+ /* mesesDe, nao D.meses: num mes sem DRE o FAT cai no grupo 1 e a
+    reconciliacao exibiria uma identidade falsa (ajuste zero). */
+ var MS=mesesDe('comp'), L=[];
+ BLOCOS_DRE.slice(BLOCOS_DRE.map(function(b){return b[0]}).indexOf(SEP_AUD)+1)
+  .forEach(function(B){L.push(B)});
+ var h='<div class="rsm-wrap"><table class="xtbl"><thead><tr><th class="l">Reconciliação da receita</th>'+
+  MS.map(function(m){return '<th>'+D.meses_nome[m]+'</th>'}).join('')+'</tr></thead><tbody>';
+ L.forEach(function(B){
+  var rot=B[0], c0=rot.charAt(0), nome=(c0==='='||c0==='+'||c0==='*')?rot.slice(1):rot;
+  h+='<tr'+(c0==='+'?' class="res"':'')+'><td class="l">'+nome+'</td>'+
+   MS.map(function(m){return '<td>'+mv(soma(ENT,'comp',m,B[1]))+'</td>'}).join('')+'</tr>';
+ });
+ h+='</tbody></table></div>';
+ var fora=D.meses.filter(semDre);
+ if(fora.length)h+='<p class="repnote">'+fora.map(function(m){return D.meses_nome[m]}).join(', ')+
+  ' não entra nesta ponte: o mês está fora da DRE enquanto o custo estiver em carga. '+
+  'A venda do 3LM do mês aparece no cruzamento abaixo, trocando o mês no topo.</p>';
+ el.innerHTML=h;
+}
+
 function receita(){
  var el=document.getElementById('rec-cruz'); if(!el)return;
  var R=D.receita&&ENT!=='yo'?D.receita[MES]:null;
@@ -1147,7 +1176,7 @@ function render(){
  document.getElementById('wfX').innerHTML=(pp||[]).map(function(x){
   return '<span>'+x[0]+'</span>'}).join('');
  document.getElementById('kpis').innerHTML=kpis();
- operacao(); socios(); taxas(); receita();
+ operacao(); socios(); taxas(); receita(); reconc();
  pintaRelatorios(); vendasBloco();
  document.querySelectorAll('.repwrap').forEach(function(w){
   w.classList.toggle('on',(REG==='caixa')===(w.id==='rep-fc'))});
@@ -1168,30 +1197,42 @@ render();
 NAV_LINKS = ('<a href="#geral" class="on">Visão geral</a>'
              '<a href="#relatorios" onclick="setRegime(\'comp\')">DRE</a>'
              '<a href="#relatorios" onclick="setRegime(\'caixa\')">Caixa</a>'
-             '<a href="#vendas-sec">Vendas</a><a href="#taxas">Taxas</a>')
+             '<a href="#vendas-sec">Vendas</a><a href="#taxas">Taxas</a>'
+             '<a href="#auditoria">Auditoria</a>')
 NAV_LINKS_SOC = ('<a href="#geral" class="on">Visão geral</a><a href="#socios">Sócios</a>'
                  '<a href="#operacao">Operação</a>')
 
 ENTSW = """<div class="entsw" id="entsw">
-<button data-ent="boldro" class="on" onclick="setEntity('boldro')">Boldró</button>
+<button data-ent="consol" class="on" onclick="setEntity('consol')">Consolidado</button>
+<button data-ent="boldro" onclick="setEntity('boldro')">Boldró</button>
 <button data-ent="yo" onclick="setEntity('yo')">YO</button>
-<button data-ent="consol" onclick="setEntity('consol')">Consolidado</button>
 <a href="socios.html">Sócios</a>
 </div>"""
 ENTSW_SOC = """<div class="entsw" id="entsw">
-<button data-ent="boldro" class="on" onclick="setEntity('boldro')">Boldró</button>
+<button data-ent="consol" class="on" onclick="setEntity('consol')">Consolidado</button>
+<button data-ent="boldro" onclick="setEntity('boldro')">Boldró</button>
 <button data-ent="yo" onclick="setEntity('yo')">YO</button>
-<button data-ent="consol" onclick="setEntity('consol')">Consolidado</button>
 <a href="index.html" class="on">Sócios</a>
 </div>"""
 
 SEC_ANO = """<section id="vendas-sec"><div class="wrap">
 <div class="sec-head"><div class="k">Vendas</div><h2>O que o salão <span class="light">vendeu</span></h2>
-<p class="lede">Dia da semana, turno e curva ABC — do relatório mensal do 3LM, que não tem API e entra por PDF. Antes disso, o mesmo faturamento visto por três fontes independentes.</p></div>
-<div id="rec-cruz"></div>
+<p class="lede">Dia da semana, turno e curva ABC — do relatório mensal do 3LM, que não tem API e entra por PDF.</p></div>
 <div id="vendas"></div>
 </div></section>
 
+"""
+
+SEC_AUD = """<section id="auditoria" class="sec-alt"><div class="wrap">
+<div class="sec-head"><div class="k">Auditoria</div>
+<h2>O que não bate <span class="light">e por quê</span></h2>
+<p class="lede">Papel de trabalho, não leitura gerencial: a mesma receita por critérios diferentes, a diferença entre os dois relatórios de vendas e a ponte entre o que o Omie lançou e o que a DRE mostra. Está aqui para quem precisa auditar o número — o painel acima já usa a conclusão.</p></div>
+<details class="ress"><summary><b>Abrir o dash de auditoria</b> — reconciliação da receita e divergência entre relatórios<span class="chev">▼</span></summary>
+<div class="ressin">
+<div id="aud-reconc"></div>
+<div id="rec-cruz"></div>
+</div></details>
+</div></section>
 """
 
 SEC_TAXAS = """<section id="taxas"><div class="wrap">
@@ -1266,8 +1307,8 @@ def pagina(socios=False):
 <div id="rep-fc" class="repwrap on"><table class="xtbl mat dfc"><thead><tr id="fchead"></tr></thead><tbody id="fcbody"></tbody></table>
 <p class="repnote">Demonstração do fluxo de caixa pelo método direto, a partir da movimentação das contas no Omie. Clique na linha com seta para abrir o nível de baixo, e <b>clique em qualquer número para abrir a caixa com os lançamentos</b> daquela conta naquele mês. O saldo abre por empresa e por conta bancária.</p></div>
 <div id="rep-dre" class="repwrap"><table class="xtbl mat dre"><thead><tr id="drehead"></tr></thead><tbody id="drebody"></tbody></table>
-<div id="auditoria"></div>
-<p class="repnote"><b>A receita bruta é o faturamento do mês da venda, não o crédito no banco.</b> Clique nela para abrir por forma de pagamento, e no número de cada forma para ver dia a dia o que foi vendido. Nos três meses ela vem da extração bruta do 3LM — R$ 163.548,50 em agosto, R$ 1.058.984,27 em setembro e R$ 1.193.067,36 em outubro — e abre em A&amp;B, taxa de serviço, couvert e taxa de rolha. Em agosto e setembro o clique abre também a forma de pagamento, reconstruída do Extrato de Vendas Detalhado da GetNet; em outubro não, porque não há extrato da GetNet do mês. O bloco de reconciliação no pé da tabela mostra o que o Omie lançou pela data do crédito e a diferença de competência entre os dois. Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
+<div id="tbl-alerta"></div>
+<p class="repnote"><b>A receita bruta é o faturamento do mês da venda, não o crédito no banco.</b> Clique nela para abrir por forma de pagamento, e no número de cada forma para ver dia a dia o que foi vendido. Nos três meses ela vem da extração bruta do 3LM — R$ 163.548,50 em agosto, R$ 1.058.984,27 em setembro e R$ 1.193.067,36 em outubro — e abre em A&amp;B, taxa de serviço, couvert e taxa de rolha. Em agosto e setembro o clique abre também a forma de pagamento, reconstruída do Extrato de Vendas Detalhado da GetNet; em outubro não, porque não há extrato da GetNet do mês. A reconciliação com o que o Omie lançou pela data do crédito — e a diferença de competência entre os dois critérios — saiu do pé da tabela e está na seção <b>Auditoria</b>. Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
 
 
 </div>
@@ -1291,7 +1332,7 @@ def pagina(socios=False):
         NAV_LINKS_SOC if socios else NAV_LINKS,
         ENTSW_SOC if socios else ENTSW,
         'Visão dos sócios · 2026' if socios else 'Fluxo de Caixa &amp; DRE Gerencial · 2026',
-        SEC_SOCIOS if socios else (SEC_ANO + SEC_TAXAS),
+        SEC_SOCIOS if socios else (SEC_ANO + SEC_TAXAS + SEC_AUD),
         SEC_SOCIOS if not socios else '',
         D['gerado'],
         json.dumps(D, ensure_ascii=False),
