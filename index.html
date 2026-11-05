@@ -489,10 +489,12 @@ function passosPonte(){
  /* pedido do Tiago em 05/11: entradas x saidas nao dizem se a operacao gera
     caixa. A ponte agora separa o que a casa gerou do que foi obra e aporte,
     nos mesmos grupos da DRE: acima do EBITDA = operacional; 11 = investimento;
-    12 = financiamento; o resto (13, CC, OR, neutras) e transferencia e ajuste.
+    12 = financiamento; o resto (CC, neutras, 13) e transferencia e ajuste.
+    A linha operacional le a MESMA lista de grupos da tabela do DFC (BLOCOS_DFC),
+    senao a ponte e a tabela mostram dois numeros com o mesmo nome na mesma tela.
     A ultima perna e o residuo, entao a ponte fecha no saldo do banco sempre. */
  var mov=s.entradas+s.saidas,
-     op=soma(ENT,'caixa',MES,['1','2','3','4','5','6','7','8','9','10','14']),
+     op=soma(ENT,'caixa',MES,BLOCOS_DFC[5][1]),
      inv=soma(ENT,'caixa',MES,['11']),
      fin=soma(ENT,'caixa',MES,['12']),
      res=mov-op-inv-fin;
@@ -500,7 +502,7 @@ function passosPonte(){
          ['Geração de caixa operacional',op,op<0?'out':'in'],
          ['Investimentos',inv,inv>0?'in':'out'],
          ['Financiamento',fin,fin<0?'out':'in'],
-         ['Outros e transferências',res,res<0?'out':'in'],
+         ['Não operacional e transferências',res,res<0?'out':'in'],
          ['Saldo final',s.fim,'n']];
 }
 function ponteSVG(){
