@@ -16,6 +16,23 @@ import os
 BASE = os.path.expanduser('~/Library/Mobile Documents/com~apple~CloudDocs/Claude VS/omie-boldro')
 D = json.load(open(os.path.join(BASE, 'dados_painel.json')))
 
+# Meses que a base tem mas o painel nao mostra. Outubro saiu em 05/11/2026: a
+# carga e a conciliacao do mes ainda nao fecharam e o mes parcial atrapalhava a
+# leitura. Esvaziar esta lista traz o mes de volta, sem tocar nos dados.
+FORA_DO_PAINEL = ['2026-10']
+
+for _m in FORA_DO_PAINEL:
+    for _k in ('meses', 'parciais', 'sem_dre'):
+        if _m in (D.get(_k) or []):
+            D[_k].remove(_m)
+    D.get('meses_nome', {}).pop(_m, None)
+    D.get('dias', {}).pop(_m, None)
+    D.get('taxas', {}).pop(_m, None)
+    D.get('receita', {}).pop(_m, None)
+    for _e in D['ents'].values():
+        for _k in ('comp', 'caixa', 'saldos'):
+            (_e.get(_k) or {}).pop(_m, None)
+
 CSS = r"""
 :root{--navy:#0D0F1A;--navy2:#141726;--navy3:#1C2032;--line:#262B40;--orange:#F97316;
  --orange-soft:#FFF7ED;--offwhite:#FAFAF7;--ink:#0D0F1A;--ink2:#374151;--g400:#9CA3AF;
@@ -1172,7 +1189,7 @@ SEC_REL = """<section id="relatorios"><div class="wrap">
 <h3 class="rep-t">DRE (competência)</h3>
 <div id="rep-dre" class="repwrap on"><table class="xtbl mat dre"><thead><tr id="drehead"></tr></thead><tbody id="drebody"></tbody></table>
 <div id="tbl-alerta"></div>
-<p class="repnote"><b>A receita bruta é o faturamento do mês da venda, não o crédito no banco.</b> Clique nela para abrir por forma de pagamento, e no número de cada forma para ver dia a dia o que foi vendido. Nos três meses ela vem da extração bruta do 3LM — R$ 163.548,50 em agosto, R$ 1.058.984,27 em setembro e R$ 1.193.067,36 em outubro — e abre em A&amp;B, taxa de serviço, couvert e taxa de rolha. Em agosto e setembro o clique abre também a forma de pagamento, reconstruída do Extrato de Vendas Detalhado da GetNet; em outubro não, porque não há extrato da GetNet do mês.  Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
+<p class="repnote"><b>A receita bruta é o faturamento do mês da venda, não o crédito no banco.</b> Clique nela para abrir por forma de pagamento, e no número de cada forma para ver dia a dia o que foi vendido. Nos dois meses ela vem da extração bruta do 3LM — R$ 163.548,50 em agosto e R$ 1.058.984,27 em setembro — e abre em A&amp;B, taxa de serviço, couvert e taxa de rolha, mais a forma de pagamento reconstruída do Extrato de Vendas Detalhado da GetNet.  Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
 
 
 <h3 class="rep-t">Fluxo de caixa (DFC)</h3>
@@ -1282,7 +1299,7 @@ def pagina(socios=False):
 <div style="text-align:right"><div class="r" style="margin-bottom:4px">Disciplina Gera Lucro</div>
 <div style="font-family:'Plus Jakarta Sans';font-size:13px;font-weight:500;color:rgba(255,255,255,.85)">Exact BR · Recife — PE</div></div>
 </div>
-<p class="disc">Relatório gerencial · Grupo Yó / Boldró. Resultado apurado por competência, pela data de emissão dos documentos; fluxo de caixa apurado pela movimentação bancária, conferido contra o extrato bancário de cada empresa até 30 de setembro de 2026 — Santander 13002614-6 na Boldró e Bradesco mais aplicação na YO — com saldo igual ao da conciliação do CSC. A conta corrente entre as empresas do grupo é transferência, não custo, e fica fora do resultado; no consolidado, o par Yó↔Boldró é eliminado. A receita bruta é o faturamento pelo mês da venda e vem, nos três meses, da extração bruta do 3LM — relatório "Vendas Por Funcionário", mês inteiro numa extração só, líquido do desconto concedido no salão. Agosto foi retificado em 04/11/2026: até então era reconstruído do extrato da GetNet mais o fundo fixo (R$ 191.290,32) e passou a R$ 163.548,50. Setembro tem um segundo relatório, montado pela diretoria em 02/10, que dá R$ 1.047.949,04; a diferença de R$ 11.035,23 está decomposta nas ressalvas. A taxa de cartão é custo e aparece acima do EBITDA, não deduzida da receita. Orçado × realizado e ponto de equilíbrio foram retirados em 03/11/2026 por não se sustentarem: o orçamento não separa YO de Boldró e a margem de contribuição depende de uma receita bruta que a base ainda não tem. Dados lidos da API do Omie em %s.</p>
+<p class="disc">Relatório gerencial · Grupo Yó / Boldró. Resultado apurado por competência, pela data de emissão dos documentos; fluxo de caixa apurado pela movimentação bancária, conferido contra o extrato bancário de cada empresa até 30 de setembro de 2026 — Santander 13002614-6 na Boldró e Bradesco mais aplicação na YO — com saldo igual ao da conciliação do CSC. A conta corrente entre as empresas do grupo é transferência, não custo, e fica fora do resultado; no consolidado, o par Yó↔Boldró é eliminado. A receita bruta é o faturamento pelo mês da venda e vem, nos dois meses, da extração bruta do 3LM — relatório "Vendas Por Funcionário", mês inteiro numa extração só, líquido do desconto concedido no salão. Agosto foi retificado em 04/11/2026: até então era reconstruído do extrato da GetNet mais o fundo fixo (R$ 191.290,32) e passou a R$ 163.548,50. Setembro tem um segundo relatório, montado pela diretoria em 02/10, que dá R$ 1.047.949,04; a diferença de R$ 11.035,23 está decomposta nas ressalvas. A taxa de cartão é custo e aparece acima do EBITDA, não deduzida da receita. <b>Outubro/2026 foi retirado do painel em 05/11/2026</b>: a carga e a conciliação do mês ainda não fecharam, e um mês pela metade atrapalha a leitura dos dois que estão fechados. Volta quando o mês fechar. Orçado × realizado e ponto de equilíbrio foram retirados em 03/11/2026 por não se sustentarem: o orçamento não separa YO de Boldró e a margem de contribuição depende de uma receita bruta que a base ainda não tem. Dados lidos da API do Omie em %s.</p>
 </div></footer>
 
 <script>const D=%s;var SOCIOS=%s;%s</script>
