@@ -60,7 +60,7 @@ body{font-family:'Inter',sans-serif;background:var(--offwhite);color:var(--ink);
 .wf-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;gap:14px;flex-wrap:wrap}
 .wf-head .t{font-family:'Plus Jakarta Sans';font-weight:700;font-size:15px}
 .wf-head .h{font-size:12.5px;color:#8A91A6}
-.wf-x{display:grid;grid-template-columns:repeat(5,1fr);margin-top:6px}
+.wf-x{display:grid;margin-top:6px}
 .wf-x span{font-size:11px;color:#8A91A6;text-align:center}
 .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:-30px 0 0;position:relative;z-index:5}
 @media(max-width:980px){.kpis{grid-template-columns:repeat(2,1fr)}}
@@ -1287,8 +1287,12 @@ function render(){
   (REG==='comp'?(semDre(MES)?'Sem DRE · ':'Ponte do resultado · '):'Ponte do caixa · ')+D.meses_nome[MES];
  document.getElementById('wfHint').textContent=(pp||[]).map(function(x){return x[0]}).join(' → ')
   ||(REG==='comp'?'receita → deduções → custos → despesas → EBITDA':'saldo inicial → geração operacional → investimentos → financiamento → saldo final');
- document.getElementById('wfX').innerHTML=(pp||[]).map(function(x){
-  return '<span>'+x[0]+'</span>'}).join('');
+ /* o numero de colunas tem de ser o numero de passos: a ponte do caixa tem 6
+    e a de competencia 5. Com grid fixo em 5, o sexto rotulo do caixa caia para
+    a linha de baixo e todos ficavam fora da barra. */
+ var wfx=document.getElementById('wfX'), np=(pp||[]).length||1;
+ wfx.style.gridTemplateColumns='repeat('+np+',1fr)';
+ wfx.innerHTML=(pp||[]).map(function(x){return '<span>'+x[0]+'</span>'}).join('');
  document.getElementById('kpis').innerHTML=kpis();
  operacao(); receita();
  pintaRelatorios(); vendasBloco();
