@@ -1,5 +1,5 @@
 {
- "gerado": "06/11/2026 às 11:53",
+ "gerado": "06/11/2026 às 12:01",
  "meses": [
   "2026-08",
   "2026-09",
@@ -17392,11 +17392,10 @@
      "grupos": {
       "1": 1104094.3300000005,
       "10": 31.38,
-      "NEUTRO": 17894.86,
+      "4": -306383.88000000006,
       "8": -12090.52,
       "5": -112805.23999999998,
-      "6": -166170.66,
-      "4": -312348.8300000001,
+      "6": -167192.53,
       "7": -20059.8,
       "14": -46240.0,
       "11": -50301.18000000001,
@@ -17408,13 +17407,13 @@
      "contas": {
       "1|Receita operacional (salão)": 1104094.3300000005,
       "10|Rendimentos de aplicações": 31.38,
-      "NEUTRO|Ajustes e estornos - entrada": 17894.86,
+      "4|Devoluções de Compra de Matéria Prima": 17894.86,
       "8|Sistemas": -3392.05,
       "5|Alojamento e ajuda de custo para moradia": -53500.0,
       "6|ISS | Permanência": -4972.69,
       "4|Proteínas (carnes e frutos do mar)": -85853.63,
       "6|Diarista (OIA)": -14616.67,
-      "6|Salários da operação": -82948.22000000002,
+      "6|Salários da operação": -83770.09000000003,
       "6|Alimentação de colaboradores": -8935.78,
       "4|Hortifrúti": -32613.539999999997,
       "4|Água mineral": -6530.0,
@@ -17426,13 +17425,13 @@
       "9|Marketing e divulgação de eventos": -6000.0,
       "5|Diversos de operação": -3562.46,
       "4|Frete de insumos de alimentos e bebidas": -38962.62,
-      "6|Extras e freelancers": -8529.17,
+      "6|Extras e freelancers": -8729.17,
       "6|Salario PJ": -500.0,
       "4|Secos e mercearia": -27204.529999999995,
       "CC|Conta corrente YO Noronha - saída": -100000.0,
       "3|Comissões sobre vendas": -12041.119999999999,
       "4|Frios, laticínios e congelados": -25557.17,
-      "4|Bebidas alcoólicas": -85763.87999999999,
+      "4|Bebidas alcoólicas": -97693.79,
       "4|Bebidas não alcoólicas": -2029.0,
       "4|Outros insumos e diversos": -7186.46,
       "7|Seguros": -1059.8,
@@ -17462,13 +17461,13 @@
      "lanc": {
       "1|Receita operacional (salão)": 361,
       "10|Rendimentos de aplicações": 9,
-      "NEUTRO|Ajustes e estornos - entrada": 1,
+      "4|Devoluções de Compra de Matéria Prima": 1,
       "8|Sistemas": 3,
       "5|Alojamento e ajuda de custo para moradia": 15,
       "6|ISS | Permanência": 17,
       "4|Proteínas (carnes e frutos do mar)": 32,
       "6|Diarista (OIA)": 27,
-      "6|Salários da operação": 34,
+      "6|Salários da operação": 33,
       "6|Alimentação de colaboradores": 9,
       "4|Hortifrúti": 17,
       "4|Água mineral": 3,
@@ -17480,13 +17479,13 @@
       "9|Marketing e divulgação de eventos": 4,
       "5|Diversos de operação": 3,
       "4|Frete de insumos de alimentos e bebidas": 21,
-      "6|Extras e freelancers": 20,
+      "6|Extras e freelancers": 21,
       "6|Salario PJ": 1,
       "4|Secos e mercearia": 20,
       "CC|Conta corrente YO Noronha - saída": 1,
       "3|Comissões sobre vendas": 3,
       "4|Frios, laticínios e congelados": 11,
-      "4|Bebidas alcoólicas": 20,
+      "4|Bebidas alcoólicas": 22,
       "4|Bebidas não alcoólicas": 3,
       "4|Outros insumos e diversos": 4,
       "7|Seguros": 1,
@@ -17515,7 +17514,7 @@
      },
      "familias": {
       "cozinha": -171228.87000000002,
-      "bar": -94970.87999999999,
+      "bar": -106900.79,
       "comum": -46149.08
      },
      "itens": [
@@ -20382,7 +20381,7 @@
        ""
       ],
       [
-       "NEUTRO|Ajustes e estornos - entrada",
+       "4|Devoluções de Compra de Matéria Prima",
        "02/10/2026",
        17894.86,
        "INGA - DISTRIBUIDORA LTDA",
@@ -22380,7 +22379,7 @@
        ""
       ],
       [
-       "6|Salários da operação",
+       "6|Extras e freelancers",
        "31/10/2026",
        -200,
        "SWESLLEN SAYONARA SANTOS DE BRITO",
@@ -22544,7 +22543,7 @@
       [
        "6|Salários da operação",
        "31/10/2026",
-       -3186.3,
+       -4208.17,
        "JOAO VICTOR OLIVEIRA NERY",
        "07333182584",
        "",
@@ -24481,6 +24480,24 @@
        "07/10/2026",
        -817.54,
        "Cliente Consumidor / Sem Tomador",
+       "",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "02/10/2026",
+       -5964.95,
+       "INGA - DISTRIBUIDORA LTDA",
+       "",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "02/10/2026",
+       -5964.96,
+       "INGA - DISTRIBUIDORA LTDA",
        "",
        "",
        ""
@@ -35717,8 +35734,8 @@
      "grupos": {
       "1": 1057132.56,
       "6": -134120.88999999998,
-      "NEUTRO": 17894.859999999982,
-      "4": -449195.4999999999,
+      "NEUTRO": 0.0,
+      "4": -431300.6399999999,
       "5": -127490.32999999999,
       "11": -17038.39,
       "7": -18559.8,
@@ -35784,7 +35801,7 @@
       "9|Marketing e divulgação de eventos": -500.0,
       "2|COFINS": -28885.36,
       "2|PIS": -6258.49,
-      "NEUTRO|Ajustes e estornos - entrada": 17894.86,
+      "4|Devoluções de Compra de Matéria Prima": 17894.86,
       "8|Licenças e alvarás": -289.2,
       "2|ICMS-ST e DIFAL": -472.34,
       "5|Reposição de utensílios": -890.4,
@@ -35845,7 +35862,7 @@
       "9|Marketing e divulgação de eventos": 1,
       "2|COFINS": 1,
       "2|PIS": 1,
-      "NEUTRO|Ajustes e estornos - entrada": 1,
+      "4|Devoluções de Compra de Matéria Prima": 1,
       "8|Licenças e alvarás": 1,
       "2|ICMS-ST e DIFAL": 1,
       "5|Reposição de utensílios": 1,
@@ -41790,7 +41807,7 @@
        ""
       ],
       [
-       "NEUTRO|Ajustes e estornos - entrada",
+       "4|Devoluções de Compra de Matéria Prima",
        "27/10/2026",
        17894.86,
        "INGA - DISTRIBUIDORA LTDA",
