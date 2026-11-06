@@ -61,7 +61,8 @@ body{font-family:'Inter',sans-serif;background:var(--offwhite);color:var(--ink);
    de elemento substituido (300x150), o desenho e reduzido para caber e fica
    centralizado com sobra dos lados — na tela parece cortado. Com aspect-ratio
    do proprio viewBox ele ocupa a largura do bloco na proporcao certa. */
-.waterfall svg{display:block;width:100%;height:auto;aspect-ratio:1080/236}
+.waterfall svg{display:block;width:100%;height:auto}
+.wf-x{display:none}
 .wf-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;gap:14px;flex-wrap:wrap}
 .wf-head .t{font-family:'Plus Jakarta Sans';font-weight:700;font-size:15px}
 .wf-head .h{font-size:12.5px;color:#8A91A6}
@@ -484,19 +485,20 @@ function setRegime(r){REG=r;document.querySelectorAll('.regsw button,.rep-switch
    card e a tabela diziam 210.924,08. */
 var GRUPOS_OP=['1','OR','2','3','4','5','6','7','8','9','14','10'];
 
-function passosPonte(){
+function passosPonte(mes){
+ mes=mes||MES;
  /* a ponte segue o regime escolhido: no caixa e saldo -> entradas -> saidas;
     na competencia e receita -> custo -> despesa -> EBITDA, que e o que mostra o
     faturamento do mes em vez do que passou no banco. */
  if(REG==='comp'){
-  if(!temDado(ENT)||semDre(MES))return null;
-  var rec=soma(ENT,'comp',MES,['FAT']), ded=soma(ENT,'comp',MES,['2']),
-      cus=soma(ENT,'comp',MES,['3','4','5']), des=soma(ENT,'comp',MES,['6','7','8','9','14']);
+  if(!temDado(ENT)||semDre(mes))return null;
+  var rec=soma(ENT,'comp',mes,['FAT']), ded=soma(ENT,'comp',mes,['2']),
+      cus=soma(ENT,'comp',mes,['3','4','5']), des=soma(ENT,'comp',mes,['6','7','8','9','14']);
   if(!rec&&!ded&&!cus&&!des)return null;
   return [['Receita bruta',rec,'in'],['Deduções',ded,'out'],['Custos',cus,'out'],
           ['Despesas',des,'out'],['EBITDA',rec+ded+cus+des,'r']];
  }
- var s=saldos(ENT,MES);
+ var s=saldos(ENT,mes);
  if(!s)return null;
  /* pedido do Tiago em 05/11: entradas x saidas nao dizem se a operacao gera
     caixa. A ponte agora separa o que a casa gerou do que foi obra e aporte,
@@ -506,9 +508,9 @@ function passosPonte(){
     senao a ponte e a tabela mostram dois numeros com o mesmo nome na mesma tela.
     A ultima perna e o residuo, entao a ponte fecha no saldo do banco sempre. */
  var mov=s.entradas+s.saidas,
-     op=soma(ENT,'caixa',MES,GRUPOS_OP),
-     inv=soma(ENT,'caixa',MES,['11']),
-     fin=soma(ENT,'caixa',MES,['12']),
+     op=soma(ENT,'caixa',mes,GRUPOS_OP),
+     inv=soma(ENT,'caixa',mes,['11']),
+     fin=soma(ENT,'caixa',mes,['12']),
      res=mov-op-inv-fin;
  return [['Saldo inicial',s.ini,'n'],
          ['Geração de caixa operacional',op,op<0?'out':'in'],
@@ -518,56 +520,84 @@ function passosPonte(){
          ['Saldo final',s.fim,'n']];
 }
 function ponteSVG(){
- var passos=passosPonte();
- if(!passos)return '<text x="540" y="120" text-anchor="middle" fill="#6D748A" font-size="14" font-family="Inter">'+
-  (REG==='comp'&&semDre(MES)
+ /* Cascata em faixas: UMA por mes do regime ativo, empilhadas, em vez de uma
+    so do mes selecionado (pedido do Joao em 06/11/2026). Tudo vive DENTRO do
+    svg — inclusive os rotulos dos passos —, porque o eixo em HTML com grid de
+    contagem fixa ja desalinhou das barras uma vez. O viewBox cresce com o
+    numero de faixas e a pagina acompanha pelo aspect-ratio, entao nada corta.
+    Cada faixa tem a SUA escala: os meses tem ordem de grandeza diferente e uma
+    escala comum achataria o menor deles. */
+ var MS=mesesDe(REG).filter(function(m){return !!passosPonte(m)});
+ if(!MS.length){
+  var vazio=(REG==='comp'&&semDre(MES))
    ?D.meses_nome[MES]+' não tem DRE: o faturamento do 3LM do mês ainda não entrou, e sem a receita nenhuma margem tem leitura. O caixa do mês está conferido contra o extrato — veja o Caixa.'
-   :'sem movimento lançado neste mês')+'</text>';
- /* Geometria da cascata, refeita em 06/11/2026.
-    O erro anterior: a escala vinha do maior valor e o eixo zero era o fundo do
-    quadro. Numa ponte o acumulado sobe E desce — em agosto ele fica negativo
-    depois do investimento — e barra para baixo do fundo nao tem onde caber.
-    Agora a faixa vai do MINIMO ao MAXIMO da linha acumulada (com o zero sempre
-    dentro) e cada barra vai de um ponto do acumulado ao outro. Assim nada sai
-    do quadro e a altura de cada passo continua proporcional ao valor. */
- var pts=[0], cur=(passos[0][2]==='n')?passos[0][1]:0;
- pts.push(cur);
- passos.forEach(function(p){
-  if(p[2]==='n'){pts.push(p[1]);return}
-  cur+=p[1]; pts.push(cur);
+   :'sem movimento lançado neste mês';
+  wfBox(1080,150);
+  return '<text x="540" y="80" text-anchor="middle" fill="#6D748A" font-size="14" font-family="Inter">'+vazio+'</text>';
+ }
+ var W=1080, ML=96, MR=14, FX=W-ML-MR,
+     BH=118,            /* altura util das barras de uma faixa */
+     GAP=34,            /* respiro entre faixas, onde cabe o nome do mes */
+     AX=30,             /* faixa dos rotulos dos passos, no pe */
+     TOP=10,
+     n=passosPonte(MS[0]).length,
+     cw=FX/n, bw=Math.min(84,cw-22),
+     H=TOP+MS.length*(BH+GAP)+AX,
+     out='';
+ wfBox(W,H);
+ MS.forEach(function(mes,fi){
+  var passos=passosPonte(mes),
+      y0=TOP+fi*(BH+GAP),
+      base=y0+BH;
+  /* escala da faixa: faixa da linha acumulada, com o zero sempre dentro, e o
+     maior passo isolado, que pode passar do acumulado */
+  var pts=[0], cur=(passos[0][2]==='n')?passos[0][1]:0;
+  pts.push(cur);
+  passos.forEach(function(p){
+   if(p[2]==='n'||p[2]==='r'){pts.push(p[1]);return}
+   pts.push(cur+p[1]); pts.push(cur); cur+=p[1];
+  });
+  passos.forEach(function(p){if(p[2]!=='n')pts.push(p[1])});
+  var lo=Math.min.apply(null,pts), hi=Math.max.apply(null,pts);
+  if(hi===lo)hi=lo+1;
+  var esc=BH-20, yOf=function(v){return base-((v-lo)/(hi-lo))*esc}, zero=yOf(0);
+  /* nome do mes, a esquerda da faixa */
+  out+='<text x="0" y="'+(y0+BH/2-4).toFixed(1)+'" fill="#E7EAF3" font-size="15" '+
+       'font-weight="700" font-family="Plus Jakarta Sans">'+D.meses_nome[mes]+'</text>';
+  if(lo<0&&hi>0)
+   out+='<line x1="'+ML+'" y1="'+zero.toFixed(1)+'" x2="'+(W-MR)+'" y2="'+zero.toFixed(1)+
+        '" stroke="#39405A" stroke-width="1" stroke-dasharray="4 4"/>';
+  var acum=(passos[0][2]==='n')?passos[0][1]:0;
+  passos.forEach(function(p,i){
+   var cx=ML+i*cw+cw/2, de, ate, cor;
+   if(p[2]==='in'||p[2]==='out'){de=acum; ate=acum+p[1]; acum=ate; cor=(p[1]<0)?'#F87171':'#34D399'}
+   else{de=0; ate=p[1]; cor=(p[2]==='r')?'#F97316':'#9CA3AF'}
+   var y1=yOf(de), y2=yOf(ate), y=Math.min(y1,y2), alt=Math.max(3,Math.abs(y2-y1));
+   out+='<rect x="'+(cx-bw/2).toFixed(1)+'" y="'+y.toFixed(1)+'" width="'+bw.toFixed(1)+
+        '" height="'+alt.toFixed(1)+'" rx="5" fill="'+cor+'" opacity=".92"/>';
+   /* o rotulo vai ACIMA da barra; se nao cabe, vai abaixo, nunca fora da faixa */
+   var ly=(y-7>=y0+9)?(y-7):(y+alt+13);
+   out+='<text x="'+cx.toFixed(1)+'" y="'+ly.toFixed(1)+'" text-anchor="middle" fill="#fff" '+
+        'font-size="12" font-weight="700" font-family="Plus Jakarta Sans">'+brl(p[1])+'</text>';
+  });
  });
- var lo=Math.min.apply(null,pts), hi=Math.max.apply(null,pts);
- if(hi===lo){hi=lo+1}
- var W=1080,H=236,cw=W/passos.length,bw=Math.min(92,cw-24),topo=30,base=H-38,
-     esc=base-topo,out='';
- function yOf(v){return base-((v-lo)/(hi-lo))*esc}
- var zero=yOf(0), acum=(passos[0][2]==='n')?passos[0][1]:0;
- passos.forEach(function(p,i){
-  var cx=i*cw+cw/2, cor, y, alt, de, ate;
-  if(p[2]==='in'||p[2]==='out'){
-   de=acum; ate=acum+p[1]; acum=ate;
-   cor=(p[1]<0)?'#F87171':'#34D399';
-  }else{
-   de=0; ate=p[1];
-   cor=(p[2]==='r')?'#F97316':'#9CA3AF';
-  }
-  var y1=yOf(de), y2=yOf(ate);
-  y=Math.min(y1,y2); alt=Math.max(3,Math.abs(y2-y1));
-  out+='<rect x="'+(cx-bw/2)+'" y="'+y.toFixed(1)+'" width="'+bw+'" height="'+alt.toFixed(1)+
-       '" rx="5" fill="'+cor+'" opacity=".92"/>';
-  /* passo de valor zero: a barra fica como marca e o rotulo iria flutuar solto */
-  if(Math.abs(p[1])>=0.005)
-   out+='<text x="'+cx+'" y="'+Math.max(13,y-9).toFixed(1)+'" text-anchor="middle" fill="#fff" '+
-        'font-size="13" font-weight="700" font-family="Plus Jakarta Sans">'+brl(p[1])+'</text>';
-  else
-   out+='<text x="'+cx+'" y="'+(zero-9).toFixed(1)+'" text-anchor="middle" fill="#6D748A" '+
-        'font-size="11" font-family="Inter">zero no mês</text>';
+ /* eixo dos passos, uma vez, no pe — mesma grade das barras */
+ var rot=passosPonte(MS[0]);
+ rot.forEach(function(p,i){
+  var cx=ML+i*cw+cw/2;
+  out+='<text x="'+cx.toFixed(1)+'" y="'+(H-9)+'" text-anchor="middle" fill="#8A91A6" '+
+       'font-size="11.5" font-family="Inter">'+p[0]+'</text>';
  });
- /* linha do zero, para a cascata negativa ter referencia */
- if(lo<0&&hi>0)
-  out+='<line x1="0" y1="'+zero.toFixed(1)+'" x2="'+W+'" y2="'+zero.toFixed(1)+
-       '" stroke="#39405A" stroke-width="1" stroke-dasharray="4 4"/>';
  return out;
+}
+/* o viewBox e o aspect-ratio andam juntos: se so o viewBox cresce, o svg mantem
+   a proporcao antiga e o conteudo e reduzido para caber — foi o que fez a
+   cascata parecer cortada. */
+function wfBox(w,h){
+ var el=document.getElementById('wf');
+ if(!el)return;
+ el.setAttribute('viewBox','0 0 '+w+' '+h);
+ el.style.aspectRatio=w+'/'+h;
 }
 
 function cozinha(mes){
@@ -1289,15 +1319,14 @@ function render(){
  var pp=passosPonte();
  document.getElementById('wf').innerHTML=ponteSVG();
  document.getElementById('wfTitle').textContent=
-  (REG==='comp'?(semDre(MES)?'Sem DRE · ':'Ponte do resultado · '):'Ponte do caixa · ')+D.meses_nome[MES];
- document.getElementById('wfHint').textContent=(pp||[]).map(function(x){return x[0]}).join(' → ')
+  (REG==='comp'?'Ponte do resultado':'Ponte do caixa')+
+  (mesesDe(REG).length>1?' · mês a mês':' · '+D.meses_nome[MES]);
+ document.getElementById('wfHint').textContent=
+  (mesesDe(REG).length>1?'cada mês na sua faixa · ':'')+((pp||[]).map(function(x){return x[0]}).join(' → '))
   ||(REG==='comp'?'receita → deduções → custos → despesas → EBITDA':'saldo inicial → geração operacional → investimentos → financiamento → saldo final');
- /* o numero de colunas tem de ser o numero de passos: a ponte do caixa tem 6
-    e a de competencia 5. Com grid fixo em 5, o sexto rotulo do caixa caia para
-    a linha de baixo e todos ficavam fora da barra. */
- var wfx=document.getElementById('wfX'), np=(pp||[]).length||1;
- wfx.style.gridTemplateColumns='repeat('+np+',1fr)';
- wfx.innerHTML=(pp||[]).map(function(x){return '<span>'+x[0]+'</span>'}).join('');
+ /* os rotulos dos passos passaram para DENTRO do svg em 06/11/2026, junto das
+    barras: eixo em HTML ao lado de desenho em SVG desalinha sozinho. */
+ document.getElementById('wfX').innerHTML='';
  document.getElementById('kpis').innerHTML=kpis();
  operacao(); receita();
  pintaRelatorios(); vendasBloco();
