@@ -18,6 +18,9 @@ import os
 from gera_painel import CSS, D
 
 GRUPOS = ['2', '3', '4', '5', '6', '7', '8', '9', '14', '10']
+# o lado do CAIXA precisa dos grupos que a competencia nao usa: recebimento,
+# investimento, financiamento e as neutras entram na projecao da diretoria.
+GRUPOS_CX = GRUPOS + ['1', '11', '12', '13', 'CC', 'OR', 'NEUTRO']
 
 # Orcamento da diretoria — "Orcamento_DRE_FC_Projetado_YO_Boldro_DFC_Semanal",
 # abas "Simulacao DRE" (o mes tipico) e "Projecao Caixa" (o faturamento mes a
@@ -44,9 +47,21 @@ BASE = {
     'ents': {e: {'nome': v['nome'],
                  'meses': {m: {g: round((v['comp'].get(m) or {}).get('grupos', {}).get(g, 0.0), 2)
                                for g in ['FAT'] + GRUPOS}
-                           for m in D['meses']}}
+                           for m in D['meses']},
+                 # o orcamento da diretoria e projecao de CAIXA, nao de
+                 # competencia — para comparar orcado x realizado o lado real
+                 # tem de ser o caixa, grupo a grupo, mais o saldo do mes.
+                 'caixa': {m: {g: round((v['caixa'].get(m) or {}).get('grupos', {}).get(g, 0.0), 2)
+                               for g in GRUPOS_CX}
+                           for m in D['meses']},
+                 'saldos': {m: {k: round(((v.get('saldos') or {}).get(m) or {}).get(k, 0.0), 2)
+                                for k in ('ini', 'fim')}
+                            for m in D['meses']}}
              for e, v in D['ents'].items()},
+    'realizados': D['meses'],
 }
+ORC['linhas_mes'] = D['orcamento']['linhas']
+ORC['fonte'] = D['orcamento'].get('fonte')
 BASE['orc'] = ORC
 
 JS = r"""
@@ -376,11 +391,71 @@ function curva(b,P){
    '<div class="cvb">'+bar(O[i],'o')+bar(C[i],'c')+'</div>'+
    '<div class="cvl">'+m+'</div></div>';
  });
+
+/* ---------- orcado x realizado ----------
+   O orcamento da diretoria e projecao de CAIXA ("Projecao Caixa"), nao de
+   competencia. Entao o lado realizado tem de ser o CAIXA do painel, grupo a
+   grupo, nos meses em que as duas series se sobrepoem — e so neles. Confronto
+   contra o BLOCO DETALHADO do orcamento, nunca contra a capa.           */
+var ORXRE = [
+ ['(+) Entradas',                 'entradas',        ['1','OR'],      1],
+ ['(–) Insumos',                  'insumos',         ['4'],          -1],
+ ['(–) Pessoal',                  'pessoal',         ['6'],          -1],
+ ['(–) Variáveis',               'variaveis',       ['3'],          -1],
+ ['(–) Administrativas',          'administrativas', ['7','8','9','14','5'], -1],
+ ['= Geração operacional',        'ger_operacional', ['1','OR','3','4','5','6','7','8','9','14'], 1],
+ ['(–) Investimento',             'investimento',    ['11'],         -1],
+ ['= Geração final',              'ger_final',       null,            1],
+ ['Saldo no fim do mês',          'saldo_fim',       null,            1]
+];
+function realCx(mes,gs){
+ var t=0;
+ for(var e in S.ents){var g=(S.ents[e].caixa||{})[mes]||{};
+  gs.forEach(function(k){t+=g[k]||0})}
+ return t;
+}
+function saldoFim(mes){var t=0;for(var e in S.ents){t+=(((S.ents[e].saldos||{})[mes])||{}).fim||0}return t}
+function orcReal(){
+ var L=S.orc.linhas_mes||{}, comuns=(S.realizados||[]).filter(function(m){
+  return (L.entradas||{})[m]!==undefined});
+ if(!comuns.length)return '';
+ var h='<div class="cvh" style="margin-top:26px"><h3 class="rep-t" style="margin:0">'+
+  'Orçado <span class="light">×</span> realizado</h3><div class="cvtot"><span>'+
+  'em caixa, nos meses que as duas séries cobrem</span></div></div>';
+ h+='<table class="ort"><thead><tr><th>linha</th>';
+ comuns.forEach(function(m){h+='<th colspan="3">'+(S.meses_nome[m]||m)+'</th>'});
+ h+='</tr><tr><th></th>';
+ comuns.forEach(function(){h+='<th class="n">orçado</th><th class="n">realizado</th><th class="n">variação</th>'});
+ h+='</tr></thead><tbody>';
+ ORXRE.forEach(function(r){
+  var tot=r[0].charAt(0)==='=';
+  h+='<tr'+(tot?' class="tt"':'')+'><td>'+r[0]+'</td>';
+  comuns.forEach(function(m){
+   var o=(L[r[1]]||{})[m];
+   var re = r[1]==='saldo_fim' ? saldoFim(m)
+          : r[1]==='ger_final' ? realCx(m,['1','OR','3','4','5','6','7','8','9','14','11','12','13','CC','NEUTRO','2','10'])
+          : realCx(m,r[2]);
+   if(o===undefined||o===null){h+='<td class="n">—</td><td class="n">'+brl(re)+'</td><td class="n">—</td>';return}
+   // o orcamento guarda saida como positivo; o realizado vem com sinal
+   var oc = r[3]<0 ? -Math.abs(o) : o;
+   var d = re-oc;
+   h+='<td class="n">'+brl(oc)+'</td><td class="n">'+brl(re)+'</td>'+
+      '<td class="n '+(d>0?'up':(d<0?'dn':''))+'">'+(d>0?'+':'')+brl(d)+'</td>';
+  });
+  h+='</tr>';
+ });
+ h+='</tbody></table><p class="repnote" style="margin:8px 0 0">O orçamento é '+
+  '<b>projeção de caixa</b> e consolidado — a planilha não separa Yó de Boldró —, '+
+  'então o realizado aqui é o caixa do grupo, não a competência. Variação positiva '+
+  'é melhor que o orçado em entrada e pior em saída: compare o sinal com a linha. '+
+  'Fonte do orçado: '+(S.orc.fonte||'—')+'.</p>';
+ return h;
+}
  h+='</div><p class="repnote" style="margin:10px 0 0">Faturamento de cada mês vem do '+
   'orçamento; os percentuais vêm do cenário. <b>É resultado, não caixa</b> — o fluxo de '+
   'caixa do orçamento compra insumo antes de consumir, e por isso não bate mês a mês com '+
   'esta linha. A barra clara é o orçamento, a laranja é o cenário ativo.</p>';
- el.innerHTML=h;
+ el.innerHTML=h+orcReal();
 }
 
 /* ---------- montagem ---------- */
@@ -417,6 +492,13 @@ render();
 """
 
 CSS_SIM = """
+.ort{width:100%;border-collapse:collapse;font-size:12px;margin-top:10px}
+.ort th,.ort td{padding:6px 8px;border-bottom:1px solid var(--linha);text-align:left}
+.ort thead th{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--fraco);font-weight:700}
+.ort th.n,.ort td.n{text-align:right;font-variant-numeric:tabular-nums}
+.ort tr.tt td{font-weight:700;border-top:1px solid var(--texto);background:rgba(0,0,0,.02)}
+.ort td.up{color:#0F9D58}.ort td.dn{color:#D93025}
+
 .dashbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
  padding:12px 0;border-bottom:1px solid var(--line)}
 .dash{display:grid;grid-template-columns:318px minmax(0,1fr);gap:20px;
