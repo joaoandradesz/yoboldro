@@ -912,18 +912,43 @@ function abreCaixa(ev,ck,mes,reg){
  if(!its.length){
   h+='<div class="cx-vazio">Esta linha não tem lançamento detalhado.</div>';
  }else{
-  h+='<table class="cx-tbl"><thead><tr><th>Data</th><th>Cliente / fornecedor</th>'+
-     '<th>Banco / conta</th><th>NF</th><th class="r">Valor</th></tr></thead><tbody>';
+  /* a coluna de vencimento so existe na competencia: o extrato do Omie nao
+     traz vencimento nem o codigo do titulo, e no caixa a data da linha JA e a
+     do pagamento. Mostrar uma coluna vazia ali seria pior que nao ter. */
+  var temVenc=(reg==='comp')&&its.some(function(i){return i[7]});
+  h+='<table class="cx-tbl"><thead><tr><th>'+(reg==='comp'?'Emissão':'Pagamento')+'</th>'+
+     (temVenc?'<th>Vencimento</th>':'')+'<th>Cliente / fornecedor</th>'+
+     '<th>Banco / conta</th><th>Documento</th><th class="r">Valor</th></tr></thead><tbody>';
   its.sort(function(a,b2){return Math.abs(b2[2])-Math.abs(a[2])}).forEach(function(i){
    var av=i[6]?' <span class="flag" title="'+i[6].replace(/"/g,'&quot;')+'">100% na competência</span>':'';
-   h+='<tr'+(i[6]?' class="flagged"':'')+'><td>'+i[1].slice(0,5)+'</td><td>'+(i[3]||'—')+av+
-      '</td><td>'+(i[5]||'—')+'</td>'+
-      '<td>'+(i[4]||'—')+'</td><td class="r '+(i[2]<0?'neg':'pos')+'">'+mv(i[2])+'</td></tr>';
+   /* "FALTA NF" e marca que o proprio CSC digita. Em venda de salao, forma de
+      pagamento, aporte, conta corrente do grupo e imposto a nota fiscal nao
+      existe por natureza — ali a marca vira a origem do numero, que e o que de
+      fato lastreia o lancamento. */
+   var doc=(i[4]||'').trim(), semNF=(!doc||/^(FALTA NF|SEM NF|-)$/i.test(doc));
+   var ori=origemDe(nome);
+   var cdoc=semNF?(ori?'<span class="z">'+ori+'</span>':'—'):doc;
+   h+='<tr'+(i[6]?' class="flagged"':'')+'><td>'+i[1].slice(0,5)+'</td>'+
+      (temVenc?('<td>'+((i[7]||'').slice(0,5)||'—')+'</td>'):'')+
+      '<td>'+(i[3]||'—')+av+'</td><td>'+(i[5]||'—')+'</td>'+
+      '<td>'+cdoc+'</td><td class="r '+(i[2]<0?'neg':'pos')+'">'+mv(i[2])+'</td></tr>';
   });
   h+='</tbody></table>';
  }
  document.getElementById('cx-corpo').innerHTML=h;
  document.getElementById('cx-fundo').classList.add('on');
+}
+/* categorias em que a nota fiscal nao se aplica: o lastro e outro documento */
+var ORIGEM=[[/receita operacional|bar e balc|beach club|couvert|eventos e grupos|ajuste ao total/i,'relatório de vendas'],
+ [/cart[ãa]o de (cr[ée]dito|d[ée]bito)|^pix$|dinheiro \(fundo fixo\)|voucher|vale/i,'extrato do adquirente'],
+ [/aporte|empr[ée]stimo|financiamento|distribui[çc][ãa]o de lucros/i,'contrato e comprovante'],
+ [/conta corrente (boldr|yo|amana|pousada)|transfer[êe]ncia/i,'comprovante de transferência'],
+ [/pis|cofins|irpj|csll|icms|iss|simples|das|fgts|inss|taxas distritais/i,'guia de recolhimento'],
+ [/sal[áa]rio|folha|f[ée]rias|rescis|13|pr[óo]-labore|diarista|extras e free/i,'folha de pagamento'],
+ [/rendimento|juros|tarifa|iof|antecipa/i,'extrato bancário']];
+function origemDe(cat){
+ for(var i=0;i<ORIGEM.length;i++)if(ORIGEM[i][0].test(cat||''))return ORIGEM[i][1];
+ return '';
 }
 function fechaCaixa(){document.getElementById('cx-fundo').classList.remove('on')}
 function linhaMat(rot,vals,bases,cls,chave,nivel,abreCk,abreReg){
