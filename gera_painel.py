@@ -99,6 +99,11 @@ body{font-family:'Inter',sans-serif;background:var(--offwhite);color:var(--ink);
 .regsw button.on{background:#fff;color:var(--navy)}
 .waterfall{margin-top:26px;background:var(--navy2);border:1px solid var(--line);border-radius:16px;
  padding:22px 26px 14px}
+/* O svg#wf tem viewBox e NENHUMA regra de tamanho: o navegador aplica o padrao
+   de elemento substituido (300x150), o desenho e reduzido para caber e fica
+   centralizado com sobra dos lados — na tela parece cortado. Com aspect-ratio
+   do proprio viewBox ele ocupa a largura do bloco na proporcao certa. */
+.waterfall svg{display:block;width:100%;height:auto;aspect-ratio:1080/236}
 .wf-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;gap:14px;flex-wrap:wrap}
 .wf-head .t{font-family:'Plus Jakarta Sans';font-weight:700;font-size:15px}
 .wf-head .h{font-size:12.5px;color:#8A91A6}
