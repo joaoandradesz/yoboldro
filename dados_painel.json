@@ -1,5 +1,5 @@
 {
- "gerado": "06/11/2026 às 11:39",
+ "gerado": "06/11/2026 às 11:53",
  "meses": [
   "2026-08",
   "2026-09",
@@ -25900,14 +25900,13 @@
      "grupos": {
       "1": 1059150.87,
       "4": -357256.19000070007,
-      "6": -122274.35999999996,
+      "6": -122974.35999929997,
       "11": -49282.649999999994,
       "9": -7500.0,
       "5": -39718.11,
       "8": -40221.00000000001,
       "NEUTRO": 11128.229999999363,
       "14": -23215.83,
-      "NAO MAPEADA": -699.9999992999999,
       "CC": -3466.67,
       "3": -12116.620000000003,
       "2": -5857.55,
@@ -25943,7 +25942,7 @@
       "8|Remuneracao PJ diretoria": -5600.0,
       "8|Ajuda de custos diretoria": -2800.0,
       "8|Pró-labore": -19600.0,
-      "NAO MAPEADA|OIA)": -699.9999992999999,
+      "6|OIA)": -699.9999992999999,
       "6|ISS | Permanência": -2134.33,
       "9|Mídia paga": -1500.0,
       "4|Frete de insumos de alimentos e bebidas": -11375.560000000001,
@@ -25997,7 +25996,7 @@
       "8|Remuneracao PJ diretoria": 1,
       "8|Ajuda de custos diretoria": 2,
       "8|Pró-labore": 2,
-      "NAO MAPEADA|OIA)": 1,
+      "6|OIA)": 1,
       "6|ISS | Permanência": 6,
       "9|Mídia paga": 1,
       "4|Frete de insumos de alimentos e bebidas": 2,
@@ -27379,7 +27378,7 @@
        ""
       ],
       [
-       "NAO MAPEADA|OIA)",
+       "6|OIA)",
        "04/09/2026",
        -700.0,
        "MARCOS DOS SANTOS MELO",
