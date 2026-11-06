@@ -1,5 +1,5 @@
 {
- "gerado": "04/11/2026 às 21:17",
+ "gerado": "05/11/2026 às 21:16",
  "meses": [
   "2026-08",
   "2026-09",
@@ -5379,8 +5379,8 @@
       "8": -52006.5,
       "11": -87472.65,
       "9": -7500.0,
-      "5": -78911.86,
-      "6": -159797.20000000013,
+      "6": -169898.03000000012,
+      "5": -68811.03000000001,
       "4": -366406.57000000007,
       "14": -23215.83,
       "CC": -3466.67,
@@ -5396,26 +5396,25 @@
       "8|Sistemas": -3943.38,
       "11|Investimentos diversos": -73627.65,
       "9|Outros de marketing": -3500.0,
-      "5|Prestadores de servicos gerais": -13050.83,
+      "6|Diarista (OIA)": -31085.010000000002,
       "5|Alojamento e ajuda de custo para moradia": -25070.65,
-      "6|Diarista (OIA)": -22686.68,
       "6|Salários da operação": -87427.82000000004,
       "8|Telefonia e internet": -188.42,
+      "5|Prestadores de servicos gerais": -2250.0,
       "4|Proteínas (carnes e frutos do mar)": -106902.46,
       "6|Alimentação de colaboradores": -22618.12,
       "8|Correios e fretes administrativos": -186.95,
       "4|Outros insumos e diversos": -9493.53,
       "14|Cachê de artistas e atrações": -23215.83,
-      "6|Salario PJ": -14600.0,
+      "6|Salario PJ": -21800.0,
       "5|Gestor operacional PJ": -14666.67,
       "11|Equipamentos e mobiliário": -10345.0,
       "4|Hortifrúti": -18342.13,
-      "6|Extras e freelancers": -5497.5,
       "4|Secos e mercearia": -78539.91000000002,
       "11|Obras e reformas": -3500.0,
       "5|Limpeza e descartáveis": -21617.11,
       "8|Tarifas bancárias": -782.2500000000001,
-      "4|Bebidas alcoólicas": -118122.94,
+      "4|Bebidas alcoólicas": -118122.94000000002,
       "9|Agência e conteúdo": -2500.0,
       "4|Frete de insumos de alimentos e bebidas": -14428.04,
       "4|Gás de cozinha": -1000.0,
@@ -5430,14 +5429,15 @@
       "4|Frios, laticínios e congelados": -11430.560000000001,
       "6|Rescisões": -2780.18,
       "4|Bebidas não alcoólicas": -1355.0,
+      "5|Manutenção de equipamentos": -700.0,
       "8|Material de escritório": -1785.5,
       "2|Cancelamentos e estornos": -5300.0,
       "3|Taxas de cartão": -10451.57,
       "2|COFINS": -28885.36,
       "2|PIS": -6258.49,
       "5|Diversos de operação": -3957.6,
-      "8|Pró-labore": -28000.0,
-      "8|Ajuda de custos diretoria": -4000.0,
+      "8|Pró-labore": -26000.0,
+      "8|Ajuda de custos diretoria": -6000.0,
       "8|Remuneracao PJ diretoria": -8000.0,
       "10|Custo de antecipação de recebíveis": -6564.46,
       "6|FGTS e contribuições": -4186.9,
@@ -5453,21 +5453,20 @@
       "8|Sistemas": 3,
       "11|Investimentos diversos": 44,
       "9|Outros de marketing": 2,
-      "5|Prestadores de servicos gerais": 16,
+      "6|Diarista (OIA)": 65,
       "5|Alojamento e ajuda de custo para moradia": 11,
-      "6|Diarista (OIA)": 38,
       "6|Salários da operação": 67,
       "8|Telefonia e internet": 1,
+      "5|Prestadores de servicos gerais": 3,
       "4|Proteínas (carnes e frutos do mar)": 34,
       "6|Alimentação de colaboradores": 12,
       "8|Correios e fretes administrativos": 1,
       "4|Outros insumos e diversos": 5,
       "14|Cachê de artistas e atrações": 24,
-      "6|Salario PJ": 4,
+      "6|Salario PJ": 5,
       "5|Gestor operacional PJ": 3,
       "11|Equipamentos e mobiliário": 5,
       "4|Hortifrúti": 16,
-      "6|Extras e freelancers": 16,
       "4|Secos e mercearia": 34,
       "11|Obras e reformas": 2,
       "5|Limpeza e descartáveis": 8,
@@ -5487,6 +5486,7 @@
       "4|Frios, laticínios e congelados": 7,
       "6|Rescisões": 1,
       "4|Bebidas não alcoólicas": 3,
+      "5|Manutenção de equipamentos": 1,
       "8|Material de escritório": 1,
       "2|Cancelamentos e estornos": 3,
       "3|Taxas de cartão": 1,
@@ -5494,7 +5494,7 @@
       "2|PIS": 1,
       "5|Diversos de operação": 9,
       "8|Pró-labore": 2,
-      "8|Ajuda de custos diretoria": 2,
+      "8|Ajuda de custos diretoria": 3,
       "8|Remuneracao PJ diretoria": 1,
       "10|Custo de antecipação de recebíveis": 1,
       "6|FGTS e contribuições": 1,
@@ -11451,7 +11451,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "01/09/2026",
        -800,
        "NILSON DOUGLAS RODRIGUES DA PAZ",
@@ -11496,7 +11496,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "01/09/2026",
        -255,
        "HOELL TEODOSIO DOS SANTOS",
@@ -11532,7 +11532,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "01/09/2026",
        -800,
        "RAMATHYS AGRYLAR MENEZES DA SILVA",
@@ -11550,7 +11550,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "01/09/2026",
        -150,
        "VALDENIRA DOS SANTOS PEREIRA",
@@ -11811,7 +11811,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "02/09/2026",
        -1712.5,
        "MARIANA BRANCO DA SILVA",
@@ -11910,7 +11910,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "03/09/2026",
        -700,
        "MARCOS DOS SANTOS MELO",
@@ -11973,7 +11973,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "01/09/2026",
        -262.5,
        "HOELL TEODOSIO DOS SANTOS",
@@ -13134,7 +13134,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "22/09/2026",
        -375,
        "BRUNO CELIO PORTELA DE SOUZA",
@@ -13170,7 +13170,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "22/09/2026",
        -700,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -13179,7 +13179,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "22/09/2026",
        -840,
        "FLAVIO AUGUSTO LIMA DA SILVA",
@@ -13863,7 +13863,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "6|Salario PJ",
        "25/09/2026",
        -7200,
        "DEYBSON JOSE FAGUNDES",
@@ -13908,7 +13908,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "25/09/2026",
        -1620.83,
        "MARIANA MACHADO BUENO",
@@ -14133,7 +14133,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "29/09/2026",
        -100,
        "VOLHA DRAZIELI SOARES DE SOUZA",
@@ -14142,7 +14142,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "29/09/2026",
        -300,
        "THIAGO MACHADO STORCK",
@@ -14151,7 +14151,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "29/09/2026",
        -300,
        "PAULO CESAR DA SILVA",
@@ -14160,7 +14160,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "29/09/2026",
        -100,
        "INACIO ADRIANO DE LIMA",
@@ -14169,7 +14169,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "29/09/2026",
        -445.83,
        "JOSE EVANDRO DA SILVA",
@@ -14340,7 +14340,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "5|Manutenção de equipamentos",
        "29/09/2026",
        -700,
        "PEDROEROL CLIMATIZACAO LTDA",
@@ -14457,7 +14457,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "30/09/2026",
        -200,
        "DIEGO CLEOVANSOSTENES VITAL DE VASCONCELOS",
@@ -14466,7 +14466,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "30/09/2026",
        -250,
        "GLAUBER ANTONIO SILVA SANTANA",
@@ -14475,7 +14475,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "30/09/2026",
        -200,
        "MARIO ROBERTO DE OLIVEIRA LOPES",
@@ -14484,7 +14484,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "30/09/2026",
        -300,
        "PEDRO FRANZO XAVIER",
@@ -14493,7 +14493,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "30/09/2026",
        -200,
        "ROBINSON BARBOSA BORGES",
@@ -14502,7 +14502,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "30/09/2026",
        -200,
        "SEBASTIAO DO CARMO MAIA FARIAS",
@@ -14511,7 +14511,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "30/09/2026",
        -316.67,
        "SEVERINO ALEXANDRE DA SILVA",
@@ -14520,7 +14520,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "30/09/2026",
        -126.67,
        "SWESLLEN SAYONARA SANTOS DE BRITO",
@@ -14529,7 +14529,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "30/09/2026",
        -200,
        "YURI COSTA BARRETO",
@@ -14574,7 +14574,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "25/09/2026",
        -1785,
        "FLAVIA MARIA SILVA TORRES",
@@ -14583,7 +14583,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "25/09/2026",
        -800,
        "MARIANA GOICOECHEA",
@@ -14610,7 +14610,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "29/09/2026",
        -1558.33,
        "FLAVIA MARIA SILVA TORRES",
@@ -14919,15 +14919,6 @@
        "4|Bebidas alcoólicas",
        "09/09/2026",
        -4567.86,
-       "INGA - DISTRIBUIDORA LTDA",
-       "",
-       "",
-       ""
-      ],
-      [
-       "4|Bebidas alcoólicas",
-       "08/09/2026",
-       -7838.36,
        "INGA - DISTRIBUIDORA LTDA",
        "",
        "",
@@ -15260,7 +15251,16 @@
       [
        "8|Pró-labore",
        "30/09/2026",
-       -20000,
+       -18000,
+       "RENATO FERREIRA LIMA BATISTA GOMES",
+       "81996660444",
+       "",
+       ""
+      ],
+      [
+       "8|Ajuda de custos diretoria",
+       "30/09/2026",
+       -2000,
        "RENATO FERREIRA LIMA BATISTA GOMES",
        "81996660444",
        "",
@@ -15799,33 +15799,6 @@
       ],
       [
        "4|Bebidas alcoólicas",
-       "08/09/2026",
-       -7613.39,
-       "INGA - DISTRIBUIDORA LTDA",
-       "NF388070",
-       "",
-       "compra considerada 100% no mes da competencia (08/09/2026). Parcela 2, vencimento 07/11/2026 — no fluxo de caixa ela aparece na data do pagamento, nao"
-      ],
-      [
-       "4|Bebidas alcoólicas",
-       "08/09/2026",
-       -7613.39,
-       "INGA - DISTRIBUIDORA LTDA",
-       "NF388070",
-       "",
-       "compra considerada 100% no mes da competencia (08/09/2026). Parcela 3, vencimento 07/12/2026 — no fluxo de caixa ela aparece na data do pagamento, nao"
-      ],
-      [
-       "4|Bebidas alcoólicas",
-       "08/09/2026",
-       -7613.4,
-       "INGA - DISTRIBUIDORA LTDA",
-       "NF388070",
-       "",
-       "compra considerada 100% no mes da competencia (08/09/2026). Parcela 4, vencimento 06/01/2027 — no fluxo de caixa ela aparece na data do pagamento, nao"
-      ],
-      [
-       "4|Bebidas alcoólicas",
        "04/09/2026",
        -1297.08,
        "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
@@ -15911,6 +15884,42 @@
        -4186.9,
        "CAIXA ECONOMICA FEDERAL",
        "",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "08/09/2026",
+       -7669.63,
+       "INGA - DISTRIBUIDORA LTDA",
+       "000388070/1",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "08/09/2026",
+       -7669.63,
+       "INGA - DISTRIBUIDORA LTDA",
+       "000388070/2",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "08/09/2026",
+       -7669.63,
+       "INGA - DISTRIBUIDORA LTDA",
+       "000388070/3",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "08/09/2026",
+       -7669.65,
+       "INGA - DISTRIBUIDORA LTDA",
+       "000388070/4",
        "",
        ""
       ],
@@ -17039,12 +17048,12 @@
      "grupos": {
       "1": 97473.08000000002,
       "8": -6392.05,
-      "5": -57293.51,
-      "6": -17084.220000000005,
-      "4": -87760.31999999999,
+      "5": -59093.51,
+      "6": -103106.38000000002,
+      "4": -142845.31000000003,
       "7": -18559.8,
       "14": -21155.0,
-      "11": -43758.69,
+      "11": -44178.69,
       "9": -6000.0,
       "NEUTRO": -100000.0,
       "3": -4380.41
@@ -17055,11 +17064,11 @@
       "5|Alojamento e ajuda de custo para moradia": -49000.0,
       "6|Rescisões": -325.85,
       "6|ISS | Permanência": -2261.39,
-      "4|Proteínas (carnes e frutos do mar)": -31730.93,
+      "4|Proteínas (carnes e frutos do mar)": -54691.43,
       "6|Diarista (OIA)": -4712.5,
-      "6|Salários da operação": -400.0,
+      "6|Salários da operação": -85222.16000000003,
       "6|Alimentação de colaboradores": -3955.3100000000004,
-      "4|Hortifrúti": -7498.76,
+      "4|Hortifrúti": -18482.14,
       "4|Água mineral": -6530.0,
       "8|Contabilidade, jurídico e consultorias": -3000.0,
       "7|Outros aluguéis": -17500.0,
@@ -17069,19 +17078,20 @@
       "11|Investimentos diversos": -38339.76,
       "9|Marketing e divulgação de eventos": -6000.0,
       "5|Diversos de operação": -4807.46,
-      "4|Frete de insumos de alimentos e bebidas": -8849.050000000001,
-      "6|Extras e freelancers": -4929.17,
+      "4|Frete de insumos de alimentos e bebidas": -13448.02,
+      "6|Extras e freelancers": -6129.17,
       "6|Salario PJ": -500.0,
       "4|Secos e mercearia": -4153.8099999999995,
       "NEUTRO|Transferência entre contas - saída": -100000.0,
       "3|Comissões sobre vendas": -4380.41,
-      "4|Frios, laticínios e congelados": -2287.96,
+      "4|Frios, laticínios e congelados": -18830.1,
       "4|Bebidas alcoólicas": -19028.22,
       "4|Bebidas não alcoólicas": -2029.0,
       "7|Seguros": -1059.8,
       "14|Artistas e couvert": -1250.0,
-      "11|Equipamentos e mobiliário": -5000.0,
-      "11|Frete de equipamentos e obra": -418.93
+      "11|Equipamentos e mobiliário": -5420.0,
+      "11|Frete de equipamentos e obra": -418.93,
+      "5|Manutenção de equipamentos": -1800.0
      },
      "lanc": {
       "1|Receita operacional (salão)": 42,
@@ -17089,11 +17099,11 @@
       "5|Alojamento e ajuda de custo para moradia": 11,
       "6|Rescisões": 1,
       "6|ISS | Permanência": 8,
-      "4|Proteínas (carnes e frutos do mar)": 16,
+      "4|Proteínas (carnes e frutos do mar)": 18,
       "6|Diarista (OIA)": 11,
-      "6|Salários da operação": 1,
+      "6|Salários da operação": 40,
       "6|Alimentação de colaboradores": 7,
-      "4|Hortifrúti": 8,
+      "4|Hortifrúti": 10,
       "4|Água mineral": 3,
       "8|Contabilidade, jurídico e consultorias": 2,
       "7|Outros aluguéis": 3,
@@ -17103,24 +17113,25 @@
       "11|Investimentos diversos": 19,
       "9|Marketing e divulgação de eventos": 4,
       "5|Diversos de operação": 4,
-      "4|Frete de insumos de alimentos e bebidas": 7,
-      "6|Extras e freelancers": 10,
+      "4|Frete de insumos de alimentos e bebidas": 13,
+      "6|Extras e freelancers": 13,
       "6|Salario PJ": 1,
       "4|Secos e mercearia": 5,
       "NEUTRO|Transferência entre contas - saída": 1,
       "3|Comissões sobre vendas": 1,
-      "4|Frios, laticínios e congelados": 2,
+      "4|Frios, laticínios e congelados": 5,
       "4|Bebidas alcoólicas": 7,
       "4|Bebidas não alcoólicas": 3,
       "7|Seguros": 1,
       "14|Artistas e couvert": 1,
-      "11|Equipamentos e mobiliário": 1,
-      "11|Frete de equipamentos e obra": 1
+      "11|Equipamentos e mobiliário": 3,
+      "11|Frete de equipamentos e obra": 1,
+      "5|Manutenção de equipamentos": 2
      },
      "familias": {
-      "cozinha": -45671.46000000001,
+      "cozinha": -96157.48000000001,
       "bar": -27587.22,
-      "comum": -14501.640000000001
+      "comum": -19100.610000000004
      },
      "itens": [
       [
@@ -18976,6 +18987,537 @@
        "000000104/1",
        "",
        ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -500,
+       "DIEGO CLEOVANSOSTENES VITAL DE VASCONCELOS",
+       "057.751.844-59",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -500,
+       "GLAUBER ANTONIO SILVA SANTANA",
+       "81 9936-3789",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "30/10/2026",
+       -200,
+       "MARIO ROBERTO DE OLIVEIRA LOPES",
+       "053.081.318-13",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "30/10/2026",
+       -200,
+       "MARIO ROBERTO DE OLIVEIRA LOPES",
+       "053.081.318-13",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -300,
+       "PEDRO FRANZO XAVIER",
+       "84998563280",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -200,
+       "ROBINSON BARBOSA BORGES",
+       "81 99709-7848",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -500,
+       "SEVERINO ALEXANDRE DA SILVA",
+       "29793993880",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -200,
+       "SWESLLEN SAYONARA SANTOS DE BRITO",
+       "116.618.224-01",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -10000,
+       "RAFAELA PATRICIA MIRANDA DE ARAUJO",
+       "",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -4058.45,
+       "ALUISIO FREITAS DE MORAIS",
+       "099.920.674-54",
+       "",
+       ""
+      ],
+      [
+       "4|Frete de insumos de alimentos e bebidas",
+       "31/10/2026",
+       -766.49,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA ME",
+       "000107124/1",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -2558.77,
+       "ANTONIO CARLOS CHERU",
+       "21968301197",
+       "",
+       ""
+      ],
+      [
+       "4|Frete de insumos de alimentos e bebidas",
+       "31/10/2026",
+       -766.49,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA ME",
+       "000107123/1",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -2558.77,
+       "DIEGO CLEOVANSOSTENES VITAL DE VASCONCELOS",
+       "057.751.844-59",
+       "",
+       ""
+      ],
+      [
+       "4|Frete de insumos de alimentos e bebidas",
+       "31/10/2026",
+       -766.49,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA ME",
+       "000107122/1",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -2163.93,
+       "EDIVALDO IVAN DOS SANTOS",
+       "10940450470",
+       "",
+       ""
+      ],
+      [
+       "4|Frete de insumos de alimentos e bebidas",
+       "31/10/2026",
+       -766.49,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA ME",
+       "000107121/1",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -3186.3,
+       "EDMILSON DE LIMA JUNIOR",
+       "06471205422",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -2224.86,
+       "GABRIEL JOSE DA SILVA SANTOS",
+       "81995705263",
+       "",
+       ""
+      ],
+      [
+       "4|Frete de insumos de alimentos e bebidas",
+       "31/10/2026",
+       -766.49,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA ME",
+       "000107120/1",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -2302.13,
+       "GABRIELLA ALVES NOVAES",
+       "81998045951",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -2069.74,
+       "GLAUBER ANTONIO SILVA SANTANA",
+       "81 9936-3789",
+       "",
+       ""
+      ],
+      [
+       "4|Frete de insumos de alimentos e bebidas",
+       "31/10/2026",
+       -766.52,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA ME",
+       "000107119/1",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -3623.83,
+       "GLEICE KELLY DE OLIVEIRA GOMES DE SOUZA",
+       "81981029520",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -2650.09,
+       "INACIO ADRIANO DE LIMA",
+       "092.597.824-81",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -3186.3,
+       "JOAO VICTOR OLIVEIRA NERY",
+       "07333182584",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -2221.06,
+       "JOSE EDSON FRANCISCO DOS SANTOS",
+       "81 98621-3313",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -641.97,
+       "JOSE JADSON SILVA GOMES",
+       "Gomesjadson182@gmail",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -1626.39,
+       "JOSE MANOEL DOS SANTOS",
+       "711.713.024-52",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -1286.39,
+       "JOSE PAULO FERREIRA",
+       "105.377.944-50",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -3186.3,
+       "MARIO ROBERTO DE OLIVEIRA LOPES",
+       "053.081.318-13",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -1784.91,
+       "MATHEUS MARQUES DOS SANTOS",
+       "82993970725",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -2558.77,
+       "MAXIMILLIAN MARINHO DE LIMA",
+       "81996623498",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -2864.83,
+       "PAULO CESAR DA SILVA",
+       "78452414404",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -3186.3,
+       "PEDRO FRANZO XAVIER",
+       "84998563280",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -2285.79,
+       "REBECA RAYANE GOMES DE SOUZA",
+       "705.677.744-90",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -2224.32,
+       "ROBINSON BARBOSA BORGES",
+       "81 99709-7848",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -2558.77,
+       "SEBASTIAO DO CARMO MAIA FARIAS",
+       "81979160464",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -2531.47,
+       "SEVERINO ALEXANDRE DA SILVA",
+       "29793993880",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -2077.93,
+       "SWESLLEN SAYONARA SANTOS DE BRITO",
+       "116.618.224-01",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -3311.45,
+       "THIAGO MACHADO STORCK",
+       "48996383955",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -699.97,
+       "VIVIANE DE SOUZA SILVA",
+       "118.316.074-76",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -3121.49,
+       "VOLHA DRAZIELI SOARES DE SOUZA",
+       "87988350451",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -3325.96,
+       "YURI COSTA BARRETO",
+       "858.334.245-85",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -144.92,
+       "ELAINE SANTOS DA SILVA",
+       "111.869.674-39",
+       "",
+       ""
+      ],
+      [
+       "4|Frios, laticínios e congelados",
+       "23/10/2026",
+       -7483.07,
+       "MASTERBOI LTDA.",
+       "03.721.769/0002-78",
+       "",
+       ""
+      ],
+      [
+       "4|Frios, laticínios e congelados",
+       "23/10/2026",
+       -7483.07,
+       "MASTERBOI LTDA.",
+       "03.721.769/0002-78",
+       "",
+       ""
+      ],
+      [
+       "4|Hortifrúti",
+       "20/10/2026",
+       -5491.69,
+       "PCA - POTIGUAR COMERCIO DE ALIMENTOS LTDA",
+       "000003140/1",
+       "",
+       ""
+      ],
+      [
+       "4|Hortifrúti",
+       "20/10/2026",
+       -5491.69,
+       "PCA - POTIGUAR COMERCIO DE ALIMENTOS LTDA",
+       "000003140/2",
+       "",
+       ""
+      ],
+      [
+       "4|Frios, laticínios e congelados",
+       "22/10/2026",
+       -1576,
+       "KarneKeijo Logistica Integrada LTDA",
+       "006127977/1",
+       "",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "29/10/2026",
+       -20334,
+       "GC COMERCIO DE PESCADOS LTDA",
+       "000000031/1",
+       "",
+       ""
+      ],
+      [
+       "5|Manutenção de equipamentos",
+       "31/10/2026",
+       -300,
+       "MAURO VIEIRA DA CUNHA JUNIOR",
+       "mvcjr@hotmail.com",
+       "",
+       ""
+      ],
+      [
+       "11|Equipamentos e mobiliário",
+       "30/10/2026",
+       -220,
+       "MAURO VIEIRA DA CUNHA JUNIOR",
+       "mvcjr@hotmail.com",
+       "",
+       ""
+      ],
+      [
+       "11|Equipamentos e mobiliário",
+       "27/10/2026",
+       -200,
+       "MAURO VIEIRA DA CUNHA JUNIOR",
+       "mvcjr@hotmail.com",
+       "",
+       ""
+      ],
+      [
+       "5|Manutenção de equipamentos",
+       "25/10/2026",
+       -1500,
+       "REINALDO PEREIRA GOMES",
+       "81 99338-5157",
+       "",
+       ""
+      ],
+      [
+       "6|Extras e freelancers",
+       "30/10/2026",
+       -500,
+       "ALUISIO FREITAS DE MORAIS",
+       "099.920.674-54",
+       "",
+       ""
+      ],
+      [
+       "6|Extras e freelancers",
+       "30/10/2026",
+       -200,
+       "ROBERT DE MELO CRUZ DE JESUS",
+       "056.524.355-18",
+       "",
+       ""
+      ],
+      [
+       "6|Extras e freelancers",
+       "16/10/2026",
+       -500,
+       "JOSE MANOEL DOS SANTOS",
+       "711.713.024-52",
+       "",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "20/10/2026",
+       -2626.5,
+       "O REI DAS OVAS COMERCIO DE PESCADOS LTDA",
+       "000043231/1",
+       "",
+       ""
       ]
      ]
     }
@@ -20392,13 +20934,14 @@
      "grupos": {
       "1": 1059150.87,
       "4": -357256.19000070007,
-      "6": -112873.52999929996,
+      "6": -122274.35999999996,
       "11": -49282.649999999994,
       "9": -7500.0,
-      "5": -49818.94,
+      "5": -39718.11,
       "8": -40221.00000000001,
       "NEUTRO": 11128.229999999363,
       "14": -23215.83,
+      "NAO MAPEADA": -699.9999992999999,
       "CC": -3466.67,
       "3": -12116.620000000003,
       "2": -5857.55,
@@ -20412,9 +20955,8 @@
       "4|Secos e mercearia": -79035.87999999999,
       "11|Investimentos diversos": -35437.65,
       "9|Outros de marketing": -3500.0,
-      "5|Prestadores de servicos gerais": -11350.83,
+      "6|Diarista (OIA)": -28391.670000000006,
       "5|Alojamento e ajuda de custo para moradia": -26070.65,
-      "6|Diarista (OIA)": -22686.68,
       "11|Equipamentos e mobiliário": -10345.0,
       "4|Proteínas (carnes e frutos do mar)": -111081.62999999998,
       "4|Bebidas alcoólicas": -55827.879991740505,
@@ -20426,15 +20968,16 @@
       "NEUTRO|Transferência entre contas - saída": -916797.9800000001,
       "6|Salários da operação": -39208.299999999996,
       "5|Gestor operacional PJ": -9000.0,
-      "6|Salario PJ": -7600.0,
+      "6|Salario PJ": -14800.0,
       "8|Telefonia e internet": -188.42,
+      "5|Prestadores de servicos gerais": -1250.0,
       "8|Correios e fretes administrativos": -186.95,
       "4|Outros insumos e diversos": -38480.450000000004,
       "14|Cachê de artistas e atrações": -23215.83,
       "8|Remuneracao PJ diretoria": -5600.0,
       "8|Ajuda de custos diretoria": -2800.0,
       "8|Pró-labore": -19600.0,
-      "6|Extras e freelancers": -3504.1599993,
+      "NAO MAPEADA|OIA)": -699.9999992999999,
       "6|ISS | Permanência": -2134.33,
       "9|Mídia paga": -1500.0,
       "4|Frete de insumos de alimentos e bebidas": -11375.560000000001,
@@ -20466,9 +21009,8 @@
       "4|Secos e mercearia": 34,
       "11|Investimentos diversos": 22,
       "9|Outros de marketing": 2,
-      "5|Prestadores de servicos gerais": 14,
+      "6|Diarista (OIA)": 55,
       "5|Alojamento e ajuda de custo para moradia": 12,
-      "6|Diarista (OIA)": 38,
       "11|Equipamentos e mobiliário": 5,
       "4|Proteínas (carnes e frutos do mar)": 39,
       "4|Bebidas alcoólicas": 13,
@@ -20480,15 +21022,16 @@
       "NEUTRO|Transferência entre contas - saída": 21,
       "6|Salários da operação": 40,
       "5|Gestor operacional PJ": 2,
-      "6|Salario PJ": 3,
+      "6|Salario PJ": 4,
       "8|Telefonia e internet": 1,
+      "5|Prestadores de servicos gerais": 2,
       "8|Correios e fretes administrativos": 1,
       "4|Outros insumos e diversos": 9,
       "14|Cachê de artistas e atrações": 24,
       "8|Remuneracao PJ diretoria": 1,
       "8|Ajuda de custos diretoria": 2,
       "8|Pró-labore": 2,
-      "6|Extras e freelancers": 7,
+      "NAO MAPEADA|OIA)": 1,
       "6|ISS | Permanência": 6,
       "9|Mídia paga": 1,
       "4|Frete de insumos de alimentos e bebidas": 2,
@@ -20637,7 +21180,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "01/09/2026",
        -800,
        "NILSON DOUGLAS RODRIGUES DA PAZ",
@@ -20682,7 +21225,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "01/09/2026",
        -255,
        "HOELL TEODOSIO DOS SANTOS",
@@ -20718,7 +21261,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "01/09/2026",
        -800,
        "RAMATHYS AGRYLAR MENEZES DA SILVA",
@@ -20736,7 +21279,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "01/09/2026",
        -150,
        "VALDENIRA DOS SANTOS PEREIRA",
@@ -20808,7 +21351,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "01/09/2026",
        -262.5,
        "HOELL TEODOSIO DOS SANTOS",
@@ -21717,7 +22260,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "04/09/2026",
        -1712.5,
        "MARIANA BRANCO DA SILVA",
@@ -21870,7 +22413,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "NAO MAPEADA|OIA)",
        "04/09/2026",
        -700.0,
        "MARCOS DOS SANTOS MELO",
@@ -24768,7 +25311,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "21/09/2026",
        -375,
        "BRUNO CELIO PORTELA DE SOUZA",
@@ -24804,7 +25347,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "21/09/2026",
        -700,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -24813,7 +25356,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "21/09/2026",
        -840,
        "FLAVIO AUGUSTO LIMA DA SILVA",
@@ -27990,7 +28533,7 @@
        ""
       ],
       [
-       "6|Diarista (OIA)",
+       "6|Salario PJ",
        "25/09/2026",
        -7200,
        "DEYBSON JOSE FAGUNDES",
@@ -28026,7 +28569,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "25/09/2026",
        -1620.83,
        "MARIANA MACHADO BUENO",
@@ -28188,7 +28731,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "25/09/2026",
        -1785,
        "FLAVIA MARIA SILVA TORRES",
@@ -28197,7 +28740,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "6|Diarista (OIA)",
        "25/09/2026",
        -800,
        "MARIANA GOICOECHEA",
@@ -29394,7 +29937,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "29/09/2026",
        -100,
        "VOLHA DRAZIELI SOARES DE SOUZA",
@@ -29403,7 +29946,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "29/09/2026",
        -300,
        "THIAGO MACHADO STORCK",
@@ -29412,7 +29955,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "29/09/2026",
        -300,
        "PAULO CESAR DA SILVA",
@@ -29421,7 +29964,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "29/09/2026",
        -100,
        "INACIO ADRIANO DE LIMA",
@@ -29430,7 +29973,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "29/09/2026",
        -445.83,
        "JOSE EVANDRO DA SILVA",
@@ -29592,7 +30135,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "29/09/2026",
        -1558.33,
        "FLAVIA MARIA SILVA TORRES",
@@ -30210,7 +30753,7 @@
       "1": 50511.31000000001,
       "6": -6295.74,
       "NEUTRO": 0.0,
-      "4": -45730.78,
+      "4": -59381.28999999999,
       "5": -7200.0,
       "11": -900.0
      },
@@ -30221,9 +30764,9 @@
       "4|Proteínas (carnes e frutos do mar)": -8271.140000000001,
       "4|Secos e mercearia": -1744.3799999999999,
       "6|Diarista (OIA)": -4712.5,
-      "4|Bebidas alcoólicas": -10418.5,
+      "4|Bebidas alcoólicas": -24069.010000000002,
       "5|Alojamento e ajuda de custo para moradia": -6500.0,
-      "5|Prestadores de servicos gerais": -700.0,
+      "5|Manutenção de equipamentos": -700.0,
       "6|Salários da operação": -400.0,
       "4|Hortifrúti": -902.25,
       "6|Alimentação de colaboradores": -310.0,
@@ -30240,9 +30783,9 @@
       "4|Proteínas (carnes e frutos do mar)": 4,
       "4|Secos e mercearia": 3,
       "6|Diarista (OIA)": 11,
-      "4|Bebidas alcoólicas": 2,
+      "4|Bebidas alcoólicas": 4,
       "5|Alojamento e ajuda de custo para moradia": 2,
-      "5|Prestadores de servicos gerais": 1,
+      "5|Manutenção de equipamentos": 1,
       "6|Salários da operação": 1,
       "4|Hortifrúti": 1,
       "6|Alimentação de colaboradores": 1,
@@ -30254,7 +30797,7 @@
      },
      "familias": {
       "cozinha": -10917.77,
-      "bar": -13348.5,
+      "bar": -26999.010000000002,
       "comum": -21464.510000000002
      },
      "itens": [
@@ -30574,7 +31117,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "5|Manutenção de equipamentos",
        "02/10/2026",
        -700,
        "PEDROEROL CLIMATIZACAO LTDA",
@@ -30781,6 +31324,24 @@
        ""
       ],
       [
+       "4|Bebidas alcoólicas",
+       "09/10/2026",
+       -7669.63,
+       "INGA - DISTRIBUIDORA LTDA",
+       "000388070/1",
+       "Santander",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "29/10/2026",
+       -5980.88,
+       "DLP",
+       "001270442/3",
+       "Santander",
+       ""
+      ],
+      [
        "NEUTRO|Transferência entre contas - entrada",
        "01/10/2026",
        21562.27,
@@ -30824,11 +31385,11 @@
     },
     "2026-10": {
      "ini": 599870.43,
-     "fim": 590255.22,
+     "fim": 576604.71,
      "entradas": 50511.31,
-     "saidas": -60126.51999999999,
+     "saidas": -73777.03,
      "contas": {
-      "Santander": 58253.88,
+      "Santander": 44603.37,
       "Santander - ContaMax": 532001.34
      }
     }
@@ -30850,7 +31411,7 @@
       "8": -27090.24,
       "7": -34986.92,
       "11": -592036.2,
-      "5": -82445.93999999999,
+      "5": -80931.08,
       "6": -88602.21,
       "4": -90306.9,
       "2": -48.339999999999996
@@ -30882,7 +31443,6 @@
       "CC|Conta corrente Amana - saída": -8097.74,
       "8|Gestor administrativo PJ": -4700.0,
       "4|Proteínas (carnes e frutos do mar)": -27672.510000000002,
-      "5|Energia elétrica": -4106.5,
       "5|Limpeza e descartáveis": -11242.58,
       "5|Alojamento e ajuda de custo para moradia": -48168.9,
       "8|Licenças e alvarás": -1172.78,
@@ -30898,6 +31458,7 @@
       "4|Hortifrúti": -9759.580000000002,
       "4|Bebidas alcoólicas": -5629.5,
       "4|Bebidas não alcoólicas": -311.52,
+      "5|Energia elétrica": -2591.6400000000003,
       "6|FGTS e contribuições": -3289.94,
       "2|Simples Nacional (DAS)": -48.339999999999996
      },
@@ -30928,7 +31489,6 @@
       "CC|Conta corrente Amana - saída": 7,
       "8|Gestor administrativo PJ": 1,
       "4|Proteínas (carnes e frutos do mar)": 16,
-      "5|Energia elétrica": 3,
       "5|Limpeza e descartáveis": 10,
       "5|Alojamento e ajuda de custo para moradia": 10,
       "8|Licenças e alvarás": 1,
@@ -30944,6 +31504,7 @@
       "4|Hortifrúti": 6,
       "4|Bebidas alcoólicas": 3,
       "4|Bebidas não alcoólicas": 1,
+      "5|Energia elétrica": 2,
       "6|FGTS e contribuições": 2,
       "2|Simples Nacional (DAS)": 2
      },
@@ -31687,15 +32248,6 @@
        "05/08/2026",
        -1518,
        "O REI DAS OVAS COMERCIO DE PESCADOS LTDA",
-       "FALTA NF",
-       "",
-       ""
-      ],
-      [
-       "5|Energia elétrica",
-       "06/08/2026",
-       -2189.29,
-       "COMPANHIA ENERGETICA DE PERNAMBUCO",
        "FALTA NF",
        "",
        ""
@@ -32948,15 +33500,6 @@
        -793.64,
        "PRASO PLATAFORMA DE COMERCIO LTDA.",
        "NF 1000737",
-       "",
-       ""
-      ],
-      [
-       "5|Energia elétrica",
-       "19/08/2026",
-       -771.95,
-       "COMPANHIA ENERGETICA DE PERNAMBUCO",
-       "SEM NF",
        "",
        ""
       ],
@@ -34258,7 +34801,7 @@
       ],
       [
        "5|Energia elétrica",
-       "04/08/2026",
+       "31/08/2026",
        -1145.26,
        "COMPANHIA ENERGETICA DE PERNAMBUCO",
        "NF 422807330",
@@ -34505,6 +35048,15 @@
        -7883.9,
        "DISTRIBUIDORA E LOGISTICA DE PERNAMBUCO IMPORT",
        "NF 282880",
+       "",
+       ""
+      ],
+      [
+       "5|Energia elétrica",
+       "31/08/2026",
+       -1446.38,
+       "COMPANHIA ENERGETICA DE PERNAMBUCO",
+       "SEM NF",
        "",
        ""
       ],
@@ -34794,10 +35346,10 @@
       "OR": 5998.04,
       "NEUTRO": -2.2737367544323206e-13,
       "4": -69563.47000000002,
-      "5": -51033.119999999995,
-      "8": -8760.23,
-      "7": -36500.0,
+      "5": -50982.68,
+      "8": -8864.289999999999,
       "11": -301387.22,
+      "7": -35000.0,
       "CC": -6096.85,
       "6": -4350.06,
       "9": -1500.0,
@@ -34810,7 +35362,7 @@
       "4|Devoluções de Compra de Material de Consumo": 6687.009999999999,
       "5|Transporte, veículo e combustível": -7241.04,
       "8|Gestor administrativo PJ": -4000.0,
-      "7|Outros aluguéis": -11500.0,
+      "5|Alojamento e ajuda de custo para moradia": -34500.0,
       "11|Pré-operação": -10102.84,
       "4|Hortifrúti": -13340.400000000001,
       "11|Equipamentos e mobiliário": -65112.48000000001,
@@ -34819,21 +35371,22 @@
       "4|Água mineral": -4800.0,
       "4|Secos e mercearia": -28416.449999999997,
       "7|Arrendamento e aluguel do ponto": -25000.0,
-      "5|Prestadores de servicos gerais": -5504.06,
+      "7|Outros aluguéis": -10000.0,
+      "5|Prestadores de servicos gerais": -4000.0,
       "CC|Conta corrente Amana - saída": -6096.85,
       "6|Salários da operação": -4350.06,
       "5|Água e esgoto": -2210.8599999999997,
       "9|Mídia paga": -1500.0,
       "11|Frete de equipamentos e obra": -65549.06,
       "8|Material de escritório": -922.15,
-      "5|Alojamento e ajuda de custo para moradia": -33000.0,
       "4|Proteínas (carnes e frutos do mar)": -22046.07,
       "8|Contabilidade, jurídico e consultorias": -1682.21,
       "8|Sistemas": -1843.62,
       "4|Gás de cozinha": -5119.92,
       "10|Juros e multas": -938.02,
-      "5|Energia elétrica": -1446.38,
+      "8|Telefonia e internet": -104.06,
       "8|Tarifas bancárias": -312.25,
+      "5|Limpeza e descartáveis": -1400.0,
       "13|Emprestimo concedido - saida": -10000.0,
       "4|Frios, laticínios e congelados": -2527.64,
       "5|Diversos de operação": -1630.78,
@@ -34845,7 +35398,7 @@
       "4|Devoluções de Compra de Material de Consumo": 16,
       "5|Transporte, veículo e combustível": 3,
       "8|Gestor administrativo PJ": 1,
-      "7|Outros aluguéis": 2,
+      "5|Alojamento e ajuda de custo para moradia": 5,
       "11|Pré-operação": 4,
       "4|Hortifrúti": 4,
       "11|Equipamentos e mobiliário": 13,
@@ -34854,21 +35407,22 @@
       "4|Água mineral": 1,
       "4|Secos e mercearia": 9,
       "7|Arrendamento e aluguel do ponto": 1,
-      "5|Prestadores de servicos gerais": 4,
+      "7|Outros aluguéis": 1,
+      "5|Prestadores de servicos gerais": 2,
       "CC|Conta corrente Amana - saída": 4,
       "6|Salários da operação": 2,
       "5|Água e esgoto": 2,
       "9|Mídia paga": 1,
       "11|Frete de equipamentos e obra": 12,
       "8|Material de escritório": 2,
-      "5|Alojamento e ajuda de custo para moradia": 4,
       "4|Proteínas (carnes e frutos do mar)": 11,
       "8|Contabilidade, jurídico e consultorias": 2,
       "8|Sistemas": 5,
       "4|Gás de cozinha": 4,
       "10|Juros e multas": 2,
-      "5|Energia elétrica": 1,
+      "8|Telefonia e internet": 1,
       "8|Tarifas bancárias": 16,
+      "5|Limpeza e descartáveis": 1,
       "13|Emprestimo concedido - saida": 1,
       "4|Frios, laticínios e congelados": 1,
       "5|Diversos de operação": 1,
@@ -35159,7 +35713,7 @@
        ""
       ],
       [
-       "7|Outros aluguéis",
+       "5|Alojamento e ajuda de custo para moradia",
        "02/09/2026",
        -1500,
        "RUAN PAULO PEREIRA DOS SANTOS",
@@ -35897,7 +36451,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "8|Telefonia e internet",
        "20/09/2026",
        -104.06,
        "TIM S A",
@@ -35937,15 +36491,6 @@
        "22/09/2026",
        -7000,
        "P I D SILVA AGENCIAMENTO",
-       "SEM NF",
-       "",
-       ""
-      ],
-      [
-       "5|Energia elétrica",
-       "23/09/2026",
-       -1446.38,
-       "COMPANHIA ENERGETICA DE PERNAMBUCO",
        "SEM NF",
        "",
        ""
@@ -36194,7 +36739,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "5|Limpeza e descartáveis",
        "01/09/2026",
        -1400,
        "FACTOR SAUDE AMBIENTAL LTDA",
@@ -36576,9 +37121,9 @@
     "2026-10": {
      "grupos": {
       "8": -4705.0,
-      "5": -2100.0,
-      "11": -27784.31,
-      "6": -2000.0,
+      "5": -18399.960000000003,
+      "11": -31784.31,
+      "6": -8223.0,
       "CC": -5801.0,
       "7": -25000.0
      },
@@ -36587,22 +37132,30 @@
       "8|Licenças e alvarás": -396.0,
       "5|Alojamento e ajuda de custo para moradia": -2100.0,
       "8|Gestor administrativo PJ": -4000.0,
-      "11|Investimentos diversos": -25032.81,
+      "11|Investimentos diversos": -29032.81,
       "6|Diarista (OIA)": -2000.0,
       "CC|Conta corrente Amana - saída": -5801.0,
       "7|Arrendamento e aluguel do ponto": -25000.0,
-      "11|Frete de equipamentos e obra": -2751.5
+      "11|Frete de equipamentos e obra": -2751.5,
+      "5|Frete de materiais de operação": -6877.5,
+      "6|Salários da operação": -6223.0,
+      "5|Energia elétrica": -8300.62,
+      "5|Água e esgoto": -1121.84
      },
      "lanc": {
       "8|Sistemas": 1,
       "8|Licenças e alvarás": 1,
       "5|Alojamento e ajuda de custo para moradia": 1,
       "8|Gestor administrativo PJ": 1,
-      "11|Investimentos diversos": 2,
+      "11|Investimentos diversos": 3,
       "6|Diarista (OIA)": 1,
       "CC|Conta corrente Amana - saída": 2,
       "7|Arrendamento e aluguel do ponto": 1,
-      "11|Frete de equipamentos e obra": 2
+      "11|Frete de equipamentos e obra": 2,
+      "5|Frete de materiais de operação": 2,
+      "6|Salários da operação": 2,
+      "5|Energia elétrica": 1,
+      "5|Água e esgoto": 1
      },
      "familias": {},
      "itens": [
@@ -36711,6 +37264,69 @@
        -1375.75,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
        "000106329/1",
+       "",
+       ""
+      ],
+      [
+       "5|Frete de materiais de operação",
+       "31/10/2026",
+       -3438.75,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
+       "000106790/1",
+       "",
+       ""
+      ],
+      [
+       "5|Frete de materiais de operação",
+       "31/10/2026",
+       -3438.75,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
+       "000106789/1",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -2572,
+       "FRANCISCO EDUARDO OLIVEIRA DE SOUZA",
+       "091.288.234-43",
+       "",
+       ""
+      ],
+      [
+       "6|Salários da operação",
+       "31/10/2026",
+       -3651,
+       "THYAGO MESSIAS DO NASCIMENTO",
+       "080.155.614-77",
+       "",
+       ""
+      ],
+      [
+       "5|Energia elétrica",
+       "31/10/2026",
+       -8300.62,
+       "COMPANHIA ENERGETICA DE PERNAMBUCO",
+       "",
+       "",
+       ""
+      ],
+      [
+       "5|Água e esgoto",
+       "31/10/2026",
+       -1121.84,
+       "COMPANHIA PERNAMBUCANA DE SANEAMENTO",
+       "",
+       "",
+       ""
+      ],
+      [
+       "11|Investimentos diversos",
+       "29/10/2026",
+       -4000,
+       "A FERREIRA COMERCIO DE MADEIRAS LTDA",
+       "53545465000194",
        "",
        ""
       ]
@@ -41507,11 +42123,11 @@
     "2026-09": {
      "grupos": {
       "11": -430042.2100000001,
-      "5": -57654.85,
+      "5": -59050.79,
       "4": -126469.23999999992,
-      "8": -13382.15,
-      "7": -36500.0,
+      "8": -13486.21,
       "NEUTRO": 1.3244516594568267e-10,
+      "7": -35000.0,
       "CC": -6300.84,
       "6": -8118.5,
       "9": -1500.0,
@@ -41529,7 +42145,7 @@
       "8|Gestor administrativo PJ": -8000.0,
       "11|Equipamentos e mobiliário": -114249.62000000001,
       "4|Hortifrúti": -21040.54,
-      "7|Outros aluguéis": -11500.0,
+      "5|Alojamento e ajuda de custo para moradia": -36600.0,
       "11|Pré-operação": -21643.85,
       "8|Tarifas bancárias": -330.25,
       "NEUTRO|Transferência entre contas - entrada": 686445.0400000002,
@@ -41537,17 +42153,17 @@
       "4|Água mineral": -4800.0,
       "4|Proteínas (carnes e frutos do mar)": -35947.840000000004,
       "7|Arrendamento e aluguel do ponto": -25000.0,
-      "5|Prestadores de servicos gerais": -5504.06,
+      "7|Outros aluguéis": -10000.0,
+      "5|Prestadores de servicos gerais": -4000.0,
       "CC|Conta corrente Amana - saída": -6300.84,
       "6|Salários da operação": -4350.06,
-      "5|Limpeza e descartáveis": -5007.25,
+      "5|Limpeza e descartáveis": -6407.25,
       "5|Água e esgoto": -2210.8599999999997,
       "4|Bebidas alcoólicas": -10583.18,
       "4|Frios, laticínios e congelados": -5752.139999999999,
       "9|Mídia paga": -1500.0,
       "8|Material de escritório": -1130.0700000000002,
       "5|Energia elétrica": -2591.6400000000003,
-      "5|Alojamento e ajuda de custo para moradia": -35100.0,
       "8|Contabilidade, jurídico e consultorias": -1682.21,
       "8|Licenças e alvarás": -396.0,
       "6|Alimentação de colaboradores": -478.5,
@@ -41557,6 +42173,7 @@
       "6|FGTS e contribuições": -3289.94,
       "10|Juros e multas": -938.02,
       "2|Simples Nacional (DAS)": -48.339999999999996,
+      "8|Telefonia e internet": -104.06,
       "13|Emprestimo concedido - saida": -10000.0,
       "NEUTRO|Transferência entre contas - saída": -691651.12,
       "10|Rendimentos de aplicações": 84.09,
@@ -41573,7 +42190,7 @@
       "8|Gestor administrativo PJ": 2,
       "11|Equipamentos e mobiliário": 34,
       "4|Hortifrúti": 6,
-      "7|Outros aluguéis": 2,
+      "5|Alojamento e ajuda de custo para moradia": 6,
       "11|Pré-operação": 6,
       "8|Tarifas bancárias": 25,
       "NEUTRO|Transferência entre contas - entrada": 41,
@@ -41581,17 +42198,17 @@
       "4|Água mineral": 1,
       "4|Proteínas (carnes e frutos do mar)": 18,
       "7|Arrendamento e aluguel do ponto": 1,
-      "5|Prestadores de servicos gerais": 4,
+      "7|Outros aluguéis": 1,
+      "5|Prestadores de servicos gerais": 2,
       "CC|Conta corrente Amana - saída": 5,
       "6|Salários da operação": 2,
-      "5|Limpeza e descartáveis": 3,
+      "5|Limpeza e descartáveis": 4,
       "5|Água e esgoto": 2,
       "4|Bebidas alcoólicas": 2,
       "4|Frios, laticínios e congelados": 2,
       "9|Mídia paga": 1,
       "8|Material de escritório": 2,
       "5|Energia elétrica": 2,
-      "5|Alojamento e ajuda de custo para moradia": 5,
       "8|Contabilidade, jurídico e consultorias": 2,
       "8|Licenças e alvarás": 1,
       "6|Alimentação de colaboradores": 1,
@@ -41601,6 +42218,7 @@
       "6|FGTS e contribuições": 2,
       "10|Juros e multas": 2,
       "2|Simples Nacional (DAS)": 2,
+      "8|Telefonia e internet": 1,
       "13|Emprestimo concedido - saida": 1,
       "NEUTRO|Transferência entre contas - saída": 53,
       "10|Rendimentos de aplicações": 1,
@@ -41758,7 +42376,7 @@
        ""
       ],
       [
-       "7|Outros aluguéis",
+       "5|Alojamento e ajuda de custo para moradia",
        "01/09/2026",
        -1500,
        "RUAN PAULO PEREIRA DOS SANTOS",
@@ -43522,7 +44140,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "8|Telefonia e internet",
        "18/09/2026",
        -104.06,
        "TIM S A",
@@ -43909,7 +44527,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "5|Limpeza e descartáveis",
        "25/09/2026",
        -1400,
        "FACTOR SAUDE",
