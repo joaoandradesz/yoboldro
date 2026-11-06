@@ -1,5 +1,5 @@
 {
- "gerado": "06/11/2026 às 14:17",
+ "gerado": "06/11/2026 às 14:45",
  "meses": [
   "2026-08",
   "2026-09",
@@ -5914,7 +5914,7 @@
       "9": -7500.0,
       "6": -166036.98000000013,
       "5": -72891.3,
-      "4": -472123.7899999999,
+      "4": -449339.95999999996,
       "14": -23215.83,
       "CC": -3466.67,
       "3": -111227.71000000005,
@@ -5943,11 +5943,11 @@
       "5|Gestor operacional PJ": -14666.67,
       "11|Equipamentos e mobiliário": -10345.0,
       "4|Hortifrúti": -19542.13,
-      "4|Secos e mercearia": -80439.77000000002,
+      "4|Secos e mercearia": -78539.91000000002,
       "11|Obras e reformas": -3500.0,
       "5|Limpeza e descartáveis": -24452.380000000005,
       "8|Tarifas bancárias": -782.2500000000001,
-      "4|Bebidas alcoólicas": -205828.72000000003,
+      "4|Bebidas alcoólicas": -197990.36000000002,
       "9|Agência e conteúdo": -2500.0,
       "4|Frete de insumos de alimentos e bebidas": -14428.04,
       "4|Gás de cozinha": -1000.0,
@@ -5959,7 +5959,7 @@
       "5|Transporte, veículo e combustível": -549.0,
       "9|Mídia paga": -1500.0,
       "4|Água mineral": -6792.0,
-      "4|Frios, laticínios e congelados": -24476.17,
+      "4|Frios, laticínios e congelados": -11430.56,
       "6|Rescisões": -3106.0299999999997,
       "4|Bebidas não alcoólicas": -1355.0,
       "5|Manutenção de equipamentos": -700.0,
@@ -5997,11 +5997,11 @@
       "5|Gestor operacional PJ": 3,
       "11|Equipamentos e mobiliário": 5,
       "4|Hortifrúti": 17,
-      "4|Secos e mercearia": 36,
+      "4|Secos e mercearia": 34,
       "11|Obras e reformas": 2,
       "5|Limpeza e descartáveis": 12,
       "8|Tarifas bancárias": 25,
-      "4|Bebidas alcoólicas": 38,
+      "4|Bebidas alcoólicas": 37,
       "9|Agência e conteúdo": 1,
       "4|Frete de insumos de alimentos e bebidas": 2,
       "4|Gás de cozinha": 1,
@@ -6013,7 +6013,7 @@
       "5|Transporte, veículo e combustível": 3,
       "9|Mídia paga": 1,
       "4|Água mineral": 1,
-      "4|Frios, laticínios e congelados": 9,
+      "4|Frios, laticínios e congelados": 7,
       "6|Rescisões": 2,
       "4|Bebidas não alcoólicas": 3,
       "5|Manutenção de equipamentos": 1,
@@ -6032,9 +6032,9 @@
       "FAT|Ajuste ao total do 3LM": 1
      },
      "familias": {
-      "cozinha": -232360.53,
+      "cozinha": -217415.06,
       "comum": -25787.54,
-      "bar": -213975.72000000003
+      "bar": -206137.36000000002
      },
      "itens": [
       [
@@ -18721,17 +18721,6 @@
        "004/004"
       ],
       [
-       "4|Frios, laticínios e congelados",
-       "14/09/2026",
-       -6522.8,
-       "FORMAGGIO DISTRIBUICAO DE ALIMENTOS LTDA",
-       "NF962584",
-       "",
-       "",
-       "05/10/2026",
-       "001/001"
-      ],
-      [
        "4|Proteínas (carnes e frutos do mar)",
        "16/09/2026",
        -6442.8,
@@ -18751,50 +18740,6 @@
        "",
        "",
        "08/10/2026",
-       "001/001"
-      ],
-      [
-       "4|Secos e mercearia",
-       "08/09/2026",
-       -361.66,
-       "DISPAN DISTRIBUIDORA DE ALIMENTOS LTDA",
-       "NF 68345",
-       "",
-       "",
-       "22/09/2026",
-       "001/001"
-      ],
-      [
-       "4|Bebidas alcoólicas",
-       "08/09/2026",
-       -7838.36,
-       "INGA - DISTRIBUIDORA LTDA",
-       "NF 388070",
-       "",
-       "",
-       "08/10/2026",
-       "001/001"
-      ],
-      [
-       "4|Frios, laticínios e congelados",
-       "14/09/2026",
-       -6522.81,
-       "FORMAGGIO DISTRIBUICAO DE ALIMENTOS LTDA",
-       "NF962584",
-       "",
-       "",
-       "12/10/2026",
-       "001/001"
-      ],
-      [
-       "4|Secos e mercearia",
-       "23/09/2026",
-       -1538.2,
-       "DISPAN DISTRIBUIDORA DE ALIMENTOS LTDA",
-       "NF 286464",
-       "",
-       "",
-       "09/10/2026",
        "001/001"
       ],
       [
@@ -20120,7 +20065,7 @@
      "grupos": {
       "1": 1104094.3300000005,
       "10": 31.38,
-      "4": -292053.98000000004,
+      "4": -287597.14,
       "8": -12090.52,
       "5": -112805.23999999998,
       "6": -167192.53,
@@ -20139,7 +20084,7 @@
       "8|Sistemas": -3392.05,
       "5|Alojamento e ajuda de custo para moradia": -53500.0,
       "6|ISS | Permanência": -4972.69,
-      "4|Proteínas (carnes e frutos do mar)": -83513.63,
+      "4|Proteínas (carnes e frutos do mar)": -81056.63,
       "6|Diarista (OIA)": -14616.67,
       "6|Salários da operação": -73770.09000000003,
       "6|Alimentação de colaboradores": -8935.78,
@@ -20161,7 +20106,7 @@
       "4|Bebidas alcoólicas": -85763.87999999999,
       "4|Bebidas não alcoólicas": -2029.0,
       "9|Marketing e divulgação de eventos": -1500.0,
-      "4|Outros insumos e diversos": -7186.46,
+      "4|Outros insumos e diversos": -5186.62,
       "7|Seguros": -1059.8,
       "14|Artistas e couvert": -1250.0,
       "11|Equipamentos e mobiliário": -5420.0,
@@ -20193,7 +20138,7 @@
       "8|Sistemas": 3,
       "5|Alojamento e ajuda de custo para moradia": 15,
       "6|ISS | Permanência": 17,
-      "4|Proteínas (carnes e frutos do mar)": 31,
+      "4|Proteínas (carnes e frutos do mar)": 30,
       "6|Diarista (OIA)": 27,
       "6|Salários da operação": 32,
       "6|Alimentação de colaboradores": 9,
@@ -20215,7 +20160,7 @@
       "4|Bebidas alcoólicas": 20,
       "4|Bebidas não alcoólicas": 3,
       "9|Marketing e divulgação de eventos": 3,
-      "4|Outros insumos e diversos": 4,
+      "4|Outros insumos e diversos": 3,
       "7|Seguros": 1,
       "14|Artistas e couvert": 1,
       "11|Equipamentos e mobiliário": 3,
@@ -20241,9 +20186,9 @@
       "2|Cancelamentos e estornos": 2
      },
      "familias": {
-      "cozinha": -168828.88000000003,
+      "cozinha": -166371.88,
       "bar": -94970.87999999999,
-      "comum": -46149.08
+      "comum": -44149.24
      },
      "itens": [
       [
@@ -26781,17 +26726,6 @@
        "001/001"
       ],
       [
-       "4|Outros insumos e diversos",
-       "05/10/2026",
-       -1999.84,
-       "NOMU BISTRO RESTAURANTE LTDA",
-       "NF 538",
-       "",
-       "",
-       "12/10/2026",
-       "001/001"
-      ],
-      [
        "14|Cachê de artistas e atrações",
        "14/10/2026",
        -3400,
@@ -26811,17 +26745,6 @@
        "",
        "",
        "16/10/2026",
-       "001/001"
-      ],
-      [
-       "4|Proteínas (carnes e frutos do mar)",
-       "13/10/2026",
-       -2457,
-       "PARAGUAIO PESCADOS COMERCIO ATACADISTA &amp; V",
-       "NF 43",
-       "",
-       "",
-       "20/10/2026",
        "001/001"
       ],
       [
@@ -42425,7 +42348,7 @@
       "6|ISS | Permanência": -4972.69,
       "NEUTRO|Transferência entre contas - saída": -1449221.54,
       "4|Proteínas (carnes e frutos do mar)": -77914.06999999999,
-      "4|Secos e mercearia": -40528.22,
+      "4|Secos e mercearia": -51307.92495349001,
       "6|Diarista (OIA)": -16610.010000000002,
       "4|Bebidas alcoólicas": -213033.8068507,
       "5|Alojamento e ajuda de custo para moradia": -52500.0,
@@ -42442,7 +42365,7 @@
       "7|Outros aluguéis": -17500.0,
       "8|Contabilidade, jurídico e consultorias": -5737.71,
       "5|Limpeza e descartáveis": -22691.749999999993,
-      "4|Frios, laticínios e congelados": -28205.700000000004,
+      "4|Frios, laticínios e congelados": -17425.99504651,
       "5|Prestadores de servicos gerais": -38839.20999999999,
       "6|Salario PJ": -7500.0,
       "5|Gestor operacional PJ": -5666.67,
@@ -42486,7 +42409,7 @@
       "6|ISS | Permanência": 17,
       "NEUTRO|Transferência entre contas - saída": 21,
       "4|Proteínas (carnes e frutos do mar)": 34,
-      "4|Secos e mercearia": 23,
+      "4|Secos e mercearia": 25,
       "6|Diarista (OIA)": 36,
       "4|Bebidas alcoólicas": 41,
       "5|Alojamento e ajuda de custo para moradia": 14,
@@ -43376,9 +43299,20 @@
       [
        "4|Frios, laticínios e congelados",
        "02/10/2026",
-       -6522.8,
+       -1132.95,
        "FORMAGGIO DISTRIBUICAO DE ALIMENTOS LTDA",
-       "NF962584",
+       "000962584/1",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "02/10/2026",
+       -5389.85,
+       "FORMAGGIO DISTRIBUICAO DE ALIMENTOS LTDA",
+       "000962584/1",
        "Santander",
        "",
        "",
@@ -45807,28 +45741,6 @@
       [
        "4|Secos e mercearia",
        "09/10/2026",
-       -361.66,
-       "DISPAN DISTRIBUIDORA DE ALIMENTOS LTDA",
-       "NF 68345",
-       "Santander",
-       "",
-       "",
-       ""
-      ],
-      [
-       "4|Bebidas alcoólicas",
-       "09/10/2026",
-       -7838.36,
-       "INGA - DISTRIBUIDORA LTDA",
-       "NF 388070",
-       "Santander",
-       "",
-       "",
-       ""
-      ],
-      [
-       "4|Secos e mercearia",
-       "09/10/2026",
        -59.99,
        "GRAO EMPORIO NATURAL",
        "FALTA NF",
@@ -45849,11 +45761,55 @@
        ""
       ],
       [
+       "NEUTRO|Transferência entre contas - entrada",
+       "09/10/2026",
+       304432.4,
+       "Transf. Santander - ContaMax &gt;&gt; Santande",
+       "",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
        "4|Frios, laticínios e congelados",
        "09/10/2026",
-       -6522.81,
+       -1132.95,
        "FORMAGGIO DISTRIBUICAO DE ALIMENTOS LTDA",
-       "NF962584",
+       "000962584/2",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "09/10/2026",
+       -5389.86,
+       "FORMAGGIO DISTRIBUICAO DE ALIMENTOS LTDA",
+       "000962584/2",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "09/10/2026",
+       -7838.36,
+       "INGA - DISTRIBUIDORA LTDA",
+       "000388070/1",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "09/10/2026",
+       -361.66,
+       "DISPAN DISTRIBUIDORA DE ALIMENTOS LTDA",
+       "000068345/1",
        "Santander",
        "",
        "",
@@ -45864,18 +45820,7 @@
        "09/10/2026",
        -1999.84,
        "NOMU BISTRO RESTAURANTE LTDA",
-       "NF 538",
-       "Santander",
-       "",
-       "",
-       ""
-      ],
-      [
-       "NEUTRO|Transferência entre contas - entrada",
-       "09/10/2026",
-       304432.4,
-       "Transf. Santander - ContaMax &gt;&gt; Santande",
-       "",
+       "000000538/1",
        "Santander",
        "",
        "",
@@ -47037,17 +46982,6 @@
        ""
       ],
       [
-       "4|Secos e mercearia",
-       "14/10/2026",
-       -1538.2,
-       "DISPAN DISTRIBUIDORA DE ALIMENTOS LTDA",
-       "NF 286464",
-       "Santander",
-       "",
-       "",
-       ""
-      ],
-      [
        "14|Cachê de artistas e atrações",
        "14/10/2026",
        -3400,
@@ -47081,17 +47015,6 @@
        ""
       ],
       [
-       "4|Proteínas (carnes e frutos do mar)",
-       "14/10/2026",
-       -2457,
-       "CARLOS DO ATUM",
-       "NF 43",
-       "Santander",
-       "",
-       "",
-       ""
-      ],
-      [
        "6|FGTS e contribuições",
        "14/10/2026",
        -4186.9,
@@ -47119,6 +47042,28 @@
        72060.95,
        "Transf. Santander - ContaMax &gt;&gt; Santande",
        "",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "14/10/2026",
+       -2457,
+       "CARLOS DO ATUM",
+       "000000043/1",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
+       "4|Secos e mercearia",
+       "14/10/2026",
+       -1538.2,
+       "DISPAN DISTRIBUIDORA DE ALIMENTOS LTDA",
+       "000286464/1",
        "Santander",
        "",
        "",
