@@ -912,12 +912,14 @@ function abreCaixa(ev,ck,mes,reg){
  if(!its.length){
   h+='<div class="cx-vazio">Esta linha não tem lançamento detalhado.</div>';
  }else{
-  /* a coluna de vencimento so existe na competencia: o extrato do Omie nao
-     traz vencimento nem o codigo do titulo, e no caixa a data da linha JA e a
-     do pagamento. Mostrar uma coluna vazia ali seria pior que nao ter. */
-  var temVenc=(reg==='comp')&&its.some(function(i){return i[7]});
+  /* vencimento e parcela aparecem sempre que o dado existir, nos dois regimes.
+     Quem nao tem e o extrato do Omie, que nao traz vencimento nem parcela — ali
+     a coluna simplesmente nao nasce, em vez de nascer vazia. */
+  var temVenc=its.some(function(i){return i[7]});
+  var temParc=its.some(function(i){return i[8]});
   h+='<table class="cx-tbl"><thead><tr><th>'+(reg==='comp'?'Emissão':'Pagamento')+'</th>'+
-     (temVenc?'<th>Vencimento</th>':'')+'<th>Cliente / fornecedor</th>'+
+     (temVenc?'<th>Vencimento</th>':'')+(temParc?'<th>Parcela</th>':'')+
+     '<th>Cliente / fornecedor</th>'+
      '<th>Banco / conta</th><th>Documento</th><th class="r">Valor</th></tr></thead><tbody>';
   its.sort(function(a,b2){return Math.abs(b2[2])-Math.abs(a[2])}).forEach(function(i){
    var av=i[6]?' <span class="flag" title="'+i[6].replace(/"/g,'&quot;')+'">100% na competência</span>':'';
@@ -930,6 +932,7 @@ function abreCaixa(ev,ck,mes,reg){
    var cdoc=semNF?(ori?'<span class="z">'+ori+'</span>':'—'):doc;
    h+='<tr'+(i[6]?' class="flagged"':'')+'><td>'+i[1].slice(0,5)+'</td>'+
       (temVenc?('<td>'+((i[7]||'').slice(0,5)||'—')+'</td>'):'')+
+      (temParc?('<td>'+(i[8]||'—')+'</td>'):'')+
       '<td>'+(i[3]||'—')+av+'</td><td>'+(i[5]||'—')+'</td>'+
       '<td>'+cdoc+'</td><td class="r '+(i[2]<0?'neg':'pos')+'">'+mv(i[2])+'</td></tr>';
   });
