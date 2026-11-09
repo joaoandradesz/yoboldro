@@ -1349,30 +1349,40 @@ function pintaRelatorios(){
   var aj=(D.ajustes||{}).cmv||{}, meta=Math.round(((D.ajustes||{}).cmv_meta||0)*100),
       ms=mesesDe('comp').filter(function(m){return aj[m]}), h='';
   if(ms.length){
-   /* o teto e da BOLDRO. No consolidado entra o CMV da YO, que nao tem receita
-      propria, e a analise vertical da tela sobe — dizer "esta a 33%" ali
-      contradiz a linha logo acima. Entao a nota fala do que a tela mostra. */
-   var naBoldro=ENT==='boldro';
-   var tit=naBoldro
-    ?('O CMV desta DRE está lançado a '+meta+'% da receita')
-    :(ENT==='yo'
-      ?'O teto de CMV não se aplica à YO'
-      :('O CMV da Boldró está lançado a '+meta+'% — no consolidado a vertical fica acima disso'));
+   /* a nota fala do que a TELA mostra. Desde 09/11/2026 o teto vale no
+      consolidado tambem — o CMV da YO sai da linha e vai para pre-operacao —,
+      entao o consolidado fecha no teto e nao ha o que ressalvar ali. A frase
+      de divergencia so entra se a vertical da tela REALMENTE sair do teto;
+      escrita sem essa trava, ela dizia "aparece em 33,0% ... e nao em 33%". */
+   var cmvYo=(D.ajustes||{}).cmv_yo||{};
+   var fora=ms.filter(function(m){
+    var p=-soma(ENT,'comp',m,['4'])/(soma(ENT,'comp',m,['FAT'])||1)*100;
+    return Math.abs(p-meta)>0.1;
+   });
+   var tit=(ENT==='yo')
+    ?'O teto de CMV não se aplica à YO'
+    :(fora.length
+      ?('O CMV da Boldró está lançado a '+meta+'% — nesta visão a vertical sai disso')
+      :('O CMV desta DRE está lançado a '+meta+'% da receita'));
    var corpo='Decisão da diretoria em 07/11/2026. O que a casa <b>comprou</b> de insumo foi: '+
      ms.map(function(m){return D.meses_nome[m]+' <b>'+brl(aj[m].comprado)+'</b> ('+
        pc(aj[m].comprado,soma('boldro','comp',m,['FAT'])||1)+' da receita)'}).join(' · ')+
      '. A diferença é estoque comprado e não consumido dentro do mês — o CMV deste painel é '+
      'compra pela data da nota, não consumo.';
-   if(ENT==='consol'){
-    corpo+=' <b>Nesta visão o CMV aparece em '+
-      ms.map(function(m){return pc(-soma('consol','comp',m,['4']),soma('consol','comp',m,['FAT'])||1)+
-        ' em '+D.meses_nome[m]}).join(' e ')+
-      '</b>, e não em '+meta+'%: o consolidado soma o CMV da YO, que não tem receita própria '+
-      'para dividir. Escolha <b>Boldró</b> no seletor de empresa para ver o '+meta+'%.';
-   }
    if(ENT==='yo'){
     corpo='A YO não fatura — quem vende é a Boldró. O teto de '+meta+'% foi aplicado '+
-      'à DRE da Boldró; aqui o CMV é a compra de insumo da pré-operação, pela data da nota.';
+      'à DRE da Boldró; aqui o insumo de pré-operação saiu da linha de CMV e está em '+
+      'Investimentos, abaixo do EBITDA.';
+   }else if(fora.length){
+    corpo+=' <b>Nesta visão o CMV aparece em '+
+      fora.map(function(m){return pc(-soma(ENT,'comp',m,['4']),soma(ENT,'comp',m,['FAT'])||1)+
+        ' em '+D.meses_nome[m]}).join(' e ')+'</b>. Escolha <b>Boldró</b> no seletor de '+
+      'empresa para ver o '+meta+'%.';
+   }else if(ENT==='consol'&&Object.keys(cmvYo).length){
+    corpo+=' O consolidado também fecha no teto porque o insumo que a YO comprou antes de '+
+      'a casa abrir — '+ms.filter(function(m){return cmvYo[m]}).map(function(m){
+        return brl(cmvYo[m])+' em '+D.meses_nome[m]}).join(' e ')+' — saiu da linha de CMV '+
+      'e está em <b>pré-operação</b>, abaixo do EBITDA: a YO não tem receita para dividir.';
    }
    if(ENT!=='yo')corpo+=' O ajuste está como linha própria dentro do CMV — '+
      ms.map(function(m){return brl(aj[m].ajuste)+' em '+D.meses_nome[m]}).join(' e ')+
