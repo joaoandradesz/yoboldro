@@ -310,6 +310,8 @@ td.av{color:var(--g500);font-size:12px}
 .subt{font-family:'Plus Jakarta Sans',sans-serif;margin:30px 0 12px;font-size:14px;font-weight:600;color:var(--ink2);letter-spacing:.02em}
 .selo{margin-top:7px;font-size:11.5px;color:rgba(255,255,255,.5);letter-spacing:.01em}
 .selo b{color:rgba(255,255,255,.8);font-weight:600}
+.aviso.nota{background:var(--orange-soft);border-color:#FDBA74;margin:14px 0 0}
+.aviso.nota h4{color:#9A3412}
 .aviso.erro{border-color:var(--out);background:#FFF5F5}
 .aviso.erro h4{color:var(--out)}
 .emc{display:inline-block;font-size:15px;font-weight:600;color:var(--orange);
@@ -326,6 +328,103 @@ td.av{color:var(--g500);font-size:12px}
 .caret{display:inline-block;width:15px;color:var(--orange);font-size:11px}
 .foot .disc{margin-top:18px;font-size:11.5px;line-height:1.7;color:#6D748A}
 @media(max-width:720px){.wrap{padding:0 18px}.kpis{margin-top:18px}}
+
+/* ---------- exportar PDF -------------------------------------------------
+   Portado do painel Amana/Topazio em 09/11/2026: foi o modelo que o Tiago
+   mandou como padrao ("quero objetividade"), e aquele PDF e exatamente a
+   exportacao desta funcao. O documento e montado a parte (.pdoc), em paginas
+   A4 deitadas de altura fixa, clonando o que JA esta renderizado na tela —
+   entao ele nunca pode divergir do painel. Quem imprime e o navegador.
+   ponytail: sem indice clicavel; se precisar, entra uma lib de paginacao. */
+.pdfbt{position:fixed;right:20px;bottom:20px;z-index:60;border:none;cursor:pointer;
+ display:flex;align-items:center;gap:8px;background:var(--orange);color:#fff;
+ font-family:'Plus Jakarta Sans',sans-serif;font-size:12.5px;font-weight:700;
+ padding:12px 18px;border-radius:999px;box-shadow:0 10px 26px rgba(249,115,22,.40);transition:.2s}
+.pdfbt:hover{background:#EA6A0B;transform:translateY(-1px)}
+@media(max-width:620px){.pdfbt{right:12px;bottom:12px;padding:10px 14px;font-size:11.5px}}
+
+.pdoc{display:none;background:#fff;color:var(--ink);font-family:'Inter',sans-serif}
+.pdoc .pg{position:relative;width:297mm;height:209.6mm;padding:10mm 13mm 7mm;background:#fff;
+ display:flex;flex-direction:column;overflow:hidden;break-after:page;page-break-after:always;
+ break-inside:avoid}
+.pdoc .pg:last-child{break-after:auto;page-break-after:auto}
+.pdoc .pg-h{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;
+ border-bottom:1.6px solid var(--navy);padding-bottom:3.5mm;margin-bottom:4mm}
+.pdoc .pg-h .ttl{font-family:'Plus Jakarta Sans',sans-serif;font-size:16.5px;font-weight:800;
+ letter-spacing:-.025em;color:var(--navy);line-height:1.15}
+.pdoc .pg-h .sub{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:10.5px;
+ color:var(--g500);margin-top:3px}
+.pdoc .pg-h .rt{text-align:right;flex:none}
+.pdoc .pg-h .rt b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;
+ font-weight:700;color:var(--navy)}
+.pdoc .pg-h .rt span{font-family:'Plus Jakarta Sans',sans-serif;font-size:7.5px;font-weight:700;
+ letter-spacing:.18em;text-transform:uppercase;color:var(--g400)}
+.pdoc .pg-b{flex:1;min-height:0;overflow:hidden}
+.pdoc .pg-f{display:flex;justify-content:space-between;align-items:center;margin-top:3mm;
+ padding-top:2mm;border-top:1px solid var(--g200);font-family:'Plus Jakarta Sans',sans-serif;
+ font-size:7.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--g400)}
+.pdoc .pg-f .pn{font-style:normal;color:var(--orange);font-weight:800}
+
+.pdoc .pg.capa{background:var(--navy);color:#fff;padding:0;justify-content:center}
+.pdoc .capa-in{padding:0 22mm;display:flex;flex-direction:column;justify-content:center;height:100%}
+.pdoc .capa .marca{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:800;
+ letter-spacing:.06em;text-transform:uppercase;color:#fff;margin-top:18mm;margin-bottom:auto}
+.pdoc .capa .marca b{color:var(--orange)}
+.pdoc .capa .k{font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;font-weight:700;
+ letter-spacing:.26em;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
+.pdoc .capa h1{font-family:'Plus Jakarta Sans',sans-serif;font-weight:300;font-size:46px;
+ letter-spacing:-.035em;line-height:1.02;margin-bottom:8px}
+.pdoc .capa h1 b{font-weight:800}
+.pdoc .capa .per{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:18px;
+ color:rgba(255,255,255,.72)}
+.pdoc .capa .meta{margin-top:auto;margin-bottom:16mm;padding-top:5mm;
+ border-top:1px solid rgba(255,255,255,.16);display:flex;justify-content:space-between;gap:24px}
+.pdoc .capa .meta div{font-family:'Plus Jakarta Sans',sans-serif;font-size:8.5px;font-weight:600;
+ letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.pdoc .capa .meta b{display:block;font-size:12px;letter-spacing:0;text-transform:none;color:#fff;
+ margin-bottom:3px}
+
+/* conteudo clonado: tudo cabe na pagina e nada rola */
+.pdoc .pg-b table{width:100%!important;border-collapse:collapse;table-layout:fixed;font-size:8.4px}
+.pdoc .pg-b th,.pdoc .pg-b td{padding:2.3px 4px!important;white-space:nowrap;overflow:hidden;
+ text-overflow:ellipsis;border-radius:0!important}
+.pdoc .pg-b thead th{background:var(--navy)!important;color:#fff!important;
+ font-family:'Plus Jakarta Sans',sans-serif;font-size:7.4px;font-weight:700;letter-spacing:.05em;
+ text-transform:uppercase;border:none!important}
+.pdoc .pg-b td.l,.pdoc .pg-b th.l,.pdoc .pg-b td:first-child,.pdoc .pg-b th:first-child{
+ position:static!important;box-shadow:none!important;text-align:left;width:200px;
+ white-space:normal;line-height:1.25}
+.pdoc .pg-b .chv{display:none!important}
+.pdoc .pg-b .repwrap,.pdoc .pg-b .xmwrap{overflow:visible!important;border:none!important;
+ box-shadow:none!important;border-radius:0!important;margin:0!important;background:none!important}
+.pdoc .pg-b .kpis{display:grid!important;grid-template-columns:repeat(4,1fr);gap:6mm;margin:0!important}
+.pdoc .pg-b .kpi{box-shadow:none!important;border:1px solid var(--g200)!important;padding:4mm!important}
+.pdoc .pg-b .kpi .v{font-size:17px}
+.pdoc .pg-b .waterfall{background:none!important;border:1px solid var(--g200);border-radius:10px;
+ padding:5mm!important;margin:0!important;color:var(--ink)!important}
+.pdoc .pg-b .waterfall .t,.pdoc .pg-b .waterfall .h,.pdoc .pg-b .wf-x span{color:var(--ink2)!important}
+.pdoc .pg-b .waterfall svg{max-height:92mm}
+.pdoc .pg-b .pz-grid{grid-template-columns:230px 1fr!important;align-items:center;gap:8mm!important}
+.pdoc .pg-b .pz-chart svg{max-height:66mm}
+.pdoc .pg-b .pz-leg{display:grid!important;grid-template-columns:1fr 1fr!important;
+ font-size:8px!important;gap:2mm 6mm!important}
+.pdoc .pg-b svg{max-width:100%;height:auto;display:block}
+.pdoc .pg-b .aviso,.pdoc .pg-b .panel,.pdoc .pg-b .card{box-shadow:none!important;
+ border:1px solid var(--g200)!important;margin:0 0 4mm!important}
+.pdoc .pg-b .repnote,.pdoc .pg-b .lede,.pdoc .pg-b .nota,.pdoc .pg-b .disc{font-size:8px!important;
+ line-height:1.5!important;color:var(--g500)!important;margin:3mm 0 0!important}
+.pdoc .pg-b button,.pdoc .pg-b .rep-switch{display:none!important}
+.pdoc .pg-b .mixrow{font-size:9px}
+
+@media print{
+ @page{size:A4 landscape;margin:0}
+ html,body{background:#fff!important}
+ html{scroll-behavior:auto}
+ body>*{display:none!important}
+ body>.pdoc{display:block!important}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
 """
 
 JS = r"""
@@ -422,7 +521,7 @@ function setRegime(r){REG=r;document.querySelectorAll('.regsw button,.rep-switch
    linha da tabela do DFC. Cada um com a sua lista ja deu dois numeros na mesma
    tela (05/11/2026): a ponte esquecia o grupo OR e dizia 204.926,04 enquanto o
    card e a tabela diziam 210.924,08. */
-var GRUPOS_OP=['1','OR','2','3','4','5','6','7','8','9','14','10'];
+var GRUPOS_OP=['1','OR','2','3','4','5','6','7','8','9','14','10','IR'];
 
 function passosPonte(mes){
  mes=mes||MES;
@@ -737,9 +836,12 @@ function pgtoCard(){
  var o=F.linhas.slice().sort(function(a,b){return b[1]-a[1]});
  function curto(n){return n.replace('Cartão de crédito à vista','crédito')
   .replace('Cartão de débito','débito').replace('Dinheiro (fundo fixo)','dinheiro')}
+ var bruta=soma(ENT,'comp',MES,['FAT']), gap=F.total-bruta;
  return ['Como o cliente pagou',pc(o[0][1],F.total)+' '+curto(o[0][0]),
   o.slice(1).map(function(x){return pc(x[1],F.total)+' '+curto(x[0])}).join(' · '),
-  'sobre '+brl(F.total)+' · GetNet venda a venda mais o dinheiro do fundo fixo'];
+  'sobre '+brl(F.total)+' reconstruídos da GetNet venda a venda mais o fundo fixo'+
+  (Math.abs(gap)>1?(' — '+brl(Math.abs(gap))+(gap>0?' acima':' abaixo')+
+   ' da venda bruta de '+brl(bruta)+', que vem do 3LM e é a que vale na DRE'):'')];
 }
 function contasCard(){
  var V=vd();
@@ -825,6 +927,55 @@ function kpis(){
 
 var CORES=['#F97316','#0D0F1A','#0E9F6E','#DC2626','#6366F1','#D97706','#0891B2','#7C3AED',
  '#BE185D','#4D7C0F','#9CA3AF','#334155'];
+/* custo de receber: taxa por bandeira e antecipacao. Quem conclui e quem le. */
+function custoReceber(){
+ var el=document.getElementById('tx-kpis'), tb=document.getElementById('tx-tab');
+ if(!el||!tb)return;
+ var T=txDe();
+ if(!T){
+  el.innerHTML='<div class="vazio"><h4>'+(ENT==='yo'?'A YO não recebe de cliente'
+    :'Sem extrato detalhado da adquirente em '+(D.meses_nome[MES]||'')) +'</h4><p>'+
+   (ENT==='yo'?'Quem fatura o restaurante é a Boldró — o custo de receber vive lá.'
+    :'A taxa por bandeira sai do Extrato de Vendas Detalhado da GetNet, que existe em '+
+     Object.keys(D.taxas||{}).map(function(m){return D.meses_nome[m]}).join(' e ')+
+     '. Escolha um desses meses nas pílulas.')+'</p></div>';
+  tb.innerHTML=''; return;
+ }
+ var c=T.cartao||{}, px=T.pix||{}, an=T.antecipacao||{};
+ var total=(c.taxa||0)+(an.custo||0);
+ el.innerHTML=[
+  ['Custo total de receber',brl(total),'taxa de cartão mais antecipação',
+   pc(total,(c.bruto||0)+(px.bruto||0))+' do que entrou por cartão e PIX'],
+  ['Taxa de cartão',brl(c.taxa||0),txPc(c.pc||0)+' sobre '+brl(c.bruto||0),
+   (c.n||0).toLocaleString('pt-BR')+' vendas no cartão'],
+  ['Antecipação',brl(an.custo||0),txPc(an.pc||0)+' sobre '+brl(an.base||0),
+   an.total_creditado?('creditado no mês: '+brl(an.total_creditado)):''],
+  ['PIX',brl(px.bruto||0),'entrou sem taxa nenhuma',
+   (px.n||0).toLocaleString('pt-BR')+' recebimentos · '+
+   pc(px.bruto||0,(c.bruto||0)+(px.bruto||0))+' do recebido']
+ ].map(card).join('');
+
+ var L=(T.linhas||[]).slice().sort(function(a,b){return b.bruto-a.bruto});
+ var h='<div class="repwrap on"><table class="xtbl"><thead><tr><th class="l">Bandeira e modalidade</th>'+
+  '<th>Vendas</th><th>Bruto</th><th>Ticket médio</th><th>Taxa</th><th class="av">Taxa efetiva</th></tr></thead><tbody>';
+ L.forEach(function(x){
+  h+='<tr class="lvl1"><td class="l n1">'+x.bandeira+' · '+x.modalidade+'</td>'+
+   '<td class="num">'+x.n.toLocaleString('pt-BR')+'</td>'+
+   '<td class="num">'+mv(x.bruto)+'</td><td class="num">'+mv(x.ticket)+'</td>'+
+   '<td class="num neg">'+mv(-x.taxa)+'</td><td class="num avtot">'+txPc(x.pc)+'</td></tr>';
+ });
+ h+='<tr class="ebit"><td class="l">Total no cartão</td><td class="num">'+
+  (c.n||0).toLocaleString('pt-BR')+'</td><td class="num">'+mv(c.bruto||0)+
+  '</td><td class="num">'+mv(c.n?(c.bruto/c.n):0)+'</td><td class="num">'+
+  mv(-(c.taxa||0))+'</td><td class="num avtot">'+txPc(c.pc||0)+'</td></tr>';
+ h+='</tbody></table></div>'+
+  '<p class="repnote">A taxa efetiva é a que a GetNet cobrou de fato em cada venda, não a de tabela. '+
+  'A antecipação é cobrança separada: '+txPc(an.pc||0)+' sobre '+brl(an.base||0)+
+  ' antecipados no mês. O custo de receber é <b>custo</b> e aparece acima do EBITDA, '+
+  'em despesas variáveis de venda — não é dedução da receita.</p>';
+ tb.innerHTML=h;
+}
+
 function pizza(){
  var b=(REG==='comp'&&semDre(MES))?{grupos:{}}:bloco(ENT,REG,MES),itens=[];
  Object.keys(b.grupos).forEach(function(g){
@@ -959,8 +1110,11 @@ function linhaMat(rot,vals,bases,cls,chave,nivel,abreCk,abreReg){
  var tb=bases?bases.reduce(function(a,b){return a+b},0):0;
  var o='<tr class="'+(cls||'')+'"'+(chave?' onclick="tog(\''+chave+'\')"':'')+'>'+
    '<td class="l n'+(nivel||0)+'">'+(chave?cv(chave):'')+rot+'</td>';
+ /* o mes do clique sai da lista EXIBIDA (abreReg diz qual regime), nao de
+    D.meses: com um mes escondido no meio, o clique abria o mes errado. */
+ var MSx=mesesDe(abreReg||REG);
  vals.forEach(function(v,i){o+=cel(v,bases?bases[i]:0,null,
-   (abreCk?[abreCk,D.meses[i],abreReg]:null))});
+   (abreCk?[abreCk,MSx[i],abreReg]:null))});
  return o+cel(t,0,'tt')+'<td class="num avtot">'+(tb?pc(t,tb):'')+'</td></tr>';
 }
 
@@ -970,6 +1124,7 @@ var BLOCOS_DFC=[
  ['(−) Deduções e estornos',['2']],
  ['(−) Custos',['3','4','5']],
  ['(−) Despesas',['6','7','8','9','14']],
+ ['(−) IRPJ e CSLL pagos',['IR']],
  ['(±) Resultado financeiro',['10']],
  ['=GERAÇÃO DE CAIXA OPERACIONAL',GRUPOS_OP],
  ['(−) Investimentos',['11']],
@@ -992,13 +1147,19 @@ var BLOCOS_DRE=[
  ['(−) Entretenimento',['14']],
  ['=EBITDA',['FAT','2','3','4','5','6','7','8','9','14']],
  ['(±) Resultado financeiro',['10']],
- ['*LUCRO LÍQUIDO',['FAT','2','3','4','5','6','7','8','9','14','10']],
+ ['+LAIR · lucro antes do imposto',['FAT','2','3','4','5','6','7','8','9','14','10']],
+ ['(−) IRPJ e CSLL',['IR']],
+ ['*LUCRO LÍQUIDO',['FAT','2','3','4','5','6','7','8','9','14','10','IR']],
  ['§ABAIXO DO EBITDA — CAPEX E NÃO OPERACIONAL',null],
  ['(−) Investimentos (capex)',['11']],
  ['(±) Financiamento',['12']],
  ['(+) Outros recebimentos',['OR']],
  ['(±) Transferências e ajustes',['CC','NEUTRO','13']],
- ['*RESULTADO APÓS INVESTIMENTOS',['FAT','2','3','4','5','6','7','8','9','14','10','11','12','OR','CC','NEUTRO','13']],
+ ['*RESULTADO APÓS INVESTIMENTOS',['FAT','2','3','4','5','6','7','8','9','14','10','IR','11','12','OR','CC','NEUTRO','13']],
+ ['§RECONCILIAÇÃO DA RECEITA — DE ONDE VEM A RECEITA BRUTA',null],
+ ['(=) Receita lançada no Omie, pela data do crédito',['1']],
+ ['(±) Ajuste de competência da receita',['AJC']],
+ ['+Receita bruta da DRE, pelo mês da venda',['FAT']],
 ];
 
 function matriz(reg){
@@ -1008,8 +1169,12 @@ function matriz(reg){
  /* a analise vertical e sobre a receita bruta DO MES, nao do periodo */
  var base=MS.map(function(m){return Math.abs(
    (reg==='comp'?soma(ENT,reg,m,['FAT']):(bl[m].grupos['1']||0)))||0});
- if(!base.some(function(x){return x}))base=MS.map(function(m){
-   var v=0;Object.keys(bl[m].grupos).forEach(function(g){if(bl[m].grupos[g]<0)v-=bl[m].grupos[g]});return v||1});
+ /* sem receita bruta no mes (a YO nao fatura) nao existe analise vertical: a
+    base cairia na soma dos grupos negativos, capex incluido, e a coluna
+    continuaria rotulada "AV %". Percentual sobre base inventada e pior que
+    percentual nenhum — a coluna sai vazia. */
+ var SEM_AV=!base.some(function(x){return x});
+ if(SEM_AV)base=MS.map(function(){return 0});
  var ESTR=(reg==='caixa')?BLOCOS_DFC:BLOCOS_DRE;
 
  if(reg==='caixa')out+=linhaSaldo('ini',MS);
@@ -1091,10 +1256,29 @@ function pintaRelatorios(){
   var h=document.getElementById(t+'head'); if(!h)return;
   var th='<th class="l">'+(t==='fc'?'Fluxo de caixa':'Categoria')+'</th>';
   mesesDe(t==='fc'?'caixa':'comp').forEach(function(m){th+='<th>'+D.meses_nome[m]+'</th>'});
-  h.innerHTML=th+'<th>Total</th><th class="av">AV %</th>';
+  var semAv=(t==='dre')&&!mesesDe('comp').some(function(m){return soma(ENT,'comp',m,['FAT'])});
+  h.innerHTML=th+'<th>Total</th><th class="av">'+(semAv?'—':'AV %')+'</th>';
  });
  var fc=document.getElementById('fcbody'); if(fc)fc.innerHTML=matriz('caixa');
  var dr=document.getElementById('drebody'); if(dr)dr.innerHTML=matriz('comp');
+ /* a nota do teto de CMV: o numero exibido na linha nao e a compra do mes, e
+    quem le a DRE tem que ver isso na mesma tela, nao so no rodape da pagina. */
+ var na=document.getElementById('dre-ajustes');
+ if(na){
+  var aj=(D.ajustes||{}).cmv||{}, meta=Math.round(((D.ajustes||{}).cmv_meta||0)*100),
+      ms=mesesDe('comp').filter(function(m){return aj[m]}), h='';
+  if(ms.length){
+   h='<div class="aviso nota"><h4>O CMV desta DRE está lançado a '+meta+'% da receita</h4><p>'+
+     'Decisão da diretoria em 07/11/2026. O que a casa <b>comprou</b> de insumo foi: '+
+     ms.map(function(m){return D.meses_nome[m]+' <b>'+brl(aj[m].comprado)+'</b> ('+
+       pc(aj[m].comprado,soma(ENT,'comp',m,['FAT'])||aj[m].comprado/0.33)+' da receita)'}).join(' · ')+
+     '. A diferença é estoque comprado e não consumido dentro do mês — o CMV deste painel é '+
+     'compra pela data da nota, não consumo. O ajuste entra como linha própria dentro do CMV: '+
+     'clique em <b>CMV</b> para ver, e no valor dele para ler a conta inteira. '+
+     'Nada disso toca o fluxo de caixa.</p></div>';
+  }
+  na.innerHTML=h;
+ }
  var er=auditaTabela('caixa').concat(auditaTabela('comp'));
  var av=document.getElementById('tbl-alerta');
  if(av)av.innerHTML=er.length
@@ -1160,16 +1344,35 @@ function operacao(){
     '<div class="mixval num">'+brl(-ac[c])+' · '+pc(ac[c],tA)+'</div></div>'}).join('')}
   return;
  }
+ /* mes sem DRE nao tem margem: a receita do grupo 1 e parcial e o custo do mes
+    esta em carga. Toda margem daqui seria elogio falso — a mesma razao que ja
+    deixa o KPI de margem em branco. Ver 02 Decisoes/mes-parcial-entra-marcado. */
+ if(semDre(MES)){
+  el.innerHTML='<div class="vazio"><h4>'+D.meses_nome[MES]+' entra só no fluxo de caixa</h4>'+
+   '<p>O resultado por competência do mês não está publicado, então nenhuma margem '+
+   'sobre a venda tem leitura aqui. Escolha '+D.meses_nome[D.meses[D.meses.length-2]]+
+   ' nas pílulas de mês para ver onde vai cada real vendido.</p></div>';
+  var mxv=document.getElementById('op-mix'); if(mxv)mxv.innerHTML='';
+  return;
+ }
  var k=cozinha(MES), A=acumCozinha(), dias=(D.dias||{})[MES]||30;
  var fixo=k.pessoal+k.ocupacao+k.adm+k.mkt+k.operacao;
+ var aj=((D.ajustes||{}).cmv||{})[MES];
  el.innerHTML=[
-  ['Insumo de A&B',pc(k.cmv,k.venda),brl(k.cmv)+' de compra no mês',
-   'a abertura por cozinha e bar entra quando o insumo deixar de vir num balde só'],
+  ['Insumo de A&B',pc(k.cmv,k.venda),
+   aj?(brl(k.cmv)+' lançados no mês'):(brl(k.cmv)+' de compra no mês'),
+   aj?('a compra do mês foi '+brl(aj.comprado)+' — o CMV entra a '+
+       Math.round((D.ajustes.cmv_meta||0)*100)+'% por decisão da diretoria')
+     :'a abertura por cozinha e bar entra quando o insumo deixar de vir num balde só'],
   ['Equipe',pc(k.pessoal,k.venda),brl(k.pessoal)+' entre fixos, diaristas e alojamento',
    'referência: 25% a 32%'],
   ['Custo de casa aberta',brl(fixo/dias),'por dia de operação',
    'sem vender nada, a casa custa isso por dia'],
-  ['Ocupação',pc(k.ocupacao,k.venda),brl(k.ocupacao)+' de arrendamento','referência: até 10%'],
+  (ENT==='boldro'&&k.ocupacao<1000)
+    ?['Ocupação',emC('a Boldró não paga arrendamento: o ponto é arrendado pela YO, '+
+       'por R$ 25.000 ao mês, e não é rateado. Ver o consolidado.'),'','']
+    :['Ocupação',pc(k.ocupacao,k.venda),brl(k.ocupacao)+' de arrendamento',
+      ENT==='consol'?'arrendamento do ponto, pago pela YO':'referência: até 10%'],
   ['Atrações e mídia',pc(k.mkt,k.venda),brl(k.mkt)+' em DJ, música e divulgação','referência: 3% a 6%'],
   ['Sobra depois de tudo',pc(k.venda-k.cmv-fixo,k.venda),
    brl(k.venda-k.cmv-fixo)+' antes do financeiro','']
@@ -1274,6 +1477,115 @@ function receita(){
   au.innerHTML=a;
  }
 }
+/* ---------- exportar PDF ---------------------------------------------------
+   Portado do painel Amana/Topazio em 09/11/2026. O modelo que o Tiago mandou
+   como padrao ("quero objetividade ... a turma quer bater o olho e entender
+   logo") E a saida desta funcao. Cada pagina CLONA o que ja esta na tela,
+   entao o PDF nao tem numero proprio e nao pode divergir do painel.
+   A paginacao mede a altura real: bloco que nao cabe vai para a pagina
+   seguinte, e tabela longa quebra linha a linha repetindo o cabecalho. */
+function pdocTs(){
+ var d=new Date(), p=function(n){return (n<10?'0':'')+n};
+ return p(d.getDate())+'/'+p(d.getMonth()+1)+'/'+d.getFullYear()+' às '+
+        p(d.getHours())+':'+p(d.getMinutes());
+}
+function pdocBuild(){
+ var doc=document.getElementById('pdoc'); if(!doc)return;
+ var TS=pdocTs(), ENTL=(ENT==='consol'?'Consolidado':(ENT==='boldro'?'Boldró':'YO Noronha')),
+     PER=D.meses_nome[MES]||'';
+ var TIT=ENT==='consol'?'Grupo <b>Yó + Boldró</b>'
+   :(ENT==='boldro'?'Boldró <b>Praia Empreendimentos</b>':'<b>YO Noronha</b>');
+ doc.innerHTML='';
+ /* precisa estar renderizado para medir; fica fora da tela enquanto monta */
+ doc.style.cssText='display:block;position:absolute;left:-20000px;top:0;width:297mm';
+
+ doc.insertAdjacentHTML('beforeend',
+  '<section class="pg capa"><div class="capa-in">'
+  +'<div class="marca">Exact <b>BR</b></div>'
+  +'<div class="k">Relatório Gerencial</div><h1>'+TIT+'</h1>'
+  +'<div class="per">'+PER+'</div>'
+  +'<div class="meta"><div><b>'+TS+'</b>data e hora da exportação</div>'
+  +'<div><b>'+ENTL+'</b>visão</div>'
+  +'<div><b>'+(REG==='comp'?'Competência':'Caixa')+'</b>regime na tela</div>'
+  +'<div style="text-align:right"><b>Exact BR</b>Disciplina Gera Lucro</div></div>'
+  +'</div></section>');
+
+ function page(tit,sub){
+  var sec=document.createElement('section'); sec.className='pg';
+  sec.innerHTML='<div class="pg-h"><div><div class="ttl">'+tit+'</div>'
+   +(sub?'<div class="sub">'+sub+'</div>':'')+'</div>'
+   +'<div class="rt"><b>'+ENTL+'</b><span>'+PER+'</span></div></div>'
+   +'<div class="pg-b"></div>'
+   +'<div class="pg-f"><span>Exact BR · Relatório gerencial · Grupo Yó / Boldró · '+ENTL+'</span>'
+   +'<span>Exportado em '+TS+' · <i class="pn"></i></span></div>';
+  doc.appendChild(sec); return sec.querySelector('.pg-b');
+ }
+ var cabe=function(b){return b.scrollHeight<=b.clientHeight};
+ function bloco(tit,sub,nodes){
+  var ns=nodes.filter(Boolean); if(!ns.length)return;
+  var b=page(tit,sub);
+  ns.forEach(function(n){ b.appendChild(n);
+   if(!cabe(b)&&b.children.length>1){ b.removeChild(n); b=page(tit,sub+' (continuação)'); b.appendChild(n); } });
+ }
+ /* tabela longa: quebra linha a linha, repetindo o cabecalho */
+ function tabela(src,tit,sub){
+  if(!src)return;
+  var tbl=src.matches('table')?src:src.querySelector('table');
+  if(!tbl||!tbl.tBodies[0])return;
+  var rows=[].slice.call(tbl.tBodies[0].rows);
+  var molde=function(){ var t=tbl.cloneNode(false);
+   if(tbl.tHead)t.appendChild(tbl.tHead.cloneNode(true));
+   [].slice.call(tbl.querySelectorAll('colgroup')).forEach(function(c){t.appendChild(c.cloneNode(true))});
+   t.appendChild(document.createElement('tbody')); return t; };
+  var b=page(tit,sub), t=molde(); b.appendChild(t); var n=0;
+  rows.forEach(function(r){ t.tBodies[0].appendChild(r.cloneNode(true)); n++;
+   if(!cabe(b)&&n>1){ t.tBodies[0].removeChild(t.tBodies[0].lastChild);
+    b=page(tit,sub+' (continuação)'); t=molde(); b.appendChild(t);
+    t.tBodies[0].appendChild(r.cloneNode(true)); n=1; } });
+ }
+ var cl=function(sel){var e=document.querySelector(sel);return e?e.cloneNode(true):null};
+ var vz=function(sel){var e=document.querySelector(sel);
+  return e&&e.innerHTML.trim()?e.cloneNode(true):null};
+
+ bloco('Resumo do período','Os números do período em um olhar',[cl('#kpis')]);
+ bloco('Ponte do caixa','Saldo inicial → entradas → saídas → saldo final',[cl('.waterfall')]);
+ tabela(document.querySelector('#rep-dre table'),'DRE por categoria',
+        'Resultado por competência, pela data de emissão dos documentos');
+ bloco('A nota da DRE','O que o número do CMV mostra, e o que a casa comprou',
+       [vz('#dre-ajustes')]);
+ tabela(document.querySelector('#rep-fc table'),'Fluxo de caixa por categoria',
+        'Movimentação bancária conferida conta a conta contra os extratos');
+ bloco('Composição das saídas','Todas as saídas do período, agrupadas',[cl('.pz-grid')]);
+ bloco('Onde vai cada real vendido','Insumo, equipe, casa e atrações',
+       [vz('#op-kpis'),vz('#op-mix')]);
+ bloco('Quando a casa vende','Venda por dia da semana e por turno',[vz('#v-dia'),vz('#v-mix')]);
+ bloco('Custo de receber','Taxa por bandeira, venda a venda, e a antecipação',
+       [vz('#tx-kpis'),vz('#tx-tab')]);
+ bloco('Composição da venda','O que foi vendido e como o cliente pagou',
+       [vz('#vendas'),vz('#rec-cruz')]);
+ bloco('Ressalvas','O que o número não diz sozinho',[cl('.disc')]);
+
+ /* trava: bloco que ainda passar da pagina reduz ate caber, em vez de cortar */
+ [].slice.call(doc.querySelectorAll('.pg-b')).forEach(function(b){
+  if(b.scrollHeight<=b.clientHeight+1)return;
+  var k=Math.max(.52,(b.clientHeight-2)/b.scrollHeight);
+  var dentro=document.createElement('div');
+  while(b.firstChild)dentro.appendChild(b.firstChild);
+  dentro.style.cssText='transform-origin:top left;transform:scale('+k.toFixed(3)+
+   ');width:'+(100/k).toFixed(2)+'%';
+  b.appendChild(dentro);
+ });
+ var tot=doc.querySelectorAll('.pg').length;
+ [].slice.call(doc.querySelectorAll('.pg')).forEach(function(p,i){
+  var pn=p.querySelector('.pn'); if(pn)pn.textContent='página '+(i+1)+' de '+tot; });
+ doc.style.cssText='';   /* volta a ficar escondido na tela */
+}
+function exportPDF(){ pdocBuild(); window.print(); }
+addEventListener('beforeprint',function(){
+ var d=document.getElementById('pdoc'); if(d&&!d.children.length)pdocBuild(); });
+addEventListener('afterprint',function(){
+ var d=document.getElementById('pdoc'); if(d)d.innerHTML=''; });
+
 function render(){
  var e=E();
  document.getElementById('heroTitle').innerHTML=temDado(ENT)
@@ -1295,7 +1607,7 @@ function render(){
     barras: eixo em HTML ao lado de desenho em SVG desalinha sozinho. */
  document.getElementById('wfX').innerHTML='';
  document.getElementById('kpis').innerHTML=kpis();
- operacao(); receita();
+ operacao(); pizza(); custoReceber(); receita();
  pintaRelatorios(); vendasBloco();
 }
 document.getElementById('mespills').innerHTML=D.meses.map(function(m){
@@ -1317,6 +1629,7 @@ NAV_LINKS = ('<a href="#geral" class="on">Visão geral</a>'
              '<a href="#venda-mix">Curva e mix</a>'
              '<a href="#operacao">Operação</a>'
              '<a href="#auditoria">Auditoria</a>'
+             '<a href="#custo-receber">Custo de receber</a>'
              '<a href="#vendas-sec">Composição</a>'
              '<a href="simulador.html">Simulador</a>')
 
@@ -1333,6 +1646,123 @@ ENTSW_SOC = """<div class="entsw" id="entsw">
 <a href="index.html" class="on">Sócios</a>
 </div>"""
 
+def brlpt(v):
+    return 'R$ ' + '{:,.2f}'.format(v).replace(',', '@').replace('.', ',').replace('@', '.')
+
+
+def ressalva():
+    """Monta a ressalva do rodape A PARTIR DO D, nunca como texto fixo.
+
+    Em 09/11/2026 a varredura pegou o rodape afirmando EBITDA consolidado de
+    R$ -90.393,73 e CMV de 53,8% com a tabela logo acima mostrando +43.295,74 e
+    -39,6%: eram numeros de 06/11 que ficaram no texto quando a base andou. Texto
+    fixo sobre numero que muda e divergencia garantida — ver
+    03 Padroes/ressalva-nao-pode-afirmar-mais-que-a-base.
+    """
+    EB = ['FAT', '2', '3', '4', '5', '6', '7', '8', '9', '14']
+    def grp(emp, mes, k):
+        return ((D['ents'][emp]['comp'].get(mes) or {}).get('grupos') or {}).get(k, 0)
+    def soma(mes, ks):
+        return round(sum(grp(e, mes, k) for e in ('boldro', 'yo') for k in ks), 2)
+    def pct(v, b):
+        return ('%.1f%%' % (v / b * 100)).replace('.', ',') if b else '—'
+
+    MESES = [m for m in D['meses'] if m not in (D.get('sem_dre') or [])]
+    ult = MESES[-1]
+    fat = soma(ult, ['FAT'])
+    aju = D.get('ajustes') or {}
+    teto = int(round((aju.get('cmv_meta') or 0) * 100))
+    cmv = aju.get('cmv') or {}
+
+    # receita bruta mes a mes, do proprio D
+    rec = ' e '.join('%s em %s' % (brlpt((D['receita'][m] or {}).get('recebido') or 0),
+                                   D['meses_nome'][m].replace('/26', ''))
+                     for m in MESES if (D.get('receita') or {}).get(m))
+
+    # o teto de CMV, mes a mes, com a compra real
+    if cmv:
+        linhas = '; '.join('%s: compra de %s (%s da receita) e CMV exibido de %s'
+                           % (D['meses_nome'][m], brlpt(cmv[m]['comprado']),
+                              pct(cmv[m]['comprado'],
+                                  (D['receita'].get(m) or {}).get('recebido') or 0),
+                              brlpt(cmv[m]['exibido']))
+                           for m in sorted(cmv))
+        bloco_cmv = (
+            '<b>O CMV da DRE est&aacute; lan&ccedil;ado a %d%% da receita</b>, por decis&atilde;o '
+            'da diretoria em 07/11/2026, e n&atilde;o pela compra do m&ecirc;s. %s. '
+            'A diferen&ccedil;a &eacute; estoque comprado e n&atilde;o consumido dentro do m&ecirc;s: '
+            'o CMV deste painel &eacute; <b>compra pela data da nota, n&atilde;o consumo</b>, '
+            'e agosto comprou o estoque de abertura da casa. O ajuste aparece como '
+            'linha pr&oacute;pria dentro do CMV, clic&aacute;vel, e n&atilde;o toca o fluxo de caixa. ' % (teto, linhas))
+    else:
+        bloco_cmv = ''
+
+    # IRPJ/CSLL: so o que esta na base
+    ir = soma(ult, ['IR'])
+    bloco_ir = ('<b>IRPJ e CSLL de %s somam %s</b> e entram abaixo do EBITDA, entre o LAIR '
+                'e o lucro l&iacute;quido — imposto sobre o lucro n&atilde;o &eacute; dedu&ccedil;&atilde;o de venda. '
+                'S&atilde;o t&iacute;tulos lan&ccedil;ados pelo CSC em 06/11/2026, com compet&ecirc;ncia declarada '
+                'na observa&ccedil;&atilde;o, e estavam <b>em aberto</b> na leitura desta p&aacute;gina. '
+                'N&atilde;o h&aacute; provis&atilde;o calculada por al&iacute;quota presumida: o painel s&oacute; mostra '
+                'tributo que existe como t&iacute;tulo. '
+                % (D['meses_nome'][ult], brlpt(-ir))) if ir else (
+                'N&atilde;o h&aacute; IRPJ nem CSLL lan&ccedil;ado na base, e o resultado est&aacute; melhor do '
+                'que ser&aacute; enquanto isso n&atilde;o entrar. ')
+
+    # outubro no caixa: a populacao que a COLUNA mostra, nao a da conciliacao
+    fora = [m for m in D['meses'] if m in (D.get('sem_dre') or [])]
+    bloco_out = ''
+    for m in fora:
+        q = []
+        for emp, nome in (('boldro', 'Boldr&oacute;'), ('yo', 'Y&oacute;')):
+            it = ((D['ents'][emp]['caixa'].get(m) or {}).get('itens') or [])
+            dias = len({i[1] for i in it if len(i) > 1 and i[1]})
+            q.append('%d lan&ccedil;amentos em %d dias na %s' % (len(it), dias, nome))
+        bloco_out += ('<b>%s entra apenas no fluxo de caixa</b>: %s. O resultado por '
+                      'compet&ecirc;ncia do m&ecirc;s entra quando a carga e a concilia&ccedil;&atilde;o fecharem. '
+                      % (D['meses_nome'][m], ' e '.join(q)))
+
+    dias_ago = (D.get('dias') or {}).get(MESES[0])
+    return (
+        'Relat&oacute;rio gerencial &middot; Grupo Y&oacute; / Boldr&oacute;. Resultado apurado por '
+        'compet&ecirc;ncia, pela data de emiss&atilde;o dos documentos; fluxo de caixa apurado pela '
+        'movimenta&ccedil;&atilde;o banc&aacute;ria. O <b>movimento</b> est&aacute; conferido contra o extrato de '
+        'cada empresa — Santander 13002614-6 na Boldr&oacute;, Bradesco mais aplica&ccedil;&atilde;o e '
+        'Mercado Pago na Y&oacute;. O <b>saldo</b> n&atilde;o: a conta corrente da Boldr&oacute; &eacute; varrida '
+        'para a ContaMax todo dia, a ContaMax n&atilde;o tem extrato pr&oacute;prio e o saldo dela &eacute; '
+        'derivado do movimento. A conta corrente entre as empresas do grupo &eacute; '
+        'transfer&ecirc;ncia, n&atilde;o custo, e fica fora do resultado; no consolidado, o par '
+        'Y&oacute;&harr;Boldr&oacute; &eacute; eliminado, e Amana e Top&aacute;zio permanecem como conta corrente. '
+        'A receita bruta &eacute; o faturamento pelo m&ecirc;s da venda e vem da extra&ccedil;&atilde;o bruta do '
+        '3LM — relat&oacute;rio "Vendas Por Funcion&aacute;rio", m&ecirc;s inteiro numa extra&ccedil;&atilde;o s&oacute;, '
+        'l&iacute;quido do desconto concedido no sal&atilde;o: %s. Agosto foi retificado em '
+        '04/11/2026: at&eacute; ent&atilde;o era reconstru&iacute;do do extrato da GetNet mais o fundo fixo '
+        '(R$ 191.290,32) e passou a R$ 163.548,50 — &eacute; por isso que a abertura por forma '
+        'de pagamento do m&ecirc;s traz uma linha de ajuste ao total do 3LM. Setembro tem um '
+        'segundo relat&oacute;rio, montado pela diretoria em 02/10, que d&aacute; R$ 1.047.949,04; a '
+        'diferen&ccedil;a de R$ 11.035,23 est&aacute; decomposta nas ressalvas, e &eacute; esse segundo '
+        'relat&oacute;rio que alimenta a venda por dia da semana. A venda por dia usa <b>dias de '
+        'opera&ccedil;&atilde;o</b>, n&atilde;o dias do calend&aacute;rio: a casa abriu em 18/08 e agosto tem %s '
+        'dias com venda. A taxa de cart&atilde;o &eacute; custo e aparece acima do EBITDA, n&atilde;o '
+        'deduzida da receita. %s%s'
+        '<b>Em 05/11/2026 a conta de luz passou a ter compet&ecirc;ncia no m&ecirc;s anterior ao '
+        'pagamento</b> — a fatura paga em julho &eacute; o consumo de junho —, crit&eacute;rio definido '
+        'pela diretoria e aplicado &agrave;s oito faturas da Y&oacute;. '
+        '<b>Em 09/11/2026 agosto e setembro foram retificados</b>, a pedido da diretoria: '
+        'nove t&iacute;tulos de R$ 62.178,27 cuja observa&ccedil;&atilde;o declara compet&ecirc;ncia de setembro '
+        'estavam com emiss&atilde;o em outubro e voltaram para setembro — PIS, COFINS, ICMS, '
+        'comiss&atilde;o do chef, pontua&ccedil;&atilde;o vari&aacute;vel da diretoria, honor&aacute;rios e telefonia; '
+        '"Prestadores de servi&ccedil;os gerais" e "Frete de materiais de opera&ccedil;&atilde;o" passaram a '
+        'entrar em Investimentos, mantendo o nome da conta, para serem reclassificados '
+        'depois; e R$ 11.174,00 de aluguel que era aloja&shy;mento sa&iacute;ram de Ocupa&ccedil;&atilde;o para '
+        'Alojamento em outubro. %s'
+        'Or&ccedil;ado &times; realizado e ponto de equil&iacute;brio foram retirados em 03/11/2026 por n&atilde;o '
+        'se sustentarem: o or&ccedil;amento n&atilde;o separa Y&oacute; de Boldr&oacute; e a margem de '
+        'contribui&ccedil;&atilde;o depende de uma receita bruta que a base ainda n&atilde;o tem. '
+        'Dados lidos da API do Omie em %s.'
+        % (rec, dias_ago, bloco_cmv, bloco_ir, bloco_out, D['gerado']))
+
+
 SEC_REL = """<section id="relatorios"><div class="wrap">
 <div class="sec-head"><div class="k">Relatório detalhado</div>
 <h2>Tabelas por categoria <span class="light">— grupo e conta</span></h2>
@@ -1340,6 +1770,7 @@ SEC_REL = """<section id="relatorios"><div class="wrap">
 <h3 class="rep-t">DRE (competência)</h3>
 <div id="rep-dre" class="repwrap on"><table class="xtbl mat dre"><thead><tr id="drehead"></tr></thead><tbody id="drebody"></tbody></table>
 <div id="tbl-alerta"></div>
+<div id="dre-ajustes"></div>
 <p class="repnote"><b>A receita bruta é o faturamento do mês da venda, não o crédito no banco.</b> Clique nela para abrir por forma de pagamento, e no número de cada forma para ver dia a dia o que foi vendido. Nos dois meses ela vem da extração bruta do 3LM — R$ 163.548,50 em agosto e R$ 1.058.984,27 em setembro — e abre em A&amp;B, taxa de serviço, couvert e taxa de rolha, mais a forma de pagamento reconstruída do Extrato de Vendas Detalhado da GetNet.  Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
 
 
@@ -1350,6 +1781,15 @@ SEC_REL = """<section id="relatorios"><div class="wrap">
 </div></section>
 """
 
+
+SEC_TX = """<section id="custo-receber"><div class="wrap">
+<div class="sec-head"><div class="k">Custo de receber</div>
+<h2>Quanto custa <span class="light">receber do cliente</span></h2>
+<p class="lede">A taxa efetiva de cada bandeira, venda a venda, pelo Extrato de Vendas Detalhado da GetNet — e o que a antecipação cobrou. Dado, não conclusão: o que negociar e até quando antecipar depende de contrato e de compromisso que o número não conhece.</p></div>
+<div class="kpis" id="tx-kpis" style="margin:0"></div>
+<div style="height:26px"></div>
+<div id="tx-tab"></div>
+</div></section>"""
 
 SEC_DIA = """<section id="venda-dia"><div class="wrap">
 <div class="sec-head"><div class="k">Venda por dia</div>
@@ -1434,6 +1874,11 @@ def pagina(socios=False):
 <div class="kpis" id="op-kpis" style="margin:0"></div>
 <div style="height:30px"></div>
 <h3 style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:17px;margin-bottom:14px">Composição <span class="light">do que saiu</span></h3>
+<div class="pz-grid" style="margin-bottom:30px">
+<div class="pz-chart"><svg id="pzSvg" viewBox="0 0 320 320" style="width:100%%;height:auto;display:block"></svg>
+<div class="pz-mid"><div class="pz-t">Total que saiu</div><b id="pzTot">—</b></div></div>
+<div class="pz-leg" id="pzLeg"></div>
+</div>
 <div id="op-mix"></div>
 <p class="repnote">Sem integração com o PDV não há ticket médio, número de couverts nem venda por canal — salão, bar, beach club e day use vivem no 3LM. O que dá para medir pelo financeiro é o <b>mix de compra</b>: quanto do insumo foi para a cozinha e quanto foi para o bar.</p>
 </div></section>
@@ -1441,6 +1886,9 @@ def pagina(socios=False):
 
 %s
 %s
+
+<div class="pdoc" id="pdoc"></div>
+<button class="pdfbt" onclick="exportPDF()" title="Monta o relatório em páginas A4 deitadas e abre a caixa de impressão (Salvar como PDF)">&#8681; Relatório em PDF</button>
 
 <div id="cx-fundo" class="cx-fundo" onclick="if(event.target===this)fechaCaixa()">
 <div class="cx" id="cx-corpo"></div></div>
@@ -1450,7 +1898,7 @@ def pagina(socios=False):
 <div style="text-align:right"><div class="r" style="margin-bottom:4px">Disciplina Gera Lucro</div>
 <div style="font-family:'Plus Jakarta Sans';font-size:13px;font-weight:500;color:rgba(255,255,255,.85)">Exact BR · Recife — PE</div></div>
 </div>
-<p class="disc">Relatório gerencial · Grupo Yó / Boldró. Resultado apurado por competência, pela data de emissão dos documentos; fluxo de caixa apurado pela movimentação bancária, conferido contra o extrato bancário de cada empresa até 30 de setembro de 2026 — Santander 13002614-6 na Boldró e Bradesco mais aplicação na YO — com saldo igual ao da conciliação do CSC. A conta corrente entre as empresas do grupo é transferência, não custo, e fica fora do resultado; no consolidado, o par Yó↔Boldró é eliminado. A receita bruta é o faturamento pelo mês da venda e vem, nos dois meses, da extração bruta do 3LM — relatório "Vendas Por Funcionário", mês inteiro numa extração só, líquido do desconto concedido no salão. Agosto foi retificado em 04/11/2026: até então era reconstruído do extrato da GetNet mais o fundo fixo (R$ 191.290,32) e passou a R$ 163.548,50. Setembro tem um segundo relatório, montado pela diretoria em 02/10, que dá R$ 1.047.949,04; a diferença de R$ 11.035,23 está decomposta nas ressalvas. A taxa de cartão é custo e aparece acima do EBITDA, não deduzida da receita. <b>Em 05/11/2026 a conta de luz passou a ter competência no mês anterior ao pagamento</b> — a fatura paga em julho é o consumo de junho —, critério definido pela diretoria e aplicado às oito faturas da Yó: agosto saiu de R$ 4.106,50 para R$ 2.591,64 de energia e setembro ficou sem energia, porque a fatura de R$ 8.300,62 que estava emitida em 30/09 vence em 06/11 e é consumo de outubro. O EBITDA consolidado subiu R$ 1.514,86 em agosto e R$ 1.446,38 em setembro. Na mesma data entraram as reclassificações pedidas pela diretoria em setembro (diaristas, extras, prestadores, alojamento e a quebra do pró-labore), que mudam a abertura e não mudam EBITDA nem lucro. <b>Setembro/2026 foi retificado em 06/11/2026</b>: entraram R$ 133.685,23 de CMV de notas cuja competência é setembro e que não estavam lançadas — 21 parcelas de notas parceladas, mais os títulos de competência carregados na conciliação de outubro. Três quartos do valor são bebida alcoólica. O EBITDA consolidado do mês sai de R$ 48.093,62 para <b>R$ -90.393,73</b> e o CMV passa a 53,8%% da receita. Agosto foi retificado na mesma data em R$ 10.055,29, também CMV. O CMV deste painel é <b>compra pela data da nota, não consumo</b>: o estoque comprado em setembro e consumido em outubro aparece todo em setembro. <b>Outubro/2026 entra apenas no fluxo de caixa</b>: o mês está conferido movimento a movimento contra o extrato das duas empresas — 871 lançamentos de cada lado na Boldró em 22 dias e 156 de cada lado na Yó em 16 dias. O resultado por competência do mês entra quando o relatório de vendas de outubro for consolidado. Orçado × realizado e ponto de equilíbrio foram retirados em 03/11/2026 por não se sustentarem: o orçamento não separa YO de Boldró e a margem de contribuição depende de uma receita bruta que a base ainda não tem. Dados lidos da API do Omie em %s.</p>
+<p class="disc">%s</p>
 </div></footer>
 
 <script>const D=%s;var SOCIOS=%s;%s</script>
@@ -1461,10 +1909,10 @@ def pagina(socios=False):
         ENTSW_SOC if socios else ENTSW,
         'Visão dos sócios · 2026' if socios else 'Fluxo de Caixa &amp; DRE Gerencial · 2026',
         SEC_REL,
-        SEC_DIA + SEC_MIX,
+        SEC_TX + SEC_DIA + SEC_MIX,
         SEC_AUD + SEC_ANO,
         '',
-        D['gerado'],
+        ressalva(),
         json.dumps(D, ensure_ascii=False),
         'true' if socios else 'false',
         JS)
@@ -1472,6 +1920,12 @@ def pagina(socios=False):
 
 if __name__ == '__main__':
     d = os.path.dirname(os.path.abspath(__file__))
+    # a copia do JSON ao lado da pagina tem que ser a MESMA que gerou a pagina:
+    # uma copia velha aqui ja me fez diffar o painel novo contra o painel novo e
+    # concluir "delta zero". Escrever sempre, junto.
+    import shutil
+    shutil.copyfile(os.path.join(BASE, 'dados_painel.json'),
+                    os.path.join(d, 'dados_painel.json'))
     for nome, soc in (('index.html', False), ('socios.html', True)):
         p = os.path.join(d, nome)
         open(p, 'w').write(pagina(soc))

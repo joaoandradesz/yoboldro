@@ -54,17 +54,36 @@ BLOCOS_DRE = [
     ('(-) Entretenimento', ['14']),
     ('=EBITDA', ['FAT', '2', '3', '4', '5', '6', '7', '8', '9', '14']),
     ('(+-) Resultado financeiro', ['10']),
-    ('*LUCRO LIQUIDO', ['FAT', '2', '3', '4', '5', '6', '7', '8', '9', '14', '10']),
+    ('+LAIR . lucro antes do imposto',
+     ['FAT', '2', '3', '4', '5', '6', '7', '8', '9', '14', '10']),
+    ('(-) IRPJ e CSLL', ['IR']),
+    ('*LUCRO LIQUIDO', ['FAT', '2', '3', '4', '5', '6', '7', '8', '9', '14', '10', 'IR']),
     ('(-) Investimentos (capex)', ['11']),
     ('(+-) Financiamento', ['12']),
     ('(+) Outros recebimentos', ['OR']),
     ('(+-) Transferencias e ajustes', ['CC', 'NEUTRO', '13']),
     ('*RESULTADO APOS INVESTIMENTOS',
-     ['FAT', '2', '3', '4', '5', '6', '7', '8', '9', '14', '10', '11', '12', 'OR', 'CC', 'NEUTRO', '13']),
+     ['FAT', '2', '3', '4', '5', '6', '7', '8', '9', '14', '10', 'IR', '11', '12', 'OR',
+      'CC', 'NEUTRO', '13']),
     ('(=) Receita lancada no Omie, pela data do credito', ['1']),
     ('(+-) Ajuste de competencia da receita', ['AJC']),
     ('+Receita bruta da DRE, pelo mes da venda', ['FAT']),
 ]
+GRUPOS_OP_DFC = ['1', 'OR', '2', '3', '4', '5', '6', '7', '8', '9', '14', '10', 'IR']
+BLOCOS_DFC = [
+    ('(+) Recebimentos', ['1', 'OR']),
+    ('(-) Deducoes e estornos', ['2']),
+    ('(-) Custos', ['3', '4', '5']),
+    ('(-) Despesas', ['6', '7', '8', '9', '14']),
+    ('(-) IRPJ e CSLL pagos', ['IR']),
+    ('(+-) Resultado financeiro', ['10']),
+    ('=GERACAO DE CAIXA OPERACIONAL', GRUPOS_OP_DFC),
+    ('(-) Investimentos', ['11']),
+    ('(+-) Financiamento', ['12']),
+    ('(+-) Nao operacional e transferencias', ['CC', 'NEUTRO', '13']),
+    ('*GERACAO DE CAIXA FINAL', GRUPOS_OP_DFC + ['11', '12', 'CC', 'NEUTRO', '13']),
+]
+
 # virtuais: FAT e AJC nao sao grupos da base, saem de fatDe()
 VIRTUAIS = {'FAT', 'AJC'}
 # na reconciliacao da receita o grupo 1 e FAT reaparecem de proposito: aquele
@@ -202,29 +221,35 @@ def confere(D):
                     if g not in b['grupos']:
                         falha(onde, 'C contas no grupo %s, que nao aparece no total' % g)
 
-                # D: cobertura dos grupos nos blocos (so a DRE tem FAT/AJC)
-                if reg == 'comp':
-                    detalhe = collections.Counter()
-                    for rot, gs in BLOCOS_DRE:
-                        if not gs or rot[0] in '=+*':
-                            continue
-                        for g in gs:
-                            detalhe[g] += 1
-                    for g in detalhe:
-                        if detalhe[g] > 1:
-                            falha(onde, 'D grupo %s aparece em %d blocos de detalhe (dobra)'
-                                  % (g, detalhe[g]))
-                    for g in b['grupos']:
-                        if g not in detalhe and g not in SO_RECONCILIACAO:
-                            falha(onde, 'D grupo %s tem %.2f e nao esta em nenhum bloco da DRE'
-                                  % (g, b['grupos'][g]))
+                # D: cobertura dos grupos nos blocos, nos DOIS regimes. Antes
+                # so olhava a DRE, e por isso o grupo IR fora dos blocos do DFC
+                # (R$ 76,85) nao foi acusado em 09/11/2026.
+                blocos = BLOCOS_DRE if reg == 'comp' else BLOCOS_DFC
+                nome_dem = 'DRE' if reg == 'comp' else 'DFC'
+                detalhe = collections.Counter()
+                for rot, gs in blocos:
+                    if not gs or rot[0] in '=+*':
+                        continue
+                    for g in gs:
+                        detalhe[g] += 1
+                for g in detalhe:
+                    if detalhe[g] > 1:
+                        falha(onde, 'D grupo %s aparece em %d blocos de detalhe da %s (dobra)'
+                              % (g, detalhe[g], nome_dem))
+                for g in b['grupos']:
+                    so_rec = SO_RECONCILIACAO if reg == 'comp' else set()
+                    if g not in detalhe and g not in so_rec:
+                        falha(onde, 'D grupo %s tem %.2f e nao esta em nenhum bloco da %s'
+                              % (g, b['grupos'][g], nome_dem))
 
+                if reg == 'comp':
                     # E: cascata = soma dos detalhes
                     acum = ['FAT', '2', '3', '4', '5', '6', '7', '8', '9', '14']
                     casos = [('=EBITDA', acum),
-                             ('*LUCRO LIQUIDO', acum + ['10']),
+                             ('+LAIR', acum + ['10']),
+                             ('*LUCRO LIQUIDO', acum + ['10', 'IR']),
                              ('*RESULTADO APOS INVESTIMENTOS',
-                              acum + ['10', '11', '12', 'OR', 'CC', 'NEUTRO', '13'])]
+                              acum + ['10', 'IR', '11', '12', 'OR', 'CC', 'NEUTRO', '13'])]
                     for rot, gs in casos:
                         linha = soma(D, ent, reg, mes, gs)
                         peca = sum(soma(D, ent, reg, mes, [g]) for g in gs)
@@ -287,9 +312,16 @@ def confere(D):
                         if not s:
                             continue
                     onde = '%s/caixa/%s' % (ent, mes)
-                    mov = sum(b['grupos'].values())
+                    # a lista EXIBIDA na linha final do DFC, nao todos os grupos:
+                    # somar tudo esconde justamente o grupo que ficou fora dela
+                    exibidos = BLOCOS_DFC[-1][1]
+                    mov = sum(v for g, v in b['grupos'].items() if g in exibidos)
+                    extra = {g: R2(v) for g, v in b['grupos'].items()
+                             if g not in exibidos and abs(R2(v)) > TOL}
+                    if extra:
+                        falha(onde, 'F0 grupo(s) fora da linha final do DFC: %s' % extra)
                     if abs(R2(s['ini'] + mov) - R2(s['fim'])) > TOL:
-                        falha(onde, 'F1 saldo inicial %.2f + movimento dos grupos %.2f = %.2f, '
+                        falha(onde, 'F1 saldo inicial %.2f + movimento dos grupos exibidos %.2f = %.2f, '
                                     'mas o saldo final exibido e %.2f (dif %.2f)'
                               % (s['ini'], mov, s['ini'] + mov, s['fim'],
                                  R2(s['ini'] + mov) - R2(s['fim'])))

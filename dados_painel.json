@@ -1,5 +1,5 @@
 {
- "gerado": "06/11/2026 às 14:45",
+ "gerado": "09/11/2026 às 12:30",
  "meses": [
   "2026-08",
   "2026-09",
@@ -25,6 +25,7 @@
   "9": "Marketing",
   "14": "Entretenimento",
   "10": "Resultado financeiro",
+  "IR": "Provisão de IRPJ e CSLL",
   "11": "Investimentos",
   "12": "Financiamento",
   "13": "Empréstimos e adiantamentos (volta ao caixa)",
@@ -42,8 +43,9 @@
   "fonte": "Gestao Orcamentaria YO, rev 30.07.2026"
  },
  "dias": {
-  "2026-08": 31,
-  "2026-09": 30
+  "2026-08": 12,
+  "2026-09": 30,
+  "2026-10": 31
  },
  "orcamento": {
   "fonte": "Orçamento revisado — Tiago, planilha Projeção Caixa",
@@ -322,6 +324,31 @@
  "sem_dre": [
   "2026-10"
  ],
+ "ajustes": {
+  "cmv_meta": 0.33,
+  "cmv": {
+   "2026-08": {
+    "comprado": 274924.87,
+    "exibido": 53971.01,
+    "ajuste": 220953.86
+   },
+   "2026-09": {
+    "comprado": 449339.96,
+    "exibido": 349464.81,
+    "ajuste": 99875.15
+   }
+  },
+  "ir": {},
+  "piscofins": {},
+  "presuncao": {
+   "irpj": 0.08,
+   "csll": 0.12
+  },
+  "base": {
+   "2026-09": 962844.97,
+   "2026-10": 1067009.32
+  }
+ },
  "vendas": {
   "mes": "2026-09",
   "fonte": "Relatório de Vendas do 3LM/Gourmet — setembro/2026",
@@ -2808,7 +2835,7 @@
       "1": 175903.28,
       "CC": 100000.0,
       "NEUTRO": 9.17,
-      "4": -274924.87,
+      "4": -53971.01000000001,
       "5": -11656.46,
       "11": -30105.180000000004,
       "6": -23683.38,
@@ -2856,7 +2883,8 @@
       "FAT|Cartão de débito": 18295.56,
       "FAT|Dinheiro (fundo fixo)": 8771.0,
       "FAT|PIX": 8735.43,
-      "FAT|Ajuste ao total do 3LM": -27741.82
+      "FAT|Ajuste ao total do 3LM": -27741.82,
+      "4|Ajuste de CMV para 33% da receita": 220953.86
      },
      "lanc": {
       "1|Receita operacional (salão)": 62,
@@ -2895,7 +2923,8 @@
       "FAT|Cartão de débito": 11,
       "FAT|Dinheiro (fundo fixo)": 11,
       "FAT|PIX": 11,
-      "FAT|Ajuste ao total do 3LM": 1
+      "FAT|Ajuste ao total do 3LM": 1,
+      "4|Ajuste de CMV para 33% da receita": 1
      },
      "familias": {
       "cozinha": -114858.56999999998,
@@ -5890,6 +5919,17 @@
        "",
        "",
        "16.96% do total"
+      ],
+      [
+       "4|Ajuste de CMV para 33% da receita",
+       "31/08/2026",
+       220953.86,
+       "Diretoria",
+       "AJUSTE",
+       "",
+       "A DRE mostra o CMV a 33% da receita, por decisao da diretoria em 07/11/2026. A compra de insumo do mes foi R$ 274.924,87, ou 168.1% da receita; a diferenca de R$ 220.953,86 e estoque comprado e nao consumido dentro do mes.",
+       "",
+       ""
       ]
      ],
      "fat": {
@@ -5909,18 +5949,19 @@
      "grupos": {
       "1": 1123423.9800000004,
       "NEUTRO": 1058.2300000000012,
-      "8": -52006.5,
-      "11": -87472.65,
+      "8": -52864.17,
+      "11": -89722.65,
       "9": -7500.0,
-      "6": -166036.98000000013,
-      "5": -72891.3,
-      "4": -449339.95999999996,
+      "6": -187360.98000000013,
+      "5": -70641.3,
+      "4": -349464.80999999994,
       "14": -23215.83,
       "CC": -3466.67,
-      "3": -111227.71000000005,
-      "2": -5595.21,
+      "3": -115608.12000000005,
+      "2": -41211.399999999994,
       "7": -825.42,
       "10": -6564.46,
+      "IR": -9344.43,
       "FAT": 1058984.27
      },
      "contas": {
@@ -5932,8 +5973,8 @@
       "6|Diarista (OIA)": -31085.010000000002,
       "5|Alojamento e ajuda de custo para moradia": -25070.65,
       "6|Salários da operação": -87427.82000000004,
-      "8|Telefonia e internet": -188.42,
-      "5|Prestadores de servicos gerais": -2250.0,
+      "8|Telefonia e internet": -308.38,
+      "11|Prestadores de servicos gerais": -2250.0,
       "4|Proteínas (carnes e frutos do mar)": -106902.46,
       "6|Alimentação de colaboradores": -22618.12,
       "8|Correios e fretes administrativos": -186.95,
@@ -5952,9 +5993,9 @@
       "4|Frete de insumos de alimentos e bebidas": -14428.04,
       "4|Gás de cozinha": -1000.0,
       "CC|Conta corrente Pousada Topázio - saída": -3466.67,
-      "8|Contabilidade, jurídico e consultorias": -5120.0,
-      "3|Comissões sobre vendas": -100776.14000000003,
-      "2|ICMS-ST e DIFAL": -295.21,
+      "8|Contabilidade, jurídico e consultorias": -5857.71,
+      "3|Comissões sobre vendas": -105156.55000000003,
+      "2|ICMS-ST e DIFAL": -767.55,
       "7|Taxas distritais, TPU, TLL e IPTU": -825.42,
       "5|Transporte, veículo e combustível": -549.0,
       "9|Mídia paga": -1500.0,
@@ -5971,11 +6012,17 @@
       "8|Ajuda de custos diretoria": -6000.0,
       "8|Remuneracao PJ diretoria": -8000.0,
       "10|Custo de antecipação de recebíveis": -6564.46,
+      "6|Variável": -21324.0,
+      "2|COFINS": -28885.36,
+      "2|PIS": -6258.49,
+      "IR|IRPJ": -5350.25,
+      "IR|CSLL": -3994.18,
       "FAT|Cartão de crédito à vista": 819896.32,
       "FAT|Cartão de débito": 114362.71,
       "FAT|PIX": 72746.84,
       "FAT|Dinheiro (fundo fixo)": 47022.72,
-      "FAT|Ajuste ao total do 3LM": 4955.68
+      "FAT|Ajuste ao total do 3LM": 4955.68,
+      "4|Ajuste de CMV para 33% da receita": 99875.15
      },
      "lanc": {
       "1|Receita operacional (salão)": 356,
@@ -5986,8 +6033,8 @@
       "6|Diarista (OIA)": 65,
       "5|Alojamento e ajuda de custo para moradia": 11,
       "6|Salários da operação": 67,
-      "8|Telefonia e internet": 1,
-      "5|Prestadores de servicos gerais": 3,
+      "8|Telefonia e internet": 2,
+      "11|Prestadores de servicos gerais": 3,
       "4|Proteínas (carnes e frutos do mar)": 34,
       "6|Alimentação de colaboradores": 12,
       "8|Correios e fretes administrativos": 1,
@@ -6006,9 +6053,9 @@
       "4|Frete de insumos de alimentos e bebidas": 2,
       "4|Gás de cozinha": 1,
       "CC|Conta corrente Pousada Topázio - saída": 2,
-      "8|Contabilidade, jurídico e consultorias": 2,
-      "3|Comissões sobre vendas": 53,
-      "2|ICMS-ST e DIFAL": 1,
+      "8|Contabilidade, jurídico e consultorias": 3,
+      "3|Comissões sobre vendas": 54,
+      "2|ICMS-ST e DIFAL": 2,
       "7|Taxas distritais, TPU, TLL e IPTU": 2,
       "5|Transporte, veículo e combustível": 3,
       "9|Mídia paga": 1,
@@ -6025,11 +6072,17 @@
       "8|Ajuda de custos diretoria": 3,
       "8|Remuneracao PJ diretoria": 1,
       "10|Custo de antecipação de recebíveis": 1,
+      "6|Variável": 3,
+      "2|COFINS": 1,
+      "2|PIS": 1,
+      "IR|IRPJ": 1,
+      "IR|CSLL": 1,
       "FAT|Cartão de crédito à vista": 30,
       "FAT|Cartão de débito": 30,
       "FAT|Dinheiro (fundo fixo)": 28,
       "FAT|PIX": 30,
-      "FAT|Ajuste ao total do 3LM": 1
+      "FAT|Ajuste ao total do 3LM": 1,
+      "4|Ajuste de CMV para 33% da receita": 1
      },
      "familias": {
       "cozinha": -217415.06,
@@ -13727,7 +13780,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "02/09/2026",
        -250,
        "JOSE FORTUNATO DA COSTA",
@@ -13870,7 +13923,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "05/09/2026",
        -1000,
        "JOSE FORTUNATO DA COSTA",
@@ -15949,7 +16002,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "30/09/2026",
        -1000,
        "JOSE FORTUNATO DA COSTA",
@@ -18743,6 +18796,17 @@
        "001/001"
       ],
       [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -4380.41,
+       "JOAO WICTTOR MARCELINO MEDEIROS",
+       "SEM NF",
+       "",
+       "",
+       "10/10/2026",
+       "001/001"
+      ],
+      [
        "4|Frios, laticínios e congelados",
        "17/09/2026",
        -3007.33,
@@ -18798,6 +18862,17 @@
        "001/001"
       ],
       [
+       "8|Telefonia e internet",
+       "30/09/2026",
+       -119.96,
+       "Cliente Consumidor / Sem Tomador",
+       "NF 10488550",
+       "",
+       "",
+       "20/10/2026",
+       "001/001"
+      ],
+      [
        "5|Limpeza e descartáveis",
        "23/09/2026",
        -994.5,
@@ -18809,11 +18884,66 @@
        "001/001"
       ],
       [
+       "6|Variável",
+       "30/09/2026",
+       -10662,
+       "RENATO FERREIRA LIMA BATISTA GOMES",
+       "SEM NF",
+       "",
+       "",
+       "20/10/2026",
+       "001/001"
+      ],
+      [
+       "6|Variável",
+       "30/09/2026",
+       -5331,
+       "MARCELA CAVALCANTI VILANOVA HURTADO",
+       "SEM NF",
+       "",
+       "",
+       "20/10/2026",
+       "001/001"
+      ],
+      [
+       "6|Variável",
+       "30/09/2026",
+       -5331,
+       "GEORGE CARTAXO MENDES COSTA",
+       "SEM NF",
+       "",
+       "",
+       "20/10/2026",
+       "001/001"
+      ],
+      [
+       "2|COFINS",
+       "30/09/2026",
+       -28885.36,
+       "MINISTERIO DA FAZENDA",
+       "SEM NF",
+       "",
+       "",
+       "23/10/2026",
+       "001/001"
+      ],
+      [
+       "2|PIS",
+       "30/09/2026",
+       -6258.49,
+       "MINISTERIO DA FAZENDA",
+       "SEM NF",
+       "",
+       "",
+       "23/10/2026",
+       "001/001"
+      ],
+      [
        "4|Secos e mercearia",
        "30/09/2026",
        -340,
        "M B N INDUSTRIA E COMERCIO DE ALIMENTOS LTDA",
-       "NF 005383",
+       "005383 - YO NORONHA",
        "",
        "",
        "15/10/2026",
@@ -18831,6 +18961,17 @@
        "001/001"
       ],
       [
+       "2|ICMS-ST e DIFAL",
+       "30/09/2026",
+       -472.34,
+       "Cliente Consumidor / Sem Tomador",
+       "SEM NF",
+       "",
+       "",
+       "28/10/2026",
+       "001/001"
+      ],
+      [
        "4|Bebidas alcoólicas",
        "30/09/2026",
        -4434.78,
@@ -18839,6 +18980,17 @@
        "",
        "",
        "30/10/2026",
+       "001/001"
+      ],
+      [
+       "8|Contabilidade, jurídico e consultorias",
+       "30/09/2026",
+       -737.71,
+       "Cliente Consumidor / Sem Tomador",
+       "NF 2600000001661",
+       "",
+       "",
+       "29/10/2026",
        "001/001"
       ],
       [
@@ -18939,6 +19091,28 @@
        "",
        "20/01/2027",
        "004/004"
+      ],
+      [
+       "IR|IRPJ",
+       "30/09/2026",
+       -5350.25,
+       "MINISTERIO DA FAZENDA",
+       "",
+       "",
+       "",
+       "06/11/2026",
+       "001/001"
+      ],
+      [
+       "IR|CSLL",
+       "30/09/2026",
+       -3994.18,
+       "MINISTERIO DA FAZENDA",
+       "",
+       "",
+       "",
+       "06/11/2026",
+       "001/001"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -20010,6 +20184,17 @@
        "",
        "",
        "0.47% do total"
+      ],
+      [
+       "4|Ajuste de CMV para 33% da receita",
+       "30/09/2026",
+       99875.15,
+       "Diretoria",
+       "AJUSTE",
+       "",
+       "A DRE mostra o CMV a 33% da receita, por decisao da diretoria em 07/11/2026. A compra de insumo do mes foi R$ 449.339,96, ou 42.4% da receita; a diferenca de R$ 99.875,15 e estoque comprado e nao consumido dentro do mes.",
+       "",
+       ""
       ]
      ],
      "fat": {
@@ -20066,23 +20251,23 @@
       "1": 1104094.3300000005,
       "10": 31.38,
       "4": -287597.14,
-      "8": -12090.52,
-      "5": -112805.23999999998,
-      "6": -167192.53,
-      "7": -20059.8,
+      "8": -11466.460000000001,
+      "5": -77966.03,
+      "6": -145868.53,
+      "7": -17059.8,
       "14": -46240.0,
-      "11": -50301.18000000001,
+      "11": -88140.38999999998,
       "CC": -100000.0,
-      "3": -12041.119999999999,
+      "3": -8735.07,
       "9": -9000.0,
-      "2": -36686.10999999999
+      "2": -1069.92
      },
      "contas": {
       "1|Receita operacional (salão)": 1104094.3300000005,
       "10|Rendimentos de aplicações": 31.38,
       "4|Devoluções de Compra de Matéria Prima": 17894.86,
-      "8|Sistemas": -3392.05,
-      "5|Alojamento e ajuda de custo para moradia": -53500.0,
+      "8|Sistemas": -3625.6600000000003,
+      "5|Alojamento e ajuda de custo para moradia": -56500.0,
       "6|ISS | Permanência": -4972.69,
       "4|Proteínas (carnes e frutos do mar)": -81056.63,
       "6|Diarista (OIA)": -14616.67,
@@ -20090,8 +20275,8 @@
       "6|Alimentação de colaboradores": -8935.78,
       "4|Hortifrúti": -32613.539999999997,
       "4|Água mineral": -6530.0,
-      "8|Contabilidade, jurídico e consultorias": -7737.71,
-      "7|Outros aluguéis": -19000.0,
+      "8|Contabilidade, jurídico e consultorias": -7000.0,
+      "7|Outros aluguéis": -16000.0,
       "5|Limpeza e descartáveis": -9100.79,
       "14|Cachê de artistas e atrações": -44990.0,
       "11|Investimentos diversos": -44462.25000000001,
@@ -20100,7 +20285,7 @@
       "6|Extras e freelancers": -8729.17,
       "6|Salario PJ": -10500.0,
       "CC|Conta corrente YO Noronha - saída": -100000.0,
-      "3|Comissões sobre vendas": -12041.119999999999,
+      "3|Comissões sobre vendas": -7660.71,
       "4|Secos e mercearia": -27144.539999999997,
       "4|Frios, laticínios e congelados": -25557.17,
       "4|Bebidas alcoólicas": -85763.87999999999,
@@ -20115,28 +20300,24 @@
       "5|Manutenção de equipamentos": -1800.0,
       "9|Outros de marketing": -6000.0,
       "6|FGTS e contribuições": -23199.129999999997,
-      "5|Prestadores de servicos gerais": -37839.20999999999,
+      "11|Prestadores de servicos gerais": -37839.20999999999,
       "9|Mídia paga": -1500.0,
       "5|Energia elétrica": -1527.3,
       "4|Gelo e gases": -648.0,
       "5|Transporte, veículo e combustível": -2950.0,
-      "8|Telefonia e internet": -119.96,
-      "6|Variável": -21324.0,
-      "2|COFINS": -28885.36,
-      "2|PIS": -6258.49,
       "8|Licenças e alvarás": -289.2,
-      "2|ICMS-ST e DIFAL": -472.34,
       "5|Reposição de utensílios": -2525.48,
       "6|Passagens aéreas da equipe": -605.0,
       "6|Uniformes, EPI e exames": -540.0,
-      "2|Cancelamentos e estornos": -1069.92
+      "2|Cancelamentos e estornos": -1069.92,
+      "3|Taxa de cartão crédito": -1074.3600000000001
      },
      "lanc": {
       "1|Receita operacional (salão)": 361,
       "10|Rendimentos de aplicações": 9,
       "4|Devoluções de Compra de Matéria Prima": 1,
-      "8|Sistemas": 3,
-      "5|Alojamento e ajuda de custo para moradia": 15,
+      "8|Sistemas": 4,
+      "5|Alojamento e ajuda de custo para moradia": 17,
       "6|ISS | Permanência": 17,
       "4|Proteínas (carnes e frutos do mar)": 30,
       "6|Diarista (OIA)": 27,
@@ -20144,8 +20325,8 @@
       "6|Alimentação de colaboradores": 9,
       "4|Hortifrúti": 17,
       "4|Água mineral": 3,
-      "8|Contabilidade, jurídico e consultorias": 5,
-      "7|Outros aluguéis": 4,
+      "8|Contabilidade, jurídico e consultorias": 4,
+      "7|Outros aluguéis": 2,
       "5|Limpeza e descartáveis": 11,
       "14|Cachê de artistas e atrações": 32,
       "11|Investimentos diversos": 23,
@@ -20154,7 +20335,7 @@
       "6|Extras e freelancers": 21,
       "6|Salario PJ": 2,
       "CC|Conta corrente YO Noronha - saída": 1,
-      "3|Comissões sobre vendas": 3,
+      "3|Comissões sobre vendas": 2,
       "4|Secos e mercearia": 19,
       "4|Frios, laticínios e congelados": 11,
       "4|Bebidas alcoólicas": 20,
@@ -20169,21 +20350,17 @@
       "5|Manutenção de equipamentos": 2,
       "9|Outros de marketing": 2,
       "6|FGTS e contribuições": 2,
-      "5|Prestadores de servicos gerais": 24,
+      "11|Prestadores de servicos gerais": 24,
       "9|Mídia paga": 1,
       "5|Energia elétrica": 1,
       "4|Gelo e gases": 1,
       "5|Transporte, veículo e combustível": 4,
-      "8|Telefonia e internet": 1,
-      "6|Variável": 3,
-      "2|COFINS": 1,
-      "2|PIS": 1,
       "8|Licenças e alvarás": 1,
-      "2|ICMS-ST e DIFAL": 1,
       "5|Reposição de utensílios": 3,
       "6|Passagens aéreas da equipe": 1,
       "6|Uniformes, EPI e exames": 2,
-      "2|Cancelamentos e estornos": 2
+      "2|Cancelamentos e estornos": 2,
+      "3|Taxa de cartão crédito": 4
      },
      "familias": {
       "cozinha": -166371.88,
@@ -24570,7 +24747,7 @@
        "001/001"
       ],
       [
-       "7|Outros aluguéis",
+       "5|Alojamento e ajuda de custo para moradia",
        "02/10/2026",
        -1500,
        "RUAN PAULO PEREIRA DOS SANTOS",
@@ -26671,7 +26848,7 @@
        "001/001"
       ],
       [
-       "7|Outros aluguéis",
+       "5|Alojamento e ajuda de custo para moradia",
        "02/10/2026",
        -1500,
        "Cliente Consumidor / Sem Tomador",
@@ -26712,17 +26889,6 @@
        "",
        "",
        "09/10/2026",
-       "001/001"
-      ],
-      [
-       "3|Comissões sobre vendas",
-       "09/10/2026",
-       -4380.41,
-       "JOAO WICTTOR MARCELINO MEDEIROS",
-       "SEM NF",
-       "",
-       "",
-       "10/10/2026",
        "001/001"
       ],
       [
@@ -26902,7 +27068,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "16/10/2026",
        -2250,
        "Cliente Consumidor / Sem Tomador",
@@ -26913,7 +27079,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "16/10/2026",
        -3500,
        "Cliente Consumidor / Sem Tomador",
@@ -27001,7 +27167,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "20/10/2026",
        -600,
        "JOSE PAULO FERREIRA",
@@ -27100,7 +27266,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "20/10/2026",
        -7000,
        "Cliente Consumidor / Sem Tomador",
@@ -27276,7 +27442,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "20/10/2026",
        -1371,
        "Cliente Consumidor / Sem Tomador",
@@ -27287,7 +27453,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "19/10/2026",
        -2600,
        "PEDROEROL CLIMATIZACAO LTDA",
@@ -27375,7 +27541,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "20/10/2026",
        -4000,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -27408,50 +27574,6 @@
        "001/001"
       ],
       [
-       "8|Telefonia e internet",
-       "07/10/2026",
-       -119.96,
-       "Cliente Consumidor / Sem Tomador",
-       "NF 10488550",
-       "",
-       "",
-       "20/10/2026",
-       "001/001"
-      ],
-      [
-       "6|Variável",
-       "20/10/2026",
-       -10662,
-       "RENATO FERREIRA LIMA BATISTA GOMES",
-       "SEM NF",
-       "",
-       "",
-       "20/10/2026",
-       "001/001"
-      ],
-      [
-       "6|Variável",
-       "20/10/2026",
-       -5331,
-       "MARCELA CAVALCANTI VILANOVA HURTADO",
-       "SEM NF",
-       "",
-       "",
-       "20/10/2026",
-       "001/001"
-      ],
-      [
-       "6|Variável",
-       "20/10/2026",
-       -5331,
-       "GEORGE CARTAXO MENDES COSTA",
-       "SEM NF",
-       "",
-       "",
-       "20/10/2026",
-       "001/001"
-      ],
-      [
        "4|Proteínas (carnes e frutos do mar)",
        "08/10/2026",
        -2340,
@@ -27471,28 +27593,6 @@
        "",
        "",
        "22/10/2026",
-       "001/001"
-      ],
-      [
-       "2|COFINS",
-       "22/10/2026",
-       -28885.36,
-       "MINISTERIO DA FAZENDA",
-       "SEM NF",
-       "",
-       "",
-       "23/10/2026",
-       "001/001"
-      ],
-      [
-       "2|PIS",
-       "22/10/2026",
-       -6258.49,
-       "MINISTERIO DA FAZENDA",
-       "SEM NF",
-       "",
-       "",
-       "23/10/2026",
        "001/001"
       ],
       [
@@ -27529,7 +27629,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "27/10/2026",
        -883.03,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -27672,7 +27772,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "27/10/2026",
        -2800,
        "MAURO VIEIRA DA CUNHA JUNIOR",
@@ -27749,7 +27849,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "27/10/2026",
        -600,
        "Cliente Consumidor / Sem Tomador",
@@ -27760,7 +27860,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "27/10/2026",
        -575,
        "Cliente Consumidor / Sem Tomador",
@@ -27771,7 +27871,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "27/10/2026",
        -1741.67,
        "Cliente Consumidor / Sem Tomador",
@@ -27782,7 +27882,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "27/10/2026",
        -1721.01,
        "Cliente Consumidor / Sem Tomador",
@@ -27793,7 +27893,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "27/10/2026",
        -830,
        "VIVIANE DE SOUZA SILVA",
@@ -27804,7 +27904,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "27/10/2026",
        -600,
        "JOSE PAULO FERREIRA",
@@ -27853,17 +27953,6 @@
        -805.6,
        "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
        "NF029162",
-       "",
-       "",
-       "28/10/2026",
-       "001/001"
-      ],
-      [
-       "2|ICMS-ST e DIFAL",
-       "27/10/2026",
-       -472.34,
-       "Cliente Consumidor / Sem Tomador",
-       "SEM NF",
        "",
        "",
        "28/10/2026",
@@ -27969,18 +28058,7 @@
        "001/001"
       ],
       [
-       "8|Contabilidade, jurídico e consultorias",
-       "29/10/2026",
-       -737.71,
-       "Cliente Consumidor / Sem Tomador",
-       "NF 2600000001661",
-       "",
-       "",
-       "29/10/2026",
-       "001/001"
-      ],
-      [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "29/10/2026",
        -1567.5,
        "Cliente Consumidor / Sem Tomador",
@@ -28013,7 +28091,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "29/10/2026",
        -300,
        "JOSE FORTUNATO DA COSTA",
@@ -28024,7 +28102,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "29/10/2026",
        -250,
        "SEBASTIAO DO CARMO MAIA FARIAS",
@@ -28112,7 +28190,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "29/10/2026",
        -125,
        "Cliente Consumidor / Sem Tomador",
@@ -28123,7 +28201,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "29/10/2026",
        -200,
        "GABRIELLA ALVES NOVAES",
@@ -28134,7 +28212,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "29/10/2026",
        -100,
        "ROBINSON BARBOSA BORGES",
@@ -28145,7 +28223,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "29/10/2026",
        -50,
        "SWESLLEN SAYONARA SANTOS DE BRITO",
@@ -28211,7 +28289,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "29/10/2026",
        -4000,
        "Cliente Consumidor / Sem Tomador",
@@ -28574,7 +28652,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "29/10/2026",
        -175,
        "FERNANDA VICTORIA SANTOS DE MORAIS",
@@ -28649,6 +28727,61 @@
        "",
        "04/12/2026",
        "002/002"
+      ],
+      [
+       "3|Taxa de cartão crédito",
+       "30/10/2026",
+       -486.31,
+       "GETNET",
+       "",
+       "",
+       "",
+       "30/11/2026",
+       ""
+      ],
+      [
+       "3|Taxa de cartão crédito",
+       "30/10/2026",
+       -135.39,
+       "GETNET",
+       "",
+       "",
+       "",
+       "03/11/2026",
+       ""
+      ],
+      [
+       "3|Taxa de cartão crédito",
+       "31/10/2026",
+       -434.93,
+       "GETNET",
+       "",
+       "",
+       "",
+       "01/12/2026",
+       ""
+      ],
+      [
+       "3|Taxa de cartão crédito",
+       "31/10/2026",
+       -17.73,
+       "GETNET",
+       "",
+       "",
+       "",
+       "03/11/2026",
+       ""
+      ],
+      [
+       "8|Sistemas",
+       "31/10/2026",
+       -233.61,
+       "RAJ TECNOLOGIA LTDA",
+       "",
+       "",
+       "",
+       "30/11/2026",
+       "010/012"
       ]
      ]
     }
@@ -28667,7 +28800,7 @@
       "14": -2385.0,
       "9": -2000.0,
       "10": 4.07,
-      "2": -0.03
+      "IR": -0.03
      },
      "contas": {
       "NEUTRO|Ajustes e estornos - entrada": 9.17,
@@ -28693,7 +28826,7 @@
       "4|Frios, laticínios e congelados": -1140.0,
       "10|Rendimentos de aplicações": 4.45,
       "10|IOF": -0.38,
-      "2|IRPJ": -0.03
+      "IR|IRPJ": -0.03
      },
      "lanc": {
       "NEUTRO|Ajustes e estornos - entrada": 4,
@@ -28719,7 +28852,7 @@
       "4|Frios, laticínios e congelados": 1,
       "10|Rendimentos de aplicações": 1,
       "10|IOF": 1,
-      "2|IRPJ": 1
+      "IR|IRPJ": 1
      },
      "familias": {
       "cozinha": -13393.68,
@@ -30345,7 +30478,7 @@
        ""
       ],
       [
-       "2|IRPJ",
+       "IR|IRPJ",
        "31/08/2026",
        -0.03,
        "BANCO SANTANDER",
@@ -30360,23 +30493,24 @@
     "2026-09": {
      "grupos": {
       "1": 1059150.87,
-      "4": -357256.19000070007,
-      "6": -122974.35999929997,
-      "11": -49282.649999999994,
+      "4": -357256.19000000006,
+      "6": -122974.35999999996,
+      "11": -50532.649999999994,
       "9": -7500.0,
-      "5": -39718.11,
+      "5": -38468.11,
       "8": -40221.00000000001,
       "NEUTRO": 11128.229999999363,
       "14": -23215.83,
       "CC": -3466.67,
       "3": -12116.620000000003,
-      "2": -5857.55,
+      "2": -5856.05,
       "7": -825.42,
-      "10": 28.54
+      "10": 28.54,
+      "IR": -1.5
      },
      "contas": {
       "1|Receita operacional (salão)": 1059150.87,
-      "4|Hortifrúti": -23048.3900007,
+      "4|Hortifrúti": -23048.390000000003,
       "6|Alimentação de colaboradores": -24874.32,
       "4|Secos e mercearia": -79035.87999999999,
       "11|Investimentos diversos": -35437.65,
@@ -30385,7 +30519,7 @@
       "5|Alojamento e ajuda de custo para moradia": -26070.65,
       "11|Equipamentos e mobiliário": -10345.0,
       "4|Proteínas (carnes e frutos do mar)": -111081.62999999998,
-      "4|Bebidas alcoólicas": -55827.879991740505,
+      "4|Bebidas alcoólicas": -55827.880000000005,
       "11|Obras e reformas": -3500.0,
       "5|Limpeza e descartáveis": -2948.46,
       "8|Tarifas bancárias": -782.2500000000001,
@@ -30396,14 +30530,14 @@
       "5|Gestor operacional PJ": -9000.0,
       "6|Salario PJ": -14800.0,
       "8|Telefonia e internet": -188.42,
-      "5|Prestadores de servicos gerais": -1250.0,
+      "11|Prestadores de servicos gerais": -1250.0,
       "8|Correios e fretes administrativos": -186.95,
       "4|Outros insumos e diversos": -38480.450000000004,
       "14|Cachê de artistas e atrações": -23215.83,
       "8|Remuneracao PJ diretoria": -5600.0,
       "8|Ajuda de custos diretoria": -2800.0,
       "8|Pró-labore": -19600.0,
-      "6|OIA)": -699.9999992999999,
+      "6|OIA)": -700.0,
       "6|ISS | Permanência": -2134.33,
       "9|Mídia paga": -1500.0,
       "4|Frete de insumos de alimentos e bebidas": -11375.560000000001,
@@ -30417,7 +30551,7 @@
       "2|ICMS-ST e DIFAL": -295.21,
       "7|Taxas distritais, TPU, TLL e IPTU": -825.42,
       "5|Transporte, veículo e combustível": -449.0,
-      "4|Bebidas não alcoólicas": -1772.2800082595,
+      "4|Bebidas não alcoólicas": -1772.28,
       "NEUTRO|Ajustes e estornos - entrada": 1058.2300000000012,
       "4|Água mineral": -6792.0,
       "2|Cancelamentos e estornos": -5300.0,
@@ -30426,7 +30560,7 @@
       "6|Rescisões": -3106.0299999999997,
       "10|Rendimentos de aplicações": 34.94,
       "10|IOF": -6.4,
-      "2|IRPJ": -1.5
+      "IR|IRPJ": -1.5
      },
      "lanc": {
       "1|Receita operacional (salão)": 323,
@@ -30450,7 +30584,7 @@
       "5|Gestor operacional PJ": 2,
       "6|Salario PJ": 4,
       "8|Telefonia e internet": 1,
-      "5|Prestadores de servicos gerais": 2,
+      "11|Prestadores de servicos gerais": 2,
       "8|Correios e fretes administrativos": 1,
       "4|Outros insumos e diversos": 9,
       "14|Cachê de artistas e atrações": 24,
@@ -30480,10 +30614,10 @@
       "6|Rescisões": 2,
       "10|Rendimentos de aplicações": 1,
       "10|IOF": 1,
-      "2|IRPJ": 1
+      "IR|IRPJ": 1
      },
      "familias": {
-      "cozinha": -243008.02000070002,
+      "cozinha": -243008.02000000002,
       "bar": -64392.16,
       "comum": -49856.01
      },
@@ -31941,7 +32075,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "04/09/2026",
        -250,
        "JOSE FORTUNATO DA COSTA",
@@ -32150,7 +32284,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "04/09/2026",
        -1000,
        "JOSE FORTUNATO DA COSTA",
@@ -42314,7 +42448,7 @@
        ""
       ],
       [
-       "2|IRPJ",
+       "IR|IRPJ",
        "30/09/2026",
        -1.5,
        "BANCO SANTANDER",
@@ -42332,10 +42466,10 @@
       "6": -133620.88999999998,
       "NEUTRO": 0.0,
       "4": -431300.6399999999,
-      "5": -127490.32999999999,
-      "11": -17038.39,
-      "7": -18559.8,
+      "5": -90151.12,
+      "11": -55877.600000000006,
       "8": -51678.34999999999,
+      "7": -17059.8,
       "9": -8000.0,
       "14": -42840.0,
       "CC": -100000.0,
@@ -42348,25 +42482,25 @@
       "6|ISS | Permanência": -4972.69,
       "NEUTRO|Transferência entre contas - saída": -1449221.54,
       "4|Proteínas (carnes e frutos do mar)": -77914.06999999999,
-      "4|Secos e mercearia": -51307.92495349001,
+      "4|Secos e mercearia": -51307.930000000015,
       "6|Diarista (OIA)": -16610.010000000002,
-      "4|Bebidas alcoólicas": -213033.8068507,
-      "5|Alojamento e ajuda de custo para moradia": -52500.0,
+      "4|Bebidas alcoólicas": -213033.81,
+      "5|Alojamento e ajuda de custo para moradia": -54000.0,
       "5|Manutenção de equipamentos": -700.0,
       "6|Salários da operação": -48745.57999999999,
       "4|Hortifrúti": -20000.91,
       "6|Alimentação de colaboradores": -5195.31,
       "4|Frete de insumos de alimentos e bebidas": -40724.6,
-      "4|Água mineral": -6530.000534,
+      "4|Água mineral": -6530.0,
       "11|Investimentos diversos": -7546.15,
       "4|Outros insumos e diversos": -18221.629999999997,
       "NEUTRO|Transferência entre contas - entrada": 1449221.54,
-      "4|Bebidas não alcoólicas": -3388.5626153000003,
-      "7|Outros aluguéis": -17500.0,
+      "4|Bebidas não alcoólicas": -3388.56,
       "8|Contabilidade, jurídico e consultorias": -5737.71,
       "5|Limpeza e descartáveis": -22691.749999999993,
-      "4|Frios, laticínios e congelados": -17425.99504651,
-      "5|Prestadores de servicos gerais": -38839.20999999999,
+      "7|Outros aluguéis": -16000.0,
+      "4|Frios, laticínios e congelados": -17425.989999999998,
+      "11|Prestadores de servicos gerais": -38839.20999999999,
       "6|Salario PJ": -7500.0,
       "5|Gestor operacional PJ": -5666.67,
       "8|Material de escritório": -1785.5,
@@ -42412,7 +42546,7 @@
       "4|Secos e mercearia": 25,
       "6|Diarista (OIA)": 36,
       "4|Bebidas alcoólicas": 41,
-      "5|Alojamento e ajuda de custo para moradia": 14,
+      "5|Alojamento e ajuda de custo para moradia": 15,
       "5|Manutenção de equipamentos": 1,
       "6|Salários da operação": 29,
       "4|Hortifrúti": 16,
@@ -42423,11 +42557,11 @@
       "4|Outros insumos e diversos": 5,
       "NEUTRO|Transferência entre contas - entrada": 21,
       "4|Bebidas não alcoólicas": 7,
-      "7|Outros aluguéis": 3,
       "8|Contabilidade, jurídico e consultorias": 4,
       "5|Limpeza e descartáveis": 14,
+      "7|Outros aluguéis": 2,
       "4|Frios, laticínios e congelados": 11,
-      "5|Prestadores de servicos gerais": 25,
+      "11|Prestadores de servicos gerais": 25,
       "6|Salario PJ": 2,
       "5|Gestor operacional PJ": 1,
       "8|Material de escritório": 1,
@@ -43231,7 +43365,7 @@
        ""
       ],
       [
-       "7|Outros aluguéis",
+       "5|Alojamento e ajuda de custo para moradia",
        "02/10/2026",
        -1500,
        "Cliente Consumidor / Sem Tomador",
@@ -43396,7 +43530,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "05/10/2026",
        -1000,
        "JOSE FORTUNATO DA COSTA",
@@ -47708,7 +47842,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "16/10/2026",
        -2250,
        "Cliente Consumidor / Sem Tomador",
@@ -47719,7 +47853,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "16/10/2026",
        -3500,
        "Cliente Consumidor / Sem Tomador",
@@ -48379,7 +48513,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "20/10/2026",
        -600,
        "JOSE PAULO FERREIRA",
@@ -48489,7 +48623,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "20/10/2026",
        -7000,
        "Cliente Consumidor / Sem Tomador",
@@ -48665,7 +48799,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "20/10/2026",
        -1371,
        "Cliente Consumidor / Sem Tomador",
@@ -48676,7 +48810,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "20/10/2026",
        -2600,
        "PEDROEROL CLIMATIZACAO LTDA",
@@ -48764,7 +48898,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "20/10/2026",
        -4000,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -49384,7 +49518,7 @@
        "22/10/2026",
        -340,
        "GRANNO SELECT",
-       "NF 005383",
+       "",
        "Santander",
        "",
        "",
@@ -49853,7 +49987,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "27/10/2026",
        -883.03,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -49996,7 +50130,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "27/10/2026",
        -2800,
        "MAURO VIEIRA DA CUNHA JUNIOR",
@@ -50073,7 +50207,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "27/10/2026",
        -600,
        "Cliente Consumidor / Sem Tomador",
@@ -50084,7 +50218,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "27/10/2026",
        -575,
        "Cliente Consumidor / Sem Tomador",
@@ -50095,7 +50229,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "27/10/2026",
        -1741.67,
        "Cliente Consumidor / Sem Tomador",
@@ -50106,7 +50240,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "27/10/2026",
        -1721.01,
        "Cliente Consumidor / Sem Tomador",
@@ -50117,7 +50251,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "27/10/2026",
        -830,
        "VIVIANE DE SOUZA SILVA",
@@ -50128,7 +50262,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "27/10/2026",
        -600,
        "JOSE PAULO FERREIRA",
@@ -50601,7 +50735,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "29/10/2026",
        -1567.5,
        "Cliente Consumidor / Sem Tomador",
@@ -50634,7 +50768,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "29/10/2026",
        -300,
        "JOSE FORTUNATO DA COSTA",
@@ -50645,7 +50779,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "29/10/2026",
        -250,
        "SEBASTIAO DO CARMO MAIA FARIAS",
@@ -50722,7 +50856,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "29/10/2026",
        -200,
        "GABRIELLA ALVES NOVAES",
@@ -50733,7 +50867,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "29/10/2026",
        -100,
        "ROBINSON BARBOSA BORGES",
@@ -50744,7 +50878,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "29/10/2026",
        -50,
        "SWESLLEN SAYONARA SANTOS DE BRITO",
@@ -50810,7 +50944,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "29/10/2026",
        -4000,
        "Cliente Consumidor / Sem Tomador",
@@ -50942,7 +51076,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "29/10/2026",
        -125,
        "Cliente Consumidor / Sem Tomador",
@@ -50953,7 +51087,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "29/10/2026",
        -175,
        "FERNANDA VICTORIA SANTOS DE MORAIS",
@@ -51563,8 +51697,8 @@
       "OR": 32550.210000000003,
       "8": -27090.24,
       "7": -34986.92,
-      "11": -592036.2,
-      "5": -80931.08,
+      "11": -593036.2,
+      "5": -79931.08000000002,
       "6": -88602.21,
       "4": -90306.9,
       "10": -549.53,
@@ -51578,7 +51712,7 @@
       "7|Outros aluguéis": -9384.0,
       "11|Pré-operação": -13552.84,
       "5|Transporte, veículo e combustível": -8561.699999999999,
-      "5|Prestadores de servicos gerais": -1000.0,
+      "11|Prestadores de servicos gerais": -1000.0,
       "6|Diarista (OIA)": -36726.53,
       "11|Equipamentos e mobiliário": -137879.25000000003,
       "6|Salários da operação": -3194.0,
@@ -51624,7 +51758,7 @@
       "7|Outros aluguéis": 4,
       "11|Pré-operação": 5,
       "5|Transporte, veículo e combustível": 5,
-      "5|Prestadores de servicos gerais": 1,
+      "11|Prestadores de servicos gerais": 1,
       "6|Diarista (OIA)": 27,
       "11|Equipamentos e mobiliário": 57,
       "6|Salários da operação": 2,
@@ -51966,7 +52100,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "05/08/2026",
        -1000,
        "MYRELLA FLOR PEREIRA DA SILVA",
@@ -56338,10 +56472,10 @@
      "grupos": {
       "OR": 5998.04,
       "NEUTRO": -2.2737367544323206e-13,
-      "4": -69563.47000000002,
-      "5": -50982.68,
+      "4": -69903.47000000002,
+      "5": -46982.68,
       "8": -9260.289999999999,
-      "11": -301387.22,
+      "11": -305978.01999999996,
       "7": -35000.0,
       "CC": -6096.85,
       "6": -4350.06,
@@ -56359,13 +56493,13 @@
       "11|Pré-operação": -10102.84,
       "4|Hortifrúti": -13340.400000000001,
       "11|Equipamentos e mobiliário": -65112.48000000001,
-      "11|Investimentos diversos": -49633.24,
+      "11|Investimentos diversos": -50224.04,
       "11|Obras e reformas": -110989.6,
       "4|Água mineral": -4800.0,
-      "4|Secos e mercearia": -28416.449999999997,
+      "4|Secos e mercearia": -28756.449999999997,
       "7|Arrendamento e aluguel do ponto": -25000.0,
       "7|Outros aluguéis": -10000.0,
-      "5|Prestadores de servicos gerais": -4000.0,
+      "11|Prestadores de servicos gerais": -4000.0,
       "CC|Conta corrente Amana - saída": -6096.85,
       "6|Salários da operação": -4350.06,
       "5|Água e esgoto": -2210.8599999999997,
@@ -56396,13 +56530,13 @@
       "11|Pré-operação": 4,
       "4|Hortifrúti": 4,
       "11|Equipamentos e mobiliário": 13,
-      "11|Investimentos diversos": 10,
+      "11|Investimentos diversos": 11,
       "11|Obras e reformas": 24,
       "4|Água mineral": 1,
-      "4|Secos e mercearia": 9,
+      "4|Secos e mercearia": 10,
       "7|Arrendamento e aluguel do ponto": 1,
       "7|Outros aluguéis": 1,
-      "5|Prestadores de servicos gerais": 2,
+      "11|Prestadores de servicos gerais": 2,
       "CC|Conta corrente Amana - saída": 4,
       "6|Salários da operação": 2,
       "5|Água e esgoto": 2,
@@ -56424,7 +56558,7 @@
       "NEUTRO|Transferência entre contas - saída": 12
      },
      "familias": {
-      "cozinha": -71450.48000000001,
+      "cozinha": -71790.48000000001,
       "bar": -4800.0
      },
      "itens": [
@@ -56924,7 +57058,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "05/09/2026",
        -1000,
        "MYRELLA FLOR PEREIRA DA SILVA",
@@ -57276,7 +57410,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "09/09/2026",
        -3000,
        "KELLINY VIEIRA BANDEIRA DE MELO 04071730480",
@@ -58495,6 +58629,28 @@
        "",
        "16/09/2026",
        "001/001"
+      ],
+      [
+       "11|Investimentos diversos",
+       "04/09/2026",
+       -590.8,
+       "TORQ &amp; CIA LTDA",
+       "000706",
+       "",
+       "",
+       "03/11/2026",
+       "001/001"
+      ],
+      [
+       "4|Secos e mercearia",
+       "30/09/2026",
+       -340,
+       "M B N INDUSTRIA E COMERCIO DE ALIMENTOS LTDA",
+       "45.270.781/0002-53",
+       "",
+       "",
+       "15/10/2026",
+       "001/001"
       ]
      ]
     },
@@ -58502,75 +58658,87 @@
      "grupos": {
       "CC": 94199.0,
       "12": 200000.0,
-      "8": -8285.53,
-      "5": -48530.3,
-      "11": -228300.98999999996,
-      "6": -16867.5,
-      "7": -33174.0,
+      "8": -11285.5,
+      "5": -28700.72,
+      "11": -258242.70999999996,
+      "6": -26547.96,
+      "7": -25000.0,
       "4": -18389.1,
-      "9": -2500.0
+      "9": -2500.0,
+      "3": -38.66,
+      "13": -188.17
      },
      "contas": {
       "CC|Conta corrente Boldró - entrada": 100000.0,
       "12|Aportes de sócios": 200000.0,
-      "8|Sistemas": -2554.2,
-      "5|Alojamento e ajuda de custo para moradia": -3447.3199999999997,
+      "8|Sistemas": -3454.0,
+      "5|Alojamento e ajuda de custo para moradia": -11621.32,
       "8|Gestor administrativo PJ": -4000.0,
       "11|Investimentos diversos": -37265.31,
       "6|Diarista (OIA)": -2000.0,
       "CC|Conta corrente Amana - saída": -5801.0,
       "7|Arrendamento e aluguel do ponto": -25000.0,
       "11|Frete de equipamentos e obra": -17145.16,
-      "5|Frete de materiais de operação": -22806.63,
+      "11|Frete de materiais de operação": -22806.63,
       "6|Salários da operação": -6223.0,
       "5|Energia elétrica": -8300.62,
       "5|Água e esgoto": -2989.74,
-      "5|Prestadores de servicos gerais": -5299.94,
+      "11|Prestadores de servicos gerais": -5299.94,
       "11|Obras e reformas": -114101.76,
-      "11|Equipamentos e mobiliário": -59788.759999999995,
+      "11|Equipamentos e mobiliário": -61623.909999999996,
       "4|Outros insumos e diversos": -15519.1,
       "8|Contabilidade, jurídico e consultorias": -901.5,
       "8|Tarifas bancárias": -12.0,
       "6|Uniformes, EPI e exames": -2388.0,
       "8|Material de escritório": -817.83,
       "6|Alimentação de colaboradores": -3078.24,
-      "7|Outros aluguéis": -8174.0,
       "4|Gás de cozinha": -2870.0,
       "5|Transporte, veículo e combustível": -5686.05,
       "6|FGTS e contribuições": -2418.26,
       "9|Mídia paga": -2500.0,
-      "6|Benefícios (VT, VR e saúde)": -760.0
+      "6|Benefícios (VT, VR e saúde)": -760.0,
+      "5|Limpeza e descartáveis": -102.99,
+      "3|Taxas de cartão": -38.66,
+      "6|Passagens aéreas da equipe": -9680.46,
+      "8|Telefonia e internet": -1905.2,
+      "8|Outras despesas administrativas": -194.97,
+      "13|Pagamento indevido / a maior": -188.17
      },
      "lanc": {
       "CC|Conta corrente Boldró - entrada": 1,
       "12|Aportes de sócios": 1,
-      "8|Sistemas": 3,
-      "5|Alojamento e ajuda de custo para moradia": 3,
+      "8|Sistemas": 4,
+      "5|Alojamento e ajuda de custo para moradia": 6,
       "8|Gestor administrativo PJ": 1,
       "11|Investimentos diversos": 5,
       "6|Diarista (OIA)": 1,
       "CC|Conta corrente Amana - saída": 2,
       "7|Arrendamento e aluguel do ponto": 1,
       "11|Frete de equipamentos e obra": 3,
-      "5|Frete de materiais de operação": 9,
+      "11|Frete de materiais de operação": 9,
       "6|Salários da operação": 2,
       "5|Energia elétrica": 1,
       "5|Água e esgoto": 2,
-      "5|Prestadores de servicos gerais": 7,
+      "11|Prestadores de servicos gerais": 7,
       "11|Obras e reformas": 20,
-      "11|Equipamentos e mobiliário": 12,
+      "11|Equipamentos e mobiliário": 13,
       "4|Outros insumos e diversos": 5,
       "8|Contabilidade, jurídico e consultorias": 1,
       "8|Tarifas bancárias": 6,
       "6|Uniformes, EPI e exames": 3,
       "8|Material de escritório": 1,
       "6|Alimentação de colaboradores": 3,
-      "7|Outros aluguéis": 3,
       "4|Gás de cozinha": 2,
       "5|Transporte, veículo e combustível": 3,
       "6|FGTS e contribuições": 2,
       "9|Mídia paga": 2,
-      "6|Benefícios (VT, VR e saúde)": 1
+      "6|Benefícios (VT, VR e saúde)": 1,
+      "5|Limpeza e descartáveis": 1,
+      "3|Taxas de cartão": 1,
+      "6|Passagens aéreas da equipe": 1,
+      "8|Telefonia e internet": 1,
+      "8|Outras despesas administrativas": 1,
+      "13|Pagamento indevido / a maior": 1
      },
      "familias": {
       "comum": -15519.1,
@@ -58721,7 +58889,7 @@
        "001/001"
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de materiais de operação",
        "31/10/2026",
        -3438.75,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -58732,7 +58900,7 @@
        "001/001"
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de materiais de operação",
        "31/10/2026",
        -3438.75,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -58798,11 +58966,11 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "05/10/2026",
        -1800,
-       "Cliente Consumidor / Sem Tomador",
-       "",
+       "52.694.856 MARIANO HERNAN CORREA",
+       "52.694.856/0001-08",
        "",
        "",
        "05/10/2026",
@@ -58919,7 +59087,7 @@
        "001/001"
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de materiais de operação",
        "07/10/2026",
        -621.27,
        "Cliente Consumidor / Sem Tomador",
@@ -58996,7 +59164,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "13/10/2026",
        -41.9,
        "TILLBILL - DESENVOLVIMENTO DE SISTEMAS LTDA",
@@ -59150,7 +59318,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "13/10/2026",
        -3000,
        "KELLINY VIEIRA BANDEIRA DE MELO 04071730480",
@@ -59161,7 +59329,7 @@
        "001/001"
       ],
       [
-       "7|Outros aluguéis",
+       "5|Alojamento e ajuda de custo para moradia",
        "13/10/2026",
        -5000,
        "LEONARDO SOUZA DOS SANTOS",
@@ -59337,7 +59505,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "15/10/2026",
        -309.78,
        "MINISTERIO DA FAZENDA",
@@ -59359,7 +59527,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "15/10/2026",
        -36.55,
        "MINISTERIO DA FAZENDA",
@@ -59370,7 +59538,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "15/10/2026",
        -11.79,
        "MINISTERIO DA FAZENDA",
@@ -59381,7 +59549,7 @@
        "001/001"
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "15/10/2026",
        -99.92,
        "MINISTERIO DA FAZENDA",
@@ -59403,7 +59571,7 @@
        "001/001"
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de materiais de operação",
        "15/10/2026",
        -37.8,
        "Cliente Consumidor / Sem Tomador",
@@ -59414,7 +59582,7 @@
        "001/001"
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de materiais de operação",
        "15/10/2026",
        -5998.04,
        "Cliente Consumidor / Sem Tomador",
@@ -59425,7 +59593,7 @@
        "001/001"
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de materiais de operação",
        "15/10/2026",
        -5137.9,
        "Cliente Consumidor / Sem Tomador",
@@ -59436,7 +59604,7 @@
        "001/001"
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de materiais de operação",
        "15/10/2026",
        -240,
        "Cliente Consumidor / Sem Tomador",
@@ -59491,7 +59659,7 @@
        "001/001"
       ],
       [
-       "7|Outros aluguéis",
+       "5|Alojamento e ajuda de custo para moradia",
        "27/10/2026",
        -1384,
        "PRATICO SERVICOS DE CONSTRUCAO EM GERAL LTDA",
@@ -59557,7 +59725,7 @@
        "001/001"
       ],
       [
-       "7|Outros aluguéis",
+       "5|Alojamento e ajuda de custo para moradia",
        "27/10/2026",
        -1790,
        "PRATICO SERVICOS DE CONSTRUCAO EM GERAL LTDA",
@@ -59568,7 +59736,7 @@
        "001/001"
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de materiais de operação",
        "27/10/2026",
        -287.5,
        "Cliente Consumidor / Sem Tomador",
@@ -59579,7 +59747,7 @@
        "001/001"
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de materiais de operação",
        "27/10/2026",
        -3606.62,
        "Cliente Consumidor / Sem Tomador",
@@ -59733,6 +59901,94 @@
        "001/001"
       ],
       [
+       "5|Limpeza e descartáveis",
+       "31/10/2026",
+       -102.99,
+       "BANCO BRADESCO S.A.",
+       "",
+       "",
+       "",
+       "01/11/2026",
+       "010/012"
+      ],
+      [
+       "3|Taxas de cartão",
+       "31/10/2026",
+       -38.66,
+       "BANCO BRADESCO S.A.",
+       "",
+       "",
+       "",
+       "01/11/2026",
+       "010/012"
+      ],
+      [
+       "6|Passagens aéreas da equipe",
+       "31/10/2026",
+       -9680.46,
+       "BANCO BRADESCO S.A.",
+       "",
+       "",
+       "",
+       "01/11/2026",
+       "010/012"
+      ],
+      [
+       "8|Telefonia e internet",
+       "31/10/2026",
+       -1905.2,
+       "BANCO BRADESCO S.A.",
+       "",
+       "",
+       "",
+       "01/11/2026",
+       "010/012"
+      ],
+      [
+       "8|Sistemas",
+       "31/10/2026",
+       -899.8,
+       "BANCO BRADESCO S.A.",
+       "",
+       "",
+       "",
+       "01/11/2026",
+       "010/012"
+      ],
+      [
+       "11|Equipamentos e mobiliário",
+       "31/10/2026",
+       -1835.15,
+       "BANCO BRADESCO S.A.",
+       "",
+       "",
+       "",
+       "01/11/2026",
+       "010/012"
+      ],
+      [
+       "8|Outras despesas administrativas",
+       "31/10/2026",
+       -194.97,
+       "BANCO BRADESCO S.A.",
+       "",
+       "",
+       "",
+       "01/11/2026",
+       "010/012"
+      ],
+      [
+       "13|Pagamento indevido / a maior",
+       "31/10/2026",
+       -188.17,
+       "BANCO BRADESCO S.A.",
+       "",
+       "",
+       "",
+       "01/11/2026",
+       "010/012"
+      ],
+      [
        "5|Transporte, veículo e combustível",
        "09/10/2026",
        -2107.51,
@@ -59750,29 +60006,30 @@
     "2026-08": {
      "grupos": {
       "CC": -100902.64,
-      "11": -587065.8100000003,
+      "11": -611943.5000000001,
       "7": -34986.92,
-      "5": -111907.7499906788,
-      "8": -29558.4199334427,
-      "6": -94921.5900758785,
+      "5": -87030.06,
+      "8": -29558.420000000002,
+      "6": -94921.59,
       "4": -126197.50000000001,
       "OR": 35950.21,
       "NEUTRO": 5.646150214033696e-11,
       "12": 1155386.76,
       "10": -330.94,
-      "2": -387.27
+      "2": -351.81,
+      "IR": -35.46
      },
      "contas": {
       "CC|Conta corrente Amana - entrada": 6991.11,
       "11|Equipamentos e mobiliário": -138273.02,
       "7|Outros aluguéis": -9384.0,
       "11|Pré-operação": -25093.85,
-      "5|Transporte, veículo e combustível": -8561.6999906788,
+      "5|Transporte, veículo e combustível": -8561.699999999999,
       "8|Viagens administrativas": -5274.0,
       "11|Obras e reformas": -272084.65,
       "5|Alojamento e ajuda de custo para moradia": -49168.9,
-      "5|Frete de materiais de operação": -23877.690000000002,
-      "5|Prestadores de servicos gerais": -1000.0,
+      "11|Frete de materiais de operação": -23877.690000000002,
+      "11|Prestadores de servicos gerais": -1000.0,
       "6|Diarista (OIA)": -36726.53,
       "6|Salários da operação": -3194.0,
       "4|Frios, laticínios e congelados": -11608.43,
@@ -59783,11 +60040,11 @@
       "11|Investimentos diversos": -64011.240000000005,
       "5|Reposição de utensílios": -2530.94,
       "5|Diversos de operação": -2599.7200000000003,
-      "8|Sistemas": -2657.9599743867,
-      "8|Tarifas bancárias": -5365.619999485899,
-      "8|Telefonia e internet": -5780.3800290148,
-      "6|Passagens aéreas da equipe": -15036.680075878501,
-      "8|Outras despesas administrativas": -1925.3699305552998,
+      "8|Sistemas": -2657.96,
+      "8|Tarifas bancárias": -5365.619999999999,
+      "8|Telefonia e internet": -5780.38,
+      "6|Passagens aéreas da equipe": -15036.68,
+      "8|Outras despesas administrativas": -1925.37,
       "OR|Outras receitas operacionais": 35950.21,
       "NEUTRO|Transferência entre contas - entrada": 1928411.4799999997,
       "12|Aportes de sócios": 1155386.76,
@@ -59815,7 +60072,7 @@
       "4|Bebidas não alcoólicas": -311.52,
       "10|Rendimentos de aplicações": 239.54,
       "10|IOF": -20.95,
-      "2|IRPJ": -35.46
+      "IR|IRPJ": -35.46
      },
      "lanc": {
       "CC|Conta corrente Amana - entrada": 1,
@@ -59826,8 +60083,8 @@
       "8|Viagens administrativas": 1,
       "11|Obras e reformas": 63,
       "5|Alojamento e ajuda de custo para moradia": 11,
-      "5|Frete de materiais de operação": 2,
-      "5|Prestadores de servicos gerais": 1,
+      "11|Frete de materiais de operação": 2,
+      "11|Prestadores de servicos gerais": 1,
       "6|Diarista (OIA)": 27,
       "6|Salários da operação": 2,
       "4|Frios, laticínios e congelados": 6,
@@ -59870,7 +60127,7 @@
       "4|Bebidas não alcoólicas": 1,
       "10|Rendimentos de aplicações": 1,
       "10|IOF": 1,
-      "2|IRPJ": 1
+      "IR|IRPJ": 1
      },
      "familias": {
       "cozinha": -106779.65000000001,
@@ -60011,7 +60268,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de materiais de operação",
        "03/08/2026",
        -1399.47,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -60022,7 +60279,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "03/08/2026",
        -1000,
        "MYRELLA FLOR PEREIRA DA SILVA",
@@ -61672,7 +61929,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de materiais de operação",
        "11/08/2026",
        -22478.22,
        "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA",
@@ -65555,7 +65812,7 @@
        ""
       ],
       [
-       "2|IRPJ",
+       "IR|IRPJ",
        "31/08/2026",
        -35.46,
        "BANCO BRADESCO",
@@ -65569,8 +65826,8 @@
     },
     "2026-09": {
      "grupos": {
-      "11": -430042.2100000001,
-      "5": -59050.79,
+      "11": -434042.2100000001,
+      "5": -55050.79,
       "4": -126469.23999999992,
       "8": -13486.21,
       "NEUTRO": 1.3244516594568267e-10,
@@ -65580,8 +65837,9 @@
       "9": -1500.0,
       "OR": 5998.04,
       "10": -855.3499999999999,
-      "2": -88.19999999999999,
-      "13": -10000.0
+      "2": -48.339999999999996,
+      "13": -10000.0,
+      "IR": -39.86
      },
      "contas": {
       "11|Investimentos diversos": -54625.19,
@@ -65601,7 +65859,7 @@
       "4|Proteínas (carnes e frutos do mar)": -35947.840000000004,
       "7|Arrendamento e aluguel do ponto": -25000.0,
       "7|Outros aluguéis": -10000.0,
-      "5|Prestadores de servicos gerais": -4000.0,
+      "11|Prestadores de servicos gerais": -4000.0,
       "CC|Conta corrente Amana - saída": -6300.84,
       "6|Salários da operação": -4350.06,
       "5|Limpeza e descartáveis": -6407.25,
@@ -65625,7 +65883,7 @@
       "NEUTRO|Transferência entre contas - saída": -691651.12,
       "10|Rendimentos de aplicações": 84.09,
       "10|IOF": -1.42,
-      "2|IRPJ": -39.86,
+      "IR|IRPJ": -39.86,
       "4|Devoluções de Compra de Material de Consumo": 6687.009999999999
      },
      "lanc": {
@@ -65646,7 +65904,7 @@
       "4|Proteínas (carnes e frutos do mar)": 18,
       "7|Arrendamento e aluguel do ponto": 1,
       "7|Outros aluguéis": 1,
-      "5|Prestadores de servicos gerais": 2,
+      "11|Prestadores de servicos gerais": 2,
       "CC|Conta corrente Amana - saída": 5,
       "6|Salários da operação": 2,
       "5|Limpeza e descartáveis": 4,
@@ -65670,7 +65928,7 @@
       "NEUTRO|Transferência entre contas - saída": 53,
       "10|Rendimentos de aplicações": 1,
       "10|IOF": 1,
-      "2|IRPJ": 1,
+      "IR|IRPJ": 1,
       "4|Devoluções de Compra de Material de Consumo": 16
      },
      "familias": {
@@ -66328,7 +66586,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "04/09/2026",
        -1000,
        "MYRELLA FLOR PEREIRA DA SILVA",
@@ -67142,7 +67400,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "14/09/2026",
        -3000,
        "KELLINY VIEIRA BANDEIRA DE MELO 04071730480",
@@ -69309,7 +69567,7 @@
        ""
       ],
       [
-       "2|IRPJ",
+       "IR|IRPJ",
        "30/09/2026",
        -39.86,
        "BANCO BRADESCO",
@@ -69642,22 +69900,24 @@
     },
     "2026-10": {
      "grupos": {
-      "11": -229815.11999999997,
+      "11": -251044.18999999997,
       "6": -10644.5,
-      "NEUTRO": -2.9103830456733704e-11,
       "8": -5129.68,
+      "NEUTRO": -2.8958169195902883e-11,
       "4": -31354.32,
       "CC": 94199.0,
-      "7": -33174.0,
-      "5": -31761.12,
+      "7": -25000.0,
+      "5": -18706.050000000003,
       "12": 200000.0,
-      "9": -2500.0
+      "9": -2500.0,
+      "10": 13.41,
+      "IR": -11.48
      },
      "contas": {
       "11|Investimentos diversos": -34717.81,
       "6|Diarista (OIA)": -2000.0,
-      "NEUTRO|Transferência entre contas - entrada": 543581.24,
       "8|Tarifas bancárias": -246.25,
+      "NEUTRO|Transferência entre contas - entrada": 543574.74,
       "4|Secos e mercearia": -10054.779999999999,
       "11|Frete de equipamentos e obra": -18279.59,
       "11|Obras e reformas": -117028.96,
@@ -69666,31 +69926,33 @@
       "8|Material de escritório": -1427.73,
       "4|Proteínas (carnes e frutos do mar)": -2910.44,
       "5|Diversos de operação": -1630.78,
-      "5|Prestadores de servicos gerais": -5299.94,
+      "11|Prestadores de servicos gerais": -5299.94,
       "11|Equipamentos e mobiliário": -59788.759999999995,
       "4|Outros insumos e diversos": -15519.1,
       "8|Contabilidade, jurídico e consultorias": -901.5,
-      "5|Frete de materiais de operação": -15929.129999999997,
-      "5|Alojamento e ajuda de custo para moradia": -1347.32,
+      "11|Frete de materiais de operação": -15929.129999999997,
+      "5|Alojamento e ajuda de custo para moradia": -9521.32,
       "5|Água e esgoto": -1867.9,
-      "NEUTRO|Transferência entre contas - saída": -543581.24,
       "CC|Conta corrente Boldró - entrada": 100000.0,
       "5|Transporte, veículo e combustível": -5686.05,
-      "12|Aportes de sócios": 200000.0,
+      "NEUTRO|Transferência entre contas - saída": -543574.74,
       "6|Uniformes, EPI e exames": -2388.0,
       "8|Sistemas": -2554.2,
       "6|Alimentação de colaboradores": -3078.24,
-      "7|Outros aluguéis": -8174.0,
+      "12|Aportes de sócios": 200000.0,
       "4|Gás de cozinha": -2870.0,
       "6|FGTS e contribuições": -2418.26,
       "9|Mídia paga": -2500.0,
-      "6|Benefícios (VT, VR e saúde)": -760.0
+      "6|Benefícios (VT, VR e saúde)": -760.0,
+      "10|Rendimentos de aplicações": 16.27,
+      "10|IOF": -2.86,
+      "IR|IRPJ": -11.48
      },
      "lanc": {
       "11|Investimentos diversos": 6,
       "6|Diarista (OIA)": 1,
-      "NEUTRO|Transferência entre contas - entrada": 24,
       "8|Tarifas bancárias": 40,
+      "NEUTRO|Transferência entre contas - entrada": 26,
       "4|Secos e mercearia": 2,
       "11|Frete de equipamentos e obra": 3,
       "11|Obras e reformas": 22,
@@ -69699,25 +69961,27 @@
       "8|Material de escritório": 2,
       "4|Proteínas (carnes e frutos do mar)": 1,
       "5|Diversos de operação": 1,
-      "5|Prestadores de servicos gerais": 7,
+      "11|Prestadores de servicos gerais": 7,
       "11|Equipamentos e mobiliário": 12,
       "4|Outros insumos e diversos": 5,
       "8|Contabilidade, jurídico e consultorias": 1,
-      "5|Frete de materiais de operação": 7,
-      "5|Alojamento e ajuda de custo para moradia": 2,
+      "11|Frete de materiais de operação": 7,
+      "5|Alojamento e ajuda de custo para moradia": 5,
       "5|Água e esgoto": 1,
-      "NEUTRO|Transferência entre contas - saída": 24,
       "CC|Conta corrente Boldró - entrada": 1,
       "5|Transporte, veículo e combustível": 3,
-      "12|Aportes de sócios": 1,
+      "NEUTRO|Transferência entre contas - saída": 26,
       "6|Uniformes, EPI e exames": 3,
       "8|Sistemas": 3,
       "6|Alimentação de colaboradores": 3,
-      "7|Outros aluguéis": 3,
+      "12|Aportes de sócios": 1,
       "4|Gás de cozinha": 2,
       "6|FGTS e contribuições": 2,
       "9|Mídia paga": 2,
-      "6|Benefícios (VT, VR e saúde)": 1
+      "6|Benefícios (VT, VR e saúde)": 1,
+      "10|Rendimentos de aplicações": 1,
+      "10|IOF": 1,
+      "IR|IRPJ": 1
      },
      "familias": {
       "cozinha": -15835.22,
@@ -69747,6 +70011,61 @@
        ""
       ],
       [
+       "8|Tarifas bancárias",
+       "01/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "290926",
+       "Bradesco c/c",
+       "",
+       "",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "01/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "290926",
+       "Bradesco c/c",
+       "",
+       "",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "01/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "290926",
+       "Bradesco c/c",
+       "",
+       "",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "01/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "290926",
+       "Bradesco c/c",
+       "",
+       "",
+       ""
+      ],
+      [
+       "8|Tarifas bancárias",
+       "01/10/2026",
+       -2,
+       "BANCO BRADESCO",
+       "290926",
+       "Bradesco c/c",
+       "",
+       "",
+       ""
+      ],
+      [
        "NEUTRO|Transferência entre contas - entrada",
        "01/10/2026",
        24028.88,
@@ -69763,72 +70082,6 @@
        5.93,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "3345825",
-       "Bradesco c/c",
-       "",
-       "",
-       ""
-      ],
-      [
-       "8|Tarifas bancárias",
-       "01/10/2026",
-       -2,
-       "BANCO BRADESCO",
-       "290926",
-       "Bradesco c/c",
-       "",
-       "",
-       ""
-      ],
-      [
-       "8|Tarifas bancárias",
-       "01/10/2026",
-       -2,
-       "BANCO BRADESCO",
-       "290926",
-       "Bradesco c/c",
-       "",
-       "",
-       ""
-      ],
-      [
-       "8|Tarifas bancárias",
-       "01/10/2026",
-       -2,
-       "BANCO BRADESCO",
-       "290926",
-       "Bradesco c/c",
-       "",
-       "",
-       ""
-      ],
-      [
-       "8|Tarifas bancárias",
-       "01/10/2026",
-       -2,
-       "BANCO BRADESCO",
-       "290926",
-       "Bradesco c/c",
-       "",
-       "",
-       ""
-      ],
-      [
-       "8|Tarifas bancárias",
-       "01/10/2026",
-       -2,
-       "BANCO BRADESCO",
-       "290926",
-       "Bradesco c/c",
-       "",
-       "",
-       ""
-      ],
-      [
-       "NEUTRO|Transferência entre contas - entrada",
-       "01/10/2026",
-       8,
-       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "151875",
        "Bradesco c/c",
        "",
        "",
@@ -70044,22 +70297,11 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "05/10/2026",
        -1800,
-       "Cliente Consumidor / Sem Tomador",
-       "",
-       "Bradesco c/c",
-       "",
-       "",
-       ""
-      ],
-      [
-       "NEUTRO|Transferência entre contas - entrada",
-       "06/10/2026",
-       10,
-       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "3345825",
+       "52.694.856 MARIANO HERNAN CORREA",
+       "52.694.856/0001-08",
        "Bradesco c/c",
        "",
        "",
@@ -70078,19 +70320,8 @@
       ],
       [
        "NEUTRO|Transferência entre contas - entrada",
-       "07/10/2026",
-       43725.49,
-       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "3345825",
-       "Bradesco c/c",
-       "",
-       "",
-       ""
-      ],
-      [
-       "NEUTRO|Transferência entre contas - entrada",
-       "07/10/2026",
-       12.18,
+       "06/10/2026",
+       10,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "3345825",
        "Bradesco c/c",
@@ -70209,7 +70440,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de materiais de operação",
        "07/10/2026",
        -621.27,
        "Cliente Consumidor / Sem Tomador",
@@ -70286,11 +70517,22 @@
        ""
       ],
       [
-       "8|Tarifas bancárias",
-       "09/10/2026",
-       -2,
-       "BANCO BRADESCO",
-       "71026",
+       "NEUTRO|Transferência entre contas - entrada",
+       "07/10/2026",
+       43725.49,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco c/c",
+       "",
+       "",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "07/10/2026",
+       12.18,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
        "Bradesco c/c",
        "",
        "",
@@ -70363,11 +70605,11 @@
        ""
       ],
       [
-       "NEUTRO|Transferência entre contas - saída",
+       "8|Tarifas bancárias",
        "09/10/2026",
-       -97878.49,
-       "Transf. Bradesco c/c &gt;&gt; Bradesco - INVES",
-       "9910621",
+       -2,
+       "BANCO BRADESCO",
+       "71026",
        "Bradesco c/c",
        "",
        "",
@@ -70396,18 +70638,18 @@
        ""
       ],
       [
-       "12|Aportes de sócios",
-       "13/10/2026",
-       200000,
-       "Cliente Consumidor / Sem Tomador",
-       "",
+       "NEUTRO|Transferência entre contas - saída",
+       "09/10/2026",
+       -97878.49,
+       "Transf. Bradesco c/c &gt;&gt; Bradesco - INVES",
+       "9910621",
        "Bradesco c/c",
        "",
        "",
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "13/10/2026",
        -41.9,
        "TILLBILL - DESENVOLVIMENTO DE SISTEMAS LTDA",
@@ -70572,7 +70814,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "13/10/2026",
        -3000,
        "KELLINY VIEIRA BANDEIRA DE MELO 04071730480",
@@ -70583,7 +70825,7 @@
        ""
       ],
       [
-       "7|Outros aluguéis",
+       "5|Alojamento e ajuda de custo para moradia",
        "13/10/2026",
        -5000,
        "LEONARDO SOUZA DOS SANTOS",
@@ -70627,33 +70869,22 @@
        ""
       ],
       [
+       "12|Aportes de sócios",
+       "13/10/2026",
+       200000,
+       "Cliente Consumidor / Sem Tomador",
+       "",
+       "Bradesco c/c",
+       "",
+       "",
+       ""
+      ],
+      [
        "NEUTRO|Transferência entre contas - saída",
        "13/10/2026",
        -148823.01,
        "Transf. Bradesco c/c &gt;&gt; Bradesco - INVES",
-       "",
-       "Bradesco c/c",
-       "",
-       "",
-       ""
-      ],
-      [
-       "NEUTRO|Transferência entre contas - entrada",
-       "14/10/2026",
-       5000.45,
-       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "3345825",
-       "Bradesco c/c",
-       "",
-       "",
-       ""
-      ],
-      [
-       "NEUTRO|Transferência entre contas - entrada",
-       "14/10/2026",
-       1.55,
-       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "3345825",
+       "1555366",
        "Bradesco c/c",
        "",
        "",
@@ -70683,8 +70914,8 @@
       ],
       [
        "NEUTRO|Transferência entre contas - entrada",
-       "15/10/2026",
-       10383.51,
+       "14/10/2026",
+       5000.45,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "3345825",
        "Bradesco c/c",
@@ -70694,32 +70925,10 @@
       ],
       [
        "NEUTRO|Transferência entre contas - entrada",
-       "15/10/2026",
-       82743.72,
-       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "9910621",
-       "Bradesco c/c",
-       "",
-       "",
-       ""
-      ],
-      [
-       "NEUTRO|Transferência entre contas - entrada",
-       "15/10/2026",
-       3.3,
+       "14/10/2026",
+       1.55,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "3345825",
-       "Bradesco c/c",
-       "",
-       "",
-       ""
-      ],
-      [
-       "NEUTRO|Transferência entre contas - entrada",
-       "15/10/2026",
-       0.2,
-       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "9910621",
        "Bradesco c/c",
        "",
        "",
@@ -70979,7 +71188,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "15/10/2026",
        -309.78,
        "RECEITA FEDERAL",
@@ -71001,7 +71210,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "15/10/2026",
        -36.55,
        "RECEITA FEDERAL",
@@ -71012,7 +71221,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "15/10/2026",
        -11.79,
        "RECEITA FEDERAL",
@@ -71023,7 +71232,7 @@
        ""
       ],
       [
-       "5|Prestadores de servicos gerais",
+       "11|Prestadores de servicos gerais",
        "15/10/2026",
        -99.92,
        "RECEITA FEDERAL",
@@ -71045,7 +71254,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de materiais de operação",
        "15/10/2026",
        -37.8,
        "Cliente Consumidor / Sem Tomador",
@@ -71056,7 +71265,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de materiais de operação",
        "15/10/2026",
        -5998.04,
        "Cliente Consumidor / Sem Tomador",
@@ -71067,7 +71276,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de materiais de operação",
        "15/10/2026",
        -5137.9,
        "Cliente Consumidor / Sem Tomador",
@@ -71078,7 +71287,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de materiais de operação",
        "15/10/2026",
        -240,
        "Cliente Consumidor / Sem Tomador",
@@ -71123,8 +71332,41 @@
       ],
       [
        "NEUTRO|Transferência entre contas - entrada",
-       "16/10/2026",
-       10,
+       "15/10/2026",
+       10383.51,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco c/c",
+       "",
+       "",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "15/10/2026",
+       82743.72,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "9910621",
+       "Bradesco c/c",
+       "",
+       "",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "15/10/2026",
+       3.3,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "3345825",
+       "Bradesco c/c",
+       "",
+       "",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "15/10/2026",
+       0.2,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "9910621",
        "Bradesco c/c",
@@ -71145,7 +71387,7 @@
       ],
       [
        "NEUTRO|Transferência entre contas - entrada",
-       "19/10/2026",
+       "16/10/2026",
        10,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "9910621",
@@ -71232,6 +71474,17 @@
        ""
       ],
       [
+       "NEUTRO|Transferência entre contas - entrada",
+       "19/10/2026",
+       10,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "9910621",
+       "Bradesco c/c",
+       "",
+       "",
+       ""
+      ],
+      [
        "11|Investimentos diversos",
        "27/10/2026",
        -6090,
@@ -71243,7 +71496,7 @@
        ""
       ],
       [
-       "7|Outros aluguéis",
+       "5|Alojamento e ajuda de custo para moradia",
        "27/10/2026",
        -1384,
        "PRATICO LOCACOES",
@@ -71309,7 +71562,7 @@
        ""
       ],
       [
-       "7|Outros aluguéis",
+       "5|Alojamento e ajuda de custo para moradia",
        "27/10/2026",
        -1790,
        "PRATICO LOCACOES",
@@ -71320,7 +71573,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de materiais de operação",
        "27/10/2026",
        -287.5,
        "Cliente Consumidor / Sem Tomador",
@@ -71331,7 +71584,7 @@
        ""
       ],
       [
-       "5|Frete de materiais de operação",
+       "11|Frete de materiais de operação",
        "27/10/2026",
        -3606.62,
        "Cliente Consumidor / Sem Tomador",
@@ -71423,7 +71676,7 @@
        "27/10/2026",
        41139.57,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "",
+       "1555366",
        "Bradesco c/c",
        "",
        "",
@@ -71434,7 +71687,29 @@
        "27/10/2026",
        15114.77,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "9910621",
+       "Bradesco c/c",
        "",
+       "",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "27/10/2026",
+       0.76,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "1555366",
+       "Bradesco c/c",
+       "",
+       "",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "27/10/2026",
+       0.4,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "9910621",
        "Bradesco c/c",
        "",
        "",
@@ -71456,7 +71731,18 @@
        "28/10/2026",
        15599.66,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "1555366",
+       "Bradesco c/c",
        "",
+       "",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "28/10/2026",
+       0.34,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "1555366",
        "Bradesco c/c",
        "",
        "",
@@ -71511,7 +71797,7 @@
        "29/10/2026",
        10,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "",
+       "1555366",
        "Bradesco c/c",
        "",
        "",
@@ -71545,17 +71831,6 @@
        -5.93,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
        "3345825",
-       "Bradesco - INVEST FAC",
-       "",
-       "",
-       ""
-      ],
-      [
-       "NEUTRO|Transferência entre contas - saída",
-       "01/10/2026",
-       -8,
-       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "151875",
        "Bradesco - INVEST FAC",
        "",
        "",
@@ -71654,7 +71929,7 @@
        "13/10/2026",
        148823.01,
        "Transf. Bradesco c/c &gt;&gt; Bradesco - INVES",
-       "",
+       "1555366",
        "Bradesco - INVEST FAC",
        "",
        "",
@@ -71753,7 +72028,7 @@
        "27/10/2026",
        -41139.57,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
-       "",
+       "1555366",
        "Bradesco - INVEST FAC",
        "",
        "",
@@ -71764,7 +72039,29 @@
        "27/10/2026",
        -15114.77,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "9910621",
+       "Bradesco - INVEST FAC",
        "",
+       "",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "27/10/2026",
+       -0.76,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "1555366",
+       "Bradesco - INVEST FAC",
+       "",
+       "",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "27/10/2026",
+       -0.4,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "9910621",
        "Bradesco - INVEST FAC",
        "",
        "",
@@ -71775,7 +72072,18 @@
        "28/10/2026",
        -15599.66,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "1555366",
+       "Bradesco - INVEST FAC",
        "",
+       "",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "28/10/2026",
+       -0.34,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "1555366",
        "Bradesco - INVEST FAC",
        "",
        "",
@@ -71786,7 +72094,40 @@
        "29/10/2026",
        -10,
        "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "1555366",
+       "Bradesco - INVEST FAC",
        "",
+       "",
+       ""
+      ],
+      [
+       "10|Rendimentos de aplicações",
+       "30/10/2026",
+       16.27,
+       "BANCO BRADESCO",
+       "INVEST FACIL",
+       "Bradesco - INVEST FAC",
+       "",
+       "",
+       ""
+      ],
+      [
+       "10|IOF",
+       "30/10/2026",
+       -2.86,
+       "BANCO BRADESCO",
+       "INVEST FACIL",
+       "Bradesco - INVEST FAC",
+       "",
+       "",
+       ""
+      ],
+      [
+       "IR|IRPJ",
+       "30/10/2026",
+       -11.48,
+       "BANCO BRADESCO",
+       "INVEST FACIL",
        "Bradesco - INVEST FAC",
        "",
        "",
@@ -71820,12 +72161,12 @@
     },
     "2026-10": {
      "ini": 143789.03,
-     "fim": 93609.29,
-     "entradas": 300000.0,
-     "saidas": -350179.74,
+     "fim": 93611.22,
+     "entradas": 300016.27,
+     "saidas": -350194.07999999996,
      "contas": {
-      "Bradesco c/c": 7.5,
-      "Bradesco - INVEST FAC": 92071.42,
+      "Bradesco c/c": 1,
+      "Bradesco - INVEST FAC": 92079.85,
       "Mercado Pago": 1530.37
      }
     }
