@@ -1655,7 +1655,10 @@ NAV_LINKS = ('<a href="#geral" class="on">Visão geral</a>'
              '<a href="#auditoria">Auditoria</a>'
              '<a href="#custo-receber">Custo de receber</a>'
              '<a href="#vendas-sec">Composição</a>'
-             '<a href="simulador.html">Simulador</a>')
+             # 09/11/2026: simulador fora da nav por decisao do Joao, "remova o
+             # simulador por hora". gera_simulador.py continua no repo; devolver
+             # o link e desfazer esta linha e regerar a pagina dele.
+             )
 
 ENTSW = """<div class="entsw" id="entsw">
 <button data-ent="consol" class="on" onclick="setEntity('consol')">Consolidado</button>
