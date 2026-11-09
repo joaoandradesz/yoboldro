@@ -2078,13 +2078,231 @@
  },
  "2026-10": {
   "mes": "2026-10",
-  "dias": [],
+  "dias": [
+   {
+    "data": "01/10",
+    "sem": "quinta",
+    "contas": null,
+    "valor": 35076.72,
+    "ticket": null
+   },
+   {
+    "data": "02/10",
+    "sem": "sexta",
+    "contas": null,
+    "valor": 30373.73,
+    "ticket": null
+   },
+   {
+    "data": "03/10",
+    "sem": "sabado",
+    "contas": null,
+    "valor": 27413.17,
+    "ticket": null
+   },
+   {
+    "data": "04/10",
+    "sem": "domingo",
+    "contas": null,
+    "valor": 24716.49,
+    "ticket": null
+   },
+   {
+    "data": "05/10",
+    "sem": "segunda",
+    "contas": null,
+    "valor": 18359.31,
+    "ticket": null
+   },
+   {
+    "data": "06/10",
+    "sem": "terca",
+    "contas": null,
+    "valor": 29988.12,
+    "ticket": null
+   },
+   {
+    "data": "07/10",
+    "sem": "quarta",
+    "contas": null,
+    "valor": 32364.36,
+    "ticket": null
+   },
+   {
+    "data": "08/10",
+    "sem": "quinta",
+    "contas": null,
+    "valor": 30275.86,
+    "ticket": null
+   },
+   {
+    "data": "09/10",
+    "sem": "sexta",
+    "contas": null,
+    "valor": 35359.38,
+    "ticket": null
+   },
+   {
+    "data": "10/10",
+    "sem": "sabado",
+    "contas": null,
+    "valor": 70820.16,
+    "ticket": null
+   },
+   {
+    "data": "11/10",
+    "sem": "domingo",
+    "contas": null,
+    "valor": 73379.75,
+    "ticket": null
+   },
+   {
+    "data": "12/10",
+    "sem": "segunda",
+    "contas": null,
+    "valor": 46063.97,
+    "ticket": null
+   },
+   {
+    "data": "13/10",
+    "sem": "terca",
+    "contas": null,
+    "valor": 34680.94,
+    "ticket": null
+   },
+   {
+    "data": "14/10",
+    "sem": "quarta",
+    "contas": null,
+    "valor": 38214.91,
+    "ticket": null
+   },
+   {
+    "data": "15/10",
+    "sem": "quinta",
+    "contas": null,
+    "valor": 53035.75,
+    "ticket": null
+   },
+   {
+    "data": "16/10",
+    "sem": "sexta",
+    "contas": null,
+    "valor": 94864.36,
+    "ticket": null
+   },
+   {
+    "data": "17/10",
+    "sem": "sabado",
+    "contas": null,
+    "valor": 46194.49,
+    "ticket": null
+   },
+   {
+    "data": "18/10",
+    "sem": "domingo",
+    "contas": null,
+    "valor": 50707.62,
+    "ticket": null
+   },
+   {
+    "data": "19/10",
+    "sem": "segunda",
+    "contas": null,
+    "valor": 37912.55,
+    "ticket": null
+   },
+   {
+    "data": "20/10",
+    "sem": "terca",
+    "contas": null,
+    "valor": 22373.0,
+    "ticket": null
+   },
+   {
+    "data": "21/10",
+    "sem": "quarta",
+    "contas": null,
+    "valor": 13711.28,
+    "ticket": null
+   },
+   {
+    "data": "22/10",
+    "sem": "quinta",
+    "contas": null,
+    "valor": 33330.81,
+    "ticket": null
+   },
+   {
+    "data": "23/10",
+    "sem": "sexta",
+    "contas": null,
+    "valor": 21876.97,
+    "ticket": null
+   },
+   {
+    "data": "24/10",
+    "sem": "sabado",
+    "contas": null,
+    "valor": 34555.33,
+    "ticket": null
+   },
+   {
+    "data": "25/10",
+    "sem": "domingo",
+    "contas": null,
+    "valor": 45401.02,
+    "ticket": null
+   },
+   {
+    "data": "26/10",
+    "sem": "segunda",
+    "contas": null,
+    "valor": 23837.85,
+    "ticket": null
+   },
+   {
+    "data": "27/10",
+    "sem": "terca",
+    "contas": null,
+    "valor": 15220.01,
+    "ticket": null
+   },
+   {
+    "data": "28/10",
+    "sem": "quarta",
+    "contas": null,
+    "valor": 24112.43,
+    "ticket": null
+   },
+   {
+    "data": "29/10",
+    "sem": "quinta",
+    "contas": null,
+    "valor": 39543.72,
+    "ticket": null
+   },
+   {
+    "data": "30/10",
+    "sem": "sexta",
+    "contas": null,
+    "valor": 64667.82,
+    "ticket": null
+   },
+   {
+    "data": "31/10",
+    "sem": "sabado",
+    "contas": null,
+    "valor": 44635.48,
+    "ticket": null
+   }
+  ],
   "turno": {},
   "horario": [],
-  "recebido": 0,
-  "contas": 0,
-  "media_diaria": 0,
-  "ticket": 0,
+  "recebido": 1193067.36,
+  "contas": 2044,
+  "media_diaria": 38486.04,
+  "ticket": 583.69,
   "abc": {
    "Entrada": {
     "receita": 305483.8,
@@ -3814,7 +4032,9 @@
    }
   },
   "produtos": 1067009.32,
-  "fonte_abc": "Extração bruta do 3LM — \"Vendas Por Funcionário (Backup)\", a mesma fonte da DRE"
+  "fonte_abc": "Extração bruta do 3LM — \"Vendas Por Funcionário (Backup)\", a mesma fonte da DRE",
+  "fonte": "Relatório \"Vendas Por Tipo de Pagamento\" do 3LM, dia a dia. Veio como imagem e foi transcrito: as 7 formas e os 31 dias somam, cada um por si, o Total Geral do mês.",
+  "sem_contas_por_dia": true
  },
  "2026-08": {
   "mes": "2026-08",

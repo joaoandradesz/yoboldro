@@ -666,9 +666,10 @@ function vd(){if(!D.vendas||ENT==='yo')return null; return D.vendas[MES]||null}
 /* tem curva ABC mas nao tem dia/turno/hora: e o caso de outubro, que veio do
    Backup do 3LM (item a item, sem data) e nao do relatorio da diretoria. */
 function vdTemDia(){var V=vd(); return !!(V&&V.dias&&V.dias.length)}
+function vdTemTurno(){var V=vd(); return !!(V&&V.turno&&V.turno.dia)}
 function semHora(){
  var com=Object.keys(D.vendas||{}).filter(function(m){
-   var v=D.vendas[m]; return v&&v.dias&&v.dias.length});
+   var v=D.vendas[m]; return v&&v.turno&&v.turno.dia});
  return com.length? 'o relatório com data e hora só existe em '+
    com.map(function(m){return D.meses_nome[m]}).join(' e ')
   : 'ainda não há relatório com data e hora';}
@@ -677,7 +678,7 @@ function tkCard(){var V=vd();
  return ['Ticket médio por conta',brl(V.ticket),V.contas.toLocaleString('pt-BR')+' contas no mês',
          'fonte: relatório do 3LM · por comanda, não por mesa']}
 function turnoCard(){var V=vd();
- if(!vdTemDia())return ['Share por turno',emC(ENT==='yo'?'a YO não fatura':semHora()),'',''];
+ if(!vdTemTurno())return ['Share por turno',emC(ENT==='yo'?'a YO não fatura':semHora()),'',''];
  var t=V.turno;
  /* o percentual do 3LM e sobre a soma dos turnos, que e MENOR que o mes: o
     relatorio de horario nao traz a taxa de servico e nao traz 30/09. Mostrar
@@ -753,20 +754,28 @@ function vendasBloco(){
   var x=hr[d.data]||{}, bs=(x.dia||0)+(x.final||0)+(x.antes||0);
   sd+=x.dia||0; sf+=x.final||0; sa+=x.antes||0;
   h+='<tr><td class="l">'+d.data+'</td><td class="l">'+(NOM[d.sem]||d.sem)+'</td>'+
-     '<td class="num">'+d.contas+'</td><td class="num">'+brl(d.valor)+'</td>'+
-     '<td class="num">'+brl(d.ticket)+'</td>'+turno(x.dia,bs)+turno(x.final,bs)+'</tr>';
+     '<td class="num">'+(d.contas==null?'–':d.contas)+'</td><td class="num">'+brl(d.valor)+'</td>'+
+     '<td class="num">'+(d.ticket==null?'–':brl(d.ticket))+'</td>'+
+     turno(x.dia,bs)+turno(x.final,bs)+'</tr>';
  });
- var tc=V.dias.reduce(function(a,d){return a+d.contas},0), tv=V.dias.reduce(function(a,d){return a+d.valor},0);
+ var tc=V.dias.reduce(function(a,d){return a+(d.contas||0)},0)||V.contas||0,
+     tv=V.dias.reduce(function(a,d){return a+d.valor},0);
  var sb=sd+sf+sa;
  h+='<tr class="dfcs"><td class="l">Total do mês</td><td class="l"></td><td class="num">'+tc+'</td>'+
     '<td class="num">'+brl(tv)+'</td><td class="num">'+brl(tv/tc)+'</td>'+
     turno(sd,sb)+turno(sf,sb)+'</tr></tbody></table>'+
-    '<p class="repnote" style="margin-top:8px">No mês, <b>'+
+    (vdTemTurno()?'<p class="repnote" style="margin-top:8px">No mês, <b>'+
     (sb?(100*sd/sb).toFixed(1).replace('.',',')+'%':'–')+' da venda com hora registrada é almoço</b> ('+
     brl(sd)+') e <b>'+(sb?(100*sf/sb).toFixed(1).replace('.',',')+'%':'–')+' é fim de dia</b> ('+
     brl(sf)+'). O resto, '+(sb?(100*sa/sb).toFixed(1).replace('.',',')+'%':'–')+' ('+brl(sa)+
     '), é início do dia. A base são os '+brl(sb)+' que o 3LM carimba com hora — '+
-    pc(sb,V.recebido)+' do mês: ele não carimba hora na taxa de serviço nem no dia 30/09.</p>';
+    pc(sb,V.recebido)+' do mês: ele não carimba hora na taxa de serviço nem no dia 30/09.</p>'
+    :'<p class="repnote" style="margin-top:8px">'+(V.fonte||'')+
+     ' <b>Contas e ticket por dia não aparecem</b> porque este relatório traz o valor '+
+     'de cada dia, não a contagem de comandas; o ticket médio do mês ('+brl(V.ticket)+
+     ' em '+(V.contas||0).toLocaleString('pt-BR')+' contas) vem do Itens Vendidos '+
+     'Analítico. Turno e horário dependem da hora de cada conta, que só o Analítico '+
+     'em CSV entrega.</p>');
  h+='<p class="repnote"><b>Ticket individual e por mesa continuam em construção:</b> '+
     'o 3LM exporta a comanda, mas não o número de pessoas nem a mesa física. '+
     'Com essas duas colunas na exportação os dois indicadores entram. '+
@@ -831,7 +840,7 @@ function pgtoTabela(){
 
 /* faturamento por horario: o 3LM separa antes do almoco, almoco e fim de dia */
 function horarioTabela(){
- var V=vd(); if(!V||!V.turno||!V.turno.dia)return '';
+ var V=vd(); if(!vdTemTurno())return '';
  var t=V.turno, L=[['Início do dia',(t.antes||{}).valor||0],['Almoço (11h às 16h)',t.dia.valor],
   ['Fim de dia',t.final.valor]], tot=0;
  L.forEach(function(x){tot+=x[1]});
@@ -863,7 +872,15 @@ function formasDe(mes){
   if(nome==='A&B'||nome==='Taxa de servico'||nome==='Couvert'||nome==='Taxa de rolha')return;
   o.push([nome,c[k]]); tot+=c[k];
  });
- return tot?{linhas:o,total:tot}:null;
+ if(tot)return {linhas:o,total:tot};
+ /* mes fora da DRE nao tem conta FAT| (SEM_DRE), mas pode ter forma de
+    pagamento medida: out/26 veio do relatorio de Tipo de Pagamento do 3LM. */
+ var R=(D.receita||{})[mes||MES];
+ if(R&&R.formas&&R.formas.length){
+  var t2=0; R.formas.forEach(function(x){t2+=x[1]});
+  return {linhas:R.formas.map(function(x){return [x[0],x[1]]}),total:t2,nota:R.formas_nota};
+ }
+ return null;
 }
 function pgtoCard(){
  var F=formasDe();
