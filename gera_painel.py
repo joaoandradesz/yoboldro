@@ -662,14 +662,22 @@ function card(k){return '<div class="kpi"><div class="t">'+k[0]+'</div><div clas
  '</div><div class="d">'+k[2]+'</div>'+(k[3]?'<div class="ref">'+k[3]+'</div>':'')+'</div>'}
 /* KPIs que vem do relatorio de vendas do 3LM. So existem para quem fatura:
    a venda esta no CNPJ da Boldro, entao na visao YO eles nao aparecem. */
-function vd(){var V=D.vendas; if(!V||ENT==='yo')return null;
- return (MES===V.mes)?V:null}
+function vd(){if(!D.vendas||ENT==='yo')return null; return D.vendas[MES]||null}
+/* tem curva ABC mas nao tem dia/turno/hora: e o caso de outubro, que veio do
+   Backup do 3LM (item a item, sem data) e nao do relatorio da diretoria. */
+function vdTemDia(){var V=vd(); return !!(V&&V.dias&&V.dias.length)}
+function semHora(){
+ var com=Object.keys(D.vendas||{}).filter(function(m){
+   var v=D.vendas[m]; return v&&v.dias&&v.dias.length});
+ return com.length? 'o relatório com data e hora só existe em '+
+   com.map(function(m){return D.meses_nome[m]}).join(' e ')
+  : 'ainda não há relatório com data e hora';}
 function tkCard(){var V=vd();
- if(!V)return ['Ticket médio por conta',emC(ENT==='yo'?'a YO não fatura: a venda está no CNPJ da Boldró':'só há relatório de vendas de set/26'),'',''];
+ if(!vdTemDia())return ['Ticket médio por conta',emC(ENT==='yo'?'a YO não fatura: a venda está no CNPJ da Boldró':semHora()),'',''];
  return ['Ticket médio por conta',brl(V.ticket),V.contas.toLocaleString('pt-BR')+' contas no mês',
          'fonte: relatório do 3LM · por comanda, não por mesa']}
 function turnoCard(){var V=vd();
- if(!V)return ['Share por turno',emC(ENT==='yo'?'a YO não fatura':'só há relatório de vendas de set/26'),'',''];
+ if(!vdTemDia())return ['Share por turno',emC(ENT==='yo'?'a YO não fatura':semHora()),'',''];
  var t=V.turno;
  /* o percentual do 3LM e sobre a soma dos turnos, que e MENOR que o mes: o
     relatorio de horario nao traz a taxa de servico e nao traz 30/09. Mostrar
@@ -680,7 +688,7 @@ function turnoCard(){var V=vd();
          'fim de dia: '+(100*t.final.valor/somaT).toFixed(1).replace('.',',')+'% · '+brl(t.final.valor)+
          ' — a base do relatório de horário é '+pc(somaT,V.recebido)+' do mês: não traz a taxa de serviço nem o dia 30/09']}
 function diaForteCard(){var V=vd();
- if(!V)return ['Venda por dia da semana',emC(ENT==='yo'?'a YO não fatura':'só há relatório de vendas de set/26'),'',''];
+ if(!vdTemDia())return ['Venda por dia da semana',emC(ENT==='yo'?'a YO não fatura':semHora()),'',''];
  var s={},c={};
  V.dias.forEach(function(d){s[d.sem]=(s[d.sem]||0)+d.valor;c[d.sem]=(c[d.sem]||0)+d.contas});
  var ks=Object.keys(s).sort(function(a,b){return s[b]-s[a]}), tot=0;
@@ -695,13 +703,21 @@ function vendasBloco(){
  if(!dia||!mix)return;
  var V=vd();
  if(!V){
-  var temMes=D.vendas&&MES!==D.vendas.mes;
+  var temMes=!!D.vendas;
   dia.innerHTML=mix.innerHTML='<div class="vazio"><h4>'+
    (ENT==='yo'?'A YO não fatura':(temMes?'Sem relatório de vendas de '+D.meses_nome[MES]:'Sem relatório de vendas'))+'</h4>'+
    '<p>'+(ENT==='yo'?'A venda de salão acontece no CNPJ da Boldró. Troque de empresa no topo.'
     :'O 3LM não tem API: estes números vêm do relatório mensal em PDF, e hoje só existe o de '+
-      (D.vendas?D.meses_nome[D.vendas.mes]:'setembro')+'.')+'</p></div>';
+      Object.keys(D.vendas||{}).map(function(m){return D.meses_nome[m]}).join(' e ')+'.')+'</p></div>';
   return;
+ }
+ if(!vdTemDia()){
+  dia.innerHTML='<div class="vazio"><h4>Venda por dia e por turno não disponível em '+
+   D.meses_nome[MES]+'</h4><p>A curva ABC ao lado sai do relatório <b>Vendas Por '+
+   'Funcionário</b> do 3LM, que traz item a item mas <b>não traz data nem hora</b>. '+
+   'Dia da semana, turno, número de contas e ticket médio só existem no relatório '+
+   'de vendas montado pela diretoria, que ainda não veio para este mês.</p></div>';
+  montaMix(V); return;
  }
  var s={},c={},NOME={segunda:'segunda',terca:'terça',quarta:'quarta',quinta:'quinta',sexta:'sexta',sabado:'sábado',domingo:'domingo'};
  V.dias.forEach(function(d){s[d.sem]=(s[d.sem]||0)+d.valor;c[d.sem]=(c[d.sem]||0)+d.contas});
@@ -756,6 +772,10 @@ function vendasBloco(){
     'Com essas duas colunas na exportação os dois indicadores entram. '+
     'Fonte: relatório de vendas do 3LM/Gourmet.</p>';
  dia.innerHTML=h;
+ montaMix(V);
+}
+function montaMix(V){
+ var mix=document.getElementById('v-mix'); if(!mix)return;
  var cats=Object.keys(V.abc).sort(function(a,b){return V.abc[b].receita-V.abc[a].receita});
  /* o total vem ANTES das linhas: o % de cada tipo sobre a venda de produtos e
     o que o Tiago pediu em 09/11/2026 — "quantos % do faturamento e bebida,
@@ -811,7 +831,7 @@ function pgtoTabela(){
 
 /* faturamento por horario: o 3LM separa antes do almoco, almoco e fim de dia */
 function horarioTabela(){
- var V=vd(); if(!V||!V.turno)return '';
+ var V=vd(); if(!V||!V.turno||!V.turno.dia)return '';
  var t=V.turno, L=[['Início do dia',(t.antes||{}).valor||0],['Almoço (11h às 16h)',t.dia.valor],
   ['Fim de dia',t.final.valor]], tot=0;
  L.forEach(function(x){tot+=x[1]});
@@ -1039,7 +1059,7 @@ function cel(v,base,cls,abre){
 
 /* caixa dos itens de uma curva ABC */
 function abreABC(cat){
- var V=D.vendas, x=V.abc[cat], its=x.itens_lista||[];
+ var V=vd(); if(!V)return; var x=V.abc[cat], its=x.itens_lista||[];
  var h='<div class="cx-cab"><h4>Curva ABC · '+cat+' · '+D.meses_nome[V.mes]+'</h4>'+
    '<button class="cx-x" onclick="fechaCaixa()">×</button></div>'+
    '<div class="cx-sub"><span>'+its.length+' ITENS ATIVOS</span><b>RECEITA: '+mv(x.receita)+'</b></div>'+
@@ -1797,6 +1817,22 @@ def ressalva():
             'n&atilde;o havia lan&ccedil;amento anterior. '
             % (ig['n'], brlpt(ig['valor']).replace('R$ ', '')))
 
+    # IRPJ/CSLL e trimestral: o painel rateia pela receita, o Omie nao.
+    # Diferenca de CRITERIO tem de estar escrita, senao parece erro de conta.
+    bloco_rat = ''
+    for r in ((D.get('ajustes') or {}).get('rateio_ir') or []):
+        por = ' e '.join('%s em %s' % (brlpt(abs(v)), D['meses_nome'][m].replace('/26', ''))
+                         for m, v in sorted(r['por_mes'].items()))
+        bloco_rat += (
+            '<b>IRPJ e CSLL s&atilde;o apurados por trimestre</b> e est&atilde;o lan&ccedil;ados no Omie '
+            'no fechamento do trimestre, junto com a guia. Nesta DRE mensal o tributo '
+            'acompanha a receita que o gerou: os %s do trimestre foram rateados pela '
+            'receita bruta de cada m&ecirc;s — %s. Multa e juros de R$ %s, por atraso no '
+            'pagamento da 1&ordf; quota, ficam inteiros no m&ecirc;s de fechamento, por serem '
+            'penalidade e n&atilde;o imposto sobre a receita do m&ecirc;s. '
+            % (brlpt(abs(r['tributo'])), por,
+               ('%.2f' % r['multa_juros']).replace('.', ',')))
+
     MESES = [m for m in D['meses'] if m not in (D.get('sem_dre') or [])]
     ult = MESES[-1]
     fat = soma(ult, ['FAT'])
@@ -1901,11 +1937,11 @@ def ressalva():
         'R$ -311,14 para %s; o lucro l&iacute;quido de setembro saiu de R$ -7.813,62 para %s. '
         'Quem guardou o relat&oacute;rio de 06/11 vai encontrar essa diferen&ccedil;a, e ela &eacute; a soma '
         'das linhas acima. '
-        '%s'
+        '%s%s'
         'Dados lidos da API do Omie em %s.'
         % (rec, dias_ago, bloco_cmv, bloco_ir, bloco_out,
            brlpt(soma(MESES[0], EB)), brlpt(soma(ult, EB)),
-           brlpt(soma(ult, EB + ['10', 'IR'])), bloco_dup, D['gerado']))
+           brlpt(soma(ult, EB + ['10', 'IR'])), bloco_dup, bloco_rat, D['gerado']))
 
 
 SEC_REL = """<section id="relatorios"><div class="wrap">
