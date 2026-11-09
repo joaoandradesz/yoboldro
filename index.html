@@ -1374,9 +1374,10 @@ function pintaRelatorios(){
     corpo='A YO não fatura — quem vende é a Boldró. O teto de '+meta+'% foi aplicado '+
       'à DRE da Boldró; aqui o CMV é a compra de insumo da pré-operação, pela data da nota.';
    }
-   if(ENT!=='yo')corpo+=' O ajuste entra como linha própria dentro do CMV: clique em '+
-     '<b>CMV</b> para ver, e no valor dele para ler a conta inteira. Nada disso toca o '+
-     'fluxo de caixa.';
+   if(ENT!=='yo')corpo+=' O ajuste está como linha própria dentro do CMV — '+
+     ms.map(function(m){return brl(aj[m].ajuste)+' em '+D.meses_nome[m]}).join(' e ')+
+     ' —, e na tela o grupo <b>CMV</b> abre para ver lançamento a lançamento. '+
+     'Nada disso toca o fluxo de caixa.';
    h='<div class="aviso nota"><h4>'+tit+'</h4><p>'+corpo+'</p></div>';
   }
   na.innerHTML=h;
@@ -1650,7 +1651,13 @@ function pdocBuild(){
   return e&&e.innerHTML.trim()?e.cloneNode(true):null};
 
  bloco('Resumo do período','Os números do período em um olhar',[cl('#kpis')]);
- bloco('Ponte do caixa','Saldo inicial → entradas → saídas → saldo final',[cl('.waterfall')]);
+ /* o titulo do bloco segue o REGIME da tela, como o titulo dentro da ponte:
+    com REG=comp a pagina dizia "Ponte do caixa" e o desenho dizia "Ponte do
+    resultado" — dois nomes para a mesma coisa na mesma folha. */
+ bloco(REG==='comp'?'Ponte do resultado':'Ponte do caixa',
+       REG==='comp'?'Receita bruta → deduções → custos → despesas → EBITDA'
+                   :'Saldo inicial → entradas → saídas → saldo final',
+       [cl('.waterfall')]);
  tabela(document.querySelector('#rep-dre table'),'DRE por categoria',
         'Resultado por competência, pela data de emissão dos documentos');
  bloco('A nota da DRE','O que o número do CMV mostra, e o que a casa comprou',
