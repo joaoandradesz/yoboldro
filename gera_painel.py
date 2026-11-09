@@ -558,14 +558,18 @@ function passosPonte(mes){
          ['Saldo final',s.fim,'n']];
 }
 function ponteSVG(){
- /* Cascata em faixas: UMA por mes do regime ativo, empilhadas, em vez de uma
-    so do mes selecionado (pedido do Joao em 06/11/2026). Tudo vive DENTRO do
+ /* Cascata do MES SELECIONADO, uma faixa so. Era uma faixa por mes do regime
+    (pedido do Joao em 06/11/2026) e voltou ao mes unico em 09/11/2026, tambem
+    por decisao dele: com tres meses ficava sujo, e o modelo que o Tiago mandou
+    como padrao mostra a cascata de um mes ("Cascata da DRE . setembro").
+    O codigo continua em laco sobre uma lista de meses — trocar MS abaixo por
+    mesesDe(REG) traz as faixas de volta. Tudo vive DENTRO do
     svg — inclusive os rotulos dos passos —, porque o eixo em HTML com grid de
     contagem fixa ja desalinhou das barras uma vez. O viewBox cresce com o
     numero de faixas e a pagina acompanha pelo aspect-ratio, entao nada corta.
     Cada faixa tem a SUA escala: os meses tem ordem de grandeza diferente e uma
     escala comum achataria o menor deles. */
- var MS=mesesDe(REG).filter(function(m){return !!passosPonte(m)});
+ var MS=[MES].filter(function(m){return !!passosPonte(m)});
  if(!MS.length){
   var vazio=(REG==='comp'&&semDre(MES))
    ?D.meses_nome[MES]+' não tem DRE: o faturamento do 3LM do mês ainda não entrou, e sem a receita nenhuma margem tem leitura. O caixa do mês está conferido contra o extrato — veja o Caixa.'
@@ -1268,14 +1272,35 @@ function pintaRelatorios(){
   var aj=(D.ajustes||{}).cmv||{}, meta=Math.round(((D.ajustes||{}).cmv_meta||0)*100),
       ms=mesesDe('comp').filter(function(m){return aj[m]}), h='';
   if(ms.length){
-   h='<div class="aviso nota"><h4>O CMV desta DRE está lançado a '+meta+'% da receita</h4><p>'+
-     'Decisão da diretoria em 07/11/2026. O que a casa <b>comprou</b> de insumo foi: '+
+   /* o teto e da BOLDRO. No consolidado entra o CMV da YO, que nao tem receita
+      propria, e a analise vertical da tela sobe — dizer "esta a 33%" ali
+      contradiz a linha logo acima. Entao a nota fala do que a tela mostra. */
+   var naBoldro=ENT==='boldro';
+   var tit=naBoldro
+    ?('O CMV desta DRE está lançado a '+meta+'% da receita')
+    :(ENT==='yo'
+      ?'O teto de CMV não se aplica à YO'
+      :('O CMV da Boldró está lançado a '+meta+'% — no consolidado a vertical fica acima disso'));
+   var corpo='Decisão da diretoria em 07/11/2026. O que a casa <b>comprou</b> de insumo foi: '+
      ms.map(function(m){return D.meses_nome[m]+' <b>'+brl(aj[m].comprado)+'</b> ('+
-       pc(aj[m].comprado,soma(ENT,'comp',m,['FAT'])||aj[m].comprado/0.33)+' da receita)'}).join(' · ')+
+       pc(aj[m].comprado,soma('boldro','comp',m,['FAT'])||1)+' da receita)'}).join(' · ')+
      '. A diferença é estoque comprado e não consumido dentro do mês — o CMV deste painel é '+
-     'compra pela data da nota, não consumo. O ajuste entra como linha própria dentro do CMV: '+
-     'clique em <b>CMV</b> para ver, e no valor dele para ler a conta inteira. '+
-     'Nada disso toca o fluxo de caixa.</p></div>';
+     'compra pela data da nota, não consumo.';
+   if(ENT==='consol'){
+    corpo+=' <b>Nesta visão o CMV aparece em '+
+      ms.map(function(m){return pc(-soma('consol','comp',m,['4']),soma('consol','comp',m,['FAT'])||1)+
+        ' em '+D.meses_nome[m]}).join(' e ')+
+      '</b>, e não em '+meta+'%: o consolidado soma o CMV da YO, que não tem receita própria '+
+      'para dividir. Escolha <b>Boldró</b> no seletor de empresa para ver o '+meta+'%.';
+   }
+   if(ENT==='yo'){
+    corpo='A YO não fatura — quem vende é a Boldró. O teto de '+meta+'% foi aplicado '+
+      'à DRE da Boldró; aqui o CMV é a compra de insumo da pré-operação, pela data da nota.';
+   }
+   if(ENT!=='yo')corpo+=' O ajuste entra como linha própria dentro do CMV: clique em '+
+     '<b>CMV</b> para ver, e no valor dele para ler a conta inteira. Nada disso toca o '+
+     'fluxo de caixa.';
+   h='<div class="aviso nota"><h4>'+tit+'</h4><p>'+corpo+'</p></div>';
   }
   na.innerHTML=h;
  }
@@ -1598,10 +1623,9 @@ function render(){
  var pp=passosPonte();
  document.getElementById('wf').innerHTML=ponteSVG();
  document.getElementById('wfTitle').textContent=
-  (REG==='comp'?'Ponte do resultado':'Ponte do caixa')+
-  (mesesDe(REG).length>1?' · mês a mês':' · '+D.meses_nome[MES]);
+  (REG==='comp'?'Ponte do resultado':'Ponte do caixa')+' · '+D.meses_nome[MES];
  document.getElementById('wfHint').textContent=
-  (mesesDe(REG).length>1?'cada mês na sua faixa · ':'')+((pp||[]).map(function(x){return x[0]}).join(' → '))
+  ((pp||[]).map(function(x){return x[0]}).join(' → '))
   ||(REG==='comp'?'receita → deduções → custos → despesas → EBITDA':'saldo inicial → geração operacional → investimentos → financiamento → saldo final');
  /* os rotulos dos passos passaram para DENTRO do svg em 06/11/2026, junto das
     barras: eixo em HTML ao lado de desenho em SVG desalinha sozinho. */

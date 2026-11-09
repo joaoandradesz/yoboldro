@@ -1,5 +1,5 @@
 {
- "gerado": "09/11/2026 às 12:30",
+ "gerado": "09/11/2026 às 13:05",
  "meses": [
   "2026-08",
   "2026-09",
@@ -337,6 +337,10 @@
     "exibido": 349464.81,
     "ajuste": 99875.15
    }
+  },
+  "cmv_yo": {
+   "2026-08": 90306.9,
+   "2026-09": 69903.47
   },
   "ir": {},
   "piscofins": {},
@@ -2835,10 +2839,10 @@
       "1": 175903.28,
       "CC": 100000.0,
       "NEUTRO": 9.17,
+      "6": -21895.39,
       "4": -53971.01000000001,
       "5": -11656.46,
       "11": -30105.180000000004,
-      "6": -23683.38,
       "8": -29876.380000000005,
       "14": -2385.0,
       "9": -2000.0,
@@ -2850,6 +2854,7 @@
       "1|Receita operacional (salão)": 175903.28,
       "CC|Conta corrente YO Noronha - entrada": 100000.0,
       "NEUTRO|Ajustes e estornos - entrada": 9.17,
+      "6|ISS | Permanência": -946.3399999999999,
       "4|Secos e mercearia": -34932.87,
       "4|Outros insumos e diversos": -40020.14,
       "5|Alojamento e ajuda de custo para moradia": -7000.0,
@@ -2864,7 +2869,6 @@
       "4|Hortifrúti": -14509.61,
       "5|Reposição de utensílios": -180.0,
       "4|Frios, laticínios e congelados": -27972.12,
-      "6|ISS | Permanência": -2734.33,
       "6|Alimentação de colaboradores": -2256.2,
       "8|Ajuda de custos diretoria": -2800.0,
       "8|Remuneracao PJ diretoria": -5600.0,
@@ -2890,6 +2894,7 @@
       "1|Receita operacional (salão)": 62,
       "CC|Conta corrente YO Noronha - entrada": 1,
       "NEUTRO|Ajustes e estornos - entrada": 4,
+      "6|ISS | Permanência": 5,
       "4|Secos e mercearia": 17,
       "4|Outros insumos e diversos": 5,
       "5|Alojamento e ajuda de custo para moradia": 1,
@@ -2904,7 +2909,6 @@
       "4|Hortifrúti": 11,
       "5|Reposição de utensílios": 1,
       "4|Frios, laticínios e congelados": 14,
-      "6|ISS | Permanência": 8,
       "6|Alimentação de colaboradores": 1,
       "8|Ajuda de custos diretoria": 2,
       "8|Remuneracao PJ diretoria": 1,
@@ -3670,6 +3674,17 @@
        "001/001"
       ],
       [
+       "6|ISS | Permanência",
+       "20/08/2026",
+       -165.29,
+       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
+       "SEM NF",
+       "",
+       "",
+       "14/08/2026",
+       "001/001"
+      ],
+      [
        "4|Secos e mercearia",
        "12/08/2026",
        -609.31,
@@ -3722,6 +3737,28 @@
        "",
        "",
        "20/08/2026",
+       "001/001"
+      ],
+      [
+       "6|ISS | Permanência",
+       "20/08/2026",
+       -100,
+       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
+       "SEM NF",
+       "",
+       "",
+       "25/08/2026",
+       "001/001"
+      ],
+      [
+       "6|ISS | Permanência",
+       "20/08/2026",
+       -81.05,
+       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
+       "SEM NF",
+       "",
+       "",
+       "25/08/2026",
        "001/001"
       ],
       [
@@ -4309,7 +4346,7 @@
       ],
       [
        "6|ISS | Permanência",
-       "31/08/2026",
+       "28/08/2026",
        -300,
        "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
        "SEM NF",
@@ -4320,7 +4357,7 @@
       ],
       [
        "6|ISS | Permanência",
-       "31/08/2026",
+       "28/08/2026",
        -300,
        "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
        "SEM NF",
@@ -4671,28 +4708,6 @@
        "001/001"
       ],
       [
-       "6|ISS | Permanência",
-       "31/08/2026",
-       -660.79,
-       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
-       "SEM NF",
-       "",
-       "",
-       "08/09/2026",
-       "001/001"
-      ],
-      [
-       "6|ISS | Permanência",
-       "31/08/2026",
-       -330.39,
-       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
-       "SEM NF",
-       "",
-       "",
-       "08/09/2026",
-       "001/001"
-      ],
-      [
        "4|Secos e mercearia",
        "24/08/2026",
        -1370.66,
@@ -5001,39 +5016,6 @@
        "001/001"
       ],
       [
-       "6|ISS | Permanência",
-       "31/08/2026",
-       -300,
-       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
-       "SEM NF",
-       "",
-       "",
-       "18/09/2026",
-       "001/001"
-      ],
-      [
-       "6|ISS | Permanência",
-       "31/08/2026",
-       -300,
-       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
-       "SEM NF",
-       "",
-       "",
-       "18/09/2026",
-       "001/001"
-      ],
-      [
-       "6|ISS | Permanência",
-       "31/08/2026",
-       -300,
-       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
-       "SEM NF",
-       "",
-       "",
-       "18/09/2026",
-       "001/001"
-      ],
-      [
        "6|FGTS e contribuições",
        "31/08/2026",
        -1845.51,
@@ -5097,17 +5079,6 @@
        "",
        "",
        "23/09/2026",
-       "001/001"
-      ],
-      [
-       "6|ISS | Permanência",
-       "31/08/2026",
-       -243.15,
-       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
-       "SEM NF",
-       "",
-       "",
-       "24/09/2026",
        "001/001"
       ],
       [
@@ -5952,7 +5923,7 @@
       "8": -52864.17,
       "11": -89722.65,
       "9": -7500.0,
-      "6": -187360.98000000013,
+      "6": -212694.4400000001,
       "5": -70641.3,
       "4": -349464.80999999994,
       "14": -23215.83,
@@ -5989,6 +5960,7 @@
       "5|Limpeza e descartáveis": -24452.380000000005,
       "8|Tarifas bancárias": -782.2500000000001,
       "4|Bebidas alcoólicas": -197990.36000000002,
+      "6|ISS | Permanência": -2134.33,
       "9|Agência e conteúdo": -2500.0,
       "4|Frete de insumos de alimentos e bebidas": -14428.04,
       "4|Gás de cozinha": -1000.0,
@@ -6012,6 +5984,7 @@
       "8|Ajuda de custos diretoria": -6000.0,
       "8|Remuneracao PJ diretoria": -8000.0,
       "10|Custo de antecipação de recebíveis": -6564.46,
+      "6|FGTS e contribuições": -23199.129999999997,
       "6|Variável": -21324.0,
       "2|COFINS": -28885.36,
       "2|PIS": -6258.49,
@@ -6049,6 +6022,7 @@
       "5|Limpeza e descartáveis": 12,
       "8|Tarifas bancárias": 25,
       "4|Bebidas alcoólicas": 37,
+      "6|ISS | Permanência": 6,
       "9|Agência e conteúdo": 1,
       "4|Frete de insumos de alimentos e bebidas": 2,
       "4|Gás de cozinha": 1,
@@ -6072,6 +6046,7 @@
       "8|Ajuda de custos diretoria": 3,
       "8|Remuneracao PJ diretoria": 1,
       "10|Custo de antecipação de recebíveis": 1,
+      "6|FGTS e contribuições": 2,
       "6|Variável": 3,
       "2|COFINS": 1,
       "2|PIS": 1,
@@ -14385,6 +14360,28 @@
        "001/001"
       ],
       [
+       "6|ISS | Permanência",
+       "08/09/2026",
+       -660.79,
+       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
+       "SEM NF",
+       "",
+       "",
+       "08/09/2026",
+       "001/001"
+      ],
+      [
+       "6|ISS | Permanência",
+       "08/09/2026",
+       -330.39,
+       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
+       "SEM NF",
+       "",
+       "",
+       "08/09/2026",
+       "001/001"
+      ],
+      [
        "11|Investimentos diversos",
        "08/09/2026",
        -1563.6,
@@ -15122,6 +15119,39 @@
        "001/001"
       ],
       [
+       "6|ISS | Permanência",
+       "15/09/2026",
+       -300,
+       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
+       "SEM NF",
+       "",
+       "",
+       "18/09/2026",
+       "001/001"
+      ],
+      [
+       "6|ISS | Permanência",
+       "15/09/2026",
+       -300,
+       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
+       "SEM NF",
+       "",
+       "",
+       "18/09/2026",
+       "001/001"
+      ],
+      [
+       "6|ISS | Permanência",
+       "15/09/2026",
+       -300,
+       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
+       "SEM NF",
+       "",
+       "",
+       "18/09/2026",
+       "001/001"
+      ],
+      [
        "4|Secos e mercearia",
        "04/09/2026",
        -1416,
@@ -15820,6 +15850,17 @@
        -6800,
        "GC COMERCIO DE PESCADOS LTDA",
        "NF000023",
+       "",
+       "",
+       "24/09/2026",
+       "001/001"
+      ],
+      [
+       "6|ISS | Permanência",
+       "22/09/2026",
+       -243.15,
+       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
+       "SEM NF",
        "",
        "",
        "24/09/2026",
@@ -18818,6 +18859,28 @@
        "001/001"
       ],
       [
+       "6|FGTS e contribuições",
+       "30/09/2026",
+       -4186.9,
+       "CAIXA ECONOMICA FEDERAL",
+       "SEM NF",
+       "",
+       "",
+       "20/10/2026",
+       "001/001"
+      ],
+      [
+       "6|FGTS e contribuições",
+       "30/09/2026",
+       -19012.23,
+       "MINISTERIO DA FAZENDA",
+       "SEM NF",
+       "",
+       "",
+       "20/10/2026",
+       "001/001"
+      ],
+      [
        "4|Bebidas alcoólicas",
        "16/09/2026",
        -13931.48,
@@ -20253,7 +20316,7 @@
       "4": -287597.14,
       "8": -11466.460000000001,
       "5": -77966.03,
-      "6": -145868.53,
+      "6": -122669.4,
       "7": -17059.8,
       "14": -46240.0,
       "11": -88140.38999999998,
@@ -20299,7 +20362,6 @@
       "8|Outras despesas administrativas": -551.6,
       "5|Manutenção de equipamentos": -1800.0,
       "9|Outros de marketing": -6000.0,
-      "6|FGTS e contribuições": -23199.129999999997,
       "11|Prestadores de servicos gerais": -37839.20999999999,
       "9|Mídia paga": -1500.0,
       "5|Energia elétrica": -1527.3,
@@ -20349,7 +20411,6 @@
       "8|Outras despesas administrativas": 1,
       "5|Manutenção de equipamentos": 2,
       "9|Outros de marketing": 2,
-      "6|FGTS e contribuições": 2,
       "11|Prestadores de servicos gerais": 24,
       "9|Mídia paga": 1,
       "5|Energia elétrica": 1,
@@ -24484,7 +24545,7 @@
       ],
       [
        "6|ISS | Permanência",
-       "01/10/2026",
+       "02/10/2026",
        -330.09,
        "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
        "SEM NF",
@@ -24814,7 +24875,7 @@
       ],
       [
        "6|ISS | Permanência",
-       "20/10/2026",
+       "05/10/2026",
        -270,
        "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
        "",
@@ -25166,7 +25227,7 @@
       ],
       [
        "6|ISS | Permanência",
-       "21/10/2026",
+       "09/10/2026",
        -200,
        "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
        "",
@@ -26057,7 +26118,7 @@
       ],
       [
        "6|ISS | Permanência",
-       "13/10/2026",
+       "09/10/2026",
        -375,
        "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
        "",
@@ -26068,7 +26129,7 @@
       ],
       [
        "6|ISS | Permanência",
-       "13/10/2026",
+       "09/10/2026",
        -300,
        "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
        "",
@@ -26101,7 +26162,7 @@
       ],
       [
        "6|ISS | Permanência",
-       "14/10/2026",
+       "09/10/2026",
        -243.15,
        "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
        "",
@@ -26911,28 +26972,6 @@
        "",
        "",
        "16/10/2026",
-       "001/001"
-      ],
-      [
-       "6|FGTS e contribuições",
-       "14/10/2026",
-       -4186.9,
-       "CAIXA ECONOMICA FEDERAL",
-       "SEM NF",
-       "",
-       "",
-       "20/10/2026",
-       "001/001"
-      ],
-      [
-       "6|FGTS e contribuições",
-       "14/10/2026",
-       -19012.23,
-       "MINISTERIO DA FAZENDA",
-       "SEM NF",
-       "",
-       "",
-       "20/10/2026",
        "001/001"
       ],
       [
@@ -51697,10 +51736,10 @@
       "OR": 32550.210000000003,
       "8": -27090.24,
       "7": -34986.92,
-      "11": -593036.2,
+      "11": -683343.1,
       "5": -79931.08000000002,
       "6": -88602.21,
-      "4": -90306.9,
+      "4": 0.0,
       "10": -549.53,
       "2": -48.339999999999996
      },
@@ -51748,7 +51787,9 @@
       "4|Bebidas não alcoólicas": -311.52,
       "5|Energia elétrica": -2591.6400000000003,
       "6|FGTS e contribuições": -3289.94,
-      "2|Simples Nacional (DAS)": -48.339999999999996
+      "2|Simples Nacional (DAS)": -48.339999999999996,
+      "4|Insumo de pré-operação fora do CMV (ver nota)": 90306.9,
+      "11|Insumo de pré-operação (vindo do CMV)": -90306.9
      },
      "lanc": {
       "CC|Conta corrente Amana - entrada": 1,
@@ -51794,7 +51835,9 @@
       "4|Bebidas não alcoólicas": 1,
       "5|Energia elétrica": 2,
       "6|FGTS e contribuições": 2,
-      "2|Simples Nacional (DAS)": 2
+      "2|Simples Nacional (DAS)": 2,
+      "4|Insumo de pré-operação fora do CMV (ver nota)": 1,
+      "11|Insumo de pré-operação (vindo do CMV)": 1
      },
      "familias": {
       "cozinha": -82784.42,
@@ -56465,6 +56508,28 @@
        "",
        "05/10/2026",
        "001/001"
+      ],
+      [
+       "4|Insumo de pré-operação fora do CMV (ver nota)",
+       "31/08/2026",
+       90306.9,
+       "Diretoria",
+       "AJUSTE",
+       "",
+       "insumo comprado pela YO antes de a casa abrir: R$ 90.306,90. Sai do CMV porque a YO nao tem receita para dividir e o consolidado mostra o CMV a 33% da receita da Boldro, por decisao da diretoria em 09/11/2026. O valor nao desaparece: vai para pre-operacao, abaixo do EBITDA.",
+       "",
+       ""
+      ],
+      [
+       "11|Insumo de pré-operação (vindo do CMV)",
+       "31/08/2026",
+       -90306.9,
+       "Diretoria",
+       "AJUSTE",
+       "",
+       "insumo comprado pela YO antes de a casa abrir: R$ 90.306,90. Sai do CMV porque a YO nao tem receita para dividir e o consolidado mostra o CMV a 33% da receita da Boldro, por decisao da diretoria em 09/11/2026. O valor nao desaparece: vai para pre-operacao, abaixo do EBITDA.",
+       "",
+       ""
       ]
      ]
     },
@@ -56472,10 +56537,10 @@
      "grupos": {
       "OR": 5998.04,
       "NEUTRO": -2.2737367544323206e-13,
-      "4": -69903.47000000002,
+      "4": -1.4551915228366852e-11,
       "5": -46982.68,
       "8": -9260.289999999999,
-      "11": -305978.01999999996,
+      "11": -375881.49,
       "7": -35000.0,
       "CC": -6096.85,
       "6": -4350.06,
@@ -56518,7 +56583,9 @@
       "13|Emprestimo concedido - saida": -10000.0,
       "4|Frios, laticínios e congelados": -2527.64,
       "5|Diversos de operação": -1630.78,
-      "NEUTRO|Transferência entre contas - saída": -5206.08
+      "NEUTRO|Transferência entre contas - saída": -5206.08,
+      "4|Insumo de pré-operação fora do CMV (ver nota)": 69903.47,
+      "11|Insumo de pré-operação (vindo do CMV)": -69903.47
      },
      "lanc": {
       "OR|Outras receitas operacionais": 1,
@@ -56555,7 +56622,9 @@
       "13|Emprestimo concedido - saida": 1,
       "4|Frios, laticínios e congelados": 1,
       "5|Diversos de operação": 1,
-      "NEUTRO|Transferência entre contas - saída": 12
+      "NEUTRO|Transferência entre contas - saída": 12,
+      "4|Insumo de pré-operação fora do CMV (ver nota)": 1,
+      "11|Insumo de pré-operação (vindo do CMV)": 1
      },
      "familias": {
       "cozinha": -71790.48000000001,
@@ -58651,6 +58720,28 @@
        "",
        "15/10/2026",
        "001/001"
+      ],
+      [
+       "4|Insumo de pré-operação fora do CMV (ver nota)",
+       "30/09/2026",
+       69903.47,
+       "Diretoria",
+       "AJUSTE",
+       "",
+       "insumo comprado pela YO antes de a casa abrir: R$ 69.903,47. Sai do CMV porque a YO nao tem receita para dividir e o consolidado mostra o CMV a 33% da receita da Boldro, por decisao da diretoria em 09/11/2026. O valor nao desaparece: vai para pre-operacao, abaixo do EBITDA.",
+       "",
+       ""
+      ],
+      [
+       "11|Insumo de pré-operação (vindo do CMV)",
+       "30/09/2026",
+       -69903.47,
+       "Diretoria",
+       "AJUSTE",
+       "",
+       "insumo comprado pela YO antes de a casa abrir: R$ 69.903,47. Sai do CMV porque a YO nao tem receita para dividir e o consolidado mostra o CMV a 33% da receita da Boldro, por decisao da diretoria em 09/11/2026. O valor nao desaparece: vai para pre-operacao, abaixo do EBITDA.",
+       "",
+       ""
       ]
      ]
     },
