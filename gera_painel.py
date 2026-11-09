@@ -1162,10 +1162,14 @@ var BLOCOS_DRE=[
  ['(+) Outros recebimentos',['OR']],
  ['(±) Transferências e ajustes',['CC','NEUTRO','13']],
  ['*RESULTADO APÓS INVESTIMENTOS',['FAT','2','3','4','5','6','7','8','9','14','10','IR','11','12','OR','CC','NEUTRO','13']],
- ['§RECONCILIAÇÃO DA RECEITA — DE ONDE VEM A RECEITA BRUTA',null],
- ['(=) Receita lançada no Omie, pela data do crédito',['1']],
- ['(±) Ajuste de competência da receita',['AJC']],
- ['+Receita bruta da DRE, pelo mês da venda',['FAT']],
+ /* 09/11/2026: o bloco de reconciliacao da receita saiu da DRE por decisao do
+    Joao, "nao precisa ter isso na DRE". A linha do meio era um RESIDUO
+    (faturamento menos grupo 1) com nome que afirmava causa — "ajuste de
+    competencia" — sem ninguem ter decomposto os R$ 64.439,71 de setembro.
+    Ver 06 Aprendizados/ajuste-de-competencia-da-receita-e-residuo.
+    O grupo 1 volta a nao aparecer em linha nenhuma da DRE, e isso e de
+    proposito: a receita da DRE e o faturamento pelo mes da venda. A trava
+    externa ja isenta o grupo 1 em SO_RECONCILIACAO. */
 ];
 
 function matriz(reg){

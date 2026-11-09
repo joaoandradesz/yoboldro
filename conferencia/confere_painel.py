@@ -65,9 +65,6 @@ BLOCOS_DRE = [
     ('*RESULTADO APOS INVESTIMENTOS',
      ['FAT', '2', '3', '4', '5', '6', '7', '8', '9', '14', '10', 'IR', '11', '12', 'OR',
       'CC', 'NEUTRO', '13']),
-    ('(=) Receita lancada no Omie, pela data do credito', ['1']),
-    ('(+-) Ajuste de competencia da receita', ['AJC']),
-    ('+Receita bruta da DRE, pelo mes da venda', ['FAT']),
 ]
 GRUPOS_OP_DFC = ['1', 'OR', '2', '3', '4', '5', '6', '7', '8', '9', '14', '10', 'IR']
 BLOCOS_DFC = [
