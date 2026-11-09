@@ -974,9 +974,11 @@ function custoReceber(){
   mv(-(c.taxa||0))+'</td><td class="num avtot">'+txPc(c.pc||0)+'</td></tr>';
  h+='</tbody></table></div>'+
   '<p class="repnote">A taxa efetiva é a que a GetNet cobrou de fato em cada venda, não a de tabela. '+
-  'A antecipação é cobrança separada: '+txPc(an.pc||0)+' sobre '+brl(an.base||0)+
-  ' antecipados no mês. O custo de receber é <b>custo</b> e aparece acima do EBITDA, '+
-  'em despesas variáveis de venda — não é dedução da receita.</p>';
+  'As duas cobranças moram em linhas diferentes da DRE: a <b>taxa de cartão</b> ('+
+  brl(c.taxa||0)+') entra em despesas variáveis de venda, <b>acima</b> do EBITDA; a '+
+  '<b>antecipação</b> ('+brl(an.custo||0)+', '+txPc(an.pc||0)+' sobre '+brl(an.base||0)+
+  ') entra em resultado financeiro, <b>abaixo</b> do EBITDA. Nenhuma das duas é '+
+  'dedução da receita.</p>';
  tb.innerHTML=h;
 }
 
@@ -1392,26 +1394,38 @@ function operacao(){
   return;
  }
  var k=cozinha(MES), A=acumCozinha(), dias=(D.dias||{})[MES]||30;
+ /* fixo = custo de casa aberta: NAO entra o variavel de venda, porque ele e o
+    divisor do card "por dia de operacao". A sobra, sim, desconta tudo — e com
+    isso ela passa a ser o MESMO EBITDA da DRE. Antes dava 20,5% contra 9,5%
+    na DRE do mesmo PDF, porque esquecia o grupo 3. */
  var fixo=k.pessoal+k.ocupacao+k.adm+k.mkt+k.operacao;
+ var ebitdaOp=k.venda-k.cmv-fixo-k.variaveis;
+ /* a base dos percentuais desta secao e a RECEITA BRUTA, a mesma da analise
+    vertical da DRE. Com a receita liquida a sobra dava 9,8% e a DRE 9,5% para
+    o mesmo valor — dois percentuais para um numero so na mesma pagina.
+    Ver 03 Padroes/painel-uma-definicao-por-metrica. */
+ var base=soma(ENT,'comp',MES,['FAT'])||k.venda;
  var aj=((D.ajustes||{}).cmv||{})[MES];
  el.innerHTML=[
-  ['Insumo de A&B',pc(k.cmv,k.venda),
+  ['Insumo de A&B',pc(k.cmv,base),
    aj?(brl(k.cmv)+' lançados no mês'):(brl(k.cmv)+' de compra no mês'),
    aj?('a compra do mês foi '+brl(aj.comprado)+' — o CMV entra a '+
        Math.round((D.ajustes.cmv_meta||0)*100)+'% por decisão da diretoria')
      :'a abertura por cozinha e bar entra quando o insumo deixar de vir num balde só'],
-  ['Equipe',pc(k.pessoal,k.venda),brl(k.pessoal)+' entre fixos, diaristas e alojamento',
+  ['Equipe',pc(k.pessoal,base),brl(k.pessoal)+' entre fixos, diaristas e alojamento',
    'referência: 25% a 32%'],
   ['Custo de casa aberta',brl(fixo/dias),'por dia de operação',
    'sem vender nada, a casa custa isso por dia'],
   (ENT==='boldro'&&k.ocupacao<1000)
     ?['Ocupação',emC('a Boldró não paga arrendamento: o ponto é arrendado pela YO, '+
        'por R$ 25.000 ao mês, e não é rateado. Ver o consolidado.'),'','']
-    :['Ocupação',pc(k.ocupacao,k.venda),brl(k.ocupacao)+' de arrendamento',
+    :['Ocupação',pc(k.ocupacao,base),brl(k.ocupacao)+' de arrendamento',
       ENT==='consol'?'arrendamento do ponto, pago pela YO':'referência: até 10%'],
-  ['Atrações e mídia',pc(k.mkt,k.venda),brl(k.mkt)+' em DJ, música e divulgação','referência: 3% a 6%'],
-  ['Sobra depois de tudo',pc(k.venda-k.cmv-fixo,k.venda),
-   brl(k.venda-k.cmv-fixo)+' antes do financeiro','']
+  ['Atrações e mídia',pc(k.mkt,base),brl(k.mkt)+' em DJ, música e divulgação','referência: 3% a 6%'],
+  ['Custo de vender',pc(k.variaveis,base),brl(k.variaveis)+' em comissão e taxa de cartão',
+   'sai a cada venda, não com a casa aberta'],
+  ['Sobra depois de tudo',pc(ebitdaOp,base),brl(ebitdaOp)+' antes do financeiro',
+   'é o EBITDA da DRE']
  ].map(card).join('');
 
  /* mix cozinha x bar */
@@ -1421,7 +1435,14 @@ function operacao(){
  mx.innerHTML=[['Cozinha',k.food,'#F97316'],['Bar',k.bar,'#0E9F6E'],['Frete e diversos',k.comum,'#6366F1']]
   .map(function(i){return '<div class="mixrow"><div class="mixlab">'+i[0]+'</div>'+
    '<div class="mixbar"><i style="width:'+(100*i[1]/tot).toFixed(1)+'%;background:'+i[2]+'"></i></div>'+
-   '<div class="mixval num">'+brl(i[1])+' · '+pc(i[1],tot)+'</div></div>'}).join('');
+   '<div class="mixval num">'+brl(i[1])+' · '+pc(i[1],tot)+'</div></div>'}).join('')
+  /* as barras saem de 'familias', que e a COMPRA pela data da nota e inclui a
+     YO — base diferente do CMV exibido na linha de cima, que esta no teto de
+     33% e e so da Boldro. Sem este rodape eram tres numeros sem rotulo. */
+  +'<p class="repnote">Soma das três famílias: <b>'+brl(tot)+'</b>. É a '+
+   '<b>compra de insumo pela data da nota</b>'+(ENT==='consol'?', das duas empresas':'')+
+   ', não o CMV da DRE'+(aj?(' — que está lançado a '+
+    Math.round((D.ajustes.cmv_meta||0)*100)+'% da receita, '+brl(k.cmv)+' no mês'):'')+'.</p>';
 }
 
 
@@ -1687,7 +1708,7 @@ ENTSW_SOC = """<div class="entsw" id="entsw">
 <button data-ent="consol" class="on" onclick="setEntity('consol')">Consolidado</button>
 <button data-ent="boldro" onclick="setEntity('boldro')">Boldró</button>
 <button data-ent="yo" onclick="setEntity('yo')">YO</button>
-<a href="index.html" class="on">Sócios</a>
+<a href="index.html" title="Abre o painel completo de controladoria">Controladoria</a>
 </div>"""
 
 def brlpt(v):
@@ -1810,11 +1831,18 @@ def ressalva():
         'aparecer: o painel come&ccedil;a em agosto. Cinco t&iacute;tulos ficaram de fora de prop&oacute;sito — '
         'a energia e a &aacute;gua da Y&oacute;, que seguem o crit&eacute;rio de compet&ecirc;ncia no m&ecirc;s anterior ao '
         'pagamento, e um t&iacute;tulo cuja observa&ccedil;&atilde;o declara compet&ecirc;ncia de 2025. %s'
+        '<b>O efeito das retifica&ccedil;&otilde;es de 09/11 contra o relat&oacute;rio anterior, de 06/11:</b> '
+        'o EBITDA consolidado de agosto saiu de R$ -505.214,12 para %s e o de setembro de '
+        'R$ -311,14 para %s; o lucro l&iacute;quido de setembro saiu de R$ -7.813,62 para %s. '
+        'Quem guardou o relat&oacute;rio de 06/11 vai encontrar essa diferen&ccedil;a, e ela &eacute; a soma '
+        'das linhas acima. '
         'Or&ccedil;ado &times; realizado e ponto de equil&iacute;brio foram retirados em 03/11/2026 por n&atilde;o '
         'se sustentarem: o or&ccedil;amento n&atilde;o separa Y&oacute; de Boldr&oacute; e a margem de '
         'contribui&ccedil;&atilde;o depende de uma receita bruta que a base ainda n&atilde;o tem. '
         'Dados lidos da API do Omie em %s.'
-        % (rec, dias_ago, bloco_cmv, bloco_ir, bloco_out, D['gerado']))
+        % (rec, dias_ago, bloco_cmv, bloco_ir, bloco_out,
+           brlpt(soma(MESES[0], EB)), brlpt(soma(ult, EB)),
+           brlpt(soma(ult, EB + ['10', 'IR'])), D['gerado']))
 
 
 SEC_REL = """<section id="relatorios"><div class="wrap">
