@@ -756,25 +756,36 @@ function vendasBloco(){
     'Com essas duas colunas na exportação os dois indicadores entram. '+
     'Fonte: relatório de vendas do 3LM/Gourmet.</p>';
  dia.innerHTML=h;
- var hm='<h4 class="subt">Curva ABC por categoria</h4>'+
-    '<table class="xtbl"><thead><tr><th class="l">Categoria</th><th>Receita</th><th>Itens</th>'+
-    '<th>Classe A</th><th class="av">% em A</th><th>Classe B</th><th>Classe C</th></tr></thead><tbody>';
  var cats=Object.keys(V.abc).sort(function(a,b){return V.abc[b].receita-V.abc[a].receita});
+ /* o total vem ANTES das linhas: o % de cada tipo sobre a venda de produtos e
+    o que o Tiago pediu em 09/11/2026 — "quantos % do faturamento e bebida,
+    entrada ou prato principal". */
+ var tr=0; cats.forEach(function(k){tr+=V.abc[k].receita});
+ var hm='<h4 class="subt">Curva ABC por categoria</h4>'+
+    '<table class="xtbl"><thead><tr><th class="l">Categoria</th><th>Receita</th>'+
+    '<th class="av">% da venda</th><th>Itens</th>'+
+    '<th>Classe A</th><th class="av">% em A</th><th>Classe B</th><th>Classe C</th></tr></thead><tbody>';
  cats.forEach(function(k){var x=V.abc[k];
   hm+='<tr class="abc-l" onclick="abreABC(\''+k+'\')"><td class="l"><span class="chv">▸</span>'+k+
-     '</td><td class="num">'+brl(x.receita)+'</td><td class="av">'+x.itens+'</td>'+
+     '</td><td class="num">'+brl(x.receita)+'</td>'+
+     '<td class="av"><b>'+(100*x.receita/(tr||1)).toFixed(1).replace('.',',')+'%</b></td>'+
+     '<td class="av">'+x.itens+'</td>'+
      '<td class="num">'+brl(x.A.valor)+' <span class="z">('+x.A.itens+')</span></td>'+
      '<td class="av">'+(100*x.A.pct).toFixed(1).replace('.',',')+'%</td>'+
      '<td class="num">'+brl(x.B.valor)+'</td><td class="num">'+brl(x.C.valor)+'</td></tr>';
  });
- var tr=0; cats.forEach(function(k){tr+=V.abc[k].receita});
  hm+='<tr class="dfcs"><td class="l">Venda de produtos</td><td class="num">'+brl(tr)+'</td>'+
+    '<td class="av"><b>100,0%</b></td>'+
     '<td class="av"></td><td class="num"></td><td class="av"></td><td class="num"></td><td class="num"></td></tr>';
  hm+='</tbody></table>';
- hm+='<p class="repnote">A curva de cada categoria é calculada sobre a receita daquela '+
-    'categoria, não sobre o total. Classe A vai até 80% do faturamento do grupo, B de 80% a '+
-    '95%, C os 5% finais. Clique na categoria para abrir os itens. A venda de produtos exclui '+
-    'taxa de serviço e rolha, por isso é menor que a venda bruta do mês.</p>';
+ hm+='<p class="repnote"><b>A coluna "% da venda" é a fatia de cada tipo na venda de '+
+    'produtos</b> — é o mix do cardápio. A curva ABC de cada categoria, essa sim, é calculada '+
+    'sobre a receita daquela categoria: classe A vai até 80% do faturamento do grupo, B de 80% '+
+    'a 95%, C os 5% finais. Clique na categoria para abrir os itens. '+
+    '<b>Esta tabela sai do relatório de vendas montado pela diretoria</b> ('+brl(V.recebido)+
+    '), não da extração bruta do 3LM que alimenta a DRE ('+
+    brl(soma('boldro','comp',V.mes,['FAT']))+') — por isso o total não bate com a receita '+
+    'bruta do mês. A diferença está decomposta na seção de auditoria.</p>';
  hm+=pgtoTabela()+horarioTabela();
  mix.innerHTML=hm;
 }
