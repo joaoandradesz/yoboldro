@@ -1,0 +1,2077 @@
+{
+ "mes": "2026-09",
+ "fonte": "Relatório de Vendas do 3LM/Gourmet — setembro/2026",
+ "recebido": 1047949.04,
+ "contas": 1540,
+ "produtos": 947805.74,
+ "dias": [
+  {
+   "data": "01/09",
+   "sem": "terca",
+   "contas": 40,
+   "valor": 16609.64,
+   "ticket": 415.24
+  },
+  {
+   "data": "02/09",
+   "sem": "quarta",
+   "contas": 37,
+   "valor": 14406.58,
+   "ticket": 389.37
+  },
+  {
+   "data": "03/09",
+   "sem": "quinta",
+   "contas": 39,
+   "valor": 17432.15,
+   "ticket": 446.98
+  },
+  {
+   "data": "04/09",
+   "sem": "sexta",
+   "contas": 5,
+   "valor": 16928.37,
+   "ticket": 3385.67
+  },
+  {
+   "data": "05/09",
+   "sem": "sabado",
+   "contas": 67,
+   "valor": 43681.62,
+   "ticket": 651.96
+  },
+  {
+   "data": "06/09",
+   "sem": "domingo",
+   "contas": 64,
+   "valor": 55975.21,
+   "ticket": 874.61
+  },
+  {
+   "data": "07/09",
+   "sem": "segunda",
+   "contas": 55,
+   "valor": 43701.59,
+   "ticket": 794.57
+  },
+  {
+   "data": "08/09",
+   "sem": "terca",
+   "contas": 43,
+   "valor": 29607.41,
+   "ticket": 688.54
+  },
+  {
+   "data": "09/09",
+   "sem": "quarta",
+   "contas": 53,
+   "valor": 28688.39,
+   "ticket": 541.29
+  },
+  {
+   "data": "10/09",
+   "sem": "quinta",
+   "contas": 62,
+   "valor": 44228.82,
+   "ticket": 713.37
+  },
+  {
+   "data": "11/09",
+   "sem": "sexta",
+   "contas": 52,
+   "valor": 39501.17,
+   "ticket": 759.64
+  },
+  {
+   "data": "12/09",
+   "sem": "sabado",
+   "contas": 39,
+   "valor": 30292.2,
+   "ticket": 776.72
+  },
+  {
+   "data": "13/09",
+   "sem": "domingo",
+   "contas": 46,
+   "valor": 27032.54,
+   "ticket": 587.66
+  },
+  {
+   "data": "14/09",
+   "sem": "segunda",
+   "contas": 34,
+   "valor": 18372.39,
+   "ticket": 540.36
+  },
+  {
+   "data": "15/09",
+   "sem": "terca",
+   "contas": 38,
+   "valor": 21269.26,
+   "ticket": 559.72
+  },
+  {
+   "data": "16/09",
+   "sem": "quarta",
+   "contas": 53,
+   "valor": 37372.08,
+   "ticket": 705.13
+  },
+  {
+   "data": "17/09",
+   "sem": "quinta",
+   "contas": 88,
+   "valor": 46857.03,
+   "ticket": 532.47
+  },
+  {
+   "data": "18/09",
+   "sem": "sexta",
+   "contas": 48,
+   "valor": 26394.96,
+   "ticket": 549.89
+  },
+  {
+   "data": "19/09",
+   "sem": "sabado",
+   "contas": 81,
+   "valor": 75559.48,
+   "ticket": 932.83
+  },
+  {
+   "data": "20/09",
+   "sem": "domingo",
+   "contas": 74,
+   "valor": 50996.26,
+   "ticket": 689.14
+  },
+  {
+   "data": "21/09",
+   "sem": "segunda",
+   "contas": 67,
+   "valor": 45732.6,
+   "ticket": 682.58
+  },
+  {
+   "data": "22/09",
+   "sem": "terca",
+   "contas": 57,
+   "valor": 42862.06,
+   "ticket": 751.97
+  },
+  {
+   "data": "23/09",
+   "sem": "quarta",
+   "contas": 58,
+   "valor": 57989.24,
+   "ticket": 999.81
+  },
+  {
+   "data": "24/09",
+   "sem": "quinta",
+   "contas": 60,
+   "valor": 47530.96,
+   "ticket": 792.18
+  },
+  {
+   "data": "25/09",
+   "sem": "sexta",
+   "contas": 49,
+   "valor": 28413.73,
+   "ticket": 579.87
+  },
+  {
+   "data": "26/09",
+   "sem": "sabado",
+   "contas": 47,
+   "valor": 23294.28,
+   "ticket": 495.62
+  },
+  {
+   "data": "27/09",
+   "sem": "domingo",
+   "contas": 69,
+   "valor": 49595.92,
+   "ticket": 718.78
+  },
+  {
+   "data": "28/09",
+   "sem": "segunda",
+   "contas": 40,
+   "valor": 24782.25,
+   "ticket": 619.56
+  },
+  {
+   "data": "29/09",
+   "sem": "terca",
+   "contas": 34,
+   "valor": 18975.15,
+   "ticket": 558.09
+  },
+  {
+   "data": "30/09",
+   "sem": "quarta",
+   "contas": 41,
+   "valor": 23865.7,
+   "ticket": 582.09
+  }
+ ],
+ "turno": {
+  "antes": {
+   "pct": 0.006999999999999999,
+   "valor": 6037.0
+  },
+  "dia": {
+   "pct": 0.6779999999999999,
+   "valor": 624540.0
+  },
+  "final": {
+   "pct": 0.316,
+   "valor": 291193.0
+  }
+ },
+ "abc": {
+  "Entrada": {
+   "receita": 275901.28,
+   "itens": 19,
+   "A": {
+    "itens": 9,
+    "valor": 218924.25,
+    "pct": 0.793488
+   },
+   "B": {
+    "itens": 5,
+    "valor": 42492.77,
+    "pct": 0.154014
+   },
+   "C": {
+    "itens": 5,
+    "valor": 14484.26,
+    "pct": 0.052498
+   },
+   "itens_lista": [
+    {
+     "n": 1,
+     "item": "Camaroes A Hungara",
+     "qtd": 202,
+     "preco": 186.53,
+     "total": 37679.22,
+     "pct": 0.136568,
+     "acum": 0.136568,
+     "classe": "A"
+    },
+    {
+     "n": 2,
+     "item": "Ceviche Tropical",
+     "qtd": 308,
+     "preco": 118.95,
+     "total": 36635.41,
+     "pct": 0.132784,
+     "acum": 0.269352,
+     "classe": "A"
+    },
+    {
+     "n": 3,
+     "item": "Pastel De Lagosta",
+     "qtd": 231,
+     "preco": 156.16,
+     "total": 36073.57,
+     "pct": 0.130748,
+     "acum": 0.4001,
+     "classe": "A"
+    },
+    {
+     "n": 4,
+     "item": "Selecao De Frutos Do Mar",
+     "qtd": 110,
+     "preco": 248.88,
+     "total": 27376.85,
+     "pct": 0.099227,
+     "acum": 0.499327,
+     "classe": "A"
+    },
+    {
+     "n": 5,
+     "item": "Croquetes De Camarao",
+     "qtd": 150,
+     "preco": 137.61,
+     "total": 20641.69,
+     "pct": 0.074815,
+     "acum": 0.574143,
+     "classe": "A"
+    },
+    {
+     "n": 6,
+     "item": "Atum Ao Maracuja",
+     "qtd": 150,
+     "preco": 136.85,
+     "total": 20527.32,
+     "pct": 0.074401,
+     "acum": 0.648544,
+     "classe": "A"
+    },
+    {
+     "n": 7,
+     "item": "Arrumadinho De Frutos",
+     "qtd": 41,
+     "preco": 382.06,
+     "total": 15664.5,
+     "pct": 0.056776,
+     "acum": 0.70532,
+     "classe": "A"
+    },
+    {
+     "n": 8,
+     "item": "Burrata Ao Pesto",
+     "qtd": 96,
+     "preco": 128.97,
+     "total": 12381.42,
+     "pct": 0.044876,
+     "acum": 0.750196,
+     "classe": "A"
+    },
+    {
+     "n": 9,
+     "item": "Carpaccio De Atum",
+     "qtd": 59,
+     "preco": 202.45,
+     "total": 11944.27,
+     "pct": 0.043292,
+     "acum": 0.793488,
+     "classe": "A"
+    },
+    {
+     "n": 10,
+     "item": "*Couvert Artistico",
+     "qtd": 385,
+     "preco": 29.82,
+     "total": 11481.01,
+     "pct": 0.041613,
+     "acum": 0.8351,
+     "classe": "B"
+    },
+    {
+     "n": 11,
+     "item": "Crudo De Atum",
+     "qtd": 75,
+     "preco": 128.4,
+     "total": 9630.15,
+     "pct": 0.034904,
+     "acum": 0.870005,
+     "classe": "B"
+    },
+    {
+     "n": 12,
+     "item": "Focaccia & Pera",
+     "qtd": 98,
+     "preco": 83.96,
+     "total": 8228.06,
+     "pct": 0.029822,
+     "acum": 0.899827,
+     "classe": "B"
+    },
+    {
+     "n": 13,
+     "item": "Tabua Yo",
+     "qtd": 57,
+     "preco": 129.86,
+     "total": 7402.19,
+     "pct": 0.026829,
+     "acum": 0.926656,
+     "classe": "B"
+    },
+    {
+     "n": 14,
+     "item": "Pastel De Polvo",
+     "qtd": 44,
+     "preco": 130.71,
+     "total": 5751.36,
+     "pct": 0.020846,
+     "acum": 0.947502,
+     "classe": "B"
+    },
+    {
+     "n": 15,
+     "item": "Couvert",
+     "qtd": 181,
+     "preco": 28.95,
+     "total": 5239.83,
+     "pct": 0.018992,
+     "acum": 0.966494,
+     "classe": "C"
+    },
+    {
+     "n": 16,
+     "item": "Croquetes De Berinjela",
+     "qtd": 31,
+     "preco": 120.31,
+     "total": 3729.56,
+     "pct": 0.013518,
+     "acum": 0.980011,
+     "classe": "C"
+    },
+    {
+     "n": 17,
+     "item": "Pao - Extra",
+     "qtd": 131,
+     "preco": 28.21,
+     "total": 3694.87,
+     "pct": 0.013392,
+     "acum": 0.993403,
+     "classe": "C"
+    },
+    {
+     "n": 18,
+     "item": "Crudo Tropical",
+     "qtd": 8,
+     "preco": 168.0,
+     "total": 1344.0,
+     "pct": 0.004871,
+     "acum": 0.998275,
+     "classe": "C"
+    },
+    {
+     "n": 19,
+     "item": "Anos",
+     "qtd": 7,
+     "preco": 68.0,
+     "total": 476.0,
+     "pct": 0.001725,
+     "acum": 1.0,
+     "classe": "C"
+    }
+   ]
+  },
+  "Prato Principal": {
+   "receita": 216289.43,
+   "itens": 14,
+   "A": {
+    "itens": 6,
+    "valor": 164905.77,
+    "pct": 0.762431
+   },
+   "B": {
+    "itens": 4,
+    "valor": 39178.14,
+    "pct": 0.181138
+   },
+   "C": {
+    "itens": 4,
+    "valor": 12205.52,
+    "pct": 0.056431
+   },
+   "itens_lista": [
+    {
+     "n": 1,
+     "item": "Peixe A Moqueca",
+     "qtd": 250,
+     "preco": 165.77,
+     "total": 41441.8,
+     "pct": 0.191603,
+     "acum": 0.191603,
+     "classe": "A"
+    },
+    {
+     "n": 2,
+     "item": "Risoto E Camarao",
+     "qtd": 201,
+     "preco": 189.97,
+     "total": 38183.11,
+     "pct": 0.176537,
+     "acum": 0.368141,
+     "classe": "A"
+    },
+    {
+     "n": 3,
+     "item": "File Mignon Com Nhoque",
+     "qtd": 172,
+     "preco": 173.14,
+     "total": 29780.52,
+     "pct": 0.137688,
+     "acum": 0.505829,
+     "classe": "A"
+    },
+    {
+     "n": 4,
+     "item": "Ancho",
+     "qtd": 120,
+     "preco": 195.56,
+     "total": 23467.48,
+     "pct": 0.1085,
+     "acum": 0.614329,
+     "classe": "A"
+    },
+    {
+     "n": 5,
+     "item": "Atum E Maca",
+     "qtd": 98,
+     "preco": 175.01,
+     "total": 17151.45,
+     "pct": 0.079299,
+     "acum": 0.693628,
+     "classe": "A"
+    },
+    {
+     "n": 6,
+     "item": "Salmao Comeia",
+     "qtd": 81,
+     "preco": 183.72,
+     "total": 14881.41,
+     "pct": 0.068803,
+     "acum": 0.762431,
+     "classe": "A"
+    },
+    {
+     "n": 7,
+     "item": "Peixe Inteiro Na Brasa",
+     "qtd": 37,
+     "preco": 384.53,
+     "total": 14227.49,
+     "pct": 0.06578,
+     "acum": 0.828211,
+     "classe": "B"
+    },
+    {
+     "n": 8,
+     "item": "Costela Black Angus Na",
+     "qtd": 29,
+     "preco": 411.15,
+     "total": 11923.21,
+     "pct": 0.055126,
+     "acum": 0.883337,
+     "classe": "B"
+    },
+    {
+     "n": 9,
+     "item": "Mar E Terra (Peixe E Polvo)",
+     "qtd": 45,
+     "preco": 203.61,
+     "total": 9162.54,
+     "pct": 0.042362,
+     "acum": 0.925699,
+     "classe": "B"
+    },
+    {
+     "n": 10,
+     "item": "*Ancho Trufado",
+     "qtd": 11,
+     "preco": 351.35,
+     "total": 3864.9,
+     "pct": 0.017869,
+     "acum": 0.943569,
+     "classe": "B"
+    },
+    {
+     "n": 11,
+     "item": "Rigatoni De Beterraba",
+     "qtd": 26,
+     "preco": 146.29,
+     "total": 3803.61,
+     "pct": 0.017586,
+     "acum": 0.961154,
+     "classe": "C"
+    },
+    {
+     "n": 12,
+     "item": "Lagosta Na Brasa",
+     "qtd": 6,
+     "preco": 590.0,
+     "total": 3540.0,
+     "pct": 0.016367,
+     "acum": 0.977521,
+     "classe": "C"
+    },
+    {
+     "n": 13,
+     "item": "Burguer Suino",
+     "qtd": 25,
+     "preco": 117.35,
+     "total": 2933.76,
+     "pct": 0.013564,
+     "acum": 0.991085,
+     "classe": "C"
+    },
+    {
+     "n": 14,
+     "item": "Mezzaluna Negra",
+     "qtd": 10,
+     "preco": 192.81,
+     "total": 1928.15,
+     "pct": 0.008915,
+     "acum": 1.0,
+     "classe": "C"
+    }
+   ]
+  },
+  "Outros": {
+   "receita": 43272.55,
+   "itens": 10,
+   "A": {
+    "itens": 3,
+    "valor": 28869.65,
+    "pct": 0.667159
+   },
+   "B": {
+    "itens": 2,
+    "valor": 11399.29,
+    "pct": 0.26343
+   },
+   "C": {
+    "itens": 5,
+    "valor": 3003.61,
+    "pct": 0.069411
+   },
+   "itens_lista": [
+    {
+     "n": 1,
+     "item": "Chocolatudo",
+     "qtd": 174,
+     "preco": 80.09,
+     "total": 13936.33,
+     "pct": 0.322059,
+     "acum": 0.322059,
+     "classe": "A"
+    },
+    {
+     "n": 2,
+     "item": "Salada De Camarao",
+     "qtd": 64,
+     "preco": 128.07,
+     "total": 8196.24,
+     "pct": 0.18941,
+     "acum": 0.511469,
+     "classe": "A"
+    },
+    {
+     "n": 3,
+     "item": "Peixe Kids",
+     "qtd": 73,
+     "preco": 92.29,
+     "total": 6737.08,
+     "pct": 0.155689,
+     "acum": 0.667159,
+     "classe": "A"
+    },
+    {
+     "n": 4,
+     "item": "Baguete De Atum Selado",
+     "qtd": 56,
+     "preco": 117.74,
+     "total": 6593.51,
+     "pct": 0.152372,
+     "acum": 0.81953,
+     "classe": "B"
+    },
+    {
+     "n": 5,
+     "item": "Cheesecake Tropical",
+     "qtd": 68,
+     "preco": 70.67,
+     "total": 4805.78,
+     "pct": 0.111058,
+     "acum": 0.930589,
+     "classe": "B"
+    },
+    {
+     "n": 6,
+     "item": "File Mignon Kids",
+     "qtd": 22,
+     "preco": 91.44,
+     "total": 2011.6,
+     "pct": 0.046487,
+     "acum": 0.977075,
+     "classe": "C"
+    },
+    {
+     "n": 7,
+     "item": "Salada De Atum",
+     "qtd": 7,
+     "preco": 124.0,
+     "total": 868.0,
+     "pct": 0.020059,
+     "acum": 0.997134,
+     "classe": "C"
+    },
+    {
+     "n": 8,
+     "item": "Cafe Caps",
+     "qtd": 9,
+     "preco": 7.07,
+     "total": 63.6,
+     "pct": 0.00147,
+     "acum": 0.998604,
+     "classe": "C"
+    },
+    {
+     "n": 9,
+     "item": "Arroz - Extra",
+     "qtd": 2,
+     "preco": 30.0,
+     "total": 60.0,
+     "pct": 0.001387,
+     "acum": 0.999991,
+     "classe": "C"
+    },
+    {
+     "n": 10,
+     "item": "Agua Sistema",
+     "qtd": 42,
+     "preco": 0.01,
+     "total": 0.41,
+     "pct": 9e-06,
+     "acum": 1.0,
+     "classe": "C"
+    }
+   ]
+  },
+  "Bebida": {
+   "receita": 407902.74,
+   "itens": 106,
+   "A": {
+    "itens": 33,
+    "valor": 326128.86,
+    "pct": 0.799526
+   },
+   "B": {
+    "itens": 28,
+    "valor": 60340.59,
+    "pct": 0.147929
+   },
+   "C": {
+    "itens": 45,
+    "valor": 21433.29,
+    "pct": 0.052545
+   },
+   "itens_lista": [
+    {
+     "n": 1,
+     "item": "Corona Extra 330Ml",
+     "qtd": 1850,
+     "preco": 23.29,
+     "total": 43084.36,
+     "pct": 0.105624,
+     "acum": 0.105624,
+     "classe": "A"
+    },
+    {
+     "n": 2,
+     "item": "Stella Pure Gold 330Ml",
+     "qtd": 1300,
+     "preco": 21.95,
+     "total": 28535.21,
+     "pct": 0.069956,
+     "acum": 0.17558,
+     "classe": "A"
+    },
+    {
+     "n": 3,
+     "item": "Aperol Spritz",
+     "qtd": 322,
+     "preco": 65.39,
+     "total": 21054.65,
+     "pct": 0.051617,
+     "acum": 0.227197,
+     "classe": "A"
+    },
+    {
+     "n": 4,
+     "item": "Bco Milani P Grigio Ven Igt",
+     "qtd": 68,
+     "preco": 283.94,
+     "total": 19308.0,
+     "pct": 0.047335,
+     "acum": 0.274532,
+     "classe": "A"
+    },
+    {
+     "n": 5,
+     "item": "Caipifrutas Importada",
+     "qtd": 326,
+     "preco": 53.54,
+     "total": 17452.44,
+     "pct": 0.042786,
+     "acum": 0.317317,
+     "classe": "A"
+    },
+    {
+     "n": 6,
+     "item": "Tropical Brut",
+     "qtd": 291,
+     "preco": 50.9,
+     "total": 14813.21,
+     "pct": 0.036316,
+     "acum": 0.353633,
+     "classe": "A"
+    },
+    {
+     "n": 7,
+     "item": "Mango Spritz",
+     "qtd": 198,
+     "preco": 65.14,
+     "total": 12897.57,
+     "pct": 0.031619,
+     "acum": 0.385252,
+     "classe": "A"
+    },
+    {
+     "n": 8,
+     "item": "Champ Moet & Chandon Imp",
+     "qtd": 12,
+     "preco": 960.0,
+     "total": 11520.0,
+     "pct": 0.028242,
+     "acum": 0.413494,
+     "classe": "A"
+    },
+    {
+     "n": 9,
+     "item": "Bco Petit Chablis T Lab",
+     "qtd": 19,
+     "preco": 600.31,
+     "total": 11405.81,
+     "pct": 0.027962,
+     "acum": 0.441456,
+     "classe": "A"
+    },
+    {
+     "n": 10,
+     "item": "Agua Sem Gas Indaia 330Ml",
+     "qtd": 738,
+     "preco": 14.93,
+     "total": 11018.21,
+     "pct": 0.027012,
+     "acum": 0.468468,
+     "classe": "A"
+    },
+    {
+     "n": 11,
+     "item": "Rose Milani Pinot Grigio",
+     "qtd": 39,
+     "preco": 266.7,
+     "total": 10401.16,
+     "pct": 0.025499,
+     "acum": 0.493967,
+     "classe": "A"
+    },
+    {
+     "n": 12,
+     "item": "Agua Com Gas Premium",
+     "qtd": 588,
+     "preco": 17.52,
+     "total": 10303.06,
+     "pct": 0.025259,
+     "acum": 0.519226,
+     "classe": "A"
+    },
+    {
+     "n": 13,
+     "item": "Caipirinha",
+     "qtd": 165,
+     "preco": 54.41,
+     "total": 8977.47,
+     "pct": 0.022009,
+     "acum": 0.541235,
+     "classe": "A"
+    },
+    {
+     "n": 14,
+     "item": "Quilha Moscow Mule",
+     "qtd": 118,
+     "preco": 74.12,
+     "total": 8745.74,
+     "pct": 0.021441,
+     "acum": 0.562676,
+     "classe": "A"
+    },
+    {
+     "n": 15,
+     "item": "Fitzgerald",
+     "qtd": 123,
+     "preco": 67.01,
+     "total": 8242.67,
+     "pct": 0.020207,
+     "acum": 0.582883,
+     "classe": "A"
+    },
+    {
+     "n": 16,
+     "item": "Michelob Ultra 330Ml",
+     "qtd": 305,
+     "preco": 23.29,
+     "total": 7102.35,
+     "pct": 0.017412,
+     "acum": 0.600295,
+     "classe": "A"
+    },
+    {
+     "n": 17,
+     "item": "Do Capim Eu Gosto",
+     "qtd": 205,
+     "preco": 33.01,
+     "total": 6767.51,
+     "pct": 0.016591,
+     "acum": 0.616886,
+     "classe": "A"
+    },
+    {
+     "n": 18,
+     "item": "Suco De Fruta",
+     "qtd": 323,
+     "preco": 19.74,
+     "total": 6375.22,
+     "pct": 0.015629,
+     "acum": 0.632515,
+     "classe": "A"
+    },
+    {
+     "n": 19,
+     "item": "Bco W Cole V S Sauv Blanc",
+     "qtd": 25,
+     "preco": 250.32,
+     "total": 6257.97,
+     "pct": 0.015342,
+     "acum": 0.647857,
+     "classe": "A"
+    },
+    {
+     "n": 20,
+     "item": "Bco Paco Do Conde",
+     "qtd": 18,
+     "preco": 346.61,
+     "total": 6239.0,
+     "pct": 0.015295,
+     "acum": 0.663152,
+     "classe": "A"
+    },
+    {
+     "n": 21,
+     "item": "Caipifrutas Premium",
+     "qtd": 90,
+     "preco": 64.8,
+     "total": 5832.41,
+     "pct": 0.014299,
+     "acum": 0.677451,
+     "classe": "A"
+    },
+    {
+     "n": 22,
+     "item": "Gin & Tonica",
+     "qtd": 79,
+     "preco": 65.94,
+     "total": 5209.44,
+     "pct": 0.012771,
+     "acum": 0.690222,
+     "classe": "A"
+    },
+    {
+     "n": 23,
+     "item": "Esp Rose Cava Castelfino",
+     "qtd": 16,
+     "preco": 290.0,
+     "total": 4640.0,
+     "pct": 0.011375,
+     "acum": 0.701597,
+     "classe": "A"
+    },
+    {
+     "n": 24,
+     "item": "Esp Cava Castelfino Brut",
+     "qtd": 16,
+     "preco": 288.19,
+     "total": 4611.0,
+     "pct": 0.011304,
+     "acum": 0.712901,
+     "classe": "A"
+    },
+    {
+     "n": 25,
+     "item": "Corona 600Ml",
+     "qtd": 144,
+     "preco": 31.91,
+     "total": 4595.55,
+     "pct": 0.011266,
+     "acum": 0.724168,
+     "classe": "A"
+    },
+    {
+     "n": 26,
+     "item": "Coca Cola Zero 350Ml",
+     "qtd": 409,
+     "preco": 11.1,
+     "total": 4541.08,
+     "pct": 0.011133,
+     "acum": 0.735301,
+     "classe": "A"
+    },
+    {
+     "n": 27,
+     "item": "Corona Zero 330Ml",
+     "qtd": 199,
+     "preco": 20.22,
+     "total": 4023.41,
+     "pct": 0.009864,
+     "acum": 0.745164,
+     "classe": "A"
+    },
+    {
+     "n": 28,
+     "item": "Agua De Coco",
+     "qtd": 159,
+     "preco": 24.86,
+     "total": 3953.3,
+     "pct": 0.009692,
+     "acum": 0.754856,
+     "classe": "A"
+    },
+    {
+     "n": 29,
+     "item": "Mare Calma",
+     "qtd": 82,
+     "preco": 47.69,
+     "total": 3910.69,
+     "pct": 0.009587,
+     "acum": 0.764443,
+     "classe": "A"
+    },
+    {
+     "n": 30,
+     "item": "Bco Chab Tho Lab Prem",
+     "qtd": 6,
+     "preco": 640.0,
+     "total": 3840.0,
+     "pct": 0.009414,
+     "acum": 0.773857,
+     "classe": "A"
+    },
+    {
+     "n": 31,
+     "item": "Villebois Sauvignon Blanc",
+     "qtd": 10,
+     "preco": 360.0,
+     "total": 3600.0,
+     "pct": 0.008826,
+     "acum": 0.782683,
+     "classe": "A"
+    },
+    {
+     "n": 32,
+     "item": "Spaten 330Ml",
+     "qtd": 259,
+     "preco": 13.5,
+     "total": 3497.07,
+     "pct": 0.008573,
+     "acum": 0.791256,
+     "classe": "A"
+    },
+    {
+     "n": 33,
+     "item": "Negroni",
+     "qtd": 43,
+     "preco": 78.45,
+     "total": 3373.3,
+     "pct": 0.00827,
+     "acum": 0.799526,
+     "classe": "A"
+    },
+    {
+     "n": 34,
+     "item": "Bco V Calma Est Sauv",
+     "qtd": 11,
+     "preco": 287.36,
+     "total": 3161.01,
+     "pct": 0.007749,
+     "acum": 0.807275,
+     "classe": "B"
+    },
+    {
+     "n": 35,
+     "item": "Mojito",
+     "qtd": 59,
+     "preco": 52.96,
+     "total": 3124.81,
+     "pct": 0.007661,
+     "acum": 0.814936,
+     "classe": "B"
+    },
+    {
+     "n": 36,
+     "item": "Agua Sem Gas Minalba",
+     "qtd": 221,
+     "preco": 14.07,
+     "total": 3109.87,
+     "pct": 0.007624,
+     "acum": 0.82256,
+     "classe": "B"
+    },
+    {
+     "n": 37,
+     "item": "Esp Chandon Brut 750Ml",
+     "qtd": 12,
+     "preco": 256.5,
+     "total": 3078.0,
+     "pct": 0.007546,
+     "acum": 0.830106,
+     "classe": "B"
+    },
+    {
+     "n": 38,
+     "item": "Tto Agustinos Res Pinot",
+     "qtd": 11,
+     "preco": 265.45,
+     "total": 2920.0,
+     "pct": 0.007159,
+     "acum": 0.837265,
+     "classe": "B"
+    },
+    {
+     "n": 39,
+     "item": "Tranquilo",
+     "qtd": 47,
+     "preco": 61.1,
+     "total": 2871.58,
+     "pct": 0.00704,
+     "acum": 0.844305,
+     "classe": "B"
+    },
+    {
+     "n": 40,
+     "item": "Caju Amigo (Vitoriosa)",
+     "qtd": 44,
+     "preco": 62.01,
+     "total": 2728.26,
+     "pct": 0.006689,
+     "acum": 0.850993,
+     "classe": "B"
+    },
+    {
+     "n": 41,
+     "item": "Rose W Cole Reserva",
+     "qtd": 8,
+     "preco": 316.0,
+     "total": 2528.01,
+     "pct": 0.006198,
+     "acum": 0.857191,
+     "classe": "B"
+    },
+    {
+     "n": 42,
+     "item": "Red Bull 250Ml",
+     "qtd": 145,
+     "preco": 16.41,
+     "total": 2380.03,
+     "pct": 0.005835,
+     "acum": 0.863025,
+     "classe": "B"
+    },
+    {
+     "n": 43,
+     "item": "Ilha Verde",
+     "qtd": 88,
+     "preco": 26.21,
+     "total": 2306.53,
+     "pct": 0.005655,
+     "acum": 0.86868,
+     "classe": "B"
+    },
+    {
+     "n": 44,
+     "item": "Champ Louis Roederer",
+     "qtd": 2,
+     "preco": 1150.0,
+     "total": 2300.0,
+     "pct": 0.005639,
+     "acum": 0.874319,
+     "classe": "B"
+    },
+    {
+     "n": 45,
+     "item": "Oeste",
+     "qtd": 37,
+     "preco": 61.76,
+     "total": 2285.29,
+     "pct": 0.005603,
+     "acum": 0.879921,
+     "classe": "B"
+    },
+    {
+     "n": 46,
+     "item": "Esp Rose Chandon Brut",
+     "qtd": 8,
+     "preco": 284.12,
+     "total": 2273.0,
+     "pct": 0.005572,
+     "acum": 0.885494,
+     "classe": "B"
+    },
+    {
+     "n": 47,
+     "item": "Agua Com Gas Indaia 330Ml",
+     "qtd": 131,
+     "preco": 15.41,
+     "total": 2018.72,
+     "pct": 0.004949,
+     "acum": 0.890443,
+     "classe": "B"
+    },
+    {
+     "n": 48,
+     "item": "Caipirinha Importada",
+     "qtd": 35,
+     "preco": 55.04,
+     "total": 1926.5,
+     "pct": 0.004723,
+     "acum": 0.895166,
+     "classe": "B"
+    },
+    {
+     "n": 49,
+     "item": "Champ Perrier Jouet",
+     "qtd": 2,
+     "preco": 960.0,
+     "total": 1920.0,
+     "pct": 0.004707,
+     "acum": 0.899873,
+     "classe": "B"
+    },
+    {
+     "n": 50,
+     "item": "Vista Calma Estate",
+     "qtd": 6,
+     "preco": 310.0,
+     "total": 1860.0,
+     "pct": 0.00456,
+     "acum": 0.904432,
+     "classe": "B"
+    },
+    {
+     "n": 51,
+     "item": "Bco Esprit De Grassete",
+     "qtd": 7,
+     "preco": 260.0,
+     "total": 1820.0,
+     "pct": 0.004462,
+     "acum": 0.908894,
+     "classe": "B"
+    },
+    {
+     "n": 52,
+     "item": "El Nino",
+     "qtd": 26,
+     "preco": 69.34,
+     "total": 1802.72,
+     "pct": 0.004419,
+     "acum": 0.913314,
+     "classe": "B"
+    },
+    {
+     "n": 53,
+     "item": "Bco Mestizaje",
+     "qtd": 5,
+     "preco": 360.0,
+     "total": 1800.0,
+     "pct": 0.004413,
+     "acum": 0.917727,
+     "classe": "B"
+    },
+    {
+     "n": 54,
+     "item": "Coca Cola 350Ml",
+     "qtd": 171,
+     "preco": 10.43,
+     "total": 1783.31,
+     "pct": 0.004372,
+     "acum": 0.922098,
+     "classe": "B"
+    },
+    {
+     "n": 55,
+     "item": "Dose Campari 50Ml",
+     "qtd": 33,
+     "preco": 49.68,
+     "total": 1639.56,
+     "pct": 0.004019,
+     "acum": 0.926118,
+     "classe": "B"
+    },
+    {
+     "n": 56,
+     "item": "Mad Dog",
+     "qtd": 23,
+     "preco": 69.42,
+     "total": 1596.77,
+     "pct": 0.003915,
+     "acum": 0.930033,
+     "classe": "B"
+    },
+    {
+     "n": 57,
+     "item": "Bco Familia Viu Res",
+     "qtd": 10,
+     "preco": 157.0,
+     "total": 1570.0,
+     "pct": 0.003849,
+     "acum": 0.933882,
+     "classe": "B"
+    },
+    {
+     "n": 58,
+     "item": "Latino",
+     "qtd": 22,
+     "preco": 67.12,
+     "total": 1476.61,
+     "pct": 0.00362,
+     "acum": 0.937502,
+     "classe": "B"
+    },
+    {
+     "n": 59,
+     "item": "Dose Tanqueray 50Ml",
+     "qtd": 30,
+     "preco": 49.17,
+     "total": 1475.0,
+     "pct": 0.003616,
+     "acum": 0.941118,
+     "classe": "B"
+    },
+    {
+     "n": 60,
+     "item": "Bulevardier",
+     "qtd": 18,
+     "preco": 74.61,
+     "total": 1343.01,
+     "pct": 0.003292,
+     "acum": 0.94441,
+     "classe": "B"
+    },
+    {
+     "n": 61,
+     "item": "Margarita",
+     "qtd": 18,
+     "preco": 69.0,
+     "total": 1242.0,
+     "pct": 0.003045,
+     "acum": 0.947455,
+     "classe": "B"
+    },
+    {
+     "n": 62,
+     "item": "Cosmopolitan",
+     "qtd": 18,
+     "preco": 66.7,
+     "total": 1200.6,
+     "pct": 0.002943,
+     "acum": 0.950398,
+     "classe": "C"
+    },
+    {
+     "n": 63,
+     "item": "Bco La F Est",
+     "qtd": 4,
+     "preco": 290.0,
+     "total": 1160.0,
+     "pct": 0.002844,
+     "acum": 0.953242,
+     "classe": "C"
+    },
+    {
+     "n": 64,
+     "item": "Bco Finca Wayta B",
+     "qtd": 4,
+     "preco": 260.0,
+     "total": 1040.0,
+     "pct": 0.00255,
+     "acum": 0.955792,
+     "classe": "C"
+    },
+    {
+     "n": 65,
+     "item": "Rose Esprit Grassete",
+     "qtd": 4,
+     "preco": 260.0,
+     "total": 1040.0,
+     "pct": 0.00255,
+     "acum": 0.958341,
+     "classe": "C"
+    },
+    {
+     "n": 66,
+     "item": "Buchanans Dose",
+     "qtd": 17,
+     "preco": 59.91,
+     "total": 1018.51,
+     "pct": 0.002497,
+     "acum": 0.960838,
+     "classe": "C"
+    },
+    {
+     "n": 67,
+     "item": "Dose Licor 43 50Ml",
+     "qtd": 20,
+     "preco": 48.67,
+     "total": 973.5,
+     "pct": 0.002387,
+     "acum": 0.963225,
+     "classe": "C"
+    },
+    {
+     "n": 68,
+     "item": "Cachaca Premium",
+     "qtd": 15,
+     "preco": 64.45,
+     "total": 966.69,
+     "pct": 0.00237,
+     "acum": 0.965595,
+     "classe": "C"
+    },
+    {
+     "n": 69,
+     "item": "Stella Artois 330Ml",
+     "qtd": 43,
+     "preco": 21.9,
+     "total": 941.6,
+     "pct": 0.002308,
+     "acum": 0.967903,
+     "classe": "C"
+    },
+    {
+     "n": 70,
+     "item": "Dose Black Label 50Ml",
+     "qtd": 14,
+     "preco": 65.0,
+     "total": 910.0,
+     "pct": 0.002231,
+     "acum": 0.970134,
+     "classe": "C"
+    },
+    {
+     "n": 71,
+     "item": "Reserva Sombreiro",
+     "qtd": 1,
+     "preco": 800.0,
+     "total": 800.0,
+     "pct": 0.001961,
+     "acum": 0.972095,
+     "classe": "C"
+    },
+    {
+     "n": 72,
+     "item": "Dose Don Julio",
+     "qtd": 9,
+     "preco": 85.0,
+     "total": 765.0,
+     "pct": 0.001875,
+     "acum": 0.973971,
+     "classe": "C"
+    },
+    {
+     "n": 73,
+     "item": "Guarana Antarctica Zero",
+     "qtd": 67,
+     "preco": 10.87,
+     "total": 728.35,
+     "pct": 0.001786,
+     "acum": 0.975756,
+     "classe": "C"
+    },
+    {
+     "n": 74,
+     "item": "Dose Absolut 50Ml",
+     "qtd": 16,
+     "preco": 43.66,
+     "total": 698.55,
+     "pct": 0.001713,
+     "acum": 0.977469,
+     "classe": "C"
+    },
+    {
+     "n": 75,
+     "item": "Dose Vitoriosa 50Ml",
+     "qtd": 15,
+     "preco": 45.34,
+     "total": 680.05,
+     "pct": 0.001667,
+     "acum": 0.979136,
+     "classe": "C"
+    },
+    {
+     "n": 76,
+     "item": "Dose Cointreau 50Ml",
+     "qtd": 12,
+     "preco": 56.0,
+     "total": 672.0,
+     "pct": 0.001647,
+     "acum": 0.980784,
+     "classe": "C"
+    },
+    {
+     "n": 77,
+     "item": "Dose Grey Goose 50Ml",
+     "qtd": 9,
+     "preco": 65.0,
+     "total": 585.0,
+     "pct": 0.001434,
+     "acum": 0.982218,
+     "classe": "C"
+    },
+    {
+     "n": 78,
+     "item": "Dose Amarula 50Ml",
+     "qtd": 10,
+     "preco": 54.45,
+     "total": 544.5,
+     "pct": 0.001335,
+     "acum": 0.983553,
+     "classe": "C"
+    },
+    {
+     "n": 79,
+     "item": "Drink Boldro",
+     "qtd": 11,
+     "preco": 48.55,
+     "total": 534.1,
+     "pct": 0.001309,
+     "acum": 0.984862,
+     "classe": "C"
+    },
+    {
+     "n": 80,
+     "item": "Guarana Antarctica 350Ml",
+     "qtd": 50,
+     "preco": 10.33,
+     "total": 516.48,
+     "pct": 0.001266,
+     "acum": 0.986128,
+     "classe": "C"
+    },
+    {
+     "n": 81,
+     "item": "Agua Tonica Antarctica",
+     "qtd": 34,
+     "preco": 14.69,
+     "total": 499.34,
+     "pct": 0.001224,
+     "acum": 0.987352,
+     "classe": "C"
+    },
+    {
+     "n": 82,
+     "item": "Dose Ciroc 50Ml",
+     "qtd": 10,
+     "preco": 49.55,
+     "total": 495.55,
+     "pct": 0.001215,
+     "acum": 0.988567,
+     "classe": "C"
+    },
+    {
+     "n": 83,
+     "item": "Nosso Caju Amigo (Ypioca",
+     "qtd": 7,
+     "preco": 69.0,
+     "total": 483.0,
+     "pct": 0.001184,
+     "acum": 0.989751,
+     "classe": "C"
+    },
+    {
+     "n": 84,
+     "item": "Suco Especial De Fruta",
+     "qtd": 18,
+     "preco": 24.92,
+     "total": 448.56,
+     "pct": 0.0011,
+     "acum": 0.990851,
+     "classe": "C"
+    },
+    {
+     "n": 85,
+     "item": "Tto Vista Calma Res",
+     "qtd": 2,
+     "preco": 203.57,
+     "total": 407.15,
+     "pct": 0.000998,
+     "acum": 0.991849,
+     "classe": "C"
+    },
+    {
+     "n": 86,
+     "item": "Dose Old Parr 50Ml",
+     "qtd": 6,
+     "preco": 65.0,
+     "total": 390.0,
+     "pct": 0.000956,
+     "acum": 0.992805,
+     "classe": "C"
+    },
+    {
+     "n": 87,
+     "item": "Suco Coral",
+     "qtd": 14,
+     "preco": 22.85,
+     "total": 319.91,
+     "pct": 0.000784,
+     "acum": 0.99359,
+     "classe": "C"
+    },
+    {
+     "n": 88,
+     "item": "Dose Seleta Gold 50Ml",
+     "qtd": 7,
+     "preco": 45.0,
+     "total": 315.0,
+     "pct": 0.000772,
+     "acum": 0.994362,
+     "classe": "C"
+    },
+    {
+     "n": 89,
+     "item": "Gin Com Tanqueray",
+     "qtd": 3,
+     "preco": 89.0,
+     "total": 267.0,
+     "pct": 0.000655,
+     "acum": 0.995016,
+     "classe": "C"
+    },
+    {
+     "n": 90,
+     "item": "Soda Limonada 350Ml",
+     "qtd": 36,
+     "preco": 7.24,
+     "total": 260.52,
+     "pct": 0.000639,
+     "acum": 0.995655,
+     "classe": "C"
+    },
+    {
+     "n": 91,
+     "item": "Pepsi 350Ml",
+     "qtd": 22,
+     "preco": 9.77,
+     "total": 214.92,
+     "pct": 0.000527,
+     "acum": 0.996182,
+     "classe": "C"
+    },
+    {
+     "n": 92,
+     "item": "Dose Germana Palha 50Ml",
+     "qtd": 5,
+     "preco": 42.3,
+     "total": 211.5,
+     "pct": 0.000519,
+     "acum": 0.9967,
+     "classe": "C"
+    },
+    {
+     "n": 93,
+     "item": "Dose Red Label 50Ml",
+     "qtd": 5,
+     "preco": 41.89,
+     "total": 209.44,
+     "pct": 0.000513,
+     "acum": 0.997214,
+     "classe": "C"
+    },
+    {
+     "n": 94,
+     "item": "Pepsi Black 350Ml",
+     "qtd": 20,
+     "preco": 9.02,
+     "total": 180.48,
+     "pct": 0.000442,
+     "acum": 0.997656,
+     "classe": "C"
+    },
+    {
+     "n": 95,
+     "item": "Dose Tanqueray Ten 50Ml",
+     "qtd": 2,
+     "preco": 65.0,
+     "total": 130.0,
+     "pct": 0.000319,
+     "acum": 0.997975,
+     "classe": "C"
+    },
+    {
+     "n": 96,
+     "item": "Dose Hendricks 50Ml",
+     "qtd": 2,
+     "preco": 65.0,
+     "total": 130.0,
+     "pct": 0.000319,
+     "acum": 0.998294,
+     "classe": "C"
+    },
+    {
+     "n": 97,
+     "item": "Tto Familia Viu Res",
+     "qtd": 1,
+     "preco": 130.0,
+     "total": 130.0,
+     "pct": 0.000319,
+     "acum": 0.998612,
+     "classe": "C"
+    },
+    {
+     "n": 98,
+     "item": "Dose Hennessy",
+     "qtd": 1,
+     "preco": 95.0,
+     "total": 95.0,
+     "pct": 0.000233,
+     "acum": 0.998845,
+     "classe": "C"
+    },
+    {
+     "n": 99,
+     "item": "Dose Beefeater 50Ml",
+     "qtd": 2,
+     "preco": 45.0,
+     "total": 90.0,
+     "pct": 0.000221,
+     "acum": 0.999066,
+     "classe": "C"
+    },
+    {
+     "n": 100,
+     "item": "Dose Amaretto 50Ml",
+     "qtd": 2,
+     "preco": 38.5,
+     "total": 77.0,
+     "pct": 0.000189,
+     "acum": 0.999255,
+     "classe": "C"
+    },
+    {
+     "n": 101,
+     "item": "Dose Bulleit 50Ml",
+     "qtd": 1,
+     "preco": 58.5,
+     "total": 58.5,
+     "pct": 0.000143,
+     "acum": 0.999398,
+     "classe": "C"
+    },
+    {
+     "n": 102,
+     "item": "Dose Peachtree 50Ml",
+     "qtd": 1,
+     "preco": 56.0,
+     "total": 56.0,
+     "pct": 0.000137,
+     "acum": 0.999535,
+     "classe": "C"
+    },
+    {
+     "n": 103,
+     "item": "Dose Pitu Gold 50Ml",
+     "qtd": 10,
+     "preco": 4.91,
+     "total": 49.05,
+     "pct": 0.00012,
+     "acum": 0.999656,
+     "classe": "C"
+    },
+    {
+     "n": 104,
+     "item": "Mate De Casa",
+     "qtd": 1,
+     "preco": 49.0,
+     "total": 49.0,
+     "pct": 0.00012,
+     "acum": 0.999776,
+     "classe": "C"
+    },
+    {
+     "n": 105,
+     "item": "Sukita Laranja 350Ml",
+     "qtd": 10,
+     "preco": 4.82,
+     "total": 48.24,
+     "pct": 0.000118,
+     "acum": 0.999894,
+     "classe": "C"
+    },
+    {
+     "n": 106,
+     "item": "Ypioca Branca Dose",
+     "qtd": 3,
+     "preco": 14.4,
+     "total": 43.2,
+     "pct": 0.000106,
+     "acum": 1.0,
+     "classe": "C"
+    }
+   ]
+  },
+  "Taxa de rolha": {
+   "receita": 4439.74,
+   "itens": 1,
+   "A": {
+    "itens": 1,
+    "valor": 4439.74,
+    "pct": 1.0
+   },
+   "B": {
+    "itens": 0,
+    "valor": 0.0,
+    "pct": 0.0
+   },
+   "C": {
+    "itens": 0,
+    "valor": 0.0,
+    "pct": 0.0
+   },
+   "itens_lista": [
+    {
+     "n": 1,
+     "item": "Taxa De Rolha",
+     "qtd": 35,
+     "preco": 126.85,
+     "total": 4439.74,
+     "pct": 1.0,
+     "acum": 1.0,
+     "classe": "A"
+    }
+   ]
+  }
+ },
+ "horario": [
+  {
+   "data": "01/09",
+   "antes": 145.01,
+   "dia": 12951.0,
+   "final": 1738.0,
+   "pct_dia": 0.87,
+   "pct_final": 0.12
+  },
+  {
+   "data": "02/09",
+   "antes": 629.01,
+   "dia": 9216.0,
+   "final": 3127.0,
+   "pct_dia": 0.71,
+   "pct_final": 0.24
+  },
+  {
+   "data": "03/09",
+   "antes": 0.01,
+   "dia": 9463.01,
+   "final": 5905.0,
+   "pct_dia": 0.62,
+   "pct_final": 0.38
+  },
+  {
+   "data": "04/09",
+   "antes": 0.01,
+   "dia": 12960.0,
+   "final": 2219.0,
+   "pct_dia": 0.85,
+   "pct_final": 0.15
+  },
+  {
+   "data": "05/09",
+   "antes": 24.01,
+   "dia": 30790.0,
+   "final": 8665.0,
+   "pct_dia": 0.78,
+   "pct_final": 0.22
+  },
+  {
+   "data": "06/09",
+   "antes": 0.01,
+   "dia": 35970.0,
+   "final": 14014.0,
+   "pct_dia": 0.72,
+   "pct_final": 0.28
+  },
+  {
+   "data": "07/09",
+   "antes": 46.02,
+   "dia": 28124.0,
+   "final": 11044.0,
+   "pct_dia": 0.72,
+   "pct_final": 0.28
+  },
+  {
+   "data": "08/09",
+   "antes": 0.01,
+   "dia": 18073.0,
+   "final": 8220.0,
+   "pct_dia": 0.69,
+   "pct_final": 0.31
+  },
+  {
+   "data": "09/09",
+   "antes": 207.01,
+   "dia": 16560.0,
+   "final": 9132.0,
+   "pct_dia": 0.64,
+   "pct_final": 0.35
+  },
+  {
+   "data": "10/09",
+   "antes": 0.03,
+   "dia": 32340.03,
+   "final": 7277.0,
+   "pct_dia": 0.82,
+   "pct_final": 0.18
+  },
+  {
+   "data": "11/09",
+   "antes": 163.02,
+   "dia": 26477.0,
+   "final": 9360.0,
+   "pct_dia": 0.74,
+   "pct_final": 0.26
+  },
+  {
+   "data": "12/09",
+   "antes": 71.0,
+   "dia": 17658.0,
+   "final": 9299.0,
+   "pct_dia": 0.65,
+   "pct_final": 0.34
+  },
+  {
+   "data": "13/09",
+   "antes": 82.01,
+   "dia": 14645.0,
+   "final": 10047.0,
+   "pct_dia": 0.59,
+   "pct_final": 0.41
+  },
+  {
+   "data": "14/09",
+   "antes": 355.01,
+   "dia": 10923.0,
+   "final": 5879.0,
+   "pct_dia": 0.64,
+   "pct_final": 0.34
+  },
+  {
+   "data": "15/09",
+   "antes": 386.01,
+   "dia": 7691.0,
+   "final": 10920.0,
+   "pct_dia": 0.4,
+   "pct_final": 0.57
+  },
+  {
+   "data": "16/09",
+   "antes": 370.01,
+   "dia": 20980.0,
+   "final": 10748.0,
+   "pct_dia": 0.65,
+   "pct_final": 0.33
+  },
+  {
+   "data": "17/09",
+   "antes": 12.01,
+   "dia": 15764.0,
+   "final": 26614.01,
+   "pct_dia": 0.37,
+   "pct_final": 0.63
+  },
+  {
+   "data": "18/09",
+   "antes": 116.01,
+   "dia": 15235.0,
+   "final": 8471.0,
+   "pct_dia": 0.64,
+   "pct_final": 0.36
+  },
+  {
+   "data": "19/09",
+   "antes": 138.01,
+   "dia": 39348.0,
+   "final": 32188.0,
+   "pct_dia": 0.55,
+   "pct_final": 0.45
+  },
+  {
+   "data": "20/09",
+   "antes": 0.01,
+   "dia": 23999.0,
+   "final": 22231.0,
+   "pct_dia": 0.52,
+   "pct_final": 0.48
+  },
+  {
+   "data": "21/09",
+   "antes": 369.01,
+   "dia": 33448.0,
+   "final": 7479.0,
+   "pct_dia": 0.81,
+   "pct_final": 0.18
+  },
+  {
+   "data": "22/09",
+   "antes": 749.01,
+   "dia": 26310.0,
+   "final": 10303.0,
+   "pct_dia": 0.7,
+   "pct_final": 0.28
+  },
+  {
+   "data": "23/09",
+   "antes": 0.0,
+   "dia": 44333.01,
+   "final": 6493.0,
+   "pct_dia": 0.87,
+   "pct_final": 0.13
+  },
+  {
+   "data": "24/09",
+   "antes": 50.01,
+   "dia": 30462.0,
+   "final": 11631.0,
+   "pct_dia": 0.72,
+   "pct_final": 0.28
+  },
+  {
+   "data": "25/09",
+   "antes": 356.01,
+   "dia": 20996.0,
+   "final": 4251.0,
+   "pct_dia": 0.82,
+   "pct_final": 0.17
+  },
+  {
+   "data": "26/09",
+   "antes": 531.01,
+   "dia": 15154.0,
+   "final": 5319.02,
+   "pct_dia": 0.72,
+   "pct_final": 0.25
+  },
+  {
+   "data": "27/09",
+   "antes": 636.01,
+   "dia": 29145.0,
+   "final": 15727.0,
+   "pct_dia": 0.64,
+   "pct_final": 0.35
+  },
+  {
+   "data": "28/09",
+   "antes": 0.01,
+   "dia": 14777.0,
+   "final": 7364.0,
+   "pct_dia": 0.67,
+   "pct_final": 0.33
+  },
+  {
+   "data": "29/09",
+   "antes": 602.01,
+   "dia": 10748.0,
+   "final": 5528.0,
+   "pct_dia": 0.64,
+   "pct_final": 0.33
+  }
+ ],
+ "media_diaria": 34931.63,
+ "ticket": 680.49,
+ "fonte_abc": "Extração bruta do 3LM — \"Vendas Por Funcionário (Backup)\", a mesma fonte da DRE"
+}

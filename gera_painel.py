@@ -774,18 +774,19 @@ function vendasBloco(){
      '<td class="av">'+(100*x.A.pct).toFixed(1).replace('.',',')+'%</td>'+
      '<td class="num">'+brl(x.B.valor)+'</td><td class="num">'+brl(x.C.valor)+'</td></tr>';
  });
- hm+='<tr class="dfcs"><td class="l">Venda de produtos</td><td class="num">'+brl(tr)+'</td>'+
+ hm+='<tr class="dfcs"><td class="l">Venda de cardápio</td><td class="num">'+brl(tr)+'</td>'+
     '<td class="av"><b>100,0%</b></td>'+
     '<td class="av"></td><td class="num"></td><td class="av"></td><td class="num"></td><td class="num"></td></tr>';
  hm+='</tbody></table>';
  hm+='<p class="repnote"><b>A coluna "% da venda" é a fatia de cada tipo na venda de '+
-    'produtos</b> — é o mix do cardápio. A curva ABC de cada categoria, essa sim, é calculada '+
+    'cardápio</b> — é o mix do menu. A curva ABC de cada categoria, essa sim, é calculada '+
     'sobre a receita daquela categoria: classe A vai até 80% do faturamento do grupo, B de 80% '+
     'a 95%, C os 5% finais. Clique na categoria para abrir os itens. '+
-    '<b>Esta tabela sai do relatório de vendas montado pela diretoria</b> ('+brl(V.recebido)+
-    '), não da extração bruta do 3LM que alimenta a DRE ('+
-    brl(soma('boldro','comp',V.mes,['FAT']))+') — por isso o total não bate com a receita '+
-    'bruta do mês. A diferença está decomposta na seção de auditoria.</p>';
+    '<b>Sai da mesma extração do 3LM que alimenta a DRE</b>, por isso o total desta curva '+
+    'é exatamente a <b>venda de cardápio</b> da composição ('+brl(tr)+') — a venda bruta '+
+    'do mês menos a taxa de serviço. A classificação por tipo não existe no 3LM: vem do '+
+    'relatório da diretoria item a item, do prefixo da própria carta nas bebidas, e de '+
+    'decisão da diretoria nos oito itens restantes.</p>';
  hm+=pgtoTabela()+horarioTabela();
  mix.innerHTML=hm;
 }
@@ -804,7 +805,7 @@ function pgtoTabela(){
  h+='<tr class="dfcs"><td class="l">Total</td><td class="num">'+brl(F.total)+
   '</td><td class="av">100,0%</td></tr></tbody></table>'+
   '<p class="repnote">Venda a venda do Extrato de Vendas Detalhado da GetNet, mais o dinheiro do fundo fixo. '+
-  'O total fecha com a venda bruta do mês a menos do ajuste de medição do 3LM.</p>';
+  'O total fecha com a <b>venda bruta</b> a menos do ajuste de medição do 3LM.</p>';
  return h;
 }
 
@@ -979,7 +980,7 @@ function custoReceber(){
    '<td class="num">'+mv(x.bruto)+'</td><td class="num">'+mv(x.ticket)+'</td>'+
    '<td class="num neg">'+mv(-x.taxa)+'</td><td class="num avtot">'+txPc(x.pc)+'</td></tr>';
  });
- h+='<tr class="ebit"><td class="l">Total no cartão</td><td class="num">'+
+ h+='<tr class="ebit"><td class="l">Recebido em cartão</td><td class="num">'+
   (c.n||0).toLocaleString('pt-BR')+'</td><td class="num">'+mv(c.bruto||0)+
   '</td><td class="num">'+mv(c.n?(c.bruto/c.n):0)+'</td><td class="num">'+
   mv(-(c.taxa||0))+'</td><td class="num avtot">'+txPc(c.pc||0)+'</td></tr>';
@@ -1122,8 +1123,19 @@ function origemDe(cat){
  return '';
 }
 function fechaCaixa(){document.getElementById('cx-fundo').classList.remove('on')}
+var AV_SAIDAS=false;
+/* total de saidas do mes, somando as empresas da visao: e o denominador do
+   "% do gasto" no DFC. Sai dos saldos, que e o mesmo numero da ponte. */
+function saidasMes(m){
+ var ents=(ENT==='consol')?['boldro','yo']:[ENT], v=0;
+ ents.forEach(function(e){var s=((D.ents[e]||{}).saldos||{})[m]; if(s)v+=s.saidas||0});
+ return v;
+}
 function linhaMat(rot,vals,bases,cls,chave,nivel,abreCk,abreReg){
  var t=vals.reduce(function(a,b){return a+b},0);
+ /* percentual de gasto so faz sentido em linha de gasto: entrada e saldo
+    ficam sem o numero, em vez de mostrar 170% das saidas. */
+ if(AV_SAIDAS&&t>=0)bases=null;
  var tb=bases?bases.reduce(function(a,b){return a+b},0):0;
  var o='<tr class="'+(cls||'')+'"'+(chave?' onclick="tog(\''+chave+'\')"':'')+'>'+
    '<td class="l n'+(nivel||0)+'">'+(chave?cv(chave):'')+rot+'</td>';
@@ -1189,7 +1201,8 @@ function matriz(reg){
  MS.forEach(function(m){bl[m]=bloco(ENT,reg,m)});
  /* a analise vertical e sobre a receita bruta DO MES, nao do periodo */
  var base=MS.map(function(m){return Math.abs(
-   (reg==='comp'?soma(ENT,reg,m,['FAT']):(bl[m].grupos['1']||0)))||0});
+   (reg==='comp'?soma(ENT,reg,m,['FAT']):saidasMes(m)))||0});
+ AV_SAIDAS=(reg==='caixa');
  /* sem receita bruta no mes (a YO nao fatura) nao existe analise vertical: a
     base cairia na soma dos grupos negativos, capex incluido, e a coluna
     continuaria rotulada "AV %". Percentual sobre base inventada e pior que
@@ -1278,7 +1291,8 @@ function pintaRelatorios(){
   var th='<th class="l">'+(t==='fc'?'Fluxo de caixa':'Categoria')+'</th>';
   mesesDe(t==='fc'?'caixa':'comp').forEach(function(m){th+='<th>'+D.meses_nome[m]+'</th>'});
   var semAv=(t==='dre')&&!mesesDe('comp').some(function(m){return soma(ENT,'comp',m,['FAT'])});
-  h.innerHTML=th+'<th>Total</th><th class="av">'+(semAv?'—':'AV %')+'</th>';
+  h.innerHTML=th+'<th>Total</th><th class="av">'+
+    (t==='fc'?'% saídas':(semAv?'—':'AV %'))+'</th>';
  });
  var fc=document.getElementById('fcbody'); if(fc)fc.innerHTML=matriz('caixa');
  var dr=document.getElementById('drebody'); if(dr)dr.innerHTML=matriz('comp');
@@ -1510,17 +1524,19 @@ function receita(){
   }else if(R.grupos){
    R.grupos.forEach(function(g,i){h+=l(i?'+':'',g[0],g[1],'grupo do cardápio no 3LM')});
   }
-  h+=l('=','<b>Venda bruta do mês</b>',R.recebido,
+  h+=l('=','<b>Venda bruta</b>',R.recebido,
    R.fonte_3lm==='3LM'?'extração bruta do 3LM — '+(R.itens?R.itens.toLocaleString('pt-BR')+' itens, ':'')+
    'líquido de desconto':'reconstruído: GetNet por data da venda + dinheiro do fundo fixo','res');
   if(R.servico&&R.produtos)
-   h+=l('','&nbsp;&nbsp;<i>memo:</i> produtos vendidos (A&amp;B, couvert e rolha)',R.produtos,
-        'a taxa de serviço é '+R.servico_pc.toFixed(2).replace('.',',')+'% sobre eles','memo');
+   h+=l('','&nbsp;&nbsp;<i>memo:</i> <b>Venda de cardápio</b> — venda bruta menos taxa de serviço',
+        R.produtos,
+        'A&amp;B, couvert e rolha. A taxa de serviço é '+
+        R.servico_pc.toFixed(2).replace('.',',')+'% sobre esta base','memo');
   if(R.desconto)
    h+=l('','&nbsp;&nbsp;<i>memo:</i> desconto concedido no salão',-R.desconto,
         'já deduzido das linhas acima — não é dedução da DRE','memo');
   if(R.declarada!==null&&R.declarada!==undefined){
-   h+=l('','&nbsp;&nbsp;<i>memo:</i> receita declarada ao fisco',R.declarada,
+   h+=l('','&nbsp;&nbsp;<i>memo:</i> <b>Receita declarada</b> — base das guias do mês',R.declarada,
     'base deduzida de PIS a 0,65% e COFINS a 3,00% — '+pc(R.declarada,R.recebido)+
     ' do que o salão vendeu','memo');
   }
@@ -1631,16 +1647,31 @@ function pdocBuild(){
         'Resultado por competência, pela data de emissão dos documentos');
  bloco('A nota da DRE','O que o número do CMV mostra, e o que a casa comprou',
        [vz('#dre-ajustes')]);
+ /* o DFC do PDF sai com TODAS as saidas abertas, conta a conta. Reusa o
+    proprio renderizador em vez de montar outra tabela — duas tabelas com a
+    mesma funcao divergem na primeira mudanca. */
+ var _ab=ABERTO; ABERTO={};
+ Object.keys(_ab).forEach(function(k){ABERTO[k]=_ab[k]});
+ BLOCOS_DFC.forEach(function(B,bi){
+  if('§=+*'.indexOf(B[0].charAt(0))>=0)return;
+  ABERTO['caixa|b'+bi]=1;
+  B[1].forEach(function(g){ABERTO['caixa|b'+bi+'|g'+g]=1});
+ });
+ var _fc=document.getElementById('fcbody');
+ if(_fc)_fc.innerHTML=matriz('caixa');
  tabela(document.querySelector('#rep-fc table'),'Fluxo de caixa por categoria',
-        'Movimentação bancária conferida conta a conta contra os extratos');
+        'Todas as saídas abertas conta a conta · % sobre o total de saídas do mês');
+ ABERTO=_ab; if(_fc)_fc.innerHTML=matriz('caixa');
  bloco('Composição das saídas','Todas as saídas do período, agrupadas',[cl('.pz-grid')]);
  bloco('Onde vai cada real vendido','Insumo, equipe, casa e atrações',
        [vz('#op-kpis'),vz('#op-mix')]);
  bloco('Quando a casa vende','Venda por dia da semana e por turno',[vz('#v-dia'),vz('#v-mix')]);
  bloco('Custo de receber','Taxa por bandeira, venda a venda, e a antecipação',
        [vz('#tx-kpis'),vz('#tx-tab')]);
- bloco('Composição da venda','O que foi vendido e como o cliente pagou',
-       [vz('#vendas'),vz('#rec-cruz')]);
+ /* volta ao PDF em 09/11/2026 sem o #rec-cruz: o Tiago queria fora a
+    divergencia entre relatorios, nao a composicao — e com a ABC unificada a
+    divergencia nem existe mais. O relatorio vai a investidores. */
+ bloco('Composição da venda','O que foi vendido e como o cliente pagou',[vz('#vendas')]);
  bloco('Ressalvas','O que o número não diz sozinho',[cl('.disc')]);
 
  /* trava: bloco que ainda passar da pagina reduz ate caber, em vez de cortar */
@@ -1747,6 +1778,25 @@ def ressalva():
     def pct(v, b):
         return ('%.1f%%' % (v / b * 100)).replace('.', ',') if b else '—'
 
+    # o que o painel ignorou da base, e por que. Sem isso quem conferir a DRE
+    # do Omie contra este relatorio acha um buraco de R$ 12 mil sem explicacao.
+    ig = D.get('ignorado') or {}
+    bloco_dup = ''
+    # DESLIGADO por decisao do Joao em 09/11/2026 — ver comentario acima.
+    # Trocar para `if ig.get('n'):` devolve o paragrafo.
+    if False and ig.get('n'):
+        bloco_dup = (
+            '<b>Este relat&oacute;rio ignora %d t&iacute;tulos de R$ %s que est&atilde;o na base e s&atilde;o '
+            'duplicidade.</b> Em 09/11/2026 a taxa de cart&atilde;o de agosto e setembro foi '
+            'relan&ccedil;ada venda a venda na conta "Taxa de cart&atilde;o cr&eacute;dito" (2.05.99), '
+            'sendo que o mesmo custo j&aacute; estava lan&ccedil;ado desde 15/10 na conta "Taxas de '
+            'cart&atilde;o" (2.02.01), de forma consolidada — R$ 2.009,99 em agosto e '
+            'R$ 10.451,57 em setembro. Mantivemos o lan&ccedil;amento original e desprezamos o '
+            'novo. <b>A DRE do Omie vai mostrar esse custo em dobro at&eacute; o CSC excluir '
+            'uma das duas s&eacute;ries</b>; outubro e novembro n&atilde;o t&ecirc;m duplicidade, porque '
+            'n&atilde;o havia lan&ccedil;amento anterior. '
+            % (ig['n'], brlpt(ig['valor']).replace('R$ ', '')))
+
     MESES = [m for m in D['meses'] if m not in (D.get('sem_dre') or [])]
     ult = MESES[-1]
     fat = soma(ult, ['FAT'])
@@ -1851,13 +1901,11 @@ def ressalva():
         'R$ -311,14 para %s; o lucro l&iacute;quido de setembro saiu de R$ -7.813,62 para %s. '
         'Quem guardou o relat&oacute;rio de 06/11 vai encontrar essa diferen&ccedil;a, e ela &eacute; a soma '
         'das linhas acima. '
-        'Or&ccedil;ado &times; realizado e ponto de equil&iacute;brio foram retirados em 03/11/2026 por n&atilde;o '
-        'se sustentarem: o or&ccedil;amento n&atilde;o separa Y&oacute; de Boldr&oacute; e a margem de '
-        'contribui&ccedil;&atilde;o depende de uma receita bruta que a base ainda n&atilde;o tem. '
+        '%s'
         'Dados lidos da API do Omie em %s.'
         % (rec, dias_ago, bloco_cmv, bloco_ir, bloco_out,
            brlpt(soma(MESES[0], EB)), brlpt(soma(ult, EB)),
-           brlpt(soma(ult, EB + ['10', 'IR'])), D['gerado']))
+           brlpt(soma(ult, EB + ['10', 'IR'])), bloco_dup, D['gerado']))
 
 
 SEC_REL = """<section id="relatorios"><div class="wrap">
