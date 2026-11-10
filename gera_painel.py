@@ -1420,40 +1420,49 @@ function pintaRelatorios(){
  if(er.length&&window.console)console.error('auditoria da tabela:',er);
 }
 
-/* 10/11/2026: o Tiago perguntou duas vezes por que 'Limpeza e descartaveis'
-   pesa em setembro — "material comprado pra durar 3 meses, por que lancar tudo
-   num mes?". A nota responde com o numero, na mesma tela da DRE.
-   Ela NAO afirma que o painel reconhece pelo uso, porque ele nao reconhece:
-   a linha e compra pela data da nota. Dizer o contrario seria descrever um
-   metodo que o painel nao aplica. O que a nota faz e separar, dentro do mes,
-   o que e compra parcelada do que e consumo do mes, e apontar o fluxo de
-   caixa, que ja responde "quanto saiu do banco". */
+/* 10/11/2026, decisao do Joao depois de duas reclamacoes do Tiago sobre o peso
+   de setembro: "considera limpeza pelo pagamento, insumo deixa como ta".
+   Esta linha passou a ser a UNICA da DRE medida pelo pagamento. Eu levantei a
+   objecao — misturar criterio na mesma demonstracao faz a linha depender do
+   prazo do fornecedor — e ele decidiu assim; entao a excecao vai DECLARADA na
+   tela, com o que a casa comprou ao lado do que pagou. O painel pode divergir
+   do criterio geral, mas nunca em silencio. */
 function notaLimpeza(){
- var LP=(D.ajustes||{}).limpeza; if(!LP||ENT==='yo')return '';
- var MS=mesesDe('comp').filter(function(m){return LP[m]&&LP[m].parcelado});
+ var AJ=D.ajustes||{}, PP=(AJ.por_pagamento||{})['5|Limpeza e descartáveis'];
+ if(!PP||ENT==='yo')return '';
+ var LP=AJ.limpeza||{}, MS=mesesDe('comp').filter(function(m){return PP[m]});
  if(!MS.length)return '';
- var p='';
- MS.forEach(function(m){
-  /* os dois vem negativos: pc() devolve '—' com base negativa, e era o que
-     saia na tela. O percentual se calcula no modulo. */
-  var x=LP[m], pct=pc(Math.abs(x.parcelado),Math.abs(x.compra)||1);
-  p+='<b>'+brl(-x.parcelado)+'</b> dos '+brl(-x.compra)+' de '+D.meses_nome[m]+
-     ' ('+pct+') são '+x.n_parc+' parcelas de '+x.notas.length+' notas: '+
-     x.notas.map(function(nt){
-      return '<b>'+nt[1].quem.split(' ')[0]+'</b> '+brl(-nt[1].valor)+
-       (nt[1].venc.length?' (vence '+nt[1].venc.join(', ')+')':'')}).join(' e ')+
-     '. ';
- });
- p+='Esse material foi comprado '+(MS.length>1?'nesses meses':'em '+D.meses_nome[MS[0]])+
-  ' e é consumido ao longo dos meses '+
-  'seguintes — a linha mede a <b>compra pela data da nota</b>, não o consumo. '+
-  'O que saiu do banco está no <b>Fluxo de caixa</b>: '+
-  mesesDe('caixa').filter(function(m){return LP[m]}).map(function(m){
-   return D.meses_nome[m]+' '+brl(-LP[m].caixa)}).join(' · ')+
-  '. Para a linha passar a medir uso, a operação precisa informar a duração '+
-  'estimada de cada compra — e a regra valeria para todo insumo, não só limpeza.';
- return '<div class="aviso nota"><h4>Limpeza e descartáveis: o mês concentra a '+
-  '<span class="light">compra, não o uso</span></h4><p>'+p+'</p></div>';
+ var lista=function(f){return MS.map(function(m){
+   return D.meses_nome[m]+' <b>'+brl(f(m))+'</b>'}).join(' · ')};
+ var comprou=0, pagou=0;
+ MS.forEach(function(m){comprou+=-PP[m].compra; pagou+=-PP[m].pago});
+ var p='Decisão de 10/11/2026. <b>Todas as outras linhas desta DRE são '+
+  'competência</b> — a data de emissão do documento. Nesta, a linha mostra o '+
+  'que saiu do banco no mês: '+lista(function(m){return -PP[m].pago})+
+  '. O que a casa <b>comprou</b> foi '+lista(function(m){return -PP[m].compra})+'. ';
+ var cp=MS.filter(function(m){return (LP[m]||{}).parcelado});
+ if(cp.length)p+=cp.map(function(m){var x=LP[m];
+   return D.meses_nome[m]+' concentrava <b>'+brl(-x.parcelado)+'</b> em '+x.n_parc+
+    ' parcelas de '+x.notas.length+' notas ('+x.notas.map(function(nt){
+      return nt[1].quem.split(' ')[0]+', vence '+nt[1].venc.join(', ')}).join('; ')+')'
+   }).join('; ')+'. ';
+ /* a soma e dos meses QUE A DRE MOSTRA. Outubro esta fora da DRE, e era ele
+    que pagava quase todo o atraso: sem esta ressalva a frase dizia "R$ 23.568
+    a menos" e fazia o buraco parecer o triplo do que e. */
+ var dif=Math.round((comprou-pagou)*100)/100;
+ if(Math.abs(dif)>=0.01){
+  p+='Somando só '+(MS.length>1?'os meses acima':D.meses_nome[MS[0]])+', a linha mostra <b>'+
+   brl(Math.abs(dif))+(dif>0?' a menos':' a mais')+'</b> do que a casa comprou';
+  var fora=Object.keys(PP).filter(function(m){return MS.indexOf(m)<0&&PP[m].pago})
+             .sort();
+  p+=fora.length
+   ? ' — o grosso disso foi pago em '+fora.map(function(m){
+       return D.meses_nome[m]+' (<b>'+brl(-PP[m].pago)+'</b>)'}).join(' e ')+
+     ', que está no Fluxo de caixa mas fora desta DRE.'
+   : ', porque o resto é pago depois.';
+ }
+ return '<div class="aviso nota"><h4>Limpeza e descartáveis é a única linha '+
+  'medida <span class="light">pelo pagamento</span></h4><p>'+p+'</p></div>';
 }
 
 function auditaTabela(reg){

@@ -1,5 +1,5 @@
 {
- "gerado": "10/11/2026 às 12:23",
+ "gerado": "10/11/2026 às 13:25",
  "meses": [
   "2026-08",
   "2026-09",
@@ -422,6 +422,22 @@
     "n_parc": 0,
     "caixa": -22691.75,
     "notas": []
+   }
+  },
+  "por_pagamento": {
+   "5|Limpeza e descartáveis": {
+    "2026-08": {
+     "compra": -2458.46,
+     "pago": -394.0
+    },
+    "2026-09": {
+     "compra": -24452.38,
+     "pago": -2948.46
+    },
+    "2026-10": {
+     "compra": -9100.79,
+     "pago": -22691.75
+    }
    }
   }
  },
@@ -6772,7 +6788,7 @@
       "NEUTRO": 9.17,
       "6": -36762.05,
       "4": -53971.01000000001,
-      "5": -11656.46,
+      "5": -9592.0,
       "11": -30105.180000000004,
       "8": -24276.380000000005,
       "14": -2385.0,
@@ -6794,7 +6810,7 @@
       "6|Diarista (OIA)": -8933.14,
       "8|Sistemas": -1594.1999999999998,
       "14|Cachê de artistas e atrações": -2385.0,
-      "5|Limpeza e descartáveis": -2458.46,
+      "5|Limpeza e descartáveis": -394.0,
       "4|Bebidas alcoólicas": -112891.80000000002,
       "9|Outros de marketing": -2000.0,
       "4|Proteínas (carnes e frutos do mar)": -37443.97000000001,
@@ -6838,7 +6854,7 @@
       "6|Diarista (OIA)": 27,
       "8|Sistemas": 3,
       "14|Cachê de artistas e atrações": 2,
-      "5|Limpeza e descartáveis": 2,
+      "5|Limpeza e descartáveis": 1,
       "4|Bebidas alcoólicas": 19,
       "9|Outros de marketing": 1,
       "4|Proteínas (carnes e frutos do mar)": 14,
@@ -8505,17 +8521,6 @@
        "001/001"
       ],
       [
-       "5|Limpeza e descartáveis",
-       "25/08/2026",
-       -394,
-       "CORTEPEL COMERCIO DE PAPEIS E MATERIAIS GRAFIC",
-       "FALTA NF",
-       "",
-       "",
-       "25/08/2026",
-       "001/001"
-      ],
-      [
        "11|Investimentos diversos",
        "25/08/2026",
        -7500,
@@ -9492,17 +9497,6 @@
        "",
        "",
        "10/09/2026",
-       "001/001"
-      ],
-      [
-       "5|Limpeza e descartáveis",
-       "27/08/2026",
-       -2064.46,
-       "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
-       "NF028413",
-       "",
-       "",
-       "11/09/2026",
        "001/001"
       ],
       [
@@ -10888,6 +10882,17 @@
        "16.96% do total"
       ],
       [
+       "5|Limpeza e descartáveis",
+       "25/08/2026",
+       -394,
+       "CORTEPEL",
+       "FALTA NF",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
        "4|Ajuste de CMV para 33% da receita",
        "31/08/2026",
        220953.86,
@@ -10931,7 +10936,7 @@
       "11": -89722.65,
       "9": -7500.0,
       "6": -226094.4500000001,
-      "5": -55974.630000000005,
+      "5": -34470.71000000001,
       "4": -349464.80999999994,
       "14": -23215.83,
       "CC": -3466.67,
@@ -10962,7 +10967,7 @@
       "4|Hortifrúti": -19542.13,
       "4|Secos e mercearia": -78539.91000000002,
       "11|Obras e reformas": -3500.0,
-      "5|Limpeza e descartáveis": -24452.380000000005,
+      "5|Limpeza e descartáveis": -2948.46,
       "8|Tarifas bancárias": -782.2500000000001,
       "6|Remuneração PJ": -35933.34,
       "4|Bebidas alcoólicas": -197990.36000000002,
@@ -11023,7 +11028,7 @@
       "4|Hortifrúti": 17,
       "4|Secos e mercearia": 34,
       "11|Obras e reformas": 2,
-      "5|Limpeza e descartáveis": 12,
+      "5|Limpeza e descartáveis": 3,
       "8|Tarifas bancárias": 25,
       "6|Remuneração PJ": 7,
       "4|Bebidas alcoólicas": 37,
@@ -21356,17 +21361,6 @@
        "001/001"
       ],
       [
-       "5|Limpeza e descartáveis",
-       "04/09/2026",
-       -452,
-       "NOMU BISTRO RESTAURANTE LTDA",
-       "SEM NF",
-       "",
-       "",
-       "04/09/2026",
-       "001/001"
-      ],
-      [
        "4|Proteínas (carnes e frutos do mar)",
        "01/09/2026",
        -4920,
@@ -23798,17 +23792,6 @@
        "001/001"
       ],
       [
-       "5|Limpeza e descartáveis",
-       "26/09/2026",
-       -432,
-       "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
-       "NF 028841",
-       "",
-       "",
-       "01/10/2026",
-       "001/001"
-      ],
-      [
        "4|Hortifrúti",
        "25/09/2026",
        -2059,
@@ -25184,39 +25167,6 @@
        "003/003"
       ],
       [
-       "5|Limpeza e descartáveis",
-       "02/09/2026",
-       -2935.32,
-       "ADHFLEX EMBALAGENS FLEXIVEIS LTDA",
-       "000001730/1",
-       "",
-       "",
-       "28/09/2026",
-       "001/003"
-      ],
-      [
-       "5|Limpeza e descartáveis",
-       "02/09/2026",
-       -2935.33,
-       "ADHFLEX EMBALAGENS FLEXIVEIS LTDA",
-       "000001730/2",
-       "",
-       "",
-       "19/10/2026",
-       "002/003"
-      ],
-      [
-       "5|Limpeza e descartáveis",
-       "02/09/2026",
-       -2935.33,
-       "ADHFLEX EMBALAGENS FLEXIVEIS LTDA",
-       "000001730/3",
-       "",
-       "",
-       "06/11/2026",
-       "003/003"
-      ],
-      [
        "4|Frios, laticínios e congelados",
        "28/09/2026",
        -1140,
@@ -25226,39 +25176,6 @@
        "",
        "19/10/2026",
        "001/001"
-      ],
-      [
-       "5|Limpeza e descartáveis",
-       "08/09/2026",
-       -3975.73,
-       "CONBO DISTRIBUIDORA FBV LTDA",
-       "000032141/1",
-       "",
-       "",
-       "06/10/2026",
-       "001/003"
-      ],
-      [
-       "5|Limpeza e descartáveis",
-       "08/09/2026",
-       -3975.7,
-       "CONBO DISTRIBUIDORA FBV LTDA",
-       "000032141/2",
-       "",
-       "",
-       "13/10/2026",
-       "002/003"
-      ],
-      [
-       "5|Limpeza e descartáveis",
-       "08/09/2026",
-       -3975.7,
-       "CONBO DISTRIBUIDORA FBV LTDA",
-       "000032141/3",
-       "",
-       "",
-       "20/10/2026",
-       "003/003"
       ],
       [
        "11|Investimentos diversos",
@@ -25910,17 +25827,6 @@
        "001/001"
       ],
       [
-       "5|Limpeza e descartáveis",
-       "23/09/2026",
-       -994.5,
-       "PONTELAND DISTRIBUICAO SA",
-       "NF 350692",
-       "",
-       "",
-       "21/10/2026",
-       "001/001"
-      ],
-      [
        "6|Variável",
        "30/09/2026",
        -10662,
@@ -26028,39 +25934,6 @@
        "",
        "",
        "29/10/2026",
-       "001/001"
-      ],
-      [
-       "5|Limpeza e descartáveis",
-       "18/09/2026",
-       -418.4,
-       "CONBO DISTRIBUIDORA FBV LTDA",
-       "NF 032680",
-       "",
-       "",
-       "03/10/2026",
-       "001/001"
-      ],
-      [
-       "5|Limpeza e descartáveis",
-       "15/09/2026",
-       -669.4,
-       "CONBO DISTRIBUIDORA FBV LTDA",
-       "NF 032465",
-       "",
-       "",
-       "03/11/2026",
-       "001/001"
-      ],
-      [
-       "5|Limpeza e descartáveis",
-       "24/09/2026",
-       -752.97,
-       "CONBO DISTRIBUIDORA FBV LTDA",
-       "NF 032936",
-       "",
-       "",
-       "03/11/2026",
        "001/001"
       ],
       [
@@ -27289,6 +27162,39 @@
        "0.47% do total"
       ],
       [
+       "5|Limpeza e descartáveis",
+       "01/09/2026",
+       -452,
+       "NOMU BISTRO RESTAURANTE LTDA",
+       "SEM NF",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "09/09/2026",
+       -2064.46,
+       "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
+       "NF028413",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "29/09/2026",
+       -432,
+       "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
+       "NF 028841",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
        "4|Ajuste de CMV para 33% da receita",
        "30/09/2026",
        99875.15,
@@ -27367,7 +27273,7 @@
       "4": -293371.91,
       "8": -9466.460000000001,
       "6": -135610.99,
-      "5": -74541.03,
+      "5": -88131.98999999999,
       "7": -17059.8,
       "14": -46240.0,
       "11": -88140.38999999998,
@@ -27393,7 +27299,7 @@
       "4|Água mineral": -6530.0,
       "8|Contabilidade, jurídico e consultorias": -5000.0,
       "7|Outros aluguéis": -16000.0,
-      "5|Limpeza e descartáveis": -9100.79,
+      "5|Limpeza e descartáveis": -22691.75,
       "14|Cachê de artistas e atrações": -44990.0,
       "11|Investimentos diversos": -44462.25000000001,
       "5|Diversos de operação": -3562.46,
@@ -27442,7 +27348,7 @@
       "4|Água mineral": 3,
       "8|Contabilidade, jurídico e consultorias": 3,
       "7|Outros aluguéis": 2,
-      "5|Limpeza e descartáveis": 11,
+      "5|Limpeza e descartáveis": 14,
       "14|Cachê de artistas e atrações": 32,
       "11|Investimentos diversos": 23,
       "5|Diversos de operação": 3,
@@ -34224,17 +34130,6 @@
        "001/001"
       ],
       [
-       "5|Limpeza e descartáveis",
-       "05/10/2026",
-       -1880.19,
-       "PINHO &amp; PINHO LTDA",
-       "",
-       "",
-       "",
-       "08/10/2026",
-       "001/001"
-      ],
-      [
        "6|ISS | Permanência",
        "05/10/2026",
        -270,
@@ -34449,17 +34344,6 @@
        -6780,
        "TORRE ALTA SERVICOS E REPRESENTACOES LTDA",
        "",
-       "",
-       "",
-       "09/10/2026",
-       "001/001"
-      ],
-      [
-       "5|Limpeza e descartáveis",
-       "20/10/2026",
-       -457.86,
-       "SENTIDOS INDUSTRIA E COMERCIO DE PERFUMES LTDA",
-       "13.188.663/0001-23",
        "",
        "",
        "09/10/2026",
@@ -35555,17 +35439,6 @@
        "001/001"
       ],
       [
-       "5|Limpeza e descartáveis",
-       "31/10/2026",
-       -1148,
-       "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
-       "000029302/1",
-       "",
-       "",
-       "15/11/2026",
-       "001/001"
-      ],
-      [
        "4|Bebidas alcoólicas",
        "30/10/2026",
        -1846.08,
@@ -36410,17 +36283,6 @@
        "",
        "",
        "19/10/2026",
-       "001/001"
-      ],
-      [
-       "5|Limpeza e descartáveis",
-       "13/10/2026",
-       -711.92,
-       "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
-       "NF 029057",
-       "",
-       "",
-       "20/10/2026",
        "001/001"
       ],
       [
@@ -37348,17 +37210,6 @@
        "001/001"
       ],
       [
-       "5|Limpeza e descartáveis",
-       "21/10/2026",
-       -805.6,
-       "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
-       "NF029162",
-       "",
-       "",
-       "28/10/2026",
-       "001/001"
-      ],
-      [
        "4|Bebidas alcoólicas",
        "22/10/2026",
        -6197.9,
@@ -37411,17 +37262,6 @@
        "",
        "",
        "30/10/2026",
-       "001/001"
-      ],
-      [
-       "5|Limpeza e descartáveis",
-       "24/10/2026",
-       -505.84,
-       "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
-       "NF029200",
-       "",
-       "",
-       "31/10/2026",
        "001/001"
       ],
       [
@@ -37551,28 +37391,6 @@
        -1254,
        "MARCOS DOS SANTOS MELO",
        "SEM NF",
-       "",
-       "",
-       "29/10/2026",
-       "001/001"
-      ],
-      [
-       "5|Limpeza e descartáveis",
-       "01/10/2026",
-       -514.8,
-       "CONBO DISTRIBUIDORA FBV LTDA",
-       "NF 033180",
-       "",
-       "",
-       "29/10/2026",
-       "001/001"
-      ],
-      [
-       "5|Limpeza e descartáveis",
-       "01/10/2026",
-       -1095.08,
-       "CONBO DISTRIBUIDORA FBV LTDA",
-       "NF 033181",
        "",
        "",
        "29/10/2026",
@@ -37733,17 +37551,6 @@
        "001/001"
       ],
       [
-       "5|Limpeza e descartáveis",
-       "26/10/2026",
-       -675.5,
-       "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
-       "NF 029220",
-       "",
-       "",
-       "02/11/2026",
-       "001/001"
-      ],
-      [
        "4|Bebidas alcoólicas",
        "27/10/2026",
        -3798,
@@ -37854,17 +37661,6 @@
        "001/001"
       ],
       [
-       "5|Limpeza e descartáveis",
-       "22/10/2026",
-       -1118,
-       "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
-       "NF029169",
-       "",
-       "",
-       "06/11/2026",
-       "001/001"
-      ],
-      [
        "4|Secos e mercearia",
        "22/10/2026",
        -222.79,
@@ -37969,17 +37765,6 @@
        -1400,
        "66.863.786 GRAZIELLE DE SOUZA PEREIRA",
        "NF 17",
-       "",
-       "",
-       "15/10/2026",
-       "001/001"
-      ],
-      [
-       "5|Limpeza e descartáveis",
-       "12/10/2026",
-       -188,
-       "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
-       "NF 29054",
        "",
        "",
        "15/10/2026",
@@ -40107,6 +39892,160 @@
        "",
        "13/11/2026",
        "001/001"
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "02/10/2026",
+       -3975.73,
+       "CONBO DISTRIBUIDORA",
+       "000032141/1",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "05/10/2026",
+       -1880.19,
+       "PINHO E PINHO",
+       "",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "09/10/2026",
+       -457.86,
+       "SENTIDOS INDUSTRIA E COMERCIO DE PERFUMES LTDA",
+       "13.188.663/0001-23",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "09/10/2026",
+       -3975.7,
+       "CONBO DISTRIBUIDORA",
+       "000032141/2",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "14/10/2026",
+       -2935.33,
+       "ADHFLEX EMBALAGENS FLEXIVEIS",
+       "000001730/2",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "14/10/2026",
+       -3975.7,
+       "CONBO DISTRIBUIDORA",
+       "000032141/3",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "15/10/2026",
+       -188,
+       "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
+       "NF 29054",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "16/10/2026",
+       -711.92,
+       "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
+       "NF 029057",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "20/10/2026",
+       -994.5,
+       "PONTELAND DISTRIBUICAO SA",
+       "NF 350692",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "27/10/2026",
+       -805.6,
+       "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
+       "NF029162",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "27/10/2026",
+       -505.84,
+       "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
+       "NF029200",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "29/10/2026",
+       -514.8,
+       "CONBO DISTRIBUIDORA",
+       "NF 033180",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "29/10/2026",
+       -1095.08,
+       "CONBO DISTRIBUIDORA",
+       "NF 033181",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
+       "5|Limpeza e descartáveis",
+       "29/10/2026",
+       -675.5,
+       "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
+       "NF 029220",
+       "Santander",
+       "",
+       "",
+       ""
       ]
      ]
     }
