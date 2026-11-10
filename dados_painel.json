@@ -1,5 +1,5 @@
 {
- "gerado": "09/11/2026 às 21:39",
+ "gerado": "10/11/2026 às 12:07",
  "meses": [
   "2026-08",
   "2026-09",
@@ -5938,28 +5938,28 @@
       930431.44,
       926645.16,
       -3786.28,
-      "o relatorio da diretoria cobre 01 a 29/09 pelo Itens Vendidos Analitico e 30/09 pelo Sintetico; os dois cortes tratam o desconto de forma diferente"
+      "o relatório da diretoria cobre 01 a 29/09 pelo Itens Vendidos Analítico e 30/09 pelo Sintético; os dois cortes tratam o desconto de forma diferente"
      ],
      [
       "Couvert",
       11550.0,
       16720.84,
       5170.84,
-      "o PDV tem DOIS itens de couvert: *Couvert Artistico (385) e Couvert codigo 99997 (181, R$ 5.239,83). O relatorio da diretoria so pegou o primeiro, e pelo preco de tabela (385 x R$ 30,00), sem deduzir R$ 68,99 de desconto"
+      "o PDV tem DOIS itens de couvert: *Couvert Artístico (385) e Couvert código 99997 (181, R$ 5.239,83). O relatório da diretoria só pegou o primeiro, e pelo preço de tabela (385 × R$ 30,00), sem deduzir R$ 68,99 de desconto"
      ],
      [
       "Taxa de rolha",
       0.0,
       4439.74,
       4439.74,
-      "o relatorio da diretoria declara na propria pagina que exclui a taxa de rolha; sao 35 cobrancas reais"
+      "o relatório da diretoria declara na própria página que exclui a taxa de rolha; são 35 cobranças reais"
      ],
      [
       "Taxa de servico",
       105967.6,
       111178.53,
       5210.93,
-      "na diretoria sai por diferenca (recebido menos produtos); no 3LM e item do PDV, codigo 100000, lancado no funcionario 0 SERVICO"
+      "na diretoria sai por diferença (recebido menos produtos); no 3LM é item do PDV, código 100000, lançado no funcionário 0 SERVICO"
      ]
     ]
    },
@@ -6055,6 +6055,653 @@
     ]
    ],
    "formas_nota": "Relatório \"Vendas Por Tipo de Pagamento\" do 3LM, dia a dia. Veio como imagem e foi transcrito: as 7 formas e os 31 dias somam, cada um por si, o Total Geral do mês."
+  }
+ },
+ "seis": {
+  "2026-08": {
+   "linhas": [
+    {
+     "n": "Receita bruta",
+     "v": 163548.5,
+     "oficial": true,
+     "mede": "Tudo que a casa vendeu no mês: cardápio, taxa de serviço, couvert e rolha.",
+     "fora": "Nada — é o escopo completo. É esta a receita bruta da DRE.",
+     "fonte": "Extração bruta do 3LM, relatório \"Vendas Por Funcionário (Backup)\", 2.869 itens",
+     "conta_rot": "As quatro linhas do 3LM que somam o bruto",
+     "conta": [
+      [
+       "A&B — cardápio",
+       146568.39,
+       "comida e bebida do cardápio, já líquido do desconto dado no salão"
+      ],
+      [
+       "Taxa de serviço",
+       16780.11,
+       "item do PDV, código 100000, lançado no funcionário 0 SERVICO"
+      ],
+      [
+       "Taxa de rolha",
+       200.0,
+       "cobrança de rolha, item do PDV"
+      ]
+     ]
+    },
+    {
+     "n": "Como o cliente pagou",
+     "v": 191290.32,
+     "mede": "A mesma venda do bruto, somada por forma de pagamento.",
+     "fora": "A soma das formas fica R$ 27.741,82 acima do bruto do 3LM — 16,96% do mês.",
+     "fonte": "Extrato de Vendas Detalhado da GetNet por data da venda, mais os títulos de FUNDO FIXO no Omie",
+     "conta_rot": "As formas de pagamento do mês",
+     "conta": [
+      [
+       "Cartão de crédito à vista",
+       155488.33,
+       ""
+      ],
+      [
+       "Cartão de débito",
+       18295.56,
+       ""
+      ],
+      [
+       "Dinheiro (fundo fixo)",
+       8771.0,
+       ""
+      ],
+      [
+       "PIX",
+       8735.43,
+       ""
+      ]
+     ]
+    },
+    {
+     "n": "Venda cartão e PIX",
+     "v": 182519.32,
+     "mede": "Só o que passou pela maquininha.",
+     "fora": "O dinheiro — R$ 8.771,00 do fundo fixo.",
+     "fonte": "Extrato de Vendas Detalhado da GetNet. Confere com o bruto da adquirente no centavo: cartão R$ 173.783,89 em 416 vendas mais PIX R$ 8.735,43 em 25 recebimentos.",
+     "conta_rot": "As formas de pagamento, sem o dinheiro",
+     "conta": [
+      [
+       "Cartão de crédito à vista",
+       155488.33,
+       ""
+      ],
+      [
+       "Cartão de débito",
+       18295.56,
+       ""
+      ],
+      [
+       "PIX",
+       8735.43,
+       ""
+      ]
+     ]
+    },
+    {
+     "n": "Curva ABC",
+     "v": 146768.39,
+     "mede": "Só o que saiu da cozinha e do bar: produto vendido, item a item.",
+     "fora": "A taxa de serviço inteira — R$ 16.780,11. Taxa de serviço não é produto.",
+     "fonte": "Extração bruta do 3LM — \"Vendas Por Funcionário (Backup)\", a mesma fonte da DRE",
+     "conta_rot": "As categorias do cardápio",
+     "conta": [
+      [
+       "Bebida",
+       58183.42,
+       "70 itens"
+      ],
+      [
+       "Prato Principal",
+       41400.72,
+       "12 itens"
+      ],
+      [
+       "Entrada",
+       37007.51,
+       "13 itens"
+      ],
+      [
+       "Outros",
+       9976.74,
+       "6 itens"
+      ],
+      [
+       "Taxa de rolha",
+       200.0,
+       "1 itens"
+      ]
+     ]
+    }
+   ],
+   "ponte": [
+    {
+     "rot": "Receita bruta",
+     "v": 163548.5,
+     "t": "base",
+     "nota": ""
+    },
+    {
+     "rot": "(−) taxa de serviço",
+     "v": -16780.11,
+     "t": "mid",
+     "nota": ""
+    },
+    {
+     "rot": "= Curva ABC",
+     "v": 146768.39,
+     "t": "res",
+     "nota": "fecha no centavo"
+    },
+    {
+     "rot": "Receita bruta",
+     "v": 163548.5,
+     "t": "base",
+     "nota": ""
+    },
+    {
+     "rot": "(+) resíduo de reconciliação da forma de pagamento",
+     "v": 27741.82,
+     "t": "mid",
+     "nota": ""
+    },
+    {
+     "rot": "= Como o cliente pagou",
+     "v": 191290.32,
+     "t": "res",
+     "nota": "fecha no centavo"
+    },
+    {
+     "rot": "(−) dinheiro do fundo fixo",
+     "v": -8771.0,
+     "t": "mid",
+     "nota": ""
+    },
+    {
+     "rot": "= Venda cartão e PIX",
+     "v": 182519.32,
+     "t": "res",
+     "nota": "fecha no centavo — e igual ao bruto da adquirente"
+    }
+   ]
+  },
+  "2026-09": {
+   "linhas": [
+    {
+     "n": "Receita bruta",
+     "v": 1058984.27,
+     "oficial": true,
+     "mede": "Tudo que a casa vendeu no mês: cardápio, taxa de serviço, couvert e rolha.",
+     "fora": "Nada — é o escopo completo. É esta a receita bruta da DRE.",
+     "fonte": "Extração bruta do 3LM, relatório \"Vendas Por Funcionário (Backup)\", 15.837 itens",
+     "conta_rot": "As quatro linhas do 3LM que somam o bruto",
+     "conta": [
+      [
+       "A&B — cardápio",
+       926645.16,
+       "comida e bebida do cardápio, já líquido do desconto dado no salão"
+      ],
+      [
+       "Taxa de serviço",
+       111178.53,
+       "item do PDV, código 100000, lançado no funcionário 0 SERVICO"
+      ],
+      [
+       "Couvert",
+       16720.84,
+       "dois itens no PDV: *Couvert Artístico e Couvert (99997)"
+      ],
+      [
+       "Taxa de rolha",
+       4439.74,
+       "cobrança de rolha, item do PDV"
+      ]
+     ]
+    },
+    {
+     "n": "Como o cliente pagou",
+     "v": 1054028.59,
+     "mede": "A mesma venda do bruto, somada por forma de pagamento.",
+     "fora": "A soma das formas fica R$ 4.955,68 abaixo do bruto do 3LM — 0,47% do mês.",
+     "fonte": "Extrato de Vendas Detalhado da GetNet por data da venda, mais os títulos de FUNDO FIXO no Omie",
+     "conta_rot": "As formas de pagamento do mês",
+     "conta": [
+      [
+       "Cartão de crédito à vista",
+       819896.32,
+       ""
+      ],
+      [
+       "Cartão de débito",
+       114362.71,
+       ""
+      ],
+      [
+       "PIX",
+       72746.84,
+       ""
+      ],
+      [
+       "Dinheiro (fundo fixo)",
+       47022.72,
+       ""
+      ]
+     ]
+    },
+    {
+     "n": "Venda cartão e PIX",
+     "v": 1007005.87,
+     "mede": "Só o que passou pela maquininha.",
+     "fora": "O dinheiro — R$ 47.022,72 do fundo fixo.",
+     "fonte": "Extrato de Vendas Detalhado da GetNet. Confere com o bruto da adquirente no centavo: cartão R$ 934.259,03 em 2.001 vendas mais PIX R$ 72.746,84 em 201 recebimentos.",
+     "conta_rot": "As formas de pagamento, sem o dinheiro",
+     "conta": [
+      [
+       "Cartão de crédito à vista",
+       819896.32,
+       ""
+      ],
+      [
+       "Cartão de débito",
+       114362.71,
+       ""
+      ],
+      [
+       "PIX",
+       72746.84,
+       ""
+      ]
+     ]
+    },
+    {
+     "n": "Curva ABC",
+     "v": 947805.74,
+     "mede": "Só o que saiu da cozinha e do bar: produto vendido, item a item.",
+     "fora": "A taxa de serviço inteira — R$ 111.178,53. Taxa de serviço não é produto.",
+     "fonte": "Extração bruta do 3LM — \"Vendas Por Funcionário (Backup)\", a mesma fonte da DRE",
+     "conta_rot": "As categorias do cardápio",
+     "conta": [
+      [
+       "Bebida",
+       407902.74,
+       "106 itens"
+      ],
+      [
+       "Entrada",
+       275901.28,
+       "19 itens"
+      ],
+      [
+       "Prato Principal",
+       216289.43,
+       "14 itens"
+      ],
+      [
+       "Outros",
+       43272.55,
+       "10 itens"
+      ],
+      [
+       "Taxa de rolha",
+       4439.74,
+       "1 itens"
+      ]
+     ]
+    },
+    {
+     "n": "Venda dia a dia",
+     "v": 1047949.04,
+     "mede": "A mesma venda, somada dia por dia — 1.540 contas.",
+     "fora": "É <b>outra extração</b> do 3LM, não outro mês: fica R$ 11.035,23 abaixo da extração bruta.",
+     "fonte": "YO_Noronha_Vendas_Setembro2026.pdf — montado pela Diretoria Adm-Financeira em 02/10/2026",
+     "conta_rot": "Onde as duas extrações do 3LM divergem (sinal: o que falta na do dia a dia)",
+     "conta": [
+      [
+       "A&B (sem couvert e sem rolha)",
+       3786.28,
+       "o relatório da diretoria cobre 01 a 29/09 pelo Itens Vendidos Analítico e 30/09 pelo Sintético; os dois cortes tratam o desconto de forma diferente"
+      ],
+      [
+       "Couvert",
+       -5170.84,
+       "o PDV tem DOIS itens de couvert: *Couvert Artístico (385) e Couvert código 99997 (181, R$ 5.239,83). O relatório da diretoria só pegou o primeiro, e pelo preço de tabela (385 × R$ 30,00), sem deduzir R$ 68,99 de desconto"
+      ],
+      [
+       "Taxa de rolha",
+       -4439.74,
+       "o relatório da diretoria declara na própria página que exclui a taxa de rolha; são 35 cobranças reais"
+      ],
+      [
+       "Taxa de servico",
+       -5210.93,
+       "na diretoria sai por diferença (recebido menos produtos); no 3LM é item do PDV, código 100000, lançado no funcionário 0 SERVICO"
+      ]
+     ]
+    },
+    {
+     "n": "Faturamento por horário",
+     "v": 921770.39,
+     "mede": "Produto vendido, distribuído pelas faixas de horário.",
+     "fora": "A taxa de serviço <b>e o dia 30/09</b> — o relatório tem 29 dias, não 30.",
+     "fonte": "Relatório de faturamento por horário do 3LM. Cada faixa vem arredondada ao real inteiro na origem.",
+     "conta_rot": "Os turnos",
+     "conta": [
+      [
+       "Antes do almoço",
+       6037.0,
+       "0.7% do que tem hora registrada"
+      ],
+      [
+       "Almoço e tarde",
+       624540.0,
+       "67.8% do que tem hora registrada"
+      ],
+      [
+       "Fim de tarde e noite",
+       291193.0,
+       "31.6% do que tem hora registrada"
+      ]
+     ]
+    }
+   ],
+   "ponte": [
+    {
+     "rot": "Receita bruta",
+     "v": 1058984.27,
+     "t": "base",
+     "nota": ""
+    },
+    {
+     "rot": "(−) taxa de serviço",
+     "v": -111178.53,
+     "t": "mid",
+     "nota": ""
+    },
+    {
+     "rot": "= Curva ABC",
+     "v": 947805.74,
+     "t": "res",
+     "nota": "fecha no centavo"
+    },
+    {
+     "rot": "Receita bruta",
+     "v": 1058984.27,
+     "t": "base",
+     "nota": ""
+    },
+    {
+     "rot": "(−) resíduo de reconciliação da forma de pagamento",
+     "v": -4955.68,
+     "t": "mid",
+     "nota": ""
+    },
+    {
+     "rot": "= Como o cliente pagou",
+     "v": 1054028.59,
+     "t": "res",
+     "nota": "fecha no centavo"
+    },
+    {
+     "rot": "(−) dinheiro do fundo fixo",
+     "v": -47022.72,
+     "t": "mid",
+     "nota": ""
+    },
+    {
+     "rot": "= Venda cartão e PIX",
+     "v": 1007005.87,
+     "t": "res",
+     "nota": "fecha no centavo — e igual ao bruto da adquirente"
+    },
+    {
+     "rot": "Receita bruta",
+     "v": 1058984.27,
+     "t": "base",
+     "nota": ""
+    },
+    {
+     "rot": "(−) diferença entre as duas extrações do 3LM",
+     "v": -11035.23,
+     "t": "mid",
+     "nota": ""
+    },
+    {
+     "rot": "= Venda dia a dia",
+     "v": 1047949.04,
+     "t": "res",
+     "nota": "fecha no centavo"
+    },
+    {
+     "rot": "Curva ABC",
+     "v": 947805.74,
+     "t": "base",
+     "nota": ""
+    },
+    {
+     "rot": "(−) dias ausentes no relatório de horário",
+     "v": -23865.7,
+     "t": "mid",
+     "nota": ""
+    },
+    {
+     "rot": "≈ Faturamento por horário",
+     "v": 921770.39,
+     "t": "res2",
+     "nota": "resíduo de R$ 2.169,65 (0,20% do mês) — o relatório arredonda cada faixa ao real inteiro na origem"
+    }
+   ]
+  },
+  "2026-10": {
+   "linhas": [
+    {
+     "n": "Receita bruta",
+     "v": 1193067.36,
+     "oficial": true,
+     "mede": "Tudo que a casa vendeu no mês: cardápio, taxa de serviço, couvert e rolha.",
+     "fora": "Nada — é o escopo completo. É esta a receita bruta da DRE.",
+     "fonte": "Extração bruta do 3LM, relatório \"Vendas Por Funcionário (Backup)\", 18.714 itens",
+     "conta_rot": "As quatro linhas do 3LM que somam o bruto",
+     "conta": [
+      [
+       "A&B — cardápio",
+       1017816.85,
+       "comida e bebida do cardápio, já líquido do desconto dado no salão"
+      ],
+      [
+       "Taxa de serviço",
+       126058.04,
+       "item do PDV, código 100000, lançado no funcionário 0 SERVICO"
+      ],
+      [
+       "Couvert",
+       42466.87,
+       "dois itens no PDV: *Couvert Artístico e Couvert (99997)"
+      ],
+      [
+       "Taxa de rolha",
+       6725.6,
+       "cobrança de rolha, item do PDV"
+      ]
+     ]
+    },
+    {
+     "n": "Como o cliente pagou",
+     "v": 1193067.36,
+     "mede": "A mesma venda do bruto, somada por forma de pagamento.",
+     "fora": "Nada: as formas de pagamento somam exatamente o bruto.",
+     "fonte": "Extrato de Vendas Detalhado da GetNet por data da venda, mais os títulos de FUNDO FIXO no Omie",
+     "conta_rot": "As formas de pagamento do mês",
+     "conta": [
+      [
+       "Cartão de crédito à vista",
+       901447.83,
+       ""
+      ],
+      [
+       "Cartão de débito",
+       135945.72,
+       ""
+      ],
+      [
+       "PIX",
+       92950.87,
+       ""
+      ],
+      [
+       "Dinheiro",
+       61220.54,
+       ""
+      ],
+      [
+       "Crédito Visa (fora do TEF)",
+       1026.24,
+       ""
+      ],
+      [
+       "Crédito Master (fora do TEF)",
+       476.16,
+       ""
+      ]
+     ]
+    },
+    {
+     "n": "Venda cartão e PIX",
+     "v": 1131846.82,
+     "mede": "Só o que passou pela maquininha.",
+     "fora": "O dinheiro — R$ 61.220,54 do fundo fixo.",
+     "fonte": "Extrato de Vendas Detalhado da GetNet.",
+     "conta_rot": "As formas de pagamento, sem o dinheiro",
+     "conta": [
+      [
+       "Cartão de crédito à vista",
+       901447.83,
+       ""
+      ],
+      [
+       "Cartão de débito",
+       135945.72,
+       ""
+      ],
+      [
+       "PIX",
+       92950.87,
+       ""
+      ],
+      [
+       "Crédito Visa (fora do TEF)",
+       1026.24,
+       ""
+      ],
+      [
+       "Crédito Master (fora do TEF)",
+       476.16,
+       ""
+      ]
+     ]
+    },
+    {
+     "n": "Curva ABC",
+     "v": 1067009.32,
+     "mede": "Só o que saiu da cozinha e do bar: produto vendido, item a item.",
+     "fora": "A taxa de serviço inteira — R$ 126.058,04. Taxa de serviço não é produto.",
+     "fonte": "Extração bruta do 3LM — \"Vendas Por Funcionário (Backup)\", a mesma fonte da DRE",
+     "conta_rot": "As categorias do cardápio",
+     "conta": [
+      [
+       "Bebida",
+       465997.05,
+       "119 itens"
+      ],
+      [
+       "Entrada",
+       305483.8,
+       "16 itens"
+      ],
+      [
+       "Prato Principal",
+       226092.13,
+       "9 itens"
+      ],
+      [
+       "Outros",
+       57410.74,
+       "14 itens"
+      ],
+      [
+       "Taxa de rolha",
+       6725.6,
+       "1 itens"
+      ],
+      [
+       "Aluguel de espaço",
+       5300.0,
+       "1 itens"
+      ]
+     ]
+    },
+    {
+     "n": "Venda dia a dia",
+     "v": 1193067.36,
+     "mede": "A mesma venda, somada dia por dia — 31 dias.",
+     "fora": "Nada: soma exatamente o bruto.",
+     "fonte": "Relatório \"Vendas Por Tipo de Pagamento\" do 3LM, dia a dia. Veio como imagem e foi transcrito: as 7 formas e os 31 dias somam, cada um por si, o Total Geral do mês.",
+     "conta_rot": "Os dias do mês",
+     "conta": []
+    }
+   ],
+   "ponte": [
+    {
+     "rot": "Receita bruta",
+     "v": 1193067.36,
+     "t": "base",
+     "nota": ""
+    },
+    {
+     "rot": "(−) taxa de serviço",
+     "v": -126058.04,
+     "t": "mid",
+     "nota": ""
+    },
+    {
+     "rot": "= Curva ABC",
+     "v": 1067009.32,
+     "t": "res",
+     "nota": "fecha no centavo"
+    },
+    {
+     "rot": "Receita bruta",
+     "v": 1193067.36,
+     "t": "base",
+     "nota": ""
+    },
+    {
+     "rot": "(+) resíduo de reconciliação da forma de pagamento",
+     "v": -0.0,
+     "t": "mid",
+     "nota": ""
+    },
+    {
+     "rot": "= Como o cliente pagou",
+     "v": 1193067.36,
+     "t": "res",
+     "nota": "fecha no centavo"
+    },
+    {
+     "rot": "(−) dinheiro do fundo fixo",
+     "v": -61220.54,
+     "t": "mid",
+     "nota": ""
+    },
+    {
+     "rot": "= Venda cartão e PIX",
+     "v": 1131846.82,
+     "t": "res",
+     "nota": "fecha no centavo"
+    }
+   ]
   }
  },
  "ents": {
@@ -9784,7 +10431,7 @@
        "1 venda(s)",
        "",
        "",
-       "taxa R$ 0.01"
+       "taxa R$ 0,01"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -9793,7 +10440,7 @@
        "12 venda(s)",
        "",
        "",
-       "taxa R$ 77.09"
+       "taxa R$ 77,09"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -9802,7 +10449,7 @@
        "40 venda(s)",
        "",
        "",
-       "taxa R$ 191.96"
+       "taxa R$ 191,96"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -9811,7 +10458,7 @@
        "35 venda(s)",
        "",
        "",
-       "taxa R$ 163.58"
+       "taxa R$ 163,58"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -9820,7 +10467,7 @@
        "40 venda(s)",
        "",
        "",
-       "taxa R$ 167.63"
+       "taxa R$ 167,63"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -9829,7 +10476,7 @@
        "28 venda(s)",
        "",
        "",
-       "taxa R$ 209.47"
+       "taxa R$ 209,47"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -9838,7 +10485,7 @@
        "31 venda(s)",
        "",
        "",
-       "taxa R$ 160.57"
+       "taxa R$ 160,57"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -9847,7 +10494,7 @@
        "20 venda(s)",
        "",
        "",
-       "taxa R$ 133.00"
+       "taxa R$ 133,00"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -9856,7 +10503,7 @@
        "27 venda(s)",
        "",
        "",
-       "taxa R$ 223.25"
+       "taxa R$ 223,25"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -9865,7 +10512,7 @@
        "41 venda(s)",
        "",
        "",
-       "taxa R$ 164.71"
+       "taxa R$ 164,71"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -9874,7 +10521,7 @@
        "41 venda(s)",
        "",
        "",
-       "taxa R$ 175.08"
+       "taxa R$ 175,08"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -9883,7 +10530,7 @@
        "29 venda(s)",
        "",
        "",
-       "taxa R$ 172.54"
+       "taxa R$ 172,54"
       ],
       [
        "FAT|Cartão de débito",
@@ -9892,7 +10539,7 @@
        "3 venda(s)",
        "",
        "",
-       "taxa R$ 8.30"
+       "taxa R$ 8,30"
       ],
       [
        "FAT|Cartão de débito",
@@ -9901,7 +10548,7 @@
        "1 venda(s)",
        "",
        "",
-       "taxa R$ 3.39"
+       "taxa R$ 3,39"
       ],
       [
        "FAT|Cartão de débito",
@@ -9910,7 +10557,7 @@
        "5 venda(s)",
        "",
        "",
-       "taxa R$ 25.96"
+       "taxa R$ 25,96"
       ],
       [
        "FAT|Cartão de débito",
@@ -9919,7 +10566,7 @@
        "9 venda(s)",
        "",
        "",
-       "taxa R$ 23.42"
+       "taxa R$ 23,42"
       ],
       [
        "FAT|Cartão de débito",
@@ -9928,7 +10575,7 @@
        "6 venda(s)",
        "",
        "",
-       "taxa R$ 34.32"
+       "taxa R$ 34,32"
       ],
       [
        "FAT|Cartão de débito",
@@ -9937,7 +10584,7 @@
        "6 venda(s)",
        "",
        "",
-       "taxa R$ 7.88"
+       "taxa R$ 7,88"
       ],
       [
        "FAT|Cartão de débito",
@@ -9946,7 +10593,7 @@
        "8 venda(s)",
        "",
        "",
-       "taxa R$ 12.75"
+       "taxa R$ 12,75"
       ],
       [
        "FAT|Cartão de débito",
@@ -9955,7 +10602,7 @@
        "4 venda(s)",
        "",
        "",
-       "taxa R$ 2.92"
+       "taxa R$ 2,92"
       ],
       [
        "FAT|Cartão de débito",
@@ -9964,7 +10611,7 @@
        "14 venda(s)",
        "",
        "",
-       "taxa R$ 25.53"
+       "taxa R$ 25,53"
       ],
       [
        "FAT|Cartão de débito",
@@ -9973,7 +10620,7 @@
        "9 venda(s)",
        "",
        "",
-       "taxa R$ 17.45"
+       "taxa R$ 17,45"
       ],
       [
        "FAT|Cartão de débito",
@@ -9982,7 +10629,7 @@
        "6 venda(s)",
        "",
        "",
-       "taxa R$ 9.19"
+       "taxa R$ 9,19"
       ],
       [
        "FAT|Dinheiro (fundo fixo)",
@@ -25532,7 +26179,7 @@
        "34 venda(s)",
        "",
        "",
-       "taxa R$ 124.18"
+       "taxa R$ 124,18"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25541,7 +26188,7 @@
        "26 venda(s)",
        "",
        "",
-       "taxa R$ 139.90"
+       "taxa R$ 139,90"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25550,7 +26197,7 @@
        "44 venda(s)",
        "",
        "",
-       "taxa R$ 186.22"
+       "taxa R$ 186,22"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25559,7 +26206,7 @@
        "51 venda(s)",
        "",
        "",
-       "taxa R$ 454.81"
+       "taxa R$ 454,81"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25568,7 +26215,7 @@
        "74 venda(s)",
        "",
        "",
-       "taxa R$ 378.35"
+       "taxa R$ 378,35"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25577,7 +26224,7 @@
        "91 venda(s)",
        "",
        "",
-       "taxa R$ 513.03"
+       "taxa R$ 513,03"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25586,7 +26233,7 @@
        "69 venda(s)",
        "",
        "",
-       "taxa R$ 390.61"
+       "taxa R$ 390,61"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25595,7 +26242,7 @@
        "44 venda(s)",
        "",
        "",
-       "taxa R$ 301.03"
+       "taxa R$ 301,03"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25604,7 +26251,7 @@
        "50 venda(s)",
        "",
        "",
-       "taxa R$ 234.77"
+       "taxa R$ 234,77"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25613,7 +26260,7 @@
        "67 venda(s)",
        "",
        "",
-       "taxa R$ 396.19"
+       "taxa R$ 396,19"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25622,7 +26269,7 @@
        "65 venda(s)",
        "",
        "",
-       "taxa R$ 353.65"
+       "taxa R$ 353,65"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25631,7 +26278,7 @@
        "47 venda(s)",
        "",
        "",
-       "taxa R$ 241.95"
+       "taxa R$ 241,95"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25640,7 +26287,7 @@
        "39 venda(s)",
        "",
        "",
-       "taxa R$ 233.23"
+       "taxa R$ 233,23"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25649,7 +26296,7 @@
        "33 venda(s)",
        "",
        "",
-       "taxa R$ 151.77"
+       "taxa R$ 151,77"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25658,7 +26305,7 @@
        "47 venda(s)",
        "",
        "",
-       "taxa R$ 201.46"
+       "taxa R$ 201,46"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25667,7 +26314,7 @@
        "45 venda(s)",
        "",
        "",
-       "taxa R$ 336.03"
+       "taxa R$ 336,03"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25676,7 +26323,7 @@
        "65 venda(s)",
        "",
        "",
-       "taxa R$ 297.53"
+       "taxa R$ 297,53"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25685,7 +26332,7 @@
        "41 venda(s)",
        "",
        "",
-       "taxa R$ 224.49"
+       "taxa R$ 224,49"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25694,7 +26341,7 @@
        "79 venda(s)",
        "",
        "",
-       "taxa R$ 614.02"
+       "taxa R$ 614,02"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25703,7 +26350,7 @@
        "80 venda(s)",
        "",
        "",
-       "taxa R$ 452.97"
+       "taxa R$ 452,97"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25712,7 +26359,7 @@
        "78 venda(s)",
        "",
        "",
-       "taxa R$ 363.18"
+       "taxa R$ 363,18"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25721,7 +26368,7 @@
        "57 venda(s)",
        "",
        "",
-       "taxa R$ 300.31"
+       "taxa R$ 300,31"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25730,7 +26377,7 @@
        "90 venda(s)",
        "",
        "",
-       "taxa R$ 576.11"
+       "taxa R$ 576,11"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25739,7 +26386,7 @@
        "65 venda(s)",
        "",
        "",
-       "taxa R$ 359.75"
+       "taxa R$ 359,75"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25748,7 +26395,7 @@
        "57 venda(s)",
        "",
        "",
-       "taxa R$ 287.21"
+       "taxa R$ 287,21"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25757,7 +26404,7 @@
        "32 venda(s)",
        "",
        "",
-       "taxa R$ 222.10"
+       "taxa R$ 222,10"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25766,7 +26413,7 @@
        "67 venda(s)",
        "",
        "",
-       "taxa R$ 457.33"
+       "taxa R$ 457,33"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25775,7 +26422,7 @@
        "42 venda(s)",
        "",
        "",
-       "taxa R$ 219.81"
+       "taxa R$ 219,81"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25784,7 +26431,7 @@
        "27 venda(s)",
        "",
        "",
-       "taxa R$ 169.57"
+       "taxa R$ 169,57"
       ],
       [
        "FAT|Cartão de crédito à vista",
@@ -25793,7 +26440,7 @@
        "45 venda(s)",
        "",
        "",
-       "taxa R$ 198.55"
+       "taxa R$ 198,55"
       ],
       [
        "FAT|Cartão de débito",
@@ -25802,7 +26449,7 @@
        "7 venda(s)",
        "",
        "",
-       "taxa R$ 22.81"
+       "taxa R$ 22,81"
       ],
       [
        "FAT|Cartão de débito",
@@ -25811,7 +26458,7 @@
        "7 venda(s)",
        "",
        "",
-       "taxa R$ 22.23"
+       "taxa R$ 22,23"
       ],
       [
        "FAT|Cartão de débito",
@@ -25820,7 +26467,7 @@
        "7 venda(s)",
        "",
        "",
-       "taxa R$ 13.13"
+       "taxa R$ 13,13"
       ],
       [
        "FAT|Cartão de débito",
@@ -25829,7 +26476,7 @@
        "7 venda(s)",
        "",
        "",
-       "taxa R$ 12.70"
+       "taxa R$ 12,70"
       ],
       [
        "FAT|Cartão de débito",
@@ -25838,7 +26485,7 @@
        "13 venda(s)",
        "",
        "",
-       "taxa R$ 29.64"
+       "taxa R$ 29,64"
       ],
       [
        "FAT|Cartão de débito",
@@ -25847,7 +26494,7 @@
        "14 venda(s)",
        "",
        "",
-       "taxa R$ 62.94"
+       "taxa R$ 62,94"
       ],
       [
        "FAT|Cartão de débito",
@@ -25856,7 +26503,7 @@
        "12 venda(s)",
        "",
        "",
-       "taxa R$ 41.04"
+       "taxa R$ 41,04"
       ],
       [
        "FAT|Cartão de débito",
@@ -25865,7 +26512,7 @@
        "5 venda(s)",
        "",
        "",
-       "taxa R$ 18.30"
+       "taxa R$ 18,30"
       ],
       [
        "FAT|Cartão de débito",
@@ -25874,7 +26521,7 @@
        "12 venda(s)",
        "",
        "",
-       "taxa R$ 32.73"
+       "taxa R$ 32,73"
       ],
       [
        "FAT|Cartão de débito",
@@ -25883,7 +26530,7 @@
        "5 venda(s)",
        "",
        "",
-       "taxa R$ 15.62"
+       "taxa R$ 15,62"
       ],
       [
        "FAT|Cartão de débito",
@@ -25892,7 +26539,7 @@
        "10 venda(s)",
        "",
        "",
-       "taxa R$ 27.92"
+       "taxa R$ 27,92"
       ],
       [
        "FAT|Cartão de débito",
@@ -25901,7 +26548,7 @@
        "9 venda(s)",
        "",
        "",
-       "taxa R$ 28.79"
+       "taxa R$ 28,79"
       ],
       [
        "FAT|Cartão de débito",
@@ -25910,7 +26557,7 @@
        "12 venda(s)",
        "",
        "",
-       "taxa R$ 33.96"
+       "taxa R$ 33,96"
       ],
       [
        "FAT|Cartão de débito",
@@ -25919,7 +26566,7 @@
        "6 venda(s)",
        "",
        "",
-       "taxa R$ 25.71"
+       "taxa R$ 25,71"
       ],
       [
        "FAT|Cartão de débito",
@@ -25928,7 +26575,7 @@
        "7 venda(s)",
        "",
        "",
-       "taxa R$ 14.62"
+       "taxa R$ 14,62"
       ],
       [
        "FAT|Cartão de débito",
@@ -25937,7 +26584,7 @@
        "13 venda(s)",
        "",
        "",
-       "taxa R$ 20.91"
+       "taxa R$ 20,91"
       ],
       [
        "FAT|Cartão de débito",
@@ -25946,7 +26593,7 @@
        "10 venda(s)",
        "",
        "",
-       "taxa R$ 32.98"
+       "taxa R$ 32,98"
       ],
       [
        "FAT|Cartão de débito",
@@ -25955,7 +26602,7 @@
        "10 venda(s)",
        "",
        "",
-       "taxa R$ 30.49"
+       "taxa R$ 30,49"
       ],
       [
        "FAT|Cartão de débito",
@@ -25964,7 +26611,7 @@
        "18 venda(s)",
        "",
        "",
-       "taxa R$ 64.77"
+       "taxa R$ 64,77"
       ],
       [
        "FAT|Cartão de débito",
@@ -25973,7 +26620,7 @@
        "29 venda(s)",
        "",
        "",
-       "taxa R$ 77.36"
+       "taxa R$ 77,36"
       ],
       [
        "FAT|Cartão de débito",
@@ -25982,7 +26629,7 @@
        "19 venda(s)",
        "",
        "",
-       "taxa R$ 68.62"
+       "taxa R$ 68,62"
       ],
       [
        "FAT|Cartão de débito",
@@ -25991,7 +26638,7 @@
        "12 venda(s)",
        "",
        "",
-       "taxa R$ 37.71"
+       "taxa R$ 37,71"
       ],
       [
        "FAT|Cartão de débito",
@@ -26000,7 +26647,7 @@
        "19 venda(s)",
        "",
        "",
-       "taxa R$ 55.26"
+       "taxa R$ 55,26"
       ],
       [
        "FAT|Cartão de débito",
@@ -26009,7 +26656,7 @@
        "22 venda(s)",
        "",
        "",
-       "taxa R$ 72.06"
+       "taxa R$ 72,06"
       ],
       [
        "FAT|Cartão de débito",
@@ -26018,7 +26665,7 @@
        "14 venda(s)",
        "",
        "",
-       "taxa R$ 37.44"
+       "taxa R$ 37,44"
       ],
       [
        "FAT|Cartão de débito",
@@ -26027,7 +26674,7 @@
        "13 venda(s)",
        "",
        "",
-       "taxa R$ 31.45"
+       "taxa R$ 31,45"
       ],
       [
        "FAT|Cartão de débito",
@@ -26036,7 +26683,7 @@
        "14 venda(s)",
        "",
        "",
-       "taxa R$ 58.80"
+       "taxa R$ 58,80"
       ],
       [
        "FAT|Cartão de débito",
@@ -26045,7 +26692,7 @@
        "9 venda(s)",
        "",
        "",
-       "taxa R$ 31.04"
+       "taxa R$ 31,04"
       ],
       [
        "FAT|Cartão de débito",
@@ -26054,7 +26701,7 @@
        "8 venda(s)",
        "",
        "",
-       "taxa R$ 26.85"
+       "taxa R$ 26,85"
       ],
       [
        "FAT|Cartão de débito",
@@ -26063,7 +26710,7 @@
        "7 venda(s)",
        "",
        "",
-       "taxa R$ 23.58"
+       "taxa R$ 23,58"
       ],
       [
        "FAT|Dinheiro (fundo fixo)",
@@ -26641,28 +27288,28 @@
          930431.44,
          926645.16,
          -3786.28,
-         "o relatorio da diretoria cobre 01 a 29/09 pelo Itens Vendidos Analitico e 30/09 pelo Sintetico; os dois cortes tratam o desconto de forma diferente"
+         "o relatório da diretoria cobre 01 a 29/09 pelo Itens Vendidos Analítico e 30/09 pelo Sintético; os dois cortes tratam o desconto de forma diferente"
         ],
         [
          "Couvert",
          11550.0,
          16720.84,
          5170.84,
-         "o PDV tem DOIS itens de couvert: *Couvert Artistico (385) e Couvert codigo 99997 (181, R$ 5.239,83). O relatorio da diretoria so pegou o primeiro, e pelo preco de tabela (385 x R$ 30,00), sem deduzir R$ 68,99 de desconto"
+         "o PDV tem DOIS itens de couvert: *Couvert Artístico (385) e Couvert código 99997 (181, R$ 5.239,83). O relatório da diretoria só pegou o primeiro, e pelo preço de tabela (385 × R$ 30,00), sem deduzir R$ 68,99 de desconto"
         ],
         [
          "Taxa de rolha",
          0.0,
          4439.74,
          4439.74,
-         "o relatorio da diretoria declara na propria pagina que exclui a taxa de rolha; sao 35 cobrancas reais"
+         "o relatório da diretoria declara na própria página que exclui a taxa de rolha; são 35 cobranças reais"
         ],
         [
          "Taxa de servico",
          105967.6,
          111178.53,
          5210.93,
-         "na diretoria sai por diferenca (recebido menos produtos); no 3LM e item do PDV, codigo 100000, lancado no funcionario 0 SERVICO"
+         "na diretoria sai por diferença (recebido menos produtos); no 3LM é item do PDV, código 100000, lançado no funcionário 0 SERVICO"
         ]
        ]
       }

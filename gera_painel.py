@@ -182,6 +182,30 @@ td.av{color:var(--g500);font-size:12px}
  max-width:860px;margin-bottom:13px}
 .xtbl td.neg{color:#B42318}
 .xtbl td.obs{font-family:'Inter';font-size:11.5px;color:var(--g500);white-space:normal;max-width:430px;line-height:1.45}
+/* memoria de calculo dos numeros de venda (10/11/2026) — tabela propria porque
+   ela nao e demonstracao: e papel de trabalho com a aritmetica aberta. */
+.seis{margin-top:30px}
+.seis h4{font-family:'Plus Jakarta Sans';font-weight:700;font-size:19px;letter-spacing:-.015em;margin-bottom:6px}
+.seis h4 .light{font-weight:300;color:var(--g500)}
+.seis .seisled{font-family:'Inter';font-size:12.5px;color:var(--ink2);line-height:1.55;
+ max-width:880px;margin-bottom:14px}
+.seis h5.seish{font-family:'Plus Jakarta Sans';font-weight:700;font-size:13px;
+ text-transform:uppercase;letter-spacing:.11em;color:var(--orange);margin:26px 0 10px}
+.seis .xtbl td{vertical-align:top}
+.seis .xtbl td.num{font-family:'Plus Jakarta Sans';font-weight:700}
+.seis .xtbl tr td{background:#fff}
+.seis .xtbl tr.lvl1 td{background:#FBFBF9;cursor:pointer}
+.seis .xtbl tr.res td{background:var(--orange-soft);font-weight:800;border-top:1px solid #FDBA74;cursor:pointer}
+.seis .xtbl tr.scc td{background:#fff;font-size:11.5px;color:#4B5563;border-bottom:1px solid #F3F4F6}
+.seis .xtbl td.n1{padding-left:26px;font-style:italic;color:var(--g500)}
+.seis .xtbl td.n2{padding-left:44px}
+.seis .chv{display:inline-block;width:15px;color:var(--orange);font-size:10px}
+.seis .pnota{font-family:'Inter';font-size:11px;color:var(--g500);white-space:normal;
+ line-height:1.45;margin-top:3px;max-width:620px;font-weight:400}
+.seis .xtbl.pt td.l{width:auto}
+.seis .xtbl.pt tr.pbase td{background:#F1F3F6;font-weight:700;border-top:1px solid var(--g300)}
+.seis .xtbl.pt tr.lvl1 td{background:#FFFBEA;cursor:default;font-weight:700}
+@media(max-width:720px){.seis .xtbl td.obs{max-width:none;font-size:11px}}
 .aviso{background:#fff;border:1px solid var(--g200);border-left:3px solid var(--orange);border-radius:12px;
  padding:16px 19px;margin-bottom:12px;box-shadow:var(--shadow)}
 .aviso h4{font-family:'Plus Jakarta Sans';font-size:14px;font-weight:700;margin-bottom:4px}
@@ -1058,7 +1082,10 @@ function pizza(){
 var ABERTO={};                  /* nos abertos, por chave */
 /* na visao dos socios a linha abre, mas o numero nao: ve-se a conta, nao o
    lancamento. Por isso os itens nem sao embarcados no socios.html. */
-function tog(k){ABERTO[k]=!ABERTO[k];pintaRelatorios()}
+/* tog repinta as duas demonstracoes E a memoria de calculo: ela tambem
+   guarda estado em ABERTO, e sem isto o clique nao abria a conta. */
+function tog(k){ABERTO[k]=!ABERTO[k];pintaRelatorios();
+ if(typeof seisNumeros==='function')seisNumeros()}
 function cv(k){return '<span class="chv">'+(ABERTO[k]?'▾':'▸')+'</span>'}
 
 /* celula: valor com a analise vertical dentro, como no painel modelo */
@@ -1606,6 +1633,61 @@ function receita(){
   au.innerHTML=a;
  }
 }
+
+/* ---- memoria de calculo dos numeros de venda que convivem no mes ----
+   10/11/2026. O Tiago mandou seis numeros de setembro e disse que "tem que
+   bater uma com a outra". Nao tem: tres medem escopos diferentes (com e sem
+   taxa de servico, com e sem dinheiro) e dois tem corte de data diferente.
+   A explicacao vivia numa mensagem de WhatsApp, entao a pergunta voltava.
+   Aqui ela fica ao lado do numero, com a aritmetica aberta.
+   Nada e digitado: vem de D.seis, gerado por seis_numeros.py, que aborta se
+   qualquer ponte deixar de fechar. E nao conclui nada — cada linha diz o que
+   mede e o que deixa de fora; o porque e leitura do cliente. */
+function seisNumeros(){
+ var el=document.getElementById('rec-seis'); if(!el)return;
+ var S=(D.seis&&ENT!=='yo')?D.seis[MES]:null;
+ if(!S||!S.linhas||!S.linhas.length){el.innerHTML='';return}
+ var L=S.linhas, nome=D.meses_nome[MES]||'';
+ var h='<div class="seis"><h4>Os '+L.length+' números de '+nome+
+  ' <span class="light">e o que cada um mede</span></h4>'+
+  '<p class="seisled">Os relatórios do 3LM não medem a mesma coisa. Abaixo, cada '+
+  'número com o escopo que ele cobre, o que ele deixa de fora e a conta que o '+
+  'liga à receita bruta. Clique na linha para abrir a aritmética.</p>'+
+  '<div class="rsm-wrap"><table class="xtbl"><thead><tr><th class="l">Medição</th>'+
+  '<th>'+nome+'</th><th class="l">O que mede</th><th class="l">O que deixa de fora</th>'+
+  '</tr></thead><tbody>';
+ L.forEach(function(x,i){
+  var k='seis|'+MES+'|'+i, tem=x.conta&&x.conta.length;
+  h+='<tr class="'+(x.oficial?'res':'lvl1')+(tem?(ABERTO[k]?' open':''):'')+'"'+
+   (tem?' onclick="tog(\''+k+'\')"':'')+'><td class="l">'+(tem?cv(k):'')+
+   '<b>'+x.n+'</b>'+(x.oficial?'<span class="tag">a receita da DRE</span>':'')+
+   '</td><td class="num">'+mv(x.v)+'</td><td class="l obs">'+x.mede+
+   '</td><td class="l obs">'+x.fora+'</td></tr>';
+  if(!tem||!ABERTO[k])return;
+  h+='<tr class="scc"><td class="l n1" colspan="4"><i>'+x.conta_rot+'</i></td></tr>';
+  x.conta.forEach(function(c){
+   h+='<tr class="scc"><td class="l n2">'+c[0]+'</td><td class="num">'+mv(c[1])+
+      '</td><td class="l obs" colspan="2">'+(c[2]||'')+'</td></tr>';
+  });
+  h+='<tr class="scc"><td class="l n1">Fonte</td><td class="l obs" colspan="3">'+
+     x.fonte+'</td></tr>';
+ });
+ h+='</tbody></table></div>';
+
+ if(S.ponte&&S.ponte.length){
+  h+='<h5 class="seish">A conta, passo a passo</h5>'+
+   '<div class="rsm-wrap"><table class="xtbl pt"><tbody>';
+  S.ponte.forEach(function(x){
+   var c=(x.t==='base'?'pbase':(x.t==='res'?'res':(x.t==='res2'?'lvl1':'')));
+   h+='<tr class="'+c+'"><td class="l">'+x.rot+
+      (x.nota?'<div class="pnota">'+x.nota+'</div>':'')+'</td>'+
+      '<td class="num">'+mv(x.v)+'</td></tr>';
+  });
+  h+='</tbody></table></div>';
+ }
+ h+='</div>';
+ el.innerHTML=h;
+}
 /* ---------- exportar PDF ---------------------------------------------------
    Portado do painel modelo em 09/11/2026. O modelo que o Tiago mandou
    como padrao ("quero objetividade ... a turma quer bater o olho e entender
@@ -1711,6 +1793,17 @@ function pdocBuild(){
     divergencia entre relatorios, nao a composicao — e com a ABC unificada a
     divergencia nem existe mais. O relatorio vai a investidores. */
  bloco('Composição da venda','O que foi vendido e como o cliente pagou',[vz('#vendas')]);
+ /* 10/11/2026: a memoria de calculo entra no PDF porque e la que o cliente
+    le. Vai com os detalhes FECHADOS — a aritmetica de cada numero esta na
+    ponte, e abrir as seis contas estouraria a folha. O estado da tela e
+    restaurado depois, senao o painel fica diferente de como o leitor deixou. */
+ var _as=ABERTO, _af={};
+ Object.keys(_as).forEach(function(k){if(k.indexOf('seis|')!==0)_af[k]=_as[k]});
+ ABERTO=_af; seisNumeros();
+ bloco('Memória de cálculo da venda',
+       'Cada número de venda do mês, o que ele mede e a conta que o liga à receita bruta',
+       [vz('#rec-seis')]);
+ ABERTO=_as; seisNumeros();
 
  /* trava: folha que passar da pagina REDUZ ate caber, nunca corta.
     O piso era .52 e o piso cortava — a folha "Quando a casa vende" passava
@@ -1762,7 +1855,7 @@ function render(){
     barras: eixo em HTML ao lado de desenho em SVG desalinha sozinho. */
  document.getElementById('wfX').innerHTML='';
  document.getElementById('kpis').innerHTML=kpis();
- operacao(); pizza(); custoReceber(); receita();
+ operacao(); pizza(); custoReceber(); receita(); seisNumeros();
  pintaRelatorios(); vendasBloco();
 }
 document.getElementById('mespills').innerHTML=D.meses.map(function(m){
@@ -2022,6 +2115,7 @@ SEC_ANO = """<section id="vendas-sec"><div class="wrap">
 <h2>O que o salão <span class="light">vendeu</span></h2>
 <p class="lede">A conta fechada do mês: o que o PDV registrou, item por item, somando até o faturamento bruto.</p></div>
 <div id="vendas"></div>
+<div id="rec-seis"></div>
 </div></section>
 
 """
