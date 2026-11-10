@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Gera o painel gerencial Yó / Boldró no esqueleto do painel Amana/Topázio.
+"""Gera o painel gerencial Yó / Boldró no esqueleto do painel modelo.
 
 Mesma estrutura: nav com seletor de entidade (Boldró · YO · Consolidado · Sócios),
 hero com pills de mês, switch de regime (caixa × competência) e a ponte do caixa em SVG,
@@ -192,7 +192,7 @@ td.av{color:var(--g500);font-size:12px}
 .foot .fg{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;
  padding-bottom:20px;border-bottom:1px solid var(--line)}
 .foot .sig{font-family:'Fraunces',serif;font-style:italic;font-size:19px;color:#fff}
-/* tipografia medida no painel Amana/Topazio: rotulo em Inter, numero em Plus
+/* tipografia medida no painel modelo: rotulo em Inter, numero em Plus
    Jakarta Sans, e o peso acompanhando o nivel da linha. */
 .xtbl.mat{font-family:'Inter',sans-serif;font-size:12px;font-weight:400;color:var(--ink)}
 .xtbl.mat th{font-family:'Plus Jakarta Sans',sans-serif;background:#EEF0F4;color:#3B4252;
@@ -330,7 +330,7 @@ td.av{color:var(--g500);font-size:12px}
 @media(max-width:720px){.wrap{padding:0 18px}.kpis{margin-top:18px}}
 
 /* ---------- exportar PDF -------------------------------------------------
-   Portado do painel Amana/Topazio em 09/11/2026: foi o modelo que o Tiago
+   Portado do painel modelo em 09/11/2026: foi o modelo que o Tiago
    mandou como padrao ("quero objetividade"), e aquele PDF e exatamente a
    exportacao desta funcao. O documento e montado a parte (.pdoc), em paginas
    A4 deitadas de altura fixa, clonando o que JA esta renderizado na tela —
@@ -1060,8 +1060,8 @@ var ABERTO={};                  /* nos abertos, por chave */
 function tog(k){if(SOCIOS)return;ABERTO[k]=!ABERTO[k];pintaRelatorios()}
 function cv(k){return SOCIOS?'':'<span class="chv">'+(ABERTO[k]?'▾':'▸')+'</span>'}
 
-/* celula: valor com a analise vertical dentro, como no painel Amana/Topazio */
-/* na matriz o numero vai sem "R$" e com centavos, como no painel Amana/Topazio:
+/* celula: valor com a analise vertical dentro, como no painel modelo */
+/* na matriz o numero vai sem "R$" e com centavos, como no painel modelo:
    cabe mais mes na largura e a soma visual fecha com o total. */
 function mv(v){return (v<0?'-':'')+Math.abs(v).toLocaleString('pt-BR',
  {minimumFractionDigits:2,maximumFractionDigits:2})}
@@ -1603,7 +1603,7 @@ function receita(){
  }
 }
 /* ---------- exportar PDF ---------------------------------------------------
-   Portado do painel Amana/Topazio em 09/11/2026. O modelo que o Tiago mandou
+   Portado do painel modelo em 09/11/2026. O modelo que o Tiago mandou
    como padrao ("quero objetividade ... a turma quer bater o olho e entender
    logo") E a saida desta funcao. Cada pagina CLONA o que ja esta na tela,
    entao o PDF nao tem numero proprio e nao pode divergir do painel.
@@ -1913,9 +1913,9 @@ def ressalva():
         'cada empresa — Santander 13002614-6 na Boldr&oacute;, Bradesco mais aplica&ccedil;&atilde;o e '
         'Mercado Pago na Y&oacute;. O <b>saldo</b> n&atilde;o: a conta corrente da Boldr&oacute; &eacute; varrida '
         'para a ContaMax todo dia, a ContaMax n&atilde;o tem extrato pr&oacute;prio e o saldo dela &eacute; '
-        'derivado do movimento. A conta corrente entre as empresas do grupo &eacute; '
-        'transfer&ecirc;ncia, n&atilde;o custo, e fica fora do resultado; no consolidado, o par '
-        'Y&oacute;&harr;Boldr&oacute; &eacute; eliminado, e Amana e Top&aacute;zio permanecem como conta corrente. '
+        'derivado do movimento. Adiantamento entre empresas &eacute; transfer&ecirc;ncia, '
+        'n&atilde;o custo, e fica fora do resultado; no consolidado o par '
+        'Y&oacute;&harr;Boldr&oacute; &eacute; eliminado e os demais permanecem como valor a reembolsar. '
         'A receita bruta &eacute; o faturamento pelo m&ecirc;s da venda e vem da extra&ccedil;&atilde;o bruta do '
         '3LM — relat&oacute;rio "Vendas Por Funcion&aacute;rio", m&ecirc;s inteiro numa extra&ccedil;&atilde;o s&oacute;, '
         'l&iacute;quido do desconto concedido no sal&atilde;o: %s. Agosto foi retificado em '
