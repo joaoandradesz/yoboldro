@@ -1056,9 +1056,10 @@ function pizza(){
 }
 
 var ABERTO={};                  /* nos abertos, por chave */
-/* na visao dos socios a DRE e o DFC nao abrem: e leitura, nao conferencia */
-function tog(k){if(SOCIOS)return;ABERTO[k]=!ABERTO[k];pintaRelatorios()}
-function cv(k){return SOCIOS?'':'<span class="chv">'+(ABERTO[k]?'▾':'▸')+'</span>'}
+/* na visao dos socios a linha abre, mas o numero nao: ve-se a conta, nao o
+   lancamento. Por isso os itens nem sao embarcados no socios.html. */
+function tog(k){ABERTO[k]=!ABERTO[k];pintaRelatorios()}
+function cv(k){return '<span class="chv">'+(ABERTO[k]?'▾':'▸')+'</span>'}
 
 /* celula: valor com a analise vertical dentro, como no painel modelo */
 /* na matriz o numero vai sem "R$" e com centavos, como no painel modelo:
@@ -1395,18 +1396,21 @@ function auditaTabela(reg){
  var erros=[], MS=D.meses;
  MS.forEach(function(m){
   var b=bloco(ENT,reg,m);
-  /* 1. conta = soma dos seus lancamentos */
-  var porConta={};
-  (b.itens||[]).forEach(function(i){porConta[i[0]]=(porConta[i[0]]||0)+i[2]});
-  Object.keys(b.contas).forEach(function(k){
-   var s=porConta[k]||0;
-   if(Math.abs(b.contas[k]-s)>0.011)
-    erros.push(m+' · '+k+': conta '+b.contas[k].toFixed(2)+' x lançamentos '+s.toFixed(2));
-  });
-  /* 2. lancamento orfao: item sem conta correspondente */
-  Object.keys(porConta).forEach(function(k){
-   if(!(k in b.contas))erros.push(m+' · '+k+': lançamento sem conta');
-  });
+  /* 1 e 2 so no painel interno: a visao socios nao embarca lancamento */
+  if(!SOCIOS){
+   /* 1. conta = soma dos seus lancamentos */
+   var porConta={};
+   (b.itens||[]).forEach(function(i){porConta[i[0]]=(porConta[i[0]]||0)+i[2]});
+   Object.keys(b.contas).forEach(function(k){
+    var s=porConta[k]||0;
+    if(Math.abs(b.contas[k]-s)>0.011)
+     erros.push(m+' · '+k+': conta '+b.contas[k].toFixed(2)+' x lançamentos '+s.toFixed(2));
+   });
+   /* 2. lancamento orfao: item sem conta correspondente */
+   Object.keys(porConta).forEach(function(k){
+    if(!(k in b.contas))erros.push(m+' · '+k+': lançamento sem conta');
+   });
+  }
   /* 3. grupo = soma das contas do grupo */
   var porGrupo={};
   Object.keys(b.contas).forEach(function(k){var g=k.split('|')[0];porGrupo[g]=(porGrupo[g]||0)+b.contas[k]});
@@ -2030,6 +2034,25 @@ SEC_AUD = """<section id="auditoria" class="sec-alt"><div class="wrap">
 
 
 
+def sem_itens(D):
+    """Copia do D sem a lista de lancamentos de cada mes.
+
+    Nao basta desligar o clique: o lancamento continuaria legivel no fonte da
+    pagina. A copia e rasa de proposito — so o dict do mes e refeito."""
+    import copy
+    E = {}
+    for ent, d in D['ents'].items():
+        d2 = dict(d)
+        for reg in ('comp', 'caixa'):
+            if isinstance(d.get(reg), dict):
+                d2[reg] = {m: {k: v for k, v in b.items() if k != 'itens'}
+                           for m, b in d[reg].items()}
+        E[ent] = d2
+    out = dict(D)
+    out['ents'] = E
+    return out
+
+
 def pagina(socios=False):
     return """<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -2111,7 +2134,7 @@ def pagina(socios=False):
         SEC_AUD + SEC_ANO,
         '',
         ressalva(),
-        json.dumps(D, ensure_ascii=False),
+        json.dumps(sem_itens(D) if socios else D, ensure_ascii=False),
         'true' if socios else 'false',
         JS)
 
