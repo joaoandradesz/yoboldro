@@ -1409,6 +1409,7 @@ function pintaRelatorios(){
      'Nada disso toca o fluxo de caixa.';
    h='<div class="aviso nota"><h4>'+tit+'</h4><p>'+corpo+'</p></div>';
   }
+  h+=notaLimpeza();
   na.innerHTML=h;
  }
  var er=auditaTabela('caixa').concat(auditaTabela('comp'));
@@ -1417,6 +1418,42 @@ function pintaRelatorios(){
   ?'<div class="aviso erro"><h4>A tabela não fecha — não confie nestes números</h4><p>'+
     er.slice(0,8).join('<br>')+(er.length>8?'<br>… mais '+(er.length-8):'')+'</p></div>':'';
  if(er.length&&window.console)console.error('auditoria da tabela:',er);
+}
+
+/* 10/11/2026: o Tiago perguntou duas vezes por que 'Limpeza e descartaveis'
+   pesa em setembro — "material comprado pra durar 3 meses, por que lancar tudo
+   num mes?". A nota responde com o numero, na mesma tela da DRE.
+   Ela NAO afirma que o painel reconhece pelo uso, porque ele nao reconhece:
+   a linha e compra pela data da nota. Dizer o contrario seria descrever um
+   metodo que o painel nao aplica. O que a nota faz e separar, dentro do mes,
+   o que e compra parcelada do que e consumo do mes, e apontar o fluxo de
+   caixa, que ja responde "quanto saiu do banco". */
+function notaLimpeza(){
+ var LP=(D.ajustes||{}).limpeza; if(!LP||ENT==='yo')return '';
+ var MS=mesesDe('comp').filter(function(m){return LP[m]&&LP[m].parcelado});
+ if(!MS.length)return '';
+ var p='';
+ MS.forEach(function(m){
+  /* os dois vem negativos: pc() devolve '—' com base negativa, e era o que
+     saia na tela. O percentual se calcula no modulo. */
+  var x=LP[m], pct=pc(Math.abs(x.parcelado),Math.abs(x.compra)||1);
+  p+='<b>'+brl(-x.parcelado)+'</b> dos '+brl(-x.compra)+' de '+D.meses_nome[m]+
+     ' ('+pct+') são '+x.n_parc+' parcelas de '+x.notas.length+' notas: '+
+     x.notas.map(function(nt){
+      return '<b>'+nt[1].quem.split(' ')[0]+'</b> '+brl(-nt[1].valor)+
+       (nt[1].venc.length?' (vence '+nt[1].venc.join(', ')+')':'')}).join(' e ')+
+     '. ';
+ });
+ p+='Esse material foi comprado '+(MS.length>1?'nesses meses':'em '+D.meses_nome[MS[0]])+
+  ' e é consumido ao longo dos meses '+
+  'seguintes — a linha mede a <b>compra pela data da nota</b>, não o consumo. '+
+  'O que saiu do banco está no <b>Fluxo de caixa</b>: '+
+  mesesDe('caixa').filter(function(m){return LP[m]}).map(function(m){
+   return D.meses_nome[m]+' '+brl(-LP[m].caixa)}).join(' · ')+
+  '. Para a linha passar a medir uso, a operação precisa informar a duração '+
+  'estimada de cada compra — e a regra valeria para todo insumo, não só limpeza.';
+ return '<div class="aviso nota"><h4>Limpeza e descartáveis: o mês concentra a '+
+  '<span class="light">compra, não o uso</span></h4><p>'+p+'</p></div>';
 }
 
 function auditaTabela(reg){
