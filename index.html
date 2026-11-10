@@ -1754,28 +1754,26 @@ function pdocBuild(){
   return e&&e.innerHTML.trim()?e.cloneNode(true):null};
 
  bloco('Resumo do período','Os números do período em um olhar',[cl('#kpis')]);
- /* o titulo do bloco segue o REGIME da tela, como o titulo dentro da ponte:
-    com REG=comp a pagina dizia "Ponte do caixa" e o desenho dizia "Ponte do
-    resultado" — dois nomes para a mesma coisa na mesma folha. */
- bloco(REG==='comp'?'Ponte do resultado':'Ponte do caixa',
-       REG==='comp'?'Receita bruta → deduções → custos → despesas → EBITDA'
-                   :'Saldo inicial → entradas → saídas → saldo final',
-       [cl('.waterfall')]);
- tabela(document.querySelector('#rep-dre table'),'DRE por categoria',
+ /* a DRE sai em UMA folha, com a nota do CMV no pe — e a pagina 3 do padrao.
+    Nao quebra: encaixa() no fim reduz a folha inteira ate caber. */
+ var _bdre=page('DRE por categoria',
         'Resultado por competência, pela data de emissão dos documentos');
- bloco('A nota da DRE','O que o número do CMV mostra, e o que a casa comprou',
-       [vz('#dre-ajustes')]);
+ var _tdre=cl('#rep-dre table'); if(_tdre)_bdre.appendChild(_tdre);
+ var _nota=vz('#dre-ajustes'); if(_nota)_bdre.appendChild(_nota);
  /* o DFC do PDF sai com TODAS as saidas abertas, conta a conta. Reusa o
     proprio renderizador em vez de montar outra tabela — duas tabelas com a
     mesma funcao divergem na primeira mudanca. */
- var _ab=ABERTO; ABERTO={};
- Object.keys(_ab).forEach(function(k){ABERTO[k]=_ab[k]});
+ var _ab=ABERTO, _fc=document.getElementById('fcbody');
+ /* primeiro a visao resumida: mesma tabela com tudo fechado */
+ ABERTO={};
+ if(_fc)_fc.innerHTML=matriz('caixa');
+ tabela(document.querySelector('#rep-fc table'),'Fluxo de caixa (DFC)',
+        'Visão resumida · % sobre o total de saídas do mês');
  BLOCOS_DFC.forEach(function(B,bi){
   if('§=+*'.indexOf(B[0].charAt(0))>=0)return;
   ABERTO['caixa|b'+bi]=1;
   B[1].forEach(function(g){ABERTO['caixa|b'+bi+'|g'+g]=1});
  });
- var _fc=document.getElementById('fcbody');
  if(_fc)_fc.innerHTML=matriz('caixa');
  tabela(document.querySelector('#rep-fc table'),'Fluxo de caixa por categoria',
         'Todas as saídas abertas conta a conta · % sobre o total de saídas do mês');
@@ -1790,17 +1788,25 @@ function pdocBuild(){
     divergencia entre relatorios, nao a composicao — e com a ABC unificada a
     divergencia nem existe mais. O relatorio vai a investidores. */
  bloco('Composição da venda','O que foi vendido e como o cliente pagou',[vz('#vendas')]);
- bloco('Ressalvas','O que o número não diz sozinho',[cl('.disc')]);
 
- /* trava: bloco que ainda passar da pagina reduz ate caber, em vez de cortar */
+ /* trava: folha que passar da pagina REDUZ ate caber, nunca corta.
+    O piso era .52 e o piso cortava — a folha "Quando a casa vende" passava
+    54px e o resto sumia sem aviso. E a escala de um chute so erra para baixo:
+    reduzir tambem alarga a tabela (width 100/k), as linhas deixam de quebrar e
+    sobra meia pagina em branco. Dai a busca: o maior k que cabe. */
  [].slice.call(doc.querySelectorAll('.pg-b')).forEach(function(b){
   if(b.scrollHeight<=b.clientHeight+1)return;
-  var k=Math.max(.52,(b.clientHeight-2)/b.scrollHeight);
   var dentro=document.createElement('div');
   while(b.firstChild)dentro.appendChild(b.firstChild);
-  dentro.style.cssText='transform-origin:top left;transform:scale('+k.toFixed(3)+
-   ');width:'+(100/k).toFixed(2)+'%';
+  dentro.style.cssText='transform-origin:top left';
   b.appendChild(dentro);
+  var por=function(k){dentro.style.transform='scale('+k.toFixed(3)+')';
+   dentro.style.width=(100/k).toFixed(2)+'%';
+   return dentro.getBoundingClientRect().height<=b.clientHeight-1};
+  var lo=.35, hi=1;
+  if(!por(lo)&&window.console)console.warn('folha do PDF nao cabe nem a 35%');
+  for(var i=0;i<7;i++){var m=(lo+hi)/2; if(por(m))lo=m; else hi=m}
+  por(lo);
  });
  var tot=doc.querySelectorAll('.pg').length;
  [].slice.call(doc.querySelectorAll('.pg')).forEach(function(p,i){
