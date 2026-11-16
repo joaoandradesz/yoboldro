@@ -209,6 +209,9 @@ td.av{color:var(--g500);font-size:12px}
 .xtbl.mat.dre tr.ebit td{background:#D6E4F5;color:#102C4C;font-weight:800;border-top:1.5px solid #A9C6E8}
 .xtbl.mat.dre tr.res td{background:#FBEFE2;color:#7A3E00;font-weight:800;border-top:1.5px solid #E8C9A6}
 .xtbl.mat.dfc tr.ebit td{background:#FFF7ED;color:#7A3E00;font-weight:800;border-top:1.5px solid var(--orange)}
+.xtbl.mat.dfc tr.pcop td{background:#FFF7ED;color:#9A5B1C;font-weight:700;font-size:11.5px;
+ font-family:'Plus Jakarta Sans',sans-serif}
+.xtbl.mat.dfc tr.pcop td.l{font-weight:600;color:#7A3E00;text-transform:none}
 .xtbl.mat.dfc tr.res td{background:#0D0F1A;color:#fff;font-weight:800;border-top:1.5px solid #0D0F1A}
 .xtbl.mat.dfc tr.res i.avin,.xtbl.mat tr.r0 i.avin{color:rgba(255,255,255,.55)}
 .xtbl.mat tr.zero td{opacity:.42}
@@ -292,6 +295,15 @@ td.av{color:var(--g500);font-size:12px}
 .subt{font-family:'Plus Jakarta Sans',sans-serif;margin:30px 0 12px;font-size:14px;font-weight:600;color:var(--ink2);letter-spacing:.02em}
 .selo{margin-top:7px;font-size:11.5px;color:rgba(255,255,255,.5);letter-spacing:.01em}
 .selo b{color:rgba(255,255,255,.8);font-weight:600}
+/* 16/11/2026, pedido do Tiago: a projecao de caixa deixa de ser uma URL que
+   so eu sei e passa a ser um campo do painel. O botao carrega a data de
+   geracao da projecao, nao a do painel: sao dois documentos com cadencia
+   diferente, e sem a data o leitor assume que a projecao e de hoje. */
+.proj{display:inline-flex;align-items:center;gap:9px;margin-top:13px;padding:9px 15px;
+ border-radius:10px;background:var(--orange);color:var(--navy);text-decoration:none;
+ font-family:'Plus Jakarta Sans',sans-serif;font-size:12.5px;font-weight:700}
+.proj:hover{filter:brightness(1.07)}
+.proj i{font-style:normal;font-weight:600;opacity:.72;font-size:11.5px}
 .aviso.nota{background:var(--orange-soft);border-color:#FDBA74;margin:14px 0 0}
 .aviso.nota h4{color:#9A3412}
 .aviso.erro{border-color:var(--out);background:#FFF5F5}
@@ -411,7 +423,7 @@ td.av{color:var(--g500);font-size:12px}
 
 <nav class="nav"><div class="wrap">
 <div class="brand">Grupo <b>Yó / Boldró</b></div>
-<div class="nav-links"><a href="#geral" class="on">Visão geral</a><a href="#relatorios">DRE e DFC</a><a href="#venda-dia">Venda por dia</a><a href="#venda-mix">Curva e mix</a><a href="#operacao">Operação</a><a href="#auditoria">Auditoria</a><a href="#custo-receber">Custo de receber</a><a href="#vendas-sec">Composição</a></div>
+<div class="nav-links"><a href="#geral" class="on">Visão geral</a><a href="#relatorios">DRE e DFC</a><a href="#venda-dia">Venda por dia</a><a href="#venda-mix">Curva e mix</a><a href="#operacao">Operação</a><a href="#auditoria">Auditoria</a><a href="#custo-receber">Custo de receber</a><a href="#vendas-sec">Composição</a><a href="caixa.html">Projeção de caixa</a></div>
 <div class="entsw" id="entsw">
 <button data-ent="consol" class="on" onclick="setEntity('consol')">Consolidado</button>
 <button data-ent="boldro" onclick="setEntity('boldro')">Boldró</button>
@@ -425,6 +437,7 @@ td.av{color:var(--g500);font-size:12px}
 <h1 id="heroTitle"></h1>
 <div class="cnpjline" id="heroCnpj"></div>
 <div class="selo">dados lidos do Omie em <b id="selo"></b></div>
+<div><a class="proj" href="caixa.html">Projeção de caixa e compromissos <i id="projData"></i></a></div>
 <div class="mespills" id="mespills"></div>
 <div class="regsw" id="regsw"><span class="reglab">Ver a ponte do topo por:</span>
 <button data-r="caixa" class="on" onclick="setRegime('caixa')">Caixa</button>
@@ -1299,6 +1312,13 @@ var BLOCOS_DFC=[
  ['(−) IRPJ e CSLL pagos',['IR']],
  ['(±) Resultado financeiro',['10']],
  ['=GERAÇÃO DE CAIXA OPERACIONAL',GRUPOS_OP],
+ /* 16/11/2026, pedido do Tiago: a geracao de caixa operacional ganha
+    percentual "por se tratar de um indicador". Ele NAO entra na coluna
+    "% saidas": a base dele e o RECEBIMENTO do mes, e duas bases na mesma
+    coluna fazem dois numeros com o mesmo nome. Entao vira linha propria,
+    que mostra percentual onde as outras mostram reais, e o rotulo diz a
+    base. O marcador '%' no rotulo e o que matriz() le. */
+ ['%Margem de caixa operacional · % do recebimento',GRUPOS_OP],
  ['(−) Investimentos',['11']],
  ['(±) Financiamento',['12']],
  ['(±) Não operacional e transferências',['CC','NEUTRO','13']],
@@ -1358,6 +1378,25 @@ function matriz(reg){
  ESTR.forEach(function(B,bi){
   var rot=B[0], gs=B[1], c0=rot.charAt(0);
   if(c0==='§'){out+='<tr class="sep"><td class="l" colspan="'+(MS.length+2)+'">'+rot.slice(1)+'</td></tr>';return}
+  if(c0==='%'){
+   /* percentual onde as outras linhas tem reais: base e o recebimento do mes
+      (grupos 1 e OR), a mesma linha "(+) Recebimentos" da tabela. A coluna
+      "% saidas" fica vazia aqui de proposito — ela tem outra base.
+      Empresa que nao fatura nao tem margem de caixa: na YO o "recebimento" e
+      aporte e reembolso, e a conta devolvia -3.910% com cara de indicador.
+      Mesma regra do SEM_AV da DRE — percentual sobre base inventada e pior que
+      percentual nenhum, entao a linha nao aparece. */
+   if(!mesesDe('comp').some(function(m){return soma(ENT,'comp',m,['FAT'])}))return;
+   var vg=MS.map(function(m){return soma(ENT,reg,m,gs)}),
+       rb=MS.map(function(m){return Math.abs(soma(ENT,reg,m,['1','OR']))}),
+       tv=vg.reduce(function(a,b){return a+b},0),
+       tb2=rb.reduce(function(a,b){return a+b},0),
+       o2='<tr class="pcop"><td class="l n0">'+rot.slice(1)+'</td>';
+   vg.forEach(function(v,i){o2+='<td class="num'+(v<0?' neg':'')+'">'+pc(v,rb[i])+'</td>'});
+   out+=o2+'<td class="num tt'+(tv<0?' neg':'')+'">'+pc(tv,tb2)+
+        '</td><td class="num avtot"></td></tr>';
+   return;
+  }
   if(c0==='='||c0==='+'||c0==='*'){
    out+=linhaMat(rot.slice(1),MS.map(function(m){return soma(ENT,reg,m,gs)}),base,
                  c0==='='?'ebit':(c0==='*'?'res':'op'),null,0);
@@ -1899,7 +1938,7 @@ function pdocBuild(){
  tabela(document.querySelector('#rep-fc table'),'Fluxo de caixa (DFC)',
         'Visão resumida · % sobre o total de saídas do mês');
  BLOCOS_DFC.forEach(function(B,bi){
-  if('§=+*'.indexOf(B[0].charAt(0))>=0)return;
+  if('§=+*%'.indexOf(B[0].charAt(0))>=0)return;
   ABERTO['caixa|b'+bi]=1;
   B[1].forEach(function(g){ABERTO['caixa|b'+bi+'|g'+g]=1});
  });
@@ -1982,6 +2021,15 @@ function render(){
  operacao(); pizza(); custoReceber(); receita(); seisNumeros();
  pintaRelatorios(); vendasBloco();
 }
+/* A projecao de caixa e OUTRO documento, com cadencia propria
+   (caixa/atualiza.sh roda sem regerar o painel). A data vem do JSON dela, lido
+   na hora: carimbada em tempo de geracao do painel, ela congelaria e o leitor
+   clicaria supondo projecao de hoje. Falha em silencio — botao sem data e
+   melhor que data errada. */
+fetch('caixa/dados_caixa.json').then(function(r){return r.json()}).then(function(j){
+ var e=document.getElementById('projData');
+ if(e&&j&&j.gerado)e.textContent='· gerada em '+String(j.gerado).split(' ')[0];
+}).catch(function(){});
 document.getElementById('mespills').innerHTML=D.meses.map(function(m){
  return '<button data-m="'+m+'" class="'+(m===MES?'on':'')+(parcial(m)?' parc':'')+
   '" onclick="setMes(\''+m+'\')" title="'+(parcial(m)?'mês parcial, ainda em carga':'')+'">'+
