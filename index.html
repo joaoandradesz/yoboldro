@@ -303,7 +303,6 @@ td.av{color:var(--g500);font-size:12px}
  border-radius:10px;background:var(--orange);color:var(--navy);text-decoration:none;
  font-family:'Plus Jakarta Sans',sans-serif;font-size:12.5px;font-weight:700}
 .proj:hover{filter:brightness(1.07)}
-.proj i{font-style:normal;font-weight:600;opacity:.72;font-size:11.5px}
 .aviso.nota{background:var(--orange-soft);border-color:#FDBA74;margin:14px 0 0}
 .aviso.nota h4{color:#9A3412}
 .aviso.erro{border-color:var(--out);background:#FFF5F5}
@@ -437,7 +436,7 @@ td.av{color:var(--g500);font-size:12px}
 <h1 id="heroTitle"></h1>
 <div class="cnpjline" id="heroCnpj"></div>
 <div class="selo">dados lidos do Omie em <b id="selo"></b></div>
-<div><a class="proj" href="caixa.html">Projeção de caixa e compromissos <i id="projData"></i></a></div>
+<div><a class="proj" href="caixa.html">Projeção de caixa e compromissos</a></div>
 <div class="mespills" id="mespills"></div>
 <div class="regsw" id="regsw"><span class="reglab">Ver a ponte do topo por:</span>
 <button data-r="caixa" class="on" onclick="setRegime('caixa')">Caixa</button>
@@ -2021,15 +2020,6 @@ function render(){
  operacao(); pizza(); custoReceber(); receita(); seisNumeros();
  pintaRelatorios(); vendasBloco();
 }
-/* A projecao de caixa e OUTRO documento, com cadencia propria
-   (caixa/atualiza.sh roda sem regerar o painel). A data vem do JSON dela, lido
-   na hora: carimbada em tempo de geracao do painel, ela congelaria e o leitor
-   clicaria supondo projecao de hoje. Falha em silencio — botao sem data e
-   melhor que data errada. */
-fetch('caixa/dados_caixa.json').then(function(r){return r.json()}).then(function(j){
- var e=document.getElementById('projData');
- if(e&&j&&j.gerado)e.textContent='· gerada em '+String(j.gerado).split(' ')[0];
-}).catch(function(){});
 document.getElementById('mespills').innerHTML=D.meses.map(function(m){
  return '<button data-m="'+m+'" class="'+(m===MES?'on':'')+(parcial(m)?' parc':'')+
   '" onclick="setMes(\''+m+'\')" title="'+(parcial(m)?'mês parcial, ainda em carga':'')+'">'+
