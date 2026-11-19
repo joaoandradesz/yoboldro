@@ -2005,21 +2005,75 @@ def ressalva():
     # o que o painel ignorou da base, e por que. Sem isso quem conferir a DRE
     # do Omie contra este relatorio acha um buraco de R$ 12 mil sem explicacao.
     ig = D.get('ignorado') or {}
+    cg = D.get('carga') or {}
+    # Tres razoes pelas quais a DRE do Omie NAO reproduz este relatorio, todas
+    # medidas da base a cada geracao. Religado em 17/11/2026 a pedido do Joao:
+    # ficou desligado desde 09/11 e, sem ele, quem confere o Omie contra o PDF
+    # acha a diferenca e nao tem onde ler o porque. A carga do cliente nao
+    # parou, entao o texto tem de vir do D — numero escrito a mao envelhece em
+    # um dia. Ver 03 Padroes/ressalva-nao-pode-afirmar-mais-que-a-base.
     bloco_dup = ''
-    # DESLIGADO por decisao do Joao em 09/11/2026 — ver comentario acima.
-    # Trocar para `if ig.get('n'):` devolve o paragrafo.
-    if False and ig.get('n'):
-        bloco_dup = (
-            '<b>Este relat&oacute;rio ignora %d t&iacute;tulos de R$ %s que est&atilde;o na base e s&atilde;o '
-            'duplicidade.</b> Em 09/11/2026 a taxa de cart&atilde;o de agosto e setembro foi '
+    if ig.get('n') or cg.get('n'):
+        bloco_dup = ('<b>A base do Omie continua recebendo carga, e por isso a DRE do '
+                     'sistema n&atilde;o reproduz este relat&oacute;rio.</b> ')
+    if cg.get('n'):
+        dd = sorted(cg.get('dias') or {}, key=lambda d: (d[6:10], d[3:5], d[0:2]))
+        # "10/11/2026 e 11/11/2026 e 12/11/2026 e ..." era ilegivel: o dia repete
+        # o mes e o ano seis vezes. So o ultimo leva a data inteira.
+        dias = ((', '.join(d[:2] for d in dd[:-1]) + ' e ' + dd[-1]) if len(dd) > 1
+                else (dd[0] if dd else ''))
+        fech = cg.get('fechado') or {}
+        if fech:
+            toca = ('O que caiu em m&ecirc;s com resultado publicado soma %s, e <b>j&aacute; '
+                    'est&aacute; dentro dos n&uacute;meros desta p&aacute;gina</b>'
+                    % ' e '.join('%s em %s' % (brlpt(v['valor']), D['meses_nome'][m])
+                                 for m, v in sorted(fech.items())))
+        else:
+            toca = ('<b>Nada disso caiu em m&ecirc;s com resultado publicado</b>, logo nenhum '
+                    'n&uacute;mero desta p&aacute;gina mudou por causa da carga')
+        bloco_dup += (
+            'Depois de %s entraram mais <b>%d t&iacute;tulos, %s</b>, lan&ccedil;ados pela equipe do '
+            'cliente em %s. %s. Os outros %s t&ecirc;m compet&ecirc;ncia de %s em diante: '
+            'n&atilde;o entram em nenhuma linha de resultado desta p&aacute;gina — %s aparece aqui '
+            's&oacute; no fluxo de caixa, e o que vem depois &eacute; compromisso futuro, ainda sem '
+            'reflexo na proje&ccedil;&atilde;o de caixa. '
+            % (cg.get('corte') or D.get('carga_corte'), cg['n'], brlpt(cg['valor']),
+               dias, toca,
+               brlpt((cg.get('fora') or {}).get('valor') or 0),
+               D['meses_nome'].get(D['meses'][-1], 'outubro'),
+               D['meses_nome'].get(D['meses'][-1], 'outubro')))
+    if ig.get('n'):
+        bloco_dup += (
+            '<b>Este relat&oacute;rio tamb&eacute;m ignora %d t&iacute;tulos de R$ %s que est&atilde;o na base e '
+            's&atilde;o duplicidade.</b> Em 09/11/2026 a taxa de cart&atilde;o de agosto e setembro foi '
             'relan&ccedil;ada venda a venda na conta "Taxa de cart&atilde;o cr&eacute;dito" (2.05.99), '
             'sendo que o mesmo custo j&aacute; estava lan&ccedil;ado desde 15/10 na conta "Taxas de '
             'cart&atilde;o" (2.02.01), de forma consolidada — R$ 2.009,99 em agosto e '
             'R$ 10.451,57 em setembro. Mantivemos o lan&ccedil;amento original e desprezamos o '
-            'novo. <b>A DRE do Omie vai mostrar esse custo em dobro at&eacute; o CSC excluir '
-            'uma das duas s&eacute;ries</b>; outubro e novembro n&atilde;o t&ecirc;m duplicidade, porque '
-            'n&atilde;o havia lan&ccedil;amento anterior. '
+            'novo, para n&atilde;o contar o mesmo custo duas vezes. <b>A DRE do Omie mostra esse '
+            'custo em dobro at&eacute; que uma das duas s&eacute;ries seja exclu&iacute;da</b>; outubro e '
+            'novembro n&atilde;o t&ecirc;m duplicidade, porque n&atilde;o havia lan&ccedil;amento anterior. '
             % (ig['n'], brlpt(ig['valor']).replace('R$ ', '')))
+    # a receita tem o mesmo problema, em ordem de grandeza maior: no Omie as
+    # vendas estao em duas series (data do credito e data da venda) desde 09/11.
+    rc = cg.get('receita') or {}
+    fat3 = {m: ((D.get('receita') or {}).get(m) or {}).get('recebido') or 0
+            for m in (D.get('meses') or [])}
+    par = [(m, rc[m], fat3.get(m) or 0) for m in sorted(rc)
+           if (fat3.get(m) or 0) and rc[m] > (fat3.get(m) or 0) * 1.2]
+    if par:
+        bloco_dup += (
+            '<b>A receita tem a mesma diverg&ecirc;ncia, e maior.</b> Desde 09/11/2026 a venda '
+            'est&aacute; lan&ccedil;ada no Omie em duas s&eacute;ries que convivem: uma pela data do '
+            'cr&eacute;dito banc&aacute;rio e outra pela data da venda. Somados, os t&iacute;tulos de receita '
+            'do sistema d&atilde;o %s. <b>Este relat&oacute;rio usa o 3LM</b>, que &eacute; a venda do '
+            'per&iacute;odo, e n&atilde;o a soma dos t&iacute;tulos. '
+            # tres listas paralelas ("A; B; C contra X; Y; Z — D e E e F") obrigavam
+            # o leitor a casar posicao por posicao. Um mes por vez, com os tres
+            # numeros juntos.
+            % '; '.join('%s em %s contra %s medidos no 3LM, %s a mais'
+                        % (brlpt(v), D['meses_nome'][m], brlpt(f), brlpt(v - f))
+                        for m, v, f in par))
 
     # IRPJ/CSLL e trimestral: o painel rateia pela receita, o Omie nao.
     # Diferenca de CRITERIO tem de estar escrita, senao parece erro de conta.
