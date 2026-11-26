@@ -1,5 +1,5 @@
 {
- "gerado": "26/11/2026 às 16:49",
+ "gerado": "26/11/2026 às 17:05",
  "meses": [
   "2026-08",
   "2026-09",
@@ -427,9 +427,9 @@
     "notas": []
    },
    "2026-11": {
-    "compra": -17879.12,
+    "compra": -18349.08,
     "parcelado": -2479.65,
-    "n": 11,
+    "n": 12,
     "n_parc": 2,
     "caixa": -19115.59,
     "notas": [
@@ -463,7 +463,7 @@
      "pago": -26075.15
     },
     "2026-11": {
-     "compra": -17879.12,
+     "compra": -18349.08,
      "pago": -19115.59
     }
    }
@@ -474,8 +474,8 @@
   "valor": 0.0
  },
  "carga": {
-  "n": 1241,
-  "valor": 4288864.51,
+  "n": 1346,
+  "valor": 4956051.21,
   "dias": {
    "13/11/2026": {
     "n": 144,
@@ -490,28 +490,28 @@
     "valor": 1107.68
    },
    "24/11/2026": {
-    "n": 91,
-    "valor": 111295.05
+    "n": 89,
+    "valor": 109795.05
    },
    "25/11/2026": {
     "n": 83,
-    "valor": 179579.5
+    "valor": 179879.5
    },
    "10/11/2026": {
     "n": 140,
-    "valor": 718715.72
+    "valor": 729061.72
    },
    "11/11/2026": {
     "n": 34,
     "valor": 9495.52
    },
    "12/11/2026": {
-    "n": 491,
-    "valor": 1915286.27
+    "n": 478,
+    "valor": 1795866.22
    },
    "16/11/2026": {
-    "n": 54,
-    "valor": 490946.99
+    "n": 53,
+    "valor": 475436.99
    },
    "19/11/2026": {
     "n": 28,
@@ -528,16 +528,20 @@
    "23/11/2026": {
     "n": 20,
     "valor": 27285.3
+   },
+   "26/11/2026": {
+    "n": 121,
+    "valor": 792970.75
    }
   },
   "fechado": {
    "2026-10": {
-    "n": 349,
-    "valor": 549340.36
+    "n": 380,
+    "valor": 614641.5
    },
    "2026-09": {
-    "n": 34,
-    "valor": 43828.38
+    "n": 33,
+    "valor": 42328.38
    },
    "2026-08": {
     "n": 12,
@@ -545,14 +549,14 @@
    }
   },
   "fora": {
-   "n": 846,
-   "valor": 3679003.83
+   "n": 921,
+   "valor": 4282389.39
   },
   "receita": {
    "2026-08": 174061.71,
    "2026-09": 1109143.94,
    "2026-10": 1228261.11,
-   "2026-11": 98278.24
+   "2026-11": 82768.24
   }
  },
  "carga_corte": "09/11/2026",
@@ -11258,15 +11262,15 @@
       "1": 1109143.9400000002,
       "NEUTRO": 1058.2300000000012,
       "OR": 340.0,
-      "8": -45876.46,
+      "8": -53876.46,
       "11": -88822.65,
       "9": -7500.0,
-      "6": -231425.4500000001,
+      "6": -223425.4500000001,
       "5": -37537.69,
       "4": -349464.80999999994,
       "14": -23215.83,
       "CC": -3466.67,
-      "3": -103880.30999999997,
+      "3": -107160.60999999997,
       "7": -825.42,
       "2": -40916.189999999995,
       "13": -340.0,
@@ -11296,7 +11300,7 @@
       "11|Obras e reformas": -3500.0,
       "5|Limpeza e descartáveis": -2948.46,
       "8|Tarifas bancárias": -782.2500000000001,
-      "6|Remuneração PJ": -35933.34,
+      "6|Remuneração PJ": -27933.34,
       "4|Bebidas alcoólicas": -202736.1,
       "6|ISS | Permanência": -2134.33,
       "9|Agência e conteúdo": -2500.0,
@@ -11304,7 +11308,7 @@
       "4|Gás de cozinha": -1000.0,
       "CC|Adiantamento a reembolsar - saída": -3466.67,
       "8|Contabilidade, jurídico e consultorias": -6870.0,
-      "3|Comissões sobre vendas": -93428.74000000003,
+      "3|Comissões sobre vendas": -96709.04000000004,
       "7|Taxas distritais, TPU, TLL e IPTU": -825.42,
       "5|Transporte, veículo e combustível": -549.0,
       "9|Mídia paga": -1500.0,
@@ -11317,7 +11321,7 @@
       "8|Material de escritório": -1785.5,
       "2|Cancelamentos e estornos": -5300.0,
       "5|Diversos de operação": -5202.6,
-      "8|Pró-labore": -26000.0,
+      "8|Pró-labore": -34000.0,
       "8|Ajuda de custo": -6000.0,
       "6|FGTS e contribuições": -23199.129999999997,
       "6|Variável": -26655.0,
@@ -11361,7 +11365,7 @@
       "11|Obras e reformas": 2,
       "5|Limpeza e descartáveis": 3,
       "8|Tarifas bancárias": 25,
-      "6|Remuneração PJ": 7,
+      "6|Remuneração PJ": 6,
       "4|Bebidas alcoólicas": 39,
       "6|ISS | Permanência": 6,
       "9|Agência e conteúdo": 1,
@@ -11369,7 +11373,7 @@
       "4|Gás de cozinha": 1,
       "CC|Adiantamento a reembolsar - saída": 2,
       "8|Contabilidade, jurídico e consultorias": 3,
-      "3|Comissões sobre vendas": 31,
+      "3|Comissões sobre vendas": 32,
       "7|Taxas distritais, TPU, TLL e IPTU": 2,
       "5|Transporte, veículo e combustível": 3,
       "9|Mídia paga": 1,
@@ -11382,7 +11386,7 @@
       "8|Material de escritório": 1,
       "2|Cancelamentos e estornos": 3,
       "5|Diversos de operação": 10,
-      "8|Pró-labore": 2,
+      "8|Pró-labore": 3,
       "8|Ajuda de custo": 3,
       "6|FGTS e contribuições": 2,
       "6|Variável": 4,
@@ -23246,9 +23250,9 @@
        "001/001"
       ],
       [
-       "8|Ajuda de custo",
+       "8|Pró-labore",
        "30/09/2026",
-       -2000,
+       -8000,
        "GEORGE CARTAXO MENDES COSTA",
        "112.752.714-21",
        "",
@@ -23257,9 +23261,9 @@
        "001/001"
       ],
       [
-       "6|Remuneração PJ",
+       "8|Ajuda de custo",
        "30/09/2026",
-       -8000,
+       -2000,
        "GEORGE CARTAXO MENDES COSTA",
        "112.752.714-21",
        "",
@@ -24156,6 +24160,17 @@
        "",
        "",
        "30/10/2026",
+       "001/001"
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "30/09/2026",
+       -3280.3,
+       "DEYBSON JOSE FAGUNDES",
+       "052.185.544-64",
+       "",
+       "",
+       "27/10/2026",
        "001/001"
       ],
       [
@@ -27500,11 +27515,11 @@
       "5": -88403.96000000002,
       "7": -17059.8,
       "14": -47895.0,
-      "11": -54736.030000000006,
+      "11": -54871.16,
       "CC": -100015.0,
       "9": -9000.0,
-      "3": -27109.579999999998,
       "2": -51039.64000000001,
+      "3": -89601.95,
       "IR": -9223.89,
       "FAT": 1193067.36
      },
@@ -27548,16 +27563,16 @@
       "9|Mídia paga": -1500.0,
       "5|Energia elétrica": -2019.55,
       "8|Licenças e alvarás": -289.2,
-      "3|Comissões sobre vendas": -15441.359999999999,
       "6|Passagens aéreas da equipe": -605.0,
       "6|Uniformes, EPI e exames": -540.0,
-      "8|Pró-labore": -38000.0,
-      "8|Ajuda de custo": -2000.0,
+      "8|Pró-labore": -36000.0,
+      "8|Ajuda de custo": -4000.0,
       "2|Cancelamentos e estornos": -1069.92,
       "3|Taxa de cartão crédito": -11668.220000000001,
       "IR|IRPJ": -5281.23,
       "IR|CSLL": -3942.66,
       "6|Variável": -10504.0,
+      "3|Comissões sobre vendas": -77933.73000000001,
       "2|COFINS": -30803.87,
       "2|PIS": -6673.79,
       "4|Gelo e gases": -1298.0,
@@ -27568,7 +27583,7 @@
       "8|Rateio": -7000.0,
       "4|Gás de cozinha": -138.82,
       "5|Reposição de utensílios": -1496.26,
-      "11|Frete de materiais de operação": -1532.1399999999999,
+      "11|Frete de materiais de operação": -1667.27,
       "FAT|Cartão de crédito à vista": 901447.83,
       "FAT|Cartão de débito": 135945.72,
       "FAT|PIX": 92950.87,
@@ -27616,16 +27631,16 @@
       "9|Mídia paga": 1,
       "5|Energia elétrica": 2,
       "8|Licenças e alvarás": 1,
-      "3|Comissões sobre vendas": 46,
       "6|Passagens aéreas da equipe": 1,
       "6|Uniformes, EPI e exames": 2,
       "8|Pró-labore": 3,
-      "8|Ajuda de custo": 1,
+      "8|Ajuda de custo": 2,
       "2|Cancelamentos e estornos": 2,
       "3|Taxa de cartão crédito": 178,
       "IR|IRPJ": 1,
       "IR|CSLL": 1,
       "6|Variável": 1,
+      "3|Comissões sobre vendas": 75,
       "2|COFINS": 1,
       "2|PIS": 1,
       "4|Gelo e gases": 3,
@@ -27636,7 +27651,7 @@
       "8|Rateio": 1,
       "4|Gás de cozinha": 2,
       "5|Reposição de utensílios": 2,
-      "11|Frete de materiais de operação": 3,
+      "11|Frete de materiais de operação": 4,
       "FAT|Cartão de crédito à vista": 1,
       "FAT|Cartão de débito": 1,
       "FAT|PIX": 1,
@@ -35219,17 +35234,6 @@
        "001/001"
       ],
       [
-       "3|Comissões sobre vendas",
-       "29/10/2026",
-       -3280.3,
-       "DEYBSON JOSE FAGUNDES",
-       "052.185.544-64",
-       "",
-       "",
-       "27/10/2026",
-       "001/001"
-      ],
-      [
        "8|Contabilidade, jurídico e consultorias",
        "29/10/2026",
        -786.05,
@@ -35496,7 +35500,18 @@
       [
        "8|Pró-labore",
        "31/10/2026",
-       -10000,
+       -8000,
+       "MARCELA CAVALCANTI VILANOVA HURTADO",
+       "SEM NF",
+       "",
+       "",
+       "04/11/2026",
+       "001/001"
+      ],
+      [
+       "8|Ajuda de custo",
+       "31/10/2026",
+       -2000,
        "MARCELA CAVALCANTI VILANOVA HURTADO",
        "SEM NF",
        "",
@@ -37882,7 +37897,7 @@
       ],
       [
        "3|Comissões sobre vendas",
-       "10/10/2026",
+       "31/10/2026",
        -95.14,
        "SEVERINO ALEXANDRE DA SILVA",
        "29793993880",
@@ -37890,6 +37905,17 @@
        "",
        "11/11/2026",
        "010/012"
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -72.67,
+       "RAFAELA PATRICIA MIRANDA DE ARAUJO",
+       "",
+       "",
+       "",
+       "11/11/2026",
+       "001/001"
       ],
       [
        "3|Comissões sobre vendas",
@@ -40598,6 +40624,336 @@
        "001/001"
       ],
       [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -3200,
+       "RAFAELA PATRICIA MIRANDA DE ARAUJO",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -3200,
+       "JOAO WICTTOR MARCELINO MEDEIROS",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -3200,
+       "JOAO VICTOR OLIVEIRA NERY",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -2800,
+       "YURI COSTA BARRETO",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -1700,
+       "JOSE PAULO FERREIRA",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -2500,
+       "ALUISIO FREITAS DE MORAIS",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -3200,
+       "SWESLLEN SAYONARA SANTOS DE BRITO",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -3000,
+       "GABRIELLA ALVES NOVAES",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -2800,
+       "SEVERINO ALEXANDRE DA SILVA",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -2300,
+       "GABRIEL JOSE DA SILVA SANTOS",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -2500,
+       "ROBINSON BARBOSA BORGES",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -1900,
+       "MARIO ROBERTO DE OLIVEIRA LOPES",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -1400,
+       "JOSE EDSON FRANCISCO DOS SANTOS",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -1900,
+       "MATHEUS MARQUES DOS SANTOS",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -2900,
+       "THIAGO MACHADO STORCK",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -2900,
+       "VOLHA DRAZIELI SOARES DE SOUZA",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -1500,
+       "GLEICE KELLY DE OLIVEIRA GOMES DE SOUZA",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -2400,
+       "INACIO ADRIANO DE LIMA",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -2400,
+       "PAULO CESAR DA SILVA",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -1200,
+       "VIVIANE DE SOUZA SILVA",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -2500,
+       "DIEGO CLEOVANSOSTENES VITAL DE VASCONCELOS",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -2200,
+       "PEDRO FRANZO XAVIER",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -2800,
+       "GLAUBER ANTONIO SILVA SANTANA",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -1200,
+       "JOSE JADSON SILVA GOMES",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -1600,
+       "ANTONIO JOSE DA SILVA JUNIOR",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -1600,
+       "JOSE MANOEL DOS SANTOS",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -1700,
+       "ANTONIO CARLOS CHERU",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -1600,
+       "EDIVALDO IVAN DOS SANTOS",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "3|Comissões sobre vendas",
+       "31/10/2026",
+       -1600,
+       "SEBASTIAO DO CARMO MAIA FARIAS",
+       "",
+       "",
+       "",
+       "10/11/2026",
+       ""
+      ],
+      [
+       "11|Frete de materiais de operação",
+       "31/10/2026",
+       -135.13,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA ME",
+       "000106672/1",
+       "",
+       "",
+       "08/11/2026",
+       "001/001"
+      ],
+      [
        "FAT|Cartão de crédito à vista",
        "",
        901447.83,
@@ -40862,15 +41218,15 @@
       "1": 82768.23999999998,
       "OR": 1046.74,
       "NEUTRO": 3400.0,
-      "8": -14894.970000000001,
+      "8": -24894.97,
       "5": -89938.09999999999,
-      "4": -194770.90000000008,
-      "6": -160947.74999999994,
-      "11": -15630.619999999999,
-      "14": -39644.600000000006,
-      "7": -12246.519999999999,
+      "4": -226760.51000000004,
+      "6": -161761.08999999997,
+      "11": -16580.62,
+      "14": -52421.600000000006,
+      "7": -12846.519999999999,
       "9": -6000.0,
-      "3": -2007.6100000000001,
+      "3": -1934.94,
       "2": -28885.36,
       "13": -13300.0
      },
@@ -40880,23 +41236,23 @@
       "NEUTRO|Adiantamento de clientes": 3400.0,
       "8|Sistemas": -4012.8900000000003,
       "5|Transporte, veículo e combustível": -7414.0,
-      "4|Proteínas (carnes e frutos do mar)": -60764.2,
+      "4|Proteínas (carnes e frutos do mar)": -81676.08999999997,
       "5|Limpeza e descartáveis": -19115.59,
-      "4|Bebidas não alcoólicas": -8067.780000000001,
-      "4|Bebidas alcoólicas": -51504.42,
-      "6|Extras e freelancers": -22706.0,
+      "4|Bebidas não alcoólicas": -9257.73,
+      "4|Bebidas alcoólicas": -51694.92,
+      "6|Extras e freelancers": -24956.0,
       "4|Outros insumos e diversos": -5948.3,
       "11|Equipamentos e mobiliário": -11850.0,
       "5|Diversos de operação": -1725.0,
       "8|Contabilidade, jurídico e consultorias": -10882.08,
       "5|Alojamento e ajuda de custo para moradia": -54200.0,
-      "4|Frete de insumos de alimentos e bebidas": -34561.969999999994,
+      "4|Frete de insumos de alimentos e bebidas": -41846.86999999999,
       "5|Aluguel de máquinas e equipamentos": -531.9,
       "4|Gelo e gases": -1530.0,
       "5|Manutenção de equipamentos": -500.0,
-      "14|Artistas e couvert": -39644.600000000006,
-      "6|ISS | Permanência": -6437.18,
-      "7|Outros aluguéis": -10000.0,
+      "14|Artistas e couvert": -52421.600000000006,
+      "6|ISS | Permanência": -8340.62,
+      "7|Outros aluguéis": -10600.0,
       "9|Outros de marketing": -4500.0,
       "6|Férias": -14200.1,
       "6|Rescisões": -1740.76,
@@ -40904,24 +41260,25 @@
       "7|Taxas distritais, TPU, TLL e IPTU": -1186.72,
       "4|Hortifrúti": -20306.63,
       "3|Taxa de cartão crédito": -1934.94,
-      "4|Água mineral": -3931.5,
+      "4|Água mineral": -4811.5,
       "6|Diarista (OIA)": -35158.36,
-      "6|Variável": -15331.0,
+      "6|Variável": -10504.0,
       "11|Investimentos diversos": -2780.62,
       "7|Seguros": -1059.8,
       "6|Passagens aéreas da equipe": -1050.0,
-      "3|Comissões sobre vendas": -72.67,
-      "6|Alimentação de colaboradores": -6930.0,
+      "6|Alimentação de colaboradores": -8382.0,
       "5|Energia elétrica": -2787.53,
       "2|COFINS": -28885.36,
       "6|Remuneração PJ": -7000.0,
-      "11|Prestadores de servicos gerais": -1000.0,
+      "11|Prestadores de servicos gerais": -1950.0,
       "5|Água e esgoto": -1408.68,
+      "8|Pró-labore": -8000.0,
+      "8|Ajuda de custo": -2000.0,
       "5|Reposição de utensílios": -2255.4,
-      "6|Uniformes, EPI e exames": -530.0,
-      "4|Frios, laticínios e congelados": -4710.42,
+      "6|Uniformes, EPI e exames": -564.9,
+      "4|Frios, laticínios e congelados": -5183.19,
       "9|Mídia paga": -1500.0,
-      "4|Secos e mercearia": -3445.6800000000003,
+      "4|Secos e mercearia": -4505.280000000001,
       "13|Pagamento indevido / a maior": -13300.0,
       "6|13º salário": -19651.06
      },
@@ -40931,23 +41288,23 @@
       "NEUTRO|Adiantamento de clientes": 3,
       "8|Sistemas": 4,
       "5|Transporte, veículo e combustível": 6,
-      "4|Proteínas (carnes e frutos do mar)": 22,
+      "4|Proteínas (carnes e frutos do mar)": 30,
       "5|Limpeza e descartáveis": 14,
-      "4|Bebidas não alcoólicas": 12,
-      "4|Bebidas alcoólicas": 15,
-      "6|Extras e freelancers": 25,
+      "4|Bebidas não alcoólicas": 13,
+      "4|Bebidas alcoólicas": 16,
+      "6|Extras e freelancers": 26,
       "4|Outros insumos e diversos": 5,
       "11|Equipamentos e mobiliário": 3,
       "5|Diversos de operação": 2,
       "8|Contabilidade, jurídico e consultorias": 6,
       "5|Alojamento e ajuda de custo para moradia": 14,
-      "4|Frete de insumos de alimentos e bebidas": 23,
+      "4|Frete de insumos de alimentos e bebidas": 27,
       "5|Aluguel de máquinas e equipamentos": 1,
       "4|Gelo e gases": 4,
       "5|Manutenção de equipamentos": 1,
-      "14|Artistas e couvert": 32,
-      "6|ISS | Permanência": 22,
-      "7|Outros aluguéis": 1,
+      "14|Artistas e couvert": 41,
+      "6|ISS | Permanência": 24,
+      "7|Outros aluguéis": 2,
       "9|Outros de marketing": 1,
       "6|Férias": 4,
       "6|Rescisões": 1,
@@ -40955,31 +41312,32 @@
       "7|Taxas distritais, TPU, TLL e IPTU": 1,
       "4|Hortifrúti": 14,
       "3|Taxa de cartão crédito": 37,
-      "4|Água mineral": 2,
+      "4|Água mineral": 3,
       "6|Diarista (OIA)": 42,
-      "6|Variável": 2,
+      "6|Variável": 1,
       "11|Investimentos diversos": 2,
       "7|Seguros": 1,
       "6|Passagens aéreas da equipe": 1,
-      "3|Comissões sobre vendas": 1,
-      "6|Alimentação de colaboradores": 2,
+      "6|Alimentação de colaboradores": 4,
       "5|Energia elétrica": 2,
       "2|COFINS": 1,
       "6|Remuneração PJ": 1,
-      "11|Prestadores de servicos gerais": 1,
+      "11|Prestadores de servicos gerais": 3,
       "5|Água e esgoto": 1,
+      "8|Pró-labore": 1,
+      "8|Ajuda de custo": 1,
       "5|Reposição de utensílios": 2,
-      "6|Uniformes, EPI e exames": 2,
-      "4|Frios, laticínios e congelados": 4,
+      "6|Uniformes, EPI e exames": 3,
+      "4|Frios, laticínios e congelados": 7,
       "9|Mídia paga": 1,
-      "4|Secos e mercearia": 3,
+      "4|Secos e mercearia": 7,
       "13|Pagamento indevido / a maior": 1,
       "6|13º salário": 33
      },
      "familias": {
-      "cozinha": -89226.92999999998,
-      "bar": -65033.7,
-      "comum": -40510.26999999999
+      "cozinha": -111671.18999999994,
+      "bar": -67294.15000000001,
+      "comum": -47795.169999999984
      },
      "itens": [
       [
@@ -43097,7 +43455,7 @@
       [
        "6|Variável",
        "30/11/2026",
-       -5331,
+       -10504,
        "GEORGE CARTAXO MENDES COSTA",
        "112.752.714-21",
        "",
@@ -43213,17 +43571,6 @@
        "",
        "",
        "10/11/2026",
-       "001/001"
-      ],
-      [
-       "3|Comissões sobre vendas",
-       "10/11/2026",
-       -72.67,
-       "RAFAELA PATRICIA MIRANDA DE ARAUJO",
-       "",
-       "",
-       "",
-       "11/11/2026",
        "001/001"
       ],
       [
@@ -43415,13 +43762,13 @@
       ],
       [
        "4|Bebidas não alcoólicas",
-       "12/11/2026",
-       -286.05,
+       "25/11/2026",
+       -591,
        "PRESHH ALUGUEL DE MAQUINAS LTDA",
        "",
        "",
        "",
-       "02/12/2026",
+       "10/12/2026",
        "001/013"
       ],
       [
@@ -43469,9 +43816,20 @@
        "001/013"
       ],
       [
-       "6|Variável",
+       "8|Pró-labore",
        "30/11/2026",
-       -10000,
+       -8000,
+       "GEORGE CARTAXO MENDES COSTA",
+       "112.752.714-21",
+       "",
+       "",
+       "04/12/2026",
+       "001/013"
+      ],
+      [
+       "8|Ajuda de custo",
+       "30/11/2026",
+       -2000,
        "GEORGE CARTAXO MENDES COSTA",
        "112.752.714-21",
        "",
@@ -44826,7 +45184,7 @@
        "24/11/2026",
        -1365,
        "STUDIO SALP DE CERAMICA LTDA",
-       "32054211000101",
+       "000001613/1",
        "",
        "",
        "13/11/2026",
@@ -45223,6 +45581,446 @@
        -120,
        "CRISTIANE MARIA DE OLIVEIRA SANDES",
        "035.734.724-27",
+       "",
+       "",
+       "26/11/2026",
+       "001/001"
+      ],
+      [
+       "14|Artistas e couvert",
+       "26/11/2026",
+       -1600,
+       "JOAO LUIZ DO NASCIMENTO DA ROCHA",
+       "034.362.754-09",
+       "",
+       "",
+       "26/11/2026",
+       "001/001"
+      ],
+      [
+       "14|Artistas e couvert",
+       "26/11/2026",
+       -3900,
+       "ANDRE LUIS SANTIAGO EIRAS",
+       "071.738.944-84",
+       "",
+       "",
+       "26/11/2026",
+       "001/001"
+      ],
+      [
+       "14|Artistas e couvert",
+       "26/11/2026",
+       -1000,
+       "GEANDRO DE MOURA SILVA",
+       "16.915.885/0001-99",
+       "",
+       "",
+       "26/11/2026",
+       "001/001"
+      ],
+      [
+       "14|Artistas e couvert",
+       "26/11/2026",
+       -1300,
+       "ANDRE LUIS SANTIAGO EIRAS",
+       "071.738.944-84",
+       "",
+       "",
+       "26/11/2026",
+       "001/001"
+      ],
+      [
+       "14|Artistas e couvert",
+       "26/11/2026",
+       -750,
+       "BRUNO CELIO PORTELA DE SOUZA",
+       "219.874.825.-22",
+       "",
+       "",
+       "26/11/2026",
+       "001/001"
+      ],
+      [
+       "14|Artistas e couvert",
+       "26/11/2026",
+       -500,
+       "ANDRE LUIS SANTIAGO EIRAS",
+       "071.738.944-84",
+       "",
+       "",
+       "26/11/2026",
+       "001/001"
+      ],
+      [
+       "14|Artistas e couvert",
+       "26/11/2026",
+       -1500,
+       "JUAREZ APARECIDO GOMES DOS SANTOS",
+       "333.709.648-78",
+       "",
+       "",
+       "26/11/2026",
+       "001/001"
+      ],
+      [
+       "14|Artistas e couvert",
+       "26/11/2026",
+       -1100,
+       "53.011.566 CLEITON DE SANTANA NASCIMENTO",
+       "53.011.566/0001-85",
+       "",
+       "",
+       "26/11/2026",
+       "001/001"
+      ],
+      [
+       "4|Frete de insumos de alimentos e bebidas",
+       "18/11/2026",
+       -6879.5,
+       "TORRE ALTA SERVICOS E REPRESENTACOES LTDA",
+       "66.476.606/0001-06",
+       "",
+       "",
+       "24/11/2026",
+       "001/001"
+      ],
+      [
+       "14|Artistas e couvert",
+       "26/11/2026",
+       -1127,
+       "ANDRE LUIS SANTIAGO EIRAS",
+       "071.738.944-84",
+       "",
+       "",
+       "26/11/2026",
+       "001/001"
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "19/11/2026",
+       -2626.5,
+       "O REI DAS OVAS COMERCIO DE PESCADOS LTDA",
+       "000045556/1",
+       "",
+       "",
+       "01/12/2026",
+       "001/001"
+      ],
+      [
+       "6|ISS | Permanência",
+       "26/11/2026",
+       -1797.65,
+       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
+       "",
+       "",
+       "",
+       "30/11/2026",
+       "001/001"
+      ],
+      [
+       "4|Secos e mercearia",
+       "24/11/2026",
+       -224.88,
+       "SWELL DISTRIBUIDORA ATACADISTA DE PRODUTOS ALI",
+       "000029629/1",
+       "",
+       "",
+       "01/12/2026",
+       "001/001"
+      ],
+      [
+       "4|Bebidas alcoólicas",
+       "24/11/2026",
+       -190.5,
+       "DISTRIBUIDORA NORONHENSE DE BEBIDAS LTDA",
+       "10291901000133",
+       "",
+       "",
+       "01/12/2026",
+       "001/001"
+      ],
+      [
+       "4|Bebidas não alcoólicas",
+       "24/11/2026",
+       -885,
+       "DISTRIBUIDORA NORONHENSE DE BEBIDAS LTDA",
+       "10291901000133",
+       "",
+       "",
+       "01/12/2026",
+       "001/001"
+      ],
+      [
+       "4|Água mineral",
+       "24/11/2026",
+       -880,
+       "DISTRIBUIDORA NORONHENSE DE BEBIDAS LTDA",
+       "10291901000133",
+       "",
+       "",
+       "01/12/2026",
+       "001/001"
+      ],
+      [
+       "6|Alimentação de colaboradores",
+       "24/11/2026",
+       -462,
+       "APPROVE DISTRIBUIDOR LTDA",
+       "000005139/1",
+       "",
+       "",
+       "04/12/2026",
+       "001/001"
+      ],
+      [
+       "11|Prestadores de servicos gerais",
+       "11/11/2026",
+       -150,
+       "SEBASTIAO DO CARMO MAIA FARIAS",
+       "81 979160464",
+       "",
+       "",
+       "26/11/2026",
+       "001/001"
+      ],
+      [
+       "7|Outros aluguéis",
+       "26/11/2026",
+       -600,
+       "CLAUDIO HENRIQUE BEZERRA XAVIER",
+       "SEM NF",
+       "",
+       "",
+       "26/11/2026",
+       "001/001"
+      ],
+      [
+       "4|Frete de insumos de alimentos e bebidas",
+       "26/11/2026",
+       -135.13,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA ME",
+       "000111082/1",
+       "",
+       "",
+       "08/11/2026",
+       "001/001"
+      ],
+      [
+       "4|Frete de insumos de alimentos e bebidas",
+       "26/11/2026",
+       -135.14,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA ME",
+       "000111080/1",
+       "",
+       "",
+       "08/11/2026",
+       "001/001"
+      ],
+      [
+       "4|Frete de insumos de alimentos e bebidas",
+       "26/11/2026",
+       -135.13,
+       "ALEM-MAR TRANSPORTES E NAVEGACAO LTDA ME",
+       "000111081/1",
+       "",
+       "",
+       "08/11/2026",
+       "001/001"
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "12/11/2026",
+       -3647.89,
+       "PRASO PLATAFORMA DE COMERCIO LTDA.",
+       "001147885/1",
+       "",
+       "",
+       "26/11/2026",
+       "001/002"
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "12/11/2026",
+       -3647.9,
+       "PRASO PLATAFORMA DE COMERCIO LTDA.",
+       "001147885/2",
+       "",
+       "",
+       "10/12/2026",
+       "002/002"
+      ],
+      [
+       "4|Secos e mercearia",
+       "12/11/2026",
+       -189.36,
+       "PRASO PLATAFORMA DE COMERCIO LTDA.",
+       "001149424/1",
+       "",
+       "",
+       "27/11/2026",
+       "001/002"
+      ],
+      [
+       "4|Secos e mercearia",
+       "12/11/2026",
+       -189.36,
+       "PRASO PLATAFORMA DE COMERCIO LTDA.",
+       "001149424/2",
+       "",
+       "",
+       "11/12/2026",
+       "002/002"
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "26/11/2026",
+       -2300,
+       "JOABE VIEIRA LIRA",
+       "81996565153",
+       "",
+       "",
+       "26/11/2026",
+       "001/001"
+      ],
+      [
+       "6|Uniformes, EPI e exames",
+       "26/11/2026",
+       -34.9,
+       "MIX COMERCIO VAREJISTA DE MEDICAMENTOS LTDA",
+       "064.712.054-22",
+       "",
+       "",
+       "26/11/2026",
+       "001/001"
+      ],
+      [
+       "6|Alimentação de colaboradores",
+       "26/11/2026",
+       -990,
+       "FRANCISCO SUELDES DE OLIVEIRA",
+       "791.738.884-00",
+       "",
+       "",
+       "26/11/2026",
+       "001/001"
+      ],
+      [
+       "6|ISS | Permanência",
+       "26/11/2026",
+       -105.79,
+       "AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FER",
+       "064.712.054-22",
+       "",
+       "",
+       "26/11/2026",
+       "001/001"
+      ],
+      [
+       "6|Extras e freelancers",
+       "26/11/2026",
+       -2250,
+       "ISADORA PRICILA CARLOS DE ARAUJO",
+       "81 9 8130-7902",
+       "",
+       "",
+       "26/11/2026",
+       "001/001"
+      ],
+      [
+       "11|Prestadores de servicos gerais",
+       "26/11/2026",
+       -800,
+       "64.751.929 FRANSOARES DA SILVA",
+       "",
+       "",
+       "",
+       "26/11/2026",
+       "001/001"
+      ],
+      [
+       "4|Secos e mercearia",
+       "18/11/2026",
+       -456,
+       "ATACAMAX IMPORTADORA DE ALIMENTOS LTDA",
+       "08305623000184",
+       "",
+       "",
+       "26/11/2026",
+       "001/001"
+      ],
+      [
+       "4|Frios, laticínios e congelados",
+       "19/11/2026",
+       -94.19,
+       "MASTERBOI LTDA.",
+       "002083355/1",
+       "",
+       "",
+       "26/11/2026",
+       "001/002"
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "19/11/2026",
+       -643.4,
+       "MASTERBOI LTDA.",
+       "002083355/1",
+       "",
+       "",
+       "26/11/2026",
+       "001/002"
+      ],
+      [
+       "4|Frios, laticínios e congelados",
+       "19/11/2026",
+       -94.18,
+       "MASTERBOI LTDA.",
+       "002083355/2",
+       "",
+       "",
+       "03/12/2026",
+       "002/002"
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "19/11/2026",
+       -643.4,
+       "MASTERBOI LTDA.",
+       "002083355/2",
+       "",
+       "",
+       "03/12/2026",
+       "002/002"
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "19/11/2026",
+       -3701.4,
+       "MASTERBOI LTDA.",
+       "002083354/1",
+       "",
+       "",
+       "26/11/2026",
+       "001/002"
+      ],
+      [
+       "4|Proteínas (carnes e frutos do mar)",
+       "19/11/2026",
+       -3701.4,
+       "MASTERBOI LTDA.",
+       "002083354/2",
+       "",
+       "",
+       "03/12/2026",
+       "002/002"
+      ],
+      [
+       "4|Frios, laticínios e congelados",
+       "18/11/2026",
+       -284.4,
+       "J A CALHEIROS DE MELO JUNIOR",
+       "000384571/1",
        "",
        "",
        "26/11/2026",
@@ -79203,7 +80001,7 @@
       "5": -59673.39000000001,
       "6": -24917.93,
       "11": -401871.13,
-      "7": -36500.0,
+      "7": -35000.0,
       "CC": -3345.85,
       "9": -1500.0,
       "8": -5113.23,
@@ -79225,7 +80023,7 @@
       "4|Água mineral": -4800.0,
       "4|Secos e mercearia": -28756.449999999997,
       "7|Arrendamento e aluguel do ponto": -25000.0,
-      "7|Outros aluguéis": -11500.0,
+      "7|Outros aluguéis": -10000.0,
       "11|Prestadores de servicos gerais": -7000.0,
       "CC|Adiantamento a reembolsar - saída": -3345.85,
       "5|Água e esgoto": -4078.7599999999998,
@@ -79266,7 +80064,7 @@
       "4|Água mineral": 1,
       "4|Secos e mercearia": 10,
       "7|Arrendamento e aluguel do ponto": 1,
-      "7|Outros aluguéis": 2,
+      "7|Outros aluguéis": 1,
       "11|Prestadores de servicos gerais": 3,
       "CC|Adiantamento a reembolsar - saída": 3,
       "5|Água e esgoto": 3,
@@ -81509,17 +82307,6 @@
        "001/001"
       ],
       [
-       "7|Outros aluguéis",
-       "30/09/2026",
-       -1500,
-       "PL CONSTRUCOES, OBRAS E REFORMAS DE ALVENARIA ",
-       "51.840.396/0001-16",
-       "",
-       "",
-       "22/09/2026",
-       "001/003"
-      ],
-      [
        "4|Insumo de pré-operação fora do CMV (ver nota)",
        "30/09/2026",
        72503.47,
@@ -81549,10 +82336,10 @@
       "12": 200000.0,
       "4": -15388.53,
       "8": -16785.5,
-      "5": -34720.03,
+      "5": -35613.369999999995,
       "6": -60698.53,
       "11": -254818.00999999995,
-      "7": -26500.0,
+      "7": -25000.0,
       "9": -2500.0,
       "3": -38.66,
       "13": -188.17
@@ -81595,8 +82382,7 @@
       "6|Variável": -31513.0,
       "6|FGTS e contribuições": -2645.16,
       "5|Reposição de utensílios": -4761.28,
-      "5|Energia elétrica": -6810.72,
-      "7|Outros aluguéis": -1500.0
+      "5|Energia elétrica": -7704.06
      },
      "lanc": {
       "CC|Conta corrente Boldró - entrada": 1,
@@ -81636,8 +82422,7 @@
       "6|Variável": 2,
       "6|FGTS e contribuições": 2,
       "5|Reposição de utensílios": 2,
-      "5|Energia elétrica": 1,
-      "7|Outros aluguéis": 1
+      "5|Energia elétrica": 2
      },
      "familias": {
       "comum": -15519.1,
@@ -83130,39 +83915,38 @@
        "001/001"
       ],
       [
-       "7|Outros aluguéis",
+       "5|Energia elétrica",
        "31/10/2026",
-       -1500,
-       "PL CONSTRUCOES, OBRAS E REFORMAS DE ALVENARIA ",
-       "51.840.396/0001-16",
+       -893.34,
+       "COMPANHIA ENERGETICA DE PERNAMBUCO",
+       "81997730899",
        "",
        "",
-       "22/10/2026",
-       "002/003"
+       "26/11/2026",
+       "001/001"
       ]
      ]
     },
     "2026-11": {
      "grupos": {
-      "12": 350000.0,
-      "1": 15510.0,
-      "8": -42066.0,
-      "6": -40168.990000000005,
+      "12": 336114.96,
+      "8": -40866.0,
+      "6": -40493.990000000005,
       "11": -74642.34000000001,
-      "5": -20781.629999999997,
-      "7": -29697.71,
+      "5": -21228.629999999997,
+      "7": -31486.91,
       "10": -3375.5500000000006,
       "2": -344.85,
-      "4": -21157.94
+      "4": -21157.94,
+      "9": -1500.0
      },
      "contas": {
       "12|Patrocínio": 350000.0,
-      "1|Receita operacional (salão)": 15510.0,
-      "8|Sistemas": -3984.1,
+      "8|Sistemas": -2784.1,
       "6|Uniformes, EPI e exames": -536.71,
       "11|Equipamentos e mobiliário": -11610.0,
       "11|Frete de materiais de operação": -2064.65,
-      "6|Benefícios (VT, VR e saúde)": -297.4,
+      "6|Benefícios (VT, VR e saúde)": -622.4,
       "5|Reposição de utensílios": -2845.62,
       "11|Investimentos diversos": -27523.690000000002,
       "11|Obras e reformas": -33402.1,
@@ -83170,7 +83954,7 @@
       "7|Arrendamento e aluguel do ponto": -25000.0,
       "5|Transporte, veículo e combustível": -5324.51,
       "10|Juros e multas": -3375.5500000000006,
-      "7|Taxas distritais, TPU, TLL e IPTU": -23.71,
+      "7|Taxas distritais, TPU, TLL e IPTU": -312.90999999999997,
       "2|ISS retido na fonte de prestadores": -344.85,
       "11|Prestadores de servicos gerais": -41.9,
       "5|Alojamento e ajuda de custo para moradia": -5350.0,
@@ -83188,20 +83972,22 @@
       "4|Outros insumos e diversos": -377.94,
       "6|Alimentação de colaboradores": -1829.94,
       "8|Telefonia e internet": -119.96,
-      "7|Outros aluguéis": -4674.0,
+      "7|Outros aluguéis": -6174.0,
       "8|Material de escritório": -359.94,
       "6|13º salário": -4488.92,
       "8|Pró-labore": -28000.0,
-      "8|Ajuda de custo": -2000.0
+      "8|Ajuda de custo": -2000.0,
+      "9|Mídia paga": -1500.0,
+      "5|Diversos de operação": -447.0,
+      "12|Amortização de empréstimos": -13885.04
      },
      "lanc": {
       "12|Patrocínio": 1,
-      "1|Receita operacional (salão)": 1,
-      "8|Sistemas": 5,
+      "8|Sistemas": 4,
       "6|Uniformes, EPI e exames": 2,
       "11|Equipamentos e mobiliário": 3,
       "11|Frete de materiais de operação": 5,
-      "6|Benefícios (VT, VR e saúde)": 1,
+      "6|Benefícios (VT, VR e saúde)": 2,
       "5|Reposição de utensílios": 1,
       "11|Investimentos diversos": 7,
       "11|Obras e reformas": 3,
@@ -83209,7 +83995,7 @@
       "7|Arrendamento e aluguel do ponto": 1,
       "5|Transporte, veículo e combustível": 4,
       "10|Juros e multas": 9,
-      "7|Taxas distritais, TPU, TLL e IPTU": 1,
+      "7|Taxas distritais, TPU, TLL e IPTU": 2,
       "2|ISS retido na fonte de prestadores": 1,
       "11|Prestadores de servicos gerais": 1,
       "5|Alojamento e ajuda de custo para moradia": 2,
@@ -83231,7 +84017,10 @@
       "8|Material de escritório": 1,
       "6|13º salário": 5,
       "8|Pró-labore": 2,
-      "8|Ajuda de custo": 1
+      "8|Ajuda de custo": 1,
+      "9|Mídia paga": 1,
+      "5|Diversos de operação": 1,
+      "12|Amortização de empréstimos": 1
      },
      "familias": {
       "bar": -1040.0,
@@ -83248,17 +84037,6 @@
        "",
        "",
        "03/11/2026",
-       "001/001"
-      ],
-      [
-       "1|Receita operacional (salão)",
-       "16/11/2026",
-       15510,
-       "GC COMERCIO DE PESCADOS LTDA",
-       "00000004",
-       "",
-       "",
-       "16/11/2026",
        "001/001"
       ],
       [
@@ -83632,7 +84410,7 @@
        "088.730.764-75",
        "",
        "",
-       "30/11/2026",
+       "10/12/2026",
        "011/012"
       ],
       [
@@ -84110,8 +84888,8 @@
       ],
       [
        "7|Outros aluguéis",
-       "24/11/2026",
-       -1500,
+       "30/11/2026",
+       -3000,
        "PL CONSTRUCOES, OBRAS E REFORMAS DE ALVENARIA ",
        "51.840.396/0001-16",
        "",
@@ -84131,14 +84909,58 @@
        "001/001"
       ],
       [
-       "8|Sistemas",
+       "9|Mídia paga",
        "25/11/2026",
-       -1200,
+       -1500,
        "FACEBOOK SERVICOS ONLINE DO BRASIL LTDA.",
        "",
        "",
        "",
+       "27/11/2026",
+       "001/001"
+      ],
+      [
+       "5|Diversos de operação",
+       "26/11/2026",
+       -447,
+       "MERCADO LIVRE BRASIL LTDA",
+       "",
+       "",
+       "",
        "25/11/2026",
+       "001/001"
+      ],
+      [
+       "12|Amortização de empréstimos",
+       "26/11/2026",
+       -13885.04,
+       "GUSTAVO JUNQUEIRA DE GODOY PEREIRA",
+       "33730188895",
+       "",
+       "",
+       "26/11/2026",
+       "001/003"
+      ],
+      [
+       "6|Benefícios (VT, VR e saúde)",
+       "26/11/2026",
+       -325,
+       "KARINE MACIEL VITOR RODRIGUES",
+       "81988085617",
+       "",
+       "",
+       "26/11/2026",
+       "001/001"
+      ],
+      [
+       "7|Taxas distritais, TPU, TLL e IPTU",
+       "26/11/2026",
+       -289.2,
+       "MUNICIPIO DO RECIFE",
+       "",
+       "",
+       "",
+       "26/11/2026",
        "001/001"
       ]
      ]
