@@ -1,5 +1,5 @@
 {
- "gerado": "25/11/2026 às 21:20",
+ "gerado": "25/11/2026 às 21:36",
  "meses": [
   "2026-08",
   "2026-09",
@@ -82123,7 +82123,7 @@
     },
     "2026-11": {
      "grupos": {
-      "OR": 350000.0,
+      "12": 350000.0,
       "1": 15510.0,
       "8": -42066.0,
       "6": -40168.990000000005,
@@ -82135,7 +82135,7 @@
       "4": -21157.94
      },
      "contas": {
-      "OR|Patrocínio": 350000.0,
+      "12|Patrocínio": 350000.0,
       "1|Receita operacional (salão)": 15510.0,
       "8|Sistemas": -3984.1,
       "6|Uniformes, EPI e exames": -536.71,
@@ -82174,7 +82174,7 @@
       "8|Ajuda de custos - Sócios": -2000.0
      },
      "lanc": {
-      "OR|Patrocínio": 1,
+      "12|Patrocínio": 1,
       "1|Receita operacional (salão)": 1,
       "8|Sistemas": 5,
       "6|Uniformes, EPI e exames": 2,
@@ -82219,7 +82219,7 @@
      },
      "itens": [
       [
-       "OR|Patrocínio",
+       "12|Patrocínio",
        "03/11/2026",
        350000,
        "AMBEV S.A.",
@@ -95360,7 +95360,7 @@
       "5": -37645.04000000001,
       "11": -146909.78,
       "7": -25023.71,
-      "OR": 350000.0,
+      "12": 350000.0,
       "8": -15082.269999999999,
       "3": -38.66,
       "13": -188.17,
@@ -95376,7 +95376,7 @@
       "11|Obras e reformas": -47010.38,
       "7|Arrendamento e aluguel do ponto": -25000.0,
       "11|Frete de materiais de operação": -27556.78,
-      "OR|Patrocínio": 350000.0,
+      "12|Patrocínio": 350000.0,
       "6|Passagens aéreas da equipe": -9680.46,
       "8|Telefonia e internet": -2025.16,
       "8|Sistemas": -1888.6999999999998,
@@ -95419,7 +95419,7 @@
       "11|Obras e reformas": 6,
       "7|Arrendamento e aluguel do ponto": 1,
       "11|Frete de materiais de operação": 6,
-      "OR|Patrocínio": 1,
+      "12|Patrocínio": 1,
       "6|Passagens aéreas da equipe": 1,
       "8|Telefonia e internet": 2,
       "8|Sistemas": 4,
@@ -95572,7 +95572,7 @@
        ""
       ],
       [
-       "OR|Patrocínio",
+       "12|Patrocínio",
        "03/11/2026",
        350000,
        "AMBEV S.A.",
