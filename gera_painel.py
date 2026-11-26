@@ -1025,7 +1025,25 @@ function kpis(){
   ['Dinheiro em caixa',brl(s.fim),'no banco ao fim do mês',
    fixo?('dá para '+(s.fim/fixo).toFixed(1).replace('.',',')+' mês de casa aberta'):''],
   turnoCard(), diaForteCard()
- ].map(card).join('');
+ ].map(card).join('')+notaEbitdaCmv();
+}
+/* 26/11/2026, ressalva pedida pelo Tiago (dossie de auditoria v2, decisao 2):
+   o ajuste de CMV a 33% fica ao lado do EBITDA, nao so no rodape. Tudo calculado
+   de D.ajustes e da propria DRE da tela: nenhum valor escrito a mao. */
+function notaEbitdaCmv(){
+ var aj=(D.ajustes||{}).cmv||{}, meta=Math.round(((D.ajustes||{}).cmv_meta||0)*100);
+ if(ENT==='yo'||!aj[MES])return '';
+ var ms=Object.keys(aj).sort(), tot=0;
+ ms.forEach(function(m){tot+=aj[m].ajuste});
+ var per=mesesDe('comp'), eb=0;
+ per.forEach(function(m){eb+=cozinha(m).venda+soma(ENT,'comp',m,['4','5','3','6','7','8','9','14'])});
+ var nomes=per.map(function(m){return D.meses_nome[m]});
+ return '<div class="aviso nota" style="grid-column:1/-1;margin:0"><h4>EBITDA com ajuste de CMV</h4><p>'+
+  'Em '+ms.map(function(m){return D.meses_nome[m]}).join(' e ')+' o CMV está lançado a '+meta+
+  '% da receita, por decisão da diretoria. Com isso, <b>'+brl(tot)+'</b> de compras ficaram fora do resultado ('+
+  ms.map(function(m){return brl(aj[m].ajuste)+' em '+D.meses_nome[m]}).join(' e ')+
+  '). Esse valor não volta como custo nos meses seguintes. Sem o ajuste, o EBITDA acumulado de '+
+  nomes[0]+' a '+nomes[nomes.length-1]+' seria <b>'+brl(eb-tot)+'</b>, e não '+brl(eb)+'.</p></div>';
 }
 
 var CORES=['#F97316','#0D0F1A','#0E9F6E','#DC2626','#6366F1','#D97706','#0891B2','#7C3AED',
@@ -1438,8 +1456,8 @@ function pintaRelatorios(){
    var corpo='Decisão da diretoria em 07/11/2026. O que a casa <b>comprou</b> de insumo foi: '+
      ms.map(function(m){return D.meses_nome[m]+' <b>'+brl(aj[m].comprado)+'</b> ('+
        pc(aj[m].comprado,soma('boldro','comp',m,['FAT'])||1)+' da receita)'}).join(' · ')+
-     '. A diferença é estoque comprado e não consumido dentro do mês — o CMV deste painel é '+
-     'compra pela data da nota, não consumo.';
+     '. A diferença é o que foi comprado acima de '+meta+'% da receita. Sem inventário, o painel não mede '+
+     'quanto disso foi consumido — o CMV deste painel é compra pela data da nota.';
    if(ENT==='yo'){
     corpo='A YO não fatura — quem vende é a Boldró. O teto de '+meta+'% foi aplicado '+
       'à DRE da Boldró; aqui o insumo de pré-operação saiu da linha de CMV e está em '+
@@ -1462,6 +1480,16 @@ function pintaRelatorios(){
    h='<div class="aviso nota"><h4>'+tit+'</h4><p>'+corpo+'</p></div>';
   }
   h+=notaLimpeza();
+  /* 26/11/2026, ressalva do Tiago (YB-03): servico e frete da operacao que o Omie
+     classifica como investimento, na Boldro. Valores lidos da propria DRE. */
+  if(ENT!=='yo'&&mesesDe('comp').indexOf('2026-10')>=0){
+   var cB=((D.ents.boldro.comp||{})['2026-10']||{}).contas||{},
+       pr=-(cB['11|Prestadores de servicos gerais']||0), fr=-(cB['11|Frete de materiais de operação']||0);
+   if(pr+fr>0.005)h+='<div class="aviso nota"><h4>Custo da operação dentro de Investimentos em out/26</h4><p>'+
+     'Em out/26, <b>'+brl(pr+fr)+'</b> da linha de Investimentos da Boldró são serviços e fretes da operação '+
+     'classificados no Omie como investimento: Prestadores de serviços gerais, '+brl(pr)+', e Frete de materiais '+
+     'de operação, '+brl(fr)+'. Se forem tratados como custo da operação, o EBITDA de outubro fica '+brl(pr+fr)+' menor.</p></div>';
+  }
   na.innerHTML=h;
  }
  var er=auditaTabela('caixa').concat(auditaTabela('comp'));
@@ -2133,11 +2161,10 @@ def ressalva():
         bloco_cmv = (
             '<b>Em %s o CMV da DRE est&aacute; lan&ccedil;ado a %d%% da receita</b>, por decis&atilde;o '
             'da diretoria em 07/11/2026, e n&atilde;o pela compra do m&ecirc;s; nos demais meses entra a compra. %s. '
-            'A diferen&ccedil;a &eacute; estoque comprado e n&atilde;o consumido dentro do m&ecirc;s: '
-            'o CMV deste painel &eacute; <b>compra pela data da nota, n&atilde;o consumo</b>, '
-            'e agosto comprou o estoque de abertura da casa. O ajuste aparece como '
+            'A diferen&ccedil;a &eacute; o que foi comprado acima de %d%% da receita; sem invent&aacute;rio, '
+            'o painel n&atilde;o mede quanto disso foi consumido. O CMV deste painel &eacute; <b>compra pela data da nota</b>. O ajuste aparece como '
             'linha pr&oacute;pria dentro do CMV, clic&aacute;vel, e n&atilde;o toca o fluxo de caixa. '
-            % (' e '.join(D['meses_nome'][m] for m in sorted(cmv)), teto, linhas))
+            % (' e '.join(D['meses_nome'][m] for m in sorted(cmv)), teto, linhas, teto))
     else:
         bloco_cmv = ''
 
@@ -2175,14 +2202,16 @@ def ressalva():
             for emp, nome in (('boldro', 'Boldr&oacute;'), ('yo', 'Y&oacute;')):
                 sd = ((D['ents'][emp].get('saldos') or {}).get(m) or {})
                 if sd and sd.get('fim', 0) < 0:
-                    ea = (((D['ents'][emp].get('saldos') or {}).get(ant) or {}).get('entradas') or 0) if ant else 0
+                    # 26/11/2026 (Tiago, dossie v2): recebimento e grupo 1 + OR do caixa;
+                    # o 'entradas' do saldo inclui transferencia entre contas.
+                    gx = ((D['ents'][emp].get('caixa') or {}).get(m) or {}).get('grupos') or {}
+                    rec = (gx.get('1') or 0) + (gx.get('OR') or 0)
                     bloco_out += ('<b>O saldo de %s da %s &eacute; o do Omie, n&atilde;o do banco, e sai negativo, em %s.</b> '
-                                  'Conta banc&aacute;ria varrida n&atilde;o fica negativa: o n&uacute;mero mostra o que '
-                                  'ainda n&atilde;o foi lan&ccedil;ado. At&eacute; a data entraram %s de recebimentos no '
-                                  'sistema, contra %s no m&ecirc;s anterior inteiro — os cr&eacute;ditos de cart&atilde;o do '
-                                  'm&ecirc;s ainda est&atilde;o em carga. '
-                                  % (D['meses_nome'][m], nome, brlpt(sd['fim']), brlpt(sd.get('entradas') or 0),
-                                     brlpt(ea)))
+                                  'Conta varrida n&atilde;o fica negativa: o n&uacute;mero mostra o que '
+                                  'ainda n&atilde;o foi lan&ccedil;ado. At&eacute; a data entraram <b>%s de recebimentos</b> no '
+                                  'sistema; o restante das entradas &eacute; transfer&ecirc;ncia entre contas. Os cr&eacute;ditos '
+                                  'de cart&atilde;o do m&ecirc;s ainda n&atilde;o foram lan&ccedil;ados. '
+                                  % (D['meses_nome'][m], nome, brlpt(sd['fim']), brlpt(rec)))
 
     dias_ago = (D.get('dias') or {}).get(MESES[0])
     return (
