@@ -384,6 +384,28 @@ td.av{color:var(--g500);font-size:12px}
  padding:12px 18px;border-radius:999px;box-shadow:0 10px 26px rgba(249,115,22,.40);transition:.2s}
 .pdfbt:hover{background:#EA6A0B;transform:translateY(-1px)}
 @media(max-width:620px){.pdfbt{right:12px;bottom:12px;padding:10px 14px;font-size:11.5px}}
+/* 26/11/2026 -- celular e tablet (pedido do Joao). Nada muda no desktop.
+   Tabela larga rola dentro do proprio bloco, com a 1a coluna presa; a pagina
+   nao rola mais para o lado. A ponte rola de lado em vez de encolher a letra. */
+@media(max-width:1024px){
+ .repwrap.on,div:has(> table.xtbl),section:has(> table.xtbl){overflow-x:auto;-webkit-overflow-scrolling:touch}
+ .xtbl th:first-child,.xtbl td:first-child{position:sticky;left:0;z-index:2}
+ .xtbl tr.memo td:first-child{background:#fff}
+}
+@media(max-width:820px){
+ .regsw{flex-wrap:wrap}
+ .regnota{flex-basis:100%;max-width:none}
+}
+@media(max-width:720px){
+ .nav .wrap{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:10px;row-gap:8px}
+ .entsw{width:100%;overflow-x:auto}
+ .entsw button,.entsw a{flex:1 0 auto;text-align:center}
+ .waterfall{padding:18px 14px 10px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+ .waterfall svg{min-width:640px}
+ .xtbl td:first-child{min-width:120px;max-width:150px}
+ .curva{gap:3px}
+ .cb{flex:1 1 0;min-width:0}
+}
 
 .pdoc{display:none;background:#fff;color:var(--ink);font-family:'Inter',sans-serif}
 .pdoc .pg{position:relative;width:297mm;height:209.6mm;padding:10mm 13mm 7mm;background:#fff;
