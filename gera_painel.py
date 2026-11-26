@@ -384,27 +384,66 @@ td.av{color:var(--g500);font-size:12px}
  padding:12px 18px;border-radius:999px;box-shadow:0 10px 26px rgba(249,115,22,.40);transition:.2s}
 .pdfbt:hover{background:#EA6A0B;transform:translateY(-1px)}
 @media(max-width:620px){.pdfbt{right:12px;bottom:12px;padding:10px 14px;font-size:11.5px}}
-/* 26/11/2026 -- celular e tablet (pedido do Joao). Nada muda no desktop.
-   Tabela larga rola dentro do proprio bloco, com a 1a coluna presa; a pagina
-   nao rola mais para o lado. A ponte rola de lado em vez de encolher a letra. */
+/* 26/11/2026 -- celular e tablet (pedido do Joao): desenho de app, nao desktop encolhido.
+   Nada aqui vale acima de 1024px. Tabelas: matriz (DRE, DFC, dia a dia) rola de lado
+   com a 1a coluna presa; tabela de texto (o que mede, de onde vem, bandeira, curva ABC)
+   vira cartao -- o JS mobTabelas() marca quem e quem. */
 @media(max-width:1024px){
  .repwrap.on,div:has(> table.xtbl),section:has(> table.xtbl){overflow-x:auto;-webkit-overflow-scrolling:touch}
- .xtbl th:first-child,.xtbl td:first-child{position:sticky;left:0;z-index:2}
- .xtbl tr.memo td:first-child{background:#fff}
+ .xtbl.mat th:first-child,.xtbl.mat td:first-child,.xtbl.stk th:first-child,.xtbl.stk td:first-child{position:sticky;left:0;z-index:2}
 }
-@media(max-width:820px){
- .regsw{flex-wrap:wrap}
- .regnota{flex-basis:100%;max-width:none}
-}
+@media(max-width:820px){.regsw{flex-wrap:wrap}.regnota{flex-basis:100%;max-width:none}}
 @media(max-width:720px){
+ .wrap{padding:0 16px}
  .nav .wrap{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:10px;row-gap:8px}
+ .brand{font-size:12px}
  .entsw{width:100%;overflow-x:auto}
- .entsw button,.entsw a{flex:1 0 auto;text-align:center}
- .waterfall{padding:18px 14px 10px;overflow-x:auto;-webkit-overflow-scrolling:touch}
- .waterfall svg{min-width:640px}
- .xtbl td:first-child{min-width:120px;max-width:150px}
- .curva{gap:3px}
- .cb{flex:1 1 0;min-width:0}
+ .entsw button,.entsw a{flex:1 0 auto;text-align:center;padding:8px 6px}
+ .hero{padding:22px 0 30px}
+ .hero h1{font-size:28px}
+ .cnpjline,.selo{font-size:12px}
+ .mespills button{padding:7px 12px}
+ .waterfall{padding:16px 12px 8px;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:18px}
+ .waterfall svg{min-width:620px}
+ .wf-head .t{font-size:14px}.wf-head .h{font-size:11.5px}
+ section{padding:30px 0}
+ .sec-head{margin-bottom:16px}
+ .sec-head h2{font-size:22px;line-height:1.18}
+ .sec-head .lede{font-size:14px;line-height:1.5}
+ .kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:-18px}
+ .kpi{padding:12px 12px 11px;border-radius:12px;min-width:0}
+ .kpi .t{font-size:9.5px;letter-spacing:.06em}
+ .kpi .v{font-size:18px;margin:5px 0 2px;overflow-wrap:anywhere}
+ .kpi .d{font-size:11px;line-height:1.4}
+ .kpi .ref{font-size:10.5px;line-height:1.4}
+ .pdfbt{display:none}
+ .aviso{padding:12px 14px;font-size:12.5px}
+ .aviso h4{font-size:13.5px}
+ .pz-chart{max-width:240px;margin:0 auto}
+ .pz-mid b{font-size:17px}
+ .pz-item{font-size:12.5px;gap:8px}
+ .curva{gap:3px}.cb{flex:1 1 0;min-width:0}
+ /* matriz: compacta, 1a coluna estreita e presa */
+ .xtbl.mat,.xtbl.stk{font-size:11.5px}
+ .xtbl.mat th,.xtbl.mat td,.xtbl.stk th,.xtbl.stk td{padding:7px 8px}
+ .xtbl.mat td:first-child,.xtbl.mat th:first-child{min-width:112px;max-width:132px;white-space:normal}
+ /* tabela de texto vira cartao */
+ table.cardify{display:block;border:0;background:none}
+ table.cardify thead{display:none}
+ table.cardify tbody{display:flex;flex-direction:column;gap:10px}
+ table.cardify tr{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:12px 14px;box-shadow:0 1px 2px rgba(13,15,26,.04)}
+ table.cardify tr td{display:block;padding:0!important;border:0!important;background:none!important;text-align:left!important;white-space:normal!important;position:static!important;min-width:0;max-width:none;font-size:13px}
+ table.cardify tr td.c-tit{grid-column:1/-1;font-weight:700;font-size:14px;color:var(--ink)}
+ table.cardify tr td.c-wide{grid-column:1/-1;color:var(--ink2);font-size:12.5px;line-height:1.45}
+ table.cardify tr td[data-l]::before{content:attr(data-l);display:block;font-family:'Plus Jakarta Sans';font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--g500);margin-bottom:2px}
+ table.cardify tr.res,table.cardify tr.tot{border-color:#FDBA74;background:#FFFBF5}
+ table.cardify tr.memo{background:#FAFAF7;border-style:dashed}
+ table.cardify.c-num tr{grid-template-columns:repeat(3,minmax(0,1fr))}
+ table.cardify tr td.num{font-family:'Plus Jakarta Sans';font-weight:700;font-size:15px;color:var(--ink)}
+ /* linha que abre dentro do cartao (aritmetica dos 5 numeros): lista compacta, nao cartao */
+ table.cardify tr.scc{display:flex;justify-content:space-between;gap:10px;border:0;border-radius:0;box-shadow:none;background:#FAFAF7;padding:6px 14px;margin-top:-8px}
+ table.cardify tr.scc td{font-size:12px!important}
+ table.cardify tr.scc td.c-tit{font-weight:500;color:var(--ink2)}
 }
 
 .pdoc{display:none;background:#fff;color:var(--ink);font-family:'Inter',sans-serif}
@@ -2020,6 +2059,35 @@ window.addEventListener('scroll',function(){
  document.querySelectorAll('.nav-links a').forEach(function(a){
   a.classList.toggle('on',a.getAttribute('href')==='#'+at)});
 });
+/* celular: matriz rola com a 1a coluna presa; tabela de texto vira cartao.
+   Roda de novo a cada troca de empresa/mes, porque as tabelas sao refeitas. */
+var CARD_TAB=/de onde vem|o que mede|bandeira|classe a/i, STK_TAB=/^data$/i;
+function mobTabelas(){
+ document.querySelectorAll('table.xtbl').forEach(function(t){
+  if(t.closest('#pdoc'))return;
+  var hs=[].slice.call(t.querySelectorAll('thead th')).map(function(h){return h.innerText.replace(/\s+/g,' ').trim()});
+  if(!hs.length)return;
+  if(STK_TAB.test(hs[0]))t.classList.add('stk');
+  if(!CARD_TAB.test(hs.join(' | ')))return;
+  t.classList.add('cardify'); var largo=false;
+  [].slice.call(t.querySelectorAll('tbody tr')).forEach(function(tr){
+   var col=0;
+   [].slice.call(tr.children).forEach(function(td,i){
+    var span=+(td.getAttribute('colspan')||1);
+    td.classList.remove('c-tit','c-wide'); td.removeAttribute('data-l');
+    if(i===0||span>1)td.classList.add('c-tit');
+    else if(tr.classList.contains('scc')){}
+    else{ if(hs[col])td.setAttribute('data-l',hs[col]);
+          if((td.innerText||'').length>26){td.classList.add('c-wide');largo=true;} }
+    col+=span;
+   });
+  });
+  t.classList.toggle('c-num',!largo);
+ });
+}
+var _mobT=null;
+new MutationObserver(function(){clearTimeout(_mobT);_mobT=setTimeout(mobTabelas,60)}).observe(document.body,{childList:true,subtree:true});
+
 render();
 """
 
