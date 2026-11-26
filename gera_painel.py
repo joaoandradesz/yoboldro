@@ -463,7 +463,7 @@ td.av{color:var(--g500);font-size:12px}
 """
 
 JS = r"""
-var ENT=(typeof ENT0!=='undefined'?ENT0:'consol'), MES=D.meses[D.meses.length-1], REG='caixa';
+var ENT=(typeof ENT0!=='undefined'?ENT0:'consol'), MES=(D.meses.filter(function(m){return (D.parciais||[]).indexOf(m)<0}).slice(-1)[0]||D.meses[D.meses.length-1]), REG='caixa';
 var SOCIOS=(typeof SOCIOS!=='undefined')&&SOCIOS;
 function brl(v,c){c=c||0;var s=Math.abs(v).toLocaleString('pt-BR',{minimumFractionDigits:c,maximumFractionDigits:c});
  return (v<0?'−':'')+'R$ '+s}
@@ -2145,6 +2145,24 @@ def ressalva():
         bloco_out += ('<b>%s entra apenas no fluxo de caixa</b>: %s. O resultado por '
                       'compet&ecirc;ncia do m&ecirc;s entra quando a carga e a concilia&ccedil;&atilde;o fecharem. '
                       % (D['meses_nome'][m], ' e '.join(q)))
+        # 25/11/2026: o mes parcial entra no caixa com o saldo do OMIE, nao do
+        # extrato (o extrato do mes ainda nao existe). Saldo negativo e
+        # impossivel no banco: e falta de lancamento, e a pagina tem de dizer —
+        # senao o leitor le um rombo que nao houve (02 Decisoes/mes-parcial-entra-marcado).
+        if m in (D.get('parciais') or []):
+            _ms = D.get('meses') or []
+            ant = _ms[_ms.index(m) - 1] if m in _ms and _ms.index(m) > 0 else None
+            for emp, nome in (('boldro', 'Boldr&oacute;'), ('yo', 'Y&oacute;')):
+                sd = ((D['ents'][emp].get('saldos') or {}).get(m) or {})
+                if sd and sd.get('fim', 0) < 0:
+                    ea = (((D['ents'][emp].get('saldos') or {}).get(ant) or {}).get('entradas') or 0) if ant else 0
+                    bloco_out += ('<b>O saldo de %s da %s &eacute; o do Omie, n&atilde;o do banco, e sai negativo, em %s.</b> '
+                                  'Conta banc&aacute;ria varrida n&atilde;o fica negativa: o n&uacute;mero mostra o que '
+                                  'ainda n&atilde;o foi lan&ccedil;ado. At&eacute; a data entraram %s de recebimentos no '
+                                  'sistema, contra %s no m&ecirc;s anterior inteiro — os cr&eacute;ditos de cart&atilde;o do '
+                                  'm&ecirc;s ainda est&atilde;o em carga. '
+                                  % (D['meses_nome'][m], nome, brlpt(sd['fim']), brlpt(sd.get('entradas') or 0),
+                                     brlpt(ea)))
 
     dias_ago = (D.get('dias') or {}).get(MESES[0])
     return (
