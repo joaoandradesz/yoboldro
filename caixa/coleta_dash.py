@@ -136,7 +136,13 @@ def extrato(emp, cc, ini, fim):
 
 def coleta(HOJE):
     FIM = HOJE + datetime.timedelta(days=HORIZONTE)
-    out = {'hoje': HOJE.strftime('%d/%m/%Y'), 'fim': FIM.strftime('%d/%m/%Y'),
+    # CORTE_SALDO=dd/mm/aaaa: o saldo para no ultimo dia com a varredura c/c x
+    # aplicacao lancada (26/11/2026: novembro sem as pernas da varredura).
+    # Os titulos continuam a partir de HOJE.
+    _c = os.environ.get('CORTE_SALDO')
+    CORTE = min(HOJE, datetime.datetime.strptime(_c, '%d/%m/%Y').date()) if _c else HOJE
+    out = {'corte': CORTE.strftime('%d/%m/%Y') if CORTE < HOJE else None,
+           'hoje': HOJE.strftime('%d/%m/%Y'), 'fim': FIM.strftime('%d/%m/%Y'),
            'horizonte': HORIZONTE, 'ancora': ANCORA_DATA.strftime('%d/%m/%Y'),
            'gerado': datetime.datetime.now().strftime('%d/%m/%Y às %H:%M'),
            'ents': {}}
@@ -148,7 +154,7 @@ def coleta(HOJE):
             mov = naoconc = 0.0
             nnc = 0
             ult_cc = None
-            for a, b in meses(ANCORA_DATA + datetime.timedelta(days=1), HOJE):
+            for a, b in meses(ANCORA_DATA + datetime.timedelta(days=1), CORTE):
                 for x in extrato(emp, cc, a, b):
                     if x.get('cSituacao') == 'Previsto':
                         continue

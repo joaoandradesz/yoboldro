@@ -63,6 +63,7 @@ else:
     NOTA_COB=("Este painel mostra <b>posição e compromissos</b>, não previsão: enxerga só o que "
               "já está lançado no Omie. O backtest de cobertura ainda não foi rodado nesta edição.")
 META={k:D[k] for k in ("hoje","fim","ancora","gerado")}
+META["corte"]=D.get("corte")
 META.update({"inter_rotulo":"Boldró ↔ YO ↔ Topázio ↔ Amana",
              "inter_rx":"|".join(INTER),
              "nota_saldo":("Âncora de %s mais todo o movimento realizado desde então. "
