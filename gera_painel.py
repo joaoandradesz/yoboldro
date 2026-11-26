@@ -1657,6 +1657,9 @@ function receita(){
    (ENT==='yo'?'A venda de salão acontece no CNPJ da Boldró. Troque de empresa no topo.'
              :'A composição vem da extração do 3LM, que não tem API e entra por PDF.')+'</p></div>';
  if(au)au.innerHTML='';
+ /* 25/11/2026, Joao: "se nao tem divergencia nao precisa de 'O que nao bate e por que'".
+    A secao so aparece no mes em que ha divergencia entre relatorios de venda. */
+ var secAud=document.getElementById('auditoria'); if(secAud)secAud.hidden=true;
  if(!R)return;
 
  /* a soma e o ponto: cada linha e um item do PDV e as quatro fecham o bruto.
@@ -1721,6 +1724,7 @@ function receita(){
      mv(R.recebido)+'</td><td>'+mv(V.diferenca)+'</td><td class="l obs">o painel usa a '+
      'extração bruta, que é o documento de origem</td></tr></tbody></table></div></div>';
   au.innerHTML=a;
+  if(secAud)secAud.hidden=false;
  }
 }
 
