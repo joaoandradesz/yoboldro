@@ -868,7 +868,7 @@ function pgtoTabela(){
   '</td><td class="av">'+pc(x[1],F.total)+'</td></tr>'});
  h+='<tr class="dfcs"><td class="l">Total</td><td class="num">'+brl(F.total)+
   '</td><td class="av">100,0%</td></tr></tbody></table>'+
-  '<p class="repnote">Venda a venda do Extrato de Vendas Detalhado da GetNet, mais o dinheiro do fundo fixo. '+
+  '<p class="repnote">'+fonteFormas(true)+' '+
   'O total fecha com a <b>venda bruta</b> a menos do ajuste de medição do 3LM.</p>';
  return h;
 }
@@ -894,6 +894,13 @@ function horarioTabela(){
 
 /* forma de pagamento: vem do Extrato de Vendas Detalhado da GetNet mais o
    dinheiro do fundo fixo. So existe onde ha extrato da adquirente. */
+/* 25/11/2026: a forma de pagamento de outubro nao vem da GetNet (nao ha extrato
+   detalhado do mes) e sim do relatorio do 3LM transcrito. A fonte sai do dado. */
+function fonteFormas(frase){
+ var n=(((D.receita||{})[MES])||{}).formas_nota||'';
+ if(n.indexOf('3LM')>=0)return frase?'Do relatório "Vendas Por Tipo de Pagamento" do 3LM, dia a dia, transcrito de imagem.':'do relatório de formas de pagamento do 3LM';
+ return frase?'Venda a venda do Extrato de Vendas Detalhado da GetNet, mais o dinheiro do fundo fixo.':'reconstruídos da GetNet venda a venda mais o fundo fixo';
+}
 function formasDe(mes){
  if(ENT==='yo')return null;
  var c=bloco(ENT,'comp',mes||MES).contas, o=[], tot=0;
@@ -927,7 +934,7 @@ function pgtoCard(){
  var bruta=soma(ENT,'comp',MES,['FAT']), gap=F.total-bruta;
  return ['Como o cliente pagou',pc(o[0][1],F.total)+' '+curto(o[0][0]),
   o.slice(1).map(function(x){return pc(x[1],F.total)+' '+curto(x[0])}).join(' · '),
-  'sobre '+brl(F.total)+' reconstruídos da GetNet venda a venda mais o fundo fixo'+
+  'sobre '+brl(F.total)+' '+fonteFormas()+
   (Math.abs(gap)>1?(' — '+brl(Math.abs(gap))+(gap>0?' acima':' abaixo')+
    ' da venda bruta de '+brl(bruta)+', que vem do 3LM e é a que vale na DRE'):'')];
 }
@@ -1419,7 +1426,7 @@ function pintaRelatorios(){
     ?'O teto de CMV não se aplica à YO'
     :(fora.length
       ?('O CMV da Boldró está lançado a '+meta+'% — nesta visão a vertical sai disso')
-      :('O CMV desta DRE está lançado a '+meta+'% da receita'));
+      :('O CMV de '+ms.map(function(m){return D.meses_nome[m]}).join(' e ')+' está lançado a '+meta+'% da receita'));
    var corpo='Decisão da diretoria em 07/11/2026. O que a casa <b>comprou</b> de insumo foi: '+
      ms.map(function(m){return D.meses_nome[m]+' <b>'+brl(aj[m].comprado)+'</b> ('+
        pc(aj[m].comprado,soma('boldro','comp',m,['FAT'])||1)+' da receita)'}).join(' · ')+
@@ -2112,12 +2119,13 @@ def ressalva():
                               brlpt(cmv[m]['exibido']))
                            for m in sorted(cmv))
         bloco_cmv = (
-            '<b>O CMV da DRE est&aacute; lan&ccedil;ado a %d%% da receita</b>, por decis&atilde;o '
-            'da diretoria em 07/11/2026, e n&atilde;o pela compra do m&ecirc;s. %s. '
+            '<b>Em %s o CMV da DRE est&aacute; lan&ccedil;ado a %d%% da receita</b>, por decis&atilde;o '
+            'da diretoria em 07/11/2026, e n&atilde;o pela compra do m&ecirc;s; nos demais meses entra a compra. %s. '
             'A diferen&ccedil;a &eacute; estoque comprado e n&atilde;o consumido dentro do m&ecirc;s: '
             'o CMV deste painel &eacute; <b>compra pela data da nota, n&atilde;o consumo</b>, '
             'e agosto comprou o estoque de abertura da casa. O ajuste aparece como '
-            'linha pr&oacute;pria dentro do CMV, clic&aacute;vel, e n&atilde;o toca o fluxo de caixa. ' % (teto, linhas))
+            'linha pr&oacute;pria dentro do CMV, clic&aacute;vel, e n&atilde;o toca o fluxo de caixa. '
+            % (' e '.join(D['meses_nome'][m] for m in sorted(cmv)), teto, linhas))
     else:
         bloco_cmv = ''
 
@@ -2216,8 +2224,11 @@ def ressalva():
         '%s%s'
         'Dados lidos da API do Omie em %s.'
         % (rec, dias_ago, bloco_cmv, bloco_ir, bloco_out,
-           brlpt(soma(MESES[0], EB)), brlpt(soma(ult, EB)),
-           brlpt(soma(ult, EB + ['10', 'IR'])), bloco_dup, bloco_rat, D['gerado']))
+           # 25/11/2026: a frase fala de AGOSTO e SETEMBRO. Usava o ultimo mes
+           # com DRE e, quando outubro entrou, passou a por outubro no lugar de
+           # setembro (a varredura pegou: EBITDA de 179.794,43 rotulado setembro).
+           brlpt(soma('2026-08', EB)), brlpt(soma('2026-09', EB)),
+           brlpt(soma('2026-09', EB + ['10', 'IR'])), bloco_dup, bloco_rat, D['gerado']))
 
 
 SEC_REL = """<section id="relatorios"><div class="wrap">
@@ -2228,7 +2239,7 @@ SEC_REL = """<section id="relatorios"><div class="wrap">
 <div id="rep-dre" class="repwrap on"><table class="xtbl mat dre"><thead><tr id="drehead"></tr></thead><tbody id="drebody"></tbody></table>
 <div id="tbl-alerta"></div>
 <div id="dre-ajustes"></div>
-<p class="repnote"><b>A receita bruta é o faturamento do mês da venda, não o crédito no banco.</b> Clique nela para abrir por forma de pagamento, e no número de cada forma para ver dia a dia o que foi vendido. Nos dois meses ela vem da extração bruta do 3LM — R$ 163.548,50 em agosto e R$ 1.058.984,27 em setembro — e abre em A&amp;B, taxa de serviço, couvert e taxa de rolha, mais a forma de pagamento reconstruída do Extrato de Vendas Detalhado da GetNet.  Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
+<p class="repnote"><b>A receita bruta é o faturamento do mês da venda, não o crédito no banco.</b> Clique nela para abrir por forma de pagamento, e no número de cada forma para ver dia a dia o que foi vendido. Em agosto, setembro e outubro ela vem da extração bruta do 3LM — R$ 163.548,50, R$ 1.058.984,27 e R$ 1.193.067,36 — e abre em A&amp;B, taxa de serviço, couvert e taxa de rolha. A forma de pagamento vem do Extrato de Vendas Detalhado da GetNet em agosto e setembro e do relatório de formas de pagamento do 3LM em outubro.  Competência pela data de emissão do título, mês a mês. Clique no grupo para abrir as contas e na conta para abrir os lançamentos. A conta corrente com partes relacionadas não entra no resultado.</p></div>
 
 
 <h3 class="rep-t">Fluxo de caixa (DFC)</h3>

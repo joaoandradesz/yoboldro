@@ -1,5 +1,5 @@
 {
- "gerado": "25/11/2026 às 20:58",
+ "gerado": "25/11/2026 às 21:20",
  "meses": [
   "2026-08",
   "2026-09",
@@ -46770,7 +46770,7 @@
       "4|Secos e mercearia": -79035.87999999999,
       "11|Investimentos diversos": -35437.65,
       "9|Outros de marketing": -3500.0,
-      "6|Diarista (OIA)": -28391.670000000006,
+      "6|Diarista (OIA)": -29091.670000000006,
       "5|Alojamento e ajuda de custo para moradia": -26070.65,
       "11|Equipamentos e mobiliário": -10345.0,
       "4|Proteínas (carnes e frutos do mar)": -111081.62999999998,
@@ -46790,7 +46790,6 @@
       "14|Cachê de artistas e atrações": -23215.83,
       "8|Ajuda de custo": -2800.0,
       "8|Pró-labore": -19600.0,
-      "6|OIA)": -700.0,
       "6|ISS | Permanência": -2134.33,
       "9|Mídia paga": -1500.0,
       "4|Frete de insumos de alimentos e bebidas": -11375.560000000001,
@@ -46822,7 +46821,7 @@
       "4|Secos e mercearia": 34,
       "11|Investimentos diversos": 22,
       "9|Outros de marketing": 2,
-      "6|Diarista (OIA)": 55,
+      "6|Diarista (OIA)": 56,
       "5|Alojamento e ajuda de custo para moradia": 12,
       "11|Equipamentos e mobiliário": 5,
       "4|Proteínas (carnes e frutos do mar)": 39,
@@ -46842,7 +46841,6 @@
       "14|Cachê de artistas e atrações": 24,
       "8|Ajuda de custo": 2,
       "8|Pró-labore": 2,
-      "6|OIA)": 1,
       "6|ISS | Permanência": 6,
       "9|Mídia paga": 1,
       "4|Frete de insumos de alimentos e bebidas": 2,
@@ -48524,7 +48522,7 @@
        ""
       ],
       [
-       "6|OIA)",
+       "6|Diarista (OIA)",
        "04/09/2026",
        -700.0,
        "MARCOS DOS SANTOS MELO",
@@ -58734,7 +58732,7 @@
       "1|Receita operacional (salão)": 1049132.56,
       "6|ISS | Permanência": -4972.6900000000005,
       "NEUTRO|Transferência entre contas - saída": -1449221.54,
-      "4|Proteínas (carnes e frutos do mar)": -77914.06999999999,
+      "4|Proteínas (carnes e frutos do mar)": -78294.06999999999,
       "6|Diarista (OIA)": -17635.010000000002,
       "5|Alojamento e ajuda de custo para moradia": -53400.0,
       "4|Hortifrúti": -27516.61,
@@ -58776,7 +58774,6 @@
       "2|Cancelamentos e estornos": -1069.92,
       "9|Mídia paga": -1500.0,
       "11|Frete de materiais de operação": -1300.85,
-      "4|carnes e frutos do mar)": -380.0,
       "4|Gelo e gases": -648.0,
       "8|Telefonia e internet": -119.96,
       "5|Energia elétrica": -1527.3,
@@ -58798,7 +58795,7 @@
       "1|Receita operacional (salão)": 337,
       "6|ISS | Permanência": 17,
       "NEUTRO|Transferência entre contas - saída": 21,
-      "4|Proteínas (carnes e frutos do mar)": 34,
+      "4|Proteínas (carnes e frutos do mar)": 35,
       "6|Diarista (OIA)": 38,
       "5|Alojamento e ajuda de custo para moradia": 15,
       "4|Hortifrúti": 17,
@@ -58840,7 +58837,6 @@
       "2|Cancelamentos e estornos": 2,
       "9|Mídia paga": 1,
       "11|Frete de materiais de operação": 1,
-      "4|carnes e frutos do mar)": 1,
       "4|Gelo e gases": 1,
       "8|Telefonia e internet": 1,
       "5|Energia elétrica": 1,
@@ -58859,7 +58855,7 @@
       "10|Rendimentos de aplicações": 1
      },
      "familias": {
-      "cozinha": -161984.34000000005,
+      "cozinha": -162364.34000000005,
       "bar": -235177.31000000006,
       "comum": -46629.6
      },
@@ -64904,7 +64900,7 @@
        ""
       ],
       [
-       "4|carnes e frutos do mar)",
+       "4|Proteínas (carnes e frutos do mar)",
        "20/10/2026",
        -380.0,
        "KARNE KEIJO LOG INTEGRADA LTDA",
@@ -67929,7 +67925,7 @@
       "4|Bebidas alcoólicas": -120384.97000000003,
       "6|Extras e freelancers": -19890.0,
       "5|Limpeza e descartáveis": -19115.59,
-      "4|Proteínas (carnes e frutos do mar)": -91348.58,
+      "4|Proteínas (carnes e frutos do mar)": -93040.45999999999,
       "4|Frete de insumos de alimentos e bebidas": -40160.91,
       "14|Cachê de artistas e atrações": -39644.600000000006,
       "5|Alojamento e ajuda de custo para moradia": -53200.0,
@@ -67946,7 +67942,6 @@
       "4|Hortifrúti": -48048.979999999996,
       "4|Secos e mercearia": -12675.89,
       "4|Bebidas não alcoólicas": -7689.890000000001,
-      "4|carnes e frutos do mar)": -1691.88,
       "6|Alimentação de colaboradores": -7563.969999999999,
       "NEUTRO|Adiantamento de clientes": 5000.0,
       "NEUTRO|Transferência entre contas - entrada": 1288149.5499999998,
@@ -67988,7 +67983,7 @@
       "4|Bebidas alcoólicas": 23,
       "6|Extras e freelancers": 29,
       "5|Limpeza e descartáveis": 14,
-      "4|Proteínas (carnes e frutos do mar)": 24,
+      "4|Proteínas (carnes e frutos do mar)": 27,
       "4|Frete de insumos de alimentos e bebidas": 12,
       "14|Cachê de artistas e atrações": 32,
       "5|Alojamento e ajuda de custo para moradia": 13,
@@ -68005,7 +68000,6 @@
       "4|Hortifrúti": 21,
       "4|Secos e mercearia": 11,
       "4|Bebidas não alcoólicas": 15,
-      "4|carnes e frutos do mar)": 3,
       "6|Alimentação de colaboradores": 3,
       "NEUTRO|Adiantamento de clientes": 5,
       "NEUTRO|Transferência entre contas - entrada": 60,
@@ -68045,7 +68039,7 @@
      },
      "familias": {
       "bar": -130084.86000000002,
-      "cozinha": -177863.59000000005,
+      "cozinha": -179555.47000000006,
       "comum": -46109.21
      },
      "itens": [
@@ -68699,7 +68693,7 @@
        ""
       ],
       [
-       "4|carnes e frutos do mar)",
+       "4|Proteínas (carnes e frutos do mar)",
        "03/11/2026",
        -779.88,
        "PRASO PLATAFORMA DE COMERCIO LTDA.",
@@ -71009,7 +71003,7 @@
        ""
       ],
       [
-       "4|carnes e frutos do mar)",
+       "4|Proteínas (carnes e frutos do mar)",
        "11/11/2026",
        -156.0,
        "PCA - POTIGUAR COMERCIO DE ALIMENTOS LTDA",
@@ -72813,7 +72807,7 @@
        ""
       ],
       [
-       "4|carnes e frutos do mar)",
+       "4|Proteínas (carnes e frutos do mar)",
        "19/11/2026",
        -756.0,
        "PRASO PLATAFORMA DE COMERCIO LTDA.",
