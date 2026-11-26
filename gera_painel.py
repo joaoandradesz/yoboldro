@@ -1599,15 +1599,15 @@ function operacao(){
    aj?('a compra do mês foi '+brl(aj.comprado)+' — o CMV entra a '+
        Math.round((D.ajustes.cmv_meta||0)*100)+'% por decisão da diretoria')
      :'a abertura por cozinha e bar entra quando o insumo deixar de vir num balde só'],
-  ['Equipe',pc(k.pessoal,base),brl(k.pessoal)+' entre fixos, diaristas e alojamento',
+  ['Equipe',pc(k.pessoal,base),brl(k.pessoal)+' entre fixos, diaristas e PJ — o alojamento fica em custos de operação',
    'referência: 25% a 32%'],
   ['Custo de casa aberta',brl(fixo/dias),'por dia de operação',
    'sem vender nada, a casa custa isso por dia'],
   (ENT==='boldro'&&k.ocupacao<1000)
     ?['Ocupação',emC('a Boldró não paga arrendamento: o ponto é arrendado pela YO, '+
        'por R$ 25.000 ao mês, e não é rateado. Ver o consolidado.'),'','']
-    :['Ocupação',pc(k.ocupacao,base),brl(k.ocupacao)+' de arrendamento',
-      ENT==='consol'?'arrendamento do ponto, pago pela YO':'referência: até 10%'],
+    :['Ocupação',pc(k.ocupacao,base),brl(k.ocupacao)+' de arrendamento, aluguéis e seguro',
+      ENT==='consol'?'inclui o arrendamento do ponto, pago pela YO':'referência: até 10%'],
   ['Atrações e mídia',pc(k.mkt,base),brl(k.mkt)+' em DJ, música e divulgação','referência: 3% a 6%'],
   ['Custo de vender',pc(k.variaveis,base),brl(k.variaveis)+' em comissão e taxa de cartão',
    'sai a cada venda, não com a casa aberta'],
