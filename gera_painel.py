@@ -729,7 +729,7 @@ function turnoCard(){var V=vd();
  return ['Consumo no almoço',(100*t.dia.valor/somaT).toFixed(1).replace('.',',')+'%',
          brl(t.dia.valor)+' das 11h às 16h, sobre '+brl(somaT)+' com hora registrada',
          'fim de dia: '+(100*t.final.valor/somaT).toFixed(1).replace('.',',')+'% · '+brl(t.final.valor)+
-         ' — a base do relatório de horário é '+pc(somaT,V.recebido)+' do mês: não traz a taxa de serviço nem o dia 30/09']}
+         (V.nota_hora?' — '+V.nota_hora:' — a base do relatório de horário é '+pc(somaT,V.recebido)+' do mês: não traz a taxa de serviço nem o dia 30/09')]}
 function diaForteCard(){var V=vd();
  if(!vdTemDia())return ['Venda por dia da semana',emC(ENT==='yo'?'a YO não fatura':semHora()),'',''];
  var s={},c={};
@@ -893,8 +893,9 @@ function horarioTabela(){
   '</td><td class="av">'+pc(x[1],tot)+'</td></tr>'});
  h+='<tr class="dfcs"><td class="l">Com hora registrada</td><td class="num">'+brl(tot)+
   '</td><td class="av">100,0%</td></tr></tbody></table>'+
-  '<p class="repnote">A base do relatório de horário é '+pc(tot,V.recebido)+' do mês: '+
-  'o 3LM não carimba hora na taxa de serviço nem no dia 30/09. Os percentuais são sobre '+
+  '<p class="repnote">'+(V.nota_hora?'Fonte: '+V.fonte_hora+'. '+V.nota_hora.charAt(0).toUpperCase()+V.nota_hora.slice(1)+'. ':
+  'A base do relatório de horário é '+pc(tot,V.recebido)+' do mês: '+
+  'o 3LM não carimba hora na taxa de serviço nem no dia 30/09. ')+'Os percentuais são sobre '+
   'o que tem hora registrada, não sobre o faturamento do mês.</p>';
  return h;
 }
