@@ -43,7 +43,8 @@ def dt(s):
 # R$ 599.861,24 contra R$ 599.857,30 do extrato de 30/09 — diferenca de R$ 3,94
 # que apareceu entre 15 e 16/10 por edicao de movimento de setembro, ainda sem
 # explicacao. Fica declarada em DIVERGE para o painel mostrar, nao ser tapada.
-ANCORA_DATA = datetime.date(2026, 9, 30)
+# 26/11/2026, Joao: a posicao parte de 31/10 com o saldo do DFC do painel.
+ANCORA_DATA = datetime.date(2026, 10, 31)
 # Saldo DOCUMENTADO na data da ancora, conferido em 27/10.
 #
 # Qual documento: o da APLICACAO, nao o extrato "C.C" do banco. Os dois existem
@@ -57,7 +58,9 @@ ANCORA_DATA = datetime.date(2026, 9, 30)
 #
 # YO: Invest Facil declara VALOR BRUTO de 142.249,66 em setembro; mais 9,00 da
 # conta corrente, fecha em 142.258,66, que e o que o Omie marca.
-EXTRATO = {'boldro': 599870.43, 'yo': 142258.66}
+# 31/10: ContaMax da Boldro bruto 592.999,13 (POSICAO EM ABERTO OUTUBRO.26).
+# YO sem documento do Invest Facil em 31/10: sem conferencia de ancora.
+EXTRATO = {'boldro': 592999.13}
 # A ancora da Boldro soma mais que o documento do banco de proposito: inclui o
 # Fundo Fixo. Isso e declarado no painel, nao escondido.
 NOTA_DIVERGE = {'boldro': 'e o Fundo Fixo - Restaurante, dinheiro em especie do '
@@ -72,18 +75,22 @@ EMP = {
         # todo dia. O Fundo Fixo e dinheiro fisico do restaurante: existe, mas
         # nao tem extrato bancario — fecha contra contagem de caixa, nao contra
         # documento do banco, e por isso entra declarado a parte.
-        'ancora': {'Santander c/c': 0.00, 'Santander ContaMax': 599870.43,
-                   'Santander CDB': 0.00, 'Fundo Fixo - Restaurante': 19967.48,
-                   'GetNet': 0.00},
+        # Fundo Fixo FORA do saldo (Joao, 26/11/2026): vale o DFC, e o dinheiro
+        # em especie so o CSC confirma. Fica como observacao, com o valor do Omie.
+        'ancora': {'Santander c/c': 0.00, 'Santander ContaMax': 592999.13,
+                   'Santander CDB': 0.00, 'GetNet': 0.00},
         'contas': [(2886694320, 'Santander c/c'), (2886694903, 'Santander ContaMax'),
-                   (2886695824, 'Santander CDB'), (2878729940, 'Fundo Fixo - Restaurante'),
-                   (2899732241, 'GetNet')],
+                   (2886695824, 'Santander CDB'), (2899732241, 'GetNet')],
+        'obs': ('Fora do saldo: <b>R$ 22.234,43</b> em Fundo Fixo - Restaurante em 31/10, '
+                'como está no Omie. É dinheiro em espécie, sem extrato bancário: não temos '
+                'como confirmar, só o CSC, pela contagem do caixa. O saldo desta aba é o do '
+                'fluxo de caixa do painel.'),
         'getnet': 2899732241,
     },
     'yo': {
         'nome': 'YO Noronha',
-        'ancora': {'Bradesco c/c': 1.00, 'Bradesco Invest Fácil': 142257.66,
-                   'Bradesco CDB': 0.00, 'Mercado Pago': 0.00},
+        'ancora': {'Bradesco c/c': -7.00, 'Bradesco Invest Fácil': 92087.85,
+                   'Bradesco CDB': 0.00, 'Mercado Pago': 1215.77},
         'contas': [(11806749900, 'Bradesco c/c'), (11806752455, 'Bradesco Invest Fácil'),
                    (11806755245, 'Bradesco CDB'), (11811341545, 'Mercado Pago')],
         'getnet': None,          # a YO nao tem conta de adquirente no Omie
@@ -251,7 +258,7 @@ def coleta(HOJE):
             'atrasados': {'n': len(atr),
                           'receber': R2(sum(x['v'] for x in atr if x['lado'] == 'receber')),
                           'pagar': R2(sum(x['v'] for x in atr if x['lado'] == 'pagar'))},
-            'getnet': gn, 'diverge': diverge,
+            'getnet': gn, 'diverge': diverge, 'obs': cfg.get('obs'),
             'ultimo_mov': ultimo.strftime('%d/%m/%Y') if ultimo else None,
             'atraso_dias': atraso, 'uteis_desde_ancora': uteis,
             'extrato_ancora': EXTRATO.get(emp)}
