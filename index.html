@@ -1485,7 +1485,7 @@ function pintaRelatorios(){
  ['fc','dre'].forEach(function(t){
   var h=document.getElementById(t+'head'); if(!h)return;
   var th='<th class="l">'+(t==='fc'?'Fluxo de caixa':'Categoria')+'</th>';
-  mesesDe(t==='fc'?'caixa':'comp').forEach(function(m){th+='<th>'+D.meses_nome[m]+'</th>'});
+  mesesDe(t==='fc'?'caixa':'comp').forEach(function(m){th+='<th>'+D.meses_nome[m]+(parcial(m)?'<br><small>em andamento</small>':'')+'</th>'});
   var semAv=(t==='dre')&&!mesesDe('comp').some(function(m){return soma(ENT,'comp',m,['FAT'])});
   h.innerHTML=th+'<th>Total</th><th class="av">'+
     (t==='fc'?'% saídas':(semAv?'—':'AV %'))+'</th>';
@@ -2041,8 +2041,8 @@ function render(){
 }
 document.getElementById('mespills').innerHTML=D.meses.map(function(m){
  return '<button data-m="'+m+'" class="'+(m===MES?'on':'')+(parcial(m)?' parc':'')+
-  '" onclick="setMes(\''+m+'\')" title="'+(parcial(m)?'mês parcial, ainda em carga':'')+'">'+
-  D.meses_nome[m]+(parcial(m)?' <i>parcial</i>':'')+'</button>'}).join('');
+  '" onclick="setMes(\''+m+'\')" title="'+(parcial(m)?'mês em andamento: só o fluxo de caixa, ainda em carga':'')+'">'+
+  D.meses_nome[m]+(parcial(m)?' <i>em andamento</i>':'')+'</button>'}).join('');
 window.addEventListener('scroll',function(){
  var y=scrollY+90,at='geral';
  document.querySelectorAll('section,header').forEach(function(s){if(s.offsetTop<=y)at=s.id});
