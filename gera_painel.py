@@ -345,6 +345,13 @@ td.av{color:var(--g500);font-size:12px}
  border-radius:10px;background:var(--orange);color:var(--navy);text-decoration:none;
  font-family:'Plus Jakarta Sans',sans-serif;font-size:12.5px;font-weight:700}
 .proj:hover{filter:brightness(1.07)}
+/* 25/11/2026, Joao: o botao saia entre a data e os meses e quebrava a leitura.
+   Vai para a mesma linha dos meses, a direita, com a data da PROJECAO dentro dele
+   (a projecao tem geracao propria, diferente da data deste painel). */
+.mesbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:14px 0 12px}
+.mesbar .mespills{margin-bottom:0}
+.mesbar .proj{margin-top:0;flex-direction:column;align-items:flex-start;gap:1px;line-height:1.2}
+.proj small{font-size:10.5px;font-weight:600;opacity:.72}
 .aviso.nota{background:var(--orange-soft);border-color:#FDBA74;margin:14px 0 0}
 .aviso.nota h4{color:#9A3412}
 .aviso.erro{border-color:var(--out);background:#FFF5F5}
@@ -2235,6 +2242,22 @@ def ressalva():
            brlpt(soma('2026-09', EB + ['10', 'IR'])), bloco_dup, bloco_rat, D['gerado']))
 
 
+def data_projecao():
+    """Data de geracao da projecao (caixa.html), lida da propria pagina dela.
+
+    A projecao tem gerador e cadencia proprios (caixa/atualiza.sh): a data dela
+    nao e a deste painel. Mostrar a data do painel no botao seria afirmar que a
+    projecao esta atualizada quando nao esta."""
+    import re
+    try:
+        s = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'caixa.html'),
+                 encoding='utf-8').read()
+        m = re.search(r'"gerado"\s*:\s*"([^"]+)"', s)
+        return ('atualizada em ' + m.group(1)) if m else 'data de atualização não encontrada'
+    except OSError:
+        return 'data de atualização não encontrada'
+
+
 SEC_REL = """<section id="relatorios"><div class="wrap">
 <div class="sec-head"><div class="k">Relatório detalhado</div>
 <h2>Tabelas por categoria <span class="light">— grupo e conta</span></h2>
@@ -2343,8 +2366,8 @@ def pagina(socios=False):
 <h1 id="heroTitle"></h1>
 <div class="cnpjline" id="heroCnpj"></div>
 <div class="selo">dados lidos do Omie em <b id="selo"></b></div>
-<div><a class="proj" href="caixa.html">Projeção de caixa e compromissos</a></div>
-<div class="mespills" id="mespills"></div>
+<div class="mesbar"><div class="mespills" id="mespills"></div>
+<a class="proj" href="caixa.html"><span>Projeção de caixa e compromissos</span><small>%s</small></a></div>
 <div class="regsw" id="regsw"><span class="reglab">Ver a ponte do topo por:</span>
 <button data-r="caixa" class="on" onclick="setRegime('caixa')">Caixa</button>
 <button data-r="comp" onclick="setRegime('comp')">Competência</button><span class="regnota">os indicadores e as tabelas abaixo não mudam com este botão: a DRE é sempre por competência e o DFC sempre pelo caixa</span></div>
@@ -2401,6 +2424,7 @@ def pagina(socios=False):
         NAV_LINKS,
         ENTSW_SOC if socios else ENTSW,
         'Visão dos sócios · 2026' if socios else 'Fluxo de Caixa &amp; DRE Gerencial · 2026',
+        data_projecao(),
         SEC_REL,
         SEC_TX + SEC_DIA + SEC_MIX,
         SEC_AUD + SEC_ANO,

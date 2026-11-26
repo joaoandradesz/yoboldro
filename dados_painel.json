@@ -1,5 +1,5 @@
 {
- "gerado": "25/11/2026 às 21:36",
+ "gerado": "25/11/2026 às 23:08",
  "meses": [
   "2026-08",
   "2026-09",
@@ -5895,8 +5895,8 @@
    ],
    "antecipacao": {
     "custo": 6564.46,
-    "base": 437830.41,
-    "pc": 1.499,
+    "base": 0.0,
+    "pc": 0,
     "total_creditado": 792229.64
    },
    "serie": [
@@ -6027,6 +6027,88 @@
      "sem_antecipar": -192386.25
     }
    ]
+  },
+  "2026-10": {
+   "cartao": {
+    "bruto": 1039084.86,
+    "taxa": 11668.22,
+    "pc": 1.123,
+    "n": 2058
+   },
+   "pix": {
+    "bruto": 92514.2,
+    "n": 231
+   },
+   "linhas": [
+    {
+     "bandeira": "Mastercard",
+     "modalidade": "Crédito",
+     "n": 852,
+     "bruto": 447048.27,
+     "taxa": 4917.56,
+     "pc": 1.1,
+     "ticket": 524.7
+    },
+    {
+     "bandeira": "Visa",
+     "modalidade": "Crédito",
+     "n": 747,
+     "bruto": 400097.11,
+     "taxa": 4201.18,
+     "pc": 1.05,
+     "ticket": 535.61
+    },
+    {
+     "bandeira": "Mastercard",
+     "modalidade": "Débito",
+     "n": 213,
+     "bruto": 72545.25,
+     "taxa": 681.98,
+     "pc": 0.94,
+     "ticket": 340.59
+    },
+    {
+     "bandeira": "Visa",
+     "modalidade": "Débito",
+     "n": 143,
+     "bruto": 61322.18,
+     "taxa": 545.82,
+     "pc": 0.89,
+     "ticket": 428.83
+    },
+    {
+     "bandeira": "Amex",
+     "modalidade": "Crédito",
+     "n": 50,
+     "bruto": 35808.91,
+     "taxa": 913.14,
+     "pc": 2.55,
+     "ticket": 716.18
+    },
+    {
+     "bandeira": "Elo",
+     "modalidade": "Crédito",
+     "n": 46,
+     "bruto": 20184.85,
+     "taxa": 373.42,
+     "pc": 1.85,
+     "ticket": 438.8
+    },
+    {
+     "bandeira": "Elo",
+     "modalidade": "Débito",
+     "n": 7,
+     "bruto": 2078.29,
+     "taxa": 35.12,
+     "pc": 1.69,
+     "ticket": 296.9
+    }
+   ],
+   "antecipacao": {
+    "custo": 0.0,
+    "base": 0.0,
+    "pc": 0
+   }
   }
  },
  "receita": {
