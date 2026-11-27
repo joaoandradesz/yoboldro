@@ -51,7 +51,7 @@ CSS = r"""
  --g500:#6B7280;--g300:#D1D5DB;--g200:#E5E7EB;--in:#0E9F6E;--out:#DC2626;
  --card:#fff;--shadow:0 1px 3px rgba(13,15,26,.06),0 8px 24px rgba(13,15,26,.05)}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{font-family:'Inter',sans-serif;background:var(--offwhite);color:var(--ink);
  -webkit-font-smoothing:antialiased;line-height:1.55}
 .num{font-family:'Plus Jakarta Sans',sans-serif;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
@@ -385,12 +385,14 @@ td.av{color:var(--g500);font-size:12px}
 .pdfbt:hover{background:#EA6A0B;transform:translateY(-1px)}
 @media(max-width:620px){.pdfbt{right:12px;bottom:12px;padding:10px 14px;font-size:11.5px}}
 /* 26/11/2026 -- celular e tablet (pedido do Joao): desenho de app, nao desktop encolhido.
-   Nada aqui vale acima de 1024px. Tabelas: matriz (DRE, DFC, dia a dia) rola de lado
-   com a 1a coluna presa; tabela de texto (o que mede, de onde vem, bandeira, curva ABC)
-   vira cartao -- o JS mobTabelas() marca quem e quem. */
+   Nada aqui vale acima de 1024px. Tabelas: todas
+   rolam de lado com a 1a coluna presa (pedido do Joao, 27/11). */
 @media(max-width:1024px){
- .repwrap.on,div:has(> table.xtbl),section:has(> table.xtbl){overflow-x:auto;-webkit-overflow-scrolling:touch}
- .xtbl.mat th:first-child,.xtbl.mat td:first-child,.xtbl.stk th:first-child,.xtbl.stk td:first-child{position:sticky;left:0;z-index:2}
+ /* a propria tabela e quem rola: o texto em volta nao vai junto e a 1a coluna gruda nela */
+ table.xtbl{display:block;max-width:100%;overflow-x:auto!important;-webkit-overflow-scrolling:touch}
+ .xtbl th:first-child,.xtbl td:first-child{position:sticky;left:0;z-index:2}
+ .xtbl td:first-child{background-color:#fff}
+ .xtbl thead th:first-child{z-index:3}
 }
 @media(max-width:820px){.regsw{flex-wrap:wrap}.regnota{flex-basis:100%;max-width:none}}
 @media(max-width:720px){
@@ -423,27 +425,12 @@ td.av{color:var(--g500);font-size:12px}
  .pz-mid b{font-size:17px}
  .pz-item{font-size:12.5px;gap:8px}
  .curva{gap:3px}.cb{flex:1 1 0;min-width:0}
- /* matriz: compacta, 1a coluna estreita e presa */
- .xtbl.mat,.xtbl.stk{font-size:11.5px}
- .xtbl.mat th,.xtbl.mat td,.xtbl.stk th,.xtbl.stk td{padding:7px 8px}
- .xtbl.mat td:first-child,.xtbl.mat th:first-child{min-width:112px;max-width:132px;white-space:normal}
- /* tabela de texto vira cartao */
- table.cardify{display:block;border:0;background:none}
- table.cardify thead{display:none}
- table.cardify tbody{display:flex;flex-direction:column;gap:10px}
- table.cardify tr{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:12px 14px;box-shadow:0 1px 2px rgba(13,15,26,.04)}
- table.cardify tr td{display:block;padding:0!important;border:0!important;background:none!important;text-align:left!important;white-space:normal!important;position:static!important;min-width:0;max-width:none;font-size:13px}
- table.cardify tr td.c-tit{grid-column:1/-1;font-weight:700;font-size:14px;color:var(--ink)}
- table.cardify tr td.c-wide{grid-column:1/-1;color:var(--ink2);font-size:12.5px;line-height:1.45}
- table.cardify tr td[data-l]::before{content:attr(data-l);display:block;font-family:'Plus Jakarta Sans';font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--g500);margin-bottom:2px}
- table.cardify tr.res,table.cardify tr.tot{border-color:#FDBA74;background:#FFFBF5}
- table.cardify tr.memo{background:#FAFAF7;border-style:dashed}
- table.cardify.c-num tr{grid-template-columns:repeat(3,minmax(0,1fr))}
- table.cardify tr td.num{font-family:'Plus Jakarta Sans';font-weight:700;font-size:15px;color:var(--ink)}
- /* linha que abre dentro do cartao (aritmetica dos 5 numeros): lista compacta, nao cartao */
- table.cardify tr.scc{display:flex;justify-content:space-between;gap:10px;border:0;border-radius:0;box-shadow:none;background:#FAFAF7;padding:6px 14px;margin-top:-8px}
- table.cardify tr.scc td{font-size:12px!important}
- table.cardify tr.scc td.c-tit{font-weight:500;color:var(--ink2)}
+ /* toda tabela: compacta, 1a coluna presa, o resto rola de lado */
+ .xtbl{font-size:11.5px}
+ .xtbl th,.xtbl td{padding:7px 8px}
+ .xtbl td:first-child,.xtbl th:first-child{min-width:112px;max-width:140px;white-space:normal}
+ .xtbl td.l:not(:first-child),.xtbl td.obs{min-width:190px;white-space:normal}
+ .xtbl tr.memo td:first-child i{font-style:italic}
 }
 
 .pdoc{display:none;background:#fff;color:var(--ink);font-family:'Inter',sans-serif}
@@ -2059,34 +2046,6 @@ window.addEventListener('scroll',function(){
  document.querySelectorAll('.nav-links a').forEach(function(a){
   a.classList.toggle('on',a.getAttribute('href')==='#'+at)});
 });
-/* celular: matriz rola com a 1a coluna presa; tabela de texto vira cartao.
-   Roda de novo a cada troca de empresa/mes, porque as tabelas sao refeitas. */
-var CARD_TAB=/de onde vem|o que mede|bandeira|classe a/i, STK_TAB=/^data$/i;
-function mobTabelas(){
- document.querySelectorAll('table.xtbl').forEach(function(t){
-  if(t.closest('#pdoc'))return;
-  var hs=[].slice.call(t.querySelectorAll('thead th')).map(function(h){return h.innerText.replace(/\s+/g,' ').trim()});
-  if(!hs.length)return;
-  if(STK_TAB.test(hs[0]))t.classList.add('stk');
-  if(!CARD_TAB.test(hs.join(' | ')))return;
-  t.classList.add('cardify'); var largo=false;
-  [].slice.call(t.querySelectorAll('tbody tr')).forEach(function(tr){
-   var col=0;
-   [].slice.call(tr.children).forEach(function(td,i){
-    var span=+(td.getAttribute('colspan')||1);
-    td.classList.remove('c-tit','c-wide'); td.removeAttribute('data-l');
-    if(i===0||span>1)td.classList.add('c-tit');
-    else if(tr.classList.contains('scc')){}
-    else{ if(hs[col])td.setAttribute('data-l',hs[col]);
-          if((td.innerText||'').length>26){td.classList.add('c-wide');largo=true;} }
-    col+=span;
-   });
-  });
-  t.classList.toggle('c-num',!largo);
- });
-}
-var _mobT=null;
-new MutationObserver(function(){clearTimeout(_mobT);_mobT=setTimeout(mobTabelas,60)}).observe(document.body,{childList:true,subtree:true});
 
 render();
 """
