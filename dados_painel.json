@@ -1,5 +1,5 @@
 {
- "gerado": "26/11/2026 às 17:05",
+ "gerado": "27/11/2026 às 13:20",
  "meses": [
   "2026-08",
   "2026-09",
@@ -343,9 +343,17 @@
   },
   "cmv_yo": {
    "2026-08": 90306.9,
-   "2026-09": 72503.47
+   "2026-09": 72503.47,
+   "2026-10": 15388.53
   },
-  "ir": {},
+  "ir": {
+   "2026-10": {
+    "base": 1067009.32,
+    "irpj": 19340.19,
+    "csll": 11523.7,
+    "total": 30863.89
+   }
+  },
   "piscofins": {},
   "presuncao": {
    "irpj": 0.08,
@@ -362,11 +370,11 @@
      "2026-08",
      "2026-09"
     ],
-    "tributo": -18265.14,
+    "tributo": -27489.03,
     "multa_juros": 211.87,
     "por_mes": {
-     "2026-08": -2443.48,
-     "2026-09": -16033.53
+     "2026-08": -3677.44,
+     "2026-09": -24023.46
     },
     "receita": {
      "2026-08": 163548.5,
@@ -474,8 +482,8 @@
   "valor": 0.0
  },
  "carga": {
-  "n": 1346,
-  "valor": 4956051.21,
+  "n": 1350,
+  "valor": 4975489.06,
   "dias": {
    "13/11/2026": {
     "n": 144,
@@ -530,8 +538,12 @@
     "valor": 27285.3
    },
    "26/11/2026": {
-    "n": 121,
-    "valor": 792970.75
+    "n": 122,
+    "valor": 801691.68
+   },
+   "27/11/2026": {
+    "n": 3,
+    "valor": 10716.92
    }
   },
   "fechado": {
@@ -549,8 +561,8 @@
    }
   },
   "fora": {
-   "n": 921,
-   "valor": 4282389.39
+   "n": 925,
+   "valor": 4301827.24
   },
   "receita": {
    "2026-08": 174061.71,
@@ -7257,7 +7269,7 @@
       "3": -13737.799999999997,
       "2": -556.05,
       "FAT": 163548.5,
-      "IR": -2443.48
+      "IR": -3677.44
      },
      "contas": {
       "1|Receita operacional (salão)": 174061.71,
@@ -7301,7 +7313,7 @@
       "FAT|PIX": 8735.43,
       "FAT|Ajuste ao total do 3LM": -27741.82,
       "4|Ajuste de CMV para 33% da receita": 220953.86,
-      "IR|IRPJ e CSLL do 3T — rateio pela receita do mês": -2443.48
+      "IR|IRPJ e CSLL do 3T — rateio pela receita do mês": -3677.44
      },
      "lanc": {
       "1|Receita operacional (salão)": 67,
@@ -11235,7 +11247,7 @@
       [
        "IR|IRPJ e CSLL do 3T — rateio pela receita do mês",
        "31/08/2026",
-       -2443.48,
+       -3677.44,
        "Rateio do trimestre",
        "AJUSTE",
        "",
@@ -11274,7 +11286,7 @@
       "7": -825.42,
       "2": -40916.189999999995,
       "13": -340.0,
-      "IR": -16033.530000000002,
+      "IR": -24023.460000000003,
       "FAT": 1058984.27
      },
      "contas": {
@@ -11284,7 +11296,7 @@
       "8|Sistemas": -3943.38,
       "11|Investimentos diversos": -72727.65,
       "9|Outros de marketing": -3500.0,
-      "6|Diarista (OIA)": -30885.010000000002,
+      "6|Diarista (OIA)": -31085.010000000002,
       "5|Alojamento e ajuda de custo para moradia": -25970.65,
       "6|Salários da operação": -86694.49000000003,
       "8|Telefonia e internet": -308.38,
@@ -11311,13 +11323,12 @@
       "3|Comissões sobre vendas": -96709.04000000004,
       "7|Taxas distritais, TPU, TLL e IPTU": -825.42,
       "5|Transporte, veículo e combustível": -549.0,
-      "9|Mídia paga": -1500.0,
+      "9|Mídia paga (tráfego)": -1500.0,
       "4|Água mineral": -6792.0,
       "4|Frios, laticínios e congelados": -11626.0,
       "6|Rescisões": -3106.0299999999997,
       "4|Bebidas não alcoólicas": -1355.0,
       "5|Manutenção de equipamentos": -700.0,
-      "6|Extras e freelancers": -200.0,
       "8|Material de escritório": -1785.5,
       "2|Cancelamentos e estornos": -5300.0,
       "5|Diversos de operação": -5202.6,
@@ -11329,8 +11340,8 @@
       "2|PIS": -6258.49,
       "13|Pagamento indevido / a maior": -340.0,
       "2|ICMS-ST e DIFAL": -472.34,
-      "IR|IRPJ": -10579.2,
-      "IR|CSLL": -7897.8099999999995,
+      "IR|IRPJ": -15860.43,
+      "IR|CSLL": -11840.470000000001,
       "3|Taxa de cartão crédito": -10451.569999999998,
       "5|Energia elétrica": -386.18,
       "5|Reposição de utensílios": -1780.8,
@@ -11340,7 +11351,7 @@
       "FAT|Dinheiro (fundo fixo)": 47022.72,
       "FAT|Ajuste ao total do 3LM": 4955.68,
       "4|Ajuste de CMV para 33% da receita": 103288.21,
-      "IR|IRPJ e CSLL do 3T — rateio pela receita do mês": 2443.48
+      "IR|IRPJ e CSLL do 3T — rateio pela receita do mês": 3677.44
      },
      "lanc": {
       "1|Receita operacional (salão)": 375,
@@ -11349,7 +11360,7 @@
       "8|Sistemas": 3,
       "11|Investimentos diversos": 43,
       "9|Outros de marketing": 2,
-      "6|Diarista (OIA)": 64,
+      "6|Diarista (OIA)": 65,
       "5|Alojamento e ajuda de custo para moradia": 12,
       "6|Salários da operação": 66,
       "8|Telefonia e internet": 2,
@@ -11376,13 +11387,12 @@
       "3|Comissões sobre vendas": 32,
       "7|Taxas distritais, TPU, TLL e IPTU": 2,
       "5|Transporte, veículo e combustível": 3,
-      "9|Mídia paga": 1,
+      "9|Mídia paga (tráfego)": 1,
       "4|Água mineral": 1,
       "4|Frios, laticínios e congelados": 8,
       "6|Rescisões": 2,
       "4|Bebidas não alcoólicas": 3,
       "5|Manutenção de equipamentos": 1,
-      "6|Extras e freelancers": 1,
       "8|Material de escritório": 1,
       "2|Cancelamentos e estornos": 3,
       "5|Diversos de operação": 10,
@@ -11394,8 +11404,8 @@
       "2|PIS": 1,
       "13|Pagamento indevido / a maior": 1,
       "2|ICMS-ST e DIFAL": 1,
-      "IR|IRPJ": 2,
-      "IR|CSLL": 2,
+      "IR|IRPJ": 3,
+      "IR|CSLL": 3,
       "3|Taxa de cartão crédito": 177,
       "5|Energia elétrica": 1,
       "5|Reposição de utensílios": 2,
@@ -21281,7 +21291,7 @@
        "001/001"
       ],
       [
-       "9|Mídia paga",
+       "9|Mídia paga (tráfego)",
        "10/09/2026",
        -1500,
        "AZION MARKETING E PERFORMANCE LTDA",
@@ -22304,7 +22314,7 @@
        "009/012"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "30/09/2026",
        -200,
        "DIEGO CLEOVANSOSTENES VITAL DE VASCONCELOS",
@@ -26222,6 +26232,28 @@
       [
        "IR|IRPJ",
        "30/09/2026",
+       -5281.23,
+       "MINISTERIO DA FAZENDA",
+       "",
+       "",
+       "",
+       "30/11/2026",
+       "002/003"
+      ],
+      [
+       "IR|CSLL",
+       "30/09/2026",
+       -3942.66,
+       "MINISTERIO DA FAZENDA",
+       "",
+       "",
+       "",
+       "30/11/2026",
+       "002/003"
+      ],
+      [
+       "IR|IRPJ",
+       "30/09/2026",
        -5228.95,
        "MINISTERIO DA FAZENDA",
        "",
@@ -27447,7 +27479,7 @@
       [
        "IR|IRPJ e CSLL do 3T — rateio pela receita do mês",
        "30/09/2026",
-       2443.48,
+       3677.44,
        "Rateio do trimestre",
        "AJUSTE",
        "",
@@ -27510,38 +27542,37 @@
       "1": 1228261.1100000003,
       "4": -363073.56,
       "NEUTRO": 1600.0,
-      "8": -58951.549999999996,
+      "8": -59276.549999999996,
       "6": -219595.31,
-      "5": -88403.96000000002,
-      "7": -17059.8,
+      "5": -88078.96000000002,
+      "7": -11059.8,
       "14": -47895.0,
-      "11": -54871.16,
+      "11": -60871.159999999996,
       "CC": -100015.0,
       "9": -9000.0,
       "2": -51039.64000000001,
       "3": -89601.95,
-      "IR": -9223.89,
-      "FAT": 1193067.36
+      "FAT": 1193067.36,
+      "IR": -30863.89
      },
      "contas": {
       "1|Receita operacional (salão)": 1228261.1100000003,
       "4|Devoluções de Compra de Matéria Prima": 17894.86,
       "NEUTRO|Adiantamento de clientes": 1600.0,
       "8|Sistemas": -3427.9900000000002,
-      "6|Extras e freelancers": -13388.17,
+      "6|Diarista (OIA)": -60803.359999999986,
       "6|Remuneração PJ": -19366.67,
       "5|Alojamento e ajuda de custo para moradia": -52500.0,
       "6|ISS | Permanência": -4942.6,
       "4|Proteínas (carnes e frutos do mar)": -95781.11000000004,
-      "6|Diarista (OIA)": -47415.189999999995,
       "6|Salários da operação": -75943.95000000003,
       "6|Alimentação de colaboradores": -10604.279999999999,
       "4|Hortifrúti": -51337.619999999995,
       "8|Contabilidade, jurídico e consultorias": -6523.76,
-      "7|Outros aluguéis": -16000.0,
+      "7|Outros aluguéis": -10000.0,
       "5|Limpeza e descartáveis": -26075.15,
       "14|Artistas e couvert": -47895.0,
-      "11|Investimentos diversos": -9731.529999999999,
+      "11|Investimentos diversos": -15731.529999999999,
       "5|Diversos de operação": -2392.0,
       "4|Frete de insumos de alimentos e bebidas": -36573.490000000005,
       "4|Água mineral": -6530.0,
@@ -27557,20 +27588,19 @@
       "11|Frete de equipamentos e obra": -418.93,
       "8|Outras despesas administrativas": -551.6,
       "5|Manutenção de equipamentos": -1800.0,
-      "5|Transporte, veículo e combustível": -2121.0,
-      "9|Outros de marketing": -6000.0,
+      "5|Transporte, veículo e combustível": -1796.0,
+      "9|Mídia paga (tráfego)": -3000.0,
+      "9|Outros de marketing": -4500.0,
       "11|Prestadores de servicos gerais": -33576.53,
-      "9|Mídia paga": -1500.0,
       "5|Energia elétrica": -2019.55,
+      "8|Gestor administrativo PJ": -325.0,
       "8|Licenças e alvarás": -289.2,
       "6|Passagens aéreas da equipe": -605.0,
       "6|Uniformes, EPI e exames": -540.0,
-      "8|Pró-labore": -36000.0,
-      "8|Ajuda de custo": -4000.0,
+      "8|Pró-labore": -34000.0,
+      "8|Ajuda de custo": -6000.0,
       "2|Cancelamentos e estornos": -1069.92,
       "3|Taxa de cartão crédito": -11668.220000000001,
-      "IR|IRPJ": -5281.23,
-      "IR|CSLL": -3942.66,
       "6|Variável": -10504.0,
       "3|Comissões sobre vendas": -77933.73000000001,
       "2|COFINS": -30803.87,
@@ -27580,7 +27610,7 @@
       "11|Obras e reformas": -1054.9,
       "6|FGTS e contribuições": -36285.45,
       "2|ICMS-ST e DIFAL": -12492.060000000001,
-      "8|Rateio": -7000.0,
+      "8|Rateio CSC": -7000.0,
       "4|Gás de cozinha": -138.82,
       "5|Reposição de utensílios": -1496.26,
       "11|Frete de materiais de operação": -1667.27,
@@ -27589,27 +27619,28 @@
       "FAT|PIX": 92950.87,
       "FAT|Dinheiro": 61220.54,
       "FAT|Crédito Visa (fora do TEF)": 1026.24,
-      "FAT|Crédito Master (fora do TEF)": 476.16
+      "FAT|Crédito Master (fora do TEF)": 476.16,
+      "IR|IRPJ e adicional de 10% (provisão)": -19340.19,
+      "IR|CSLL (provisão)": -11523.7
      },
      "lanc": {
       "1|Receita operacional (salão)": 411,
       "4|Devoluções de Compra de Matéria Prima": 1,
       "NEUTRO|Adiantamento de clientes": 2,
       "8|Sistemas": 3,
-      "6|Extras e freelancers": 27,
+      "6|Diarista (OIA)": 126,
       "6|Remuneração PJ": 3,
       "5|Alojamento e ajuda de custo para moradia": 14,
       "6|ISS | Permanência": 17,
       "4|Proteínas (carnes e frutos do mar)": 37,
-      "6|Diarista (OIA)": 99,
       "6|Salários da operação": 32,
       "6|Alimentação de colaboradores": 11,
       "4|Hortifrúti": 36,
       "8|Contabilidade, jurídico e consultorias": 5,
-      "7|Outros aluguéis": 2,
+      "7|Outros aluguéis": 1,
       "5|Limpeza e descartáveis": 19,
       "14|Artistas e couvert": 35,
-      "11|Investimentos diversos": 7,
+      "11|Investimentos diversos": 8,
       "5|Diversos de operação": 5,
       "4|Frete de insumos de alimentos e bebidas": 28,
       "4|Água mineral": 3,
@@ -27625,20 +27656,19 @@
       "11|Frete de equipamentos e obra": 1,
       "8|Outras despesas administrativas": 1,
       "5|Manutenção de equipamentos": 2,
-      "5|Transporte, veículo e combustível": 5,
-      "9|Outros de marketing": 2,
+      "5|Transporte, veículo e combustível": 4,
+      "9|Mídia paga (tráfego)": 2,
+      "9|Outros de marketing": 1,
       "11|Prestadores de servicos gerais": 22,
-      "9|Mídia paga": 1,
       "5|Energia elétrica": 2,
+      "8|Gestor administrativo PJ": 1,
       "8|Licenças e alvarás": 1,
       "6|Passagens aéreas da equipe": 1,
       "6|Uniformes, EPI e exames": 2,
       "8|Pró-labore": 3,
-      "8|Ajuda de custo": 2,
+      "8|Ajuda de custo": 3,
       "2|Cancelamentos e estornos": 2,
       "3|Taxa de cartão crédito": 178,
-      "IR|IRPJ": 1,
-      "IR|CSLL": 1,
       "6|Variável": 1,
       "3|Comissões sobre vendas": 75,
       "2|COFINS": 1,
@@ -27648,7 +27678,7 @@
       "11|Obras e reformas": 2,
       "6|FGTS e contribuições": 2,
       "2|ICMS-ST e DIFAL": 2,
-      "8|Rateio": 1,
+      "8|Rateio CSC": 1,
       "4|Gás de cozinha": 2,
       "5|Reposição de utensílios": 2,
       "11|Frete de materiais de operação": 4,
@@ -27657,7 +27687,9 @@
       "FAT|PIX": 1,
       "FAT|Dinheiro": 1,
       "FAT|Crédito Visa (fora do TEF)": 1,
-      "FAT|Crédito Master (fora do TEF)": 1
+      "FAT|Crédito Master (fora do TEF)": 1,
+      "IR|IRPJ e adicional de 10% (provisão)": 1,
+      "IR|CSLL (provisão)": 1
      },
      "familias": {
       "cozinha": -198614.26000000013,
@@ -32231,7 +32263,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "31/10/2026",
        -1000,
        "JOSE FORTUNATO DA COSTA",
@@ -32748,7 +32780,7 @@
        "001/001"
       ],
       [
-       "7|Outros aluguéis",
+       "11|Investimentos diversos",
        "31/10/2026",
        -6000,
        "CLAUDIO HENRIQUE BEZERRA XAVIER",
@@ -32792,7 +32824,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "20/10/2026",
        -400,
        "EDIVALDO IVAN DOS SANTOS",
@@ -32803,7 +32835,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "20/10/2026",
        -500,
        "THIAGO MACHADO STORCK",
@@ -32814,7 +32846,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "20/10/2026",
        -450,
        "INACIO ADRIANO DE LIMA",
@@ -32825,7 +32857,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "20/10/2026",
        -500,
        "PAULO CESAR DA SILVA",
@@ -32836,7 +32868,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "21/10/2026",
        -450,
        "ANTONIO JOSE DA SILVA JUNIOR",
@@ -32847,7 +32879,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "21/10/2026",
        -400,
        "VOLHA DRAZIELI SOARES DE SOUZA",
@@ -32869,7 +32901,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "21/10/2026",
        -537.5,
        "DIOGO BRISOLA MARTINELLI",
@@ -32880,7 +32912,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "21/10/2026",
        -1066.67,
        "JOSE EVANDRO DA SILVA",
@@ -32891,7 +32923,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "08/10/2026",
        -300,
        "EDIVALDO IVAN DOS SANTOS",
@@ -33232,7 +33264,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "26/10/2026",
        -325,
        "JOSE MANOEL DOS SANTOS",
@@ -33694,7 +33726,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "31/10/2026",
        -500,
        "DIEGO CLEOVANSOSTENES VITAL DE VASCONCELOS",
@@ -33705,7 +33737,7 @@
        "001/002"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "31/10/2026",
        -500,
        "GLAUBER ANTONIO SILVA SANTANA",
@@ -33716,7 +33748,7 @@
        "001/002"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "30/10/2026",
        -200,
        "MARIO ROBERTO DE OLIVEIRA LOPES",
@@ -33727,7 +33759,7 @@
        "001/002"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "30/10/2026",
        -200,
        "MARIO ROBERTO DE OLIVEIRA LOPES",
@@ -33738,7 +33770,7 @@
        "002/002"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "31/10/2026",
        -300,
        "PEDRO FRANZO XAVIER",
@@ -33749,7 +33781,7 @@
        "001/002"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "31/10/2026",
        -200,
        "ROBINSON BARBOSA BORGES",
@@ -33760,7 +33792,7 @@
        "001/002"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "31/10/2026",
        -500,
        "SEVERINO ALEXANDRE DA SILVA",
@@ -33771,7 +33803,7 @@
        "001/002"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "31/10/2026",
        -200,
        "SWESLLEN SAYONARA SANTOS DE BRITO",
@@ -34310,7 +34342,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "30/10/2026",
        -500,
        "ALUISIO FREITAS DE MORAIS",
@@ -34321,7 +34353,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "30/10/2026",
        -200,
        "ROBERT DE MELO CRUZ DE JESUS",
@@ -34332,7 +34364,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "16/10/2026",
        -500,
        "JOSE MANOEL DOS SANTOS",
@@ -34365,7 +34397,7 @@
        "001/001"
       ],
       [
-       "9|Outros de marketing",
+       "9|Mídia paga (tráfego)",
        "05/10/2026",
        -1500,
        "FACEBOOK SERVICOS ONLINE DO BRASIL LTDA.",
@@ -34508,7 +34540,7 @@
        "001/001"
       ],
       [
-       "9|Mídia paga",
+       "9|Mídia paga (tráfego)",
        "19/10/2026",
        -1500,
        "AZION MARKETING E PERFORMANCE LTDA",
@@ -34860,7 +34892,7 @@
        "001/001"
       ],
       [
-       "5|Transporte, veículo e combustível",
+       "8|Gestor administrativo PJ",
        "20/10/2026",
        -325,
        "KARINE MACIEL VITOR RODRIGUES",
@@ -35467,7 +35499,18 @@
       [
        "8|Pró-labore",
        "31/10/2026",
-       -20000,
+       -18000,
+       "RENATO FERREIRA LIMA BATISTA GOMES",
+       "SEM NF",
+       "",
+       "",
+       "04/11/2026",
+       "001/001"
+      ],
+      [
+       "8|Ajuda de custo",
+       "31/10/2026",
+       -2000,
        "RENATO FERREIRA LIMA BATISTA GOMES",
        "SEM NF",
        "",
@@ -35652,7 +35695,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "31/10/2026",
        -675,
        "RONALDO RODRIGUES DA SILVA",
@@ -35663,7 +35706,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "30/10/2026",
        -100,
        "WENDEL LUAN DELFINO DO NASCIMENTO",
@@ -37654,28 +37697,6 @@
        "001/001"
       ],
       [
-       "IR|IRPJ",
-       "31/10/2026",
-       -5281.23,
-       "MINISTERIO DA FAZENDA",
-       "",
-       "",
-       "",
-       "30/11/2026",
-       "002/003"
-      ],
-      [
-       "IR|CSLL",
-       "31/10/2026",
-       -3942.66,
-       "MINISTERIO DA FAZENDA",
-       "",
-       "",
-       "",
-       "30/11/2026",
-       "002/003"
-      ],
-      [
        "6|Diarista (OIA)",
        "30/10/2026",
        -1050,
@@ -37775,7 +37796,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "26/10/2026",
        -1634,
        "HELIO LEVINBUK",
@@ -39623,7 +39644,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "26/10/2026",
        -750,
        "Cliente Consumidor / Sem Tomador",
@@ -39634,7 +39655,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "27/10/2026",
        -500,
        "Cliente Consumidor / Sem Tomador",
@@ -39777,7 +39798,7 @@
        "001/001"
       ],
       [
-       "8|Rateio",
+       "8|Rateio CSC",
        "31/10/2026",
        -7000,
        "AMANA EMPREENDIMENTOS TURISTICOS LTDA",
@@ -41197,6 +41218,28 @@
        "",
        "",
        ""
+      ],
+      [
+       "IR|IRPJ e adicional de 10% (provisão)",
+       "31/10/2026",
+       -19340.19,
+       "Diretoria",
+       "AJUSTE",
+       "",
+       "Lucro Presumido, presuncao de 8% para IRPJ e 12% para CSLL sobre base de R$ 1067009,32. Provisao calculada, nao ha guia lancada.",
+       "",
+       ""
+      ],
+      [
+       "IR|CSLL (provisão)",
+       "31/10/2026",
+       -11523.7,
+       "Diretoria",
+       "AJUSTE",
+       "",
+       "Lucro Presumido, presuncao de 8% para IRPJ e 12% para CSLL sobre base de R$ 1067009,32. Provisao calculada, nao ha guia lancada.",
+       "",
+       ""
       ]
      ],
      "fat": {
@@ -41218,11 +41261,11 @@
       "1": 82768.23999999998,
       "OR": 1046.74,
       "NEUTRO": 3400.0,
-      "8": -24894.97,
-      "5": -89938.09999999999,
+      "8": -33615.9,
+      "5": -90738.09999999999,
       "4": -226760.51000000004,
       "6": -161761.08999999997,
-      "11": -16580.62,
+      "11": -15780.619999999999,
       "14": -52421.600000000006,
       "7": -12846.519999999999,
       "9": -6000.0,
@@ -41240,16 +41283,16 @@
       "5|Limpeza e descartáveis": -19115.59,
       "4|Bebidas não alcoólicas": -9257.73,
       "4|Bebidas alcoólicas": -51694.92,
-      "6|Extras e freelancers": -24956.0,
+      "6|Diarista (OIA)": -60114.359999999986,
       "4|Outros insumos e diversos": -5948.3,
       "11|Equipamentos e mobiliário": -11850.0,
       "5|Diversos de operação": -1725.0,
-      "8|Contabilidade, jurídico e consultorias": -10882.08,
+      "8|Contabilidade, jurídico e consultorias": -19603.010000000002,
       "5|Alojamento e ajuda de custo para moradia": -54200.0,
       "4|Frete de insumos de alimentos e bebidas": -41846.86999999999,
       "5|Aluguel de máquinas e equipamentos": -531.9,
       "4|Gelo e gases": -1530.0,
-      "5|Manutenção de equipamentos": -500.0,
+      "5|Manutenção de equipamentos": -1300.0,
       "14|Artistas e couvert": -52421.600000000006,
       "6|ISS | Permanência": -8340.62,
       "7|Outros aluguéis": -10600.0,
@@ -41261,7 +41304,6 @@
       "4|Hortifrúti": -20306.63,
       "3|Taxa de cartão crédito": -1934.94,
       "4|Água mineral": -4811.5,
-      "6|Diarista (OIA)": -35158.36,
       "6|Variável": -10504.0,
       "11|Investimentos diversos": -2780.62,
       "7|Seguros": -1059.8,
@@ -41270,14 +41312,14 @@
       "5|Energia elétrica": -2787.53,
       "2|COFINS": -28885.36,
       "6|Remuneração PJ": -7000.0,
-      "11|Prestadores de servicos gerais": -1950.0,
+      "11|Prestadores de servicos gerais": -1150.0,
       "5|Água e esgoto": -1408.68,
       "8|Pró-labore": -8000.0,
       "8|Ajuda de custo": -2000.0,
       "5|Reposição de utensílios": -2255.4,
       "6|Uniformes, EPI e exames": -564.9,
       "4|Frios, laticínios e congelados": -5183.19,
-      "9|Mídia paga": -1500.0,
+      "9|Mídia paga (tráfego)": -1500.0,
       "4|Secos e mercearia": -4505.280000000001,
       "13|Pagamento indevido / a maior": -13300.0,
       "6|13º salário": -19651.06
@@ -41292,16 +41334,16 @@
       "5|Limpeza e descartáveis": 14,
       "4|Bebidas não alcoólicas": 13,
       "4|Bebidas alcoólicas": 16,
-      "6|Extras e freelancers": 26,
+      "6|Diarista (OIA)": 68,
       "4|Outros insumos e diversos": 5,
       "11|Equipamentos e mobiliário": 3,
       "5|Diversos de operação": 2,
-      "8|Contabilidade, jurídico e consultorias": 6,
+      "8|Contabilidade, jurídico e consultorias": 7,
       "5|Alojamento e ajuda de custo para moradia": 14,
       "4|Frete de insumos de alimentos e bebidas": 27,
       "5|Aluguel de máquinas e equipamentos": 1,
       "4|Gelo e gases": 4,
-      "5|Manutenção de equipamentos": 1,
+      "5|Manutenção de equipamentos": 2,
       "14|Artistas e couvert": 41,
       "6|ISS | Permanência": 24,
       "7|Outros aluguéis": 2,
@@ -41313,7 +41355,6 @@
       "4|Hortifrúti": 14,
       "3|Taxa de cartão crédito": 37,
       "4|Água mineral": 3,
-      "6|Diarista (OIA)": 42,
       "6|Variável": 1,
       "11|Investimentos diversos": 2,
       "7|Seguros": 1,
@@ -41322,14 +41363,14 @@
       "5|Energia elétrica": 2,
       "2|COFINS": 1,
       "6|Remuneração PJ": 1,
-      "11|Prestadores de servicos gerais": 3,
+      "11|Prestadores de servicos gerais": 2,
       "5|Água e esgoto": 1,
       "8|Pró-labore": 1,
       "8|Ajuda de custo": 1,
       "5|Reposição de utensílios": 2,
       "6|Uniformes, EPI e exames": 3,
       "4|Frios, laticínios e congelados": 7,
-      "9|Mídia paga": 1,
+      "9|Mídia paga (tráfego)": 1,
       "4|Secos e mercearia": 7,
       "13|Pagamento indevido / a maior": 1,
       "6|13º salário": 33
@@ -41726,7 +41767,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "30/11/2026",
        -500,
        "DIEGO CLEOVANSOSTENES VITAL DE VASCONCELOS",
@@ -41737,7 +41778,7 @@
        "002/002"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "30/11/2026",
        -500,
        "GLAUBER ANTONIO SILVA SANTANA",
@@ -41748,7 +41789,7 @@
        "002/002"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "30/11/2026",
        -300,
        "PEDRO FRANZO XAVIER",
@@ -41759,7 +41800,7 @@
        "002/002"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "30/11/2026",
        -200,
        "ROBINSON BARBOSA BORGES",
@@ -41770,7 +41811,7 @@
        "002/002"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "05/11/2026",
        -200,
        "SEBASTIAO DO CARMO MAIA FARIAS",
@@ -41781,7 +41822,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "30/11/2026",
        -500,
        "SEVERINO ALEXANDRE DA SILVA",
@@ -41792,7 +41833,7 @@
        "002/002"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "30/11/2026",
        -200,
        "SWESLLEN SAYONARA SANTOS DE BRITO",
@@ -41803,7 +41844,7 @@
        "002/002"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "05/11/2026",
        -200,
        "YURI COSTA BARRETO",
@@ -41891,7 +41932,7 @@
        "011/012"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "05/11/2026",
        -400,
        "EMANUEL LEONARDO DA SILVA",
@@ -41902,7 +41943,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "05/11/2026",
        -400,
        "IZAILDO JOSE FELIX",
@@ -41957,7 +41998,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "05/11/2026",
        -150,
        "MAXIMILLIAN MARINHO DE LIMA",
@@ -41990,7 +42031,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "01/11/2026",
        -200,
        "DIEGO NERY SILVA",
@@ -42001,7 +42042,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "01/11/2026",
        -225,
        "HUY FAN ARAUJO DE SOUZA",
@@ -42309,7 +42350,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "03/11/2026",
        -700,
        "DYON GALDINO ALVES",
@@ -42430,7 +42471,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "02/11/2026",
        -150,
        "ALEXSANDRO NASCIMENTO DA SILVA",
@@ -42441,7 +42482,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "09/11/2026",
        -1978,
        "HELIO LEVINBUK",
@@ -42452,7 +42493,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "09/11/2026",
        -1978,
        "HELIO LEVINBUK",
@@ -43145,7 +43186,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "10/11/2026",
        -600,
        "THIAGO MACHADO STORCK",
@@ -43365,7 +43406,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "09/11/2026",
        -5000,
        "EDMILSON DE LIMA JUNIOR",
@@ -43376,7 +43417,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "10/11/2026",
        -100,
        "MARIA GORETE PEREIRA DA SILVA",
@@ -43706,7 +43747,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "30/11/2026",
        -4000,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -44498,7 +44539,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "17/11/2026",
        -600,
        "DIEGO JOSE CANDIDO DO NASCIMENTO",
@@ -44520,7 +44561,7 @@
        "011/012"
       ],
       [
-       "9|Mídia paga",
+       "9|Mídia paga (tráfego)",
        "19/11/2026",
        -1500,
        "AZION MARKETING E PERFORMANCE LTDA",
@@ -44806,7 +44847,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "23/11/2026",
        -400,
        "ANTONIO JOSE DA SILVA JUNIOR",
@@ -44817,7 +44858,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "24/11/2026",
        -1025,
        "INACIO ADRIANO DE LIMA",
@@ -44905,7 +44946,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "24/11/2026",
        -2200,
        "CAIO CESAR DE ALBUQUERQUE NASCIMENTO",
@@ -45917,7 +45958,7 @@
        "001/001"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "26/11/2026",
        -2250,
        "ISADORA PRICILA CARLOS DE ARAUJO",
@@ -45928,11 +45969,11 @@
        "001/001"
       ],
       [
-       "11|Prestadores de servicos gerais",
+       "5|Manutenção de equipamentos",
        "26/11/2026",
        -800,
        "64.751.929 FRANSOARES DA SILVA",
-       "",
+       "4",
        "",
        "",
        "26/11/2026",
@@ -46025,6 +46066,17 @@
        "",
        "26/11/2026",
        "001/001"
+      ],
+      [
+       "8|Contabilidade, jurídico e consultorias",
+       "26/11/2026",
+       -8720.93,
+       "CASTILHO ADVOGADOS",
+       "",
+       "",
+       "",
+       "26/11/2026",
+       "001/003"
       ],
       [
        "5|Limpeza e descartáveis",
@@ -47933,7 +47985,7 @@
       "8|Ajuda de custo": -2800.0,
       "8|Pró-labore": -19600.0,
       "6|ISS | Permanência": -2134.33,
-      "9|Mídia paga": -1500.0,
+      "9|Mídia paga (tráfego)": -1500.0,
       "4|Frete de insumos de alimentos e bebidas": -11375.560000000001,
       "9|Agência e conteúdo": -2500.0,
       "6|FGTS e contribuições": -9759.71,
@@ -47984,7 +48036,7 @@
       "8|Ajuda de custo": 2,
       "8|Pró-labore": 2,
       "6|ISS | Permanência": 6,
-      "9|Mídia paga": 1,
+      "9|Mídia paga (tráfego)": 1,
       "4|Frete de insumos de alimentos e bebidas": 2,
       "9|Agência e conteúdo": 1,
       "6|FGTS e contribuições": 2,
@@ -50885,7 +50937,7 @@
        ""
       ],
       [
-       "9|Mídia paga",
+       "9|Mídia paga (tráfego)",
        "10/09/2026",
        -1500,
        "AZION MARKETING E PERFORMANCE",
@@ -59857,10 +59909,10 @@
       "6": -140386.5,
       "NEUTRO": 8000.0,
       "4": -426276.3899999999,
-      "5": -88767.84999999999,
-      "8": -51678.34999999999,
-      "7": -17059.8,
-      "11": -55679.509999999995,
+      "5": -88442.84999999999,
+      "8": -52003.34999999999,
+      "7": -11059.8,
+      "11": -61679.509999999995,
       "9": -8000.0,
       "14": -42840.0,
       "3": -96320.23000000001,
@@ -59875,17 +59927,17 @@
       "6|ISS | Permanência": -4972.6900000000005,
       "NEUTRO|Transferência entre contas - saída": -1449221.54,
       "4|Proteínas (carnes e frutos do mar)": -78294.06999999999,
-      "6|Diarista (OIA)": -17635.010000000002,
+      "6|Diarista (OIA)": -22764.18,
       "5|Alojamento e ajuda de custo para moradia": -53400.0,
       "4|Hortifrúti": -27516.61,
       "4|Bebidas alcoólicas": -219727.09000000005,
       "4|Bebidas não alcoólicas": -8272.22,
       "8|Contabilidade, jurídico e consultorias": -5737.71,
       "5|Limpeza e descartáveis": -26075.149999999994,
-      "7|Outros aluguéis": -16000.0,
+      "7|Outros aluguéis": -10000.0,
       "4|Frios, laticínios e congelados": -17905.989999999998,
       "4|Secos e mercearia": -38647.670000000006,
-      "5|Transporte, veículo e combustível": -4450.0,
+      "5|Transporte, veículo e combustível": -4125.0,
       "4|Água mineral": -6530.0,
       "4|Outros insumos e diversos": -7205.849999999999,
       "6|Alimentação de colaboradores": -5195.3099999999995,
@@ -59895,11 +59947,11 @@
       "NEUTRO|Transferência entre contas - entrada": 1457221.54,
       "11|Prestadores de servicos gerais": -38114.21,
       "6|Remuneração PJ": -13166.67,
-      "6|Extras e freelancers": -5129.17,
-      "9|Outros de marketing": -6000.0,
+      "9|Mídia paga (tráfego)": -3000.0,
       "8|Material de escritório": -1785.5,
       "14|Artistas e couvert": -42840.0,
-      "11|Investimentos diversos": -6772.21,
+      "11|Investimentos diversos": -12772.209999999997,
+      "9|Outros de marketing": -4500.0,
       "5|Diversos de operação": -1725.0,
       "3|Comissões sobre vendas": -96320.23000000001,
       "8|Sistemas": -3194.38,
@@ -59913,11 +59965,11 @@
       "11|Equipamentos e mobiliário": -9073.310000000001,
       "6|Uniformes, EPI e exames": -540.0,
       "2|Cancelamentos e estornos": -1069.92,
-      "9|Mídia paga": -1500.0,
       "11|Frete de materiais de operação": -1300.85,
       "4|Gelo e gases": -648.0,
       "8|Telefonia e internet": -119.96,
       "5|Energia elétrica": -1527.3,
+      "8|Gestor administrativo PJ": -325.0,
       "6|Variável": -21324.0,
       "13|Pagamento indevido / a maior": -340.0,
       "2|PIS": -6258.49,
@@ -59937,17 +59989,17 @@
       "6|ISS | Permanência": 17,
       "NEUTRO|Transferência entre contas - saída": 21,
       "4|Proteínas (carnes e frutos do mar)": 35,
-      "6|Diarista (OIA)": 38,
+      "6|Diarista (OIA)": 49,
       "5|Alojamento e ajuda de custo para moradia": 15,
       "4|Hortifrúti": 17,
       "4|Bebidas alcoólicas": 41,
       "4|Bebidas não alcoólicas": 12,
       "8|Contabilidade, jurídico e consultorias": 4,
       "5|Limpeza e descartáveis": 19,
-      "7|Outros aluguéis": 2,
+      "7|Outros aluguéis": 1,
       "4|Frios, laticínios e congelados": 12,
       "4|Secos e mercearia": 17,
-      "5|Transporte, veículo e combustível": 5,
+      "5|Transporte, veículo e combustível": 4,
       "4|Água mineral": 3,
       "4|Outros insumos e diversos": 4,
       "6|Alimentação de colaboradores": 8,
@@ -59957,11 +60009,11 @@
       "NEUTRO|Transferência entre contas - entrada": 25,
       "11|Prestadores de servicos gerais": 23,
       "6|Remuneração PJ": 3,
-      "6|Extras e freelancers": 11,
-      "9|Outros de marketing": 2,
+      "9|Mídia paga (tráfego)": 2,
       "8|Material de escritório": 1,
       "14|Artistas e couvert": 32,
-      "11|Investimentos diversos": 6,
+      "11|Investimentos diversos": 7,
+      "9|Outros de marketing": 1,
       "5|Diversos de operação": 2,
       "3|Comissões sobre vendas": 31,
       "8|Sistemas": 2,
@@ -59975,11 +60027,11 @@
       "11|Equipamentos e mobiliário": 3,
       "6|Uniformes, EPI e exames": 2,
       "2|Cancelamentos e estornos": 2,
-      "9|Mídia paga": 1,
       "11|Frete de materiais de operação": 1,
       "4|Gelo e gases": 1,
       "8|Telefonia e internet": 1,
       "5|Energia elétrica": 1,
+      "8|Gestor administrativo PJ": 1,
       "6|Variável": 3,
       "13|Pagamento indevido / a maior": 1,
       "2|PIS": 1,
@@ -61244,7 +61296,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "05/10/2026",
        -200,
        "DIEGO CLEOVANSOSTENES VITAL DE VASCONCELOS",
@@ -61530,7 +61582,7 @@
        ""
       ],
       [
-       "9|Outros de marketing",
+       "9|Mídia paga (tráfego)",
        "05/10/2026",
        -1500,
        "FACEBOOK SERVICOS ONLINE DO BRASIL LTDA.",
@@ -62465,7 +62517,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "09/10/2026",
        -450,
        "INACIO ADRIANO DE LIMA",
@@ -62487,7 +62539,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "09/10/2026",
        -537.5,
        "DIOGO BRISOLA MARTINELLI",
@@ -62564,7 +62616,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "09/10/2026",
        -400,
        "VOLHA DRAZIELI SOARES DE SOUZA",
@@ -62619,7 +62671,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "09/10/2026",
        -400,
        "EDIVALDO IVAN DOS SANTOS",
@@ -62960,7 +63012,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "09/10/2026",
        -500,
        "PAULO CESAR DA SILVA",
@@ -63026,7 +63078,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "09/10/2026",
        -450,
        "ANTONIO JOSE DA SILVA JUNIOR",
@@ -63114,7 +63166,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "09/10/2026",
        -1066.67,
        "JOSE EVANDRO DA SILVA",
@@ -63191,7 +63243,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "09/10/2026",
        -500,
        "THIAGO MACHADO STORCK",
@@ -63213,7 +63265,7 @@
        ""
       ],
       [
-       "7|Outros aluguéis",
+       "11|Investimentos diversos",
        "09/10/2026",
        -6000,
        "CLAUDIO HENRIQUE BEZERRA XAVIER",
@@ -63312,7 +63364,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "09/10/2026",
        -300,
        "EDIVALDO IVAN DOS SANTOS",
@@ -64544,7 +64596,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "14/10/2026",
        -325,
        "JOSE MANOEL DOS SANTOS",
@@ -65644,7 +65696,7 @@
        ""
       ],
       [
-       "9|Mídia paga",
+       "9|Mídia paga (tráfego)",
        "19/10/2026",
        -1500,
        "AZION MARKETING E PERFORMANCE",
@@ -66194,7 +66246,7 @@
        ""
       ],
       [
-       "5|Transporte, veículo e combustível",
+       "8|Gestor administrativo PJ",
        "20/10/2026",
        -325,
        "KARINE MACIEL VITOR RODRIGUES",
@@ -69063,14 +69115,14 @@
      },
      "contas": {
       "4|Bebidas alcoólicas": -120384.97000000003,
-      "6|Extras e freelancers": -27515.0,
+      "6|Diarista (OIA)": -67273.35999999999,
       "5|Limpeza e descartáveis": -19115.59,
       "4|Proteínas (carnes e frutos do mar)": -97948.45999999999,
       "4|Frete de insumos de alimentos e bebidas": -40160.91,
       "14|Artistas e couvert": -39644.600000000006,
       "5|Alojamento e ajuda de custo para moradia": -53200.0,
-      "8|Pró-labore": -36000.0,
-      "8|Ajuda de custo": -4000.0,
+      "8|Pró-labore": -34000.0,
+      "8|Ajuda de custo": -6000.0,
       "6|ISS | Permanência": -6437.18,
       "8|Contabilidade, jurídico e consultorias": -9894.369999999999,
       "NEUTRO|Transferência entre contas - saída": -1194595.83,
@@ -69098,7 +69150,6 @@
       "5|Aluguel de máquinas e equipamentos": -531.9,
       "7|Seguros": -1059.8,
       "7|Taxas distritais, TPU, TLL e IPTU": -1186.72,
-      "6|Diarista (OIA)": -39758.36,
       "5|Diversos de operação": -1725.0,
       "6|Variável": -15835.0,
       "11|Investimentos diversos": -2780.62,
@@ -69114,8 +69165,8 @@
       "5|Energia elétrica": -2694.89,
       "OR|Devolução de Pagamento Indevido / A maior": 340.0,
       "2|ICMS-ST e DIFAL": -12492.060000000001,
-      "8|Rateio": -7000.0,
-      "9|Mídia paga": -1500.0,
+      "8|Rateio CSC": -7000.0,
+      "9|Mídia paga (tráfego)": -1500.0,
       "13|Pagamento indevido / a maior": -13300.0,
       "8|Material de escritório": -899.0,
       "6|13º salário": -16151.06,
@@ -69123,14 +69174,14 @@
      },
      "lanc": {
       "4|Bebidas alcoólicas": 23,
-      "6|Extras e freelancers": 33,
+      "6|Diarista (OIA)": 79,
       "5|Limpeza e descartáveis": 14,
       "4|Proteínas (carnes e frutos do mar)": 29,
       "4|Frete de insumos de alimentos e bebidas": 12,
       "14|Artistas e couvert": 32,
       "5|Alojamento e ajuda de custo para moradia": 13,
       "8|Pró-labore": 3,
-      "8|Ajuda de custo": 2,
+      "8|Ajuda de custo": 3,
       "6|ISS | Permanência": 22,
       "8|Contabilidade, jurídico e consultorias": 5,
       "NEUTRO|Transferência entre contas - saída": 18,
@@ -69158,7 +69209,6 @@
       "5|Aluguel de máquinas e equipamentos": 1,
       "7|Seguros": 1,
       "7|Taxas distritais, TPU, TLL e IPTU": 1,
-      "6|Diarista (OIA)": 46,
       "5|Diversos de operação": 2,
       "6|Variável": 2,
       "11|Investimentos diversos": 2,
@@ -69174,8 +69224,8 @@
       "5|Energia elétrica": 3,
       "OR|Devolução de Pagamento Indevido / A maior": 1,
       "2|ICMS-ST e DIFAL": 2,
-      "8|Rateio": 1,
-      "9|Mídia paga": 1,
+      "8|Rateio CSC": 1,
+      "9|Mídia paga (tráfego)": 1,
       "13|Pagamento indevido / a maior": 1,
       "8|Material de escritório": 1,
       "6|13º salário": 32,
@@ -69199,7 +69249,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "03/11/2026",
        -1000,
        "JOSE FORTUNATO DA COSTA",
@@ -69410,7 +69460,18 @@
       [
        "8|Pró-labore",
        "03/11/2026",
-       -20000,
+       -18000.0,
+       "RENATO FERREIRA LIMA BATISTA GOMES",
+       "SEM NF",
+       "Santander",
+       "",
+       "",
+       ""
+      ],
+      [
+       "8|Ajuda de custo",
+       "03/11/2026",
+       -2000.0,
        "RENATO FERREIRA LIMA BATISTA GOMES",
        "SEM NF",
        "Santander",
@@ -69518,7 +69579,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "03/11/2026",
        -700,
        "DYON GALDINO ALVES",
@@ -70497,7 +70558,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "05/11/2026",
        -500,
        "JOSE MANOEL DOS SANTOS",
@@ -70508,7 +70569,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "05/11/2026",
        -500,
        "GLAUBER ANTONIO SILVA SANTANA",
@@ -70541,7 +70602,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "05/11/2026",
        -300,
        "PEDRO FRANZO XAVIER",
@@ -70574,7 +70635,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "05/11/2026",
        -200,
        "SEBASTIAO DO CARMO MAIA FARIAS",
@@ -70673,7 +70734,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "05/11/2026",
        -500,
        "DIEGO CLEOVANSOSTENES VITAL DE VASCONCELOS",
@@ -70684,7 +70745,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "05/11/2026",
        -200,
        "YURI COSTA BARRETO",
@@ -70717,7 +70778,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "05/11/2026",
        -200,
        "DIEGO NERY SILVA",
@@ -70904,7 +70965,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "05/11/2026",
        -225,
        "HUY FAN ARAUJO DE SOUZA",
@@ -71003,7 +71064,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "06/11/2026",
        -500,
        "SEVERINO ALEXANDRE DA SILVA",
@@ -71047,7 +71108,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "06/11/2026",
        -200,
        "MARIO ROBERTO DE OLIVEIRA LOPES",
@@ -71058,7 +71119,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "06/11/2026",
        -200,
        "ROBINSON BARBOSA BORGES",
@@ -71069,7 +71130,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "06/11/2026",
        -200,
        "ROBERT DE MELO CRUZ DE JESUS",
@@ -71080,7 +71141,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "06/11/2026",
        -200,
        "SWESLLEN SAYONARA SANTOS DE BRITO",
@@ -71102,7 +71163,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "06/11/2026",
        -150,
        "MAXIMILLIAN MARINHO DE LIMA",
@@ -71245,7 +71306,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "06/11/2026",
        -500,
        "ALUISIO FREITAS DE MORAIS",
@@ -71520,7 +71581,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "10/11/2026",
        -400,
        "IZAILDO JOSE FELIX",
@@ -71542,7 +71603,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "10/11/2026",
        -400,
        "EMANUEL LEONARDO DA SILVA",
@@ -71630,7 +71691,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "10/11/2026",
        -600,
        "THIAGO MACHADO STORCK",
@@ -71729,7 +71790,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "10/11/2026",
        -100,
        "MARIA GORETE PEREIRA DA SILVA",
@@ -71740,7 +71801,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "10/11/2026",
        -100,
        "WENDEL LUAN DELFINO DO NASCIMENTO",
@@ -71773,7 +71834,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "10/11/2026",
        -675,
        "RONALDO RODRIGUES DA SILVA",
@@ -71872,7 +71933,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "10/11/2026",
        -150,
        "ALEXSANDRO NASCIMENTO DA SILVA",
@@ -71927,7 +71988,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "10/11/2026",
        -1634,
        "HELIO LEVINBUK",
@@ -71938,7 +71999,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "10/11/2026",
        -1978,
        "HELIO LEVINBUK",
@@ -71993,7 +72054,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "10/11/2026",
        -5000,
        "EDMILSON DE LIMA JUNIOR",
@@ -73324,7 +73385,7 @@
        ""
       ],
       [
-       "8|Rateio",
+       "8|Rateio CSC",
        "17/11/2026",
        -7000,
        "AMANA EMPREENDIMENTOS TURISTICOS LTDA",
@@ -73401,7 +73462,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "17/11/2026",
        -600,
        "DIEGO JOSE CANDIDO DO NASCIMENTO",
@@ -73775,7 +73836,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "17/11/2026",
        -1978,
        "HELIO LEVINBUK",
@@ -73918,7 +73979,7 @@
        ""
       ],
       [
-       "9|Mídia paga",
+       "9|Mídia paga (tráfego)",
        "19/11/2026",
        -1500,
        "AZION MARKETING E PERFORMANCE",
@@ -74468,7 +74529,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "25/11/2026",
        -4000,
        "ANDRE LUIS SANTIAGO EIRAS",
@@ -74666,7 +74727,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "25/11/2026",
        -2200,
        "CAIO CESAR DE ALBUQUERQUE NASCIMENTO",
@@ -74732,7 +74793,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "25/11/2026",
        -1025,
        "INACIO ADRIANO DE LIMA",
@@ -74930,7 +74991,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "25/11/2026",
        -400,
        "ANTONIO JOSE DA SILVA JUNIOR",
@@ -75284,11 +75345,11 @@
       "CC": -101105.63,
       "12": 1155386.76,
       "OR": 32550.210000000003,
-      "8": -19249.47,
+      "8": -23949.47,
       "7": -34986.92,
       "11": -693978.3400000001,
       "5": -85379.47,
-      "6": -62609.590000000004,
+      "6": -57909.590000000004,
       "4": 0.0,
       "10": -549.53,
       "2": -48.339999999999996
@@ -75313,7 +75374,7 @@
       "CC|Adiantamento a reembolsar - saída": -8096.74,
       "6|Diarista (OIA)": -17253.2,
       "8|Sistemas": -2167.16,
-      "6|Remuneração PJ": -4700.0,
+      "8|Gestor administrativo PJ": -4700.0,
       "4|Proteínas (carnes e frutos do mar)": -27672.510000000002,
       "5|Limpeza e descartáveis": -11242.58,
       "5|Alojamento e ajuda de custo para moradia": -48168.9,
@@ -75360,7 +75421,7 @@
       "CC|Adiantamento a reembolsar - saída": 7,
       "6|Diarista (OIA)": 17,
       "8|Sistemas": 3,
-      "6|Remuneração PJ": 1,
+      "8|Gestor administrativo PJ": 1,
       "4|Proteínas (carnes e frutos do mar)": 16,
       "5|Limpeza e descartáveis": 10,
       "5|Alojamento e ajuda de custo para moradia": 10,
@@ -76065,7 +76126,7 @@
        "001/001"
       ],
       [
-       "6|Remuneração PJ",
+       "8|Gestor administrativo PJ",
        "05/08/2026",
        -4700,
        "KARINA PONTES SANTOS LIMA ARAUJO",
@@ -79999,21 +80060,21 @@
       "NEUTRO": -2.2737367544323206e-13,
       "4": -1.4551915228366852e-11,
       "5": -59673.39000000001,
-      "6": -24917.93,
+      "8": -9113.23,
       "11": -401871.13,
       "7": -35000.0,
       "CC": -3345.85,
       "9": -1500.0,
-      "8": -5113.23,
       "10": -938.02,
-      "13": -10000.0
+      "13": -10000.0,
+      "6": -20917.93
      },
      "contas": {
       "OR|Outras receitas operacionais": 5998.04,
       "NEUTRO|Transferência entre contas próprias - entrada": 5206.080000000001,
       "4|Devoluções de Compra de Material de Consumo": 6687.009999999999,
       "5|Transporte, veículo e combustível": -8415.91,
-      "6|Remuneração PJ": -4000.0,
+      "8|Gestor administrativo PJ": -4000.0,
       "5|Alojamento e ajuda de custo para moradia": -35847.32,
       "11|Pré-operação": -10102.84,
       "4|Hortifrúti": -13340.400000000001,
@@ -80027,7 +80088,7 @@
       "11|Prestadores de servicos gerais": -7000.0,
       "CC|Adiantamento a reembolsar - saída": -3345.85,
       "5|Água e esgoto": -4078.7599999999998,
-      "9|Mídia paga": -1500.0,
+      "9|Mídia paga (tráfego)": -1500.0,
       "11|Frete de equipamentos e obra": -65549.06,
       "8|Material de escritório": -922.15,
       "4|Proteínas (carnes e frutos do mar)": -22046.07,
@@ -80054,7 +80115,7 @@
       "NEUTRO|Transferência entre contas próprias - entrada": 12,
       "4|Devoluções de Compra de Material de Consumo": 16,
       "5|Transporte, veículo e combustível": 4,
-      "6|Remuneração PJ": 1,
+      "8|Gestor administrativo PJ": 1,
       "5|Alojamento e ajuda de custo para moradia": 7,
       "11|Pré-operação": 4,
       "4|Hortifrúti": 4,
@@ -80068,7 +80129,7 @@
       "11|Prestadores de servicos gerais": 3,
       "CC|Adiantamento a reembolsar - saída": 3,
       "5|Água e esgoto": 3,
-      "9|Mídia paga": 1,
+      "9|Mídia paga (tráfego)": 1,
       "11|Frete de equipamentos e obra": 12,
       "8|Material de escritório": 2,
       "4|Proteínas (carnes e frutos do mar)": 11,
@@ -80426,7 +80487,7 @@
        "001/001"
       ],
       [
-       "6|Remuneração PJ",
+       "8|Gestor administrativo PJ",
        "01/09/2026",
        -4000,
        "KARINA PONTES SANTOS LIMA ARAUJO",
@@ -80668,7 +80729,7 @@
        "001/001"
       ],
       [
-       "9|Mídia paga",
+       "9|Mídia paga (tráfego)",
        "08/09/2026",
        -1500,
        "Cliente Consumidor / Sem Tomador",
@@ -82334,11 +82395,11 @@
      "grupos": {
       "CC": 94199.0,
       "12": 200000.0,
-      "4": -15388.53,
-      "8": -16785.5,
+      "4": 0.0,
+      "8": -20785.5,
       "5": -35613.369999999995,
-      "6": -60698.53,
-      "11": -254818.00999999995,
+      "11": -270206.54,
+      "6": -56698.53,
       "7": -25000.0,
       "9": -2500.0,
       "3": -38.66,
@@ -82350,7 +82411,7 @@
       "4|Devoluções de Compra de Material de Consumo": 400.57000000000005,
       "8|Sistemas": -3454.0,
       "5|Alojamento e ajuda de custo para moradia": -10274.0,
-      "6|Remuneração PJ": -4000.0,
+      "8|Gestor administrativo PJ": -13500.0,
       "11|Investimentos diversos": -37265.31,
       "6|Diarista (OIA)": -2000.0,
       "CC|Adiantamento a reembolsar - saída": -5801.0,
@@ -82369,7 +82430,7 @@
       "6|Alimentação de colaboradores": -3078.24,
       "4|Gás de cozinha": -270.0,
       "5|Transporte, veículo e combustível": -4511.18,
-      "9|Mídia paga": -2500.0,
+      "9|Mídia paga (tráfego)": -2500.0,
       "6|Benefícios (VT, VR e saúde)": -760.0,
       "5|Limpeza e descartáveis": -290.84000000000003,
       "3|Taxa de cartão crédito": -38.66,
@@ -82378,11 +82439,13 @@
       "8|Outras despesas administrativas": -194.97,
       "13|Pagamento indevido / a maior": -188.17,
       "5|Material de manutenção": -269.87,
-      "8|Contabilidade, jurídico e consultorias": -10401.5,
       "6|Variável": -31513.0,
+      "8|Contabilidade, jurídico e consultorias": -901.5,
       "6|FGTS e contribuições": -2645.16,
       "5|Reposição de utensílios": -4761.28,
-      "5|Energia elétrica": -7704.06
+      "5|Energia elétrica": -7704.06,
+      "4|Insumo de pré-operação fora do CMV (ver nota)": 15388.53,
+      "11|Insumo de pré-operação (vindo do CMV)": -15388.53
      },
      "lanc": {
       "CC|Conta corrente Boldró - entrada": 1,
@@ -82390,7 +82453,7 @@
       "4|Devoluções de Compra de Material de Consumo": 3,
       "8|Sistemas": 4,
       "5|Alojamento e ajuda de custo para moradia": 4,
-      "6|Remuneração PJ": 1,
+      "8|Gestor administrativo PJ": 2,
       "11|Investimentos diversos": 5,
       "6|Diarista (OIA)": 1,
       "CC|Adiantamento a reembolsar - saída": 2,
@@ -82409,7 +82472,7 @@
       "6|Alimentação de colaboradores": 3,
       "4|Gás de cozinha": 1,
       "5|Transporte, veículo e combustível": 2,
-      "9|Mídia paga": 2,
+      "9|Mídia paga (tráfego)": 2,
       "6|Benefícios (VT, VR e saúde)": 1,
       "5|Limpeza e descartáveis": 3,
       "3|Taxa de cartão crédito": 1,
@@ -82418,11 +82481,13 @@
       "8|Outras despesas administrativas": 1,
       "13|Pagamento indevido / a maior": 1,
       "5|Material de manutenção": 1,
-      "8|Contabilidade, jurídico e consultorias": 2,
       "6|Variável": 2,
+      "8|Contabilidade, jurídico e consultorias": 1,
       "6|FGTS e contribuições": 2,
       "5|Reposição de utensílios": 2,
-      "5|Energia elétrica": 2
+      "5|Energia elétrica": 2,
+      "4|Insumo de pré-operação fora do CMV (ver nota)": 1,
+      "11|Insumo de pré-operação (vindo do CMV)": 1
      },
      "familias": {
       "comum": -15519.1,
@@ -82507,7 +82572,7 @@
        "001/001"
       ],
       [
-       "6|Remuneração PJ",
+       "8|Gestor administrativo PJ",
        "01/10/2026",
        -4000,
        "KARINA PONTES SANTOS LIMA ARAUJO",
@@ -83365,7 +83430,7 @@
        "001/001"
       ],
       [
-       "9|Mídia paga",
+       "9|Mídia paga (tráfego)",
        "27/10/2026",
        -1500,
        "Cliente Consumidor / Sem Tomador",
@@ -83376,7 +83441,7 @@
        "001/001"
       ],
       [
-       "9|Mídia paga",
+       "9|Mídia paga (tráfego)",
        "27/10/2026",
        -1000,
        "Cliente Consumidor / Sem Tomador",
@@ -83607,7 +83672,7 @@
        "001/001"
       ],
       [
-       "8|Contabilidade, jurídico e consultorias",
+       "8|Gestor administrativo PJ",
        "31/10/2026",
        -9500,
        "KARINE MACIEL VITOR RODRIGUES",
@@ -83924,6 +83989,28 @@
        "",
        "26/11/2026",
        "001/001"
+      ],
+      [
+       "4|Insumo de pré-operação fora do CMV (ver nota)",
+       "31/10/2026",
+       15388.53,
+       "Diretoria",
+       "AJUSTE",
+       "",
+       "insumo comprado pela YO em 2026-10: R$ 15.388,53. Sai do CMV porque a YO nao tem receita para dividir (decisao do Joao em 27/11/2026, como em ago e set). O valor nao desaparece: vai para pre-operacao, abaixo do EBITDA.",
+       "",
+       ""
+      ],
+      [
+       "11|Insumo de pré-operação (vindo do CMV)",
+       "31/10/2026",
+       -15388.53,
+       "Diretoria",
+       "AJUSTE",
+       "",
+       "insumo comprado pela YO em 2026-10: R$ 15.388,53. Sai do CMV porque a YO nao tem receita para dividir (decisao do Joao em 27/11/2026, como em ago e set). O valor nao desaparece: vai para pre-operacao, abaixo do EBITDA.",
+       "",
+       ""
       ]
      ]
     },
@@ -83933,7 +84020,7 @@
       "8": -40866.0,
       "6": -40493.990000000005,
       "11": -74642.34000000001,
-      "5": -21228.629999999997,
+      "5": -23224.629999999997,
       "7": -31486.91,
       "10": -3375.5500000000006,
       "2": -344.85,
@@ -83947,7 +84034,7 @@
       "11|Equipamentos e mobiliário": -11610.0,
       "11|Frete de materiais de operação": -2064.65,
       "6|Benefícios (VT, VR e saúde)": -622.4,
-      "5|Reposição de utensílios": -2845.62,
+      "5|Reposição de utensílios": -4841.62,
       "11|Investimentos diversos": -27523.690000000002,
       "11|Obras e reformas": -33402.1,
       "5|Material de copa e cozinha": -26.0,
@@ -83968,7 +84055,7 @@
       "5|Água e esgoto": -4777.4,
       "8|Contabilidade, jurídico e consultorias": -1803.0,
       "4|Proteínas (carnes e frutos do mar)": -19740.0,
-      "6|Extras e freelancers": -500.0,
+      "6|Diarista (OIA)": -500.0,
       "4|Outros insumos e diversos": -377.94,
       "6|Alimentação de colaboradores": -1829.94,
       "8|Telefonia e internet": -119.96,
@@ -83977,7 +84064,7 @@
       "6|13º salário": -4488.92,
       "8|Pró-labore": -28000.0,
       "8|Ajuda de custo": -2000.0,
-      "9|Mídia paga": -1500.0,
+      "9|Mídia paga (tráfego)": -1500.0,
       "5|Diversos de operação": -447.0,
       "12|Amortização de empréstimos": -13885.04
      },
@@ -83988,7 +84075,7 @@
       "11|Equipamentos e mobiliário": 3,
       "11|Frete de materiais de operação": 5,
       "6|Benefícios (VT, VR e saúde)": 2,
-      "5|Reposição de utensílios": 1,
+      "5|Reposição de utensílios": 2,
       "11|Investimentos diversos": 7,
       "11|Obras e reformas": 3,
       "5|Material de copa e cozinha": 1,
@@ -84009,7 +84096,7 @@
       "5|Água e esgoto": 1,
       "8|Contabilidade, jurídico e consultorias": 2,
       "4|Proteínas (carnes e frutos do mar)": 3,
-      "6|Extras e freelancers": 1,
+      "6|Diarista (OIA)": 1,
       "4|Outros insumos e diversos": 1,
       "6|Alimentação de colaboradores": 2,
       "8|Telefonia e internet": 1,
@@ -84018,7 +84105,7 @@
       "6|13º salário": 5,
       "8|Pró-labore": 2,
       "8|Ajuda de custo": 1,
-      "9|Mídia paga": 1,
+      "9|Mídia paga (tráfego)": 1,
       "5|Diversos de operação": 1,
       "12|Amortização de empréstimos": 1
      },
@@ -84612,7 +84699,7 @@
        "002/002"
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "13/11/2026",
        -500,
        "PATRICIA ANDRADE LUNA DA SILVA",
@@ -84909,7 +84996,7 @@
        "001/001"
       ],
       [
-       "9|Mídia paga",
+       "9|Mídia paga (tráfego)",
        "25/11/2026",
        -1500,
        "FACEBOOK SERVICOS ONLINE DO BRASIL LTDA.",
@@ -84962,6 +85049,17 @@
        "",
        "26/11/2026",
        "001/001"
+      ],
+      [
+       "5|Reposição de utensílios",
+       "26/11/2026",
+       -1996,
+       "MERCADO PAGO INSTITUICAO DE PAGAMENTO LTDA",
+       "pix_marketplace@merc",
+       "",
+       "",
+       "26/11/2026",
+       "001/001"
       ]
      ]
     }
@@ -84973,8 +85071,8 @@
       "11": -611943.5000000001,
       "7": -34986.92,
       "5": -87030.06,
-      "8": -24858.420000000002,
-      "6": -99621.59,
+      "8": -29558.420000000002,
+      "6": -94921.59,
       "4": -126197.50000000001,
       "OR": 35950.21,
       "NEUTRO": 5.646150214033696e-11,
@@ -85016,7 +85114,7 @@
       "NEUTRO|Transferência entre contas - saída": -1928411.4799999995,
       "CC|Adiantamento a reembolsar - saída": -7893.75,
       "5|Limpeza e descartáveis": -16971.96,
-      "6|Remuneração PJ": -4700.0,
+      "8|Gestor administrativo PJ": -4700.0,
       "5|Energia elétrica": -2961.24,
       "6|Alimentação de colaboradores": -34024.5,
       "4|Hortifrúti": -11173.34,
@@ -85071,7 +85169,7 @@
       "NEUTRO|Transferência entre contas - saída": 47,
       "CC|Adiantamento a reembolsar - saída": 6,
       "5|Limpeza e descartáveis": 11,
-      "6|Remuneração PJ": 1,
+      "8|Gestor administrativo PJ": 1,
       "5|Energia elétrica": 2,
       "6|Alimentação de colaboradores": 14,
       "4|Hortifrúti": 7,
@@ -86145,7 +86243,7 @@
        ""
       ],
       [
-       "6|Remuneração PJ",
+       "8|Gestor administrativo PJ",
        "05/08/2026",
        -4700,
        "KARINA PONTES SANTOS LIMA ARAUJO",
@@ -90793,11 +90891,11 @@
       "11": -431120.3400000001,
       "5": -56383.33,
       "4": -126469.23999999992,
-      "6": -17707.83,
-      "8": -5486.21,
+      "8": -13486.21,
       "NEUTRO": 1.3244516594568267e-10,
       "7": -35000.0,
       "CC": -6300.84,
+      "6": -9707.83,
       "9": -1500.0,
       "OR": 5998.04,
       "10": -855.3499999999999,
@@ -90811,7 +90909,7 @@
       "11|Obras e reformas": -155113.75,
       "5|Transporte, veículo e combustível": -7241.04,
       "4|Secos e mercearia": -49912.63,
-      "6|Remuneração PJ": -8000.0,
+      "8|Gestor administrativo PJ": -8000.0,
       "11|Equipamentos e mobiliário": -112917.08000000002,
       "4|Hortifrúti": -21040.54,
       "5|Alojamento e ajuda de custo para moradia": -36600.0,
@@ -90830,7 +90928,7 @@
       "5|Água e esgoto": -2210.8599999999997,
       "4|Bebidas alcoólicas": -10583.18,
       "4|Frios, laticínios e congelados": -5752.139999999999,
-      "9|Mídia paga": -1500.0,
+      "9|Mídia paga (tráfego)": -1500.0,
       "8|Material de escritório": -1130.0700000000002,
       "5|Energia elétrica": -2591.6400000000003,
       "8|Contabilidade, jurídico e consultorias": -1682.21,
@@ -90858,7 +90956,7 @@
       "11|Obras e reformas": 40,
       "5|Transporte, veículo e combustível": 3,
       "4|Secos e mercearia": 17,
-      "6|Remuneração PJ": 2,
+      "8|Gestor administrativo PJ": 2,
       "11|Equipamentos e mobiliário": 33,
       "4|Hortifrúti": 6,
       "5|Alojamento e ajuda de custo para moradia": 6,
@@ -90877,7 +90975,7 @@
       "5|Água e esgoto": 2,
       "4|Bebidas alcoólicas": 2,
       "4|Frios, laticínios e congelados": 2,
-      "9|Mídia paga": 1,
+      "9|Mídia paga (tráfego)": 1,
       "8|Material de escritório": 2,
       "5|Energia elétrica": 2,
       "8|Contabilidade, jurídico e consultorias": 2,
@@ -91026,7 +91124,7 @@
        ""
       ],
       [
-       "6|Remuneração PJ",
+       "8|Gestor administrativo PJ",
        "01/09/2026",
        -4000,
        "KARINA PONTES SANTOS LIMA ARAUJO",
@@ -91796,7 +91894,7 @@
        ""
       ],
       [
-       "9|Mídia paga",
+       "9|Mídia paga (tráfego)",
        "08/09/2026",
        -1500,
        "Cliente Consumidor / Sem Tomador",
@@ -93996,7 +94094,7 @@
        ""
       ],
       [
-       "6|Remuneração PJ",
+       "8|Gestor administrativo PJ",
        "29/09/2026",
        -4000,
        "KARINA PONTES SANTOS LIMA ARAUJO",
@@ -94910,7 +95008,7 @@
       "12|Aportes de sócios": 200000.0,
       "4|Gás de cozinha": -2870.0,
       "6|FGTS e contribuições": -2418.26,
-      "9|Mídia paga": -2500.0,
+      "9|Mídia paga (tráfego)": -2500.0,
       "6|Benefícios (VT, VR e saúde)": -760.0,
       "10|Rendimentos de aplicações": 16.27,
       "10|IOF": -2.86,
@@ -94948,7 +95046,7 @@
       "12|Aportes de sócios": 1,
       "4|Gás de cozinha": 2,
       "6|FGTS e contribuições": 2,
-      "9|Mídia paga": 2,
+      "9|Mídia paga (tráfego)": 2,
       "6|Benefícios (VT, VR e saúde)": 1,
       "10|Rendimentos de aplicações": 1,
       "10|IOF": 1,
@@ -96580,7 +96678,7 @@
        ""
       ],
       [
-       "9|Mídia paga",
+       "9|Mídia paga (tráfego)",
        "27/10/2026",
        -1500,
        "Cliente Consumidor / Sem Tomador",
@@ -96591,7 +96689,7 @@
        ""
       ],
       [
-       "9|Mídia paga",
+       "9|Mídia paga (tráfego)",
        "27/10/2026",
        -1000,
        "Cliente Consumidor / Sem Tomador",
@@ -97196,7 +97294,7 @@
       "8": -16879.469999999998,
       "3": -38.66,
       "13": -188.17,
-      "NEUTRO": -8.731149137020111e-11,
+      "NEUTRO": 2.4738433523907588e-11,
       "10": -3375.5500000000006,
       "2": -344.85,
       "4": -1757.94,
@@ -97218,27 +97316,28 @@
       "3|Taxa de cartão crédito": -38.66,
       "5|Limpeza e descartáveis": -102.99,
       "13|Pagamento indevido / a maior": -188.17,
-      "NEUTRO|Transferência entre contas - saída": -777686.8299999998,
+      "NEUTRO|Transferência entre contas - saída": -830265.6699999999,
       "5|Material de copa e cozinha": -26.0,
       "5|Energia elétrica": -19716.850000000002,
       "11|Frete de equipamentos e obra": -2751.5,
       "6|Salários da operação": -6223.0,
       "6|Uniformes, EPI e exames": -2126.05,
       "5|Água e esgoto": -7802.14,
-      "NEUTRO|Transferência entre contas - entrada": 777686.8299999998,
+      "NEUTRO|Transferência entre contas - entrada": 830265.6699999999,
       "10|Juros e multas": -3375.5500000000006,
       "7|Taxas distritais, TPU, TLL e IPTU": -23.71,
       "2|ISS retido na fonte de prestadores": -344.85,
-      "8|Contabilidade, jurídico e consultorias": -10401.5,
+      "8|Gestor administrativo PJ": -9500.0,
       "6|ISS | Permanência": -105.79,
       "5|Transporte, veículo e combustível": -1628.61,
       "4|Gelo e gases": -1040.0,
       "6|Variável": -47506.0,
+      "8|Contabilidade, jurídico e consultorias": -901.5,
       "11|Prestadores de servicos gerais": -41.9,
       "5|Alojamento e ajuda de custo para moradia": -5350.0,
       "5|Manutenção de equipamentos": -172.83,
       "8|Tarifas bancárias": -214.0,
-      "6|Extras e freelancers": -500.0,
+      "6|Diarista (OIA)": -500.0,
       "4|Outros insumos e diversos": -377.94,
       "8|Material de escritório": -359.94,
       "6|FGTS e contribuições": -2645.16,
@@ -97246,7 +97345,7 @@
       "6|Alimentação de colaboradores": -1829.94,
       "7|Outros aluguéis": -3174.0,
       "6|13º salário": -2250.0,
-      "9|Mídia paga": -1500.0
+      "9|Mídia paga (tráfego)": -1500.0
      },
      "lanc": {
       "6|Benefícios (VT, VR e saúde)": 3,
@@ -97264,27 +97363,28 @@
       "3|Taxa de cartão crédito": 1,
       "5|Limpeza e descartáveis": 1,
       "13|Pagamento indevido / a maior": 1,
-      "NEUTRO|Transferência entre contas - saída": 33,
+      "NEUTRO|Transferência entre contas - saída": 35,
       "5|Material de copa e cozinha": 1,
       "5|Energia elétrica": 3,
       "11|Frete de equipamentos e obra": 1,
       "6|Salários da operação": 2,
       "6|Uniformes, EPI e exames": 3,
       "5|Água e esgoto": 2,
-      "NEUTRO|Transferência entre contas - entrada": 33,
+      "NEUTRO|Transferência entre contas - entrada": 35,
       "10|Juros e multas": 9,
       "7|Taxas distritais, TPU, TLL e IPTU": 1,
       "2|ISS retido na fonte de prestadores": 1,
-      "8|Contabilidade, jurídico e consultorias": 2,
+      "8|Gestor administrativo PJ": 1,
       "6|ISS | Permanência": 1,
       "5|Transporte, veículo e combustível": 1,
       "4|Gelo e gases": 1,
       "6|Variável": 4,
+      "8|Contabilidade, jurídico e consultorias": 1,
       "11|Prestadores de servicos gerais": 1,
       "5|Alojamento e ajuda de custo para moradia": 2,
       "5|Manutenção de equipamentos": 1,
       "8|Tarifas bancárias": 24,
-      "6|Extras e freelancers": 1,
+      "6|Diarista (OIA)": 1,
       "4|Outros insumos e diversos": 1,
       "8|Material de escritório": 1,
       "6|FGTS e contribuições": 2,
@@ -97292,7 +97392,7 @@
       "6|Alimentação de colaboradores": 2,
       "7|Outros aluguéis": 2,
       "6|13º salário": 2,
-      "9|Mídia paga": 1
+      "9|Mídia paga (tráfego)": 1
      },
      "familias": {
       "bar": -1040.0,
@@ -97774,7 +97874,7 @@
        ""
       ],
       [
-       "8|Contabilidade, jurídico e consultorias",
+       "8|Gestor administrativo PJ",
        "09/11/2026",
        -9500,
        "KARINE MACIEL VITOR RODRIGUES",
@@ -98335,7 +98435,7 @@
        ""
       ],
       [
-       "6|Extras e freelancers",
+       "6|Diarista (OIA)",
        "13/11/2026",
        -500,
        "PATRICIA ANDRADE LUNA DA SILVA",
@@ -98995,11 +99095,33 @@
        ""
       ],
       [
-       "9|Mídia paga",
+       "9|Mídia paga (tráfego)",
        "25/11/2026",
        -1500,
        "FACEBOOK SERVICOS ONLINE DO BRASIL LTDA.",
        "",
+       "Bradesco c/c",
+       "",
+       "",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "25/11/2026",
+       52576.54,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "5274076",
+       "Bradesco c/c",
+       "",
+       "",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - entrada",
+       "25/11/2026",
+       2.3,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "5274076",
        "Bradesco c/c",
        "",
        "",
@@ -99367,6 +99489,28 @@
        "",
        "",
        ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "25/11/2026",
+       -52576.54,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "5274076",
+       "Bradesco - INVEST FAC",
+       "",
+       "",
+       ""
+      ],
+      [
+       "NEUTRO|Transferência entre contas - saída",
+       "25/11/2026",
+       -2.3,
+       "Transf. Bradesco - INVEST FAC &gt;&gt; Bradesc",
+       "5274076",
+       "Bradesco - INVEST FAC",
+       "",
+       "",
+       ""
       ]
      ]
     }
@@ -99407,12 +99551,12 @@
     },
     "2026-11": {
      "ini": 93296.62000000001,
-     "fim": 88330.61,
+     "fim": 88330.61000000003,
      "entradas": 350000.0,
      "saidas": -354966.01,
      "contas": {
-      "Bradesco c/c": 213847.74,
-      "Bradesco - INVEST FAC": -126732.9,
+      "Bradesco c/c": 266426.58,
+      "Bradesco - INVEST FAC": -179311.74,
       "Mercado Pago": 1215.77
      }
     }
