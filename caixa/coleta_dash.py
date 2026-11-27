@@ -141,6 +141,27 @@ def extrato(emp, cc, ini, fim):
             if not (x.get('cDesCliente') or '').startswith('SALDO')]
 
 
+def sem_titulo(agenda, itens):
+    """Tira da agenda o que ja e titulo a vencer. Todo titulo em aberto com conta
+    corrente aparece TAMBEM como 'Previsto' no extrato dessa conta: em 27/11/2026,
+    188 dos 251 previstos da Boldro (R$ 731.898,61) e 68 dos 77 da YO
+    (R$ 424.316,88) eram titulo contado duas vezes. Casa por lado e valor com ate
+    4 dias de folga (vencimento no fim de semana cai no dia util), cada titulo uma
+    vez. Sobra o previsto sem titulo e o titulo vencido, que o Omie reprograma
+    para hoje."""
+    tit = [[dt(i['d']), round(i['v'], 2), i['lado']] for i in itens]
+    out = []
+    for a in agenda:
+        d = dt(a['d'])
+        par = next((t for t in tit if t[2] == a['lado'] and abs(t[1] - a['v']) <= 0.02
+                    and abs((t[0] - d).days) <= 4), None)
+        if par:
+            tit.remove(par)
+        else:
+            out.append(a)
+    return out
+
+
 def coleta(HOJE):
     FIM = HOJE + datetime.timedelta(days=HORIZONTE)
     # CORTE_SALDO=dd/mm/aaaa: o saldo para no ultimo dia com a varredura c/c x
@@ -254,7 +275,8 @@ def coleta(HOJE):
             diverge = {'extrato': ext, 'omie': anc, 'dif': R2(anc - ext),
                        'nota': NOTA_DIVERGE.get(emp, 'sem explicacao levantada ainda')}
         out['ents'][emp] = {
-            'nome': cfg['nome'], 'contas': contas, 'itens': itens, 'agenda': agenda,
+            'nome': cfg['nome'], 'contas': contas, 'itens': itens,
+            'agenda': sem_titulo(agenda, itens),
             'atrasados': {'n': len(atr),
                           'receber': R2(sum(x['v'] for x in atr if x['lado'] == 'receber')),
                           'pagar': R2(sum(x['v'] for x in atr if x['lado'] == 'pagar'))},

@@ -5,12 +5,14 @@ set -e
 cd "$(dirname "$0")/.."
 echo "== lendo o Omie das duas empresas"
 python3 caixa/coleta_dash.py
+echo "== estimativa (despesa recorrente e receita ainda nao lancadas)"
+python3 caixa/estimativa.py
 echo "== montando o caixa.html"
 python3 caixa/gera_dash.py
 if git diff --quiet -- caixa.html; then
   echo "== nada mudou no caixa.html, nao ha o que publicar"
 else
-  git add caixa.html caixa/dados_caixa.json
+  git add caixa.html caixa/dados_caixa.json caixa/estimativa.json
   git commit -q -m "caixa $(date +%d/%m/%Y)"
   git push -q origin HEAD
   echo "== publicado: $(git log --oneline -1)"
